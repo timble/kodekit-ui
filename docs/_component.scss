@@ -1,0 +1,16 @@
+/* ==========================================================================
+   Component
+   ========================================================================== */
+
+.k-component {
+  @include flexbox {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    overflow: auto;
+  }
+
+  @include resizing {
+    overflow: hidden;
+  }
+}

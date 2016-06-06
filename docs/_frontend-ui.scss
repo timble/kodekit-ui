@@ -1,0 +1,20 @@
+/* ==========================================================================
+   Frontend UI
+   ========================================================================== */
+
+@at-root .k-frontend-ui {
+  background: $form-front-background;
+
+  .koowa-container {
+    background: $form-front-background;
+
+    @include breakpoint($beta) {
+      padding: 15px;
+    }
+  }
+
+  .k-wrapper {
+    position: relative;
+    box-shadow: 0 0 10px rgba(0,0,0,1);
+  }
+}

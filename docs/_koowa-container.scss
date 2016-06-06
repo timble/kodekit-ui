@@ -1,0 +1,64 @@
+/**
+ * Koowa container
+ *
+ * This is the most outer container of each layout.
+ * A ``koowa-container` may only live once on the page and should be handled as an id
+ * Need to namespace something? Use the `.koowa` class
+ *
+ * 1. By using a max-width we essentially set a min-width when the contents are
+ *    to large for the koowa container. The reason we don't use min-width is
+ *    because if the content is only 300px we don't need horizontal scrollbars
+ * 2. Reset the max-width when viewport is as large as minwidth
+ * 3. Use z-index to be able to talk with JavaScript
+ * 4. Needed for webkit / blink for JS to read zindex value
+ * 5. Default font settings
+ * 6. Default styling
+ */
+
+.koowa-container {
+  position: relative; /* 4 */
+  z-index: 0; /* 3 */
+
+  max-width: $minwidth; /* 1 */
+  margin: 0; /* 6 */
+  border: none; /* 6 */
+  width: 100%;
+  overflow: hidden;
+  padding: $koowa-padding;
+
+  font-size: $font-size; /* 5 */
+  line-height: $line-height; /* 5 */
+  background: $koowa-background; /* 6 */
+  color: $color-type;
+
+  -webkit-font-smoothing: $webkit-font-smoothing;
+  -moz-osx-font-smoothing: $firefox-font-smoothing;
+  -webkit-overflow-scrolling: touch;
+
+  @include breakpoint($minwidth) {
+    max-width: none; /* 2 */
+  }
+
+
+  /* When flexbox is enabled */
+
+  @include flexbox {
+    display: flex;
+    flex: 1 1 auto;
+  }
+
+
+  /* RTL */
+
+  @include rtl {
+    direction: rtl;
+  }
+
+
+  /* On 'desktop' view */
+
+  @include breakpoint($desktop) {
+    z-index: 1; // 3
+  }
+
+}

@@ -1,0 +1,23 @@
+/* ==========================================================================
+   Mobile title
+   ========================================================================== */
+
+.k-mobile-title {
+  background: $mobile-title-background;
+  @include border(bottom, $mobile-title-border);
+  padding: $mobile-title-spacing;
+
+  .k-heading {
+    margin: 0;
+    font-size: $mobile-title-font-size;
+    line-height: $mobile-title-line-height;
+  }
+
+  @include breakpoint($charlie) {
+    display: none;
+  }
+
+  @include flexbox {
+    flex: 0 0 auto;
+  }
+}

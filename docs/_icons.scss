@@ -1,0 +1,116 @@
+/* ==========================================================================
+   Toolbar icons
+   ========================================================================== */
+
+/**
+ * Re-setting the Joomla default icons with our icons
+ */
+
+[class^="icon-"],
+[class*=" icon-"] {
+  margin: 0;
+}
+
+.icon-new {
+  @include icon-before(plus, true);
+}
+
+.icon-download {
+  @include icon-before(data-transfer-download, true);
+}
+
+.icon-options {
+  @include icon-before(cog, true);
+}
+
+.icon-delete {
+  @include icon-before(trash, true);
+}
+
+.icon-purge {
+  @include icon-before(circle-x, true);
+}
+
+.icon-publish {
+  @include icon-before(check, true);
+  color: $color-success;
+}
+
+.icon-unpublish {
+  @include icon-before(circle-x, true);
+  color: $color-error;
+}
+
+.icon-apply {
+  @include icon-before(pencil, true);
+}
+
+.icon-save {
+  @include icon-before(check, true);
+  color: $color-success;
+}
+
+.icon-cancel {
+  @include icon-before(circle-x, true);
+  color: $color-error;
+}
+
+
+.k-icon-config {
+  @include icon-before(cog, true);
+}
+
+.k-icon-content {
+  @include icon-before(pencil, true);
+}
+
+.k-icon-menus {
+  @include icon-before(menu, true);
+}
+
+.k-icon-users {
+  @include icon-before(person, true);
+}
+
+.logman-icon {
+  display: inline-block;
+  margin-right: 7px;
+}
+
+
+/* ==========================================================================
+   DOCman icons
+   ========================================================================== */
+
+/**
+ * Mapping fontawesome icons found in Nooku
+ */
+
+.koowa_icon--archive,
+.koowa_icon--audio,
+.koowa_icon--default,
+.koowa_icon--document,
+.koowa_icon--folder,
+.koowa_icon--image,
+.koowa_icon--pdf,
+.koowa_icon--spreadsheet,
+.koowa_icon--video,
+.koowa_icon--folder_open
+{
+  font-size: 16px;
+
+  i {
+    @extend .visually-hidden;
+  }
+}
+
+.koowa_icon--archive { @include icon-before(k-archive,true); }
+.koowa_icon--audio { @include icon-before(k-audio,true); }
+.koowa_icon--default { @include icon-before(k-default,true); }
+.koowa_icon--document { @include icon-before(k-document,true); }
+.koowa_icon--folder { @include icon-before(k-folder,true); }
+.koowa_icon--image { @include icon-before(k-image,true); }
+.koowa_icon--pdf { @include icon-before(k-pdf,true); }
+.koowa_icon--spreadsheet { @include icon-before(k-spreadsheet,true); }
+.koowa_icon--video { @include icon-before(k-video,true); }
+.koowa_icon--folder_open { @include icon-before(k-folder_open,true); }

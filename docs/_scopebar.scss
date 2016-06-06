@@ -1,0 +1,612 @@
+/* ==========================================================================
+   Scopebar
+   ========================================================================== */
+
+/**
+ * Scopebar
+ *
+ * Default scopebar styling
+
+markup:
+<!-- Scopebar -->
+<div class="k-scopebar">
+    <!-- Filters -->
+    <div class="k-scopebar__item k-scopebar__item--fluid">
+        <!-- Filters wrapper -->
+        <div class="k-scopebar__filters-wrapper">
+            <!-- filters toggle button -->
+            <div class="k-scopebar__filter-toggle-wrapper">
+                <!-- toggle button -->
+                <button type="button" class="k-scopebar-icon-button k-toggle-filters js-toggle-filters">
+                    <span class="k-icon-k-filter"></span>
+                    <span class="visually-hidden"><?= translate('Filters'); ?></span>
+                </button>
+                <!-- filter icon when there's no toggle button -->
+                <span class="k-scopebar-icon-button k-toggle-filters-icon koowa-tooltip">
+                    <span class="k-icon-k-filter"></span>
+                    <span class="visually-hidden"><?= translate('Filters'); ?></span>
+                </span>
+                <!-- Display label on toggle button to show there are filters -->
+                <div class="js-filter-count k-scopebar__item__label"></div>
+            </div><!-- .k-scopebar__filter-toggle-wrapper -->
+            <!-- Filters content -->
+            <div class="k-scopebar__filters-content">
+                <div class="js-filter-container k-scopebar__filters">
+                    <div class="js-filter-prototype k-scopebar__item--filter k-dropdown js-dropdown">
+                        <button type="button" class="k-dropdown__button js-dropdown-button koowa-tooltip">
+                            <span class="js-dropdown-title k-scopebar__item--filter__title">{content}</span>
+                            <span class="k-scopebar__item--filter__icon k-icon-chevron-bottom"></span>
+                            <div class="js-dropdown-label k-scopebar__item__label"></div>
+                        </button>
+                        <div class="k-dropdown__body js-dropdown-body">
+                            <div class="k-dropdown__body__buttons">
+                                <button type="button" class="js-clear-filter btn btn-sm">Clear</button>
+                                <button type="button" class="js-apply-filter btn btn-primary btn-sm">Apply filter</button>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- .k-scopebar__filters -->
+            </div><!-- .k-scopebar__filters-content -->
+            <!-- Search toggle button -->
+            <div class="k-scopebar__search-toggle-wrapper">
+                <button type="button" class="k-scopebar-icon-button k-toggle-search js-toggle-search"><span class="k-icon-magnifying-glass"></span><span class="visually-hidden"><?= translate('Search'); ?></span></button>
+            </div><!-- .k-scopebar__search-toggle-wrapper -->
+        </div><!-- .k-scopebar__filters-wrapper -->
+    </div><!-- .k-scopebar__item -->
+    <!-- Search -->
+    <div class="k-scopebar__item k-scopebar__item--search">
+        <div class="k-search__container k-search__container--has-both-buttons">
+            <input type="search" name="search" class="k-search__field" placeholder="Find by title or description…" value="">
+            <button type="submit" class="k-search__button-search">
+                <span class="k-icon-magnifying-glass"></span>
+            </button>
+            <button class="k-search__button-empty">
+                <span>X</span>
+            </button>
+        </div>
+    </div>
+</div><!-- .k-scopebar -->
+
+Styleguide 3.4
+
+*/
+
+
+.k-scopebar {
+  background: $scopebar-background;
+  color: $scopebar-color;
+  min-width: 100%;
+
+  @include breakpoint($delta) {
+    display: table;
+    width: 100%;
+  }
+
+
+  /**
+   * When flexbox is in use
+   */
+
+  @include flexbox {
+    flex: 0 0 auto;
+  }
+
+  @include flexbox($horizontal: $delta) {
+    display: flex;
+    width: auto;
+    flex: 0 0 auto;
+  }
+
+
+  /**
+   * Breadcrumbs in the scopebar
+   *
+   * When the breadcrumbs are in the scopebar the breadcrumbs should be flexing
+   */
+
+  .k-breadcrumb {
+    flex: 1 1 auto;
+  }
+}
+
+
+
+/**
+ * Items
+ */
+
+.k-scopebar__item {
+  @include border(bottom, $scopebar-border);
+  vertical-align: middle;
+
+
+  /**
+   * When flexbox is in use
+   */
+
+  @include flexbox($horizontal: $delta) {
+    display: block;
+    flex: 0 0 auto;
+
+
+    /* Search item */
+
+    &.k-scopebar__item--search {
+      display: block;
+      flex: 0 0 auto;
+    }
+  }
+}
+
+
+
+/**
+ * Fluid item
+ *
+ * Put at least one fluid item in every scopebar for flexbox to work correctly
+ */
+
+.k-scopebar__item--fluid {
+  @include clearfix;
+
+  @include breakpoint($delta) {
+    display: table-cell;
+    width: 99%;
+  }
+
+  @include flexbox($horizontal: $delta) {
+    flex: 1 1 auto;
+    width: auto;
+  }
+}
+
+
+
+
+/**
+ * Filters
+ *
+ * 1. Clearfix so we can float individual filters
+ * 2. For positioning dropdowns on smaller screens
+ */
+
+.k-scopebar__filters {
+  @include clearfix; /* 1 */
+  @include border(left,$scopebar-border);
+  position: relative; /* 2 */
+  z-index: 2; /* 2 */
+}
+
+
+/* Individual filter */
+
+.k-scopebar__item--filter {
+  display: block;
+  float: left;
+  width: auto;
+  line-height: $scopebar-size;
+  @include border(right, #ccc);
+  @include border(bottom, #ccc);
+  margin-bottom: -1px;
+  height: $scopebar-size + 1px;
+  font-size: $scopebar-filter-font-size;
+
+  @include breakpoint($beta) {
+    position: relative;
+  }
+
+  @include rtl {
+    border-right: none;
+    @include border(left, #ccc);
+    float: right;
+  }
+}
+
+
+/* Filter title */
+
+.k-scopebar__item--filter__title,
+.k-scopebar__item--filter__icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.k-scopebar__item--filter__icon {
+  margin-left: 2px;
+
+  @include rtl {
+    margin-left: 0;
+    margin-right: 2px;
+  }
+
+  @include breakpoint($beta) {
+    margin-left: 4px;
+
+    @include rtl {
+      margin-left: 0;
+      margin-right: 4px;
+    }
+  }
+}
+
+
+/* Scopebar label showing how many active filters you have below a filter button */
+
+.k-scopebar__item__label {
+  position: absolute;
+  z-index: 2;
+  top: 2px;
+  right: 2px;
+  min-width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #d35400;
+  color: white;
+  font-size: 10px;
+  line-height: 15px;
+  text-align: center;
+  font-weight: $bold;
+  box-shadow: inset 0 0 2px rgba(0,0,0,.1);
+  pointer-events: none;
+
+  @include rtl {
+    right: auto;
+    left: 2px;
+  }
+
+  @include breakpoint($beta) {
+    top: 6px;
+    right: 4px;
+
+    @include rtl {
+      right: auto;
+      left: 4px;
+    }
+  }
+
+  &--numberless {
+    &:after {
+      display: block;
+      content: " ";
+      width: 5px;
+      height: 5px;
+      background: white;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      border-radius: 50%;
+      box-shadow: 1px 1px 2px rgba(0,0,0,.2);
+    }
+  }
+}
+
+
+
+/**
+ * Search
+ *
+ * 1. Hide by default (when JS is enabled) so we can toggle it open
+ * 2. Display as table cell on medium sized screens (!important so it displays even if it's hidden by JS)
+ * 3. Display as block for flexbox on larger screens
+ * 5. Search area items
+ */
+
+.k-scopebar__item--search {
+  position: relative;
+
+  @include breakpoint($delta) {
+    @include allwidth(220px);
+  }
+
+  @include breakpoint($echo) {
+    @include allwidth(280px);
+  }
+
+  @include js-enabled {
+    display: none; /* 1 */
+
+    @include breakpoint($delta) {
+      display: table-cell!important; /* 2 */
+    }
+  }
+
+
+  /* 5 */
+
+  .k-search__container {
+    width: 100%;
+    position: relative;
+  }
+
+  .k-search__container--has-search-button .k-search__field {
+    padding-left: 28px;
+
+    @include rtl {
+      padding-left: 0;
+      padding-right: 28px;
+    }
+  }
+
+  .k-search__container--has-empty-button .k-search__field {
+    padding-right: 18px;
+
+    @include rtl {
+      padding-right: 0;
+      padding-left: 28px;
+    }
+  }
+
+  .k-search__container--has-both-buttons .k-search__field {
+    padding-left: 28px;
+    padding-right: 18px;
+
+    @include rtl {
+      padding-left: 0;
+      padding-right: 28px;
+    }
+  }
+
+  label {
+    @extend .visually-hidden;
+  }
+
+  .k-search__field {
+    @include reset;
+    margin: 0;
+    display: block;
+    width: 100%;
+    height: $scopebar-size;
+    border-radius: 0;
+    padding: $spacing-tiny;
+    padding-right: $scopebar-size;
+    background: $scopebar-search-background;
+    color: $scopebar-search-color;
+    box-shadow: none;
+    font-size: 12px;
+    -webkit-appearance: none;
+
+    @include rtl {
+      padding-right: 0;
+      padding-left: $scopebar-size;
+    }
+
+    @include breakpoint($delta) {
+      @include border(left, $scopebar-border);
+      @include border(bottom, $scopebar-border);
+      height: $scopebar-size + 1px;
+      margin-bottom: -1px;
+
+      @include rtl {
+        border-left: none;
+        @include border(right, $scopebar-border);
+      }
+    }
+  }
+
+  .k-search__button-search {
+    @include reset;
+    position: absolute;
+    top: 50%;
+    left: .5em;
+    margin-top: -.75em;
+
+    @include rtl {
+      left: auto;
+      right: .5em;
+    }
+  }
+
+  .k-search__button-empty {
+    border: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    display: none;
+    top: 50%;
+    right: 0;
+    width: 22px;
+    height: 22px;
+    margin-top: -10px;
+    background: transparent;
+
+    @include rtl {
+      right: auto;
+      left: 0;
+    }
+
+    &.is-visible {
+      display: inline-block;
+    }
+
+    span {
+      margin: 3px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      line-height: 16px;
+      text-align: center;
+      border-radius: 100%;
+      color: #777;
+      text-decoration: none;
+      font-weight: $bold;
+      font-family: Arial, helvetica, sans-serif;
+      font-size: 10px;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      span {
+        background: #ea9393;
+        border: 1px solid #ce4c4c;
+        color: #fff;
+        text-shadow: 1px 1px 1px #ce4c4c;
+        @include box-shadow(inset 1px 2px 1px lighten(#ce4c4c, 10%));
+      }
+    }
+  }
+
+  // The active search label
+  .k-scopebar__item__label--numberless {
+    position: absolute;
+    right: auto;
+    left: 13px;
+    top: 5px;
+
+    @include rtl {
+      left: auto;
+      right: 13px;
+    }
+  }
+}
+
+
+
+/**
+ * Search toggle button
+ *
+ * 1. Hide when search is visible
+ */
+
+.k-scopebar-icon-button {
+  position: relative;
+  display: none;
+  width: $scopebar-size;
+  height: 0;
+  margin: 0;
+  border: none;
+  padding: 0;
+  padding-top: $scopebar-size;
+  background: transparent;
+
+  [class^="k-icon"] {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 16px;
+    vertical-align: middle;
+    margin: -8px 0 0 -8px;
+
+    @include rtl {
+      left: auto;
+      right: 50%;
+      margin: -8px -8px 0 0;
+    }
+  }
+
+  @include js-enabled {
+    display: block;
+  }
+}
+
+
+.k-scopebar__filter-toggle-wrapper,
+.k-scopebar__search-toggle-wrapper {
+  width: $scopebar-size;
+  max-width: $scopebar-size;
+  height: $scopebar-size;
+  white-space: nowrap;
+}
+
+.k-scopebar__filter-toggle-wrapper {
+  position: relative;
+
+  .k-scopebar__item__label {
+    @include breakpoint($beta) {
+      display: none;
+    }
+  }
+}
+
+.k-scopebar__filters-wrapper {
+  display: table;
+  width: 100%;
+  height: auto;
+}
+
+.k-scopebar__filter-toggle-wrapper,
+.k-scopebar__filters-content,
+.k-scopebar__search-toggle-wrapper {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.k-scopebar__search-toggle-wrapper {
+  @include breakpoint($delta) {
+    display: none;
+  }
+}
+
+.k-scopebar__filters-content {
+  min-height: $scopebar-size;
+  min-width: $scopebar-size;
+  width: 99%;
+}
+
+.k-scopebar__filters {
+  @include js-enabled {
+    display: none;
+
+    @include breakpoint($beta) {
+      display: block !important;
+    }
+  }
+}
+
+
+.k-toggle-filters {
+  @include js-enabled {
+    display: block;
+
+    @include breakpoint($beta) {
+      display: none;
+    }
+  }
+}
+
+.k-toggle-filters-icon {
+  @include js-enabled {
+    display: none;
+
+    @include breakpoint($beta) {
+      display: block;
+    }
+  }
+}
+
+.k-toggle-search {
+  @include js-enabled {
+    display: block;
+    float: right;
+
+    @include rtl {
+      float: left;
+    }
+  }
+}
+
+
+
+/**
+ * Right floating button group
+ */
+
+.k-scopebar__group--right {
+  float: right;
+
+  @include rtl {
+    float: left;
+  }
+}
+
+.k-scopebar__group--right__item {
+  float: left;
+  height: $scopebar-size;
+
+  @include rtl {
+    float: right;
+  }
+}

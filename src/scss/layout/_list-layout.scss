@@ -1,0 +1,18 @@
+/* ==========================================================================
+   List layout
+   ========================================================================== */
+
+.k-list-layout {
+  margin: 0;
+
+  @include flexbox {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    overflow: auto;
+  }
+
+  @include resizing {
+    overflow: hidden;
+  }
+}

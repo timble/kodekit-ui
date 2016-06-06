@@ -1,0 +1,50 @@
+/**
+ * Files layout switcher
+ *
+ * Switches layout from grid to list view
+ */
+
+.files-layout-switcher {
+  @include reset;
+  display: block;
+  float: left;
+  width: round($scopebar-size * .8);
+  height: round($scopebar-size * .8);
+  margin: round($scopebar-size * .1);
+  margin-left: 0;
+  border-radius: 2px;
+  text-align: center;
+  line-height: round($scopebar-size * .8);
+  @include transition;
+  @include border(all, transparent);
+
+  @include rtl {
+    float: right;
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  &:hover {
+    border-color: $scopebar-border;
+    background: lighter($scopebar-background);
+  }
+
+  &.active {
+    display: none;
+  }
+
+  span {
+    display: block;
+    margin: round((($scopebar-size * .8) - (2px + 16px)) / 2); // absolute center
+    width: 16px;
+    height: 16px;
+    line-height: 0;
+    font-size: 0;
+    vertical-align: middle;
+
+    &:before {
+      font-size: 16px;
+      line-height: 16px;
+    }
+  }
+}

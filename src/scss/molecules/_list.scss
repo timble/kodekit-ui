@@ -1,0 +1,96 @@
+/* ==========================================================================
+   Sidebar list
+   ========================================================================== */
+
+/**
+<!-- List -->
+<ul class="k-list">
+    <!-- Active item -->
+    <li class="active">
+        <a href="...">
+            <span class="k-icon-person"></span> My documents
+        </a>
+    </li>
+    <!-- Other items -->
+    <li>
+        <a href="...">
+            <span class="k-icon-star"></span> Most popular
+        </a>
+    </li>
+</ul>
+*/
+
+
+/**
+ * 1. Reset default <ul> styling
+ */
+
+.k-list {
+  @include reset($margin: false); /* 1 */
+  margin: $list-spacing 0;
+
+
+  /* Items */
+
+  li {
+    display: block;
+    line-height: $line-height;
+  }
+
+
+  /**
+   * Links
+   *
+   * 1. Make item fully clickable
+   * 2. removing underlines
+   */
+
+  a {
+    display: block; /* 1 */
+    padding-top: $list-spacing;
+    padding-bottom: $list-spacing;
+    padding-right: $spacing;
+    padding-left: $spacing;
+    color: $list-color;
+    text-decoration: none; /* 2 */
+
+
+    /* Hover & focus state */
+
+    &:hover,
+    &:focus {
+      background: $list-hover-background;
+      color: $list-hover-color;
+      text-decoration: none; /* 2 */
+    }
+  }
+
+
+  /* Active link */
+
+  .active {
+    a {
+      font-weight: $bold;
+      background: $list-active-background;
+      color: $list-active-color;
+
+      &:hover {
+        background: transparent;
+        cursor: default;
+      }
+    }
+  }
+
+
+  /* Icons */
+
+  [class^="k-icon"] {
+    display: inline-block;
+    margin-right: .75em;
+
+    @include rtl {
+      margin-right: auto;
+      margin-left: .75em;
+    }
+  }
+}

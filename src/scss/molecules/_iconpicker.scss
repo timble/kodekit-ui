@@ -1,0 +1,89 @@
+/* ==========================================================================
+   Icon picker
+   ========================================================================== */
+
+/**
+ * Image picker found in add / edit document
+ */
+
+$thumbnailSize: 128px;
+$thumbnailWidth: $thumbnailSize;
+$thumbnailHeight: $thumbnailSize;
+
+.thumbnail-picker {
+  @include clearfix;
+  margin: 0;
+  padding: 0;
+
+  li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .thumbnail-controls,
+  .thumbnail-preview,
+  .thumbnail-info {
+    display: block;
+  }
+
+  .thumbnail-info {
+    .alert {
+      display: none;
+      margin-top: 1em;
+      margin-bottom: 0;
+      padding-right: 14px;
+
+      @include rtl {
+        padding-right: 0;
+        padding-left: 14px;
+      }
+
+      &.show {
+        display: inline-block;
+      }
+    }
+  }
+
+  .thumbnail {
+    margin-top: 1em;
+    display: inline-block;
+    vertical-align: middle;
+
+    .thumbnail-image {
+      display: block;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: #eee;
+      position: relative;
+      width: $thumbnailWidth;
+      height: $thumbnailHeight;
+      background-size: contain;
+
+      // Custom function for stripping px from value
+      @function strip-units($number) {
+        @return $number/($number*0+1);
+      }
+
+      $thumbnailWidthRaw: strip-units($thumbnailWidth);
+      $thumbnailheightRaw: strip-units($thumbnailHeight);
+
+      &.placeholder:before {
+        display: block;
+        content: '#{$thumbnailWidthRaw}\0000d7#{$thumbnailheightRaw}';
+        font-weight: bold;
+        top: 50%;
+        width: 100%;
+        margin-top: -0.8em;
+        text-align: center;
+        position: absolute;
+        font-size: 12px;
+        line-height: 1.6em;
+        color: #B8B8B8;
+      }
+    }
+
+    .thumbnail-change {
+      margin-top: 4px;
+    }
+  }
+}

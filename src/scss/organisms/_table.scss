@@ -1,0 +1,670 @@
+/* ==========================================================================
+   Table
+   ========================================================================== */
+
+/**
+ * Table
+ *
+ * Default table styling
+
+markup:
+<!-- Table -->
+<div class="k-table-container">
+    <div class="k-table">
+        <table>
+        <thead>
+            <tr>
+                <th width="1%"><input type="checkbox" class="-koowa-grid-checkall"></th>
+                <th>{content}</th>
+                <th>{content}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" class="-koowa-grid-checkbox"></td>
+                <td>{content}</td>
+                <td>{content}</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="-koowa-grid-checkbox"></td>
+                <td>{content}</td>
+                <td>{content}</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="-koowa-grid-checkbox"></td>
+                <td>{content}</td>
+                <td>{content}</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="-koowa-grid-checkbox"></td>
+                <td>{content}</td>
+                <td>{content}</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+
+Styleguide 3.5
+
+*/
+
+
+.k-table-container {
+  @include flexbox {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    overflow: auto;
+  }
+
+  @include resizing {
+    overflow: hidden;
+  }
+
+  /* Table container */
+
+  .k-table {
+    overflow: auto;
+    background: $table-background;
+    min-height: 170px;
+
+    @include flexbox {
+      display: flex;
+      flex: 0 1 auto;
+      background: $table-cell-background-even;
+    }
+  }
+
+  table {
+    width: 100%;
+    text-align: left;
+    border-collapse: separate;
+
+    @include rtl {
+      text-align: right;
+    }
+
+    @include flexbox {
+      flex: 1 1 auto;
+    }
+  }
+
+
+  /**
+   * Cells
+   *
+   * 1. Position checkbox
+   * 2. Remove default margin and set negative top margin to visually align vertically
+   */
+
+  th,
+  td {
+    position: relative;
+    height: $table-cell-size;
+    vertical-align: middle;
+    text-align: left;
+    @include transition;
+
+    input {
+      display: inline-block; /* 1 */
+      vertical-align: middle; /* 1 */
+      margin: -1px 0 0 0; /* 2 */
+    }
+  }
+
+  @include rtl {
+    th,
+    td {
+      text-align: right;
+    }
+  }
+
+
+  /**
+   * Head
+   *
+   * 1. Don't set a vertical padding on table headers. Set padding on table heading children
+   *    We do this so <a> elements are fully clickable for sorting
+   * 2. Don't use long header titles since they won't be wrapped
+   * 3. Whole <th> should be clickable
+   * 4. Set padding here
+   */
+
+  th {
+    @include border(bottom, $table-header-border);
+    z-index: 1;
+    padding: 0 $table-cell-spacing-horizontal; /* 1 */
+    white-space: nowrap; /* 2 */
+    background: $table-header-background;
+
+    a {
+      display: block; /* 3 */
+      padding: $table-cell-spacing-vertical $table-cell-spacing-horizontal; /* 4 */
+      margin-left: -$table-cell-spacing-horizontal;
+      margin-right: -$table-cell-spacing-horizontal;
+      line-height: $table-cell-size - ($table-cell-spacing-vertical * 2);
+      @include transition;
+
+      &:focus,
+      &:hover {
+        background: $table-header-background-hover;
+      }
+    }
+  }
+
+
+  /**
+   * Body
+   *
+   * 1. Small extra info below title display:block to display below title
+   */
+
+  td {
+    @include border(bottom, $table-cell-border);
+    padding: $table-cell-spacing-vertical $table-cell-spacing-horizontal;
+    background: $table-cell-background-even;
+    line-height: 18px;
+  }
+
+  tr:last-child {
+    td {
+      border-bottom: none;
+    }
+  }
+
+
+  tr:nth-child(odd) {
+    td {
+      background: $table-cell-background-odd;
+    }
+  }
+
+
+  /* Hover background */
+  tr,
+  tr:nth-child(n) {
+    &:focus,
+    &:hover {
+      td {
+        background: $table-cell-background-even-hover;
+      }
+    }
+  }
+
+  small {
+    display: block; /* 1 */
+    font-size: 11px;
+    line-height: 11px;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  a {
+    @include transition;
+  }
+
+  [class^="koowa_icon"] {
+    vertical-align: baseline;
+    font-size: 16px;
+    line-height: 23px;
+  }
+
+
+
+  /**
+   * Table classes
+   *
+   * Classes to add to table cells
+   */
+
+  .k-table-data--right {
+    text-align: right;
+
+    @include rtl {
+      text-align: left;
+    }
+  }
+
+  .k-table-data--center {
+    text-align: center;
+  }
+
+  .k-table-data--nowrap {
+    white-space: nowrap;
+  }
+
+  .k-table-data--wrap {
+    word-break: break-all;
+  }
+
+  .k-table-data--toggle {
+    white-space: nowrap;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .k-table-data--ellipsis {
+    max-width: 0;
+    overflow: hidden;
+
+    .k-ellipsis-item {
+      vertical-align: middle;
+    }
+  }
+
+
+
+  /**
+   * Table levels
+   *
+   * Indented levels for a clearer overview
+   */
+
+  .k-table__item-level {
+    white-space: nowrap;
+
+    .k-table__item-cell-ellipsis {
+      display: table;
+      width: 100%;
+
+      .k-table__item-cell-visual,
+      .k-table__item-cell-text {
+        display: table-cell;
+        vertical-align: middle;
+        width: 1%;
+      }
+
+      .k-table__item-cell-text {
+        display: table-cell;
+        width: 99%;
+        max-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+
+    &:before {
+      content: " ";
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-left: 1px solid #bbb;
+      border-bottom: 1px solid #bbb;
+      position: absolute;
+      top: 50%;
+      margin-top: -.25em;
+
+      @include rtl {
+        border-left: none;
+        border-right: 1px solid #bbb;
+      }
+    }
+  }
+
+  @for $i from 1 through 15 {
+    .k-table__item-level#{$i} {
+      padding-left: 24px * ($i - 1);
+
+      @include rtl {
+        padding-left: 0;
+        padding-right: 24px * ($i - 1);
+      }
+
+      &:before {
+        left: (24px * ($i - 1)) - 18px;
+
+        @include rtl {
+          left: auto;
+          right: (24px * ($i - 1)) - 18px;
+        }
+      }
+    }
+  }
+
+  .k-table__item-level__title {
+    padding-left: 5px;
+
+    @include rtl {
+      padding-left: 0;
+      padding-right: 5px;
+    }
+  }
+
+  .k-table__item-level1:before {
+    display: none;
+  }
+
+
+
+  /**
+   * Table elements
+   */
+
+  .k-table-button {
+    appearance: none;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-size: 12px;
+    padding: 0;
+    color: #555;
+    display: inline-block;
+    vertical-align: middle;
+    width: 18px;
+    height: 18px;
+    line-height: 16px;
+    overflow: hidden;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 6px;
+
+    &:focus,
+    &:hover {
+      color: $color-error;
+      border-color: #aaa;
+      background: #eee;
+    }
+
+    & + a {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+
+  /**
+   * Selected
+   *
+   * When rows are selected they are highlighted
+   *
+   * 1. Coloring Links and extra elements that don't color automatically with it's parent
+   */
+
+  tr.active,
+  tr.selected {
+    td {
+      background: $table-cell-accent-background;
+      color: $table-cell-accent-color;
+
+      a, i, span {
+        color: $table-cell-accent-color; /* 1 */
+      }
+
+      .k-table-button {
+        border-color: white;
+        background: transparent;
+
+        &:focus,
+        &:hover {
+          border-color: white;
+          background: white;
+        }
+      }
+    }
+
+    &:hover,
+    &:focus {
+      td {
+        background-color: $table-cell-accent-background-hover;
+      }
+    }
+  }
+
+
+
+  /* Sub headings */
+
+  .k-table__sub-header {
+    th {
+      height: auto;
+      font-size: .875em;
+      text-transform: uppercase;
+    }
+  }
+
+
+  /**
+   * Sorting arrows
+   *
+   * 1. Display table to line them up horizontally while:
+   *    - We keep everything vertically centered
+   *    - We keep it all on one line but don't have to deal with inline-block spacing trouble
+   * 2. Set base line-height to 16px to keep it all vertically centered
+   * 3. Set min-width to 16px so icons and placeholder have the same width,
+   *    lining all arrows perfectly below each other
+   * 4. Aligning items in center
+   * 5. Min-width for text larger to fit 3 digits by default. Icons will line up nice to at least 999
+   * 6. Set a little padding for when text item gets 4 digits
+   */
+
+  .k-table-data--sort {
+    display: table; /* 1 */
+    line-height: 16px; /* 2 */
+  }
+
+  .k-grid-sort {
+    display: table-cell; /* 1 */
+    min-width: 16px; /* 3 */
+    text-align: center; /* 4 */
+    vertical-align: middle; /* 4 */
+  }
+
+  .k-grid-sort--text {
+    min-width: 30px; /* 5 */
+    padding: 0 3px; /* 6 */
+  }
+
+
+
+  .dropdown-toggle {
+    &,&:hover,&:focus {
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    input, span {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  .dropdown-menu {
+    margin-left: 1px;
+
+    @include rtl {
+      margin-left: 0;
+      margin-right: 1px;
+    }
+
+    a {
+      margin: 0;
+      padding: 5px;
+
+      &:focus,
+      &:hover {
+        background: $color-accent;
+      }
+    }
+  }
+}
+
+
+/*
+ * Table pagination
+ *
+ * 1. Faking a bottom border, this shadow will disappear when pagination is positioned to bottom
+ */
+
+.k-table-pagination {
+  padding: $table-pagination-spacing;
+  background: $table-pagination-background;
+  @include border(top, #d2d2d2);
+  @if $borders != false {
+    box-shadow: 0 1px 0 $table-pagination-border; /* 1 */
+  }
+
+
+  /* Flexbox */
+
+  @include flexbox {
+      flex: 0 0 auto;
+  }
+
+
+  /**
+   * Pagination contents
+   *
+   * 1. Align vertically
+   * 2. Remove standard Bootstrap margin
+   * 3. Style <select> to be as large as the pagination
+   * 4. Make sure <select> is always as small as possible
+   * 5. Separate <select> from pagination
+   */
+
+  .limit,
+  .pagination {
+    display: inline-block; /* 1 */
+    vertical-align: middle; /* 1 */
+  }
+
+  .pagination {
+    margin: 0; /* 2 */
+  }
+
+  select {
+    height: $table-pagination-height; /* 3 */
+    width: auto; /* 4 */
+    margin-right: $table-pagination-spacing; /* 5 */
+
+    @include rtl {
+      margin-right: auto;
+      margin-left: $table-pagination-spacing;
+    }
+  }
+
+  .k-pagination-pages {
+    float: right;
+    line-height: 30px;
+
+    @include rtl {
+      float: left;
+    }
+  }
+}
+
+
+/**
+ * Footable
+ *
+ * Responsive table views
+ */
+
+.footable.breakpoint {
+  .footable-toggle {
+    display: inline-block;
+    width: $footable-toggle-size;
+    height: $footable-toggle-size;
+    line-height: ($footable-toggle-size - ($footable-toggle-border-size * 2));
+    border: $footable-toggle-border-size solid $footable-toggle-color;
+    border-radius: 50%;
+    margin-right: $table-cell-spacing-horizontal;
+    text-align: center;
+
+    @include rtl {
+      margin-right: 0;
+      margin-left: $table-cell-spacing-horizontal;
+    }
+
+    @include icon-after(chevron-bottom, true) {
+      display: inline-block;
+      width: $footable-toggle-icon-size;
+      height: $footable-toggle-icon-size;
+      margin: ((($footable-toggle-size - $footable-toggle-icon-size) / 2) - $footable-toggle-border-size);
+      color: $footable-toggle-color;
+      font-size: $footable-toggle-icon-size;
+      line-height: 1.3em;
+      transform: rotate(-90deg);
+      @include transition;
+    }
+  }
+
+  tr.selected {
+    .footable-toggle {
+      border-color: $footable-toggle-color-active;
+
+      &:after {
+        color: $footable-toggle-color-active;
+      }
+    }
+  }
+
+  tr.footable-detail-show {
+    .footable-toggle {
+      &:after {
+        transform: rotate(0deg);
+      }
+    }
+  }
+
+  .footable-row-detail-row {
+    margin-bottom: $table-cell-spacing-vertical;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .footable-row-detail-name {
+    font-weight: $bold;
+  }
+}
+
+
+/* Table item states */
+
+.k-table__item--state {
+  cursor: pointer;
+  @include transition;
+
+  &:focus,
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &.k-pending {
+    color: $color-warning;
+  }
+
+  &.k-expired {
+    color: $color-neutral;
+  }
+
+  &.k-unpublished {
+    color: $color-error;
+  }
+
+  &.k-published {
+    color: $color-success;
+  }
+}
+
+.k-table__sub-header {
+  th {
+    background: white;
+  }
+}

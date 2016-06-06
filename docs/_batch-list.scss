@@ -1,0 +1,111 @@
+/* Batch create documents */
+
+.k-batch-list {
+  background: #fff;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: $spacing;
+
+  .document-form {
+    margin: 0;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+
+    @include breakpoint($beta) {
+      display: table;
+      width: 100%;
+      padding-bottom: 0;
+
+      @include rtl {
+        direction: rtl;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  .k-batch-list__item {
+    padding: 10px 10px 0 10px;
+
+    @include breakpoint($beta) {
+      display: table-cell;
+      vertical-align: middle;
+      border-right: 1px solid #ccc;
+      padding: 10px;
+
+      @include rtl {
+        border-right: none;
+        border-left: 1px solid #ccc;
+      }
+
+      &:last-child {
+        border-right: none;
+
+        @include rtl {
+          border-left: none;
+        }
+      }
+    }
+  }
+
+  .k-batch-list__item--title,
+  .k-batch-list__item--remove-button {
+    width: 1%;
+    white-space: nowrap;
+  }
+
+  .k-batch-list__item--title {
+    border-right: none;
+    padding-right: 0;
+
+    @include rtl {
+      border-left: none;
+      padding-right: 10px;
+      padding-left: 0;
+    }
+
+    label {
+      margin: 0;
+    }
+  }
+
+  .k-batch-list__item--field {
+    @include breakpoint($beta) {
+      padding: 5px;
+    }
+  }
+
+  .form-control {
+    margin: 0;
+  }
+
+  .k-batch-list__continue {
+    a {
+      display: block;
+      padding: 10px;
+
+      &:focus,
+      &:hover {
+        background: #eee;
+      }
+    }
+  }
+
+  form:first-child {
+    .k-batch-list__continue {
+      a {
+        border-radius: 5px 5px 0 0;
+      }
+    }
+  }
+
+  form:last-child {
+    .k-batch-list__continue {
+      a {
+        border-radius: 0 0 5px 5px;
+      }
+    }
+  }
+}

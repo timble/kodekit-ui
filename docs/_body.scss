@@ -1,0 +1,25 @@
+/**
+ * Body
+ *
+ * Default body styling
+ * By using 100% for `height` and `min-height` we can work with full-height auto overflowing flexbox pages
+ */
+
+body {
+  min-height: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+
+  /* Setup flexbox */
+
+  @include flexbox {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+  }
+
+  &.k-resizing {
+    overflow: hidden;
+  }
+}

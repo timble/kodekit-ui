@@ -1,0 +1,20 @@
+/* Styling for the move modal */
+
+.controls--inline {
+  white-space: nowrap;
+
+  .select2-container,
+  .btn {
+    display: inline-block;
+  }
+
+  .select2-container {
+    width: 200px !important;
+    margin-right: 12px;
+
+    @include rtl {
+      margin-right: 0;
+      margin-left: 12px;
+    }
+  }
+}

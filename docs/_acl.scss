@@ -1,0 +1,52 @@
+/* ==========================================================================
+   ACL tabs
+   ========================================================================== */
+
+/**
+ * Styled dropdown grid in add / edit document form
+ */
+
+.access_container {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 1em;
+
+  .nav-tabs {
+    margin-bottom: 0;
+
+    li {
+      cursor: pointer;
+    }
+  }
+
+  .tab-content {
+    margin: 0;
+    padding: 1em;
+    background: white;
+    border: 1px solid #ddd;
+    border-top: none;
+
+    .select2-container {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.who-can-see-container {
+  margin-top: 1em;
+}
+
+.who-can-see {
+  margin: 0;
+  list-style: none;
+
+  li {
+    font-size: 12px;
+    border-top: 1px solid #ccc;
+    padding: 4px 0 3px;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+}

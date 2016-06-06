@@ -1,0 +1,255 @@
+$grid-itemWidth: 140px !default;
+$grid-spacing: 16px !default;
+$grid-width: 2560px !default;
+
+@mixin setGridItemWidth($breakpoint,$columns) {
+  @media (min-width: $breakpoint ) {
+    width: percentage(1/$columns);
+    @content;
+  }
+}
+
+// Calculate the grid items
+@mixin setGridBreakpoint($width: $grid-itemWidth, $spacing: $grid-spacing, $gridwidth: $grid-width) {
+
+  // Calculating max number
+  $number: floor($gridwidth / $width);
+
+  // From 2 to 20 columns
+  @for $i from 2 through $number {
+
+    // Calculating breakpoint
+    $prev-breakpoint-width: (($i - 1) * $width) + ($i * $spacing);
+    $breakpoint-width: ($i * $width) + (($i + 1) * $spacing);
+    $columns: $i;
+    $breakpoint: $breakpoint-width;
+
+    // Setting separate breakpoint for $desktop width
+    @if ( $breakpoint-width > $desktop and $prev-breakpoint-width < $desktop ) {
+      $breakpoint: $desktop;
+      $columns: floor(($desktop - $sidebar-width-small - $spacing) / ($width + $spacing));
+      @include setGridItemWidth($breakpoint,$columns);
+    }
+
+    // All breakpoints above $desktop
+    @if ( $breakpoint-width > $desktop and $breakpoint-width < $delta ) {
+      $columns: floor(($breakpoint-width - $sidebar-width-small - $spacing) / ($width + $spacing));
+      $breakpoint: $sidebar-width-small + (($columns * $width) + (($columns + 1) * $spacing));
+      @if ( $breakpoint < $desktop ) {
+        $breakpoint: $breakpoint + ($width + $spacing);
+      }
+    }
+
+    // Setting separate breakpoint for $delta width
+    @if ( $breakpoint-width > $delta and $prev-breakpoint-width < $delta ) {
+      $breakpoint: $delta;
+      $columns: floor(($delta - $sidebar-width - $spacing) / ($width + $spacing));
+      @include setGridItemWidth($breakpoint,$columns);
+    }
+
+    // All breakpoints above $delta
+    @if ( $breakpoint-width > $delta ) {
+      $columns: floor(($breakpoint-width - $sidebar-width - $spacing) / ($width + $spacing));
+      $breakpoint: $sidebar-width + (($columns * $width) + (($columns + 1) * $spacing));
+      @if ( $breakpoint < $delta ) {
+        $breakpoint: $breakpoint + ($width + $spacing);
+      }
+    }
+
+    // Setting breakpoints
+    @include setGridItemWidth($breakpoint,$columns);
+  }
+}
+
+.k-grid-container {
+  @include flexbox {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    overflow: auto;
+  }
+}
+
+.k-grid {
+  background: $table-background;
+  padding: $grid-spacing / 2;
+  overflow: auto;
+
+  @include flexbox {
+    display: flex;
+    flex: 0 1 auto;
+  }
+}
+
+.k-grid__items {
+  @include clearfix;
+
+  @include flexbox {
+    flex: 1 1 auto;
+  }
+}
+
+.k-grid__item {
+  float: left;
+  padding: $grid-spacing / 2;
+  width: 100%;
+
+  @include rtl {
+    float: right;
+  }
+
+  // Set breakpoints
+  @include setGridBreakpoint;
+
+  // Selected styling
+  &.selected {
+    .k-grid__item__title {
+      background: $color-accent;
+      border-color: darkest($color-accent);
+      color: $color-accent-type;
+
+      a {
+        color: $color-accent-type;
+      }
+    }
+
+    .k-grid__item__content {
+      color: $color-accent-type;
+      border-color: darker($color-accent);
+    }
+
+    &:hover,
+    &:focus {
+      .k-grid__item__title {
+        background: darkest($color-accent);
+      }
+    }
+  }
+
+  // 4:3 ratio block with border and background
+  .k-grid__item__content {
+    @include ratio-block(4 to 3);
+    @include transition;
+    background: colorpicker(primary, 6);
+    font-size: 14px;
+    border: 1px solid #ddd;
+  }
+
+  // Cover entire ratio block
+  .k-grid__file-wrapper {
+    @include coverall;
+  }
+
+  // Display table for vertical and horizontal centering
+  .k-grid__file {
+    width: 100%;
+    height: 100%;
+    color: $color-accent; // This is the <a> so put color here
+    cursor: pointer; // This is the <a> so put cursor here
+    max-height: 100%;
+    overflow: hidden;
+    vertical-align: middle;
+    display: inline-block;
+    text-align: center;
+    font-size: 0;
+    white-space: nowrap;
+    padding: 1px; // space images with 1px
+
+    &:before {
+      content: ' ';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+
+    @include flexbox {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  // Center vertical and horizontal
+  .k-grid__item__cell {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: hidden;
+
+    @include flexbox {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .koowa_icon--48,
+  img {
+    display: inline-block;
+    max-height: 100%;
+    vertical-align: middle;
+
+    @include flexbox {
+      flex: 0 1 auto;
+    }
+  }
+
+}
+
+
+
+.k-grid__item__title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.k-grid__item--folder {
+  cursor: pointer;
+
+  .k-grid__item__title {
+    padding: 10px;
+    border: 1px solid #ddd;
+    background: colorpicker(primary, 5);
+    @include transition;
+
+    @include icon-before(k-folder,true) {
+      padding-right: 5px;
+
+      @include rtl {
+        padding-right: 0;
+        padding-left: 5px;
+      }
+    }
+  }
+
+  &:hover,
+  &:focus {
+    .k-grid__item__title {
+      background: colorpicker(primary, 3);
+    }
+  }
+}
+
+
+
+.k-grid__item--file {
+  .k-grid__item__content {
+
+  }
+
+  .k-grid__item__title {
+    padding: 10px;
+    @include transition;
+  }
+
+  &:focus,
+  &:hover {
+    .k-grid__item__title {
+      background: colorpicker(primary, 4);
+    }
+  }
+}

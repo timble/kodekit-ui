@@ -1,0 +1,509 @@
+// ==========================================================================
+// Variables
+// ==========================================================================
+
+
+// Breakpoints
+// ==========================================================================
+//
+// Only work with either
+// - (min-width)
+// - (min-width) and (max-width)
+//
+// Try to never use (max-width) alone since that is not mobile-first
+//
+// 1. The min width of the interface. Will create a horizontal scrollbar.
+//    This way we have a base width to work from
+// 3. Separate $desktop variable is being used so all styles
+//    change together when going from small to larger screen.
+// 2. The max width of the frontend form layout
+
+$alpha:               400px !default;
+$beta:                600px !default;
+$charlie:             768px !default;
+$delta:               1024px !default;
+$echo:                1200px !default;
+
+$minwidth:            $alpha !default; // 1
+$desktop:             $charlie !default; // 2
+$maxwidth:            $delta !default; // 3
+
+
+// Flexbox
+// ==========================================================================
+//
+// 1. Wether or not to Use flexbox in layouts
+// 2. Separate $flexbox variables are being used
+//    - 300px so flexbox will be active on 320px wide screens
+//    - 391px so flexbox will be active on 400px tall screens
+//      - 25-09-2015 http://mydevice.io/devices/
+//        The only phones at the time to have flexbox in landscape mode are:
+//        - Samsung Galaxy Note (This is where the 391 number comes from)
+//        - Blackberry passport
+
+$flexbox:             true !default; // 1
+$flexbox-horizontal:  300px !default; // 2
+$flexbox-vertical:    391px !default; // 2
+
+
+// Typography
+// ==========================================================================
+
+$font-family:             "Helvetica", "Arial", sans-serif !default;
+$font-size:               13px !default;
+$line-height:             19px !default;
+$font-size--large:        21px !default;
+$line-height--large:      32px !default;
+$bold:                    700 !default;
+$regular:                 400 !default;
+$webkit-font-smoothing:   antialiased !default;
+$firefox-font-smoothing:  grayscale !default;
+
+
+// Icons
+// ==========================================================================
+
+$icon-path: '../fonts' !default;
+
+
+// Spacing
+// ==========================================================================
+//
+// can either be used as a padding or a margin on elements
+// Rounding so we won't get half pixels
+
+$spacing-tiny:    round($font-size / 2) !default;
+$spacing-small:   $font-size !default;
+$spacing:         round($font-size * 1.5) !default;
+$spacing-large:   $font-size * 2 !default;
+$spacing-huge:    $font-size * 3 !default;
+
+
+// Unit size
+// ==========================================================================
+
+$unit-size: $spacing-huge !default;
+
+
+// Function variables
+// ==========================================================================
+//
+// These are used by our light, lighter, lightest, dark, darker and darkest funxtions
+// This way we can change the amounts all in one.
+// Overwrite-able per function call
+
+$light-percentage:      3% !default;
+$lighter-percentage:    7% !default;
+$lightest-percentage:   12% !default;
+
+$dark-percentage:       3% !default;
+$darker-percentage:     7% !default;
+$darkest-percentage:    12% !default;
+
+
+// Transition
+// ==========================================================================
+//
+// The basic transition being used everywhere to get consistent animations
+// Remember to sync the JavaScript animation time with this setting
+
+$transition-duration:   180ms !default;
+$transition-easing:     cubic-bezier(.2,.57,.44,.83) !default;
+$transition:            $transition-duration $transition-easing !default;
+
+
+// Colors
+// ==========================================================================
+
+
+// Colorpicker
+$colorpicker: (
+        primary: (
+                0: #e1e1e1,
+                1: #e6e6e6,
+                2: #eeeeee,
+                3: #ececec,
+                4: #f1f1f1,
+                5: #fafafa,
+                6: #ffffff,
+        )
+) !default;
+
+
+// Type
+
+$color-type:            #333333 !default;
+$color-type-lightest:   lighten($color-type, 50%) !default;
+
+
+// Accent color
+
+$color-accent:        #3071a9 !default;
+$color-accent-type:   white !default;
+
+
+// States
+
+$color-success:       #27ae60 !default;
+$color-success-type:  white !default;
+
+$color-error:         #c0392b !default;
+$color-error-type:    white !default;
+
+$color-neutral:       #2980b9 !default;
+$color-neutral-type:  white !default;
+
+$color-warning:       #c09853 !default;
+$color-warning-type:  white !default;
+
+
+// Border
+// ==========================================================================
+//
+// Set borders to false if you don't want any borders in your theme
+// You can override borders in each separate module
+
+$borders:       true !default;
+$border-color:  false !default;
+$border-width:  1px !default;
+$border-style:  solid !default;
+
+
+// Koowa
+// ==========================================================================
+//
+// The default koowa container
+
+$koowa-background:  white !default;
+$koowa-padding:     0 !default;
+
+
+// Overview layout
+// ==========================================================================
+//
+// The default overview layout
+
+$content-background:   white !default;
+$content-border:       darker($content-background) !default;
+
+
+// Titlebar
+// ==========================================================================
+//
+// By default it looks the same as the toolbar
+
+$titlebar-background:   colorpicker(primary, 3) !default;
+$titlebar-border:       darkest($titlebar-background) !default;
+$titlebar-color:        $color-type !default;
+
+
+// Titlebar for mobile
+// ==========================================================================
+//
+// Since we're hiding the sidemenu on smaller screens we need to display the title
+
+$mobile-title-spacing:      $spacing-small !default
+$mobile-title-background:   colorpicker(primary,0) !default;
+$mobile-title-border:       darkest($mobile-title-background) !default;
+$mobile-title-font-size:    $font-size--large !default;
+$mobile-title-line-height:  $line-height !default;
+
+
+// Toolbar
+// ==========================================================================
+//
+// 1. When true; these colors are being used, when false; bootsrap defaults are being used
+
+$toolbar-spacing:                       round($font-size * 0.7) !default;
+$toolbar-height:                        50px !default;
+
+$toolbar-background:                    colorpicker(primary, 3) !default;
+$toolbar-border:                        darkest($toolbar-background) !default;
+$toolbar-color:                         $color-type !default;
+
+$toolbar-btn-alt:                       false !default; // 1
+
+
+// Success button
+
+$toolbar-btn-success-background:        $color-accent !default;
+$toolbar-btn-success-border:            darker($color-accent) !default;
+$toolbar-btn-success-color:             $color-accent-type !default;
+$toolbar-btn-success-hover-border:      darker($toolbar-btn-success-border) !default;
+$toolbar-btn-success-hover-background:  darker($toolbar-btn-success-background) !default;
+$toolbar-btn-success-hover-color:       darker($toolbar-btn-success-color) !default;
+
+
+// Sidebar
+// ==========================================================================
+//
+// 1. Sidebar width on smaller screens
+// 2. Sidebar width when screen is "$desktop"
+
+$sidebar-width-small:       210px !default; // 1
+$sidebar-width:             270px !default; // 2
+
+$sidebar-background:        colorpicker(primary, 2) !default;
+$sidebar-border:            darkest($sidebar-background) !default;
+$sidebar-color:             $color-type !default;
+
+
+// Navigation
+// ==========================================================================
+
+$navigation-spacing:            $spacing-tiny !default;
+$navigation-background:         colorpicker(primary, 1) !default;
+$navigation-border:             darkest($navigation-background) !default;
+$navigation-border-width:       5px !default;
+$navigation-color:              $color-type !default;
+$navigation-accent:             colorpicker(primary, -5) !default;
+$navigation-font-size:          16px !default;
+
+$navigation-hover-background:   lighter($navigation-background) !default;
+$navigation-hover-border:       colorpicker(primary, -3) !default;
+$navigation-hover-color:        $color-type !default;
+$navigation-hover-accent:       colorpicker(primary) !default;
+
+$navigation-active-background:  $navigation-background !default;
+$navigation-active-border:      $color-accent !default;
+$navigation-active-color:       $color-accent !default;
+
+
+// List
+// ==========================================================================
+
+$list-spacing:            $spacing-tiny !default;
+
+$list-background:         $sidebar-background !default;
+$list-color:              $sidebar-color !default;
+
+$list-hover-background:   lighter($sidebar-background) !default;
+$list-hover-color:        $color-type !default;
+
+$list-active-background:  $list-background !default;
+$list-active-color:       $color-type !default;
+
+
+// Tree
+// ==========================================================================
+
+$jqtree-hover-background:   lighter($sidebar-background) !default;
+
+
+// Breadcrumbs
+// ==========================================================================
+//
+// 1. On mobile we don't show all breadcrumb items
+// 2. The content of the divider
+// 3. The width of dividers between breadcrumb items
+// 4. Height of each breadcrumb item
+// 5. The width when showing all breadcrumbs instead of only first and last
+
+$breadcrumb-missing-content:    "…" !default; // 4
+$breadcrumb-divider-content:    "»" !default; // 2
+$breadcrumb-divider-size:       round($unit-size / 2) !default; // 3
+$breadcrumb-size:               $unit-size !default; // 4
+$breadcrumb-query:              $charlie !default; // 5
+
+$breadcrumb-background:         colorpicker(primary, 4) !default;
+$breadcrumb-border:             darkest($breadcrumb-background) !default;
+$breadcrumb-color:              $color-type !default;
+
+$breadcrumb-background-hover:   darker($breadcrumb-background) !default;
+
+
+// Scopebar
+// ==========================================================================
+//
+// 1. Height of the scopebar
+
+$scopebar-size:               $unit-size !default; // 1
+
+$scopebar-background:         colorpicker(primary, 4) !default;
+$scopebar-border:             darkest($scopebar-background) !default;
+$scopebar-color:              $color-type !default;
+
+$scopebar-search-background:  white !default;
+$scopebar-search-color:       $color-type !default;
+
+$scopebar-filter-font-size:   12px !default;
+
+
+// Dropdowns
+// ==========================================================================
+
+$dropdown-background:                 colorpicker(primary, 6) !default;
+$dropdown-border:                     darkest($dropdown-background) !default;
+$dropdown-color:                      $color-type !default;
+$dropdown-buttons-background:         colorpicker(primary, 5) !default;
+$scopebar-buttons-background-hover:   darker($dropdown-buttons-background) !default;
+$dropdown-buttons-border:             darkest($dropdown-background) !default;
+$dropdown-buttons-color:              $color-type !default;
+
+
+// Table
+// ==========================================================================
+//
+// 1. Height of the table cells
+// 2. Table cell padding
+
+$table-background:                      colorpicker(primary, 6) !default;
+
+$table-cell-size:                       round($font-size * 3) !default; // 1
+$table-cell-spacing-vertical:           10px !default; // 2
+$table-cell-spacing-horizontal:         10px !default; // 2
+
+$table-header-background:               colorpicker(primary, 5) !default;
+$table-header-border:                   darkest($table-header-background) !default;
+$table-header-color:                    $color-type !default;
+$table-header-background-hover:         colorpicker(primary, 4) !default;
+
+$table-cell-background-even:            colorpicker(primary, 6) !default;
+$table-cell-background-odd:             colorpicker(primary, 6) !default;
+$table-cell-background-even-hover:      colorpicker(primary, 5) !default;
+$table-cell-background-odd-hover:       colorpicker(primary, 5) !default;
+$table-cell-border:                     darker($table-cell-background-odd) !default;
+$table-cell-color:                      $color-type !default;
+$table-cell-accent-background:          $color-accent !default;
+$table-cell-accent-color:               white !default;
+$table-cell-accent-background-hover:    darken($color-accent,10%) !default;
+
+$table-pagination-background:           $table-header-background !default;
+$table-pagination-border:               $table-header-border !default;
+$table-pagination-spacing:              $spacing-tiny !default;
+$table-pagination-height:               30px !default;
+
+
+// Footable
+// ==========================================================================
+
+$footable-toggle-size:          20px !default;
+$footable-toggle-color:         $color-type-lightest !default;
+$footable-toggle-color-active:  $table-cell-accent-color !default;
+$footable-toggle-border-size:   1px !default;
+$footable-toggle-icon-size:     10px !default;
+
+
+// Overflowing
+// ==========================================================================
+//
+// Overflowing shadows
+
+$overflow-size:     20px !default;
+$overflow-blur:     $overflow-size * 2 !default;
+$overflow-offset:   -($overflow-size) !default;
+
+
+// Form layout
+// ==========================================================================
+
+$form-background: colorpicker(primary, 5) !default;
+
+
+// Form front
+// ==========================================================================
+//
+// Forms on frontend
+
+$form-front-background:           #333 !default;
+$form-front-maxwidth:             $maxwidth !default;
+$form-front-spacing:              $spacing-small auto 0 !default;
+$form-front-content-background:   white !default;
+$form-front-content-shadow:       0 3px 6px rgba(0,0,0,.5) !default;
+
+
+// Form block
+// ==========================================================================
+
+$form-block-background:         colorpicker(primary, 6) !default;
+$form-block-border:             darkest($form-block-background) !default;
+
+$form-block-header-spacing:     $spacing-tiny !default;
+$form-block-header-background:  colorpicker(primary, 4) !default;
+$form-block-header-border:      darkest($form-block-header-background) !default;
+
+$form-block-content-spacing:    $spacing-small !default;
+
+
+// Radio toggle
+// ==========================================================================
+//
+// 1. Use styled radio toggles?
+// 2. The color for "false"/0 items
+// 3. The color for "true"/1 items
+// 4. The color for neutral items
+
+$radio-toggle:          true !default; // 1
+$radio-toggle-0:        $color-error !default; // 2
+$radio-toggle-1:        $color-success !default; // 3
+$radio-toggle-neutral:  $color-neutral !default; // 4
+
+
+// Checkbox toggle
+// ==========================================================================
+//
+// 1. Use styled checkbox toggles?
+
+$checkbox-toggle:                 true !default; // 1
+$checkbox-toggle-size:            32px !default;
+$checkbox-toggle-border-width:    1px !default;
+$checkbox-toggle-padding:         1px !default;
+$checkbox-toggle-border-radius:   6px !default;
+$checkbox-toggle-width-inner:     ($checkbox-toggle-size * 2) - (($checkbox-toggle-border-width + $checkbox-toggle-padding) * 2) !default;
+$checkbox-toggle-height-inner:    $checkbox-toggle-size - (($checkbox-toggle-border-width + $checkbox-toggle-padding) * 2) !default;
+$checkbox-toggle-0:               $color-error !default;
+$checkbox-toggle-1:               $color-success !default;
+$checkbox-toggle-neutral-0:       #ddd !default;
+$checkbox-toggle-neutral-1:       $color-neutral !default;
+
+
+// Offcanvas container with animated hamburger button
+// ==========================================================================
+//
+// 1. The hamburger bar width, best to use a number dividable by 5
+// 2. The height is automatically calculated
+
+$overlay-background:  black !default;
+$overlay-opacity:     .75 !default;
+$button-size:         33px !default;
+$button-background:   $color-accent !default;
+$button-color:        white !default;
+$button-radius:       3px !default;
+$bar-width:           15px !default; // 1
+$bar-height:          round($bar-width / 5) !default; // 2
+
+
+// Form styles
+// ==========================================================================
+
+$form-option-size:          15px !default;
+$form-option-background:    white !default;
+$form-option-border:        #aaa !default;
+$form-option-border-size:   1px !default;
+$form-option-color:         $color-accent !default;
+$form-option-shadow:        inset 0 1px 2px rgba(0,0,0,.15) !default;
+
+
+// Info block
+// ==========================================================================
+
+$no-items-background:   white !default;
+$no-items-color:        $color-type !default;
+
+
+// Bootstrap overrides
+// ==========================================================================
+//
+// We depend on Bootstrap 3 for a few basic things
+// This is the place to overwrite the used variables
+
+$btn-success-bg:            $color-success !default;
+$btn-success-color:         $color-success-type !default;
+
+$pagination-color:          $color-accent !default;
+$pagination-active-bg:      $color-accent !default;
+$pagination-active-border:  darker($color-accent) !default;
+$input-height-base:         32px !default;
+
+$padding-base-vertical:     5px !default;
+$padding-base-horizontal:   10px !default;

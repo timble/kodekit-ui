@@ -1,0 +1,19 @@
+/**
+ * FloatThead
+ *
+ * Should have flexbox as well to be able to work properly
+ */
+
+.floatThead-wrapper {
+  z-index: 1 !important; // Overriding inline styling, we don't need a z-index of 1000+
+
+  @include flexbox {
+    display: flex;
+    flex: 0 1 auto;
+    overflow: auto;
+  }
+
+  @include resizing {
+    overflow: hidden;
+  }
+}

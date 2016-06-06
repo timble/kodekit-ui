@@ -1,0 +1,6 @@
+.dropdown-menu {
+  @include rtl {
+    left: auto;
+    right: 0;
+  }
+}

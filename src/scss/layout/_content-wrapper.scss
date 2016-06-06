@@ -1,0 +1,65 @@
+/* ==========================================================================
+   The content wrapper
+   ========================================================================== */
+
+/**
+ * The default content wrapper layout
+ *
+ * 1. Left sidebar
+ * 2. Toggle button
+ * 3. Toolbar
+ * 4. Breadcrumbs
+ * 5. Upload area
+ * 6. Scopebar
+ * 7. Table / grid / content
+ * 8. Right sidebar
+ *
+ * _____________________________
+ * |  1  |_2_|_3_________|  8  |
+ * |     |_4_____________|     |
+ * |     |_5_____________|     |
+ * |     |_6_____________|     |
+ * |     | 7             |     |
+ * |     |               |     |
+ * |     |               |     |
+ * |     |               |     |
+ * |     |               |     |
+ * |_____|_______________|_____|
+ *
+ */
+
+/**
+ * 1. Clearing toolbar floats when flexbox is not in use
+ */
+
+.k-content-wrapper {
+  clear: both; /* 1 */
+  margin: 0;
+  overflow: hidden;
+  @include border(bottom, $sidebar-border);
+
+
+  /* Faking flexbox on older browsers by using table styling */
+
+  @include breakpoint($desktop) {
+    display: table;
+    width: 100%;
+  }
+
+
+  /* RTL */
+
+  @include rtl {
+    direction: rtl;
+  }
+
+
+  /* When flexbox is in use */
+
+  @include flexbox {
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+    border-bottom: none;
+  }
+}

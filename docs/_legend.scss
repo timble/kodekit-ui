@@ -1,0 +1,34 @@
+/**
+ * Legend
+ *
+ * Default legend style
+ *
+ * markup:
+ * <legend>
+ *   {content}
+ * </legend>
+ *
+ * Styleguide 1.4
+ */
+
+legend {
+  display: block;
+  margin-top: 0;
+  margin-bottom: $spacing;
+  border-bottom: 1px solid darker($form-background);
+  padding-top: $spacing;
+  padding-bottom: 4px;
+  font-size: $font-size--large;
+  line-height: $line-height--large;
+  font-weight: $regular;
+
+  /* No margin top for the first legend */
+  &:first-child {
+    margin-top: 0;
+  }
+
+  /* No margin bottom for the last legend */
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

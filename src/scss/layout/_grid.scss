@@ -1,0 +1,143 @@
+/* ==========================================================================
+   Grid
+   ========================================================================== */
+
+/**
+<!-- Container -->
+<div class="k-container">
+    <!-- Main information -->
+    <div class="k-container__main">
+        Main
+    </div><!-- .k-container__main -->
+    <!-- Other information -->
+    <div class="k-container__sub">
+        Sub
+    </div><!-- .k-container__sub -->
+</div><!-- .k-container -->
+*/
+
+
+/* Container */
+
+.k-container {
+  @include clearfix;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  padding: $spacing;
+
+  /* When flexbox is in use */
+
+  @include flexbox {
+    flex: 0 0 auto;
+  }
+
+  @include resizing {
+    overflow: hidden;
+  }
+}
+
+
+/* --------------------------------------------------------------------------
+   Grid children
+   -------------------------------------------------------------------------- */
+
+/**
+ * Main container
+ */
+
+.k-container__main {
+  margin-bottom: $spacing;
+
+  @include breakpoint($charlie) {
+    @include span(8);
+    margin-bottom: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* When a sidebar is active next to it */
+
+.k-sidebar + .k-content .k-container__main {
+  @include breakpoint($charlie) {
+    @include span(12);
+    margin-bottom: $spacing;
+  }
+
+  @include breakpoint($delta) {
+    @include span(8);
+    margin-bottom: 0;
+  }
+}
+
+
+/**
+ * Sub container
+ */
+
+.k-container__sub {
+  margin-bottom: $spacing;
+
+  @include breakpoint($charlie) {
+    @include span(4);
+    margin-bottom: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* When a sidebar is active next to it */
+
+.k-sidebar + .k-content .k-container__sub {
+  @include breakpoint($charlie) {
+    @include span(12);
+    margin-bottom: $spacing;
+  }
+
+  @include breakpoint($delta) {
+    @include span(4);
+    margin-bottom: 0;
+  }
+}
+
+
+/**
+ * Full container
+ */
+
+.k-container__full {
+  @include clearfix;
+  clear: both;
+  margin-bottom: $spacing;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+/* RTL */
+@include rtl {
+  @include direction-context(right-to-left) {
+    .k-container__main {
+      @include breakpoint($charlie) {
+        float: none;
+        margin-right: 0;
+        @include span(8);
+      }
+    }
+
+    .k-container__sub {
+      @include breakpoint($charlie) {
+        float: none;
+        margin-right: 0;
+        @include span(4);
+      }
+    }
+  }
+}

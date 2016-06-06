@@ -1,0 +1,55 @@
+/* ==========================================================================
+   The wrapper
+   ========================================================================== */
+
+/**
+ * The default wrapper layout
+ */
+
+
+/* Faking flexbox on older browsers by using table styling */
+
+.k-wrapper {
+  @include breakpoint($desktop) {
+    display: table;
+    width: 100%;
+  }
+
+
+  /* RTL */
+
+  @include rtl {
+    direction: rtl;
+  }
+
+
+  /* When flexbox is in use */
+
+  @include flexbox {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    overflow: hidden;
+  }
+}
+
+
+/**
+ * Wrapper when toggled
+ *
+ * 1. Hide overflowing when menu is toggled
+ * 2. Set back to auto when screen is wide enough
+ */
+
+.opened--left,
+.opened--right {
+  overflow: hidden; /* 1 */
+
+  @include breakpoint($desktop) {
+    overflow: auto; /* 2 */
+  }
+
+  @include resizing {
+    overflow: hidden;
+  }
+}

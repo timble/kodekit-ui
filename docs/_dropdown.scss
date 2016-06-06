@@ -1,0 +1,94 @@
+/* Simple dropdowns */
+
+.k-dropdown {
+  overflow: hidden;
+
+  @include breakpoint($beta) {
+    position: relative;
+    z-index: 2;
+  }
+
+  &.is-active {
+    overflow: visible;
+    z-index: 3;
+
+    .k-dropdown__body {
+      visibility: visible;
+    }
+
+    .k-scopebar__item--filter__title {
+      text-decoration: underline;
+    }
+  }
+}
+
+.k-dropdown__button {
+  position: relative;
+  border: none;
+  background: transparent;
+  margin: 0;
+  padding: 0 6px;
+
+  &:hover,
+  &:focus {
+    background: $scopebar-buttons-background-hover;
+  }
+
+  @include breakpoint($beta) {
+    padding: 0 12px;
+  }
+}
+
+.is-active {
+  .k-dropdown__button {
+    background: $scopebar-buttons-background-hover;
+  }
+}
+
+.k-dropdown__body {
+  position: absolute;
+  visibility: hidden;
+  background: $dropdown-background;
+  @include border(all, $dropdown-border);
+  color: $dropdown-color;
+  box-shadow: 2px 2px 3px rgba(0,0,0,.15);
+  border-radius: 0 0 5px 5px;
+  min-width: 200px;
+  left: 0;
+  right: 0;
+  top: 100%;
+
+  @include breakpoint($beta) {
+    min-width: 300px;
+    right: auto;
+    left: -1px;
+
+    @include rtl {
+      left: auto;
+      right: -1px;
+    }
+  }
+
+  .select2 {
+    min-width: 100%;
+  }
+}
+
+.k-dropdown__body__content {
+  padding: 5px;
+}
+
+.k-dropdown__body__buttons {
+  line-height: 14px;
+  @include border(top, $dropdown-buttons-border);
+  background: $dropdown-buttons-background;
+  color: $dropdown-buttons-color;
+  padding: 8px 5px;
+  text-align: center;
+  border-radius: 0 0 5px 5px;
+
+  .btn {
+    padding: 4px 30px;
+    line-height: 16px;
+  }
+}

@@ -1,0 +1,23 @@
+/**
+ * JQTree
+ */
+
+.k-tree {
+  @include clearfix;
+  margin: $list-spacing 0;
+
+  .jqtree-element {
+    padding: 0 $spacing-tiny 0 $spacing;
+
+    &:hover,
+    &:focus {
+      background: $jqtree-hover-background;
+    }
+  }
+
+  .jqtree_common.active {
+    & > .jqtree-element {
+      color: $color-accent;
+    }
+  }
+}

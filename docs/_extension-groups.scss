@@ -1,0 +1,48 @@
+/* ==========================================================================
+   Extensions groups
+   ========================================================================== */
+
+.extension-groups {
+  @include clearfix;
+  margin: 0;
+
+  li {
+    float: left;
+    margin-left: 20px;
+    list-style: none;
+    padding: 5px 0;
+
+    @include rtl {
+      float: right;
+      margin-left: 0;
+      margin-right: 20px;
+    }
+
+    &:first-child {
+      margin-left: 0;
+
+      @include rtl {
+        margin-right: 0;
+      }
+    }
+
+    span {
+      display: block;
+      font-size: 11px;
+    }
+
+    .btn {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+}
+
+.k-add-tag {
+  display: inline-block;
+  margin: 0 5px 5px 0;
+
+  @include rtl {
+    margin: 0 0 5px 5px;
+  }
+}

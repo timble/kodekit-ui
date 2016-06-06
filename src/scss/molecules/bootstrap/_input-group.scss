@@ -1,0 +1,127 @@
+/* ==========================================================================
+   Bootstrap input group
+   ========================================================================== */
+
+
+/**
+ * Align to top so we can add a help message below the field
+ */
+
+.input-group-input,
+.input-group-btn,
+.input-group-btn .btn,
+.input-group-content,
+.input-group-input,
+.form-control {
+  vertical-align: top;
+}
+
+
+
+/**
+ * Position the dropdown toggles properly
+ */
+
+.input-group {
+  ul {
+    top: auto;
+  }
+}
+
+
+/**
+ * Position the dropdown toggles properly
+ */
+
+.input-group {
+  .input-group-btn:not(:last-child) {
+    .btn {
+      border-right: 0;
+
+      @include rtl {
+        border-right: 1px solid $input-border;
+        border-left: 0;
+      }
+    }
+  }
+}
+
+
+/* Multiple buttons in a row */
+
+.input-group {
+  .input-group-btn:not(:first-child):not(:last-child) {
+    .btn {
+      border-radius: 0;
+    }
+  }
+}
+
+
+
+/* RTL */
+
+@include rtl {
+  .input-group {
+    direction: rtl;
+
+    .form-control {
+      float: right;
+    }
+  }
+
+  // Reset rounded corners
+  .input-group .form-control:first-child,
+  .input-group-addon:first-child,
+  .input-group-btn:first-child > .btn,
+  .input-group-btn:first-child > .btn-group > .btn,
+  .input-group-btn:first-child > .dropdown-toggle,
+  .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+  .input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
+    @include border-right-radius($input-border-radius);
+    @include border-left-radius(0);
+  }
+  .input-group-addon:first-child {
+    border-right: 1px solid $input-border;
+    border-left: 0;
+  }
+  .input-group .form-control:last-child,
+  .input-group-addon:last-child,
+  .input-group-btn:last-child > .btn,
+  .input-group-btn:last-child > .btn-group > .btn,
+  .input-group-btn:last-child > .dropdown-toggle,
+  .input-group-btn:first-child > .btn:not(:first-child),
+  .input-group-btn:first-child > .btn-group:not(:first-child) > .btn {
+    @include border-left-radius($input-border-radius);
+    @include border-right-radius(0);
+  }
+  .input-group-addon:last-child {
+    border-left: 1px solid $input-border;
+    border-right: 0;
+  }
+
+  .input-group-btn {
+    > .btn {
+      + .btn {
+        margin-left: 0;
+        margin-right: -1px;
+      }
+    }
+
+    // Negative margin to only have a 1px border between the two
+    &:first-child {
+      > .btn,
+      > .btn-group {
+        margin-right: 0;
+        margin-left: -1px;
+      }
+    }
+    &:last-child {
+      > .btn,
+      > .btn-group {
+        margin-left: 0;
+        margin-right: -1px;
+      }
+    }
+  }
+}

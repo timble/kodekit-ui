@@ -1,0 +1,19 @@
+/**
+ * A
+ *
+ * Default link style
+ *
+ * markup:
+ * <a href="#">{content}</a>
+ *
+ * Styleguide 1.1
+ */
+
+a {
+  color: $color-type;
+
+  &:focus,
+  &:hover {
+    color: $color-type;
+  }
+}

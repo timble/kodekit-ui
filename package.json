@@ -1,0 +1,46 @@
+{
+  "name": "kodekit-ui",
+  "version": "0.1.0",
+  "description": "Kodekit UI",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timble/kodekit-ui.git"
+  },
+  "author": "",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/timble/kodekit-ui/issues"
+  },
+  "homepage": "https://github.com/timble/kodekit-ui#readme",
+  "devDependencies": {
+    "bootstrap-sass": "^3.3.4",
+    "bourbon": "^4.2.6",
+    "bourbon-neat": "^1.7.2",
+    "floatthead": "^1.4.0",
+    "footable": "git+https://github.com/fooplugins/FooTable.git#2.0.3",
+    "openiconic": "git+https://github.com/iconic/open-iconic.git#1.1.1",
+    "grunt": "^0.4.5",
+    "grunt-autoprefixer": "^2.2.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^1.0.1",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-uglify": "^0.6.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-gulp": "^1.0.0",
+    "grunt-modernizr": "1.0.0",
+    "grunt-sass": "^1.1.0",
+    "grunt-shell": "^1.1.2",
+    "grunt-webfont": "^0.4.8",
+    "gulp": "^3.9.1",
+    "jit-grunt": "^0.9.1",
+    "jqtree": "^1.2.1",
+    "jquery": "^1.12.3",
+    "jquery-validation": "^1.14.0",
+    "magnific-popup": "^1.0.0",
+    "sc5-styleguide": "^1.0.0",
+    "select2": "^4.0.2",
+    "select2-bootstrap-theme": "0.1.0-beta.4",
+    "time-grunt": "^1.2.1",
+    "uglify-js": "^2.6.2"
+  }
+}
