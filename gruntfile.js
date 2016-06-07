@@ -12,6 +12,22 @@ module.exports = function(grunt) {
         // Grunt variables
         srcPath: 'src',
         distPath: 'dist',
+        jquery: [
+            'node_modules/jquery/dist/jquery.js',
+            '<%= srcPath %>/js/koowa.noconflict.js'
+        ],
+        admin: [
+            '<%= srcPath %>/js/kquery.set.js',
+            'node_modules/select2/dist/js/select2.full.min.js',
+            'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
+            'node_modules/footable/dist/footable.min.js',
+            'node_modules/floatthead/dist/jquery.floatThead.min.js',
+            '<%= srcPath %>/js/overflowing.js',
+            '<%= srcPath %>/js/tabbable.js',
+            '<%= srcPath %>/js/off-canvas-menu.js',
+            '<%= srcPath %>/js/main.js',
+            '<%= srcPath %>/js/kquery.unset.js'
+        ],
 
         // Iconfont
         webfont: {
@@ -61,6 +77,21 @@ module.exports = function(grunt) {
         },
 
 
+        // Javascript
+
+
+
+        // Concatenate files
+        concat: {
+            js: {
+                files: {
+                    '<%= distPath %>/js/build/jquery.js': '<%= jquery %>',
+                    '<%= distPath %>/js/build/admin.js': '<%= admin %>'
+                }
+            }
+        },
+
+
         // Uglify
         uglify: {
             options: {
@@ -69,22 +100,8 @@ module.exports = function(grunt) {
             },
             build: {
                 files: {
-                    '<%= distPath %>/js/jquery.js': [
-                        'node_modules/jquery/dist/jquery.js',
-                        '<%= srcPath %>/js/koowa.noconflict.js'
-                    ],
-                    '<%= distPath %>/js/admin.js': [
-                        '<%= srcPath %>/js/kquery.set.js',
-                        'node_modules/select2/dist/js/select2.full.min.js',
-                        'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
-                        'node_modules/footable/dist/footable.min.js',
-                        'node_modules/floatthead/dist/jquery.floatThead.min.js',
-                        '<%= srcPath %>/js/overflowing.js',
-                        '<%= srcPath %>/js/tabbable.js',
-                        '<%= srcPath %>/js/off-canvas-menu.js',
-                        '<%= srcPath %>/js/main.js',
-                        '<%= srcPath %>/js/kquery.unset.js'
-                    ]
+                    '<%= distPath %>/js/min/jquery.js': '<%= jquery %>',
+                    '<%= distPath %>/js/min/admin.js': '<%= admin %>'
                 }
             }
         },
@@ -92,11 +109,22 @@ module.exports = function(grunt) {
 
         // Watch files
         watch: {
+            webfont: {
+                files: [
+                    'node_modules/open-iconic/svg/*.svg',
+                    '<%= srcPath %>/icons/*.svg'
+                ],
+                tasks: ['webfont'],
+                options: {
+                    interrupt: true,
+                    atBegin: false
+                }
+            },
             javascript: {
                 files: [
                     '<%= srcPath %>/js/*.js'
                 ],
-                tasks: ['uglify'],
+                tasks: ['concat', 'uglify'],
                 options: {
                     interrupt: true,
                     atBegin: true
@@ -108,6 +136,6 @@ module.exports = function(grunt) {
     });
 
     // The dev task will be used during development
-    grunt.registerTask('default', ['webfont', 'modernizr', 'watch']);
+    grunt.registerTask('default', ['modernizr', 'watch']);
 
 };
