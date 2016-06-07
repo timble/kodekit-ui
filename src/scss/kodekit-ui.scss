@@ -16,17 +16,3 @@
  */
 
 @import "core/core";
-
-
-/* Disable styleguide CSS view
-   ========================================================================== */
-
-[ng-if="section.css"] {
-  display: none;
-}
-
-sg-common-class-wrapper {
-  .k-wrapper {
-    min-height: 400px;
-  }
-}
