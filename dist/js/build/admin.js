@@ -632,7 +632,7 @@ if(this.$element.prop("multiple"))this.current(function(d){var e=[];a=[a],a.push
                 '<span class="bar2"></span>' +
                 '<span class="bar3"></span>' +
                 '</button></div>',
-                sidebar_left  = $('#k-sidebar'),
+                sidebar_left  = $('#k-sidebar-left'),
                 sidebar_right = $('#k-sidebar-right');
 
             if (sidebar_left.length) {
@@ -746,6 +746,7 @@ if(this.$element.prop("multiple"))this.current(function(d){var e=[];a=[a],a.push
     });
 
 })(kQuery);
+
 
 
 

@@ -54,8 +54,7 @@ module.exports = function(grunt) {
         modernizr: {
             dist: {
                 "cache": true,
-
-                "dest": "<%= srcPath %>/js/modernizr.js",
+                "dest": "<%= distPath %>/js/build/modernizr.js",
                 "options": [
                     "html5shiv",
                     "prefixedCSS",
@@ -100,6 +99,7 @@ module.exports = function(grunt) {
             },
             build: {
                 files: {
+                    '<%= distPath %>/js/min/modernizr.js': '<%= distPath %>/js/build/modernizr.js',
                     '<%= distPath %>/js/min/jquery.js': '<%= jquery %>',
                     '<%= distPath %>/js/min/admin.js': '<%= admin %>'
                 }

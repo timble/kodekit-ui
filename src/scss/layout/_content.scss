@@ -1,6 +1,23 @@
-/* ==========================================================================
-   The content div
-   ========================================================================== */
+/*
+Content
+
+The content container
+- Use as <b>child</b> of the `.k-content-wrapper` only
+- {unsureText}
+
+markup:
+<div class="k-content">
+    ...
+</div><!-- .k-content -->
+
+sg-wrapper:
+<div class="k-content-wrapper">
+    <sg-wrapper-content/>
+</div>
+
+Styleguide 4.5
+
+*/
 
 /**
  * 1. Set the z-index higher than the menus

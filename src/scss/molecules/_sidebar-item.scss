@@ -1,0 +1,73 @@
+
+/* Sidebar contents
+   ========================================================================== */
+
+/* Sidebar item */
+
+.k-sidebar-item {
+  width: 100%;
+
+  & + & {
+    margin-top: $spacing;
+  }
+
+  @include flexbox {
+    flex: 0 0 auto;
+
+    &--flex {
+      flex: 1 0 auto;
+    }
+  }
+
+}
+
+
+/* Sidebar header */
+
+.k-sidebar-item__header {
+  padding: $spacing $spacing 0;
+  font-weight: $bold;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+
+/* Sidebar content */
+
+.k-sidebar-item__content {
+  padding: $spacing;
+}
+
+.k-sidebar-item__content--small {
+  padding: $spacing-small $spacing;
+}
+
+
+/**
+ * Overflowing items
+ *
+ * 1. Set container to overflow it's items
+ */
+
+.k-sidebar-item--overflow {
+  overflow: auto; /* 1 */
+
+  @include flexbox {
+    flex: 0 1 auto;
+  }
+
+  @include resizing {
+    overflow: hidden;
+  }
+
+
+  /**
+   * Box shadow for overflowing containers
+   *
+   * 1. Set as same color as background to make it look like text is fading
+   */
+
+  & ~ [class^="overflowing"] {
+    color: $sidebar-background;
+  }
+}

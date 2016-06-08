@@ -2,6 +2,23 @@
    Form layout
    ========================================================================== */
 
+/*
+Form layout
+
+The default form layout
+- Use as <b>child</b> of the `.k-component` only
+- Only use when a form is needed. The layout will work fine with just `.k-component`
+- {unsureText}
+
+markup:
+<form class="k-form-layout">
+    ...
+</form><!-- .k-form-layout -->
+
+Styleguide 4.7
+
+*/
+
 .k-form-layout {
   margin: 0;
   background: $form-background;
@@ -17,6 +34,3 @@
     overflow: hidden;
   }
 }
-
-
-

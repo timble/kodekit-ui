@@ -51,6 +51,8 @@ Styleguide 3.5
 
 
 .k-table-container {
+  background: $table-background;
+
   @include flexbox {
     display: flex;
     flex: 1 1 auto;
@@ -66,7 +68,6 @@ Styleguide 3.5
 
   .k-table {
     overflow: auto;
-    background: $table-background;
     min-height: 170px;
 
     @include flexbox {

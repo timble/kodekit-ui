@@ -7,17 +7,25 @@
   @include border(bottom, $mobile-title-border);
   padding: $mobile-title-spacing;
 
-  .k-heading {
-    margin: 0;
-    font-size: $mobile-title-font-size;
-    line-height: $mobile-title-line-height;
-  }
-
   @include breakpoint($charlie) {
     display: none;
   }
 
   @include flexbox {
     flex: 0 0 auto;
+  }
+
+  h2 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+    @include breakpoint($beta) {
+      text-align: left;
+
+      @include rtl {
+        text-align: right;
+      }
+    }
   }
 }

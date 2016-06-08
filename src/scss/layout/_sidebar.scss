@@ -1,12 +1,34 @@
-/* ==========================================================================
-   Sidebars
-   ========================================================================== */
+/*
+Sidebar
+
+Left and right sidebars
+- Use `.k-sidebar-left` as <b>first child</b> of the `.k-content-wrapper` only
+- Use `.k-sidebar-right` as <b>last child</b> of the `.k-content-wrapper` only
+- Make sure you <b>Always</b> have a `.k-content` container when a sidebar is used
+- {unsureText}
+
+.k-sidebar-left - Left sidebar
+.k-sidebar-right - Right sidebar
+
+markup:
+<div class="{$modifiers}">
+    ...
+</div><!-- .{$modifiers} -->
+
+sg-wrapper:
+<div class="k-content-wrapper">
+    <sg-wrapper-content/>
+</div>
+
+Styleguide 4.4
+
+*/
 
 /**
  * The left and right sidebar
  */
 
-.k-sidebar,
+.k-sidebar-left,
 .k-sidebar-right {
   position: relative;
   overflow: auto;
@@ -90,7 +112,7 @@
 
 /* Left sidebar specific styling */
 
-.k-sidebar {
+.k-sidebar-left {
   @include border(right, $sidebar-border);
   background: $sidebar-background;
   color: $sidebar-color;
@@ -152,79 +174,5 @@
 .opened--right {
   .k-sidebar-right {
     display: block;
-  }
-}
-
-
-/* Sidebar contents
-   ========================================================================== */
-
-/* Sidebar item */
-
-.k-sidebar__item {
-  width: 100%;
-
-  & + & {
-    margin-top: $spacing;
-  }
-
-  @include flexbox {
-    flex: 0 0 auto;
-
-    &--flex {
-      flex: 1 0 auto;
-    }
-  }
-
-}
-
-
-/* Sidebar header */
-
-.k-sidebar__header {
-  padding: $spacing $spacing 0;
-  font-weight: $bold;
-  text-transform: uppercase;
-  font-size: 12px;
-}
-
-
-/* Sidebar content */
-
-.k-sidebar__content {
-  padding: $spacing $spacing 0;
-}
-
-.k-sidebar__content--small {
-  padding: $spacing-small $spacing 0;
-}
-
-
-/**
- * Overflowing items
- *
- * 1. Set container to overflow it's items
- */
-
-.k-sidebar__item--overflow {
-  overflow: auto; /* 1 */
-
-  @include flexbox {
-    flex: 0 1 auto;
-  }
-
-  @include resizing {
-    overflow: hidden;
-  }
-
-
-  /**
-   * Box shadow for overflowing containers
-   *
-   * 1. Set as same color as background to make it look like text is fading
-   */
-
-  & ~ [class^="overflowing"] {
-    color: $sidebar-background;
   }
 }

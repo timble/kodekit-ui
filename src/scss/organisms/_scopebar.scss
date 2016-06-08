@@ -15,20 +15,12 @@ markup:
         <!-- Filters wrapper -->
         <div class="k-scopebar__filters-wrapper">
             <!-- filters toggle button -->
-            <div class="k-scopebar__filter-toggle-wrapper">
-                <!-- toggle button -->
-                <button type="button" class="k-scopebar-icon-button k-toggle-filters js-toggle-filters">
-                    <span class="k-icon-k-filter"></span>
-                    <span class="visually-hidden"><?= translate('Filters'); ?></span>
-                </button>
-                <!-- filter icon when there's no toggle button -->
-                <span class="k-scopebar-icon-button k-toggle-filters-icon koowa-tooltip">
-                    <span class="k-icon-k-filter"></span>
-                    <span class="visually-hidden"><?= translate('Filters'); ?></span>
-                </span>
+            <button type="button" class="k-scopebar-icon-button k-toggle-filters js-toggle-filters">
+                <span class="k-icon-k-filter"></span>
+                <span class="visually-hidden"><?= translate('Filters'); ?></span>
                 <!-- Display label on toggle button to show there are filters -->
                 <div class="js-filter-count k-scopebar__item__label"></div>
-            </div><!-- .k-scopebar__filter-toggle-wrapper -->
+            </button>
             <!-- Filters content -->
             <div class="k-scopebar__filters-content">
                 <div class="js-filter-container k-scopebar__filters">
@@ -36,7 +28,19 @@ markup:
                         <button type="button" class="k-dropdown__button js-dropdown-button koowa-tooltip">
                             <span class="js-dropdown-title k-scopebar__item--filter__title">{content}</span>
                             <span class="k-scopebar__item--filter__icon k-icon-chevron-bottom"></span>
-                            <div class="js-dropdown-label k-scopebar__item__label"></div>
+                            <div class="js-dropdown-label k-scopebar__item__label">1</div>
+                        </button>
+                        <div class="k-dropdown__body js-dropdown-body">
+                            <div class="k-dropdown__body__buttons">
+                                <button type="button" class="js-clear-filter btn btn-sm">Clear</button>
+                                <button type="button" class="js-apply-filter btn btn-primary btn-sm">Apply filter</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="js-filter-prototype k-scopebar__item--filter k-dropdown js-dropdown">
+                        <button type="button" class="k-dropdown__button js-dropdown-button koowa-tooltip">
+                            <span class="js-dropdown-title k-scopebar__item--filter__title">{content}</span>
+                            <span class="k-scopebar__item--filter__icon k-icon-chevron-bottom"></span>
                         </button>
                         <div class="k-dropdown__body js-dropdown-body">
                             <div class="k-dropdown__body__buttons">
@@ -172,7 +176,6 @@ Styleguide 3.4
 
 .k-scopebar__filters {
   @include clearfix; /* 1 */
-  @include border(left,$scopebar-border);
   position: relative; /* 2 */
   z-index: 2; /* 2 */
 }
@@ -503,7 +506,6 @@ Styleguide 3.4
 }
 
 
-.k-scopebar__filter-toggle-wrapper,
 .k-scopebar__search-toggle-wrapper {
   width: $scopebar-size;
   max-width: $scopebar-size;
@@ -511,15 +513,6 @@ Styleguide 3.4
   white-space: nowrap;
 }
 
-.k-scopebar__filter-toggle-wrapper {
-  position: relative;
-
-  .k-scopebar__item__label {
-    @include breakpoint($beta) {
-      display: none;
-    }
-  }
-}
 
 .k-scopebar__filters-wrapper {
   display: table;
@@ -527,7 +520,6 @@ Styleguide 3.4
   height: auto;
 }
 
-.k-scopebar__filter-toggle-wrapper,
 .k-scopebar__filters-content,
 .k-scopebar__search-toggle-wrapper {
   display: table-cell;
@@ -563,16 +555,6 @@ Styleguide 3.4
 
     @include breakpoint($beta) {
       display: none;
-    }
-  }
-}
-
-.k-toggle-filters-icon {
-  @include js-enabled {
-    display: none;
-
-    @include breakpoint($beta) {
-      display: block;
     }
   }
 }

@@ -1,10 +1,20 @@
+/*
+Koowa container
+
+This is the most outer container of each page.
+- A `.koowa-container` may only live once on the page and should be handled as an `id`
+- Need to namespace something outside this container? Use the `.koowa` class
+
+markup:
+<div class="koowa-container koowa">
+    ...
+</div><!-- .koowa-container -->
+
+Styleguide 4.1
+
+*/
+
 /**
- * Koowa container
- *
- * This is the most outer container of each layout.
- * A ``koowa-container` may only live once on the page and should be handled as an id
- * Need to namespace something? Use the `.koowa` class
- *
  * 1. By using a max-width we essentially set a min-width when the contents are
  *    to large for the koowa container. The reason we don't use min-width is
  *    because if the content is only 300px we don't need horizontal scrollbars

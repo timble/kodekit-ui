@@ -1,13 +1,14 @@
 /**
  * A
- *
- * Default link style
- *
- * markup:
- * <a href="#">{content}</a>
- *
- * Styleguide 1.1
- */
+
+Default link style
+
+markup:
+<a href="{url}">{content}</a>
+
+Styleguide 1.1
+
+*/
 
 a {
   color: $color-type;

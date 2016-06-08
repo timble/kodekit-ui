@@ -23,7 +23,7 @@
                 '<span class="bar2"></span>' +
                 '<span class="bar3"></span>' +
                 '</button></div>',
-                sidebar_left  = $('#k-sidebar'),
+                sidebar_left  = $('#k-sidebar-left'),
                 sidebar_right = $('#k-sidebar-right');
 
             if (sidebar_left.length) {
@@ -137,3 +137,4 @@
     });
 
 })(kQuery);
+

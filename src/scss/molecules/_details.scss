@@ -1,32 +1,70 @@
-.k-details {
-  margin-bottom: $spacing;
+/**
+ * Details
 
+Details view
+- To be used in the right sidebar
+- Display info about selected item in the list
+
+markup:
+<div class="k-details">
+    <sg-insert>2.20.1</sg-insert>
+    <div class="k-details__content">
+        <p>
+            <span class="k-label k-label--inline">Name</span>
+            attachments.png
+        </p>
+        <p>
+            <span class="k-label k-label--inline">Dimensions</span>
+            908 x 655
+        </p>
+        <p>
+            <span class="k-label k-label--inline">Size</span>
+            66.60 KB
+        </p>
+    </div>
+    <div class="k-details__form">
+        <form id="insert-form">
+            <sg-insert>2.12.1</sg-insert>
+            <div class="buttons">
+                <a id="insert-modal-cancel" href="#">Cancel</a>
+                <span class="insert-or">or</span>
+                <button type="button" id="insert-link" class="btn btn-primary">Insert</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+Styleguide 2.2
+
+*/
+
+.k-details {
   p {
     margin-bottom: $spacing-tiny;
   }
 }
 
-.k-details-image-placeholder {
-  @include ratio-block;
-  border: 1px solid grey;
-  background: white;
-  position: relative;
-  margin-bottom: $spacing;
-}
 
-.k-details-image-placeholder__content {
-  @include coverall(1px);
-  text-align: center;
-  overflow:  hidden;
 
-  img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+/**
+ * 1. Default bottom-margin of 1.5 times the font-size
+ * 2. No bottom-margin for all the last-childs so parents can have bottom padding
+ */
+
+.k-details__content {
+  margin-bottom: 1.5em; /* 1 */
+
+  &:last-child {
+    margin-bottom: 0; /* 2 */
   }
 }
 
-.k-details-icon-holder {
-  margin-bottom: $spacing;
+
+.k-label {
+  font-weight: $bold;
+  display: block;
+}
+
+.k-label--inline {
+  display: inline-block;
 }

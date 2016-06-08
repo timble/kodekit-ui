@@ -1,0 +1,55 @@
+/**
+ * Form view
+ *
+ * Complete form view
+
+markup:
+<!-- Wrapper -->
+<div class="k-wrapper">
+    <!-- Overview -->
+    <div class="k-content-wrapper">
+        <!-- The content -->
+        <div class="k-content">
+            <!-- Toolbar -->
+            <sg-insert>3.7</sg-insert>
+            <!-- Component -->
+            <div class="k-component">
+                <!-- Form -->
+                <form class="k-form-layout -koowa-form" action="" method="post">
+                    <!-- Container -->
+                    <div class="k-container">
+                        <span class="k-toolbar-buttons">
+                            <div class="k-heading">Create new document</div>
+                        </span>
+                        <!-- Main fields -->
+                        <div class="k-container__main">
+                            <fieldset>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" placeholder="{Title}">
+                                </div>
+                            </fieldset>
+                        </div><!-- .k-container__main -->
+                        <!-- Other fields -->
+                        <div class="k-container__sub">
+                            <fieldset class="k-form-block">
+                                <div class="k-form-block__header">
+                                    {Title}
+                                </div>
+                                <div class="k-form-block__content">
+                                    <div class="form-group">
+                                        <label>{Label}</label>
+                                        Input
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div><!-- .k-container__sub -->
+                    </div><!-- .k-container -->
+                </form><!-- .k-form-layout -->
+            </div><!-- .k-component -->
+        </div><!-- .k-content -->
+    </div><!-- .k-content-wrapper -->
+</div><!-- .k-wrapper -->
+
+Styleguide 5.2
+
+*/

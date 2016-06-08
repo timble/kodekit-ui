@@ -2,6 +2,23 @@
    Component
    ========================================================================== */
 
+/*
+Component
+
+The component container
+- Use as <b>child</b> of the `.k-content` only
+- Can be preceded by a `.k-mobile-title` or a `.k-toolbar`
+- {unsureText}
+
+markup:
+<div class="k-component">
+    ...
+</div><!-- .k-component -->
+
+Styleguide 4.6
+
+*/
+
 .k-component {
   @include flexbox {
     display: flex;

@@ -1,4 +1,6 @@
-/* Parent container surrounding the toggling table and grid in files view */
+/**
+ * Parent container surrounding the toggling table and grid in files view
+ */
 
 .k-grid-table-container {
   @include flexbox {

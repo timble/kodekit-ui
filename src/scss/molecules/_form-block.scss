@@ -3,20 +3,24 @@
    ========================================================================== */
 
 /**
- * To be used in sidebar of forms
- * Data in these boxes should be non-required info
- */
+ * Form block
+ *
+ * To be used in sidebar of forms<br />
+ * Data in these boxes should be non-required form elements
 
-/**
-<!-- Breadcrumbs -->
+markup:
+<!-- Form block -->
 <fieldset class="k-form-block">
     <div class="k-form-block__header">
-        Block header
+        {header}
     </div>
     <div class="k-form-block__content">
-        Block content
+        {form elements}
     </div>
 </fieldset>
+
+Styleguide 2.12
+
 */
 
 
@@ -43,3 +47,20 @@
 .k-form-block__content {
   padding: $form-block-content-spacing;
 }
+
+
+/**
+ * Form groups
+ *
+ * Lorem ipsum
+
+markup:
+<!-- Form group -->
+<div class="form-group">
+    <label>{Label}</label>
+    <input class="form-control" type="text" placeholder="{Title}">
+</div>
+
+Styleguide 2.12.1
+
+*/

@@ -1,11 +1,23 @@
-/* ==========================================================================
-   The wrapper
-   ========================================================================== */
+/*
+Wrapper
 
-/**
- * The default wrapper layout
- */
+The default wrapper
+- Use as <b>first child</b> of the `.koowa-container` only
+- {unsureText}
 
+markup:
+<div class="k-wrapper">
+    ...
+</div><!-- .k-wrapper -->
+
+sg-wrapper:
+<div class="koowa-container koowa">
+    <sg-wrapper-content/>
+</div><!-- .koowa-container -->
+
+Styleguide 4.2
+
+*/
 
 /* Faking flexbox on older browsers by using table styling */
 

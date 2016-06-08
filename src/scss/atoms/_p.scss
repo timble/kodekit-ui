@@ -1,15 +1,18 @@
 /**
  * Paragraph
- *
- * Default paragraph style
- *
- * markup:
- * <p>
- *   {content}
- * </p>
- *
- * Styleguide 1.5
- */
+
+Default paragraph style
+- Paragraphs have a bottom margin to separate them from each other<br>
+- The last-child doesn't have this bottom margin so parent containers can have four-sided paddings
+
+markup:
+<p>
+    {content}
+</p>
+
+Styleguide 1.5
+
+*/
 
 /**
  * 1. Remove default top-margin
