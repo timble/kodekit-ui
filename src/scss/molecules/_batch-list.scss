@@ -4,29 +4,40 @@ Batch list
 Bacth list layout
 
 markup:
-<div class="k-batch-list" id="document_list">
-    <form class="document-form">
-        <div class="k-batch-list__item k-batch-list__item--remove-button">
-            <button class="cancel btn btn-xs btn-default">
-                <i class="icon icon-minus-sign"></i>
-            </button>
-        </div>
-        <div class="k-batch-list__item k-batch-list__item--title">
-            <label>File name:</label>
-        </div>
-        <div class="k-batch-list__item k-batch-list__item--field">
-            <input class="disabled form-control file-name-input" type="text" value="{value}" disabled="">
-        </div>
-        <div class="k-batch-list__item k-batch-list__item--title">
-            <label for="docman_title0">Title:</label>
-        </div>
-        <div class="k-batch-list__item k-batch-list__item--field">
-            <input id="docman_title0" class="form-control" type="text" name="title" value="{value}">
-        </div>
-    </form>
+<div class="k-batch-list">
+    <sg-insert>3.2.1</sg-insert>
 </div>
 
 Styleguide 3.2
+
+*/
+
+
+/*
+Batch list form
+
+markup:
+<form class="k-batch-list__form">
+    <div class="k-batch-list__item k-batch-list__item--remove-button">
+        <button class="cancel btn btn-xs btn-default">
+            <i class="icon icon-minus-sign"></i>
+        </button>
+    </div>
+    <div class="k-batch-list__item k-batch-list__item--title">
+        <label>File name:</label>
+    </div>
+    <div class="k-batch-list__item k-batch-list__item--field">
+        <input class="disabled form-control file-name-input" type="text" value="{value}" disabled="">
+    </div>
+    <div class="k-batch-list__item k-batch-list__item--title">
+        <label for="docman_title0">Title:</label>
+    </div>
+    <div class="k-batch-list__item k-batch-list__item--field">
+        <input id="docman_title0" class="form-control" type="text" name="title" value="{value}">
+    </div>
+</form>
+
+Styleguide 3.2.1
 
 */
 
@@ -36,7 +47,7 @@ Styleguide 3.2
   border: 1px solid #ccc;
   margin-bottom: $spacing;
 
-  .document-form {
+  .k-batch-list__form {
     margin: 0;
     border-bottom: 1px solid #ccc;
     padding-bottom: 10px;

@@ -26,21 +26,32 @@ Styleguide 2.14
 */
 
 .k-mobile-title {
-  background: $mobile-title-background;
   @include border(bottom, $mobile-title-border);
-  padding: $mobile-title-spacing;
-
-  @include breakpoint($charlie) {
-    display: none;
-  }
+  background: $mobile-title-background;
+  display: table;
+  width: 100%;
 
   @include flexbox {
     flex: 0 0 auto;
   }
 
+  @include breakpoint($charlie) {
+    display: none;
+  }
+
+  .off-canvas-menu-toggle-holder,
   h2 {
-    margin: 0;
-    padding: 0;
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .off-canvas-menu-toggle-holder {
+    white-space: nowrap;
+  }
+
+  h2 {
+    width: 99%;
+    padding: $spacing-small;
     text-align: center;
 
     @include breakpoint($beta) {

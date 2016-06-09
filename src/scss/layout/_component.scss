@@ -20,6 +20,8 @@ Styleguide 4.6
 */
 
 .k-component {
+  background: $form-background;
+
   @include flexbox {
     display: flex;
     flex-direction: column;

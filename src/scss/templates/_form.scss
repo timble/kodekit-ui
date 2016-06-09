@@ -6,9 +6,9 @@
 markup:
 <!-- Wrapper -->
 <div class="k-wrapper">
-    <!-- Overview -->
+    <!-- Content wrapper -->
     <div class="k-content-wrapper">
-        <!-- The content -->
+        <!-- Content -->
         <div class="k-content">
             <!-- Toolbar -->
             <sg-insert>3.7</sg-insert>
@@ -19,13 +19,29 @@ markup:
                     <!-- Container -->
                     <div class="k-container">
                         <div class="k-container__full">
-                            <div class="k-heading">Create new document</div>
+                            <div class="k-heading">Example form</div>
                         </div>
                         <!-- Main fields -->
                         <div class="k-container__main">
                             <fieldset>
-                                <div class="form-group">
+                                <div class="form-group form-group-lg">
                                     <input class="form-control" type="text" placeholder="{Title}">
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group input-group-sm">
+                                        <label for="todo_form_alias" class="input-group-addon">
+                                            Alias
+                                        </label>
+                                        <input id="docman_form_alias" type="text" class="form-control" name="slug" maxlength="255" value="example" placeholder="Will be created automatically">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Category</label>
+                                    <select name="category" id="category" class="select2">
+                                        <option value="1" class="level1">Example 1</option>
+                                        <option value="2" class="level1">Example 2</option>
+                                        <option value="3" class="level1">Example 3</option>
+                                    </select>
                                 </div>
                             </fieldset>
                         </div><!-- .k-container__main -->
@@ -33,12 +49,11 @@ markup:
                         <div class="k-container__sub">
                             <fieldset class="k-form-block">
                                 <div class="k-form-block__header">
-                                    {Title}
+                                    Publish
                                 </div>
                                 <div class="k-form-block__content">
                                     <div class="form-group">
-                                        <label>{Label}</label>
-                                        Input
+                                        <sg-insert>2.3</sg-insert>
                                     </div>
                                 </div>
                             </fieldset>
@@ -63,9 +78,9 @@ Styleguide 5.2
 markup:
 <!-- Wrapper -->
 <div class="k-wrapper">
-    <!-- Overview -->
+    <!-- Content wrapper -->
     <div class="k-content-wrapper">
-        <!-- The content -->
+        <!-- Content -->
         <div class="k-content">
             <!-- Toolbar -->
             <sg-insert>3.7</sg-insert>
@@ -91,7 +106,13 @@ markup:
                     <div class="k-container__full">
                         <fieldset>
                             <legend>Documents</legend>
-                            <sg-insert>3.2</sg-insert>
+                            <div class="k-batch-list">
+                              <sg-insert>3.2.1</sg-insert>
+                              <sg-insert>3.2.1</sg-insert>
+                              <sg-insert>3.2.1</sg-insert>
+                              <sg-insert>3.2.1</sg-insert>
+                              <sg-insert>3.2.1</sg-insert>
+                            </div>
                         </fieldset>
                     </div>
                 </div><!-- .k-container -->
@@ -101,5 +122,91 @@ markup:
 </div><!-- .k-wrapper -->
 
 Styleguide 5.2.1
+
+*/
+
+
+/**
+ * Form with sidebar
+
+markup:
+<!-- Wrapper -->
+<div class="k-wrapper">
+    <!-- Content wrapper -->
+    <div class="k-content-wrapper">
+        <!-- Sidebar -->
+        <div class="k-sidebar-left js-sidebar-left">
+            <sg-insert>2.15-all</sg-insert>
+            <div class="k-sidebar-item k-sidebar-item--overflow">
+                <div class="k-sidebar-item__header">
+                    Categories
+                </div>
+                <sg-insert>2.24</sg-insert>
+            </div>
+            <div class="k-sidebar-item">
+                <div class="k-sidebar-item__header">
+                    Quick filters
+                </div>
+                <sg-insert>2.10</sg-insert>
+            </div>
+        </div>
+        <!-- Content -->
+        <div class="k-content">
+            <!-- Toolbar -->
+            <sg-insert>3.7</sg-insert>
+            <!-- Component -->
+            <div class="k-component">
+                <!-- Form -->
+                <form class="k-form-layout -koowa-form" action="" method="post">
+                    <!-- Container -->
+                    <div class="k-container">
+                        <div class="k-container__full">
+                            <div class="k-heading">Example form</div>
+                        </div>
+                        <!-- Main fields -->
+                        <div class="k-container__main">
+                            <fieldset>
+                                <div class="form-group form-group-lg">
+                                    <input class="form-control" type="text" placeholder="{Title}">
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group input-group-sm">
+                                        <label for="todo_form_alias" class="input-group-addon">
+                                            Alias
+                                        </label>
+                                        <input id="docman_form_alias" type="text" class="form-control" name="slug" maxlength="255" value="example" placeholder="Will be created automatically">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Category</label>
+                                    <select name="category" id="category" class="select2">
+                                        <option value="1" class="level1">Example 1</option>
+                                        <option value="2" class="level1">Example 2</option>
+                                        <option value="3" class="level1">Example 3</option>
+                                    </select>
+                                </div>
+                            </fieldset>
+                        </div><!-- .k-container__main -->
+                        <!-- Other fields -->
+                        <div class="k-container__sub">
+                            <fieldset class="k-form-block">
+                                <div class="k-form-block__header">
+                                    Publish
+                                </div>
+                                <div class="k-form-block__content">
+                                    <div class="form-group">
+                                        <sg-insert>2.3</sg-insert>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div><!-- .k-container__sub -->
+                    </div><!-- .k-container -->
+                </form><!-- .k-form-layout -->
+            </div><!-- .k-component -->
+        </div><!-- .k-content -->
+    </div><!-- .k-content-wrapper -->
+</div><!-- .k-wrapper -->
+
+Styleguide 5.2.2
 
 */

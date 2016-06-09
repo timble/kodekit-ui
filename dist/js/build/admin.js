@@ -630,6 +630,7 @@ if(this.$element.prop("multiple"))this.current(function(d){var e=[];a=[a],a.push
         // Variables
         var $wrapper = $('.k-wrapper'),
             $titlebar = $('.k-titlebar'),
+            $mobiletitle = $('.k-mobile-title'),
             $toolbar = $('.k-toolbar'),
             $content = $('.k-content'),
             $fixedtable = $('.table--fixed'),
@@ -641,7 +642,7 @@ if(this.$element.prop("multiple"))this.current(function(d){var e=[];a=[a],a.push
             resizeClass = 'k-is-resizing';
 
         // Sidebar
-        if ( ($toolbar.length || $titlebar.length) && $wrapper.length && $content.length)
+        if ( ($toolbar.length || $titlebar.length || $mobiletitle.length) && $wrapper.length && $content.length)
         {
             var toggle_button = '<div class="off-canvas-menu-toggle-holder"><button class="off-canvas-menu-toggle" type="button">' +
                 '<span class="bar1"></span>' +
@@ -655,6 +656,7 @@ if(this.$element.prop("multiple"))this.current(function(d){var e=[];a=[a],a.push
                 // Variables
                 var kContainer = '.koowa-container',
                     titlebar = element.closest(kContainer).find('.k-titlebar')[0],
+                    mobiletitle = element.closest(kContainer).find('.k-mobile-title')[0],
                     toolbar = element.closest(kContainer).find('.k-toolbar')[0],
                     wrapper = element.closest(kContainer).find('.k-wrapper')[0],
                     content = element.closest(kContainer).find('.k-content')[0],
@@ -674,6 +676,12 @@ if(this.$element.prop("multiple"))this.current(function(d){var e=[];a=[a],a.push
                             $(titlebar).append($toggle);
                         }
                         transitionElements = [$(content), $(titlebar)]
+                    } else if ( mobiletitle != undefined ) {
+                        if ( position == 'left' ) {
+                            $(mobiletitle).prepend($toggle);
+                        } else if ( position == 'right') {
+                            $(mobiletitle).append($toggle);
+                        }
                     } else if ( toolbar != undefined ) {
                         if ( position == 'left' ) {
                             $(toolbar).prepend($toggle);
