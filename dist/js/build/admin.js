@@ -44,18 +44,18 @@ if(this.$element.prop("multiple"))this.current(function(d){var e=[];a=[a],a.push
             plugin.settings = $.extend({}, defaults, options);
 
             // Wrap content in a div
-            if (!$element.find('.overflowing').length) {
+            if ($element.parent('.overflowing')[0] == undefined) {
                 $element.wrap('<div class="overflowing">');
                 if ($element.css('flex')) {
                     $('.overflowing').addClass('overflowing--flex');
                 }
-            }
 
-            // Add overflowing shadow divs
-            $element.after('<div class="overflowing--top js-is-hidden">');
-            $element.after('<div class="overflowing--right js-is-hidden">');
-            $element.after('<div class="overflowing--bottom js-is-hidden">');
-            $element.after('<div class="overflowing--left js-is-hidden">');
+                // Add overflowing shadow divs
+                $element.after('<div class="overflowing--top js-is-hidden">');
+                $element.after('<div class="overflowing--right js-is-hidden">');
+                $element.after('<div class="overflowing--bottom js-is-hidden">');
+                $element.after('<div class="overflowing--left js-is-hidden">');
+            }
 
             // Overflowing?
             function overflowing() {
@@ -288,7 +288,8 @@ if(this.$element.prop("multiple"))this.current(function(d){var e=[];a=[a],a.push
                 menuToggle: [],
                 expandedWidth: $(element).outerWidth(),
                 offCanvasOverlay: 'k-off-canvas-overlay',
-                ariaControls: null
+                ariaControls: null,
+                opacity: .75
             },
             plugin = this;
 
@@ -311,6 +312,7 @@ if(this.$element.prop("multiple"))this.current(function(d){var e=[];a=[a],a.push
                 expandedWidth = menu.outerWidth(),
                 offCanvasOverlay = $('.' + plugin.settings.offCanvasOverlay),
                 transitionDuration = Math.round(parseFloat(container.css('transition-duration')) * 1000),
+                transitionElements = plugin.settings.transitionElements || plugin.settings.container,
                 timeout;
 
             // Set proper menuExpandedClass if not set manually
@@ -324,9 +326,13 @@ if(this.$element.prop("multiple"))this.current(function(d){var e=[];a=[a],a.push
             }
 
             // Create overlay wrapper
-            if ( container.find('.' + plugin.settings.offCanvasOverlay)[0] == undefined ) {
-                container.append('<div class="' + plugin.settings.offCanvasOverlay + '">');
-            }
+            $.each(transitionElements, function() {
+                if ($(this).find('.' + plugin.settings.offCanvasOverlay)[0] == undefined) {
+                    $(this).append('<div class="' + plugin.settings.offCanvasOverlay + '">');
+                    var newOverlay = $('.' + plugin.settings.offCanvasOverlay);
+                    $.extend(offCanvasOverlay, newOverlay);
+                }
+            });
 
             function tabToggle(menu) {
                 // When tabbing on toggle button
@@ -440,7 +446,6 @@ if(this.$element.prop("multiple"))this.current(function(d){var e=[];a=[a],a.push
                 });
             }
 
-
             // Touch actions
             if ('ontouchstart' in document.documentElement) {
                 wrapper.on('touchstart', onTouchStart);
@@ -494,11 +499,15 @@ if(this.$element.prop("multiple"))this.current(function(d){var e=[];a=[a],a.push
                 isScrolling = undefined;
 
                 // Get the opacity of the overlay
-                overlayOpacity = offCanvasOverlay.css('opacity');
+                overlayOpacity = plugin.settings.opacity;
 
                 // Add class to remove transition for 1-to-1 touch movement
-                container.addClass(noTransitionClass);
-                offCanvasOverlay.addClass(noTransitionClass);
+                $.each(transitionElements, function() {
+                    $(this).addClass(noTransitionClass);
+                });
+                $.each(offCanvasOverlay, function() {
+                    $(this).addClass(noTransitionClass);
+                });
 
                 e.stopPropagation();
 
@@ -532,19 +541,21 @@ if(this.$element.prop("multiple"))this.current(function(d){var e=[];a=[a],a.push
                         return;
 
                     // translate immediately 1-to-1
-                    container.css({
-                        '-webkit-transform' : 'translate(' + newPos + 'px, 0)',
-                        '-moz-transform'    : 'translate(' + newPos + 'px, 0)',
-                        '-ms-transform'     : 'translate(' + newPos + 'px, 0)',
-                        '-o-transform'      : 'translate(' + newPos + 'px, 0)',
-                        'transform'         : 'translate(' + newPos + 'px, 0)'
+                    $.each(transitionElements, function() {
+                        $(this).css({
+                            '-webkit-transform' : 'translate(' + newPos + 'px, 0)',
+                            '-moz-transform'    : 'translate(' + newPos + 'px, 0)',
+                            '-ms-transform'     : 'translate(' + newPos + 'px, 0)',
+                            '-o-transform'      : 'translate(' + newPos + 'px, 0)',
+                            'transform'         : 'translate(' + newPos + 'px, 0)'
+                        });
                     });
-                    offCanvasOverlay.css('opacity', opacity);
+                    $.each(offCanvasOverlay, function() {
+                        $(this).css('opacity', opacity);
+                    });
 
                     e.stopPropagation();
                 }
-
-
             }
 
             function onTouchEnd(e){
@@ -566,8 +577,13 @@ if(this.$element.prop("multiple"))this.current(function(d){var e=[];a=[a],a.push
                 // if not scrolling vertically
                 if (!isScrolling) {
 
-                    container.removeAttr('style').removeClass(noTransitionClass);
-                    offCanvasOverlay.removeAttr('style').removeClass(noTransitionClass);
+                    $.each(transitionElements, function() {
+                        container.removeAttr('style').removeClass(noTransitionClass);
+                        $('.k-titlebar').removeAttr('style').removeClass(noTransitionClass);
+                    });
+                    $.each(offCanvasOverlay, function() {
+                        $(this).removeAttr('style').removeClass(noTransitionClass);
+                    });
 
                     if ( ( position == 'left' && ( absNewPos <= (expandedWidth * 0.66) || newPos <= 0 ) ) ||
                         ( position == 'right' && ( absNewPos <= (expandedWidth * 0.66) || newPos >= 0 ) ) ) {
@@ -621,7 +637,7 @@ if(this.$element.prop("multiple"))this.current(function(d){var e=[];a=[a],a.push
             $searchtoggle = $('.js-toggle-search'),
             $filtertoggle = $('.js-toggle-filters'),
             $footable = $('.footable'),
-            $overflow = $('.k-sidebar__item--overflow'),
+            $overflow = $('.k-sidebar-item--overflow'),
             resizeClass = 'k-is-resizing';
 
         // Sidebar
@@ -643,7 +659,8 @@ if(this.$element.prop("multiple"))this.current(function(d){var e=[];a=[a],a.push
                     wrapper = element.closest(kContainer).find('.k-wrapper')[0],
                     content = element.closest(kContainer).find('.k-content')[0],
                     toggle = element.closest(kContainer).find('.off-canvas-menu-toggle-holder--' + position),
-                    $toggle = $(toggle_button);
+                    $toggle = $(toggle_button),
+                    transitionElements = $(content);
 
                 // Add proper class to toggle buttons
                 $toggle.addClass('off-canvas-menu-toggle-holder--' + position);
@@ -656,6 +673,7 @@ if(this.$element.prop("multiple"))this.current(function(d){var e=[];a=[a],a.push
                         } else if ( position == 'right') {
                             $(titlebar).append($toggle);
                         }
+                        transitionElements = [$(content), $(titlebar)]
                     } else if ( toolbar != undefined ) {
                         if ( position == 'left' ) {
                             $(toolbar).prepend($toggle);
@@ -669,7 +687,8 @@ if(this.$element.prop("multiple"))this.current(function(d){var e=[];a=[a],a.push
                         menuToggle: $toggle,
                         wrapper: $(wrapper),
                         container: $(content),
-                        position: position
+                        position: position,
+                        transitionElements: transitionElements
                     });
                 }
             }

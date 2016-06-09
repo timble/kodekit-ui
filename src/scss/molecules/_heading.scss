@@ -1,4 +1,21 @@
-/* Simple heading styling */
+/* ==========================================================================
+   Heading
+   ========================================================================== */
+
+/**
+ * Heading
+
+Simple heading
+
+markup:
+<!-- Heading -->
+<div class="k-heading">
+    {Content}
+</div><!--.k-heading-->
+
+Styleguide 2.6
+
+*/
 
 .k-heading {
   font-size: $font-size--large;

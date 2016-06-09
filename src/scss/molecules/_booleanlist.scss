@@ -1,28 +1,27 @@
 /* ==========================================================================
-   CSS only animated boolean list
+
    ========================================================================== */
 
-/** Default booleanlist
-    =========================================================================
+/*
+Boolean list
 
-<div class="k-booleanlist">
-  <input type="radio" name="name" id="id1" value="1" checked="checked">
-  <label for="id1">True</label>
-  <input type="radio" name="name" id="id0" value="0">
-  <label for="id0">False</label>
+CSS only animated boolean list
+
+default - Default style
+.k-booleanlist--neutral - Neutral styling
+
+markup:
+<div class="k-booleanlist {$modifiers}">
+  <input type="radio" name="name{$modifiers}" id="id0{$modifiers}" value="1" checked="checked">
+  <label for="id0{$modifiers}">True</label>
+  <input type="radio" name="name{$modifiers}" id="id1{$modifiers}" value="0">
+  <label for="id1{$modifiers}">False</label>
 </div>
+
+Styleguide 2.3
+
 */
 
-/** Neutral booleanlist
-    =========================================================================
-
-<div class="k-booleanlist k-booleanlist--neutral">
-  <input type="radio" name="name" id="id1" value="1" checked="checked">
-  <label for="id1">Option 1</label>
-  <input type="radio" name="name" id="id0" value="0">
-  <label for="id0">Option 2</label>
-</div>
-*/
 
 /**
  * Check if :checked is supported using modernizr

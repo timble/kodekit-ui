@@ -21,7 +21,8 @@
                 menuToggle: [],
                 expandedWidth: $(element).outerWidth(),
                 offCanvasOverlay: 'k-off-canvas-overlay',
-                ariaControls: null
+                ariaControls: null,
+                opacity: .75
             },
             plugin = this;
 
@@ -44,6 +45,7 @@
                 expandedWidth = menu.outerWidth(),
                 offCanvasOverlay = $('.' + plugin.settings.offCanvasOverlay),
                 transitionDuration = Math.round(parseFloat(container.css('transition-duration')) * 1000),
+                transitionElements = plugin.settings.transitionElements || plugin.settings.container,
                 timeout;
 
             // Set proper menuExpandedClass if not set manually
@@ -57,9 +59,13 @@
             }
 
             // Create overlay wrapper
-            if ( container.find('.' + plugin.settings.offCanvasOverlay)[0] == undefined ) {
-                container.append('<div class="' + plugin.settings.offCanvasOverlay + '">');
-            }
+            $.each(transitionElements, function() {
+                if ($(this).find('.' + plugin.settings.offCanvasOverlay)[0] == undefined) {
+                    $(this).append('<div class="' + plugin.settings.offCanvasOverlay + '">');
+                    var newOverlay = $('.' + plugin.settings.offCanvasOverlay);
+                    $.extend(offCanvasOverlay, newOverlay);
+                }
+            });
 
             function tabToggle(menu) {
                 // When tabbing on toggle button
@@ -173,7 +179,6 @@
                 });
             }
 
-
             // Touch actions
             if ('ontouchstart' in document.documentElement) {
                 wrapper.on('touchstart', onTouchStart);
@@ -227,11 +232,15 @@
                 isScrolling = undefined;
 
                 // Get the opacity of the overlay
-                overlayOpacity = offCanvasOverlay.css('opacity');
+                overlayOpacity = plugin.settings.opacity;
 
                 // Add class to remove transition for 1-to-1 touch movement
-                container.addClass(noTransitionClass);
-                offCanvasOverlay.addClass(noTransitionClass);
+                $.each(transitionElements, function() {
+                    $(this).addClass(noTransitionClass);
+                });
+                $.each(offCanvasOverlay, function() {
+                    $(this).addClass(noTransitionClass);
+                });
 
                 e.stopPropagation();
 
@@ -265,19 +274,21 @@
                         return;
 
                     // translate immediately 1-to-1
-                    container.css({
-                        '-webkit-transform' : 'translate(' + newPos + 'px, 0)',
-                        '-moz-transform'    : 'translate(' + newPos + 'px, 0)',
-                        '-ms-transform'     : 'translate(' + newPos + 'px, 0)',
-                        '-o-transform'      : 'translate(' + newPos + 'px, 0)',
-                        'transform'         : 'translate(' + newPos + 'px, 0)'
+                    $.each(transitionElements, function() {
+                        $(this).css({
+                            '-webkit-transform' : 'translate(' + newPos + 'px, 0)',
+                            '-moz-transform'    : 'translate(' + newPos + 'px, 0)',
+                            '-ms-transform'     : 'translate(' + newPos + 'px, 0)',
+                            '-o-transform'      : 'translate(' + newPos + 'px, 0)',
+                            'transform'         : 'translate(' + newPos + 'px, 0)'
+                        });
                     });
-                    offCanvasOverlay.css('opacity', opacity);
+                    $.each(offCanvasOverlay, function() {
+                        $(this).css('opacity', opacity);
+                    });
 
                     e.stopPropagation();
                 }
-
-
             }
 
             function onTouchEnd(e){
@@ -299,8 +310,13 @@
                 // if not scrolling vertically
                 if (!isScrolling) {
 
-                    container.removeAttr('style').removeClass(noTransitionClass);
-                    offCanvasOverlay.removeAttr('style').removeClass(noTransitionClass);
+                    $.each(transitionElements, function() {
+                        container.removeAttr('style').removeClass(noTransitionClass);
+                        $('.k-titlebar').removeAttr('style').removeClass(noTransitionClass);
+                    });
+                    $.each(offCanvasOverlay, function() {
+                        $(this).removeAttr('style').removeClass(noTransitionClass);
+                    });
 
                     if ( ( position == 'left' && ( absNewPos <= (expandedWidth * 0.66) || newPos <= 0 ) ) ||
                         ( position == 'right' && ( absNewPos <= (expandedWidth * 0.66) || newPos >= 0 ) ) ) {

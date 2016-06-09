@@ -13,8 +13,18 @@ markup:
             <!-- Sidebar -->
             <div class="k-sidebar-left js-sidebar-left">
                 <sg-insert>2.15-all</sg-insert>
-                {jqtree}
-                {quickfliters}
+                <div class="k-sidebar-item k-sidebar-item--overflow">
+                    <div class="k-sidebar-item__header">
+                        Quick filters
+                    </div>
+                    <sg-insert>2.24</sg-insert>
+                </div>
+                <div class="k-sidebar-item">
+                    <div class="k-sidebar-item__header">
+                        Quick filters
+                    </div>
+                    <sg-insert>2.10</sg-insert>
+                </div>
             </div>
             <!-- Content -->
             <div class="k-content">
@@ -53,6 +63,12 @@ markup:
         <!-- Sidebar -->
         <div class="k-sidebar-left js-sidebar-left">
             <sg-insert>2.15-all</sg-insert>
+            <div class="k-sidebar-item">
+                <div class="k-sidebar-item__header">
+                    Quick filters
+                </div>
+                <sg-insert>2.10</sg-insert>
+            </div>
         </div>
         <!-- Content -->
         <div class="k-content">

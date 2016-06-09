@@ -3,6 +3,11 @@
    ========================================================================== */
 
 /**
+ * Sidebar list
+
+Simple sidebar list
+
+markup:
 <!-- List -->
 <ul class="k-list">
     <!-- Active item -->
@@ -18,6 +23,14 @@
         </a>
     </li>
 </ul>
+
+sg-wrapper:
+<div class="sg-flexbox">
+    <sg-wrapper-content/>
+</div>
+
+Styleguide 2.10
+
 */
 
 

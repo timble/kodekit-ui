@@ -12,7 +12,7 @@
             $searchtoggle = $('.js-toggle-search'),
             $filtertoggle = $('.js-toggle-filters'),
             $footable = $('.footable'),
-            $overflow = $('.k-sidebar__item--overflow'),
+            $overflow = $('.k-sidebar-item--overflow'),
             resizeClass = 'k-is-resizing';
 
         // Sidebar
@@ -34,7 +34,8 @@
                     wrapper = element.closest(kContainer).find('.k-wrapper')[0],
                     content = element.closest(kContainer).find('.k-content')[0],
                     toggle = element.closest(kContainer).find('.off-canvas-menu-toggle-holder--' + position),
-                    $toggle = $(toggle_button);
+                    $toggle = $(toggle_button),
+                    transitionElements = $(content);
 
                 // Add proper class to toggle buttons
                 $toggle.addClass('off-canvas-menu-toggle-holder--' + position);
@@ -47,6 +48,7 @@
                         } else if ( position == 'right') {
                             $(titlebar).append($toggle);
                         }
+                        transitionElements = [$(content), $(titlebar)]
                     } else if ( toolbar != undefined ) {
                         if ( position == 'left' ) {
                             $(toolbar).prepend($toggle);
@@ -60,7 +62,8 @@
                         menuToggle: $toggle,
                         wrapper: $(wrapper),
                         container: $(content),
-                        position: position
+                        position: position,
+                        transitionElements: transitionElements
                     });
                 }
             }

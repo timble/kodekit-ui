@@ -17,18 +17,18 @@
             plugin.settings = $.extend({}, defaults, options);
 
             // Wrap content in a div
-            if (!$element.find('.overflowing').length) {
+            if ($element.parent('.overflowing')[0] == undefined) {
                 $element.wrap('<div class="overflowing">');
                 if ($element.css('flex')) {
                     $('.overflowing').addClass('overflowing--flex');
                 }
-            }
 
-            // Add overflowing shadow divs
-            $element.after('<div class="overflowing--top js-is-hidden">');
-            $element.after('<div class="overflowing--right js-is-hidden">');
-            $element.after('<div class="overflowing--bottom js-is-hidden">');
-            $element.after('<div class="overflowing--left js-is-hidden">');
+                // Add overflowing shadow divs
+                $element.after('<div class="overflowing--top js-is-hidden">');
+                $element.after('<div class="overflowing--right js-is-hidden">');
+                $element.after('<div class="overflowing--bottom js-is-hidden">');
+                $element.after('<div class="overflowing--left js-is-hidden">');
+            }
 
             // Overflowing?
             function overflowing() {

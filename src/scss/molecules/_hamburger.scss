@@ -112,9 +112,8 @@
  * Transform hamburger into a cross when the sidebar is opened
  */
 
-.show-left-menu,
-.show-right-menu {
-  .off-canvas-menu-toggle {
+.show-left-menu {
+  .off-canvas-menu-toggle-holder--left {
     .bar1 {
       top: round(($button-size / 2) - ($bar-height / 2));
       transform: rotate(135deg);
@@ -135,3 +134,27 @@
     }
   }
 }
+
+.show-right-menu {
+  .off-canvas-menu-toggle-holder--right {
+    .bar1 {
+      top: round(($button-size / 2) - ($bar-height / 2));
+      transform: rotate(135deg);
+    }
+
+    .bar2 {
+      opacity: 0;
+      transform: translate(-100%, 0);
+
+      @include rtl {
+        transform: translate(100%, 0);
+      }
+    }
+
+    .bar3 {
+      top: round(($button-size / 2) - ($bar-height / 2));
+      transform: rotate(-135deg);
+    }
+  }
+}
+

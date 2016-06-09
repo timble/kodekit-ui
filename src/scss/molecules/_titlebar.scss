@@ -43,28 +43,6 @@ Styleguide 2.22
   @include transition(transform); /* 3 */
 
 
-  /**
-   * Create custom 'overlay' for off canvas sidebar
-   *
-   * 1. Overlay over bottom border
-   * 2. Hide with negative z-index and opacity: 0
-   * 3. Give it a transition
-   * 4. Do not display when screen is wide enough
-   */
-
-  @include psuedo(before) {
-    @include coverall;
-    margin-bottom: -1px; /* 1 */
-    z-index: -1; /* 2 */
-    opacity: 0; /* 2 */
-    background: $overlay-background;
-    @include transition(opacity); /* 3 */
-
-    @include breakpoint($desktop) {
-      display: none; /* 4 */
-    }
-  }
-
   /* When flexbox is in use */
 
   @include flexbox {
@@ -143,6 +121,10 @@ Styleguide 2.22
 /* Titlebar contents */
 
 .k-titlebar {
+  .k-off-canvas-overlay {
+    bottom: -1px; /* Also cover the bottom border */
+  }
+
   .off-canvas-menu-toggle-holder,
   h2 {
     display: table-cell;

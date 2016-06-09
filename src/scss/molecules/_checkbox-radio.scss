@@ -1,21 +1,27 @@
 /* ==========================================================================
-   CSS only styled checkboxes and radio boxes
+   Checkbox & Radio inputs
    ========================================================================== */
+
+/*
+Checkbox & Radio inputs
+
+CSS only styled checkboxes and radio boxes
+
+markup:
+<input type="checkbox" id="input1">
+<label for="input1">Label 1</label>
+<input type="radio" id="input2">
+<label for="input2">Label 2</label>
+<!-- Or -->
+<label><input type="checkbox" id="input1"> Label 1</label>
+<label><input type="radio" id="input2"> Label 2</label>
+
+Styleguide 2.4
+
+*/
 
 /**
  * Shared styling between radio boxes and checkboxes
- *
- * Handles following markup styles:
- *
- * Markup example 1:
- * <input id="input1">
- * <label for="input1">Label 1</label>
- * <input id="input2">
- * <label for="input2">Label 2</label>
- *
- * Markup example 2:
- * <label><input id="input1"> Label 1</label>
- * <label><input id="input2"> Label 2</label>
  */
 
 @include modernizr('.k-appearance.k-checked') {
