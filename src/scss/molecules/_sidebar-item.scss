@@ -1,8 +1,30 @@
-
-/* Sidebar contents
+/* ==========================================================================
+   Sidebar item
    ========================================================================== */
 
-/* Sidebar item */
+/*
+Sidebar item
+
+The default sidebar item
+- Adds bottom spacing when multiple sidebar items are being used
+- Adds flexbox styling
+- Add `.k-sidebar-item--flex` to the sidebar items that need to <b>grow</b> with the layout
+- Add `.k-sidebar-item--overflow` to the sidebar items that need to <b>shrink</b> and <b>overflow</b> it's contents
+- Use <b>only</b> inside a `.k-sidebar`
+- {unsureText}
+
+default - Default
+.k-sidebar-item--flex - Flexing container that will grow (and not shrink)
+.k-sidebar-item--overflow - Flexing container that will shrink (and not grow) and overflow it's content
+
+markup:
+<div class="k-sidebar-item {$modifiers}">
+    ...
+</div><!-- .k-sidebar-item -->
+
+Styleguide 2.21
+
+*/
 
 .k-sidebar-item {
   width: 100%;
@@ -19,10 +41,56 @@
     }
   }
 
+  /**
+   * Overflowing items
+   *
+   * 1. Set container to overflow it's items
+   */
+
+  &--overflow {
+    overflow: auto; /* 1 */
+
+    @include flexbox {
+      flex: 0 1 auto;
+    }
+
+    @include resizing {
+      overflow: hidden;
+    }
+
+
+    /**
+     * Box shadow for overflowing containers
+     *
+     * 1. Set as same color as background to make it look like text is fading
+     */
+
+    & ~ [class^="overflowing"] {
+      color: $sidebar-background;
+    }
+  }
 }
 
 
-/* Sidebar header */
+/*
+Sidebar item header
+
+The default sidebar item header
+- Use <b>only</b> inside a `.k-sidebar-item`
+
+markup:
+<div class="k-sidebar-item__header">
+    {Title}
+</div><!-- .k-sidebar-item__header -->
+
+sg-wrapper:
+<div class="k-sidebar-item">
+    <sg-wrapper-content/>
+</div><!-- .k-sidebar-item -->
+
+Styleguide 2.21.1
+
+*/
 
 .k-sidebar-item__header {
   padding: $spacing $spacing 0;
@@ -32,7 +100,29 @@
 }
 
 
-/* Sidebar content */
+/*
+Sidebar item content
+
+The default sidebar item content
+- Adds spacing
+- Use <b>only</b> inside a `.k-sidebar-item`
+
+default - Default
+.k-sidebar-item__content--small - Smaller padding
+
+markup:
+<div class="k-sidebar-item__content {$modifiers}">
+    <sg-wrapper-content/>
+</div><!-- .k-sidebar-item__content -->
+
+sg-wrapper:
+<div class="k-sidebar-item">
+    <sg-wrapper-content/>
+</div><!-- .k-sidebar-item -->
+
+Styleguide 2.21.2
+
+*/
 
 .k-sidebar-item__content {
   padding: $spacing;
@@ -40,34 +130,4 @@
 
 .k-sidebar-item__content--small {
   padding: $spacing-small $spacing;
-}
-
-
-/**
- * Overflowing items
- *
- * 1. Set container to overflow it's items
- */
-
-.k-sidebar-item--overflow {
-  overflow: auto; /* 1 */
-
-  @include flexbox {
-    flex: 0 1 auto;
-  }
-
-  @include resizing {
-    overflow: hidden;
-  }
-
-
-  /**
-   * Box shadow for overflowing containers
-   *
-   * 1. Set as same color as background to make it look like text is fading
-   */
-
-  & ~ [class^="overflowing"] {
-    color: $sidebar-background;
-  }
 }

@@ -324,7 +324,7 @@ if(this.$element.prop("multiple"))this.current(function(d){var e=[];a=[a],a.push
             }
 
             // Create overlay wrapper
-            if ( !offCanvasOverlay.length ) {
+            if ( container.find('.' + plugin.settings.offCanvasOverlay)[0] == undefined ) {
                 container.append('<div class="' + plugin.settings.offCanvasOverlay + '">');
             }
 
@@ -632,41 +632,57 @@ if(this.$element.prop("multiple"))this.current(function(d){var e=[];a=[a],a.push
                 '<span class="bar2"></span>' +
                 '<span class="bar3"></span>' +
                 '</button></div>',
-                sidebar_left  = $('#k-sidebar-left'),
-                sidebar_right = $('#k-sidebar-right');
+                sidebar_left  = $('.js-sidebar-left'),
+                sidebar_right = $('.js-sidebar-right');
+
+            function addOffCanvasButton(element, position) {
+                // Variables
+                var kContainer = '.koowa-container',
+                    titlebar = element.closest(kContainer).find('.k-titlebar')[0],
+                    toolbar = element.closest(kContainer).find('.k-toolbar')[0],
+                    wrapper = element.closest(kContainer).find('.k-wrapper')[0],
+                    content = element.closest(kContainer).find('.k-content')[0],
+                    toggle = element.closest(kContainer).find('.off-canvas-menu-toggle-holder--' + position),
+                    $toggle = $(toggle_button);
+
+                // Add proper class to toggle buttons
+                $toggle.addClass('off-canvas-menu-toggle-holder--' + position);
+
+                // Add toggle buttons
+                if ( toggle[0] == undefined ) {
+                    if ( titlebar != undefined ) {
+                        if ( position == 'left' ) {
+                            $(titlebar).prepend($toggle);
+                        } else if ( position == 'right') {
+                            $(titlebar).append($toggle);
+                        }
+                    } else if ( toolbar != undefined ) {
+                        if ( position == 'left' ) {
+                            $(toolbar).prepend($toggle);
+                        } else if ( position == 'right') {
+                            $(toolbar).append($toggle);
+                        }
+                    }
+
+                    // Initialize the offcanvas plugin
+                    element.offCanvasMenu({
+                        menuToggle: $toggle,
+                        wrapper: $(wrapper),
+                        container: $(content),
+                        position: position
+                    });
+                }
+            }
 
             if (sidebar_left.length) {
-                var left_toggle = $(toggle_button);
-                left_toggle.addClass('off-canvas-menu-toggle-holder--right');
-
-                if ($titlebar.length) {
-                    $titlebar.prepend(left_toggle);
-                } else if ($toolbar.length) {
-                    $toolbar.prepend(left_toggle);
-                }
-
-                sidebar_left.offCanvasMenu({
-                    menuToggle: left_toggle,
-                    wrapper: $wrapper,
-                    container: $content
+                $.each(sidebar_left, function() {
+                    addOffCanvasButton($(this), 'left');
                 });
             }
 
             if (sidebar_right.length) {
-                var right_toggle = $(toggle_button);
-                right_toggle.addClass('off-canvas-menu-toggle-holder--right');
-
-                if ($titlebar.length) {
-                    $titlebar.append(right_toggle);
-                } else if ($toolbar.length) {
-                    $toolbar.append(right_toggle);
-                }
-
-                sidebar_right.offCanvasMenu({
-                    menuToggle: right_toggle,
-                    wrapper: $wrapper,
-                    container: $content,
-                    position: 'right'
+                $.each(sidebar_right, function(i) {
+                    addOffCanvasButton($(this), 'right');
                 });
             }
         }

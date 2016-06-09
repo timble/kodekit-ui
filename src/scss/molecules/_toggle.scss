@@ -1,27 +1,30 @@
 /* ==========================================================================
-   CSS only animated checkbox toggle styling
+   Toggle
    ========================================================================== */
 
-/** Default checkbox toggle
-    =========================================================================
+/*
+Toggle
 
-<div class="k-checkbox-toggle">
-  <input type="checkbox" name="group1" id="group1a" value="1">
-  <label for="group1a">
-    <span data-true="✓" data-false="✖">Do something?</span>
+CSS only animated checkbox toggle styling
+
+default - Default
+.k-checkbox-toggle--neutral - Neutral
+
+markup:
+<div class="k-checkbox-toggle {$modifiers}">
+  <input type="checkbox" name="group1" id="group1{$modifiers}" value="1">
+  <label for="group1{$modifiers}">
+    <span>{label}</span>
   </label>
 </div>
-*/
 
-/** Neutral checkbox toggle
-    =========================================================================
-
-<div class="k-checkbox-toggle k-checkbox-toggle--neutral">
-  <input type="checkbox" name="group1" id="group1a" value="1">
-  <label for="group1a">
-    <span data-true="✓" data-false="✖">Do something?</span>
-  </label>
+sg-wrapper:
+<div class="sg-fullbox" style="max-width: 400px;">
+    <sg-wrapper-content/>
 </div>
+
+Styleguide 2.23
+
 */
 
 
@@ -103,59 +106,58 @@
       position: relative;
       z-index: 1;
       overflow: hidden;
+
+      &:before,
+      &:after {
+        text-align: center;
+        font-size: 12px;
+        line-height: $checkbox-toggle-height-inner - $checkbox-toggle-border-width;
+      }
+
+      /**
+       * The right fake toggle handler
+       *
+       * This is only the "data-false" content
+       * The actual handler is the :after element
+       */
+
+      @include icon-before(x, true) {
+        top: $checkbox-toggle-border-width + $checkbox-toggle-padding;
+        right: $checkbox-toggle-border-width + $checkbox-toggle-padding;
+        width: $checkbox-toggle-width-inner - $checkbox-toggle-height-inner;
+        height: $checkbox-toggle-height-inner;
+        border: 1px solid transparent;
+        color: white;
+        font-size: 12px;
+        text-align: center;
+        @include transition;
+      }
+
+
+      /**
+       * The left fake toggle handler
+       *
+       * This :after element actually holds the fake handler
+       * 1. The "data-true" content is shown here as well by using a negative text-indent
+       * 2. Text color set to 0 by default so it won't show outside the toggle area
+       */
+
+      @include icon-after(check, true) {
+        top: $checkbox-toggle-border-width + $checkbox-toggle-padding;
+        right: ($checkbox-toggle-size * 2) - $checkbox-toggle-height-inner - ($checkbox-toggle-border-width + $checkbox-toggle-padding);
+        width: $checkbox-toggle-height-inner;
+        height: $checkbox-toggle-height-inner;
+        border: 1px solid $checkbox-toggle-0;
+        border-radius: $checkbox-toggle-border-radius - $checkbox-toggle-padding;
+        background: white;
+        text-indent: -($checkbox-toggle-width-inner); /* 1 */
+        text-align: center;
+        color: rgba(white, 0); /* 2 */
+        font-size: 12px;
+        @include transition;
+      }
     }
 
-    span:before,
-    span:after {
-      -webkit-font-smoothing: antialiased;
-      font-size: .8125em;
-      line-height: $checkbox-toggle-height-inner - 2;
-      text-transform: uppercase;
-      text-align: center;
-      @include transition;
-    }
-
-
-    /**
-     * The right fake toggle handler
-     *
-     * This is only the "data-false" content
-     * The actual handler is the :after element
-     */
-
-    span:before {
-      top: $checkbox-toggle-border-width + $checkbox-toggle-padding;
-      right: $checkbox-toggle-border-width + $checkbox-toggle-padding;
-      width: $checkbox-toggle-width-inner - $checkbox-toggle-height-inner;
-      height: $checkbox-toggle-height-inner;
-      border: 1px solid transparent;
-      content: attr(data-false);
-      color: white;
-    }
-
-
-    /**
-     * The left fake toggle handler
-     *
-     * This :after element actually holds the fake handler
-     * 1. The "data-true" content is shown here as well by using a negative text-indent
-     * 2. Text color set to 0 by default so it won't show outside the toggle area
-     */
-
-    span:after {
-      top: $checkbox-toggle-border-width + $checkbox-toggle-padding;
-      right: ($checkbox-toggle-size * 2) - $checkbox-toggle-height-inner - ($checkbox-toggle-border-width + $checkbox-toggle-padding);
-      width: $checkbox-toggle-height-inner;
-      height: $checkbox-toggle-height-inner;
-      border: 1px solid $checkbox-toggle-0;
-      border-radius: $checkbox-toggle-border-radius - $checkbox-toggle-padding;
-      background: white;
-      content: attr(data-true); /* 1 */
-      text-indent: -($checkbox-toggle-width-inner); /* 1 */
-      text-align: center;
-      color: rgba(white, 0); /* 2 */
-      @include transition;
-    }
 
 
     /* Toggle area styling on focus / active */

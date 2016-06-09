@@ -57,7 +57,7 @@
             }
 
             // Create overlay wrapper
-            if ( !offCanvasOverlay.length ) {
+            if ( container.find('.' + plugin.settings.offCanvasOverlay)[0] == undefined ) {
                 container.append('<div class="' + plugin.settings.offCanvasOverlay + '">');
             }
 

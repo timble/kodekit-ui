@@ -18,9 +18,9 @@ markup:
                 <form class="k-form-layout -koowa-form" action="" method="post">
                     <!-- Container -->
                     <div class="k-container">
-                        <span class="k-toolbar-buttons">
+                        <div class="k-container__full">
                             <div class="k-heading">Create new document</div>
-                        </span>
+                        </div>
                         <!-- Main fields -->
                         <div class="k-container__main">
                             <fieldset>
@@ -51,5 +51,55 @@ markup:
 </div><!-- .k-wrapper -->
 
 Styleguide 5.2
+
+*/
+
+
+/**
+ * Batch view
+ *
+ * Batch form view
+
+markup:
+<!-- Wrapper -->
+<div class="k-wrapper">
+    <!-- Overview -->
+    <div class="k-content-wrapper">
+        <!-- The content -->
+        <div class="k-content">
+            <!-- Toolbar -->
+            <sg-insert>3.7</sg-insert>
+            <!-- Component -->
+            <div class="k-component">
+                <!-- Container -->
+                <div class="k-container">
+                    <div class="k-container__full">
+                        <div class="k-heading">Batch values</div>
+                    </div>
+                    <!-- Main fields -->
+                    <form class="k-container__main">
+                        <fieldset>
+                            <div class="form-group">
+                                <label>Category</label>
+                                <select>
+                                    <option>Option</option>
+                                    <option>Option</option>
+                                </select>
+                            </div>
+                        </fieldset>
+                    </form><!-- .k-container__main -->
+                    <div class="k-container__full">
+                        <fieldset>
+                            <legend>Documents</legend>
+                            <sg-insert>3.2</sg-insert>
+                        </fieldset>
+                    </div>
+                </div><!-- .k-container -->
+            </div><!-- .k-component -->
+        </div><!-- .k-content -->
+    </div><!-- .k-content-wrapper -->
+</div><!-- .k-wrapper -->
+
+Styleguide 5.2.1
 
 */

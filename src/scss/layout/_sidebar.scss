@@ -1,3 +1,7 @@
+/* ==========================================================================
+   Sidebar
+   ========================================================================== */
+
 /*
 Sidebar
 
@@ -7,8 +11,8 @@ Left and right sidebars
 - Make sure you <b>Always</b> have a `.k-content` container when a sidebar is used
 - {unsureText}
 
-.k-sidebar-left - Left sidebar
-.k-sidebar-right - Right sidebar
+.k-sidebar-left.js-sidebar-left - Left sidebar
+.k-sidebar-right.js-sidebar-right - Right sidebar
 
 markup:
 <div class="{$modifiers}">
@@ -138,7 +142,7 @@ Styleguide 4.4
 /* When sidebar is toggled */
 
 .opened--left {
-  .k-sidebar {
+  .k-sidebar-left {
     display: block;
   }
 }

@@ -1,10 +1,14 @@
 /* ==========================================================================
-   CSS only animated option list
+   Option list
    ========================================================================== */
 
-/** Default option list
-    =========================================================================
+/*
+Option list
 
+CSS only animated option list
+- Use for several options
+
+markup:
 <div class="k-option-list">
   <input type="radio" name="name" id="id0" value="0" checked="checked">
   <label for="id0">Option 1</label>
@@ -14,6 +18,9 @@
   <label for="id2">Option 3</label>
   <div class="faux-focus"></div>
 </div>
+
+Styleguide 2.19
+
 */
 
 /**

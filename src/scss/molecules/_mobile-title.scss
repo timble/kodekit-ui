@@ -2,6 +2,29 @@
    Mobile title
    ========================================================================== */
 
+/*
+Mobile title
+
+Title just for mobile
+- Use <b>never</b> together with a `.k-titlebar`
+- Use <b>only</b> as <b>child</b> of `.k-content`
+- Only visible on smaller screens
+
+markup:
+<!-- Title when sidebar is invisible -->
+<div class="k-mobile-title">
+  <h2>{Title}</h2>
+</div>
+
+sg-wrapper:
+<div class="sg-flexbox">
+  <sg-wrapper-content/>
+</div>
+
+Styleguide 2.14
+
+*/
+
 .k-mobile-title {
   background: $mobile-title-background;
   @include border(bottom, $mobile-title-border);

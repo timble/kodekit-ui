@@ -55,6 +55,10 @@
   color: $color-error;
 }
 
+.icon-minus-sign {
+  @include icon-before(minus, true);
+  color: $color-error;
+}
 
 .k-icon-config {
   @include icon-before(cog, true);

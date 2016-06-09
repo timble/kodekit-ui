@@ -39,6 +39,12 @@ Styleguide 2.2
 */
 
 .k-details {
+  margin-bottom: 1.5em; /* 1 */
+
+  &:last-child {
+    margin-bottom: 0; /* 2 */
+  }
+
   p {
     margin-bottom: $spacing-tiny;
   }

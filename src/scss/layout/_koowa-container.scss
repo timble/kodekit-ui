@@ -1,3 +1,7 @@
+/* ==========================================================================
+   Koowa container
+   ========================================================================== */
+
 /*
 Koowa container
 
@@ -25,7 +29,7 @@ Styleguide 4.1
  * 6. Default styling
  */
 
-.koowa-container {
+&.koowa-container {
   position: relative; /* 4 */
   z-index: 0; /* 3 */
 

@@ -3,5 +3,9 @@
 .k-heading {
   font-size: $font-size--large;
   line-height: $line-height--large;
-  margin: 0 0 $spacing;
+  margin-bottom: $spacing;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }

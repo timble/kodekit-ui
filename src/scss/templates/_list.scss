@@ -11,17 +11,14 @@ markup:
         <!-- Overview -->
         <div class="k-content-wrapper">
             <!-- Sidebar -->
-            <div id="k-sidebar-left" class="k-sidebar-left">
+            <div class="k-sidebar-left js-sidebar-left">
                 <sg-insert>2.15-all</sg-insert>
                 {jqtree}
                 {quickfliters}
             </div>
             <!-- Content -->
             <div class="k-content">
-                <!-- Title when sidebar is inivisible -->
-                <div class="k-mobile-title">
-                    <h2>{Title}</h2>
-                </div>
+                <sg-insert>2.14</sg-insert>
                 <!-- Toolbar -->
                 <sg-insert>3.7</sg-insert>
                 <!-- Component -->
@@ -54,7 +51,7 @@ markup:
     <!-- Overview -->
     <div class="k-content-wrapper">
         <!-- Sidebar -->
-        <div id="k-sidebar-left" class="k-sidebar-left">
+        <div class="k-sidebar-left js-sidebar-left">
             <sg-insert>2.15-all</sg-insert>
         </div>
         <!-- Content -->
@@ -70,7 +67,7 @@ markup:
             </div><!-- .k-component -->
         </div><!-- k-content -->
         <!-- Sidebar -->
-        <div id="k-sidebar-right" class="k-sidebar-right">
+        <div class="k-sidebar-right js-sidebar-right">
             <div class="k-sidebar-item">
                 <div class="k-sidebar-item__header">
                     Selected file info

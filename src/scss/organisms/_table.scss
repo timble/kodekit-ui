@@ -43,11 +43,46 @@ markup:
         </tbody>
         </table>
     </div>
+    <div class="k-table-pagination">
+        <div class="k-pagination">
+            <div class="limit">
+                <select name="limit" size="1">
+                    <option value="5" class="level1">5</option>
+                    <option value="10" class="level1">10</option>
+                    <option value="15" class="level1">15</option>
+                    <option value="20" class="level1" selected="selected">20</option>
+                    <option value="25" class="level1">25</option>
+                    <option value="30" class="level1">30</option>
+                    <option value="50" class="level1">50</option>
+                    <option value="100" class="level1">100</option>
+                </select>
+            </div>
+              <ul class="pagination">
+                  <li class="active"><a>1</a></li>
+                  <li>
+                      <a href="{url}">2</a>
+                  </li>
+                  <li>
+                      <a href="{url}">3</a>
+                  </li>
+                  <li>
+                      <a href="{url}">4</a>
+                  </li>
+                  <li>
+                      <a href="{url}">5</a>
+                  </li>
+                  <li>
+                      <a href="{url}">»</a>
+                  </li>
+              </ul>
+        </div>
+    </div>
 </div>
 
 Styleguide 3.5
 
 */
+
 
 
 .k-table-container {
