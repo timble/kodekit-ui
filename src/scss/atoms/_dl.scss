@@ -1,0 +1,53 @@
+/**
+ * Definition list
+
+Default dl style
+- definition lists have a bottom margin to separate them from each other
+- The last-child doesn't have this bottom margin so parent containers can have four-sided paddings
+
+markup:
+<dl>
+    <dt>Name</dt>
+    <dd>attachments</dd>
+    <dt>Dimensions</dt>
+    <dd>908 x 655</dd>
+    <dt>Size</dt>
+    <dd>66.60 KB</dd>
+</dl>
+
+Styleguide 1.2
+
+*/
+
+/**
+ * 1. Default bottom-margin of 1.5 times the font-size
+ * 2. Using single colon so it works in IE8 as well
+ * 3. No bottom-margin for all the last-childs so parents can have bottom padding
+ */
+
+dl {
+  margin-bottom: 1.5em; /* 1 */
+  @include clearfix;
+
+  &:last-child { /* 2 */
+    margin-bottom: 0; /* 3 */
+  }
+}
+
+dt {
+  @include reset;
+  font-weight: $bold;
+  float: left;
+  clear: left;
+  margin-right: $spacing-tiny;
+}
+
+dd {
+  @include reset;
+  display: block;
+  margin-bottom: $spacing-tiny;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

@@ -17,7 +17,7 @@
 @import "../../../node_modules/select2/src/scss/core";
 @import "../../../node_modules/select2-bootstrap-theme/src/select2-bootstrap";
 @import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/dropdowns"; /* 1 */
-@import "../organisms/modal";
+@import "../molecules/modal";
 @import "../molecules/select2";
 @import "../molecules/datepicker";
 // styleguide:ignore:end
@@ -106,9 +106,6 @@
 
   /* Molecules */
   @import "../molecules/molecules";
-
-  /* Organisms */
-  @import "../organisms/organisms";
 
 
   /**

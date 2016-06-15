@@ -16,7 +16,12 @@ markup:
 <label><input type="checkbox" id="input1"> Label 1</label>
 <label><input type="radio" id="input2"> Label 2</label>
 
-Styleguide 2.4
+sg-wrapper:
+<div class="form-group">
+    <sg-wrapper-content/>
+</div>
+
+Styleguide 2.5
 
 */
 

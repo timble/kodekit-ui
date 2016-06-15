@@ -4,48 +4,45 @@
  * The default list view
 
 markup:
-<!-- Koowa -->
-<div class="koowa-container koowa">
-    <!-- Wrapper -->
-    <div class="k-wrapper">
-        <!-- Content wrapper -->
-        <div class="k-content-wrapper">
-            <!-- Sidebar -->
-            <div class="k-sidebar-left js-sidebar-left">
-                <sg-insert>2.15-all</sg-insert>
-                <div class="k-sidebar-item k-sidebar-item--overflow">
-                    <div class="k-sidebar-item__header">
-                        Categories
-                    </div>
-                    <sg-insert>2.24</sg-insert>
+<!-- Wrapper -->
+<div class="k-wrapper">
+    <!-- Content wrapper -->
+    <div class="k-content-wrapper">
+        <!-- Sidebar -->
+        <div class="k-sidebar-left js-sidebar-left">
+            <sg-insert>2.15-all</sg-insert>
+            <div class="k-sidebar-item k-sidebar-item--overflow">
+                <div class="k-sidebar-item__header">
+                    Categories
                 </div>
-                <div class="k-sidebar-item">
-                    <div class="k-sidebar-item__header">
-                        Quick filters
-                    </div>
-                    <sg-insert>2.10</sg-insert>
-                </div>
+                <sg-insert>2.24</sg-insert>
             </div>
-            <!-- Content -->
-            <div class="k-content">
-                <sg-insert>2.14</sg-insert>
-                <!-- Toolbar -->
-                <sg-insert>3.7</sg-insert>
-                <!-- Component -->
-                <div class="k-component">
-                    <!-- Form -->
-                    <form class="k-form-layout -koowa-grid" id="k-offcanvas-container" action="" method="get">
-                        <sg-insert>3.1</sg-insert>
-                        <sg-insert>3.4</sg-insert>
-                        <sg-insert>3.5</sg-insert>
-                    </form><!-- .k-list-layout -->
-                </div><!-- .k-component -->
-            </div><!-- k-content -->
-        </div><!-- .k-content-wrapper -->
-    </div><!-- .k-wrapper -->
-</div><!-- .koowa-container -->
+            <div class="k-sidebar-item">
+                <div class="k-sidebar-item__header">
+                    Quick filters
+                </div>
+                <sg-insert>2.10</sg-insert>
+            </div>
+        </div>
+        <!-- Content -->
+        <div class="k-content">
+            <sg-insert>2.14</sg-insert>
+            <!-- Toolbar -->
+            <sg-insert>2.70</sg-insert>
+            <!-- Component -->
+            <div class="k-component">
+                <!-- Form -->
+                <form class="k-form-layout -koowa-grid" id="k-offcanvas-container" action="" method="get">
+                    <sg-insert>2.4</sg-insert>
+                    <sg-insert>2.40</sg-insert>
+                    <sg-insert>2.50</sg-insert>
+                </form><!-- .k-list-layout -->
+            </div><!-- .k-component -->
+        </div><!-- k-content -->
+    </div><!-- .k-content-wrapper -->
+</div><!-- .k-wrapper -->
 
-Styleguide 5.1
+Styleguide 4.1
 
 */
 
@@ -76,9 +73,9 @@ markup:
             <div class="k-component">
                 <!-- Form -->
                 <form class="k-form-layout -koowa-grid" id="k-offcanvas-container" action="" method="get">
-                    <sg-insert>3.1</sg-insert>
-                    <sg-insert>3.4</sg-insert>
-                    <sg-insert>3.5</sg-insert>
+                    <sg-insert>2.4</sg-insert>
+                    <sg-insert>2.40</sg-insert>
+                    <sg-insert>2.50</sg-insert>
                 </form><!-- .k-list-layout -->
             </div><!-- .k-component -->
         </div><!-- k-content -->
@@ -89,13 +86,22 @@ markup:
                     Selected file info
                 </div>
                 <div class="k-sidebar-item__content">
-                    <sg-insert>2.2</sg-insert>
+                    <sg-insert>2.20.1</sg-insert>
+                    <sg-insert>1.2</sg-insert>
+                    <form>
+                        <sg-insert>2.12.1</sg-insert>
+                        <div class="form-group">
+                            <a id="insert-modal-cancel" href="#">Cancel</a>
+                            <span class="insert-or">or</span>
+                            <button type="button" id="insert-link" class="btn btn-primary">Insert</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div><!-- .k-content-wrapper -->
 </div><!-- .k-wrapper -->
 
-Styleguide 5.1.1
+Styleguide 4.1.1
 
 */
