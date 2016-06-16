@@ -10,14 +10,24 @@ markup:
     {content}
 </legend>
 
+sg-wrapper:
+<fieldset>
+    <sg-wrapper-content/>
+</fieldset>
+
 Styleguide 1.5
 
 */
 
 legend {
+  width: 100%;
+  padding: 0;
+  color: $legend-color;
+  border: 0;
   display: block;
   margin-top: 0;
   margin-bottom: $spacing;
+  border: none;
   border-bottom: 1px solid darker($form-background);
   padding-top: $spacing;
   padding-bottom: 4px;

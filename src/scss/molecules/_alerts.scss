@@ -1,0 +1,56 @@
+/* ==========================================================================
+   Alerts
+   ========================================================================== */
+
+/*
+Alerts
+
+.k-alert--success - Success style
+.k-alert--info - Info style
+.k-alert--warning - Warning style
+.k-alert--danger - Danger style
+
+markup:
+<div class="k-alert {$modifiers}">
+    {Content}
+</div>
+
+Styleguide 2.1
+
+*/
+
+
+// Base styles
+// -------------------------
+
+.k-alert {
+  padding: $alert-padding;
+  margin-bottom: $line-height-computed;
+  border: 1px solid transparent;
+  border-radius: $alert-border-radius;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Alternate styles
+//
+// Generate contextual modifier classes for colorizing the alert.
+
+.k-alert--success {
+  @include alert-variant($alert-success-bg, $alert-success-border, $alert-success-text);
+}
+
+.k-alert--info {
+  @include alert-variant($alert-info-bg, $alert-info-border, $alert-info-text);
+}
+
+.k-alert--warning {
+  @include alert-variant($alert-warning-bg, $alert-warning-border, $alert-warning-text);
+}
+
+.k-alert--danger {
+  @include alert-variant($alert-danger-bg, $alert-danger-border, $alert-danger-text);
+}
+

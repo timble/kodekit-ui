@@ -89,11 +89,10 @@ markup:
                     <sg-insert>2.20.1</sg-insert>
                     <sg-insert>1.2</sg-insert>
                     <form>
-                        <sg-insert>2.12.1</sg-insert>
+                        <sg-insert>2.13</sg-insert>
                         <div class="form-group">
-                            <a id="insert-modal-cancel" href="#">Cancel</a>
-                            <span class="insert-or">or</span>
-                            <button type="button" id="insert-link" class="btn btn-primary">Insert</button>
+                            <button type="button" class="k-button k-button--primary">Insert file</button>
+                            <a class="k-button k-button--default" href="#">Cancel</a>
                         </div>
                     </form>
                 </div>

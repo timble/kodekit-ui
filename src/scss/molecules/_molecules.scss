@@ -5,20 +5,26 @@
 // Styleguide 2.0
 
 @import "acl";
+@import "alerts";
 @import "batch-list";
 @import "booleanlist";
 @import "breadcrumb";
+@import "buttons";
+@import "button-groups";
 @import "checkbox-radio";
+@import "component-animations";
 @import "dropdown";
 @import "dropdowngrid";
 @import "extension-groups";
 @import "floatthead";
 @import "form-block";
+@import "forms";
 @import "grid";
 @import "hamburger";
 @import "heading";
 @import "iconpicker";
 @import "icons";
+@import "input-groups";
 @import "jqtree";
 @import "layout-switcher";
 @import "list";
@@ -28,6 +34,7 @@
 @import "navigation";
 @import "no-items-alert";
 @import "optionlist";
+@import "pagination";
 @import "preview";
 @import "scopebar";
 @import "sidebar-item";
@@ -35,4 +42,6 @@
 @import "titlebar";
 @import "toggle";
 @import "toolbar";
+@import "tooltip";
 @import "tree";
+@import "wells";

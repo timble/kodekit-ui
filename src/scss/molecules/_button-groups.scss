@@ -1,0 +1,252 @@
+/* ==========================================================================
+   Button groups
+   ========================================================================== */
+
+/*
+Button groups
+
+Groups of buttons
+
+markup:
+<div class="k-button-group">
+    <button type="button" class="k-button k-button--default is-active">Button</button>
+    <button type="button" class="k-button k-button--default">Button</button>
+    <button type="button" class="k-button k-button--default">Button</button>
+</div>
+
+Styleguide 2.2.1
+
+*/
+
+// Make the div behave like a button
+.k-button-group,
+.k-button-group-vertical {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle; // match .k-button alignment given font-size hack above
+  > .k-button {
+    position: relative;
+    float: left;
+    margin: 0;
+    // Bring the "active" button to the front
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      z-index: 2;
+    }
+  }
+}
+
+// Prevent double borders when buttons are next to each other
+.k-button-group {
+  .k-button + .k-button,
+  .k-button + .k-button-group,
+  .k-button-group + .k-button,
+  .k-button-group + .k-button-group {
+    margin-left: -1px;
+  }
+}
+
+// Optional: Group multiple button groups together for a toolbar
+.k-button-toolbar {
+  margin-left: -5px; // Offset the first child's margin
+  @include clearfix;
+
+  .k-button,
+  .k-button-group,
+  .input-group {
+    float: left;
+  }
+  > .k-button,
+  > .k-button-group,
+  > .input-group {
+    margin-left: 5px;
+  }
+}
+
+.k-button-group > .k-button:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+  border-radius: 0;
+}
+
+// Set corners individual because sometimes a single button can be in a .k-button-group and we need :first-child and :last-child to both match
+.k-button-group > .k-button:first-child {
+  margin-left: 0;
+  &:not(:last-child):not(.dropdown-toggle) {
+    @include border-right-radius(0);
+  }
+}
+// Need .dropdown-toggle since :last-child doesn't apply given a .dropdown-menu immediately after it
+.k-button-group > .k-button:last-child:not(:first-child),
+.k-button-group > .dropdown-toggle:not(:first-child) {
+  @include border-left-radius(0);
+}
+
+// Custom edits for including btn-groups within btn-groups (useful for including dropdown buttons within a btn-group)
+.k-button-group > .k-button-group {
+  float: left;
+}
+.k-button-group > .k-button-group:not(:first-child):not(:last-child) > .k-button {
+  border-radius: 0;
+}
+.k-button-group > .k-button-group:first-child:not(:last-child) {
+  > .k-button:last-child,
+  > .dropdown-toggle {
+    @include border-right-radius(0);
+  }
+}
+.k-button-group > .k-button-group:last-child:not(:first-child) > .k-button:first-child {
+  @include border-left-radius(0);
+}
+
+// On active and open, don't show outline
+.k-button-group .dropdown-toggle:active,
+.k-button-group.open .dropdown-toggle {
+  outline: 0;
+}
+
+
+// Split button dropdowns
+// ----------------------
+
+// Give the line between buttons some depth
+.k-button-group > .k-button + .dropdown-toggle {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.k-button-group > .k-button-lg + .dropdown-toggle {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+// The clickable button for toggling the menu
+// Remove the gradient and set the same inset shadow as the :active state
+.k-button-group.open .dropdown-toggle {
+  @include box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+
+  // Show no shadow for `.k-button-link` since it has no other button styles.
+  &.k-button-link {
+    @include box-shadow(none);
+  }
+}
+
+
+// Reposition the caret
+.k-button .caret {
+  margin-left: 0;
+}
+// Carets in other button sizes
+.k-button-lg .caret {
+  border-width: $caret-width-large $caret-width-large 0;
+}
+// Upside down carets for .dropup
+.dropup .k-button-lg .caret {
+  border-width: 0 $caret-width-large $caret-width-large;
+}
+
+
+// Vertical button groups
+// ----------------------
+
+.k-button-group-vertical {
+  > .k-button,
+  > .k-button-group,
+  > .k-button-group > .k-button {
+    display: block;
+    float: none;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  // Clear floats so dropdown menus can be properly placed
+  > .k-button-group {
+    @include clearfix;
+    > .k-button {
+      float: none;
+    }
+  }
+
+  > .k-button + .k-button,
+  > .k-button + .k-button-group,
+  > .k-button-group + .k-button,
+  > .k-button-group + .k-button-group {
+    margin-top: -1px;
+    margin-left: 0;
+  }
+}
+
+.k-button-group-vertical > .k-button {
+  &:not(:first-child):not(:last-child) {
+    border-radius: 0;
+  }
+  &:first-child:not(:last-child) {
+    @include border-top-radius($btn-border-radius-base);
+    @include border-bottom-radius(0);
+  }
+  &:last-child:not(:first-child) {
+    @include border-top-radius(0);
+    @include border-bottom-radius($btn-border-radius-base);
+  }
+}
+.k-button-group-vertical > .k-button-group:not(:first-child):not(:last-child) > .k-button {
+  border-radius: 0;
+}
+.k-button-group-vertical > .k-button-group:first-child:not(:last-child) {
+  > .k-button:last-child,
+  > .dropdown-toggle {
+    @include border-bottom-radius(0);
+  }
+}
+.k-button-group-vertical > .k-button-group:last-child:not(:first-child) > .k-button:first-child {
+  @include border-top-radius(0);
+}
+
+
+// Justified button groups
+// ----------------------
+
+.k-button-group-justified {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+  > .k-button,
+  > .k-button-group {
+    float: none;
+    display: table-cell;
+    width: 1%;
+  }
+  > .k-button-group .k-button {
+    width: 100%;
+  }
+
+  > .k-button-group .dropdown-menu {
+    left: auto;
+  }
+}
+
+
+// Checkbox and radio options
+//
+// In order to support the browser's form validation feedback, powered by the
+// `required` attribute, we have to "hide" the inputs via `clip`. We cannot use
+// `display: none;` or `visibility: hidden;` as that also hides the popover.
+// Simply visually hiding the inputs via `opacity` would leave them clickable in
+// certain cases which is prevented by using `clip` and `pointer-events`.
+// This way, we ensure a DOM element is visible to position the popover from.
+//
+// See https://github.com/twbs/bootstrap/pull/12794 and
+// https://github.com/twbs/bootstrap/pull/14559 for more information.
+
+[data-toggle="buttons"] {
+  > .k-button,
+  > .k-button-group > .k-button {
+    input[type="radio"],
+    input[type="checkbox"] {
+      position: absolute;
+      clip: rect(0,0,0,0);
+      pointer-events: none;
+    }
+  }
+}
+
