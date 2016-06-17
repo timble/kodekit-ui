@@ -131,3 +131,28 @@ Styleguide 2.21.2
 .k-sidebar-item__content--small {
   padding: $spacing-small $spacing;
 }
+
+
+/*
+Complete sidebar item
+
+A complete sidebar item may look like this
+
+markup:
+<div class="k-sidebar-item">
+    <div class="k-sidebar-item__header">
+        Title
+    </div><!-- .k-sidebar-item__header -->
+    <div class="k-sidebar-item__content">
+        Content
+    </div><!-- .k-sidebar-item__content -->
+</div><!-- .k-sidebar-item -->
+
+sg-wrapper:
+<div class="k-sidebar-left">
+    <sg-wrapper-content/>
+</div><!-- .k-sidebar -->
+
+Styleguide 2.21.3
+
+*/

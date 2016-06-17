@@ -1,7 +1,3 @@
-/* ==========================================================================
-   Icons
-   ========================================================================== */
-
 /*
 Icons
 
@@ -235,9 +231,7 @@ markup:
 <span class="{$modifiers}" aria-hidden="true"></span>
 
 sg-wrapper:
-<p style="font-size: 16px;">
-    <sg-wrapper-content/>
-</p>
+<p style="font-size: 16px;"><sg-wrapper-content/></p>
 
 Styleguide 2.30
 
@@ -274,9 +268,7 @@ markup:
 <span class="{$modifiers}" aria-hidden="true"></span>
 
 sg-wrapper:
-<p style="font-size: 16px;">
-    <sg-wrapper-content/>
-</p>
+<p style="font-size: 16px;"><sg-wrapper-content/></p>
 
 Styleguide 2.30.1
 
@@ -332,13 +324,7 @@ Styleguide 2.30.1
 .koowa_icon--video { @include icon-before(k-video,true); }
 
 
-
-/* ==========================================================================
-   Icon colors
-   ========================================================================== */
-
-/**
-
+/*
 Icon colors
 
 Give your icons more meaning by giving them a color
@@ -348,12 +334,10 @@ Give your icons more meaning by giving them a color
 .k-icon-error - Error color
 
 markup:
-<span class="k-icon-k-folder {$modifiers}" aria-hidden="true"></span>
+<span class="k-icon-home {$modifiers}" aria-hidden="true"></span>
 
 sg-wrapper:
-<p style="font-size: 16px;">
-    <sg-wrapper-content/>
-</p>
+<p style="font-size: 16px;"><sg-wrapper-content/></p>
 
 Styleguide 2.30.2
 

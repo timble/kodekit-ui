@@ -1,15 +1,20 @@
-// Normalize form controls
-//
-// While most of our form styles require extra classes, some basic normalization
-// is required to ensure optimum display with or without those classes to better
-// address browser inconsistencies.
+/*
+Input
 
-// Override content-box in Normalize (* isn't specific enough)
+Normalize form controls
+While most of our form styles require extra classes, some basic normalization
+is required to ensure optimum display with or without those classes to better
+address browser inconsistencies.
+
+*/
+
+
+/* Override content-box in Normalize (* isn't specific enough) */
 input[type="search"] {
-  @include box-sizing(border-box);
+  box-sizing: border-box;
 }
 
-// Position radios and checkboxes better
+/* Position radios and checkboxes better */
 input[type="radio"],
 input[type="checkbox"] {
   margin: 4px 0 0;
@@ -21,19 +26,19 @@ input[type="file"] {
   display: block;
 }
 
-// Make range inputs behave like textual form controls
+/* Make range inputs behave like textual form controls */
 input[type="range"] {
   display: block;
   width: 100%;
 }
 
-// Make multiple select elements height not fixed
+/* Make multiple select elements height not fixed */
 select[multiple],
 select[size] {
   height: auto;
 }
 
-// Focus for file, radio, and checkbox
+/* Focus for file, radio, and checkbox */
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {

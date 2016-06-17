@@ -1,88 +1,157 @@
-/* ==========================================================================
-   Table
-   ========================================================================== */
+/*
+Table
 
-/**
- * Table
- *
- * Default table styling
+Default table styling
 
 markup:
 <!-- Table -->
 <div class="k-table-container">
     <div class="k-table">
-        <table>
+        <table class="table--fixed footable">
         <thead>
             <tr>
-                <th width="1%"><input type="checkbox" class="-koowa-grid-checkall"></th>
-                <th>{content}</th>
-                <th>{content}</th>
+                <th width="1%"><input type="checkbox"/></th>
+                <th><a href="#">Item title</a></th>
+                <th width="5%"><a href="#">{content}</a></th>
+                <th width="5%"><a href="#">{content}</a></th>
+                <th width="5%"><a href="#">{content}</a></th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td><input type="checkbox" class="-koowa-grid-checkbox"></td>
+                <sg-insert>2.50.3</sg-insert>
                 <td>{content}</td>
-                <td>{content}</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="-koowa-grid-checkbox"></td>
                 <td>{content}</td>
                 <td>{content}</td>
             </tr>
             <tr>
                 <td><input type="checkbox" class="-koowa-grid-checkbox"></td>
+                <sg-insert>2.50.3</sg-insert>
+                <td>{content}</td>
                 <td>{content}</td>
                 <td>{content}</td>
             </tr>
             <tr>
                 <td><input type="checkbox" class="-koowa-grid-checkbox"></td>
+                <sg-insert>2.50.3</sg-insert>
+                <td>{content}</td>
+                <td>{content}</td>
+                <td>{content}</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="-koowa-grid-checkbox"></td>
+                <sg-insert>2.50.3</sg-insert>
+                <td>{content}</td>
                 <td>{content}</td>
                 <td>{content}</td>
             </tr>
         </tbody>
         </table>
     </div>
-    <div class="k-table-pagination">
-        <div class="k-pagination">
-            <div class="limit">
-                <select name="limit" size="1">
-                    <option value="5" class="level1">5</option>
-                    <option value="10" class="level1">10</option>
-                    <option value="15" class="level1">15</option>
-                    <option value="20" class="level1" selected="selected">20</option>
-                    <option value="25" class="level1">25</option>
-                    <option value="30" class="level1">30</option>
-                    <option value="50" class="level1">50</option>
-                    <option value="100" class="level1">100</option>
-                </select>
-            </div>
-              <ul class="pagination">
-                  <li class="active"><a>1</a></li>
-                  <li>
-                      <a href="{url}">2</a>
-                  </li>
-                  <li>
-                      <a href="{url}">3</a>
-                  </li>
-                  <li>
-                      <a href="{url}">4</a>
-                  </li>
-                  <li>
-                      <a href="{url}">5</a>
-                  </li>
-                  <li>
-                      <a href="{url}">»</a>
-                  </li>
-              </ul>
-        </div>
-    </div>
+    <sg-insert>2.50.1</sg-insert>
+</div>
+
+sg-wrapper:
+<div class="k-component">
+    <sg-wrapper-content/>
 </div>
 
 Styleguide 2.50
 
 */
 
+
+
+
+/*
+Item title
+
+A title for list items
+
+markup:
+<td class="k-table-data--ellipsis"><a href="#">Item title</a></td>
+
+sg-wrapper:
+<div class="k-table-container">
+    <div class="k-table">
+        <table>
+        <tbody>
+            <tr>
+                <sg-wrapper-content/>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+
+
+Styleguide 2.50.2
+
+*/
+
+
+
+/*
+Item subtitle
+
+A subtitle for list items
+
+markup:
+<td class="k-table-data--ellipsis">
+    <a href="#">Curabitur blandit tempus porttitor.</a>
+    <small>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</small>
+</td>
+
+sg-wrapper:
+<div class="k-table-container">
+    <div class="k-table">
+        <table>
+        <tbody>
+            <tr>
+                <sg-wrapper-content/>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+
+Styleguide 2.50.3
+
+*/
+
+
+/*
+Table cell settings
+
+Different available table cell settings
+
+.k-table-data--right - Right aligned text
+.k-table-data--center - Center aligned text
+.k-table-data--nowrap - Content will not be wrapped (useful for dates, file sizes etc.)
+.k-table-data--wrap - Wrap content (useful for urls etc.)
+.k-table-data--toggle - The cell that will have a footable toggle button
+.k-table-data--ellipsis - Break content at the end of the cell and add text ellipsis
+
+markup:
+<td class="{$modifiers}">Content</td>
+
+sg-wrapper:
+<div class="k-table-container">
+    <div class="k-table">
+        <table>
+        <tbody>
+            <tr>
+                <sg-wrapper-content/>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+
+Styleguide 2.50.4
+
+*/
 
 
 .k-table-container {
@@ -103,11 +172,10 @@ Styleguide 2.50
 
   .k-table {
     overflow: auto;
-    min-height: 170px;
 
     @include flexbox {
       display: flex;
-      flex: 0 1 auto;
+      flex: 1 1 auto;
       background: $table-cell-background-even;
     }
   }
@@ -116,6 +184,7 @@ Styleguide 2.50
     width: 100%;
     text-align: left;
     border-collapse: separate;
+    border-spacing: 0;
 
     @include rtl {
       text-align: right;
@@ -136,6 +205,7 @@ Styleguide 2.50
 
   th,
   td {
+    border: none;
     position: relative;
     height: $table-cell-size;
     vertical-align: middle;
@@ -228,6 +298,18 @@ Styleguide 2.50
     }
   }
 
+
+  /* Subheaders in tables <tr> */
+
+  .k-table__sub-header {
+    th {
+      background: white;
+    }
+  }
+
+
+  /* Styleguide 2.50.1 */
+
   small {
     display: block; /* 1 */
     font-size: 11px;
@@ -295,8 +377,12 @@ Styleguide 2.50
     max-width: 0;
     overflow: hidden;
 
-    .k-ellipsis-item {
+    a, span, input, svg, div {
       vertical-align: middle;
+      max-width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 
@@ -541,10 +627,117 @@ Styleguide 2.50
 
 
 /*
- * Table pagination
- *
- * 1. Faking a bottom border, this shadow will disappear when pagination is positioned to bottom
- */
+Table item states
+
+Different states that items can be in
+
+.k-pending - Pending
+.k-expired - Expired
+.k-unpublished - Unpublished
+.k-published - Published
+
+markup:
+<span class="k-table__item--state {$modifiers}">Content</span>
+
+sg-wrapper:
+<div class="k-table-container">
+    <div class="k-table">
+        <table>
+        <tbody>
+            <tr>
+                <td>
+                    <sg-wrapper-content/>
+                </td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+
+Styleguide 2.50.5
+
+*/
+
+.k-table__item--state {
+  @include transition;
+
+  // pointers for clickable elements
+  button#{&},
+  a#{&} {
+    cursor: pointer;
+
+    &:focus,
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &.k-pending {
+    color: $color-warning;
+  }
+
+  &.k-expired {
+    color: $color-neutral;
+  }
+
+  &.k-unpublished {
+    color: $color-error;
+  }
+
+  &.k-published {
+    color: $color-success;
+  }
+}
+
+
+/*
+Table pagination
+
+Table pagination
+
+markup:
+<div class="k-table-pagination">
+    <div class="k-pagination">
+        <div class="limit">
+            <select name="limit" size="1">
+                <option value="5" class="level1">5</option>
+                <option value="10" class="level1">10</option>
+                <option value="15" class="level1">15</option>
+                <option value="20" class="level1" selected="selected">20</option>
+                <option value="25" class="level1">25</option>
+                <option value="30" class="level1">30</option>
+                <option value="50" class="level1">50</option>
+                <option value="100" class="level1">100</option>
+            </select>
+        </div>
+          <ul class="pagination">
+              <li class="active"><a>1</a></li>
+              <li>
+                  <a href="{url}">2</a>
+              </li>
+              <li>
+                  <a href="{url}">3</a>
+              </li>
+              <li>
+                  <a href="{url}">4</a>
+              </li>
+              <li>
+                  <a href="{url}">5</a>
+              </li>
+              <li>
+                  <a href="{url}">»</a>
+              </li>
+          </ul>
+    </div>
+</div>
+
+Styleguide 2.50.1
+
+*/
+
+/*
+1. Faking a bottom border, this shadow will disappear when pagination is positioned to bottom
+*/
 
 .k-table-pagination {
   padding: $table-pagination-spacing;
@@ -667,40 +860,5 @@ Styleguide 2.50
 
   .footable-row-detail-name {
     font-weight: $bold;
-  }
-}
-
-
-/* Table item states */
-
-.k-table__item--state {
-  cursor: pointer;
-  @include transition;
-
-  &:focus,
-  &:hover {
-    text-decoration: underline;
-  }
-
-  &.k-pending {
-    color: $color-warning;
-  }
-
-  &.k-expired {
-    color: $color-neutral;
-  }
-
-  &.k-unpublished {
-    color: $color-error;
-  }
-
-  &.k-published {
-    color: $color-success;
-  }
-}
-
-.k-table__sub-header {
-  th {
-    background: white;
   }
 }

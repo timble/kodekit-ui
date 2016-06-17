@@ -1,7 +1,3 @@
-/* ==========================================================================
-   Content
-   ========================================================================== */
-
 /*
 Content
 
@@ -14,20 +10,15 @@ markup:
     ...
 </div><!-- .k-content -->
 
-sg-wrapper:
-<div class="k-content-wrapper">
-    <sg-wrapper-content/>
-</div>
-
 Styleguide 3.5
 
 */
 
-/**
- * 1. Set the z-index higher than the menus
- * 2. Setting a background so container will fall nicely over the sidebar
- * 3. Set transition for off canvas sidebar
- */
+/*
+1. Set the z-index higher than the menus
+2. Setting a background so container will fall nicely over the sidebar
+3. Set transition for off canvas sidebar
+*/
 
 .k-content {
   position: relative; /* 1 */

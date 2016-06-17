@@ -15,23 +15,19 @@
 /* 3rd party
    ========================================================================== */
 
-// styleguide:ignore:start
 @import "../../../node_modules/select2/src/scss/core"; /* 1 */
 @import "../../../node_modules/select2-bootstrap-theme/src/select2-bootstrap"; /* 2 */
 @import "../molecules/dropdowns"; /* 3 */
 @import "../molecules/modal";
 @import "../molecules/select2";
 @import "../molecules/datepicker";
-// styleguide:ignore:end
 
 
 /* Setup html and body
    ========================================================================== */
 
-// styleguide:ignore:start
 @import "../atoms/html";
 @import "../atoms/body";
-// styleguide:ignore:end
 
 
 /* Icons
@@ -42,9 +38,7 @@
  * To change this file, change the src/icons/template.css file
  */
 
-// styleguide:ignore:start
 @import "../utilities/koowa-icons";
-// styleguide:ignore:end
 
 
 
@@ -59,12 +53,8 @@
 
 .koowa {
 
-
-  /* Border-box size everything */
-  /* Single colons are being used for older browsers */
-  &, *, *:before, *:after {
-    box-sizing: border-box;
-  }
+  /* Border-box sizing */
+  @import "../utilities/boxsizing";
 
 
   /* Namespaced Normalize */
@@ -86,10 +76,10 @@
   /**
    * Utilities
    *
-   * 1. loading last so we have the biggest chance of 'winning' specificity wars without using !important
+   * Loading last so we have the biggest chance of 'winning' specificity wars without using !important
    */
 
-  @import "../utilities/utilities"; /* 1 */
+  @import "../utilities/utilities";
   @import "../utilities/overflowing";
 
 
@@ -103,4 +93,3 @@
   @import "../shame";
 
 }
-
