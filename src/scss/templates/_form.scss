@@ -1,7 +1,11 @@
-/**
- * Form view
- *
- * Complete form view
+/* ==========================================================================
+   Complete form
+   ========================================================================== */
+
+/*
+Form view
+
+Complete form view
 
 markup:
 <!-- Wrapper -->
@@ -77,10 +81,15 @@ Styleguide 4.2
 */
 
 
-/**
- * Batch view
- *
- * Batch form view
+
+/* ==========================================================================
+   Batch form view
+   ========================================================================== */
+
+/*
+Batch view
+
+Batch form view
 
 markup:
 <!-- Wrapper -->
@@ -133,8 +142,15 @@ Styleguide 4.2.1
 */
 
 
-/**
- * Form with sidebar
+
+/* ==========================================================================
+   Form with sidebar
+   ========================================================================== */
+
+/*
+Form with a sidebar
+
+Only use a sidebar next to a form when also using autosave since we don't want users to lose all their changes when navigating the sidebar
 
 markup:
 <!-- Wrapper -->

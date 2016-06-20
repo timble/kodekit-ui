@@ -264,3 +264,125 @@ tr.selected {
   z-index: 2;
 }
 
+
+
+
+
+
+
+
+
+
+/*
+Tabs
+
+markup:
+<ul class="k-tabs">
+    <li class="is-active">
+        <a href="javascript:void(0)">Tab 1</a>
+    </li>
+    <li>
+        <a href="javascript:void(0)">Tab 2</a>
+    </li>
+</ul>
+<div class="k-tabs-content">
+    <div class="k-tab is-active">
+        Content
+    </div>
+    <div class="k-tab">
+        Content
+    </div>
+</div>
+
+Styleguide 2.106
+
+*/
+
+.k-tabs {
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+  border-bottom: 1px solid $nav-tabs-border-color;
+  @include clearfix;
+
+
+  /* 1. Make the list-items overlay the bottom border */
+
+  & > li {
+    position: relative;
+    display: block;
+    float: left;
+    margin-bottom: -1px; /* 1 */
+
+    & > a {
+      position: relative;
+      display: block;
+      padding: $nav-link-padding;
+      margin-right: 2px;
+      line-height: $line-height-base;
+      border: 1px solid transparent;
+      border-radius: $border-radius-base $border-radius-base 0 0;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        background-color: $nav-link-hover-bg;
+        border-color: $nav-tabs-link-hover-border-color $nav-tabs-link-hover-border-color $nav-tabs-border-color;
+      }
+    }
+
+    // Disabled state sets text to gray and nukes hover/tab effects
+    &.is-disabled > a {
+      color: $nav-disabled-link-color;
+
+      &:hover,
+      &:focus {
+        color: $nav-disabled-link-hover-color;
+        text-decoration: none;
+        background-color: transparent;
+        cursor: $cursor-disabled;
+      }
+    }
+
+    // Active state, and its :hover to override normal :hover
+    &.is-active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: $nav-tabs-active-link-hover-color;
+        background-color: $nav-tabs-active-link-hover-bg;
+        border: 1px solid $nav-tabs-active-link-hover-border-color;
+        border-bottom-color: transparent;
+        cursor: default;
+      }
+    }
+  }
+
+  // Open dropdowns
+  .is-open > a {
+    &,
+    &:hover,
+    &:focus {
+      background-color: $nav-link-hover-bg;
+      border-color: $link-color;
+    }
+  }
+}
+
+/**
+ * Tabbable tabs
+ */
+
+/* Hide tabbable panes to start, show them when `.is-active` */
+
+.k-tabs-content {
+  & > .k-tab {
+    display: none;
+    padding: $spacing-small;
+  }
+
+  & > .is-active {
+    display: block;
+  }
+}

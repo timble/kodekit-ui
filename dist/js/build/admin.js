@@ -44,17 +44,17 @@ if(this.$element.prop("multiple"))this.current(function(d){var e=[];a=[a],a.push
             plugin.settings = $.extend({}, defaults, options);
 
             // Wrap content in a div
-            if ($element.parent('.overflowing')[0] == undefined) {
-                $element.wrap('<div class="overflowing">');
+            if ($element.parent('.k-overflowing')[0] == undefined) {
+                $element.wrap('<div class="k-overflowing">');
                 if ($element.css('flex')) {
-                    $('.overflowing').addClass('overflowing--flex');
+                    $('.k-overflowing').addClass('k-overflowing--flex');
                 }
 
                 // Add overflowing shadow divs
-                $element.after('<div class="overflowing--top js-is-hidden">');
-                $element.after('<div class="overflowing--right js-is-hidden">');
-                $element.after('<div class="overflowing--bottom js-is-hidden">');
-                $element.after('<div class="overflowing--left js-is-hidden">');
+                $element.after('<div class="k-overflowing--top is-hidden">');
+                $element.after('<div class="k-overflowing--right is-hidden">');
+                $element.after('<div class="k-overflowing--bottom is-hidden">');
+                $element.after('<div class="k-overflowing--left is-hidden">');
             }
 
             // Overflowing?
@@ -64,41 +64,41 @@ if(this.$element.prop("multiple"))this.current(function(d){var e=[];a=[a],a.push
 
                     // Show top overflowing div
                     if (element.scrollTop >= plugin.settings.offset && element.scrollTop >= plugin.settings.offset) {
-                        $('.overflowing--top').removeClass('js-is-hidden');
+                        $('.k-overflowing--top').removeClass('is-hidden');
                     } else {
-                        $('.overflowing--top').addClass('js-is-hidden');
+                        $('.k-overflowing--top').addClass('is-hidden');
                     }
 
                     // Show right overflowing div
                     if (element.scrollLeft <= (element.scrollWidth - element.clientWidth) - plugin.settings.offset) {
-                        $('.overflowing--right').removeClass('js-is-hidden');
+                        $('.k-overflowing--right').removeClass('is-hidden');
                     } else {
-                        $('.overflowing--right').addClass('js-is-hidden');
+                        $('.k-overflowing--right').addClass('is-hidden');
                     }
 
                     // Show bottom overflowing div
                     if (element.scrollTop < ((element.scrollHeight - element.clientHeight) - plugin.settings.offset)) {
-                        $('.overflowing--bottom').removeClass('js-is-hidden');
+                        $('.k-overflowing--bottom').removeClass('is-hidden');
                     } else {
-                        $('.overflowing--bottom').addClass('js-is-hidden');
+                        $('.k-overflowing--bottom').addClass('is-hidden');
                     }
 
                     // Show left overflowing div
                     if (element.scrollLeft >= plugin.settings.offset) {
-                        $('.overflowing--left').removeClass('js-is-hidden');
+                        $('.k-overflowing--left').removeClass('is-hidden');
                     } else {
-                        $('.overflowing--left').addClass('js-is-hidden');
+                        $('.k-overflowing--left').addClass('is-hidden');
                     }
                 }
 
                 if (element.clientWidth == element.scrollWidth) {
-                    $('.overflowing--left').addClass('js-is-hidden');
-                    $('.overflowing--right').addClass('js-is-hidden');
+                    $('.k-overflowing--left').addClass('is-hidden');
+                    $('.k-overflowing--right').addClass('is-hidden');
                 }
 
                 if (element.clientHeight == element.scrollHeight) {
-                    $('.overflowing--top').addClass('js-is-hidden');
-                    $('.overflowing--bottom').addClass('js-is-hidden');
+                    $('.k-overflowing--top').addClass('is-hidden');
+                    $('.k-overflowing--bottom').addClass('is-hidden');
                 }
             }
 
@@ -119,7 +119,7 @@ if(this.$element.prop("multiple"))this.current(function(d){var e=[];a=[a],a.push
         // iterate through the DOM elements we are attaching the plugin to
         return this.each(function () {
             // if plugin has not already been attached to the element
-            if (undefined == $(this).data('responsiveMenu')) {
+            if (undefined == $(this).data('overflowing')) {
                 // create a new instance of the plugin
                 var plugin = new $.overflowing(this, options);
                 // in the jQuery version of the element

@@ -4,6 +4,8 @@
  * Should have flexbox as well to be able to work properly
  */
 
+// @TODO: document this and put it in the styleguide / refactor
+
 .floatThead-wrapper {
   z-index: 1 !important; // Overriding inline styling, we don't need a z-index of 1000+
 

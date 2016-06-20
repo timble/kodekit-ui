@@ -2,22 +2,22 @@
    Breadcrumbs
    ========================================================================== */
 
-/**
- * Breadcrumbs
- *
- * Default breadcrumbs styling
+/*
+Breadcrumbs
+
+Default breadcrumbs styling
 
 markup:
 <!-- Breadcrumbs -->
 <div class="k-breadcrumb">
     <ul>
         <li class="k-breadcrumb__home">
-            <a class="k-breadcrumb__item k-icon-home" href="#">
+            <a class="k-breadcrumb__item k-icon-home" href="javascript:void(0)">
                 <span class="visually-hidden">Home</span>
             </a>
         </li>
         <li>
-            <a class="k-breadcrumb__item" href="#">
+            <a class="k-breadcrumb__item" href="javascript:void(0)">
                 {content}
             </a>
         </li>

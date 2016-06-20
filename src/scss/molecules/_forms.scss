@@ -1,9 +1,5 @@
-/* ==========================================================================
-   Forms
-   ========================================================================== */
-
-/**
- * Forms
+/*
+Forms
 
 To be used in sidebar of forms<br />
 Data in these boxes should be non-required form elements
@@ -14,7 +10,7 @@ Data in these boxes should be non-required form elements
 
 markup:
 <div class="{$modifiers}">
-    <label>Label</label>
+    <sg-insert>1.5</sg-insert>
     <input class="form-control" type="text">
 </div>
 

@@ -1,7 +1,3 @@
-/* ==========================================================================
-   Option list
-   ========================================================================== */
-
 /*
 Option list
 
@@ -16,7 +12,7 @@ markup:
   <label for="id1">Option 2</label>
   <input type="radio" name="name" id="id2" value="2">
   <label for="id2">Option 3</label>
-  <div class="faux-focus"></div>
+  <div class="k-faux-focus"></div>
 </div>
 
 Styleguide 2.19
@@ -105,7 +101,7 @@ Styleguide 2.19
      * 4. Set border-radius same as parent
      */
 
-    .faux-focus {
+    .k-faux-focus {
       position: absolute; /* 1 */
       top: -1px; /* 1 */
       right: -1px; /* 1 */
@@ -121,7 +117,7 @@ Styleguide 2.19
       box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($input-border-focus, 0.6);
     }
 
-    input:focus ~ .faux-focus {
+    input:focus ~ .k-faux-focus {
       opacity: 1; /* 3 */
       visibility: visible; /* 3 */
     }

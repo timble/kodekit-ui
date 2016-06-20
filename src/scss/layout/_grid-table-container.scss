@@ -2,6 +2,8 @@
  * Parent container surrounding the toggling table and grid in files view
  */
 
+// @TODO: document this and put it in the styleguide
+
 .k-grid-table-container {
   @include flexbox {
     display: flex;

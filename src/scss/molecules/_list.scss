@@ -1,17 +1,13 @@
-/* ==========================================================================
-   Sidebar list
-   ========================================================================== */
+/*
+List
 
-/**
- * Sidebar list
-
-Simple sidebar list
+Simple list
 
 markup:
 <!-- List -->
 <ul class="k-list">
     <!-- Active item -->
-    <li class="active">
+    <li class="is-active">
         <a href="...">
             <span class="k-icon-person"></span> My documents
         </a>
@@ -76,7 +72,7 @@ Styleguide 2.10
 
   /* Active link */
 
-  .active {
+  .is-active {
     a {
       font-weight: $bold;
       background: $list-active-background;

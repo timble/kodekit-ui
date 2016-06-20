@@ -1,0 +1,43 @@
+/*
+No items
+
+Styled warning for when there are no items yet
+
+markup:
+<div class="k-no-items-container">
+    <p>It seems like you don't have any items yet.</p>
+    <p><a href="javascript:void(0)" class="k-button k-button--success">Add your first item</a></p>
+</div>
+
+Styleguide 2.99
+
+*/
+
+.k-no-items-container {
+  margin: 0;
+  font-size: 1.5em;
+  line-height: 1.5em;
+  text-align: center;
+  background: $no-items-background;
+  color: $no-items-color;
+
+  @include flexbox {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  p {
+    margin-bottom: 1em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .k-button {
+    font-size: $font-size--medium;
+    line-height: $line-height--medium;
+  }
+}

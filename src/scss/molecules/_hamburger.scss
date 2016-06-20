@@ -1,20 +1,10 @@
-/* ==========================================================================
-   Animated hamburger button
-   ========================================================================== */
-
 /**
+ * Animated hamburger button
+ *
  * 1. Hide when JS is disabled, we don't need a toggle when there's no JS
  * 2. Show when JS is enabled
  * 3. Hide when the sidebar is visible
  */
-
-/**
-<button id="k-toggle-button" class="off-canvas-menu-toggle" type="button">
-    <span class="bar1"></span>
-    <span class="bar2"></span>
-    <span class="bar3"></span>
-</button>
-*/
 
 .off-canvas-menu-toggle {
   position: relative;

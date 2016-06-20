@@ -54,6 +54,8 @@ $font-size:               13px !default;
 $line-height:             19px !default;
 $font-size--large:        21px !default;
 $line-height--large:      32px !default;
+$font-size--medium:       18px !default;
+$line-height--medium:     27px !default;
 $bold:                    700 !default;
 $regular:                 400 !default;
 $webkit-font-smoothing:   antialiased !default;
@@ -83,7 +85,7 @@ $spacing-huge:    $font-size * 3 !default;
 // ==========================================================================
 
 $unit-size: $spacing-huge !default;
-
+$radius:    4px !default;
 
 // Function variables
 // ==========================================================================

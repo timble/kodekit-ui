@@ -1,7 +1,11 @@
-/**
- * List view
- *
- * The default list view
+/* ==========================================================================
+   List view
+   ========================================================================== */
+
+/*
+List view
+
+The default list view
 
 markup:
 <!-- Wrapper -->
@@ -46,10 +50,16 @@ Styleguide 4.1
 
 */
 
-/**
- * List with titlebar
- *
- * A list with a titlebar
+
+
+/* ==========================================================================
+   List with a titlebar
+   ========================================================================== */
+
+/*
+List with titlebar
+
+A list with a titlebar
 
 markup:
 <!-- Wrapper -->
@@ -92,7 +102,7 @@ markup:
                         <sg-insert>2.13</sg-insert>
                         <div class="form-group">
                             <button type="button" class="k-button k-button--primary">Insert file</button>
-                            <a class="k-button k-button--default" href="#">Cancel</a>
+                            <a class="k-button k-button--default" href="javascript:void(0)">Cancel</a>
                         </div>
                     </form>
                 </div>

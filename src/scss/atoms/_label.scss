@@ -3,11 +3,16 @@ Label
 
 Default label style
 
+markup:
+<label>Label</label>
+
+Styleguide 1.5
+
 */
 
-/*
-1. Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
-*/
+/**
+ * 1. Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
+ */
 
 label {
   display: inline-block;

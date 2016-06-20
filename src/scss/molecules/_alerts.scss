@@ -19,24 +19,17 @@ Styleguide 2.1
 
 */
 
-
-// Base styles
-// -------------------------
-
 .k-alert {
   padding: $alert-padding;
   margin-bottom: $line-height-computed;
   border: 1px solid transparent;
-  border-radius: $alert-border-radius;
 
   &:last-child {
     margin-bottom: 0;
   }
 }
 
-// Alternate styles
-//
-// Generate contextual modifier classes for colorizing the alert.
+/* Alternate styles */
 
 .k-alert--success {
   @include alert-variant($alert-success-bg, $alert-success-border, $alert-success-text);
@@ -53,4 +46,3 @@ Styleguide 2.1
 .k-alert--danger {
   @include alert-variant($alert-danger-bg, $alert-danger-border, $alert-danger-text);
 }
-

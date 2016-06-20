@@ -17,7 +17,7 @@
  */
 
 // Shadow boxes on overflowing containers
-.overflowing {
+.k-overflowing {
   overflow: hidden; /* 1 */
   position: relative; /* 2 */
   -webkit-overflow-scrolling: touch; /* 3 */
@@ -52,7 +52,7 @@
     margin: 0;
     @include transition;
 
-    &.js-is-hidden {
+    &.is-hidden {
       opacity: 0;
     }
   }
@@ -75,7 +75,7 @@
     top: 0;
     box-shadow: 0 (-($overflow-size/2)) $overflow-size $overflow-size;
 
-    &.js-is-hidden {
+    &.is-hidden {
       margin-top: -$overflow-size;
     }
   }
@@ -84,7 +84,7 @@
     right: 0;
     box-shadow: ($overflow-size/2) 0 $overflow-size $overflow-size;
 
-    &.js-is-hidden {
+    &.is-hidden {
       margin-right: -$overflow-size;
     }
   }
@@ -93,7 +93,7 @@
     bottom: 0;
     box-shadow: 0 ($overflow-size/2) $overflow-size $overflow-size;
 
-    &.js-is-hidden {
+    &.is-hidden {
       margin-bottom: -$overflow-size;
     }
   }
@@ -102,7 +102,7 @@
     left: 0;
     box-shadow: (-($overflow-size/2)) 0 $overflow-size $overflow-size;
 
-    &.js-is-hidden {
+    &.is-hidden {
       margin-left: -$overflow-size;
     }
   }

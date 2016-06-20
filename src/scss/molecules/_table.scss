@@ -11,10 +11,10 @@ markup:
         <thead>
             <tr>
                 <th width="1%"><input type="checkbox"/></th>
-                <th><a href="#">Item title</a></th>
-                <th width="5%"><a href="#">{content}</a></th>
-                <th width="5%"><a href="#">{content}</a></th>
-                <th width="5%"><a href="#">{content}</a></th>
+                <th><a href="javascript:void(0)">Item title</a></th>
+                <th width="5%"><a href="javascript:void(0)">{content}</a></th>
+                <th width="5%"><a href="javascript:void(0)">{content}</a></th>
+                <th width="5%"><a href="javascript:void(0)">{content}</a></th>
             </tr>
         </thead>
         <tbody>
@@ -70,7 +70,7 @@ Item title
 A title for list items
 
 markup:
-<td class="k-table-data--ellipsis"><a href="#">Item title</a></td>
+<td class="k-table-data--ellipsis"><a href="javascript:void(0)">Item title</a></td>
 
 sg-wrapper:
 <div class="k-table-container">
@@ -99,7 +99,7 @@ A subtitle for list items
 
 markup:
 <td class="k-table-data--ellipsis">
-    <a href="#">Curabitur blandit tempus porttitor.</a>
+    <a href="javascript:void(0)">Curabitur blandit tempus porttitor.</a>
     <small>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</small>
 </td>
 
@@ -153,6 +153,8 @@ Styleguide 2.50.4
 
 */
 
+
+// @TODO: add more examples to styleguide or get rid of em
 
 .k-table-container {
   background: $table-background;
