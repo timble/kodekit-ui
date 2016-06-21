@@ -117,3 +117,88 @@ markup:
 Styleguide 4.1.1
 
 */
+
+
+/* ==========================================================================
+   Grid view
+   ========================================================================== */
+
+/*
+Grid view
+
+The default list view displayed in a grid
+
+markup:
+<!-- Wrapper -->
+<div class="k-wrapper">
+    <!-- Content wrapper -->
+    <div class="k-content-wrapper">
+        <!-- Sidebar -->
+        <div class="k-sidebar-left js-sidebar-left">
+            <div class="k-sidebar-item">
+                <sg-insert>2.15-all</sg-insert>
+            </div>
+            <div class="k-sidebar-item k-sidebar-item--overflow">
+                <div class="k-sidebar-item__header">
+                    Categories
+                </div>
+                <sg-insert>2.24</sg-insert>
+            </div>
+            <div class="k-sidebar-item k-sidebar-item--toggle">
+                <div class="k-sidebar-item__header">
+                    Quick filters
+                </div>
+                <sg-insert>2.10</sg-insert>
+            </div>
+        </div>
+        <!-- Content -->
+        <div class="k-content">
+            <sg-insert>2.14</sg-insert>
+            <!-- Toolbar -->
+            <sg-insert>2.70</sg-insert>
+            <!-- Component -->
+            <div class="k-component">
+                <!-- Form -->
+                <form class="k-form-layout -koowa-grid" id="k-offcanvas-container" action="" method="get">
+                    <sg-insert>2.40</sg-insert>
+                    <div class="k-grid-table-container">
+                        <div class="k-grid-container">
+                            <div class="k-grid">
+                                <div class="k-grid__items">
+                                    <div class="k-grid__item k-grid__item--folder">
+                                        <sg-insert>2.20.4</sg-insert>
+                                    </div>
+                                    <div class="k-grid__item k-grid__item--folder">
+                                        <sg-insert>2.20.4</sg-insert>
+                                    </div>
+                                    <div class="k-grid__item k-grid__item--folder">
+                                        <sg-insert>2.20.4</sg-insert>
+                                    </div>
+                                    <div class="k-grid__item k-grid__item--file">
+                                        <sg-insert>2.20.3</sg-insert>
+                                    </div>
+                                    <div class="k-grid__item k-grid__item--file">
+                                        <sg-insert>2.20.3</sg-insert>
+                                    </div>
+                                    <div class="k-grid__item k-grid__item--file">
+                                        <sg-insert>2.20.1</sg-insert>
+                                    </div>
+                                    <div class="k-grid__item k-grid__item--file">
+                                        <sg-insert>2.20.1</sg-insert>
+                                    </div>
+                                    <div class="k-grid__item k-grid__item--file">
+                                        <sg-insert>2.20.1</sg-insert>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form><!-- .k-list-layout -->
+            </div><!-- .k-component -->
+        </div><!-- k-content -->
+    </div><!-- .k-content-wrapper -->
+</div><!-- .k-wrapper -->
+
+Styleguide 4.1.2
+
+*/

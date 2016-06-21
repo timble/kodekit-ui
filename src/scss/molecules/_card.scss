@@ -1,0 +1,222 @@
+/*
+Preview
+
+Preview
+- Display either an image or an icon
+
+markup:
+<!-- Preview -->
+<div class="k-card">
+    <div class="k-card__body k-card__body--preview">
+        <div class="k-card__preview-content-wrapper">
+            <div class="k-card__preview-content">
+                <div class="k-card__preview">
+                    {preview element}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+Styleguide 2.20
+
+*/
+
+/*
+Preview (image)
+
+- Display image
+
+markup:
+<!-- Preview -->
+<div class="k-card">
+    <div class="k-card__body k-card__body--preview">
+        <div class="k-card__preview-content-wrapper">
+            <div class="k-card__preview-content">
+                <div class="k-card__preview">
+                    <sg-insert>1.4</sg-insert>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+Styleguide 2.20.1
+
+*/
+
+/*
+Preview (icon)
+
+- Display image
+
+markup:
+<!-- Preview -->
+<div class="k-card">
+    <div class="k-card__body k-card__body--preview">
+        <div class="k-card__preview-content-wrapper">
+            <div class="k-card__preview-content">
+                <div class="k-card__preview">
+                    <span class="koowa_icon--audio koowa_icon--48"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+Styleguide 2.20.2
+
+*/
+
+
+/*
+Preview with title
+
+Preview with title
+
+markup:
+<!-- Preview -->
+<div class="k-card">
+    <a class="k-card__body k-card__body--preview" href="javascript:void(0)">
+        <div class="k-card__preview-content-wrapper">
+            <div class="k-card__preview-content">
+                <div class="k-card__preview">
+                    <span class="koowa_icon--audio k-icon--size-48"></span>
+                </div>
+            </div>
+        </div>
+    </a>
+    <div class="k-card__title">
+        <label><input type="checkbox"/> Title</label>
+    </div>
+</div>
+
+Styleguide 2.20.3
+
+*/
+
+
+/*
+Preview with text
+
+Preview with text
+
+markup:
+<!-- Preview -->
+<div class="k-card">
+    <div class="k-card__body">
+        <div class="k-card__title">
+            <label><input type="checkbox"/> <a href="javascript:void(0)">Title</a></label>
+        </div>
+    </div>
+</div>
+
+Styleguide 2.20.4
+
+*/
+
+.k-card {
+  width: 100%;
+  margin-bottom: 1.5em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.k-card__body {
+  @include transition;
+  display: block;
+  backface-visibility: visible;
+  background: colorpicker(primary, 5);
+  font-size: 14px;
+  border: 1px solid #ddd;
+
+  a#{&} {
+    color: $color-accent; // This is the <a> so put color here
+    cursor: pointer; // This is the <a> so put cursor here
+  }
+}
+
+.k-card__body--preview {
+  @include ratio-block(4 to 3);
+}
+
+.k-card__preview-content-wrapper {
+  @include coverall(1px);
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.k-card__preview-content {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  vertical-align: middle;
+  display: inline-block;
+  text-align: center;
+  font-size: 0;
+  white-space: nowrap;
+  padding: 1px; // space images with 1px
+
+  &:before {
+    content: ' ';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+
+  @include flexbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.k-card__preview {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  max-height: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  font-size: $font-size;
+
+  @include flexbox {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  & > img,
+  & > span {
+    display: inline-block;
+    max-height: 100%;
+    vertical-align: middle;
+
+    @include flexbox {
+      flex: 0 1 auto;
+    }
+  }
+}
+
+.k-card__title {
+  display: block;
+  padding: 10px;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  label {
+    font-weight: $regular;
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-left: 1px;
+  }
+}

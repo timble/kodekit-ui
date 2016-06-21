@@ -64,6 +64,8 @@ $grid-width: 2560px !default;
 }
 
 .k-grid-container {
+  background: $table-background;
+
   @include flexbox {
     display: flex;
     flex-direction: column;
@@ -91,14 +93,6 @@ $grid-width: 2560px !default;
   }
 }
 
-// Separate folders from files in files grid view
-
-.k-grid__items__folders,
-.k-grid__items__files {
-  @include clearfix;
-  clear: both;
-}
-
 .k-grid__item {
   float: left;
   padding: $grid-spacing / 2;
@@ -112,8 +106,8 @@ $grid-width: 2560px !default;
   @include setGridBreakpoint;
 
   // Selected styling
-  &.selected {
-    .k-grid__item__title {
+  &.is-selected {
+    .k-card__title {
       background: $color-accent;
       border-color: darkest($color-accent);
       color: $color-accent-type;
@@ -123,143 +117,21 @@ $grid-width: 2560px !default;
       }
     }
 
-    .k-grid__item__content {
+    .k-card__body {
       color: $color-accent-type;
       border-color: darker($color-accent);
     }
 
     &:hover,
     &:focus {
-      .k-grid__item__title {
+      .k-card__title {
         background: darkest($color-accent);
       }
     }
   }
-
-  // 4:3 ratio block with border and background
-  .k-grid__item__content {
-    @include ratio-block(4 to 3);
-    @include transition;
-    background: colorpicker(primary, 6);
-    font-size: 14px;
-    border: 1px solid #ddd;
-  }
-
-  // Cover entire ratio block
-  .k-grid__file-wrapper {
-    @include coverall;
-  }
-
-  // Display table for vertical and horizontal centering
-  .k-grid__file {
-    width: 100%;
-    height: 100%;
-    color: $color-accent; // This is the <a> so put color here
-    cursor: pointer; // This is the <a> so put cursor here
-    max-height: 100%;
-    overflow: hidden;
-    vertical-align: middle;
-    display: inline-block;
-    text-align: center;
-    font-size: 0;
-    white-space: nowrap;
-    padding: 1px; // space images with 1px
-
-    &:before {
-      content: ' ';
-      display: inline-block;
-      height: 100%;
-      vertical-align: middle;
-    }
-
-    @include flexbox {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  }
-
-  // Center vertical and horizontal
-  .k-grid__item__cell {
-    display: inline-block;
-    vertical-align: middle;
-    text-align: center;
-    max-height: 100%;
-    max-width: 100%;
-    overflow: hidden;
-
-    @include flexbox {
-      flex: 0 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  }
-
-  .koowa_icon--48,
-  img {
-    display: inline-block;
-    max-height: 100%;
-    vertical-align: middle;
-
-    @include flexbox {
-      flex: 0 1 auto;
-    }
-  }
-
 }
 
-
-
-.k-grid__item__title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.k-grid__item--folder {
-  cursor: pointer;
-
-  .k-grid__item__title {
-    padding: 10px;
-    border: 1px solid #ddd;
-    background: colorpicker(primary, 5);
-    @include transition;
-
-    @include icon-before(k-folder,true) {
-      padding-right: 5px;
-
-      @include rtl {
-        padding-right: 0;
-        padding-left: 5px;
-      }
-    }
-  }
-
-  &:hover,
-  &:focus {
-    .k-grid__item__title {
-      background: colorpicker(primary, 3);
-    }
-  }
-}
-
-
-
-.k-grid__item--file {
-  .k-grid__item__content {
-
-  }
-
-  .k-grid__item__title {
-    padding: 10px;
-    @include transition;
-  }
-
-  &:focus,
-  &:hover {
-    .k-grid__item__title {
-      background: colorpicker(primary, 4);
-    }
-  }
+/* Make sure that the files are separated from the folders */
+.k-grid__item--folder + .k-grid__item--file {
+  clear: left;
 }
