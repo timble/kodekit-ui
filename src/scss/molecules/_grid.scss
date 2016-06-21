@@ -91,6 +91,14 @@ $grid-width: 2560px !default;
   }
 }
 
+// Separate folders from files in files grid view
+
+.k-grid__items__folders,
+.k-grid__items__files {
+  @include clearfix;
+  clear: both;
+}
+
 .k-grid__item {
   float: left;
   padding: $grid-spacing / 2;

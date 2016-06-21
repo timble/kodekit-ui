@@ -1,50 +1,64 @@
 /*
 Table
 
-Default table styling
+A complete table
 
 markup:
 <!-- Table -->
 <div class="k-table-container">
     <div class="k-table">
-        <table class="table--fixed footable">
+        <table class="k-fixed-table-header footable">
         <thead>
             <tr>
                 <th width="1%"><input type="checkbox"/></th>
                 <th><a href="javascript:void(0)">Item title</a></th>
-                <th width="5%"><a href="javascript:void(0)">{content}</a></th>
-                <th width="5%"><a href="javascript:void(0)">{content}</a></th>
-                <th width="5%"><a href="javascript:void(0)">{content}</a></th>
+                <th width="5%"><a href="javascript:void(0)">State</a></th>
+                <th width="15%"><a href="javascript:void(0)">Category</a></th>
+                <th width="5%"><a href="javascript:void(0)">Date</a></th>
+                <th width="1%"><a href="javascript:void(0)">Ordering</a></th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><input type="checkbox" class="-koowa-grid-checkbox"></td>
+                <td><input type="checkbox"/></td>
                 <sg-insert>2.50.3</sg-insert>
-                <td>{content}</td>
-                <td>{content}</td>
-                <td>{content}</td>
+                <td><sg-insert>2.50.5-2</sg-insert></td>
+                <sg-insert>2.50.2</sg-insert>
+                <td class="k-table-data--nowrap">01 January 1999</td>
+                <td><sg-insert>2.50.8</sg-insert></td>
             </tr>
             <tr>
-                <td><input type="checkbox" class="-koowa-grid-checkbox"></td>
+                <td><input type="checkbox"/></td>
                 <sg-insert>2.50.3</sg-insert>
-                <td>{content}</td>
-                <td>{content}</td>
-                <td>{content}</td>
+                <td><sg-insert>2.50.5-2</sg-insert></td>
+                <sg-insert>2.50.2</sg-insert>
+                <td class="k-table-data--nowrap">01 January 1999</td>
+                <td><sg-insert>2.50.8</sg-insert></td>
+            </tr>
+            <sg-insert>2.50.6</sg-insert>
+            <tr>
+                <td><input type="checkbox"/></td>
+                <sg-insert>2.50.3</sg-insert>
+                <td><sg-insert>2.50.5-2</sg-insert></td>
+                <sg-insert>2.50.2</sg-insert>
+                <td class="k-table-data--nowrap">01 January 1999</td>
+                <td><sg-insert>2.50.8</sg-insert></td>
             </tr>
             <tr>
-                <td><input type="checkbox" class="-koowa-grid-checkbox"></td>
+                <td><input type="checkbox"/></td>
                 <sg-insert>2.50.3</sg-insert>
-                <td>{content}</td>
-                <td>{content}</td>
-                <td>{content}</td>
+                <td><sg-insert>2.50.5-2</sg-insert></td>
+                <sg-insert>2.50.2</sg-insert>
+                <td class="k-table-data--nowrap">01 January 1999</td>
+                <td><sg-insert>2.50.8</sg-insert></td>
             </tr>
             <tr>
-                <td><input type="checkbox" class="-koowa-grid-checkbox"></td>
+                <td><input type="checkbox"/></td>
                 <sg-insert>2.50.3</sg-insert>
-                <td>{content}</td>
-                <td>{content}</td>
-                <td>{content}</td>
+                <td><sg-insert>2.50.5-2</sg-insert></td>
+                <sg-insert>2.50.2</sg-insert>
+                <td class="k-table-data--nowrap">01 January 1999</td>
+                <td><sg-insert>2.50.8</sg-insert></td>
             </tr>
         </tbody>
         </table>
@@ -154,7 +168,122 @@ Styleguide 2.50.4
 */
 
 
-// @TODO: add more examples to styleguide or get rid of em
+/*
+Table sub header
+
+Add sub headers in between
+
+markup:
+<tr class="k-table__sub-header">
+    <th colspan="6">
+        Sub header
+    </th>
+</tr>
+
+sg-wrapper:
+<div class="k-table-container">
+    <div class="k-table">
+        <table>
+        <tbody>
+            <sg-wrapper-content/>
+        </tbody>
+        </table>
+    </div>
+</div>
+
+Styleguide 2.50.6
+
+*/
+
+
+/*
+Table levels
+
+A table displaying multiple levels
+
+markup:
+<div class="k-table-container">
+    <div class="k-table">
+        <table>
+        <thead>
+            <tr>
+                <th width="1%"><input type="checkbox"/></th>
+                <th>Heading</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox"/></td>
+                <td class="k-table__item-level k-table__item-level1">Level 1</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"/></td>
+                <td class="k-table__item-level k-table__item-level2">Level 2</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"/></td>
+                <td class="k-table__item-level k-table__item-level3">Level 3</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"/></td>
+                <td class="k-table__item-level k-table__item-level1">Level 1</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"/></td>
+                <td class="k-table__item-level k-table__item-level1">Level 1</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+
+Styleguide 2.50.7
+
+*/
+
+
+/*
+Table sorting
+
+Display sorting arrows
+
+markup:
+<span class="k-table-data--sort">
+    <span class="k-grid-sort">
+        <span class="state uparrow">
+            <span class="text">
+                <span class="k-icon-chevron-top"></span>
+            </span>
+        </span>
+    </span>
+    <span class="k-grid-sort k-grid-sort--text">1</span>
+    <span class="k-grid-sort">
+        <span class="state downarrow">
+            <span class="text">
+                <span class="k-icon-chevron-bottom"></span>
+            </span>
+        </span>
+    </span>
+</span>
+
+sg-wrapper:
+<div class="k-table-container">
+    <div class="k-table">
+        <table>
+        <tbody>
+            <tr>
+                <td>
+                    <sg-wrapper-content/>
+                </td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+
+Styleguide 2.50.8
+
+*/
 
 .k-table-container {
   background: $table-background;
@@ -300,26 +429,10 @@ Styleguide 2.50.4
     }
   }
 
-
-  /* Subheaders in tables <tr> */
-
-  .k-table__sub-header {
-    th {
-      background: white;
-    }
-  }
-
-
-  /* Styleguide 2.50.1 */
-
   small {
-    display: block; /* 1 */
+    display: block;
     font-size: 11px;
     line-height: 11px;
-    max-width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   a {
@@ -379,7 +492,8 @@ Styleguide 2.50.4
     max-width: 0;
     overflow: hidden;
 
-    a, span, input, svg, div {
+    a, span, input, svg, div, small {
+      display: block;
       vertical-align: middle;
       max-width: 100%;
       white-space: nowrap;
@@ -440,30 +554,21 @@ Styleguide 2.50.4
 
   @for $i from 1 through 15 {
     .k-table__item-level#{$i} {
-      padding-left: 24px * ($i - 1);
+      padding-left: 24px * ($i - 1) + $table-cell-spacing-horizontal;
 
       @include rtl {
         padding-left: 0;
-        padding-right: 24px * ($i - 1);
+        padding-right: 24px * ($i - 1) + $table-cell-spacing-horizontal;
       }
 
       &:before {
-        left: (24px * ($i - 1)) - 18px;
+        left: (24px * ($i - 1)) - (18px - $table-cell-spacing-horizontal);
 
         @include rtl {
           left: auto;
-          right: (24px * ($i - 1)) - 18px;
+          right: (24px * ($i - 1)) - (18px - $table-cell-spacing-horizontal);
         }
       }
-    }
-  }
-
-  .k-table__item-level__title {
-    padding-left: 5px;
-
-    @include rtl {
-      padding-left: 0;
-      padding-right: 5px;
     }
   }
 
@@ -471,44 +576,6 @@ Styleguide 2.50.4
     display: none;
   }
 
-
-
-  /**
-   * Table elements
-   */
-
-  .k-table-button {
-    appearance: none;
-    background: white;
-    border: 1px solid #ccc;
-    border-radius: 2px;
-    font-size: 12px;
-    padding: 0;
-    color: #555;
-    display: inline-block;
-    vertical-align: middle;
-    width: 18px;
-    height: 18px;
-    line-height: 16px;
-    overflow: hidden;
-    text-align: center;
-    transition: all 0.2s ease-in-out;
-    cursor: pointer;
-    font-weight: bold;
-    margin-right: 6px;
-
-    &:focus,
-    &:hover {
-      color: $color-error;
-      border-color: #aaa;
-      background: #eee;
-    }
-
-    & + a {
-      display: inline-block;
-      vertical-align: middle;
-    }
-  }
 
 
   /**
@@ -555,9 +622,15 @@ Styleguide 2.50.4
 
   .k-table__sub-header {
     th {
+      padding: .7em $table-cell-spacing-horizontal .5em;
       height: auto;
       font-size: .875em;
+      line-height: 1.2em;
+      vertical-align: middle;
       text-transform: uppercase;
+      white-space: nowrap;
+      background: $table-header-background;
+      border-bottom-color: $table-cell-border;
     }
   }
 
@@ -639,7 +712,7 @@ Different states that items can be in
 .k-published - Published
 
 markup:
-<span class="k-table__item--state {$modifiers}">Content</span>
+<span class="k-table__item--state {$modifiers}">State</span>
 
 sg-wrapper:
 <div class="k-table-container">
@@ -757,14 +830,11 @@ Styleguide 2.50.1
   }
 
 
+
   /**
    * Pagination contents
    *
    * 1. Align vertically
-   * 2. Remove standard Bootstrap margin
-   * 3. Style <select> to be as large as the pagination
-   * 4. Make sure <select> is always as small as possible
-   * 5. Separate <select> from pagination
    */
 
   .limit,
@@ -773,27 +843,92 @@ Styleguide 2.50.1
     vertical-align: middle; /* 1 */
   }
 
+  /* Pagination */
+
   .pagination {
-    margin: 0; /* 2 */
+    padding-left: 0;
+    margin: 0;
+    border-radius: $border-radius-base;
+
+    & > li {
+      display: inline; // Remove list-style and block-level defaults
+
+      & > a,
+      & > span {
+        position: relative;
+        float: left; // Collapse white-space
+        padding: $padding-base-vertical $padding-base-horizontal;
+        line-height: $line-height-base;
+        text-decoration: none;
+        color: $pagination-color;
+        background-color: $pagination-bg;
+        border: 1px solid $pagination-border;
+        margin-left: -1px;
+      }
+
+      &:first-child {
+        & > a,
+        & > span {
+          margin-left: 0;
+          @include border-left-radius($border-radius-base);
+        }
+      }
+
+      &:last-child {
+        & > a,
+        & > span {
+          @include border-right-radius($border-radius-base);
+        }
+      }
+    }
+
+    & > li > a,
+    & > li > span {
+      &:hover,
+      &:focus {
+        z-index: 2;
+        color: $pagination-hover-color;
+        background-color: $pagination-hover-bg;
+        border-color: $pagination-hover-border;
+      }
+    }
+
+    & > .active > a,
+    & > .active > span {
+      &,
+      &:hover,
+      &:focus {
+        z-index: 3;
+        color: $pagination-active-color;
+        background-color: $pagination-active-bg;
+        border-color: $pagination-active-border;
+        cursor: default;
+      }
+    }
+
+    & > .disabled {
+      & > span,
+      & > span:hover,
+      & > span:focus,
+      & > a,
+      & > a:hover,
+      & > a:focus {
+        color: $pagination-disabled-color;
+        background-color: $pagination-disabled-bg;
+        border-color: $pagination-disabled-border;
+        cursor: $cursor-disabled;
+      }
+    }
   }
 
   select {
-    height: $table-pagination-height; /* 3 */
-    width: auto; /* 4 */
-    margin-right: $table-pagination-spacing; /* 5 */
+    height: $table-pagination-height;
+    width: auto;
+    margin-right: $table-pagination-spacing;
 
     @include rtl {
       margin-right: auto;
       margin-left: $table-pagination-spacing;
-    }
-  }
-
-  .k-pagination-pages {
-    float: right;
-    line-height: 30px;
-
-    @include rtl {
-      float: left;
     }
   }
 }
@@ -862,5 +997,143 @@ Styleguide 2.50.1
 
   .footable-row-detail-name {
     font-weight: $bold;
+  }
+}
+
+
+
+/*
+Positioner
+
+For drag and drop sorting
+
+markup:
+<span class="k-positioner"></span>
+
+sg-wrapper:
+<div class="k-table-container">
+    <div class="k-table">
+        <table>
+        <tbody>
+            <tr>
+                <td>
+                    <sg-wrapper-content/>
+                </td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+
+Styleguide 2.50.9
+
+*/
+
+.k-positioner {
+  $k-positioner-width: 16px;
+  $k-positioner-color: #ccc;
+
+  display: inline-block;
+  vertical-align: middle;
+  width: $k-positioner-width;
+  height: 4px;
+  border-top: 1px solid $k-positioner-color;
+  border-bottom: 1px solid $k-positioner-color;
+  cursor: move;
+  counter-increment: positioner-counter;
+
+  @include psuedo(before) {
+    width: $k-positioner-width;
+    height: 10px;
+    border-top: 1px solid $k-positioner-color;
+    border-bottom: 1px solid $k-positioner-color;
+    top: -4px;
+  }
+
+  &:after {
+    position: absolute;
+    width: ($k-positioner-width * 2);
+    height: ($k-positioner-width * 2);
+    top: -($k-positioner-width - 1px);
+    left: -($k-positioner-width / 2);
+    content: counter(positioner-counter);
+    font-size: 10px;
+    line-height: ($k-positioner-width * 2.75);
+    text-indent: 3px;
+    vertical-align: bottom;
+    color: #333;
+    text-shadow: 0 0 3px white;
+    @include transition;
+  }
+
+  @for $i from 1 through 15 {
+    &--level#{$i} {
+      counter-increment: positioner-counter#{$i};
+
+      &:after {
+        content: counter(positioner-counter#{$i});
+      }
+    }
+  }
+}
+
+.k-table-container {
+  counter-reset:
+  positioner-counter
+  positioner-counter-level1
+  positioner-counter-level2
+  positioner-counter-level3
+  positioner-counter-level4
+  positioner-counter-level5
+  positioner-counter-level6
+  positioner-counter-level7
+  positioner-counter-level8
+  positioner-counter-level9
+  positioner-counter-level10
+  positioner-counter-level11
+  positioner-counter-level12
+  positioner-counter-level13
+  positioner-counter-level14
+  positioner-counter-level15;
+}
+
+tr.selected {
+  .k-positioner {
+    &:after {
+      color: white;
+      text-shadow: none;
+    }
+  }
+}
+
+
+
+// @TODO: Make a bit nicer
+.files__sortable,
+.files__sortable--sorted,
+.files__sortable--sorted-desc,
+a.-koowa-asc,
+a.-koowa-desc {
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.files__sortable--sorted,
+a.-koowa-asc {
+  @include icon-after(sort-ascending, true) {
+    margin-left: .5em;
+    vertical-align: middle;
+  }
+}
+
+.files__sortable--sorted-desc,
+a.-koowa-desc {
+  @include icon-after(sort-descending, true) {
+    margin-left: .5em;
+    vertical-align: middle;
   }
 }

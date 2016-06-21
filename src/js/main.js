@@ -8,13 +8,14 @@
             $mobiletitle = $('.k-mobile-title'),
             $toolbar = $('.k-toolbar'),
             $content = $('.k-content'),
-            $fixedtable = $('.table--fixed'),
+            $fixedtable = $('.k-fixed-table-header'),
             $clickable = $('a, button'),
             $searchtoggle = $('.js-toggle-search'),
             $filtertoggle = $('.js-toggle-filters'),
             $footable = $('.footable'),
             $overflow = $('.k-sidebar-item--overflow'),
-            resizeClass = 'k-is-resizing';
+            resizeClass = 'k-is-resizing',
+            $sidebarToggle = $('.k-sidebar-item--toggle');
 
         // Sidebar
         if ( ($toolbar.length || $titlebar.length || $mobiletitle.length) && $wrapper.length && $content.length)
@@ -160,6 +161,15 @@
             }, 250);
 
         });
+
+        if ( $sidebarToggle.length )
+        {
+            $sidebarToggle.find('.k-sidebar-item__header').append('<div class="k-sidebar-item__toggle"><span class="visually-hidden">Toggle</span></div>');
+            var $sidebarToggleHandler = $('.k-sidebar-item__toggle');
+            $sidebarToggle.on('click', '.k-sidebar-item__toggle', function() {
+                $sidebarToggleHandler.toggleClass('is-active').parent().next().slideToggle(180);
+            });
+        }
 
     });
 

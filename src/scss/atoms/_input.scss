@@ -32,15 +32,37 @@ input[type="range"] {
   width: 100%;
 }
 
-/* Make multiple select elements height not fixed */
-select[multiple],
-select[size] {
-  height: auto;
-}
-
 /* Focus for file, radio, and checkbox */
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
   @include tab-focus;
+}
+
+
+// Better sized because of box-sizing
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  height: 32px;
+}
+
+/* Make multiple select elements height not fixed */
+select[multiple],
+select[size] {
+  height: auto;
 }

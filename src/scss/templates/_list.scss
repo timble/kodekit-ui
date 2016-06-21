@@ -14,14 +14,16 @@ markup:
     <div class="k-content-wrapper">
         <!-- Sidebar -->
         <div class="k-sidebar-left js-sidebar-left">
-            <sg-insert>2.15-all</sg-insert>
+            <div class="k-sidebar-item">
+                <sg-insert>2.15-all</sg-insert>
+            </div>
             <div class="k-sidebar-item k-sidebar-item--overflow">
                 <div class="k-sidebar-item__header">
                     Categories
                 </div>
                 <sg-insert>2.24</sg-insert>
             </div>
-            <div class="k-sidebar-item">
+            <div class="k-sidebar-item k-sidebar-item--toggle">
                 <div class="k-sidebar-item__header">
                     Quick filters
                 </div>
@@ -49,6 +51,7 @@ markup:
 Styleguide 4.1
 
 */
+
 
 
 

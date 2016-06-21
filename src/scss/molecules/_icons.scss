@@ -354,3 +354,40 @@ Styleguide 2.30.2
 .k-icon-error {
   color: $color-error;
 }
+
+
+/*
+Icon sizes
+
+Different sizes for icons
+
+.k-icon--size-16 - 16px
+.k-icon--size-32 - 32px
+.k-icon--size-48 - 48px
+.k-icon--size-64 - 64px
+
+markup:
+<span class="k-icon-home {$modifiers}" aria-hidden="true"></span>
+
+sg-wrapper:
+<div><sg-wrapper-content/></div>
+
+Styleguide 2.30.3
+
+*/
+
+.k-icon--size-16 {
+  font-size: 16px;
+}
+
+.k-icon--size-32 {
+  font-size: 32px;
+}
+
+.k-icon--size-48 {
+  font-size: 48px;
+}
+
+.k-icon--size-64 {
+  font-size: 64px;
+}

@@ -86,11 +86,6 @@ Styleguide 3.4
     display: flex;
     flex-direction: column;
     flex: 0 0 auto;
-
-    .k-sidebar__navigation,
-    .k-sidebar__footer {
-      flex: 0 0 auto;
-    }
   }
 }
 
@@ -98,7 +93,7 @@ Styleguide 3.4
 /* RTL */
 
 @include rtl {
-  .k-sidebar,
+  .k-sidebar-left,
   .k-sidebar-right {
     direction: rtl;
   }
