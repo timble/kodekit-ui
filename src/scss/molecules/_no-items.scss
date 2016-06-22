@@ -6,7 +6,7 @@ Styled warning for when there are no items yet
 markup:
 <div class="k-no-items-container">
     <p>It seems like you don't have any items yet.</p>
-    <p><a href="javascript:void(0)" class="k-button k-button--success">Add your first item</a></p>
+    <p><a href="javascript:void(0)" class="k-button k-button--success k-button--large">Add your first item</a></p>
 </div>
 
 Styleguide 2.99
@@ -34,10 +34,5 @@ Styleguide 2.99
     &:last-child {
       margin-bottom: 0;
     }
-  }
-
-  .k-button {
-    font-size: $font-size--medium;
-    line-height: $line-height--medium;
   }
 }

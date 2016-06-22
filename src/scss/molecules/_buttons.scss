@@ -193,6 +193,19 @@ Styleguide 2.2.1
 }
 
 
+/* Sizes */
+.k-button--large {
+  font-size: $font-size--medium;
+  line-height: $line-height--medium;
+}
+
+
+.k-button--small {
+  font-size: $font-size--small;
+  line-height: $line-height--small;
+}
+
+
 /* Vertically space out multiple block buttons */
 
 .k-button--block + .k-button--block {

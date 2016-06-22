@@ -1,70 +1,49 @@
-// @TODO: document this and put it in the styleguide / refactor
+/*
+Grid
 
-$grid-itemWidth: 140px !default;
-$grid-spacing: 16px !default;
-$grid-width: 2560px !default;
+A complete grid
 
-@mixin setGridItemWidth($breakpoint,$columns) {
-  @media (min-width: $breakpoint ) {
-    width: percentage(1/$columns);
-    @content;
-  }
-}
+markup:
+<!-- Grid -->
+<div class="k-grid-container">
+    <div class="k-grid">
+        <div class="k-grid__items">
+            <div class="k-grid__item k-grid__item--folder">
+                <sg-insert>2.20.4</sg-insert>
+            </div>
+            <div class="k-grid__item k-grid__item--folder">
+                <sg-insert>2.20.4</sg-insert>
+            </div>
+            <div class="k-grid__item k-grid__item--folder">
+                <sg-insert>2.20.4</sg-insert>
+            </div>
+            <div class="k-grid__item k-grid__item--file">
+                <sg-insert>2.20.3</sg-insert>
+            </div>
+            <div class="k-grid__item k-grid__item--file">
+                <sg-insert>2.20.3</sg-insert>
+            </div>
+            <div class="k-grid__item k-grid__item--file">
+                <sg-insert>2.20.3</sg-insert>
+            </div>
+            <div class="k-grid__item k-grid__item--file">
+                <sg-insert>2.20.3</sg-insert>
+            </div>
+            <div class="k-grid__item k-grid__item--file">
+                <sg-insert>2.20.3</sg-insert>
+            </div>
+        </div>
+    </div>
+    <sg-insert>2.50.1</sg-insert>
+</div>
 
-// Calculate the grid items
-@mixin setGridBreakpoint($width: $grid-itemWidth, $spacing: $grid-spacing, $gridwidth: $grid-width) {
+Styleguide 2.110
 
-  // Calculating max number
-  $number: floor($gridwidth / $width);
+*/
 
-  // From 2 to 20 columns
-  @for $i from 2 through $number {
-
-    // Calculating breakpoint
-    $prev-breakpoint-width: (($i - 1) * $width) + ($i * $spacing);
-    $breakpoint-width: ($i * $width) + (($i + 1) * $spacing);
-    $columns: $i;
-    $breakpoint: $breakpoint-width;
-
-    // Setting separate breakpoint for $desktop width
-    @if ( $breakpoint-width > $desktop and $prev-breakpoint-width < $desktop ) {
-      $breakpoint: $desktop;
-      $columns: floor(($desktop - $sidebar-width-small - $spacing) / ($width + $spacing));
-      @include setGridItemWidth($breakpoint,$columns);
-    }
-
-    // All breakpoints above $desktop
-    @if ( $breakpoint-width > $desktop and $breakpoint-width < $delta ) {
-      $columns: floor(($breakpoint-width - $sidebar-width-small - $spacing) / ($width + $spacing));
-      $breakpoint: $sidebar-width-small + (($columns * $width) + (($columns + 1) * $spacing));
-      @if ( $breakpoint < $desktop ) {
-        $breakpoint: $breakpoint + ($width + $spacing);
-      }
-    }
-
-    // Setting separate breakpoint for $delta width
-    @if ( $breakpoint-width > $delta and $prev-breakpoint-width < $delta ) {
-      $breakpoint: $delta;
-      $columns: floor(($delta - $sidebar-width - $spacing) / ($width + $spacing));
-      @include setGridItemWidth($breakpoint,$columns);
-    }
-
-    // All breakpoints above $delta
-    @if ( $breakpoint-width > $delta ) {
-      $columns: floor(($breakpoint-width - $sidebar-width - $spacing) / ($width + $spacing));
-      $breakpoint: $sidebar-width + (($columns * $width) + (($columns + 1) * $spacing));
-      @if ( $breakpoint < $delta ) {
-        $breakpoint: $breakpoint + ($width + $spacing);
-      }
-    }
-
-    // Setting breakpoints
-    @include setGridItemWidth($breakpoint,$columns);
-  }
-}
 
 .k-grid-container {
-  background: $table-background;
+  background: $grid-background;
 
   @include flexbox {
     display: flex;
@@ -75,13 +54,14 @@ $grid-width: 2560px !default;
 }
 
 .k-grid {
-  background: $table-background;
+  background: $grid-background;
   padding: $grid-spacing / 2;
   overflow: auto;
 
   @include flexbox {
     display: flex;
-    flex: 0 1 auto;
+    flex-direction: column;
+    flex: 1 1 auto;
   }
 }
 

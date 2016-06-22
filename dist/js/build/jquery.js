@@ -11007,5 +11007,4 @@ if ( !noGlobal ) {
 return jQuery;
 }));
 
-
 window.kQuery = jQuery.noConflict(true);

@@ -4,8 +4,6 @@
  * http://www.robinpoort.com
  */
 
-"use strict";
-
 (function($) {
 
     $.offCanvasMenu = function(element, options) {

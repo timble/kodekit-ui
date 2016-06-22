@@ -145,6 +145,39 @@
             $('.k-scopebar__filters').toggle('fast');
         });
 
+        // Select2
+        var kSelect2 = $('.k-select2');
+        if ( kSelect2.length ) {
+            kSelect2.select2({
+                theme: "bootstrap"
+            });
+        }
+
+        // jqTree
+        var jqTree = $('#k-jqtree');
+        if ( jqTree.length ) {
+
+            var jqTreeData = [
+                {
+                    name: 'node1',
+                    children: [
+                        { name: 'child1' },
+                        { name: 'child2' }
+                    ]
+                },
+                {
+                    name: 'node2',
+                    children: [
+                        { name: 'child3' }
+                    ]
+                }
+            ];
+
+            jqTree.tree({
+                data: jqTreeData
+            })
+        }
+
         // Add a class during resizing event so we can hide overflowing stuff
         var resizeTimer;
 

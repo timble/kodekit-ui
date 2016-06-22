@@ -56,6 +56,8 @@ $font-size--large:        21px !default;
 $line-height--large:      32px !default;
 $font-size--medium:       18px !default;
 $line-height--medium:     27px !default;
+$font-size--small:        11px !default;
+$line-height--small:      17px !default;
 $bold:                    700 !default;
 $regular:                 400 !default;
 $webkit-font-smoothing:   antialiased !default;
@@ -491,6 +493,15 @@ $form-option-shadow:        inset 0 1px 2px rgba(0,0,0,.15) !default;
 
 $no-items-background:   white !default;
 $no-items-color:        $color-type !default;
+
+
+// Grid
+// ==========================================================================
+
+$grid-background:   colorpicker(primary, 6) !default;
+$grid-itemWidth:    140px !default;
+$grid-spacing:      16px !default;
+$grid-width:        2560px !default;
 
 
 // Bootstrap overrides

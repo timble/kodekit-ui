@@ -9,7 +9,6 @@
  *
  */
 (function($){
-    'use strict';
 
     /**
      * Focusses the next :focusable element. Elements with tabindex=-1 are focusable, but not tabable.

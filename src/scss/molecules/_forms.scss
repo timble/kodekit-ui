@@ -18,6 +18,10 @@ Styleguide 2.13
 
 */
 
+
+
+
+
 // Common form controls
 //
 // Shared size and type resets for form controls. Apply `.form-control` to any
@@ -544,6 +548,160 @@ input[type="checkbox"] {
       .control-label {
         padding-top: ($padding-small-vertical + 1);
         font-size: 16px;
+      }
+    }
+  }
+}
+
+
+
+/*
+Inline form group
+
+Inline form group
+
+markup:
+<div class="k-inline-form-group">
+    <sg-insert>2.13.2</sg-insert>
+    <sg-insert>2.13.2</sg-insert>
+    <sg-insert>2.13.2</sg-insert>
+</div>
+
+Styleguide 2.13.1
+
+*/
+
+.k-inline-form-group {
+  background: #fff;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: $spacing;
+}
+
+
+
+/*
+Inline form
+
+markup:
+<form class="k-inline-form">
+    <div class="k-inline-form__item k-inline-form__item--button">
+        <button class="k-button k-button--default k-button--small">
+            <span class="k-icon-minus k-icon-error"></span>
+        </button>
+    </div>
+    <div class="k-inline-form__item k-inline-form__item--label">
+        <label>File name:</label>
+    </div>
+    <div class="k-inline-form__item k-inline-form__item--input">
+        <input class="form-control" type="text" value="{value}" disabled="">
+    </div>
+    <div class="k-inline-form__item k-inline-form__item--label">
+        <label for="docman_title0">Title:</label>
+    </div>
+    <div class="k-inline-form__item k-inline-form__item--input">
+        <input id="docman_title0" class="form-control" type="text" name="title" value="{value}">
+    </div>
+</form>
+
+Styleguide 2.13.2
+
+*/
+
+.k-inline-form {
+  margin: 0;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+
+  @include breakpoint($beta) {
+    display: table;
+    width: 100%;
+    padding-bottom: 0;
+
+    @include rtl {
+      direction: rtl;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .k-inline-form__item {
+    padding: 10px 10px 0 10px;
+    border-right: 1px solid #ccc;
+
+    @include rtl {
+      border-right: none;
+      border-left: 1px solid #ccc;
+    }
+
+    @include breakpoint($beta) {
+      display: table-cell;
+      vertical-align: middle;
+      padding: 10px;
+    }
+
+    &:last-child {
+      border-right: none;
+
+      @include rtl {
+        border-left: none;
+      }
+    }
+  }
+
+  .k-inline-form__item--button,
+  .k-inline-form__item--label {
+    width: 1%;
+    white-space: nowrap;
+  }
+
+  .k-inline-form__item--label {
+    border-right: none;
+    padding-right: 0;
+
+    @include rtl {
+      border-left: none;
+      padding-right: 10px;
+      padding-left: 0;
+    }
+  }
+
+  .k-inline-form__item--input {
+    @include breakpoint($beta) {
+      padding: 5px;
+    }
+  }
+
+  .form-control {
+    margin: 0;
+  }
+
+  .k-inline-form__message {
+    a {
+      display: block;
+      padding: 10px;
+
+      &:focus,
+      &:hover {
+        background: #eee;
+      }
+    }
+  }
+
+  &:first-child {
+    .k-inline-form__message {
+      a {
+        border-radius: 5px 5px 0 0;
+      }
+    }
+  }
+
+  &:last-child {
+    .k-inline-form__message {
+      a {
+        border-radius: 0 0 5px 5px;
       }
     }
   }
