@@ -9,13 +9,15 @@ The default titlebar
 - {unsureText}
 
 markup:
-<div class="k-titlebar">
+<!-- Title when sidebar is invisible -->
+<div class="k-title-bar">
     <h2>{Title}</h2>
-</div><!-- .k-titlebar -->
+</div><!-- .k-title-bar -->
 
 Styleguide 2.22
 
 */
+
 
 /**
  * 1. Set the z-index higher than the menus
@@ -23,7 +25,7 @@ Styleguide 2.22
  * 3. Set transition for off canvas sidebar
  */
 
-.k-titlebar {
+.k-title-bar {
   @include border(bottom, $titlebar-border);
   position: relative; /* 1 */
   z-index: 2; /* 1 */
@@ -51,7 +53,7 @@ Styleguide 2.22
  */
 
 .show-left-menu {
-  .k-titlebar {
+  .k-title-bar {
     transform: translate($sidebar-width, 0); /* 1 */
 
     @include rtl {
@@ -69,7 +71,7 @@ Styleguide 2.22
 }
 
 .show-right-menu {
-  .k-titlebar {
+  .k-title-bar {
     transform: translate(-($sidebar-width), 0); /* 2 */
 
     @include rtl {
@@ -96,14 +98,14 @@ Styleguide 2.22
 
 .show-left-menu,
 .show-right-menu {
-  .k-titlebar:before {
+  .k-title-bar:before {
     opacity: .75; /* 1 */
   }
 }
 
 .opened--left,
 .opened--right {
-  .k-titlebar:before {
+  .k-title-bar:before {
     z-index: 2; /* 2 */
   }
 }
@@ -111,7 +113,7 @@ Styleguide 2.22
 
 /* Titlebar contents */
 
-.k-titlebar {
+.k-title-bar {
   .k-off-canvas-overlay {
     bottom: -1px; /* Also cover the bottom border */
   }
@@ -138,5 +140,35 @@ Styleguide 2.22
         text-align: right;
       }
     }
+  }
+}
+
+
+
+/*
+Mobile title
+
+Title just for mobile
+- Use <b>never</b> together with a `.k-title-bar`
+- Use <b>only</b> as <b>child</b> of `.k-content`
+- Only visible on smaller screens
+- {unsureText}
+
+markup:
+<!-- Title when sidebar is invisible -->
+<div class="k-title-bar k-title-bar--mobile">
+  <h2>{Title}</h2>
+</div><!-- .k-title-bar -->
+
+Styleguide 2.22.1
+
+*/
+
+.k-title-bar--mobile {
+  @include border(bottom, $mobile-title-border);
+  background: $mobile-title-background;
+
+  @include breakpoint($charlie) {
+    display: none;
   }
 }

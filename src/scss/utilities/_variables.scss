@@ -206,11 +206,8 @@ $titlebar-color:        $color-type !default;
 //
 // Since we're hiding the sidemenu on smaller screens we need to display the title
 
-$mobile-title-spacing:      $spacing-small !default
 $mobile-title-background:   colorpicker(primary,0) !default;
 $mobile-title-border:       darkest($mobile-title-background) !default;
-$mobile-title-font-size:    $font-size--large !default;
-$mobile-title-line-height:  $line-height !default;
 
 
 // Toolbar

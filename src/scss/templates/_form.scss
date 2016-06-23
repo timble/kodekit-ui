@@ -68,6 +68,14 @@ markup:
                                     </div>
                                 </div>
                             </fieldset>
+                            <fieldset class="k-form-block">
+                                <div class="k-form-block__header">
+                                    Date
+                                </div>
+                                <div class="k-form-block__content">
+                                    <sg-insert>2.140</sg-insert>
+                                </div>
+                            </fieldset>
                         </div><!-- .k-container__sub -->
                     </div><!-- .k-container -->
                 </form><!-- .k-form-layout -->
@@ -233,3 +241,4 @@ markup:
 Styleguide 4.2.2
 
 */
+

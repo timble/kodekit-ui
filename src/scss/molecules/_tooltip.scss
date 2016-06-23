@@ -5,6 +5,24 @@
 // @TODO: document this and put it in the styleguide / refactor
 
 
+/*
+Tooltip
+
+Tooltips
+
+markup:
+<a href="#" class="k-js-tooltip" data-toggle="tooltip" data-original-title="Tooltip">Tooltip on top</a>
+
+sg-wrapper:
+<p style="margin: 30px 0;">
+    <sg-wrapper-content/>
+</p>
+
+Styleguide 2.135
+
+*/
+
+
 // Base class
 .tooltip {
   position: absolute;

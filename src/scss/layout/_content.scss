@@ -69,7 +69,7 @@ Styleguide 3.5
 
 .show-left-menu {
   .k-content,
-  .k-titlebar {
+  .k-title-bar {
     transform: translate($sidebar-width, 0); /* 1 */
 
     @include breakpoint($desktop) {
@@ -79,7 +79,7 @@ Styleguide 3.5
 
   @include rtl {
     .k-content,
-    .k-titlebar {
+    .k-title-bar {
       transform: translate(-($sidebar-width), 0);
 
       @include breakpoint($desktop) {
@@ -91,7 +91,7 @@ Styleguide 3.5
 
 .show-right-menu {
   .k-content,
-  .k-titlebar {
+  .k-title-bar {
     transform: translate(-($sidebar-width), 0); /* 2 */
 
     @include breakpoint($desktop) {
@@ -101,7 +101,7 @@ Styleguide 3.5
 
   @include rtl {
     .k-content,
-    .k-titlebar {
+    .k-title-bar {
       transform: translate($sidebar-width, 0);
 
       @include breakpoint($desktop) {

@@ -4,12 +4,10 @@
 
         // Variables
         var $wrapper = $('.k-wrapper'),
-            $titlebar = $('.k-titlebar'),
-            $mobiletitle = $('.k-mobile-title'),
+            $titlebar = $('.k-title-bar'),
             $toolbar = $('.k-toolbar'),
             $content = $('.k-content'),
             $fixedtable = $('.k-fixed-table-header'),
-            $clickable = $('a, button'),
             $searchtoggle = $('.js-toggle-search'),
             $filtertoggle = $('.js-toggle-filters'),
             $footable = $('.footable'),
@@ -31,8 +29,7 @@
             function addOffCanvasButton(element, position) {
                 // Variables
                 var kContainer = '.koowa-container',
-                    titlebar = element.closest(kContainer).find('.k-titlebar')[0],
-                    mobiletitle = element.closest(kContainer).find('.k-mobile-title')[0],
+                    titlebar = element.closest(kContainer).find('.k-title-bar')[0],
                     toolbar = element.closest(kContainer).find('.k-toolbar')[0],
                     wrapper = element.closest(kContainer).find('.k-wrapper')[0],
                     content = element.closest(kContainer).find('.k-content')[0],
@@ -52,12 +49,6 @@
                             $(titlebar).append($toggle);
                         }
                         transitionElements = [$(content), $(titlebar)]
-                    } else if ( mobiletitle != undefined ) {
-                        if ( position == 'left' ) {
-                            $(mobiletitle).prepend($toggle);
-                        } else if ( position == 'right') {
-                            $(mobiletitle).append($toggle);
-                        }
                     } else if ( toolbar != undefined ) {
                         if ( position == 'left' ) {
                             $(toolbar).prepend($toggle);
@@ -128,13 +119,6 @@
 
         fixedTable();
 
-        // Clickable items
-        if ( $clickable.length ) {
-            $clickable.click(function() {
-                $(this).toggleClass('k-opened');
-            });
-        }
-
         // Toggle search
         $searchtoggle.click(function() {
             $('.k-scopebar__item--search').slideToggle('fast');
@@ -176,6 +160,31 @@
             jqTree.tree({
                 data: jqTreeData
             })
+        }
+
+
+        // Datepicker
+        var datepicker = $('.k-js-datepicker');
+        if ( datepicker.length ) {
+            datepicker.koowaDatepicker();
+        }
+
+        // Magnific
+        var magnific = $('.k-js-popup');
+        if ( magnific.length ) {
+            magnific.magnificPopup({type: 'image'});
+        }
+
+
+        // Tooltips
+        var tooltip = $('.k-js-tooltip');
+        if ( tooltip.length ) {
+            tooltip.tooltip({
+                animation: true,
+                placement: 'top',
+                delay: { show: 200, hide: 50 },
+                container: '.koowa-container'
+            });
         }
 
         // Add a class during resizing event so we can hide overflowing stuff

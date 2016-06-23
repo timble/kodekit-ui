@@ -1,7 +1,7 @@
 /*
-Preview
+Card
 
-Preview
+Card
 - Display either an image or an icon
 
 markup:
@@ -23,7 +23,7 @@ Styleguide 2.20
 */
 
 /*
-Preview (image)
+Card (image)
 
 - Display image
 
@@ -46,7 +46,7 @@ Styleguide 2.20.1
 */
 
 /*
-Preview (icon)
+Card (icon)
 
 - Display image
 
@@ -70,14 +70,14 @@ Styleguide 2.20.2
 
 
 /*
-Preview with title
+Card with title
 
-Preview with title
+Card with title
 
 markup:
 <!-- Preview -->
 <div class="k-card">
-    <a class="k-card__body k-card__body--preview" href="javascript:void(0)">
+    <a class="k-card__body k-card__body--preview k-js-popup" href="joomlatools/images/placeholder-16-9.png">
         <div class="k-card__preview-content-wrapper">
             <div class="k-card__preview-content">
                 <div class="k-card__preview">
@@ -97,9 +97,9 @@ Styleguide 2.20.3
 
 
 /*
-Preview with text
+Card with text only
 
-Preview with text
+Card with text only
 
 markup:
 <!-- Preview -->

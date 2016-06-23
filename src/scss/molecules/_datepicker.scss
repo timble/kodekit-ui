@@ -10,6 +10,31 @@
 
 // @TODO: document this and put it in the styleguide / refactor
 
+
+/*
+Datepicker
+
+Datepicker
+
+markup:
+<div class="form-group">
+    <label>Date</label>
+    <div class="input-group">
+        <input class="form-control" type="text" name="date" value="" size="25" maxlength="19" placeholder="">
+        <span class="input-group-button">
+            <button type="button" class="k-button k-button--default k-js-datepicker">
+                <span class="k-icon-calendar">
+                    <span class="visually-hidden">calendar</span>
+                </span>
+            </button>
+        </span>
+    </div>
+</div>
+
+Styleguide 2.140
+
+*/
+
 .datepicker {
   font-family: $font-family;
   font-size: $font-size;
