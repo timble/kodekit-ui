@@ -9,7 +9,6 @@ The default titlebar
 - {unsureText}
 
 markup:
-<!-- Title when sidebar is invisible -->
 <div class="k-title-bar">
     <h2>{Title}</h2>
 </div><!-- .k-title-bar -->
@@ -28,7 +27,7 @@ Styleguide 2.22
 .k-title-bar {
   @include border(bottom, $titlebar-border);
   position: relative; /* 1 */
-  z-index: 2; /* 1 */
+  z-index: 10; /* 1 */
   display: table;
   width: 100%;
   background: $titlebar-background; /* 2 */
@@ -53,7 +52,7 @@ Styleguide 2.22
  */
 
 .show-left-menu {
-  .k-title-bar {
+  & > .k-title-bar {
     transform: translate($sidebar-width, 0); /* 1 */
 
     @include rtl {
@@ -71,7 +70,7 @@ Styleguide 2.22
 }
 
 .show-right-menu {
-  .k-title-bar {
+  & > .k-title-bar {
     transform: translate(-($sidebar-width), 0); /* 2 */
 
     @include rtl {

@@ -44,6 +44,7 @@ Styleguide 2.21
 
   &--overflow {
     overflow: auto; /* 1 */
+    width: 100%;
 
     @include flexbox {
       flex: 0 1 auto;
