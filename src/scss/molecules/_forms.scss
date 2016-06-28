@@ -56,14 +56,19 @@ Styleguide 2.13
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
   border: 1px solid $input-border;
   border-radius: $input-border-radius; // Note: This has no effect on <select>s in some browsers, due to the limited stylability of <select>s in CSS.
-  @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
-  @include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 
   // Customize the `:focus` state to imitate native WebKit styles.
   @include form-control-focus;
 
   // Placeholder
-  @include placeholder;
+  &::-moz-placeholder { // Firefox
+    color: $input-color-placeholder;
+    opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+  }
+  &:-ms-input-placeholder { color: $input-color-placeholder; } // Internet Explorer 10+
+  &::-webkit-input-placeholder  { color: $input-color-placeholder; } // Safari and Chrome
 
   // Unstyle the caret on `<select>`s in IE10+.
   &::-ms-expand {
@@ -555,23 +560,101 @@ input[type="checkbox"] {
 
 
 
+
 /*
 Inline form group
 
-Inline form group
+Inline form groups
 
 markup:
-<div class="k-inline-form-group">
-    <sg-insert>2.13.2</sg-insert>
-    <sg-insert>2.13.2</sg-insert>
-    <sg-insert>2.13.2</sg-insert>
+<label>Select from presets</label>
+<div class="form-group">
+    <div class="inline-form-group">
+        <label>Label 1</label>
+        <div class="k-button-group">
+            <a href="#" class="k-button k-button--default k-button--tiny">
+                <span class="k-icon-plus"></span>
+            </a>
+            <a href="#" class="k-button k-button--default k-button--tiny">
+                <span class="k-icon-minus"></span>
+            </a>
+        </div>
+    </div>
+    <div class="inline-form-group">
+        <label>Label 2</label>
+        <div class="k-button-group">
+            <a href="#" class="k-button k-button--default k-button--tiny">
+                <span class="k-icon-plus"></span>
+            </a>
+            <a href="#" class="k-button k-button--default k-button--tiny">
+                <span class="k-icon-minus"></span>
+            </a>
+        </div>
+    </div>
+    <div class="inline-form-group">
+        <label>Label 3</label>
+        <div class="k-button-group">
+            <a href="#" class="k-button k-button--default k-button--tiny">
+                <span class="k-icon-plus"></span>
+            </a>
+            <a href="#" class="k-button k-button--default k-button--tiny">
+                <span class="k-icon-minus"></span>
+            </a>
+        </div>
+    </div>
 </div>
 
 Styleguide 2.13.1
 
 */
 
-.k-inline-form-group {
+
+.inline-form-group {
+  display: inline-block;
+  margin-right: 1em;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @include rtl {
+    margin-right: 0;
+    margin-left: 1em;
+
+    &:last-child {
+      margin-left: 0;
+      margin-right: 1em;
+    }
+  }
+
+  label {
+    font-weight: $regular;
+  }
+
+  .k-input-group,
+  .k-button-group {
+    display: block;
+  }
+}
+
+
+/*
+Form row group
+
+Form row group
+
+markup:
+<div class="k-form-row-group">
+    <sg-insert>2.13.3</sg-insert>
+    <sg-insert>2.13.3</sg-insert>
+    <sg-insert>2.13.3</sg-insert>
+</div>
+
+Styleguide 2.13.2
+
+*/
+
+.k-form-row-group {
   background: #fff;
   border-radius: 5px;
   border: 1px solid #ccc;
@@ -581,34 +664,36 @@ Styleguide 2.13.1
 
 
 /*
-Inline form
+Form row
+
+Form row
 
 markup:
-<form class="k-inline-form">
-    <div class="k-inline-form__item k-inline-form__item--button">
+<form class="k-form-row">
+    <div class="k-form-row__item k-form-row__item--button">
         <button class="k-button k-button--default k-button--small">
             <span class="k-icon-minus k-icon-error"></span>
         </button>
     </div>
-    <div class="k-inline-form__item k-inline-form__item--label">
+    <div class="k-form-row__item k-form-row__item--label">
         <label>File name:</label>
     </div>
-    <div class="k-inline-form__item k-inline-form__item--input">
+    <div class="k-form-row__item k-form-row__item--input">
         <input class="form-control" type="text" value="{value}" disabled="">
     </div>
-    <div class="k-inline-form__item k-inline-form__item--label">
+    <div class="k-form-row__item k-form-row__item--label">
         <label for="docman_title0">Title:</label>
     </div>
-    <div class="k-inline-form__item k-inline-form__item--input">
+    <div class="k-form-row__item k-form-row__item--input">
         <input id="docman_title0" class="form-control" type="text" name="title" value="{value}">
     </div>
 </form>
 
-Styleguide 2.13.2
+Styleguide 2.13.3
 
 */
 
-.k-inline-form {
+.k-form-row {
   margin: 0;
   border-bottom: 1px solid #ccc;
   padding-bottom: 10px;
@@ -627,7 +712,7 @@ Styleguide 2.13.2
     }
   }
 
-  .k-inline-form__item {
+  .k-form-row__item {
     padding: 10px 10px 0 10px;
     border-right: 1px solid #ccc;
 
@@ -651,13 +736,13 @@ Styleguide 2.13.2
     }
   }
 
-  .k-inline-form__item--button,
-  .k-inline-form__item--label {
+  .k-form-row__item--button,
+  .k-form-row__item--label {
     width: 1%;
     white-space: nowrap;
   }
 
-  .k-inline-form__item--label {
+  .k-form-row__item--label {
     border-right: none;
     padding-right: 0;
 
@@ -668,7 +753,7 @@ Styleguide 2.13.2
     }
   }
 
-  .k-inline-form__item--input {
+  .k-form-row__item--input {
     @include breakpoint($beta) {
       padding: 5px;
     }
@@ -678,7 +763,7 @@ Styleguide 2.13.2
     margin: 0;
   }
 
-  .k-inline-form__message {
+  .k-form-row__message {
     a {
       display: block;
       padding: 10px;
@@ -691,7 +776,7 @@ Styleguide 2.13.2
   }
 
   &:first-child {
-    .k-inline-form__message {
+    .k-form-row__message {
       a {
         border-radius: 5px 5px 0 0;
       }
@@ -699,10 +784,225 @@ Styleguide 2.13.2
   }
 
   &:last-child {
-    .k-inline-form__message {
+    .k-form-row__message {
       a {
         border-radius: 0 0 5px 5px;
       }
+    }
+  }
+}
+
+
+
+
+
+/*
+Checkbox & Radio inputs
+
+CSS only styled checkboxes and radio boxes
+
+markup:
+<input type="checkbox" id="input1">
+<label for="input1">Label 1</label>
+<input type="radio" id="input2">
+<label for="input2">Label 2</label>
+<!-- Or -->
+<label><input type="checkbox" id="input1"> Label 1</label>
+<label><input type="radio" id="input2"> Label 2</label>
+
+sg-wrapper:
+<div class="form-group">
+    <sg-wrapper-content/>
+</div>
+
+Styleguide 2.13.4
+
+*/
+
+/**
+ * Shared styling between radio boxes and checkboxes
+ */
+
+@include modernizr('.k-appearance.k-checked') {
+  input[type="checkbox"],
+  input[type="radio"] {
+
+    /**
+     * 1. Resetting the default styling used by browsers. Don't do this for -moz-
+          because the checkbox and radio box will look very ugly
+     * 2. Positioning relative to position psuedo before element nicely
+     * 3. Vertically positioning next to text
+     * 4. Aligning vertically next to labels
+     * 5. Indicate that element is clickable
+     */
+
+    -webkit-appearance: none; /* 1 */
+    /* -moz-appearance: don't set this; /* 1 */
+    position: relative; /* 2 */
+    height: $form-option-size;
+    width: $form-option-size;
+    margin-top: -1px; /* 3 */
+    margin-bottom: 2px; /* 3 */
+    margin-left: 0;
+    margin-right: .33em;
+    border: $form-option-border-size solid $form-option-border;
+    padding: 0;
+    background: $form-option-background;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer; /* 5 */
+    box-shadow: $form-option-shadow;
+    @include transition(background);
+
+    /* Hover to indicate element is clickable */
+
+    &:hover {
+      background: #f1f1f1;
+    }
+
+    /* Set disabled border color a bit lighter so it won't appear to be larger */
+
+    &:disabled {
+      border-color: #bbb;
+    }
+
+    /**
+     * 1. Position psuedo element absolute to have full control
+     * 2. Position top-left, margin, width and height will take care of centering
+     * 3. Initially hide the psuedo element
+     * 4. Show the psuedo element when item is checked
+     */
+
+    &:before {
+      position: absolute; /* 1 */
+      top: 0; /* 2 */
+      left: 0; /* 2 */
+      visibility: hidden; /* 3 */
+      transform: scale(0,0); /* 3 */
+      text-align: center;
+      vertical-align: middle;
+      background: transparent;
+      @include transition;
+    }
+
+    &:checked:before {
+      visibility: visible; /* 4 */
+      transform: scale(1,1); /* 4 */
+    }
+
+  }
+
+  /* Put some space between the box and the label */
+  label {
+
+    /**
+     * <input id="input1">
+     * <label for="input1">Label 1</label>
+     * <input id="input2">
+     * <label for="input2">Label 2</label>
+     */
+
+    & + input[type="checkbox"],
+    & + input[type="radio"] {
+      margin-left: 1em;
+    }
+
+    /**
+     * <label><input id="input1"> Label 1</label>
+     * <label><input id="input2"> Label 2</label>
+     */
+
+    & + label {
+      margin-left: 1em;
+    }
+  }
+}
+
+
+/* RTL */
+
+@include modernizr-rtl('.k-appearance.k-checked') {
+  input[type="checkbox"],
+  input[type="radio"] {
+    margin-left: .33em;
+    margin-right: 0;
+
+    &:before {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  label {
+
+    & + input[type="checkbox"],
+    & + input[type="radio"] {
+      margin-left: auto;
+      margin-right: 1em;
+    }
+
+    & + label {
+      margin-left: auto;
+      margin-right: 1em;
+    }
+  }
+}
+
+
+
+/* ==========================================================================
+   CSS only styled checkbox
+   ========================================================================== */
+
+/**
+ * 1. Remove rounded corners by default
+ * 2. Display a check icon in the psuedo before element
+ * 3. Height of the box minus the border size
+ * 4. Height of the psuedo element minus a 1px padding/margin to move icon
+      away from the side of the box
+ * 5. Set the color of the check icon
+ */
+
+@include modernizr('.k-appearance.k-checked') {
+  input[type="checkbox"] {
+    border-radius: 0; /* 1 */
+
+    @include icon-before(check, true) {
+      /* 2 */
+      width: $form-option-size - ($form-option-border-size * 2); /* 3 */
+      height: $form-option-size - ($form-option-border-size * 2); /* 3 */
+      line-height: $form-option-size - ($form-option-border-size * 2); /* 3 */
+      font-size: $form-option-size - ($form-option-border-size * 4); /* 4 */
+      color: $color-accent; /* 5 */
+    }
+  }
+}
+
+
+
+/* ==========================================================================
+   CSS only styled radio box
+   ========================================================================== */
+
+/**
+ * 1. Making the radio box round
+ * 2. Adding content to display the psuedo element
+ * 3. Small inner circle, scaling with the box itself
+ * 4. positioning the inner circle
+ * 5. Making inner circle actually round
+ */
+
+@include modernizr('.k-appearance.k-checked') {
+  input[type="radio"] {
+    border-radius: 50%; /* 1 */
+
+    &:before {
+      content: " "; /* 2 */
+      width: $form-option-size - ($form-option-border-size * 8); /* 3 */
+      height: $form-option-size - ($form-option-border-size * 8); /* 3 */
+      margin: 3px; /* 4 */
+      background: $form-option-color;
+      border-radius: 50%; /* 5 */
     }
   }
 }

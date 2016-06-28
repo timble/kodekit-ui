@@ -8,9 +8,6 @@
  *
  */
 
-// @TODO: document this and put it in the styleguide / refactor
-
-
 /*
 Datepicker
 
@@ -19,9 +16,9 @@ Datepicker
 markup:
 <div class="form-group">
     <label>Date</label>
-    <div class="input-group">
+    <div class="k-input-group">
         <input class="form-control" type="text" name="date" value="" size="25" maxlength="19" placeholder="">
-        <span class="input-group-button">
+        <span class="k-input-group__button">
             <button type="button" class="k-button k-button--default k-js-datepicker">
                 <span class="k-icon-calendar">
                     <span class="visually-hidden">calendar</span>
@@ -39,17 +36,20 @@ Styleguide 2.140
   font-family: $font-family;
   font-size: $font-size;
   line-height: $line-height;
+  direction: ltr;
 
   &.datepicker-inline {
     width: 220px;
   }
-  direction: ltr;
+
   &.datepicker-rtl {
     direction: rtl;
+
     table tr td span {
       float: right;
     }
   }
+
   &.datepicker-dropdown {
     top: 0;
     left: 0;
@@ -73,56 +73,65 @@ Styleguide 2.140
       border-top: 0;
       position: absolute;
     }
+
     &.datepicker-orient-left:before {
       left: 6px;
     }
+
     &.datepicker-orient-left:after {
       left: 7px;
     }
+
     &.datepicker-orient-right:before {
       right: 6px;
     }
+
     &.datepicker-orient-right:after {
       right: 7px;
     }
+
     &.datepicker-orient-top:before {
       top: -7px;
     }
+
     &.datepicker-orient-top:after {
       top: -6px;
     }
+
     &.datepicker-orient-bottom:before {
       bottom: -7px;
       border-bottom: 0;
       border-top: 7px solid #999;
     }
+
     &.datepicker-orient-bottom:after {
       bottom: -6px;
       border-bottom: 0;
       border-top: 6px solid white;
     }
   }
-  > div {
+
+  & > div {
     display: none;
   }
+
   &.days div.datepicker-days {
     display: block;
   }
+
   &.months div.datepicker-months {
     display: block;
   }
+
   &.years div.datepicker-years {
     display: block;
   }
+
   table {
     margin: 0;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
   }
+
   td,
   th {
     text-align: center;
@@ -131,6 +140,7 @@ Styleguide 2.140
     border: none;
     border-radius: 4px;
   }
+
   // Inline display inside a table presents some problems with
   // border and background colors.
   .table-striped & table tr {
@@ -138,21 +148,25 @@ Styleguide 2.140
       background-color: transparent;
     }
   }
+
   table tr td {
     &.day:hover {
       background: $gray-lighter;
       cursor: pointer;
     }
+
     &.old,
     &.new {
       color: $gray-light;
     }
+
     &.disabled,
     &.disabled:hover {
       background: none;
       color: $gray-light;
       cursor: default;
     }
+
     &.today,
     &.today:hover,
     &.today.disabled,
@@ -161,14 +175,17 @@ Styleguide 2.140
       background: $todayBackground;
       color: #000; // add last
     }
+
     &.today:hover:hover {
       // Thank bootstrap 2.0 for this selector...
       // TODO: Bump min BS to 2.1, use $textColor in buttonBackground above
       color: #000;
     }
+
     &.today.active:hover {
       color: #fff;
     }
+
     &.range,
     &.range:hover,
     &.range.disabled,
@@ -176,6 +193,7 @@ Styleguide 2.140
       background: $gray-lighter;
       border-radius: 0;
     }
+
     &.range.today,
     &.range.today:hover,
     &.range.today.disabled,
@@ -184,6 +202,7 @@ Styleguide 2.140
       background: $todayBackground;
       border-radius: 0;
     }
+
     &.selected,
     &.selected:hover,
     &.selected.disabled,
@@ -192,6 +211,7 @@ Styleguide 2.140
       text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
       background: lighten($gray-light, 10);
     }
+
     &.active,
     &.active:hover,
     &.active.disabled,
@@ -200,6 +220,7 @@ Styleguide 2.140
       text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
       background: $btn-primary-bg;
     }
+
     span {
       display: block;
       width: 23%;
@@ -209,15 +230,18 @@ Styleguide 2.140
       margin: 1%;
       cursor: pointer;
       border-radius: 4px;
+
       &:hover {
         background: $gray-lighter;
       }
+
       &.disabled,
       &.disabled:hover {
         background: none;
         color: $gray-light;
         cursor: default;
       }
+
       &.active,
       &.active:hover,
       &.active.disabled,
@@ -226,6 +250,7 @@ Styleguide 2.140
         text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
         background: $btn-primary-bg;
       }
+
       &.old,
       &.new {
         color: $gray-light;
@@ -252,6 +277,7 @@ Styleguide 2.140
     padding: 0 2px 0 5px;
     vertical-align: middle;
   }
+
   thead tr:first-child th.cw {
     cursor: default;
     background-color: transparent;
@@ -274,12 +300,15 @@ Styleguide 2.140
   input {
     text-align: center;
   }
+
   input:first-child {
     border-radius: 3px 0 0 3px;
   }
+
   input:last-child {
     border-radius: 0 3px 3px 0;
   }
+
   .add-on {
     display: inline-block;
     width: auto;

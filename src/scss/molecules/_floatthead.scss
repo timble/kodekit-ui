@@ -1,10 +1,60 @@
-/**
- * FloatThead
- *
- * Should have flexbox as well to be able to work properly
- */
+/*
+Floating thead
 
-// @TODO: document this and put it in the styleguide / refactor
+A floating thead so the head will stay on top when scrolling the tables
+
+markup:
+<table class="js-fixed-table-header">
+    <thead>
+    <tr>
+        <th>Heading</th>
+        <th>Heading</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Content</td>
+        <td>Content</td>
+    </tr>
+    <tr>
+        <td>Content</td>
+        <td>Content</td>
+    </tr>
+    <tr>
+        <td>Content</td>
+        <td>Content</td>
+    </tr>
+    <tr>
+        <td>Content</td>
+        <td>Content</td>
+    </tr>
+    <tr>
+        <td>Content</td>
+        <td>Content</td>
+    </tr>
+    <tr>
+        <td>Content</td>
+        <td>Content</td>
+    </tr>
+    </tbody>
+</table>
+
+sg-wrapper:
+<div class="sg-flexbox" style="height: 175px;">
+    <div class="k-table-container">
+        <div class="k-table">
+            <sg-wrapper-content/>
+        </div>
+    </div>
+</div>
+
+Styleguide 2.400
+
+*/
+
+/**
+ * These classes are created by the floatthead plugin
+ */
 
 .floatThead-wrapper {
   z-index: 1 !important; // Overriding inline styling, we don't need a z-index of 1000+

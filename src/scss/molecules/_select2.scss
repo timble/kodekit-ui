@@ -1,8 +1,19 @@
-/* ==========================================================================
-   Select2
-   ========================================================================== */
+/*
+Select2
 
-// @TODO: document this and put it in the styleguide / refactor
+Select2
+
+markup:
+<select name="category" id="category" class="js-select2">
+    <option value="1">Example 1</option>
+    <option value="2">Example 2</option>
+    <option value="3">Example 3</option>
+</select>
+
+Styleguide 2.500
+
+*/
+
 
 /* 100% wide by default instead of just 220px making it responsive */
 

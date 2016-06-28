@@ -7,7 +7,7 @@ markup:
 <!-- Table -->
 <div class="k-table-container">
     <div class="k-table">
-        <table class="k-fixed-table-header footable">
+        <table class="js-fixed-table-header footable">
         <thead>
             <tr>
                 <th width="1%"><input type="checkbox"/></th>
@@ -1007,8 +1007,11 @@ Positioner
 
 For drag and drop sorting
 
+default - Default - shows "no-drop" cursor
+.is-active - Active item - shows "move" cursor
+
 markup:
-<span class="k-positioner"></span>
+<span class="k-positioner {$modifiers}" data-position="1"></span>
 
 sg-wrapper:
 <div class="k-table-container">
@@ -1039,8 +1042,11 @@ Styleguide 2.50.9
   height: 4px;
   border-top: 1px solid $k-positioner-color;
   border-bottom: 1px solid $k-positioner-color;
-  cursor: move;
-  counter-increment: positioner-counter;
+  cursor: no-drop;
+
+  &.is-active {
+    cursor: move;
+  }
 
   @include psuedo(before) {
     width: $k-positioner-width;
@@ -1056,7 +1062,7 @@ Styleguide 2.50.9
     height: ($k-positioner-width * 2);
     top: -($k-positioner-width - 1px);
     left: -($k-positioner-width / 2);
-    content: counter(positioner-counter);
+    content: attr(data-position);
     font-size: 10px;
     line-height: ($k-positioner-width * 2.75);
     text-indent: 3px;
@@ -1065,36 +1071,6 @@ Styleguide 2.50.9
     text-shadow: 0 0 3px white;
     @include transition;
   }
-
-  @for $i from 1 through 15 {
-    &--level#{$i} {
-      counter-increment: positioner-counter#{$i};
-
-      &:after {
-        content: counter(positioner-counter#{$i});
-      }
-    }
-  }
-}
-
-.k-table-container {
-  counter-reset:
-  positioner-counter
-  positioner-counter-level1
-  positioner-counter-level2
-  positioner-counter-level3
-  positioner-counter-level4
-  positioner-counter-level5
-  positioner-counter-level6
-  positioner-counter-level7
-  positioner-counter-level8
-  positioner-counter-level9
-  positioner-counter-level10
-  positioner-counter-level11
-  positioner-counter-level12
-  positioner-counter-level13
-  positioner-counter-level14
-  positioner-counter-level15;
 }
 
 tr.selected {

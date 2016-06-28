@@ -53,7 +53,7 @@
 		if(this.isInline) {
 			this.picker.addClass('datepicker-inline').appendTo(this.element);
 		} else {
-			this.picker.addClass('datepicker-dropdown dropdown-menu');
+			this.picker.addClass('datepicker-dropdown k-dropdown__menu');
 		}
 
 		if (this.o.rtl){

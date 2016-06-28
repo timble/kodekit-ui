@@ -1,40 +1,39 @@
 /*
-Grid
+Gallery
 
-A complete grid
+A complete gallery container
 
 markup:
 <!-- Grid -->
-<div class="k-grid-container">
-    <div class="k-grid">
-        <div class="k-grid__items">
-            <div class="k-grid__item k-grid__item--folder">
+<div class="k-gallery-container">
+    <div class="k-gallery">
+        <div class="k-gallery__items">
+            <div class="k-gallery__item k-gallery__item--folder">
                 <sg-insert>2.20.4</sg-insert>
             </div>
-            <div class="k-grid__item k-grid__item--folder">
+            <div class="k-gallery__item k-gallery__item--folder">
                 <sg-insert>2.20.4</sg-insert>
             </div>
-            <div class="k-grid__item k-grid__item--folder">
+            <div class="k-gallery__item k-gallery__item--folder">
                 <sg-insert>2.20.4</sg-insert>
             </div>
-            <div class="k-grid__item k-grid__item--file">
+            <div class="k-gallery__item k-gallery__item--file">
                 <sg-insert>2.20.3</sg-insert>
             </div>
-            <div class="k-grid__item k-grid__item--file">
+            <div class="k-gallery__item k-gallery__item--file">
                 <sg-insert>2.20.3</sg-insert>
             </div>
-            <div class="k-grid__item k-grid__item--file">
+            <div class="k-gallery__item k-gallery__item--file">
                 <sg-insert>2.20.3</sg-insert>
             </div>
-            <div class="k-grid__item k-grid__item--file">
+            <div class="k-gallery__item k-gallery__item--file">
                 <sg-insert>2.20.3</sg-insert>
             </div>
-            <div class="k-grid__item k-grid__item--file">
+            <div class="k-gallery__item k-gallery__item--file">
                 <sg-insert>2.20.3</sg-insert>
             </div>
         </div>
     </div>
-    <sg-insert>2.50.1</sg-insert>
 </div>
 
 Styleguide 2.110
@@ -42,7 +41,7 @@ Styleguide 2.110
 */
 
 
-.k-grid-container {
+.k-gallery-container {
   background: $grid-background;
 
   @include flexbox {
@@ -53,7 +52,7 @@ Styleguide 2.110
   }
 }
 
-.k-grid {
+.k-gallery {
   background: $grid-background;
   padding: $grid-spacing / 2;
   overflow: auto;
@@ -65,7 +64,7 @@ Styleguide 2.110
   }
 }
 
-.k-grid__items {
+.k-gallery__items {
   @include clearfix;
 
   @include flexbox {
@@ -73,7 +72,7 @@ Styleguide 2.110
   }
 }
 
-.k-grid__item {
+.k-gallery__item {
   float: left;
   padding: $grid-spacing / 2;
   width: 100%;
@@ -112,6 +111,6 @@ Styleguide 2.110
 }
 
 /* Make sure that the files are separated from the folders */
-.k-grid__item--folder + .k-grid__item--file {
+.k-gallery__item--folder + .k-gallery__item--file {
   clear: left;
 }

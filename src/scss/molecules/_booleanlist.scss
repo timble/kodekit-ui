@@ -1,7 +1,9 @@
 /*
 Boolean list
 
-CSS only animated boolean list
+A boolean list should only be used for true / false, 0 / 1, yes / no questions
+- Need more options? Use an option list instead
+- Booleanlist has a CSS only sliding animation. Option lists don't since it's not possible with CSS only
 
 default - Default style
 .k-booleanlist--neutral - Neutral styling

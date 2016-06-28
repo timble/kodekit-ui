@@ -7,6 +7,7 @@ markup:
 <!-- Scopebar -->
 <div class="k-scopebar">
     <sg-insert>2.40.1</sg-insert>
+    <sg-insert>2.40.3</sg-insert>
     <sg-insert>2.40.2</sg-insert>
 </div><!-- .k-scopebar -->
 
@@ -388,7 +389,7 @@ Styleguide 2.40
         border: 1px solid #ce4c4c;
         color: #fff;
         text-shadow: 1px 1px 1px #ce4c4c;
-        @include box-shadow(inset 1px 2px 1px lighten(#ce4c4c, 10%));
+        box-shadow: inset 1px 2px 1px lighten(#ce4c4c, 10%);
       }
     }
   }
@@ -718,3 +719,82 @@ markup:
 Styleguide 2.40.2
 
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+Scopebar button
+
+Scopebar button
+
+markup:
+<div class="k-scopebar__item">
+    <button class="k-scopebar__button">
+        <span class="k-icon-grid-three-up"></span>
+    </button>
+</div>
+
+Styleguide 2.40.3
+
+*/
+
+
+
+.k-scopebar__button {
+  @include reset;
+  display: block;
+  float: left;
+  height: round($scopebar-size * .8);
+  margin: round($scopebar-size * .1);
+  margin-left: 0;
+  padding-left: round((($scopebar-size * .8) - (2px + 16px)) / 2);
+  padding-right: round((($scopebar-size * .8) - (2px + 16px)) / 2);
+  border-radius: 2px;
+  text-align: center;
+  line-height: round($scopebar-size * .8);
+  cursor: pointer;
+  @include transition;
+  @include border(all, transparent);
+
+  @include rtl {
+    float: right;
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  &:hover {
+    border-color: $scopebar-border;
+    background: lighter($scopebar-background);
+  }
+
+  &.is-active {
+    display: none;
+  }
+
+  [class^="k-icon"],
+  [class^="koowa-icon"] {
+    display: block;
+    margin-top: round((($scopebar-size * .8) - (2px + 16px)) / 2); // absolute center
+    margin-bottom: round((($scopebar-size * .8) - (2px + 16px)) / 2); // absolute center
+    width: 16px;
+    height: 16px;
+    line-height: 0;
+    font-size: 0;
+    vertical-align: middle;
+
+    &:before {
+      font-size: 16px;
+      line-height: 16px;
+    }
+  }
+}

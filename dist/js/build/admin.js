@@ -11260,7 +11260,7 @@ Koowa.Class = klass({
 		if(this.isInline) {
 			this.picker.addClass('datepicker-inline').appendTo(this.element);
 		} else {
-			this.picker.addClass('datepicker-dropdown dropdown-menu');
+			this.picker.addClass('datepicker-dropdown k-dropdown__menu');
 		}
 
 		if (this.o.rtl){
@@ -13267,7 +13267,7 @@ Koowa.Class = klass({
             $titlebar = $('.k-title-bar'),
             $toolbar = $('.k-toolbar'),
             $content = $('.k-content'),
-            $fixedtable = $('.k-fixed-table-header'),
+            $fixedtable = $('.js-fixed-table-header'),
             $searchtoggle = $('.js-toggle-search'),
             $filtertoggle = $('.js-toggle-filters'),
             $footable = $('.footable'),
@@ -13276,7 +13276,7 @@ Koowa.Class = klass({
             $sidebarToggle = $('.k-sidebar-item--toggle');
 
         // Sidebar
-        if ( ($toolbar.length || $titlebar.length || $mobiletitle.length) && $wrapper.length && $content.length)
+        if ( ($toolbar.length || $titlebar.length ) && $wrapper.length && $content.length)
         {
             var toggle_button = '<div class="off-canvas-menu-toggle-holder"><button class="off-canvas-menu-toggle" type="button">' +
                 '<span class="bar1"></span>' +

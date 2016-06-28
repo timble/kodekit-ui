@@ -7,7 +7,7 @@
             $titlebar = $('.k-title-bar'),
             $toolbar = $('.k-toolbar'),
             $content = $('.k-content'),
-            $fixedtable = $('.k-fixed-table-header'),
+            $fixedtable = $('.js-fixed-table-header'),
             $searchtoggle = $('.js-toggle-search'),
             $filtertoggle = $('.js-toggle-filters'),
             $footable = $('.footable'),
@@ -16,7 +16,7 @@
             $sidebarToggle = $('.k-sidebar-item--toggle');
 
         // Sidebar
-        if ( ($toolbar.length || $titlebar.length || $mobiletitle.length) && $wrapper.length && $content.length)
+        if ( ($toolbar.length || $titlebar.length ) && $wrapper.length && $content.length)
         {
             var toggle_button = '<div class="off-canvas-menu-toggle-holder"><button class="off-canvas-menu-toggle" type="button">' +
                 '<span class="bar1"></span>' +
@@ -130,7 +130,7 @@
         });
 
         // Select2
-        var kSelect2 = $('.k-select2');
+        var kSelect2 = $('.js-select2');
         if ( kSelect2.length ) {
             kSelect2.select2({
                 theme: "bootstrap"

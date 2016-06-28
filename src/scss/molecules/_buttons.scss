@@ -93,7 +93,7 @@ Styleguide 2.2.1
   &[disabled],
   &.is-disabled {
     cursor: $cursor-disabled;
-    @include opacity(.65);
+    opacity: .65;
   }
 }
 
@@ -154,7 +154,7 @@ Styleguide 2.2.1
   &[disabled],
   &.is-disabled {
     background-color: transparent;
-    @include box-shadow(none);
+    box-shadow: none;
   }
 
   &,
@@ -200,6 +200,12 @@ Styleguide 2.2.1
 .k-button--small {
   font-size: $font-size--small;
   line-height: $line-height--small;
+}
+
+
+.k-button--tiny {
+  font-size: $font-size--tiny;
+  line-height: $line-height--tiny;
 }
 
 
@@ -281,31 +287,4 @@ Styleguide 2.2.2
     @include border-left-radius(0);
   }
 
-}
-
-
-/**
- * Checkbox and radio options
- *
- * In order to support the browser's form validation feedback, powered by the
- * `required` attribute, we have to "hide" the inputs via `clip`. We cannot use
- * `display: none;` or `visibility: hidden;` as that also hides the popover.
- * Simply visually hiding the inputs via `opacity` would leave them clickable in
- * certain cases which is prevented by using `clip` and `pointer-events`.
- * This way, we ensure a DOM element is visible to position the popover from.
- *
- * See https://github.com/twbs/bootstrap/pull/12794 and
- * https://github.com/twbs/bootstrap/pull/14559 for more information.
- */
-
-[data-toggle="buttons"] {
-  & > .k-button,
-  & > .k-button-group > .k-button {
-    input[type="radio"],
-    input[type="checkbox"] {
-      position: absolute;
-      clip: rect(0,0,0,0);
-      pointer-events: none;
-    }
-  }
 }
