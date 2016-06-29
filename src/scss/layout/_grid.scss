@@ -3,6 +3,8 @@ Grid
 
 Fluid grid system
 - Has `full`, `main` and `sub` containers
+- Main and sub float next to each other
+- Main should always come first since the info is more important
 - {unsureText}
 
 markup:
@@ -18,7 +20,7 @@ markup:
     </div>
 </div><!-- .k-container -->
 
-Styleguide 3.8
+Styleguide 3.7
 
 */
 
@@ -111,6 +113,6 @@ Styleguide 3.8
 
 .k-container__full {
   clear: both;
-  width: 100%;
+  width: auto;
   margin: 0 ($spacing / 2) $spacing;
 }

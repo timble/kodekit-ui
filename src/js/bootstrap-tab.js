@@ -36,7 +36,7 @@
 
   , show: function () {
       var $this = this.element
-        , $ul = $this.closest('ul:not(.dropdown-menu)')
+        , $ul = $this.closest('ul:not(.k-dropdown__menu)')
         , selector = $this.attr('data-target')
         , previous
         , $target
@@ -47,9 +47,9 @@
         selector = selector && selector.replace(/.*(?=#[^\s]*$)/, '') //strip for ie7
       }
 
-      if ( $this.parent('li').hasClass('active') ) return
+      if ( $this.parent('li').hasClass('k-is-active') ) return
 
-      previous = $ul.find('.active:last a')[0]
+      previous = $ul.find('.k-is-active:last a')[0]
 
       e = $.Event('show', {
         relatedTarget: previous
@@ -71,18 +71,18 @@
     }
 
   , activate: function ( element, container, callback) {
-      var $active = container.find('> .active')
+      var $active = container.find('> .k-is-active')
         , transition = callback
             && $.support.transition
             && $active.hasClass('fade')
 
       function next() {
         $active
-          .removeClass('active')
-          .find('> .dropdown-menu > .active')
-          .removeClass('active')
+          .removeClass('k-is-active')
+          .find('> .k-dropdown__menu > .k-is-active')
+          .removeClass('k-is-active')
 
-        element.addClass('active')
+        element.addClass('k-is-active')
 
         if (transition) {
           element[0].offsetWidth // reflow for transition
@@ -91,8 +91,8 @@
           element.removeClass('fade')
         }
 
-        if ( element.parent('.dropdown-menu') ) {
-          element.closest('li.dropdown').addClass('active')
+        if ( element.parent('.k-dropdown__menu') ) {
+          element.closest('li.k-dropdown').addClass('k-is-active')
         }
 
         callback && callback()

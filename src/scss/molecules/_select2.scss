@@ -1,10 +1,10 @@
 /*
 Select2
 
-Select2
+Just add the class `js-select2` to any `<select>` element to transform it into a select2 element
 
 markup:
-<select name="category" id="category" class="js-select2">
+<select class="js-select2">
     <option value="1">Example 1</option>
     <option value="2">Example 2</option>
     <option value="3">Example 3</option>
@@ -15,7 +15,10 @@ Styleguide 2.500
 */
 
 
-/* 100% wide by default instead of just 220px making it responsive */
+/**
+ * 100% wide by default instead of just 220px making it responsive
+ * Important because width is being added by JS as inline styling
+ */
 
 .select2-container.select2-container--bootstrap {
   width: 100% !important;
@@ -39,11 +42,10 @@ Styleguide 2.500
     }
   }
 
-  /* Set proper styling for the search */
+  /* Set proper styling for the search input field */
 
   .select2-search__field {
     height: $input-height-base;
     margin: 0;
   }
 }
-

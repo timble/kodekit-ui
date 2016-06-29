@@ -216,7 +216,7 @@
       var $tip = this.tip()
         , title = this.getTitle()
 
-      $tip.find('.tooltip-inner')[this.options.html ? 'html' : 'text'](title)
+      $tip.find('.k-tooltip__inner')[this.options.html ? 'html' : 'text'](title)
       $tip.removeClass('fade in top bottom left right')
     }
 
@@ -285,7 +285,7 @@
     }
 
   , arrow: function(){
-      return this.$arrow = this.$arrow || this.tip().find(".tooltip-arrow")
+      return this.$arrow = this.$arrow || this.tip().find(".k-tooltip__arrow")
     }
 
   , validate: function () {
@@ -341,7 +341,7 @@
     animation: true
   , placement: 'top'
   , selector: false
-  , template: '<div class="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>'
+  , template: '<div class="k-tooltip"><div class="k-tooltip__arrow"></div><div class="k-tooltip__inner"></div></div>'
   , trigger: 'hover focus'
   , title: ''
   , delay: 0

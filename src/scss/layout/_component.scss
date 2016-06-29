@@ -2,7 +2,7 @@
 Component
 
 The component container
-- Use as <b>child</b> of the `.k-content` only
+- Use as <b>child</b> of the `.k-content` container only
 - Can be preceded by a `.k-title-bar.k-title-bar--mobile` or a `.k-toolbar`
 - {unsureText}
 
@@ -16,7 +16,7 @@ Styleguide 3.6
 */
 
 .k-component {
-  background: $form-background;
+  background: $component-background;
 
   @include flexbox {
     display: flex;

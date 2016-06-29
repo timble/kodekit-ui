@@ -5,7 +5,7 @@ CSS only animated option list
 - Use for several options
 
 markup:
-<div class="k-option-list">
+<div class="k-optionlist">
   <input type="radio" name="name" id="id0" value="0" checked="checked">
   <label for="id0">Option 1</label>
   <input type="radio" name="name" id="id1" value="1">
@@ -24,7 +24,7 @@ Styleguide 2.19
  */
 
 @include modernizr('.k-checked') {
-  .k-option-list {
+  .k-optionlist {
     position: relative;
     z-index: 1;
     display: table;

@@ -2,7 +2,7 @@
 Wrapper
 
 The default wrapper
-- Use as <b>first child</b> of the `.koowa-container` only
+- Use as <b>first child</b> of the `.koowa-container` container only
 - {unsureText}
 
 markup:
@@ -20,13 +20,6 @@ Styleguide 3.2
   @include breakpoint($desktop) {
     display: table;
     width: 100%;
-  }
-
-
-  /* RTL */
-
-  @include rtl {
-    direction: rtl;
   }
 
 
@@ -48,8 +41,8 @@ Styleguide 3.2
  * 2. Set back to auto when screen is wide enough
  */
 
-.opened--left,
-.opened--right {
+.opened-left,
+.opened-right {
   overflow: hidden; /* 1 */
 
   @include breakpoint($desktop) {

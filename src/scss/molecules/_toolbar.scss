@@ -8,8 +8,8 @@ Markup:
     <span class="k-toolbar-buttons">
         <sg-insert>2.2-3</sg-insert>
         <sg-insert>2.2-1</sg-insert>
-        <sg-insert>2.2.1</sg-insert>
-        <sg-insert>2.2.1</sg-insert>
+        <sg-insert>2.2.1-2</sg-insert>
+        <sg-insert>2.2.1-2</sg-insert>
     </span>
 </div><!-- .k-toolbar -->
 
@@ -42,8 +42,7 @@ Styleguide 2.70
 /* Toolbar contents */
 
 .k-toolbar {
-  button,
-  .btn {
+  .k-button {
     margin: 10px 0 10px 10px;
 
     /**
@@ -63,34 +62,10 @@ Styleguide 2.70
   }
 
   @include rtl {
-    button,
-    .btn {
+    .k-button {
       margin: 10px 10px 10px 0;
     }
   }
-
-
-  /**
-   * Alternative button colors
-   *
-   * If the button colors don't fit the toolbar you can have alternative colors
-   */
-
-  @if $toolbar-btn-alt == true {
-    .btn-success {
-      border-color: $toolbar-btn-success-border;
-      background: $toolbar-btn-success-background;
-      color: $toolbar-btn-success-color;
-
-      &:hover,
-      &:focus {
-        border-color: $toolbar-btn-success-hover-border;
-        background: $toolbar-btn-success-hover-background;
-        color: $toolbar-btn-success-hover-color;
-      }
-    }
-  }
-
 
   /**
    * Position the icons
@@ -99,7 +74,8 @@ Styleguide 2.70
    * By default we just want them aligned normally
    */
 
-  i {
+  [class^="k-icon"],
+  [class^="koowa_icon"] {
     @include breakpoint(0, range, $charlie) {
       display: block;
       margin: 0;

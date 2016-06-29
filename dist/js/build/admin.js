@@ -10069,7 +10069,7 @@ module.exports = '1.3.3';
     , Dropdown = function (element) {
         var $el = $(element).on('click.dropdown.data-api', this.toggle)
         $('html').on('click.dropdown.data-api', function () {
-          $el.parent().removeClass('is-open')
+          $el.parent().removeClass('k-is-open')
         })
       }
 
@@ -10082,11 +10082,11 @@ module.exports = '1.3.3';
         , $parent
         , isActive
 
-      if ($this.is('.is-disabled, :disabled')) return
+      if ($this.is('.k-is-disabled, :disabled')) return
 
       $parent = getParent($this)
 
-      isActive = $parent.hasClass('is-open')
+      isActive = $parent.hasClass('k-is-open')
 
       clearMenus()
 
@@ -10095,7 +10095,7 @@ module.exports = '1.3.3';
           // if mobile we we use a backdrop because click events don't delegate
           $('<div class="k-dropdown-backdrop"/>').insertBefore($(this)).on('click', clearMenus)
         }
-        $parent.toggleClass('is-open')
+        $parent.toggleClass('k-is-open')
       }
 
       $this.focus()
@@ -10118,18 +10118,18 @@ module.exports = '1.3.3';
       e.preventDefault()
       e.stopPropagation()
 
-      if ($this.is('.is-disabled, :disabled')) return
+      if ($this.is('.k-is-disabled, :disabled')) return
 
       $parent = getParent($this)
 
-      isActive = $parent.hasClass('is-open')
+      isActive = $parent.hasClass('k-is-open')
 
       if (!isActive || (isActive && e.keyCode == 27)) {
         if (e.which == 27) $parent.find(toggle).focus()
         return $this.click()
       }
 
-      $items = $('[role=menu] li:not(.divider):visible a', $parent)
+      $items = $('[role=menu] li:not(.k-dropdown__divider):visible a', $parent)
 
       if (!$items.length) return
 
@@ -10149,7 +10149,7 @@ module.exports = '1.3.3';
   function clearMenus() {
     $('.k-dropdown-backdrop').remove()
     $(toggle).each(function () {
-      getParent($(this)).removeClass('is-open')
+      getParent($(this)).removeClass('k-is-open')
     })
   }
 
@@ -10245,7 +10245,7 @@ module.exports = '1.3.3';
 
   , show: function () {
       var $this = this.element
-        , $ul = $this.closest('ul:not(.dropdown-menu)')
+        , $ul = $this.closest('ul:not(.k-dropdown__menu)')
         , selector = $this.attr('data-target')
         , previous
         , $target
@@ -10256,9 +10256,9 @@ module.exports = '1.3.3';
         selector = selector && selector.replace(/.*(?=#[^\s]*$)/, '') //strip for ie7
       }
 
-      if ( $this.parent('li').hasClass('active') ) return
+      if ( $this.parent('li').hasClass('k-is-active') ) return
 
-      previous = $ul.find('.active:last a')[0]
+      previous = $ul.find('.k-is-active:last a')[0]
 
       e = $.Event('show', {
         relatedTarget: previous
@@ -10280,18 +10280,18 @@ module.exports = '1.3.3';
     }
 
   , activate: function ( element, container, callback) {
-      var $active = container.find('> .active')
+      var $active = container.find('> .k-is-active')
         , transition = callback
             && $.support.transition
             && $active.hasClass('fade')
 
       function next() {
         $active
-          .removeClass('active')
-          .find('> .dropdown-menu > .active')
-          .removeClass('active')
+          .removeClass('k-is-active')
+          .find('> .k-dropdown__menu > .k-is-active')
+          .removeClass('k-is-active')
 
-        element.addClass('active')
+        element.addClass('k-is-active')
 
         if (transition) {
           element[0].offsetWidth // reflow for transition
@@ -10300,8 +10300,8 @@ module.exports = '1.3.3';
           element.removeClass('fade')
         }
 
-        if ( element.parent('.dropdown-menu') ) {
-          element.closest('li.dropdown').addClass('active')
+        if ( element.parent('.k-dropdown__menu') ) {
+          element.closest('li.k-dropdown').addClass('k-is-active')
         }
 
         callback && callback()
@@ -10569,7 +10569,7 @@ module.exports = '1.3.3';
       var $tip = this.tip()
         , title = this.getTitle()
 
-      $tip.find('.tooltip-inner')[this.options.html ? 'html' : 'text'](title)
+      $tip.find('.k-tooltip__inner')[this.options.html ? 'html' : 'text'](title)
       $tip.removeClass('fade in top bottom left right')
     }
 
@@ -10638,7 +10638,7 @@ module.exports = '1.3.3';
     }
 
   , arrow: function(){
-      return this.$arrow = this.$arrow || this.tip().find(".tooltip-arrow")
+      return this.$arrow = this.$arrow || this.tip().find(".k-tooltip__arrow")
     }
 
   , validate: function () {
@@ -10694,7 +10694,7 @@ module.exports = '1.3.3';
     animation: true
   , placement: 'top'
   , selector: false
-  , template: '<div class="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>'
+  , template: '<div class="k-tooltip"><div class="k-tooltip__arrow"></div><div class="k-tooltip__inner"></div></div>'
   , trigger: 'hover focus'
   , title: ''
   , delay: 0
@@ -13012,7 +13012,7 @@ Koowa.Class = klass({
 
                 // Add classes and CSS to the wrapper
                 // All styling in CSS comes from this parent element
-                wrapper.addClass(menuExpandedClass + ' ' + openedClass + '--' + position);
+                wrapper.addClass(menuExpandedClass + ' ' + openedClass + '-' + position);
 
                 // Enable tabbing within menu
                 timeout = setTimeout(function() {
@@ -13032,7 +13032,7 @@ Koowa.Class = klass({
 
                 // Remove style and class when transition has ended, so the menu stays visible on closing
                 timeout = setTimeout(function() {
-                    wrapper.removeClass(openedClass + '--' + position);
+                    wrapper.removeClass(openedClass + '-' + position);
                 }, transitionDuration);
             }
 
@@ -13177,13 +13177,15 @@ Koowa.Class = klass({
 
                     // translate immediately 1-to-1
                     $.each(transitionElements, function() {
-                        $(this).css({
-                            '-webkit-transform' : 'translate(' + newPos + 'px, 0)',
-                            '-moz-transform'    : 'translate(' + newPos + 'px, 0)',
-                            '-ms-transform'     : 'translate(' + newPos + 'px, 0)',
-                            '-o-transform'      : 'translate(' + newPos + 'px, 0)',
-                            'transform'         : 'translate(' + newPos + 'px, 0)'
-                        });
+                        if ( !$(this).hasClass('k-title-bar--mobile') ) {
+                            $(this).css({
+                                '-webkit-transform' : 'translate(' + newPos + 'px, 0)',
+                                '-moz-transform'    : 'translate(' + newPos + 'px, 0)',
+                                '-ms-transform'     : 'translate(' + newPos + 'px, 0)',
+                                '-o-transform'      : 'translate(' + newPos + 'px, 0)',
+                                'transform'         : 'translate(' + newPos + 'px, 0)'
+                            });
+                        }
                     });
                     $.each(offCanvasOverlay, function() {
                         $(this).css('opacity', opacity);
@@ -13267,10 +13269,10 @@ Koowa.Class = klass({
             $titlebar = $('.k-title-bar'),
             $toolbar = $('.k-toolbar'),
             $content = $('.k-content'),
-            $fixedtable = $('.js-fixed-table-header'),
-            $searchtoggle = $('.js-toggle-search'),
-            $filtertoggle = $('.js-toggle-filters'),
-            $footable = $('.footable'),
+            $fixedtable = $('.k-js-fixed-table-header'),
+            $searchtoggle = $('.k-js-toggle-search'),
+            $filtertoggle = $('.k-js-toggle-filters'),
+            $footable = $('.k-js-footable'),
             $overflow = $('.k-sidebar-item--overflow'),
             resizeClass = 'k-is-resizing',
             $sidebarToggle = $('.k-sidebar-item--toggle');
@@ -13278,13 +13280,13 @@ Koowa.Class = klass({
         // Sidebar
         if ( ($toolbar.length || $titlebar.length ) && $wrapper.length && $content.length)
         {
-            var toggle_button = '<div class="off-canvas-menu-toggle-holder"><button class="off-canvas-menu-toggle" type="button">' +
+            var toggle_button = '<div class="k-off-canvas-menu-toggle-holder"><button class="k-off-canvas-menu-toggle" type="button">' +
                 '<span class="bar1"></span>' +
                 '<span class="bar2"></span>' +
                 '<span class="bar3"></span>' +
                 '</button></div>',
-                sidebar_left  = $('.js-sidebar-left'),
-                sidebar_right = $('.js-sidebar-right');
+                sidebar_left  = $('.k-js-sidebar-left'),
+                sidebar_right = $('.k-js-sidebar-right');
 
             function addOffCanvasButton(element, position) {
                 // Variables
@@ -13293,12 +13295,12 @@ Koowa.Class = klass({
                     toolbar = element.closest(kContainer).find('.k-toolbar')[0],
                     wrapper = element.closest(kContainer).find('.k-wrapper')[0],
                     content = element.closest(kContainer).find('.k-content')[0],
-                    toggle = element.closest(kContainer).find('.off-canvas-menu-toggle-holder--' + position),
+                    toggle = element.closest(kContainer).find('.k-off-canvas-menu-toggle-holder--' + position),
                     $toggle = $(toggle_button),
                     transitionElements = $(content);
 
                 // Add proper class to toggle buttons
-                $toggle.addClass('off-canvas-menu-toggle-holder--' + position);
+                $toggle.addClass('k-off-canvas-menu-toggle-holder--' + position);
 
                 // Add toggle buttons
                 if ( toggle[0] == undefined ) {
@@ -13390,12 +13392,10 @@ Koowa.Class = klass({
         });
 
         // Select2
-        var kSelect2 = $('.k-select2');
-        if ( kSelect2.length ) {
-            kSelect2.select2({
-                theme: "bootstrap"
-            });
-        }
+        var $select2 = $('.k-js-select2');
+        $select2.select2({
+            theme: "bootstrap"
+        });
 
         // jqTree
         var jqTree = $('#k-jqtree');
@@ -13430,7 +13430,7 @@ Koowa.Class = klass({
         }
 
         // Magnific
-        var magnific = $('.k-js-popup');
+        var magnific = $('.k-js-modal');
         if ( magnific.length ) {
             magnific.magnificPopup({type: 'image'});
         }

@@ -108,7 +108,7 @@
 
                 // Add classes and CSS to the wrapper
                 // All styling in CSS comes from this parent element
-                wrapper.addClass(menuExpandedClass + ' ' + openedClass + '--' + position);
+                wrapper.addClass(menuExpandedClass + ' ' + openedClass + '-' + position);
 
                 // Enable tabbing within menu
                 timeout = setTimeout(function() {
@@ -128,7 +128,7 @@
 
                 // Remove style and class when transition has ended, so the menu stays visible on closing
                 timeout = setTimeout(function() {
-                    wrapper.removeClass(openedClass + '--' + position);
+                    wrapper.removeClass(openedClass + '-' + position);
                 }, transitionDuration);
             }
 
@@ -273,13 +273,15 @@
 
                     // translate immediately 1-to-1
                     $.each(transitionElements, function() {
-                        $(this).css({
-                            '-webkit-transform' : 'translate(' + newPos + 'px, 0)',
-                            '-moz-transform'    : 'translate(' + newPos + 'px, 0)',
-                            '-ms-transform'     : 'translate(' + newPos + 'px, 0)',
-                            '-o-transform'      : 'translate(' + newPos + 'px, 0)',
-                            'transform'         : 'translate(' + newPos + 'px, 0)'
-                        });
+                        if ( !$(this).hasClass('k-title-bar--mobile') ) {
+                            $(this).css({
+                                '-webkit-transform' : 'translate(' + newPos + 'px, 0)',
+                                '-moz-transform'    : 'translate(' + newPos + 'px, 0)',
+                                '-ms-transform'     : 'translate(' + newPos + 'px, 0)',
+                                '-o-transform'      : 'translate(' + newPos + 'px, 0)',
+                                'transform'         : 'translate(' + newPos + 'px, 0)'
+                            });
+                        }
                     });
                     $.each(offCanvasOverlay, function() {
                         $(this).css('opacity', opacity);

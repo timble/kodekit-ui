@@ -552,7 +552,7 @@ markup:
     <!-- Filters wrapper -->
     <div class="k-scopebar__filters-wrapper">
         <!-- filters toggle button -->
-        <button type="button" class="k-scopebar-icon-button k-toggle-filters js-toggle-filters">
+        <button type="button" class="k-scopebar-icon-button k-toggle-filters k-js-toggle-filters">
             <span class="k-icon-k-filter"></span>
             <span class="visually-hidden"><?= translate('Filters'); ?></span>
             <!-- Display label on toggle button to show there are filters -->
@@ -590,7 +590,7 @@ markup:
         </div><!-- .k-scopebar__filters-content -->
         <!-- Search toggle button -->
         <div class="k-scopebar__search-toggle-wrapper">
-            <button type="button" class="k-scopebar-icon-button k-toggle-search js-toggle-search"><span class="k-icon-magnifying-glass"></span><span class="visually-hidden"><?= translate('Search'); ?></span></button>
+            <button type="button" class="k-scopebar-icon-button k-toggle-search k-js-toggle-search"><span class="k-icon-magnifying-glass"></span><span class="visually-hidden"><?= translate('Search'); ?></span></button>
         </div><!-- .k-scopebar__search-toggle-wrapper -->
     </div><!-- .k-scopebar__filters-wrapper -->
 </div><!-- .k-scopebar__item -->
@@ -619,6 +619,12 @@ Styleguide 2.40.1
       text-decoration: underline;
     }
   }
+
+  &.is-active {
+    .k-scopebar-dropdown__button {
+      background: $scopebar-buttons-background-hover;
+    }
+  }
 }
 
 .k-scopebar-dropdown__button {
@@ -635,12 +641,6 @@ Styleguide 2.40.1
 
   @include breakpoint($beta) {
     padding: 0 12px;
-  }
-}
-
-.is-active {
-  .k-scopebar-dropdown__button {
-    background: $scopebar-buttons-background-hover;
   }
 }
 
@@ -782,7 +782,7 @@ Styleguide 2.40.3
   }
 
   [class^="k-icon"],
-  [class^="koowa-icon"] {
+  [class^="koowa_icon"] {
     display: block;
     margin-top: round((($scopebar-size * .8) - (2px + 16px)) / 2); // absolute center
     margin-bottom: round((($scopebar-size * .8) - (2px + 16px)) / 2); // absolute center

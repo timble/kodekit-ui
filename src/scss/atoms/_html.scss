@@ -1,14 +1,16 @@
 /**
  * HTML
  *
- * By using 100% for `height` and `min-height` we can work with full-height auto overflowing flexbox pages
- *
+ * 1. By using 100% we can work with full-height auto overflowing flexbox pages
+ * 2. Remove all spacing
+ * 3. Set basic font here. Other systems could set font on `<body>` element to override this.
+      We're just making sure there's alwas a default font available
  */
 
 html {
-  min-height: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  font-family: $font-family;
+  min-height: 100%; /* 1 */
+  height: 100%; /* 1 */
+  padding: 0; /* 2 */
+  margin: 0; /* 2 */
+  font-family: $font-family; /* 3 */
 }

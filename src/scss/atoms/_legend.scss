@@ -2,7 +2,7 @@
 Legend
 
 Default legend style
-- Legends have a bottom margin to separate them from each other<br>
+- Legends have a bottom margin to separate them from each other
 - The last-child doesn't have this bottom margin so parent containers can have four-sided paddings
 
 markup:
@@ -28,7 +28,7 @@ legend {
   margin-top: 0;
   margin-bottom: $spacing;
   border: none;
-  border-bottom: 1px solid darker($form-background);
+  border-bottom: 1px solid darker($component-background);
   padding-top: $spacing;
   padding-bottom: 4px;
   font-size: $font-size--large;

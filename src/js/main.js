@@ -7,10 +7,10 @@
             $titlebar = $('.k-title-bar'),
             $toolbar = $('.k-toolbar'),
             $content = $('.k-content'),
-            $fixedtable = $('.js-fixed-table-header'),
-            $searchtoggle = $('.js-toggle-search'),
-            $filtertoggle = $('.js-toggle-filters'),
-            $footable = $('.footable'),
+            $fixedtable = $('.k-js-fixed-table-header'),
+            $searchtoggle = $('.k-js-toggle-search'),
+            $filtertoggle = $('.k-js-toggle-filters'),
+            $footable = $('.k-js-footable'),
             $overflow = $('.k-sidebar-item--overflow'),
             resizeClass = 'k-is-resizing',
             $sidebarToggle = $('.k-sidebar-item--toggle');
@@ -18,13 +18,13 @@
         // Sidebar
         if ( ($toolbar.length || $titlebar.length ) && $wrapper.length && $content.length)
         {
-            var toggle_button = '<div class="off-canvas-menu-toggle-holder"><button class="off-canvas-menu-toggle" type="button">' +
+            var toggle_button = '<div class="k-off-canvas-menu-toggle-holder"><button class="k-off-canvas-menu-toggle" type="button">' +
                 '<span class="bar1"></span>' +
                 '<span class="bar2"></span>' +
                 '<span class="bar3"></span>' +
                 '</button></div>',
-                sidebar_left  = $('.js-sidebar-left'),
-                sidebar_right = $('.js-sidebar-right');
+                sidebar_left  = $('.k-js-sidebar-left'),
+                sidebar_right = $('.k-js-sidebar-right');
 
             function addOffCanvasButton(element, position) {
                 // Variables
@@ -33,12 +33,12 @@
                     toolbar = element.closest(kContainer).find('.k-toolbar')[0],
                     wrapper = element.closest(kContainer).find('.k-wrapper')[0],
                     content = element.closest(kContainer).find('.k-content')[0],
-                    toggle = element.closest(kContainer).find('.off-canvas-menu-toggle-holder--' + position),
+                    toggle = element.closest(kContainer).find('.k-off-canvas-menu-toggle-holder--' + position),
                     $toggle = $(toggle_button),
                     transitionElements = $(content);
 
                 // Add proper class to toggle buttons
-                $toggle.addClass('off-canvas-menu-toggle-holder--' + position);
+                $toggle.addClass('k-off-canvas-menu-toggle-holder--' + position);
 
                 // Add toggle buttons
                 if ( toggle[0] == undefined ) {
@@ -130,12 +130,10 @@
         });
 
         // Select2
-        var kSelect2 = $('.js-select2');
-        if ( kSelect2.length ) {
-            kSelect2.select2({
-                theme: "bootstrap"
-            });
-        }
+        var $select2 = $('.k-js-select2');
+        $select2.select2({
+            theme: "bootstrap"
+        });
 
         // jqTree
         var jqTree = $('#k-jqtree');
@@ -170,7 +168,7 @@
         }
 
         // Magnific
-        var magnific = $('.k-js-popup');
+        var magnific = $('.k-js-modal');
         if ( magnific.length ) {
             magnific.magnificPopup({type: 'image'});
         }

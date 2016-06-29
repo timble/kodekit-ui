@@ -7,11 +7,11 @@ markup:
 <!-- Table -->
 <div class="k-table-container">
     <div class="k-table">
-        <table class="js-fixed-table-header footable">
+        <table class="k-js-fixed-table-header footable">
         <thead>
             <tr>
                 <th width="1%"><input type="checkbox"/></th>
-                <th><a href="javascript:void(0)">Item title</a></th>
+                <th class="k-sort-desc"><a href="javascript:void(0)">Item title</a></th>
                 <th width="5%"><a href="javascript:void(0)">State</a></th>
                 <th width="15%"><a href="javascript:void(0)">Category</a></th>
                 <th width="5%"><a href="javascript:void(0)">Date</a></th>
@@ -374,6 +374,12 @@ Styleguide 2.50.8
     padding: 0 $table-cell-spacing-horizontal; /* 1 */
     white-space: nowrap; /* 2 */
     background: $table-header-background;
+    font-weight: $regular;
+
+    &.k-sort-asc,
+    &.k-sort-desc {
+      font-weight: $bold;
+    }
 
     a {
       display: block; /* 3 */
@@ -448,6 +454,7 @@ Styleguide 2.50.8
     @include transition;
   }
 
+  [class^="k-icon"],
   [class^="koowa_icon"] {
     vertical-align: baseline;
     font-size: 16px;
@@ -586,8 +593,8 @@ Styleguide 2.50.8
    * 1. Coloring Links and extra elements that don't color automatically with it's parent
    */
 
-  tr.active,
-  tr.selected {
+  tr.is-active,
+  tr.is-selected {
     td {
       background: $table-cell-accent-background;
       color: $table-cell-accent-color;
@@ -666,9 +673,7 @@ Styleguide 2.50.8
     padding: 0 3px; /* 6 */
   }
 
-
-
-  .dropdown-toggle {
+  .k-dropdown__toggle {
     &,&:hover,&:focus {
       text-decoration: none;
       cursor: pointer;
@@ -680,7 +685,7 @@ Styleguide 2.50.8
     }
   }
 
-  .dropdown-menu {
+  .k-dropdown__menu {
     margin-left: 1px;
 
     @include rtl {
@@ -706,13 +711,13 @@ Table item states
 
 Different states that items can be in
 
-.k-pending - Pending
-.k-expired - Expired
-.k-unpublished - Unpublished
-.k-published - Published
+.k-table__item--state-pending - Pending
+.k-table__item--state-expired - Expired
+.k-table__item--state-unpublished - Unpublished
+.k-table__item--state-published - Published
 
 markup:
-<span class="k-table__item--state {$modifiers}">State</span>
+<span class="k-table__item--state{$modifiers}">State</span>
 
 sg-wrapper:
 <div class="k-table-container">
@@ -747,19 +752,19 @@ Styleguide 2.50.5
     }
   }
 
-  &.k-pending {
+  &-pending {
     color: $color-warning;
   }
 
-  &.k-expired {
+  &-expired {
     color: $color-neutral;
   }
 
-  &.k-unpublished {
+  &-unpublished {
     color: $color-error;
   }
 
-  &.k-published {
+  &-published {
     color: $color-success;
   }
 }
@@ -773,7 +778,7 @@ Table pagination
 markup:
 <div class="k-table-pagination">
     <div class="k-pagination">
-        <div class="limit">
+        <div class="k-pagination__limit">
             <select name="limit" size="1">
                 <option value="5" class="level1">5</option>
                 <option value="10" class="level1">10</option>
@@ -785,24 +790,24 @@ markup:
                 <option value="100" class="level1">100</option>
             </select>
         </div>
-          <ul class="pagination">
-              <li class="active"><a>1</a></li>
-              <li>
-                  <a href="{url}">2</a>
-              </li>
-              <li>
-                  <a href="{url}">3</a>
-              </li>
-              <li>
-                  <a href="{url}">4</a>
-              </li>
-              <li>
-                  <a href="{url}">5</a>
-              </li>
-              <li>
-                  <a href="{url}">»</a>
-              </li>
-          </ul>
+        <ul class="k-pagination__pages">
+            <li class="active"><a>1</a></li>
+            <li>
+                <a href="{url}">2</a>
+            </li>
+            <li>
+                <a href="{url}">3</a>
+            </li>
+            <li>
+                <a href="{url}">4</a>
+            </li>
+            <li>
+                <a href="{url}">5</a>
+            </li>
+            <li>
+                <a href="{url}">»</a>
+            </li>
+        </ul>
     </div>
 </div>
 
@@ -837,15 +842,15 @@ Styleguide 2.50.1
    * 1. Align vertically
    */
 
-  .limit,
-  .pagination {
+  .k-pagination__limit,
+  .k-pagination__pages {
     display: inline-block; /* 1 */
     vertical-align: middle; /* 1 */
   }
 
   /* Pagination */
 
-  .pagination {
+  .k-pagination__pages {
     padding-left: 0;
     margin: 0;
     border-radius: $border-radius-base;
@@ -893,8 +898,8 @@ Styleguide 2.50.1
       }
     }
 
-    & > .active > a,
-    & > .active > span {
+    & > .is-active > a,
+    & > .is-active > span {
       &,
       &:hover,
       &:focus {
@@ -906,7 +911,7 @@ Styleguide 2.50.1
       }
     }
 
-    & > .disabled {
+    & > .is-disabled {
       & > span,
       & > span:hover,
       & > span:focus,
@@ -969,7 +974,7 @@ Styleguide 2.50.1
     }
   }
 
-  tr.selected {
+  tr.is-selected {
     .footable-toggle {
       border-color: $footable-toggle-color-active;
 
@@ -1073,7 +1078,7 @@ Styleguide 2.50.9
   }
 }
 
-tr.selected {
+tr.is-selected {
   .k-positioner {
     &:after {
       color: white;
@@ -1084,32 +1089,32 @@ tr.selected {
 
 
 
-// @TODO: Make a bit nicer
-.files__sortable,
-.files__sortable--sorted,
-.files__sortable--sorted-desc,
-a.-koowa-asc,
-a.-koowa-desc {
-  cursor: pointer;
+th.k-sort-asc,
+th.k-sort-desc {
+  a {
+    cursor: pointer;
 
-  &:focus,
-  &:hover {
-    text-decoration: none;
+    &:focus,
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
 
-.files__sortable--sorted,
-a.-koowa-asc {
-  @include icon-after(sort-ascending, true) {
-    margin-left: .5em;
-    vertical-align: middle;
+th.k-sort-asc {
+  a {
+    @include icon-after(sort-ascending, true) {
+      margin-left: .5em;
+      vertical-align: middle;
+    }
   }
 }
 
-.files__sortable--sorted-desc,
-a.-koowa-desc {
-  @include icon-after(sort-descending, true) {
-    margin-left: .5em;
-    vertical-align: middle;
+th.k-sort-desc {
+  a {
+    @include icon-after(sort-descending, true) {
+      margin-left: .5em;
+      vertical-align: middle;
+    }
   }
 }

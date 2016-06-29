@@ -2,7 +2,7 @@
 Content
 
 The content container
-- Use as <b>child</b> of the `.k-content-wrapper` only
+- Use as <b>child</b> of the `.k-content-wrapper` container only
 - {unsureText}
 
 markup:
@@ -32,13 +32,6 @@ Styleguide 3.5
   @include breakpoint($desktop) {
     display: table-cell;
     width: 100%;
-  }
-
-
-  /* RTL */
-
-  @include rtl {
-    direction: rtl;
   }
 
 
@@ -107,8 +100,8 @@ Styleguide 3.5
   }
 }
 
-.opened--left,
-.opened--right {
+.opened-left,
+.opened-right {
   .k-content {
     overflow: hidden;
 
@@ -161,8 +154,8 @@ Styleguide 3.5
   }
 }
 
-.opened--left,
-.opened--right {
+.opened-left,
+.opened-right {
   .k-off-canvas-overlay {
     z-index: 9; /* 2 */
   }

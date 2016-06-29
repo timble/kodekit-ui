@@ -10,7 +10,7 @@ default - Default
 markup:
 <div class="k-input-group {$modifiers}">
     <div class="k-input-group__addon">Addon</div>
-    <input type="text" class="form-control" />
+    <input type="text" class="k-form-control" />
     <div class="k-input-group__button">
         <button class="k-button k-button--default" type="button">Button</button>
     </div>
@@ -34,7 +34,7 @@ Styleguide 2.450
   display: table;
   border-collapse: separate; /* 2 */
 
-  .form-control {
+  .k-form-control {
 
     /* 3 */
     position: relative;
@@ -55,12 +55,12 @@ Styleguide 2.450
 
 /* Sizes */
 
-.k-input-group--large > .form-control,
+.k-input-group--large > .k-form-control,
 .k-input-group--large > .k-input-group__addon,
 .k-input-group--large > .k-input-group__button > .k-button {
   @extend .input-lg;
 }
-.k-input-group--small > .form-control,
+.k-input-group--small > .k-form-control,
 .k-input-group--small > .k-input-group__addon,
 .k-input-group--small > .k-input-group__button > .k-button {
   @extend .input-sm;
@@ -70,7 +70,7 @@ Styleguide 2.450
 
 .k-input-group__addon,
 .k-input-group__button,
-.k-input-group .form-control {
+.k-input-group .k-form-control {
   display: table-cell;
 
   &:not(:first-child):not(:last-child) {
@@ -132,7 +132,7 @@ Styleguide 2.450
 
 
 /* Reset rounded corners */
-.k-input-group .form-control:first-child,
+.k-input-group .k-form-control:first-child,
 .k-input-group__addon:first-child,
 .k-input-group__button:first-child > .k-button,
 .k-input-group__button:first-child > .k-button-group > .k-button,
@@ -146,7 +146,7 @@ Styleguide 2.450
   border-right: 0;
 }
 
-.k-input-group .form-control:last-child,
+.k-input-group .k-form-control:last-child,
 .k-input-group__addon:last-child,
 .k-input-group__button:last-child > .k-button,
 .k-input-group__button:last-child > .k-button-group > .k-button,

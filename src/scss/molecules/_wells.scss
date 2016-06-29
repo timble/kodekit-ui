@@ -10,7 +10,7 @@ Styleguide 2.105
 
 */
 
-.well {
+.k-well {
   padding: $spacing-small;
   margin-bottom: $spacing;
   background-color: $well-bg;
@@ -46,7 +46,7 @@ Styleguide 2.105.1
 
 */
 
-.well__content {
+.k-well__content {
   padding: $spacing-small;
   background: white;
   border: 1px solid $well-border;
@@ -67,7 +67,7 @@ Styleguide 2.105.2
 
 */
 
-.well {
+.k-well {
   .k-tabs-content {
     margin: 0;
     background: white;

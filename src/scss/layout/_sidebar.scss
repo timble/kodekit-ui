@@ -2,13 +2,13 @@
 Sidebar
 
 Left and right sidebars
-- Use `.k-sidebar-left` as <b>first child</b> of the `.k-content-wrapper` only
-- Use `.k-sidebar-right` as <b>last child</b> of the `.k-content-wrapper` only
+- Use `.k-sidebar-left` as <b>first child</b> of the `.k-content-wrapper` container only
+- Use `.k-sidebar-right` as <b>last child</b> of the `.k-content-wrapper` container only
 - Make sure you <b>Always</b> have a `.k-content` container when a sidebar is used
 - {unsureText}
 
-.k-sidebar-left.js-sidebar-left - Left sidebar
-.k-sidebar-right.js-sidebar-right - Right sidebar
+.k-sidebar-left.k-js-sidebar-left - Left sidebar
+.k-sidebar-right.k-js-sidebar-right - Right sidebar
 
 markup:
 <div class="{$modifiers}">
@@ -90,16 +90,6 @@ Styleguide 3.4
 }
 
 
-/* RTL */
-
-@include rtl {
-  .k-sidebar-left,
-  .k-sidebar-right {
-    direction: rtl;
-  }
-}
-
-
 /* Left sidebar specific styling */
 
 .k-sidebar-left {
@@ -127,7 +117,7 @@ Styleguide 3.4
 
 /* When sidebar is toggled */
 
-.opened--left {
+.opened-left {
   .k-sidebar-left {
     display: block;
   }
@@ -161,7 +151,7 @@ Styleguide 3.4
 
 /* When sidebar is toggled */
 
-.opened--right {
+.opened-right {
   .k-sidebar-right {
     display: block;
   }

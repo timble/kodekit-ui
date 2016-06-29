@@ -214,8 +214,6 @@ $mobile-title-border:       darkest($mobile-title-background) !default;
 
 // Toolbar
 // ==========================================================================
-//
-// 1. When true; these colors are being used, when false; bootsrap defaults are being used
 
 $toolbar-spacing:                       round($font-size * 0.7) !default;
 $toolbar-height:                        50px !default;
@@ -223,18 +221,6 @@ $toolbar-height:                        50px !default;
 $toolbar-background:                    colorpicker(primary, 3) !default;
 $toolbar-border:                        darkest($toolbar-background) !default;
 $toolbar-color:                         $color-type !default;
-
-$toolbar-btn-alt:                       false !default; // 1
-
-
-// Success button
-
-$toolbar-btn-success-background:        $color-accent !default;
-$toolbar-btn-success-border:            darker($color-accent) !default;
-$toolbar-btn-success-color:             $color-accent-type !default;
-$toolbar-btn-success-hover-border:      darker($toolbar-btn-success-border) !default;
-$toolbar-btn-success-hover-background:  darker($toolbar-btn-success-background) !default;
-$toolbar-btn-success-hover-color:       darker($toolbar-btn-success-color) !default;
 
 
 // Sidebar
@@ -397,10 +383,10 @@ $overflow-blur:     $overflow-size * 2 !default;
 $overflow-offset:   -($overflow-size) !default;
 
 
-// Form layout
+// Component layout
 // ==========================================================================
 
-$form-background: colorpicker(primary, 5) !default;
+$component-background: colorpicker(primary, 5) !default;
 
 
 // Form front

@@ -14,10 +14,10 @@ Datepicker
 Datepicker
 
 markup:
-<div class="form-group">
+<div class="k-form-group">
     <label>Date</label>
     <div class="k-input-group">
-        <input class="form-control" type="text" name="date" value="" size="25" maxlength="19" placeholder="">
+        <input class="k-form-control" type="text" name="date" value="" size="25" maxlength="19" placeholder="">
         <span class="k-input-group__button">
             <button type="button" class="k-button k-button--default k-js-datepicker">
                 <span class="k-icon-calendar">

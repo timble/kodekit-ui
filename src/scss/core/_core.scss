@@ -48,7 +48,7 @@
 
 /**
  * By namespacing we make sure our styles never interfere with other styles on the page
- * For example when using Kodekit UI inside of another framework or CMS like Joomla or WordPress
+ * For example when using Kodekit UI inside of another framework or CMS like Joomla! or WordPress
  */
 
 .koowa {
@@ -83,15 +83,5 @@
   @import "../utilities/overflowing";
   @import "../utilities/component-animations";
   @import "../utilities/hamburger";
-
-
-  /**
-  * Shame
-  *
-  * Add styling that has not found a place in the directory structure yet.
-  * Ideally this should be moved as fast as possible but at least before shipping
-  */
-
-  @import "../shame";
 
 }

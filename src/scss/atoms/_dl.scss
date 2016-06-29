@@ -26,8 +26,8 @@ Styleguide 1.2
  */
 
 dl {
-  margin-bottom: 1.5em; /* 1 */
   @include clearfix;
+  margin-bottom: 1.5em; /* 1 */
 
   &:last-child { /* 2 */
     margin-bottom: 0; /* 3 */

@@ -4,14 +4,14 @@ Forms
 To be used in sidebar of forms<br />
 Data in these boxes should be non-required form elements
 
-.form-group - Default
-.form-group-sm - Small form groups
-.form-group-lg - Large form groups
+.k-form-group - Default
+.k-form-group-small - Small form groups
+.k-form-group-large - Large form groups
 
 markup:
 <div class="{$modifiers}">
     <sg-insert>1.5</sg-insert>
-    <input class="form-control" type="text">
+    <input class="k-form-control" type="text">
 </div>
 
 Styleguide 2.13
@@ -24,7 +24,7 @@ Styleguide 2.13
 
 // Common form controls
 //
-// Shared size and type resets for form controls. Apply `.form-control` to any
+// Shared size and type resets for form controls. Apply `.k-form-control` to any
 // of the following form controls:
 //
 // select
@@ -44,7 +44,7 @@ Styleguide 2.13
 // input[type="tel"]
 // input[type="color"]
 
-.form-control {
+.k-form-control {
   display: block;
   width: 100%;
   height: $input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
@@ -93,11 +93,11 @@ Styleguide 2.13
     cursor: $cursor-disabled;
   }
 
-  // [converter] extracted textarea& to textarea.form-control
+  // [converter] extracted textarea& to textarea.k-form-control
 }
 
 // Reset height for `textarea`s
-textarea.form-control {
+textarea.k-form-control {
   height: auto;
 }
 
@@ -105,8 +105,8 @@ textarea.form-control {
 // Search inputs in iOS
 //
 // This overrides the extra rounded corners on search inputs in iOS so that our
-// `.form-control` class can properly style them. Note that this cannot simply
-// be added to `.form-control` as it's not specific enough. For details, see
+// `.k-form-control` class can properly style them. Note that this cannot simply
+// be added to `.k-form-control` as it's not specific enough. For details, see
 // https://github.com/twbs/bootstrap/issues/11586.
 
 input[type="search"] {
@@ -128,7 +128,7 @@ input[type="search"] {
   input[type="time"],
   input[type="datetime-local"],
   input[type="month"] {
-    &.form-control {
+    &.k-form-control {
       line-height: $input-height-base;
     }
 
@@ -150,7 +150,7 @@ input[type="search"] {
 // Designed to help with the organization and spacing of vertical forms. For
 // horizontal forms, use the predefined grid classes.
 
-.form-group {
+.k-form-group {
   margin: 0 0 $spacing 0;
 
   &:last-child {
@@ -246,7 +246,7 @@ input[type="checkbox"] {
 // Apply class to a `p` element to make any string of text align with labels in
 // a horizontal form layout.
 
-.form-control-static {
+.k-form-control-static {
   // Size it appropriately next to real form controls
   padding-top: ($padding-base-vertical + 1);
   padding-bottom: ($padding-base-vertical + 1);
@@ -264,30 +264,30 @@ input[type="checkbox"] {
 
 // Form control sizing
 //
-// Build on `.form-control` with modifier classes to decrease or increase the
+// Build on `.k-form-control` with modifier classes to decrease or increase the
 // height and font-size of form controls.
 //
-// The `.form-group-* form-control` variations are sadly duplicated to avoid the
+// The `.k-form-group-* k-form-control` variations are sadly duplicated to avoid the
 // issue documented in https://github.com/twbs/bootstrap/issues/15074.
 
 @include input-size('.input-sm', $input-height-small, $padding-small-vertical, $padding-small-horizontal, 16px, $line-height-small, $input-border-radius-small);
-.form-group-sm {
-  .form-control {
+.k-form-group-small {
+  .k-form-control {
     height: $input-height-small;
     padding: $padding-small-vertical $padding-small-horizontal;
     font-size: $font-size-small;
     line-height: $line-height-small;
     border-radius: $input-border-radius-small;
   }
-  select.form-control {
+  select.k-form-control {
     height: $input-height-small;
     line-height: $input-height-small;
   }
-  textarea.form-control,
-  select[multiple].form-control {
+  textarea.k-form-control,
+  select[multiple].k-form-control {
     height: auto;
   }
-  .form-control-static {
+  .k-form-control-static {
     height: $input-height-small;
     min-height: ($line-height-computed + $font-size-small);
     padding: ($padding-small-vertical + 1) $padding-small-horizontal;
@@ -297,23 +297,23 @@ input[type="checkbox"] {
 }
 
 @include input-size('.input-lg', $input-height-large, $padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $input-border-radius-large);
-.form-group-lg {
-  .form-control {
+.k-form-group-large {
+  .k-form-control {
     height: $input-height-large;
     padding: $padding-large-vertical $padding-large-horizontal;
     font-size: $font-size-large;
     line-height: $line-height-large;
     border-radius: $input-border-radius-large;
   }
-  select.form-control {
+  select.k-form-control {
     height: $input-height-large;
     line-height: $input-height-large;
   }
-  textarea.form-control,
-  select[multiple].form-control {
+  textarea.k-form-control,
+  select[multiple].k-form-control {
     height: auto;
   }
-  .form-control-static {
+  .k-form-control-static {
     height: $input-height-large;
     min-height: ($line-height-computed + $font-size-large);
     padding: ($padding-large-vertical + 1) $padding-large-horizontal;
@@ -332,12 +332,12 @@ input[type="checkbox"] {
   position: relative;
 
   // Ensure icons don't overlap text
-  .form-control {
+  .k-form-control {
     padding-right: ($input-height-base * 1.25);
   }
 }
 // Feedback icon (requires .glyphicon classes)
-.form-control-feedback {
+.k-form-control-feedback {
   position: absolute;
   top: 0;
   right: 0;
@@ -349,16 +349,16 @@ input[type="checkbox"] {
   text-align: center;
   pointer-events: none;
 }
-.input-lg + .form-control-feedback,
-.input-group-lg + .form-control-feedback,
-.form-group-lg .form-control + .form-control-feedback {
+.input-lg + .k-form-control-feedback,
+.input-group-lg + .k-form-control-feedback,
+.k-form-group-large .k-form-control + .k-form-control-feedback {
   width: $input-height-large;
   height: $input-height-large;
   line-height: $input-height-large;
 }
-.input-sm + .form-control-feedback,
-.input-group-sm + .form-control-feedback,
-.form-group-sm .form-control + .form-control-feedback {
+.input-sm + .k-form-control-feedback,
+.input-group-sm + .k-form-control-feedback,
+.k-form-group-small .k-form-control + .k-form-control-feedback {
   width: $input-height-small;
   height: $input-height-small;
   line-height: $input-height-small;
@@ -378,10 +378,10 @@ input[type="checkbox"] {
 // Reposition feedback icon if input has visible label above
 .has-feedback label {
 
-  & ~ .form-control-feedback {
+  & ~ .k-form-control-feedback {
     top: ($line-height-computed + 5); // Height of the `label` and its margin
   }
-  &.sr-only ~ .form-control-feedback {
+  &.sr-only ~ .k-form-control-feedback {
     top: 0;
   }
 }
@@ -406,7 +406,7 @@ input[type="checkbox"] {
 // forms begin stacked on extra small (mobile) devices and then go inline when
 // viewports reach <768px.
 //
-// Requires wrapping inputs and labels with `.form-group` for proper display of
+// Requires wrapping inputs and labels with `.k-form-group` for proper display of
 // default HTML form controls and our custom form controls (e.g., input groups).
 //
 // Heads up! This is mixin-ed into `.navbar-form` in navbars.less.
@@ -417,21 +417,21 @@ input[type="checkbox"] {
   // Kick in the inline
   @media (min-width: $screen-sm-min) {
     // Inline-block all the things for "inline"
-    .form-group {
+    .k-form-group {
       display: inline-block;
       margin-bottom: 0;
       vertical-align: middle;
     }
 
-    // In navbar-form, allow folks to *not* use `.form-group`
-    .form-control {
+    // In navbar-form, allow folks to *not* use `.k-form-group`
+    .k-form-control {
       display: inline-block;
-      width: auto; // Prevent labels from stacking above inputs in `.form-group`
+      width: auto; // Prevent labels from stacking above inputs in `.k-form-group`
       vertical-align: middle;
     }
 
     // Make static controls behave like regular ones
-    .form-control-static {
+    .k-form-control-static {
       display: inline-block;
     }
 
@@ -441,13 +441,13 @@ input[type="checkbox"] {
 
       .input-group-addon,
       .input-group-btn,
-      .form-control {
+      .k-form-control {
         width: auto;
       }
     }
 
     // Input groups need that 100% width though
-    .input-group > .form-control {
+    .input-group > .k-form-control {
       width: 100%;
     }
 
@@ -476,7 +476,7 @@ input[type="checkbox"] {
     }
 
     // Re-override the feedback icon.
-    .has-feedback .form-control-feedback {
+    .has-feedback .k-form-control-feedback {
       top: 0;
     }
   }
@@ -514,7 +514,7 @@ input[type="checkbox"] {
   }
 
   // Make form groups behave like rows
-  .form-group {
+  .k-form-group {
     @include make-row;
   }
 
@@ -532,15 +532,15 @@ input[type="checkbox"] {
   //
   // Reposition the icon because it's now within a grid column and columns have
   // `position: relative;` on them. Also accounts for the grid gutter padding.
-  .has-feedback .form-control-feedback {
+  .has-feedback .k-form-control-feedback {
     right: floor(($grid-gutter-width / 2));
   }
 
   // Form group sizes
   //
   // Quick utility class for applying `.input-lg` and `.input-sm` styles to the
-  // inputs and labels within a `.form-group`.
-  .form-group-lg {
+  // inputs and labels within a `.k-form-group`.
+  .k-form-group-large {
     @media (min-width: $screen-sm-min) {
       .control-label {
         padding-top: ($padding-large-vertical + 1);
@@ -548,7 +548,7 @@ input[type="checkbox"] {
       }
     }
   }
-  .form-group-sm {
+  .k-form-group-small {
     @media (min-width: $screen-sm-min) {
       .control-label {
         padding-top: ($padding-small-vertical + 1);
@@ -568,8 +568,8 @@ Inline form groups
 
 markup:
 <label>Select from presets</label>
-<div class="form-group">
-    <div class="inline-form-group">
+<div class="k-form-group">
+    <div class="k-inline-form-group">
         <label>Label 1</label>
         <div class="k-button-group">
             <a href="#" class="k-button k-button--default k-button--tiny">
@@ -580,7 +580,7 @@ markup:
             </a>
         </div>
     </div>
-    <div class="inline-form-group">
+    <div class="k-inline-form-group">
         <label>Label 2</label>
         <div class="k-button-group">
             <a href="#" class="k-button k-button--default k-button--tiny">
@@ -591,7 +591,7 @@ markup:
             </a>
         </div>
     </div>
-    <div class="inline-form-group">
+    <div class="k-inline-form-group">
         <label>Label 3</label>
         <div class="k-button-group">
             <a href="#" class="k-button k-button--default k-button--tiny">
@@ -609,7 +609,7 @@ Styleguide 2.13.1
 */
 
 
-.inline-form-group {
+.k-inline-form-group {
   display: inline-block;
   margin-right: 1em;
 
@@ -679,13 +679,13 @@ markup:
         <label>File name:</label>
     </div>
     <div class="k-form-row__item k-form-row__item--input">
-        <input class="form-control" type="text" value="{value}" disabled="">
+        <input class="k-form-control" type="text" value="{value}" disabled="">
     </div>
     <div class="k-form-row__item k-form-row__item--label">
         <label for="docman_title0">Title:</label>
     </div>
     <div class="k-form-row__item k-form-row__item--input">
-        <input id="docman_title0" class="form-control" type="text" name="title" value="{value}">
+        <input id="docman_title0" class="k-form-control" type="text" name="title" value="{value}">
     </div>
 </form>
 
@@ -759,7 +759,7 @@ Styleguide 2.13.3
     }
   }
 
-  .form-control {
+  .k-form-control {
     margin: 0;
   }
 
@@ -811,7 +811,7 @@ markup:
 <label><input type="radio" id="input2"> Label 2</label>
 
 sg-wrapper:
-<div class="form-group">
+<div class="k-form-group">
     <sg-wrapper-content/>
 </div>
 

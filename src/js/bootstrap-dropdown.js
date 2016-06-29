@@ -30,7 +30,7 @@
     , Dropdown = function (element) {
         var $el = $(element).on('click.dropdown.data-api', this.toggle)
         $('html').on('click.dropdown.data-api', function () {
-          $el.parent().removeClass('is-open')
+          $el.parent().removeClass('k-is-open')
         })
       }
 
@@ -43,11 +43,11 @@
         , $parent
         , isActive
 
-      if ($this.is('.is-disabled, :disabled')) return
+      if ($this.is('.k-is-disabled, :disabled')) return
 
       $parent = getParent($this)
 
-      isActive = $parent.hasClass('is-open')
+      isActive = $parent.hasClass('k-is-open')
 
       clearMenus()
 
@@ -56,7 +56,7 @@
           // if mobile we we use a backdrop because click events don't delegate
           $('<div class="k-dropdown-backdrop"/>').insertBefore($(this)).on('click', clearMenus)
         }
-        $parent.toggleClass('is-open')
+        $parent.toggleClass('k-is-open')
       }
 
       $this.focus()
@@ -79,18 +79,18 @@
       e.preventDefault()
       e.stopPropagation()
 
-      if ($this.is('.is-disabled, :disabled')) return
+      if ($this.is('.k-is-disabled, :disabled')) return
 
       $parent = getParent($this)
 
-      isActive = $parent.hasClass('is-open')
+      isActive = $parent.hasClass('k-is-open')
 
       if (!isActive || (isActive && e.keyCode == 27)) {
         if (e.which == 27) $parent.find(toggle).focus()
         return $this.click()
       }
 
-      $items = $('[role=menu] li:not(.divider):visible a', $parent)
+      $items = $('[role=menu] li:not(.k-dropdown__divider):visible a', $parent)
 
       if (!$items.length) return
 
@@ -110,7 +110,7 @@
   function clearMenus() {
     $('.k-dropdown-backdrop').remove()
     $(toggle).each(function () {
-      getParent($(this)).removeClass('is-open')
+      getParent($(this)).removeClass('k-is-open')
     })
   }
 

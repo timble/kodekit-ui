@@ -102,8 +102,8 @@ Styleguide 2.22
   }
 }
 
-.opened--left,
-.opened--right {
+.opened-left,
+.opened-right {
   .k-title-bar:before {
     z-index: 2; /* 2 */
   }
@@ -117,13 +117,13 @@ Styleguide 2.22
     bottom: -1px; /* Also cover the bottom border */
   }
 
-  .off-canvas-menu-toggle-holder,
+  .k-off-canvas-menu-toggle-holder,
   h2 {
     display: table-cell;
     vertical-align: middle;
   }
 
-  .off-canvas-menu-toggle-holder {
+  .k-off-canvas-menu-toggle-holder {
     white-space: nowrap;
   }
 

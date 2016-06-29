@@ -3,18 +3,18 @@ Tabs
 
 markup:
 <ul class="k-tabs">
-    <li class="is-active">
-        <a href="javascript:void(0)">Tab 1</a>
+    <li class="k-is-active">
+        <a href="#tab1" data-toggle="tab">Tab 1</a>
     </li>
     <li>
-        <a href="javascript:void(0)">Tab 2</a>
+        <a href="#tab2" data-toggle="tab">Tab 2</a>
     </li>
 </ul>
 <div class="k-tabs-content">
-    <div class="k-tab is-active">
+    <div id="tab1" class="k-tab k-is-active">
         Content
     </div>
-    <div class="k-tab">
+    <div id="tab2" class="k-tab">
         Content
     </div>
 </div>
@@ -58,7 +58,7 @@ Styleguide 2.106
     }
 
     // Disabled state sets text to gray and nukes hover/tab effects
-    &.is-disabled > a {
+    &.k-is-disabled > a {
       color: $nav-disabled-link-color;
 
       &:hover,
@@ -71,7 +71,7 @@ Styleguide 2.106
     }
 
     // Active state, and its :hover to override normal :hover
-    &.is-active > a {
+    &.k-is-active > a {
       &,
       &:hover,
       &:focus {
@@ -85,7 +85,7 @@ Styleguide 2.106
   }
 
   // Open dropdowns
-  .is-open > a {
+  .k-is-open > a {
     &,
     &:hover,
     &:focus {
@@ -99,7 +99,7 @@ Styleguide 2.106
  * Tabbable tabs
  */
 
-/* Hide tabbable panes to start, show them when `.is-active` */
+/* Hide tabbable panes to start, show them when `.k-is-active` */
 
 .k-tabs-content {
   & > .k-tab {
@@ -107,7 +107,7 @@ Styleguide 2.106
     padding: $spacing-small;
   }
 
-  & > .is-active {
+  & > .k-is-active {
     display: block;
   }
 }

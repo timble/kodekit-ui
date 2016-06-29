@@ -329,9 +329,9 @@ Icon colors
 
 Give your icons more meaning by giving them a color
 
-.k-icon-accent - Accent color
-.k-icon-success - Success color
-.k-icon-error - Error color
+.k-icon--accent - Accent color
+.k-icon--success - Success color
+.k-icon--error - Error color
 
 markup:
 <span class="k-icon-home {$modifiers}" aria-hidden="true"></span>
@@ -343,15 +343,15 @@ Styleguide 2.30.2
 
 */
 
-.k-icon-accent {
+.k-icon--accent {
   color: $color-accent;
 }
 
-.k-icon-success {
+.k-icon--success {
   color: $color-success;
 }
 
-.k-icon-error {
+.k-icon--error {
   color: $color-error;
 }
 

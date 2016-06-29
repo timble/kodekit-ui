@@ -13,7 +13,10 @@ Button styling
 .k-button--block - Full width button
 
 markup:
-<button type="button" class="k-button {$modifiers}">Button text</button>
+<button type="button" class="k-button {$modifiers}">
+    <sg-insert>2.30-171</sg-insert>
+    Button text
+</button>
 
 sg-wrapper:
 <div>

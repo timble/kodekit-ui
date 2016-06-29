@@ -4,7 +4,7 @@ Floating thead
 A floating thead so the head will stay on top when scrolling the tables
 
 markup:
-<table class="js-fixed-table-header">
+<table class="k-js-fixed-table-header">
     <thead>
     <tr>
         <th>Heading</th>
@@ -53,11 +53,13 @@ Styleguide 2.400
 */
 
 /**
- * These classes are created by the floatthead plugin
+ * This class is created by the floatThead plugin that's why it's not k-float-thead-wrapper
+ *
+ * 1. Overriding inline styling, we don't need a z-index of 1000+
  */
 
 .floatThead-wrapper {
-  z-index: 1 !important; // Overriding inline styling, we don't need a z-index of 1000+
+  z-index: 1 !important;
 
   @include flexbox {
     display: flex;

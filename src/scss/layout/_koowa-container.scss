@@ -4,6 +4,7 @@ Koowa container
 This is the most outer container of each page.
 - A `.koowa-container` may only live once on the page and should be handled as an `id`
 - Need to namespace something outside this container? Use the `.koowa` class
+- The `koowa` class should always be added to the `koowa-container` element for namespacing purposes
 
 markup:
 <div class="koowa-container koowa">
@@ -19,16 +20,11 @@ Styleguide 3.1
  *    to large for the koowa container. The reason we don't use min-width is
  *    because if the content is only 300px we don't need horizontal scrollbars
  * 2. Reset the max-width when viewport is as large as minwidth
- * 3. Use z-index to be able to talk with JavaScript
- * 4. Needed for webkit / blink for JS to read zindex value
- * 5. Default font settings
- * 6. Default styling
+ * 3. Default font settings
+ * 4. Default styling
  */
 
 &.koowa-container {
-  position: relative; /* 4 */
-  z-index: 0; /* 3 */
-
   max-width: $minwidth; /* 1 */
   margin: 0; /* 6 */
   border: none; /* 6 */
@@ -36,10 +32,10 @@ Styleguide 3.1
   overflow: hidden;
   padding: $koowa-padding;
 
-  font-size: $font-size; /* 5 */
-  line-height: $line-height; /* 5 */
-  background: $koowa-background; /* 6 */
-  color: $color-type;
+  font-size: $font-size; /* 3 */
+  line-height: $line-height; /* 3 */
+  background: $koowa-background; /* 4 */
+  color: $color-type; /* 4 */
 
   -webkit-font-smoothing: $webkit-font-smoothing;
   -moz-osx-font-smoothing: $firefox-font-smoothing;
@@ -64,12 +60,4 @@ Styleguide 3.1
   @include rtl {
     direction: rtl;
   }
-
-
-  /* On 'desktop' view */
-
-  @include breakpoint($desktop) {
-    z-index: 1; // 3
-  }
-
 }

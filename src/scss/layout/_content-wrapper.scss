@@ -2,7 +2,7 @@
 Content wrapper
 
 The default content-wrapper
-- Use as <b>child</b> of the `.k-wrapper` only
+- Use as <b>child</b> of the `.k-wrapper` container only
 - {unsureText}
 
 markup:
@@ -30,13 +30,6 @@ Styleguide 3.3
   @include breakpoint($desktop) {
     display: table;
     width: 100%;
-  }
-
-
-  /* RTL */
-
-  @include rtl {
-    direction: rtl;
   }
 
 

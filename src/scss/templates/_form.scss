@@ -19,7 +19,7 @@ markup:
             <!-- Component -->
             <div class="k-component">
                 <!-- Form -->
-                <form class="k-form-layout -koowa-form" action="" method="post">
+                <form class="k-flex-wrapper">
                     <!-- Container -->
                     <div class="k-container">
                         <div class="k-container__full">
@@ -28,22 +28,22 @@ markup:
                         <!-- Main fields -->
                         <div class="k-container__main">
                             <fieldset>
-                                <div class="form-group form-group-lg">
-                                    <input class="form-control" type="text" placeholder="{Title}">
+                                <div class="k-form-group-large">
+                                    <input class="-form-control" type="text" placeholder="{Title}">
                                 </div>
-                                <div class="form-group">
+                                <div class="k-form-group">
                                     <div class="input-group input-group-sm">
                                         <label for="todo_form_alias" class="input-group-addon">
                                             Alias
                                         </label>
-                                        <input id="docman_form_alias" type="text" class="form-control" name="slug" maxlength="255" value="example" placeholder="Will be created automatically">
+                                        <input id="docman_form_alias" type="text" class="k-form-control" name="slug" maxlength="255" value="example" placeholder="Will be created automatically">
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="k-form-group">
                                     <label>Category</label>
                                     <sg-insert>2.500</sg-insert>
                                 </div>
-                                <div class="form-group">
+                                <div class="k-form-group">
                                     <div class="k-button-group">
                                         <button type="button" class="k-button k-button--default is-active">Button</button>
                                         <button type="button" class="k-button k-button--default">Button</button>
@@ -59,7 +59,7 @@ markup:
                                     Publish
                                 </div>
                                 <div class="k-form-block__content">
-                                    <div class="form-group">
+                                    <div class="k-form-group">
                                         <sg-insert>2.3</sg-insert>
                                     </div>
                                 </div>
@@ -114,12 +114,9 @@ markup:
                     <!-- Main fields -->
                     <form class="k-container__main">
                         <fieldset>
-                            <div class="form-group">
+                            <div class="k-form-group">
                                 <label>Category</label>
-                                <select>
-                                    <option>Option</option>
-                                    <option>Option</option>
-                                </select>
+                                <sg-insert>2.500</sg-insert>
                             </div>
                         </fieldset>
                     </form><!-- .k-container__main -->
@@ -127,10 +124,6 @@ markup:
                         <fieldset>
                             <legend>Documents</legend>
                             <div class="k-batch-list">
-                              <sg-insert>2.13.2</sg-insert>
-                              <sg-insert>2.13.2</sg-insert>
-                              <sg-insert>2.13.2</sg-insert>
-                              <sg-insert>2.13.2</sg-insert>
                               <sg-insert>2.13.2</sg-insert>
                             </div>
                         </fieldset>
@@ -184,7 +177,7 @@ markup:
             <!-- Component -->
             <div class="k-component">
                 <!-- Form -->
-                <form class="k-form-layout -koowa-form" action="" method="post">
+                <form class="k-flex-wrapper">
                     <!-- Container -->
                     <div class="k-container">
                         <div class="k-container__full">
@@ -193,24 +186,20 @@ markup:
                         <!-- Main fields -->
                         <div class="k-container__main">
                             <fieldset>
-                                <div class="form-group form-group-lg">
-                                    <input class="form-control" type="text" placeholder="{Title}">
+                                <div class="k-form-group-large">
+                                    <input class="k-form-control" type="text" placeholder="{Title}">
                                 </div>
-                                <div class="form-group">
+                                <div class="k-form-group">
                                     <div class="input-group input-group-sm">
                                         <label for="todo_form_alias" class="input-group-addon">
                                             Alias
                                         </label>
-                                        <input id="docman_form_alias" type="text" class="form-control" name="slug" maxlength="255" value="example" placeholder="Will be created automatically">
+                                        <input id="docman_form_alias" type="text" class="k-form-control" name="slug" maxlength="255" value="example" placeholder="Will be created automatically">
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="k-form-group">
                                     <label>Category</label>
-                                    <select name="category" id="category" class="select2">
-                                        <option value="1" class="level1">Example 1</option>
-                                        <option value="2" class="level1">Example 2</option>
-                                        <option value="3" class="level1">Example 3</option>
-                                    </select>
+                                    <sg-insert>2.500</sg-insert>
                                 </div>
                             </fieldset>
                         </div><!-- .k-container__main -->
@@ -221,7 +210,7 @@ markup:
                                     Publish
                                 </div>
                                 <div class="k-form-block__content">
-                                    <div class="form-group">
+                                    <div class="k-form-group">
                                         <sg-insert>2.3</sg-insert>
                                     </div>
                                 </div>

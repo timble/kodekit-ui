@@ -6,7 +6,7 @@
  * 3. Hide when the sidebar is visible
  */
 
-.off-canvas-menu-toggle {
+.k-off-canvas-menu-toggle {
   position: relative;
   z-index: 10;
   float: left;
@@ -103,7 +103,7 @@
  */
 
 .show-left-menu {
-  .off-canvas-menu-toggle-holder--left {
+  .k-off-canvas-menu-toggle-holder--left {
     .bar1 {
       top: round(($button-size / 2) - ($bar-height / 2));
       transform: rotate(135deg);
@@ -126,7 +126,7 @@
 }
 
 .show-right-menu {
-  .off-canvas-menu-toggle-holder--right {
+  .k-off-canvas-menu-toggle-holder--right {
     .bar1 {
       top: round(($button-size / 2) - ($bar-height / 2));
       transform: rotate(135deg);
