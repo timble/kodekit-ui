@@ -10,7 +10,7 @@
             $fixedtable = $('.k-js-fixed-table-header'),
             $searchtoggle = $('.k-js-toggle-search'),
             $filtertoggle = $('.k-js-toggle-filters'),
-            $footable = $('.k-js-footable'),
+            $footable = $('.k-js-responsive-table'),
             $overflow = $('.k-sidebar-item--overflow'),
             resizeClass = 'k-is-resizing',
             $sidebarToggle = $('.k-sidebar-item--toggle');

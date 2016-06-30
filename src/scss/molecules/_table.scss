@@ -7,7 +7,7 @@ markup:
 <!-- Table -->
 <div class="k-table-container">
     <div class="k-table">
-        <table class="k-js-fixed-table-header footable">
+        <table class="k-js-fixed-table-header k-js-responsive-table">
         <thead>
             <tr>
                 <th width="1%"><input type="checkbox"/></th>
@@ -15,7 +15,6 @@ markup:
                 <th width="5%"><a href="javascript:void(0)">State</a></th>
                 <th width="15%"><a href="javascript:void(0)">Category</a></th>
                 <th width="5%"><a href="javascript:void(0)">Date</a></th>
-                <th width="1%"><a href="javascript:void(0)">Ordering</a></th>
             </tr>
         </thead>
         <tbody>
@@ -25,7 +24,6 @@ markup:
                 <td><sg-insert>2.50.5-2</sg-insert></td>
                 <sg-insert>2.50.2</sg-insert>
                 <td class="k-table-data--nowrap">01 January 1999</td>
-                <td><sg-insert>2.50.8</sg-insert></td>
             </tr>
             <tr>
                 <td><input type="checkbox"/></td>
@@ -33,7 +31,6 @@ markup:
                 <td><sg-insert>2.50.5-2</sg-insert></td>
                 <sg-insert>2.50.2</sg-insert>
                 <td class="k-table-data--nowrap">01 January 1999</td>
-                <td><sg-insert>2.50.8</sg-insert></td>
             </tr>
             <sg-insert>2.50.6</sg-insert>
             <tr>
@@ -42,7 +39,6 @@ markup:
                 <td><sg-insert>2.50.5-2</sg-insert></td>
                 <sg-insert>2.50.2</sg-insert>
                 <td class="k-table-data--nowrap">01 January 1999</td>
-                <td><sg-insert>2.50.8</sg-insert></td>
             </tr>
             <tr>
                 <td><input type="checkbox"/></td>
@@ -50,7 +46,6 @@ markup:
                 <td><sg-insert>2.50.5-2</sg-insert></td>
                 <sg-insert>2.50.2</sg-insert>
                 <td class="k-table-data--nowrap">01 January 1999</td>
-                <td><sg-insert>2.50.8</sg-insert></td>
             </tr>
             <tr>
                 <td><input type="checkbox"/></td>
@@ -58,7 +53,6 @@ markup:
                 <td><sg-insert>2.50.5-2</sg-insert></td>
                 <sg-insert>2.50.2</sg-insert>
                 <td class="k-table-data--nowrap">01 January 1999</td>
-                <td><sg-insert>2.50.8</sg-insert></td>
             </tr>
         </tbody>
         </table>
@@ -77,214 +71,6 @@ Styleguide 2.50
 
 
 
-
-/*
-Item title
-
-A title for list items
-
-markup:
-<td class="k-table-data--ellipsis"><a href="javascript:void(0)">Item title</a></td>
-
-sg-wrapper:
-<div class="k-table-container">
-    <div class="k-table">
-        <table>
-        <tbody>
-            <tr>
-                <sg-wrapper-content/>
-            </tr>
-        </tbody>
-        </table>
-    </div>
-</div>
-
-
-Styleguide 2.50.2
-
-*/
-
-
-
-/*
-Item subtitle
-
-A subtitle for list items
-
-markup:
-<td class="k-table-data--ellipsis">
-    <a href="javascript:void(0)">Curabitur blandit tempus porttitor.</a>
-    <small>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</small>
-</td>
-
-sg-wrapper:
-<div class="k-table-container">
-    <div class="k-table">
-        <table>
-        <tbody>
-            <tr>
-                <sg-wrapper-content/>
-            </tr>
-        </tbody>
-        </table>
-    </div>
-</div>
-
-Styleguide 2.50.3
-
-*/
-
-
-/*
-Table cell settings
-
-Different available table cell settings
-
-.k-table-data--right - Right aligned text
-.k-table-data--center - Center aligned text
-.k-table-data--nowrap - Content will not be wrapped (useful for dates, file sizes etc.)
-.k-table-data--wrap - Wrap content (useful for urls etc.)
-.k-table-data--toggle - The cell that will have a footable toggle button
-.k-table-data--ellipsis - Break content at the end of the cell and add text ellipsis
-
-markup:
-<td class="{$modifiers}">Content</td>
-
-sg-wrapper:
-<div class="k-table-container">
-    <div class="k-table">
-        <table>
-        <tbody>
-            <tr>
-                <sg-wrapper-content/>
-            </tr>
-        </tbody>
-        </table>
-    </div>
-</div>
-
-Styleguide 2.50.4
-
-*/
-
-
-/*
-Table sub header
-
-Add sub headers in between
-
-markup:
-<tr class="k-table__sub-header">
-    <th colspan="6">
-        Sub header
-    </th>
-</tr>
-
-sg-wrapper:
-<div class="k-table-container">
-    <div class="k-table">
-        <table>
-        <tbody>
-            <sg-wrapper-content/>
-        </tbody>
-        </table>
-    </div>
-</div>
-
-Styleguide 2.50.6
-
-*/
-
-
-/*
-Table levels
-
-A table displaying multiple levels
-
-markup:
-<div class="k-table-container">
-    <div class="k-table">
-        <table>
-        <thead>
-            <tr>
-                <th width="1%"><input type="checkbox"/></th>
-                <th>Heading</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><input type="checkbox"/></td>
-                <td class="k-table__item-level k-table__item-level1">Level 1</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox"/></td>
-                <td class="k-table__item-level k-table__item-level2">Level 2</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox"/></td>
-                <td class="k-table__item-level k-table__item-level3">Level 3</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox"/></td>
-                <td class="k-table__item-level k-table__item-level1">Level 1</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox"/></td>
-                <td class="k-table__item-level k-table__item-level1">Level 1</td>
-            </tr>
-        </tbody>
-        </table>
-    </div>
-</div>
-
-Styleguide 2.50.7
-
-*/
-
-
-/*
-Table sorting
-
-Display sorting arrows
-
-markup:
-<span class="k-table-data--sort">
-    <span class="k-grid-sort">
-        <span class="state uparrow">
-            <span class="text">
-                <span class="k-icon-chevron-top"></span>
-            </span>
-        </span>
-    </span>
-    <span class="k-grid-sort k-grid-sort--text">1</span>
-    <span class="k-grid-sort">
-        <span class="state downarrow">
-            <span class="text">
-                <span class="k-icon-chevron-bottom"></span>
-            </span>
-        </span>
-    </span>
-</span>
-
-sg-wrapper:
-<div class="k-table-container">
-    <div class="k-table">
-        <table>
-        <tbody>
-            <tr>
-                <td>
-                    <sg-wrapper-content/>
-                </td>
-            </tr>
-        </tbody>
-        </table>
-    </div>
-</div>
-
-Styleguide 2.50.8
-
-*/
-
 .k-table-container {
   background: $table-background;
 
@@ -298,19 +84,23 @@ Styleguide 2.50.8
   @include resizing {
     overflow: hidden;
   }
+}
 
-  /* Table container */
 
-  .k-table {
-    overflow: auto;
+.k-table {
+  overflow: auto;
 
-    @include flexbox {
-      display: flex;
-      flex: 1 1 auto;
-      background: $table-cell-background-even;
-    }
+  @include flexbox {
+    display: flex;
+    flex: 1 1 auto;
+    background: $table-cell-background-even;
   }
+}
 
+
+/* Default table settings */
+
+.k-table-container {
   table {
     width: 100%;
     text-align: left;
@@ -376,17 +166,13 @@ Styleguide 2.50.8
     background: $table-header-background;
     font-weight: $regular;
 
-    &.k-sort-asc,
-    &.k-sort-desc {
-      font-weight: $bold;
-    }
-
     a {
       display: block; /* 3 */
       padding: $table-cell-spacing-vertical $table-cell-spacing-horizontal; /* 4 */
       margin-left: -$table-cell-spacing-horizontal;
       margin-right: -$table-cell-spacing-horizontal;
       line-height: $table-cell-size - ($table-cell-spacing-vertical * 2);
+      text-decoration: none;
       @include transition;
 
       &:focus,
@@ -434,7 +220,140 @@ Styleguide 2.50.8
       }
     }
   }
+}
 
+
+
+
+/**
+ * Selected
+ *
+ * When rows are selected they are highlighted
+ *
+ * 1. Coloring Links and extra elements that don't color automatically with their parent
+ */
+
+/*
+Selected rows
+
+Styling for selected rows
+
+markup:
+<tr class="is-selected">
+    <td>Item</td>
+    <td>Item</td>
+    <td>Item</td>
+</tr>
+
+sg-wrapper:
+<div class="k-table-container">
+    <div class="k-table">
+        <table>
+        <tbody>
+            <tr>
+                <td>Item</td>
+                <td>Item</td>
+                <td>Item</td>
+            </tr>
+            <sg-wrapper-content/>
+            <tr>
+                <td>Item</td>
+                <td>Item</td>
+                <td>Item</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+
+Styleguide 2.50.8
+
+*/
+
+.k-table-container {
+  tr.is-selected {
+    td {
+      background: $table-cell-accent-background;
+      color: $table-cell-accent-color;
+
+      a, i, span {
+        color: $table-cell-accent-color; /* 1 */
+      }
+    }
+
+
+    /* Re-set background on td's while hovering th */
+
+    &:hover,
+    &:focus {
+      td {
+        background-color: $table-cell-accent-background-hover;
+      }
+    }
+  }
+}
+
+
+/**
+ * Table elements
+ */
+
+
+/*
+Item title
+
+A title for list items
+
+markup:
+<td class="k-table-data--ellipsis"><a href="javascript:void(0)">Item title</a></td>
+
+sg-wrapper:
+<div class="k-table-container">
+    <div class="k-table">
+        <table>
+        <tbody>
+            <tr>
+                <sg-wrapper-content/>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+
+
+Styleguide 2.50.2
+
+*/
+
+/*
+Item subtitle
+
+A subtitle for list items
+
+markup:
+<td class="k-table-data--ellipsis">
+    <a href="javascript:void(0)">Curabitur blandit tempus porttitor.</a>
+    <small>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</small>
+</td>
+
+sg-wrapper:
+<div class="k-table-container">
+    <div class="k-table">
+        <table>
+        <tbody>
+            <tr>
+                <sg-wrapper-content/>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+
+Styleguide 2.50.3
+
+*/
+
+.k-table-container {
   small {
     display: block;
     font-size: 11px;
@@ -460,15 +379,43 @@ Styleguide 2.50.8
     font-size: 16px;
     line-height: 23px;
   }
+}
 
 
 
-  /**
-   * Table classes
-   *
-   * Classes to add to table cells
-   */
+/*
+Table cell settings
 
+Different available table cell settings
+
+.k-table-data--right - Right aligned text
+.k-table-data--center - Center aligned text
+.k-table-data--nowrap - Content will not be wrapped (useful for dates, file sizes etc.)
+.k-table-data--wrap - Wrap long content (useful for urls etc.)
+.k-table-data--toggle - The cell that will have a responsive toggle button
+.k-table-data--ellipsis - Break content at the end of the cell and add text ellipsis
+
+markup:
+<td class="{$modifiers}">Content</td>
+
+sg-wrapper:
+<div class="k-table-container">
+    <div class="k-table">
+        <table>
+        <tbody>
+            <tr>
+                <sg-wrapper-content/>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+
+Styleguide 2.50.4
+
+*/
+
+.k-table-container {
   .k-table-data--right {
     text-align: right;
 
@@ -508,38 +455,58 @@ Styleguide 2.50.8
       text-overflow: ellipsis;
     }
   }
+}
 
 
 
-  /**
-   * Table levels
-   *
-   * Indented levels for a clearer overview
-   */
+/*
+Table levels
 
+A table displaying multiple levels
+
+markup:
+<div class="k-table-container">
+    <div class="k-table">
+        <table>
+        <thead>
+            <tr>
+                <th width="1%"><input type="checkbox"/></th>
+                <th>Heading</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox"/></td>
+                <td class="k-table__item-level k-table__item-level1">Level 1</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"/></td>
+                <td class="k-table__item-level k-table__item-level2">Level 2</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"/></td>
+                <td class="k-table__item-level k-table__item-level3">Level 3</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"/></td>
+                <td class="k-table__item-level k-table__item-level1">Level 1</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"/></td>
+                <td class="k-table__item-level k-table__item-level1">Level 1</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+
+Styleguide 2.50.7
+
+*/
+
+.k-table-container {
   .k-table__item-level {
     white-space: nowrap;
-
-    .k-table__item-cell-ellipsis {
-      display: table;
-      width: 100%;
-
-      .k-table__item-cell-visual,
-      .k-table__item-cell-text {
-        display: table-cell;
-        vertical-align: middle;
-        width: 1%;
-      }
-
-      .k-table__item-cell-text {
-        display: table-cell;
-        width: 99%;
-        max-width: 0;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-      }
-    }
 
     &:before {
       content: " ";
@@ -558,6 +525,8 @@ Styleguide 2.50.8
       }
     }
   }
+
+  /* Set proper spacing before levels */
 
   @for $i from 1 through 15 {
     .k-table__item-level#{$i} {
@@ -579,54 +548,43 @@ Styleguide 2.50.8
     }
   }
 
+  /* Do not display the level icon for the first level items */
+
   .k-table__item-level1:before {
     display: none;
   }
+}
 
 
 
-  /**
-   * Selected
-   *
-   * When rows are selected they are highlighted
-   *
-   * 1. Coloring Links and extra elements that don't color automatically with it's parent
-   */
+/*
+Table sub header
 
-  tr.is-active,
-  tr.is-selected {
-    td {
-      background: $table-cell-accent-background;
-      color: $table-cell-accent-color;
+Add sub headers in between
 
-      a, i, span {
-        color: $table-cell-accent-color; /* 1 */
-      }
+markup:
+<tr class="k-table__sub-header">
+    <th colspan="6">
+        Sub header
+    </th>
+</tr>
 
-      .k-table-button {
-        border-color: white;
-        background: transparent;
+sg-wrapper:
+<div class="k-table-container">
+    <div class="k-table">
+        <table>
+        <tbody>
+            <sg-wrapper-content/>
+        </tbody>
+        </table>
+    </div>
+</div>
 
-        &:focus,
-        &:hover {
-          border-color: white;
-          background: white;
-        }
-      }
-    }
+Styleguide 2.50.6
 
-    &:hover,
-    &:focus {
-      td {
-        background-color: $table-cell-accent-background-hover;
-      }
-    }
-  }
+*/
 
-
-
-  /* Sub headings */
-
+.k-table-container {
   .k-table__sub-header {
     th {
       padding: .7em $table-cell-spacing-horizontal .5em;
@@ -640,70 +598,8 @@ Styleguide 2.50.8
       border-bottom-color: $table-cell-border;
     }
   }
-
-
-  /**
-   * Sorting arrows
-   *
-   * 1. Display table to line them up horizontally while:
-   *    - We keep everything vertically centered
-   *    - We keep it all on one line but don't have to deal with inline-block spacing trouble
-   * 2. Set base line-height to 16px to keep it all vertically centered
-   * 3. Set min-width to 16px so icons and placeholder have the same width,
-   *    lining all arrows perfectly below each other
-   * 4. Aligning items in center
-   * 5. Min-width for text larger to fit 3 digits by default. Icons will line up nice to at least 999
-   * 6. Set a little padding for when text item gets 4 digits
-   */
-
-  .k-table-data--sort {
-    display: table; /* 1 */
-    line-height: 16px; /* 2 */
-  }
-
-  .k-grid-sort {
-    display: table-cell; /* 1 */
-    min-width: 16px; /* 3 */
-    text-align: center; /* 4 */
-    vertical-align: middle; /* 4 */
-  }
-
-  .k-grid-sort--text {
-    min-width: 30px; /* 5 */
-    padding: 0 3px; /* 6 */
-  }
-
-  .k-dropdown__toggle {
-    &,&:hover,&:focus {
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    input, span {
-      display: inline-block;
-      vertical-align: middle;
-    }
-  }
-
-  .k-dropdown__menu {
-    margin-left: 1px;
-
-    @include rtl {
-      margin-left: 0;
-      margin-right: 1px;
-    }
-
-    a {
-      margin: 0;
-      padding: 5px;
-
-      &:focus,
-      &:hover {
-        background: $color-accent;
-      }
-    }
-  }
 }
+
 
 
 /*
@@ -717,7 +613,7 @@ Different states that items can be in
 .k-table__item--state-published - Published
 
 markup:
-<span class="k-table__item--state{$modifiers}">State</span>
+<span class="k-table__item--state {$modifiers}">State</span>
 
 sg-wrapper:
 <div class="k-table-container">
@@ -738,36 +634,39 @@ Styleguide 2.50.5
 
 */
 
-.k-table__item--state {
-  @include transition;
+.k-table-container {
+  .k-table__item--state {
+    @include transition;
 
-  // pointers for clickable elements
-  button#{&},
-  a#{&} {
-    cursor: pointer;
+    // pointers for clickable elements
+    button#{&},
+    a#{&} {
+      cursor: pointer;
 
-    &:focus,
-    &:hover {
-      text-decoration: underline;
+      &:focus,
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &-pending {
+      color: $color-warning;
+    }
+
+    &-expired {
+      color: $color-neutral;
+    }
+
+    &-unpublished {
+      color: $color-error;
+    }
+
+    &-published {
+      color: $color-success;
     }
   }
-
-  &-pending {
-    color: $color-warning;
-  }
-
-  &-expired {
-    color: $color-neutral;
-  }
-
-  &-unpublished {
-    color: $color-error;
-  }
-
-  &-published {
-    color: $color-success;
-  }
 }
+
 
 
 /*
@@ -779,33 +678,30 @@ markup:
 <div class="k-table-pagination">
     <div class="k-pagination">
         <div class="k-pagination__limit">
-            <select name="limit" size="1">
-                <option value="5" class="level1">5</option>
-                <option value="10" class="level1">10</option>
-                <option value="15" class="level1">15</option>
-                <option value="20" class="level1" selected="selected">20</option>
-                <option value="25" class="level1">25</option>
-                <option value="30" class="level1">30</option>
-                <option value="50" class="level1">50</option>
-                <option value="100" class="level1">100</option>
+            <select class="k-form-control">
+                <option value="5">5</option>
+                <option value="10" selected="selected">10</option>
+                <option value="15">15</option>
             </select>
         </div>
         <ul class="k-pagination__pages">
-            <li class="active"><a>1</a></li>
-            <li>
-                <a href="{url}">2</a>
+            <li class="is-active">
+                <span>1</span>
             </li>
             <li>
-                <a href="{url}">3</a>
+                <a href="javascript:void(0)">2</a>
             </li>
             <li>
-                <a href="{url}">4</a>
+                <a href="javascript:void(0)">3</a>
             </li>
             <li>
-                <a href="{url}">5</a>
+                <a href="javascript:void(0)">4</a>
             </li>
             <li>
-                <a href="{url}">»</a>
+                <a href="javascript:void(0)">5</a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">»</a>
             </li>
         </ul>
     </div>
@@ -835,7 +731,6 @@ Styleguide 2.50.1
   }
 
 
-
   /**
    * Pagination contents
    *
@@ -847,6 +742,7 @@ Styleguide 2.50.1
     display: inline-block; /* 1 */
     vertical-align: middle; /* 1 */
   }
+
 
   /* Pagination */
 
@@ -910,21 +806,10 @@ Styleguide 2.50.1
         cursor: default;
       }
     }
-
-    & > .is-disabled {
-      & > span,
-      & > span:hover,
-      & > span:focus,
-      & > a,
-      & > a:hover,
-      & > a:focus {
-        color: $pagination-disabled-color;
-        background-color: $pagination-disabled-bg;
-        border-color: $pagination-disabled-border;
-        cursor: $cursor-disabled;
-      }
-    }
   }
+
+
+  /* Limit */
 
   select {
     height: $table-pagination-height;
@@ -939,11 +824,60 @@ Styleguide 2.50.1
 }
 
 
-/**
- * Footable
- *
- * Responsive table views
- */
+/*
+Responsive table
+
+Responsive tables
+
+markup:
+<div class="k-table-container">
+    <div class="k-table">
+        <table class="k-js-responsive-table">
+        <thead>
+            <tr>
+                <th width="1%" data-hide="phone">
+                    <span class="k-icon-move"></span>
+                </th>
+                <th width="1%">
+                    <input type="checkbox"/>
+                </th>
+                <th data-toggle="true">
+                    Title
+                </th>
+                <th data-hide="phone,tablet">
+                    Category
+                </th>
+                <th data-hide="phone,tablet,desktop">
+                    Downloads
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <sg-insert>2.50.9</sg-insert>
+                </td>
+                <td>
+                    <input type="checkbox"/>
+                </td>
+                <td>
+                    <a href="javascript:void(0)">Title</a>
+                </td>
+                <td>
+                    Category
+                </td>
+                <td>
+                    12
+                </td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+
+Styleguide 2.50.11
+
+*/
 
 .footable.breakpoint {
   .footable-toggle {
@@ -1078,19 +1012,57 @@ Styleguide 2.50.9
   }
 }
 
-tr.is-selected {
-  .k-positioner {
-    &:after {
-      color: white;
-      text-shadow: none;
+.k-table-container {
+  tr.is-selected {
+    .k-positioner {
+      &:after {
+        color: white;
+        text-shadow: none;
+      }
     }
   }
 }
 
 
 
+
+
+/*
+Table heading sorting
+
+Styling for table header sorting.
+
+.k-sort-asc - Ascending
+.k-sort-desc - Descending
+
+markup:
+<th class="{$modifiers}">
+    <a href="javascript:void(0)">Title</a>
+</th>
+
+sg-wrapper:
+<div class="k-table-container">
+    <div class="k-table">
+        <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <sg-wrapper-content/>
+                <th>Title</th>
+            </tr>
+        </thead>
+        </table>
+    </div>
+</div>
+
+Styleguide 2.50.10
+
+*/
+
 th.k-sort-asc,
 th.k-sort-desc {
+  font-weight: $bold;
+
   a {
     cursor: pointer;
 

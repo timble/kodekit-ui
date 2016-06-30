@@ -10,8 +10,8 @@ Data in these boxes should be non-required form elements
 
 markup:
 <div class="{$modifiers}">
-    <sg-insert>1.5</sg-insert>
-    <input class="k-form-control" type="text">
+    <label for="input{$modifiers}">Label</label>
+    <input class="k-form-control" type="text" id="input{$modifiers}">
 </div>
 
 Styleguide 2.13
@@ -19,109 +19,149 @@ Styleguide 2.13
 */
 
 
+/*
+Form controls
 
+markup:
+<div class="k-form-group">
+    <label for="form-input1">Default input</label>
+    <input class="k-form-control" type="text" id="form-input1">
+</div>
+<div class="k-form-group">
+    <label for="form-select1">Select</label>
+    <select class="k-form-control" id="form-select1">
+        <option>Option</option>
+    </select>
+</div>
+<div class="k-form-group">
+    <label for="form-textarea1">Textarea</label>
+    <textarea class="k-form-control" id="form-textarea1"></textarea>
+</div>
 
+Styleguide 2.13.5
 
-// Common form controls
-//
-// Shared size and type resets for form controls. Apply `.k-form-control` to any
-// of the following form controls:
-//
-// select
-// textarea
-// input[type="text"]
-// input[type="password"]
-// input[type="datetime"]
-// input[type="datetime-local"]
-// input[type="date"]
-// input[type="month"]
-// input[type="time"]
-// input[type="week"]
-// input[type="number"]
-// input[type="email"]
-// input[type="url"]
-// input[type="search"]
-// input[type="tel"]
-// input[type="color"]
+*/
+
+/**
+ * Common form controls
+ * Shared size and type resets for form controls. Apply `.k-form-control` to any
+ * of the following form controls:
+ *
+ * select
+ * textarea
+ * input[type="text"]
+ * input[type="password"]
+ * input[type="datetime"]
+ * input[type="datetime-local"]
+ * input[type="date"]
+ * input[type="month"]
+ * input[type="time"]
+ * input[type="week"]
+ * input[type="number"]
+ * input[type="email"]
+ * input[type="url"]
+ * input[type="search"]
+ * input[type="tel"]
+ * input[type="color"]
+ *
+ * 1. Make inputs at least the height of their button counterpart (base line-height + padding + border)
+ * 2. Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+ * 3. Note: This has no effect on <select>s in some browsers, due to the limited stylability of <select>s in CSS.
+ * 4. Customize the `:focus` state to imitate native WebKit styles.
+ * 5. Unstyle the caret on `<select>`s in IE10+.
+ * 6. iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
+ */
 
 .k-form-control {
   display: block;
   width: 100%;
-  height: $input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+  height: $input-height-base; /* 1 */
   padding: $padding-base-vertical $padding-base-horizontal;
   font-size: 16px;
   line-height: $line-height-base;
   color: $input-color;
   background-color: $input-bg;
-  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  background-image: none; /* 2 */
   border: 1px solid $input-border;
-  border-radius: $input-border-radius; // Note: This has no effect on <select>s in some browsers, due to the limited stylability of <select>s in CSS.
+  border-radius: $input-border-radius; /* 3 */
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 
-  // Customize the `:focus` state to imitate native WebKit styles.
+
+  /* 4 */
+
   @include form-control-focus;
 
-  // Placeholder
-  &::-moz-placeholder { // Firefox
-    color: $input-color-placeholder;
-    opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
-  }
-  &:-ms-input-placeholder { color: $input-color-placeholder; } // Internet Explorer 10+
-  &::-webkit-input-placeholder  { color: $input-color-placeholder; } // Safari and Chrome
 
-  // Unstyle the caret on `<select>`s in IE10+.
+  /* Placeholders */
+
+  &::-moz-placeholder {
+    color: $input-color-placeholder;
+    opacity: 1;
+  }
+
+  &:-ms-input-placeholder {
+    color: $input-color-placeholder;
+  }
+
+  &::-webkit-input-placeholder  {
+    color: $input-color-placeholder;
+  }
+
+  /* 5 */
   &::-ms-expand {
     border: 0;
     background-color: transparent;
   }
 
-  // Disabled and read-only inputs
-  //
-  // HTML5 says that controls under a fieldset > legend:first-child won't be
-  // disabled if the fieldset is disabled. Due to implementation difficulty, we
-  // don't honor that edge case; we style them as disabled anyway.
+
+  /* Disabled and read-only inputs */
+
   &[disabled],
   &[readonly],
   fieldset[disabled] & {
     background-color: $input-bg-disabled;
-    opacity: 1; // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
+    opacity: 1; /* 6 */
   }
 
   &[disabled],
   fieldset[disabled] & {
     cursor: $cursor-disabled;
   }
-
-  // [converter] extracted textarea& to textarea.k-form-control
 }
 
-// Reset height for `textarea`s
+
+/* Reset height for `textarea`s */
+
 textarea.k-form-control {
   height: auto;
 }
 
 
-// Search inputs in iOS
-//
-// This overrides the extra rounded corners on search inputs in iOS so that our
-// `.k-form-control` class can properly style them. Note that this cannot simply
-// be added to `.k-form-control` as it's not specific enough. For details, see
-// https://github.com/twbs/bootstrap/issues/11586.
+/**
+ * Search inputs in iOS
+ *
+ * This overrides the extra rounded corners on search inputs in iOS so that our
+ * `.k-form-control` class can properly style them. Note that this cannot simply
+ * be added to `.k-form-control` as it's not specific enough. For details, see
+ * https://github.com/twbs/bootstrap/issues/11586.
+ */
 
 input[type="search"] {
   -webkit-appearance: none;
 }
 
 
-// Special styles for iOS temporal inputs
-//
-// In Mobile Safari, setting `display: block` on temporal inputs causes the
-// text within the input to become vertically misaligned. As a workaround, we
-// set a pixel line-height that matches the given height of the input, but only
-// for Safari. See https://bugs.webkit.org/show_bug.cgi?id=139848
-//
-// Note that as of 8.3, iOS doesn't support `datetime` or `week`.
+/**
+ * Special styles for iOS temporal inputs
+ *
+ * In Mobile Safari, setting `display: block` on temporal inputs causes the
+ * text within the input to become vertically misaligned. As a workaround, we
+ * set a pixel line-height that matches the given height of the input, but only
+ * for Safari. See https://bugs.webkit.org/show_bug.cgi?id=139848
+ *
+ * Note that as of 8.3, iOS doesn't support `datetime` or `week`.
+ */
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   input[type="date"],
@@ -132,23 +172,23 @@ input[type="search"] {
       line-height: $input-height-base;
     }
 
-    &.input-sm,
-    .input-group-sm & {
+    .k-input-group--small & {
       line-height: $input-height-small;
     }
 
-    &.input-lg,
-    .input-group-lg & {
+    .k-input-group--large & {
       line-height: $input-height-large;
     }
   }
 }
 
 
-// Form groups
-//
-// Designed to help with the organization and spacing of vertical forms. For
-// horizontal forms, use the predefined grid classes.
+/**
+ * Form groups
+ *
+ * Designed to help with the organization and spacing of vertical forms. For
+ * horizontal forms, use the predefined grid classes.
+ */
 
 .k-form-group {
   margin: 0 0 $spacing 0;
@@ -159,116 +199,263 @@ input[type="search"] {
 }
 
 
-// Checkboxes and radios
-//
-// Indent the labels to position radios/checkboxes as hanging controls.
 
-.radio,
-.checkbox {
-  position: relative;
-  display: block;
-  margin-top: 10px;
-  margin-bottom: 10px;
+/*
+Checkbox & Radio inputs
 
+CSS only styled checkboxes and radio boxes
+
+markup:
+<input type="checkbox" id="input1">
+<label for="input1">Label 1</label>
+<input type="radio" id="input2">
+<label for="input2">Label 2</label>
+<!-- Or -->
+<label><input type="checkbox" id="input1"> Label 1</label>
+<label><input type="radio" id="input2"> Label 2</label>
+
+sg-wrapper:
+<div class="k-form-group">
+    <sg-wrapper-content/>
+</div>
+
+Styleguide 2.13.4
+
+*/
+
+/**
+ * Shared styling between radio boxes and checkboxes
+ */
+
+@include modernizr('.k-appearance.k-checked') {
+  input[type="checkbox"],
+  input[type="radio"] {
+
+    /**
+     * 1. Resetting the default styling used by browsers. Don't do this for -moz-
+          because the checkbox and radio box will look very ugly
+     * 2. Positioning relative to position psuedo before element nicely
+     * 3. Vertically positioning next to text
+     * 4. Aligning vertically next to labels
+     * 5. Indicate that element is clickable
+     */
+
+    -webkit-appearance: none; /* 1 */
+    /* -moz-appearance: don't set this; /* 1 */
+    position: relative; /* 2 */
+    height: $form-option-size;
+    width: $form-option-size;
+    margin-top: -1px; /* 3 */
+    margin-bottom: 2px; /* 3 */
+    margin-left: 0;
+    margin-right: .33em;
+    border: $form-option-border-size solid $form-option-border;
+    padding: 0;
+    background: $form-option-background;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer; /* 5 */
+    box-shadow: $form-option-shadow;
+    @include transition(background);
+
+    /* Hover to indicate element is clickable */
+
+    &:hover {
+      background: #f1f1f1;
+    }
+
+    /* Set disabled border color a bit lighter so it won't appear to be larger */
+
+    &:disabled {
+      border-color: #bbb;
+    }
+
+    /**
+     * 1. Position psuedo element absolute to have full control
+     * 2. Position top-left, margin, width and height will take care of centering
+     * 3. Initially hide the psuedo element
+     * 4. Show the psuedo element when item is checked
+     */
+
+    &:before {
+      position: absolute; /* 1 */
+      top: 0; /* 2 */
+      left: 0; /* 2 */
+      visibility: hidden; /* 3 */
+      transform: scale(0,0); /* 3 */
+      text-align: center;
+      vertical-align: middle;
+      background: transparent;
+      @include transition;
+    }
+
+    &:checked:before {
+      visibility: visible; /* 4 */
+      transform: scale(1,1); /* 4 */
+    }
+
+  }
+
+  /* Put some space between the box and the label */
   label {
-    min-height: $line-height-computed; // Ensure the input doesn't jump when there is no text
-    padding-left: 20px;
-    margin-bottom: 0;
-    font-weight: normal;
-    cursor: pointer;
-  }
-}
-.radio input[type="radio"],
-.radio-inline input[type="radio"],
-.checkbox input[type="checkbox"],
-.checkbox-inline input[type="checkbox"] {
-  position: absolute;
-  margin-left: -20px;
-  margin-top: 4px \9;
-}
 
-.radio + .radio,
-.checkbox + .checkbox {
-  margin-top: -5px; // Move up sibling radios or checkboxes for tighter spacing
-}
+    /**
+     * <input id="input1">
+     * <label for="input1">Label 1</label>
+     * <input id="input2">
+     * <label for="input2">Label 2</label>
+     */
 
-// Radios and checkboxes on same line
-.radio-inline,
-.checkbox-inline {
-  position: relative;
-  display: inline-block;
-  padding-left: 20px;
-  margin-bottom: 0;
-  vertical-align: middle;
-  font-weight: normal;
-  cursor: pointer;
-}
-.radio-inline + .radio-inline,
-.checkbox-inline + .checkbox-inline {
-  margin-top: 0;
-  margin-left: 10px; // space out consecutive inline controls
-}
+    & + input[type="checkbox"],
+    & + input[type="radio"] {
+      margin-left: 1em;
+    }
 
-// Apply same disabled cursor tweak as for inputs
-// Some special care is needed because <label>s don't inherit their parent's `cursor`.
-//
-// Note: Neither radios nor checkboxes can be readonly.
-input[type="radio"],
-input[type="checkbox"] {
-  &[disabled],
-  &.disabled,
-  fieldset[disabled] & {
-    cursor: $cursor-disabled;
-  }
-}
-// These classes are used directly on <label>s
-.radio-inline,
-.checkbox-inline {
-  &.disabled,
-  fieldset[disabled] & {
-    cursor: $cursor-disabled;
-  }
-}
-// These classes are used on elements with <label> descendants
-.radio,
-.checkbox {
-  &.disabled,
-  fieldset[disabled] & {
-    label {
-      cursor: $cursor-disabled;
+    /**
+     * <label><input id="input1"> Label 1</label>
+     * <label><input id="input2"> Label 2</label>
+     */
+
+    & + label {
+      margin-left: 1em;
     }
   }
 }
 
 
-// Static form control text
-//
-// Apply class to a `p` element to make any string of text align with labels in
-// a horizontal form layout.
+/* RTL */
 
-.k-form-control-static {
-  // Size it appropriately next to real form controls
-  padding-top: ($padding-base-vertical + 1);
-  padding-bottom: ($padding-base-vertical + 1);
-  // Remove default margin from `p`
-  margin-bottom: 0;
-  min-height: ($line-height-computed + $font-size-base);
+@include modernizr-rtl('.k-appearance.k-checked') {
+  input[type="checkbox"],
+  input[type="radio"] {
+    margin-left: .33em;
+    margin-right: 0;
 
-  &.input-lg,
-  &.input-sm {
-    padding-left: 0;
-    padding-right: 0;
+    &:before {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  label {
+
+    & + input[type="checkbox"],
+    & + input[type="radio"] {
+      margin-left: auto;
+      margin-right: 1em;
+    }
+
+    & + label {
+      margin-left: auto;
+      margin-right: 1em;
+    }
   }
 }
 
 
-// Form control sizing
-//
-// Build on `.k-form-control` with modifier classes to decrease or increase the
-// height and font-size of form controls.
-//
-// The `.k-form-group-* k-form-control` variations are sadly duplicated to avoid the
-// issue documented in https://github.com/twbs/bootstrap/issues/15074.
+
+/* ==========================================================================
+   CSS only styled checkbox
+   ========================================================================== */
+
+/**
+ * 1. Remove rounded corners by default
+ * 2. Display a check icon in the psuedo before element
+ * 3. Height of the box minus the border size
+ * 4. Height of the psuedo element minus a 1px padding/margin to move icon
+      away from the side of the box
+ * 5. Set the color of the check icon
+ */
+
+@include modernizr('.k-appearance.k-checked') {
+  input[type="checkbox"] {
+    border-radius: 0; /* 1 */
+
+    @include icon-before(check, true) {
+      /* 2 */
+      width: $form-option-size - ($form-option-border-size * 2); /* 3 */
+      height: $form-option-size - ($form-option-border-size * 2); /* 3 */
+      line-height: $form-option-size - ($form-option-border-size * 2); /* 3 */
+      font-size: $form-option-size - ($form-option-border-size * 4); /* 4 */
+      color: $color-accent; /* 5 */
+    }
+  }
+}
+
+
+
+/* ==========================================================================
+   CSS only styled radio box
+   ========================================================================== */
+
+/**
+ * 1. Making the radio box round
+ * 2. Adding content to display the psuedo element
+ * 3. Small inner circle, scaling with the box itself
+ * 4. positioning the inner circle
+ * 5. Making inner circle actually round
+ */
+
+@include modernizr('.k-appearance.k-checked') {
+  input[type="radio"] {
+    border-radius: 50%; /* 1 */
+
+    &:before {
+      content: " "; /* 2 */
+      width: $form-option-size - ($form-option-border-size * 8); /* 3 */
+      height: $form-option-size - ($form-option-border-size * 8); /* 3 */
+      margin: 3px; /* 4 */
+      background: $form-option-color;
+      border-radius: 50%; /* 5 */
+    }
+  }
+}
+
+
+/*
+Static form label
+
+Styled like a `<label>`
+
+markup:
+<p class="k-static-form-label">Static form control</p>
+
+Styleguide 2.13.6
+
+*/
+
+/**
+ * Static form control text
+ *
+ * Apply class to a `p` element to make any string of text align with labels in
+ * a horizontal form layout.
+ *
+ * 1. Size it appropriately next to real form controls
+ * 2. Remove default margin from `p`
+ */
+
+.k-static-form-label {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%; /* 1 */
+  margin-bottom: 5px;
+  font-weight: bold;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+/**
+ * Form control sizing
+ *
+ * Build on `.k-form-control` with modifier classes to decrease or increase the
+ * height and font-size of form controls.
+ *
+ * The `.k-form-group-* k-form-control` variations are sadly duplicated to avoid the
+ * issue documented in https://github.com/twbs/bootstrap/issues/15074.
+ */
 
 @include input-size('.input-sm', $input-height-small, $padding-small-vertical, $padding-small-horizontal, 16px, $line-height-small, $input-border-radius-small);
 .k-form-group-small {
@@ -279,20 +466,15 @@ input[type="checkbox"] {
     line-height: $line-height-small;
     border-radius: $input-border-radius-small;
   }
+
   select.k-form-control {
     height: $input-height-small;
     line-height: $input-height-small;
   }
+
   textarea.k-form-control,
   select[multiple].k-form-control {
     height: auto;
-  }
-  .k-form-control-static {
-    height: $input-height-small;
-    min-height: ($line-height-computed + $font-size-small);
-    padding: ($padding-small-vertical + 1) $padding-small-horizontal;
-    font-size: $font-size-small;
-    line-height: $line-height-small;
   }
 }
 
@@ -305,259 +487,47 @@ input[type="checkbox"] {
     line-height: $line-height-large;
     border-radius: $input-border-radius-large;
   }
+
   select.k-form-control {
     height: $input-height-large;
     line-height: $input-height-large;
   }
+
   textarea.k-form-control,
   select[multiple].k-form-control {
     height: auto;
   }
-  .k-form-control-static {
-    height: $input-height-large;
-    min-height: ($line-height-computed + $font-size-large);
-    padding: ($padding-large-vertical + 1) $padding-large-horizontal;
-    font-size: $font-size-large;
-    line-height: $line-height-large;
-  }
 }
 
 
-// Form control feedback states
-//
-// Apply contextual and semantic states to individual form controls.
+/*
+Feedback states
 
-.has-feedback {
-  // Enable absolute positioning
-  position: relative;
+Feedback states
 
-  // Ensure icons don't overlap text
-  .k-form-control {
-    padding-right: ($input-height-base * 1.25);
-  }
-}
-// Feedback icon (requires .glyphicon classes)
-.k-form-control-feedback {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 2; // Ensure icon is above input groups
-  display: block;
-  width: $input-height-base;
-  height: $input-height-base;
-  line-height: $input-height-base;
-  text-align: center;
-  pointer-events: none;
-}
-.input-lg + .k-form-control-feedback,
-.input-group-lg + .k-form-control-feedback,
-.k-form-group-large .k-form-control + .k-form-control-feedback {
-  width: $input-height-large;
-  height: $input-height-large;
-  line-height: $input-height-large;
-}
-.input-sm + .k-form-control-feedback,
-.input-group-sm + .k-form-control-feedback,
-.k-form-group-small .k-form-control + .k-form-control-feedback {
-  width: $input-height-small;
-  height: $input-height-small;
-  line-height: $input-height-small;
-}
+.k-has-success - Success
+.k-has-warning - Warning
+.k-has-error - Error
 
-// Feedback states
-.has-success {
+markup:
+<div class="k-form-group {$modifiers}">
+    <label for="form-input1">Default input</label>
+    <input class="k-form-control" type="text" id="form-input1">
+</div>
+
+Styleguide 2.13.7
+
+*/
+
+.k-has-success {
   @include form-control-validation($state-success-text, $state-success-text, $state-success-bg);
 }
-.has-warning {
+.k-has-warning {
   @include form-control-validation($state-warning-text, $state-warning-text, $state-warning-bg);
 }
-.has-error {
+.k-has-error {
   @include form-control-validation($state-danger-text, $state-danger-text, $state-danger-bg);
 }
-
-// Reposition feedback icon if input has visible label above
-.has-feedback label {
-
-  & ~ .k-form-control-feedback {
-    top: ($line-height-computed + 5); // Height of the `label` and its margin
-  }
-  &.sr-only ~ .k-form-control-feedback {
-    top: 0;
-  }
-}
-
-
-// Help text
-//
-// Apply to any element you wish to create light text for placement immediately
-// below a form control. Use for general help, formatting, or instructional text.
-
-.help-block {
-  display: block; // account for any element using help-block
-  margin-top: 5px;
-  margin-bottom: 10px;
-  color: lighten($text-color, 25%); // lighten the text some for contrast
-}
-
-
-// Inline forms
-//
-// Make forms appear inline(-block) by adding the `.form-inline` class. Inline
-// forms begin stacked on extra small (mobile) devices and then go inline when
-// viewports reach <768px.
-//
-// Requires wrapping inputs and labels with `.k-form-group` for proper display of
-// default HTML form controls and our custom form controls (e.g., input groups).
-//
-// Heads up! This is mixin-ed into `.navbar-form` in navbars.less.
-
-// [converter] extracted from `.form-inline` for libsass compatibility
-@mixin form-inline {
-
-  // Kick in the inline
-  @media (min-width: $screen-sm-min) {
-    // Inline-block all the things for "inline"
-    .k-form-group {
-      display: inline-block;
-      margin-bottom: 0;
-      vertical-align: middle;
-    }
-
-    // In navbar-form, allow folks to *not* use `.k-form-group`
-    .k-form-control {
-      display: inline-block;
-      width: auto; // Prevent labels from stacking above inputs in `.k-form-group`
-      vertical-align: middle;
-    }
-
-    // Make static controls behave like regular ones
-    .k-form-control-static {
-      display: inline-block;
-    }
-
-    .input-group {
-      display: inline-table;
-      vertical-align: middle;
-
-      .input-group-addon,
-      .input-group-btn,
-      .k-form-control {
-        width: auto;
-      }
-    }
-
-    // Input groups need that 100% width though
-    .input-group > .k-form-control {
-      width: 100%;
-    }
-
-    .control-label {
-      margin-bottom: 0;
-      vertical-align: middle;
-    }
-
-    // Remove default margin on radios/checkboxes that were used for stacking, and
-    // then undo the floating of radios and checkboxes to match.
-    .radio,
-    .checkbox {
-      display: inline-block;
-      margin-top: 0;
-      margin-bottom: 0;
-      vertical-align: middle;
-
-      label {
-        padding-left: 0;
-      }
-    }
-    .radio input[type="radio"],
-    .checkbox input[type="checkbox"] {
-      position: relative;
-      margin-left: 0;
-    }
-
-    // Re-override the feedback icon.
-    .has-feedback .k-form-control-feedback {
-      top: 0;
-    }
-  }
-}
-// [converter] extracted as `@mixin form-inline` for libsass compatibility
-.form-inline {
-  @include form-inline;
-}
-
-
-
-// Horizontal forms
-//
-// Horizontal forms are built on grid classes and allow you to create forms with
-// labels on the left and inputs on the right.
-
-.form-horizontal {
-
-  // Consistent vertical alignment of radios and checkboxes
-  //
-  // Labels also get some reset styles, but that is scoped to a media query below.
-  .radio,
-  .checkbox,
-  .radio-inline,
-  .checkbox-inline {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-top: ($padding-base-vertical + 1); // Default padding plus a border
-  }
-  // Account for padding we're adding to ensure the alignment and of help text
-  // and other content below items
-  .radio,
-  .checkbox {
-    min-height: ($line-height-computed + ($padding-base-vertical + 1));
-  }
-
-  // Make form groups behave like rows
-  .k-form-group {
-    @include make-row;
-  }
-
-  // Reset spacing and right align labels, but scope to media queries so that
-  // labels on narrow viewports stack the same as a default form example.
-  @media (min-width: $screen-sm-min) {
-    .control-label {
-      text-align: right;
-      margin-bottom: 0;
-      padding-top: ($padding-base-vertical + 1); // Default padding plus a border
-    }
-  }
-
-  // Validation states
-  //
-  // Reposition the icon because it's now within a grid column and columns have
-  // `position: relative;` on them. Also accounts for the grid gutter padding.
-  .has-feedback .k-form-control-feedback {
-    right: floor(($grid-gutter-width / 2));
-  }
-
-  // Form group sizes
-  //
-  // Quick utility class for applying `.input-lg` and `.input-sm` styles to the
-  // inputs and labels within a `.k-form-group`.
-  .k-form-group-large {
-    @media (min-width: $screen-sm-min) {
-      .control-label {
-        padding-top: ($padding-large-vertical + 1);
-        font-size: $font-size-large;
-      }
-    }
-  }
-  .k-form-group-small {
-    @media (min-width: $screen-sm-min) {
-      .control-label {
-        padding-top: ($padding-small-vertical + 1);
-        font-size: 16px;
-      }
-    }
-  }
-}
-
 
 
 
@@ -567,7 +537,7 @@ Inline form group
 Inline form groups
 
 markup:
-<label>Select from presets</label>
+<p class="k-static-form-label">Select from presets</p>
 <div class="k-form-group">
     <div class="k-inline-form-group">
         <label>Label 1</label>
@@ -788,221 +758,6 @@ Styleguide 2.13.3
       a {
         border-radius: 0 0 5px 5px;
       }
-    }
-  }
-}
-
-
-
-
-
-/*
-Checkbox & Radio inputs
-
-CSS only styled checkboxes and radio boxes
-
-markup:
-<input type="checkbox" id="input1">
-<label for="input1">Label 1</label>
-<input type="radio" id="input2">
-<label for="input2">Label 2</label>
-<!-- Or -->
-<label><input type="checkbox" id="input1"> Label 1</label>
-<label><input type="radio" id="input2"> Label 2</label>
-
-sg-wrapper:
-<div class="k-form-group">
-    <sg-wrapper-content/>
-</div>
-
-Styleguide 2.13.4
-
-*/
-
-/**
- * Shared styling between radio boxes and checkboxes
- */
-
-@include modernizr('.k-appearance.k-checked') {
-  input[type="checkbox"],
-  input[type="radio"] {
-
-    /**
-     * 1. Resetting the default styling used by browsers. Don't do this for -moz-
-          because the checkbox and radio box will look very ugly
-     * 2. Positioning relative to position psuedo before element nicely
-     * 3. Vertically positioning next to text
-     * 4. Aligning vertically next to labels
-     * 5. Indicate that element is clickable
-     */
-
-    -webkit-appearance: none; /* 1 */
-    /* -moz-appearance: don't set this; /* 1 */
-    position: relative; /* 2 */
-    height: $form-option-size;
-    width: $form-option-size;
-    margin-top: -1px; /* 3 */
-    margin-bottom: 2px; /* 3 */
-    margin-left: 0;
-    margin-right: .33em;
-    border: $form-option-border-size solid $form-option-border;
-    padding: 0;
-    background: $form-option-background;
-    display: inline-block;
-    vertical-align: middle;
-    cursor: pointer; /* 5 */
-    box-shadow: $form-option-shadow;
-    @include transition(background);
-
-    /* Hover to indicate element is clickable */
-
-    &:hover {
-      background: #f1f1f1;
-    }
-
-    /* Set disabled border color a bit lighter so it won't appear to be larger */
-
-    &:disabled {
-      border-color: #bbb;
-    }
-
-    /**
-     * 1. Position psuedo element absolute to have full control
-     * 2. Position top-left, margin, width and height will take care of centering
-     * 3. Initially hide the psuedo element
-     * 4. Show the psuedo element when item is checked
-     */
-
-    &:before {
-      position: absolute; /* 1 */
-      top: 0; /* 2 */
-      left: 0; /* 2 */
-      visibility: hidden; /* 3 */
-      transform: scale(0,0); /* 3 */
-      text-align: center;
-      vertical-align: middle;
-      background: transparent;
-      @include transition;
-    }
-
-    &:checked:before {
-      visibility: visible; /* 4 */
-      transform: scale(1,1); /* 4 */
-    }
-
-  }
-
-  /* Put some space between the box and the label */
-  label {
-
-    /**
-     * <input id="input1">
-     * <label for="input1">Label 1</label>
-     * <input id="input2">
-     * <label for="input2">Label 2</label>
-     */
-
-    & + input[type="checkbox"],
-    & + input[type="radio"] {
-      margin-left: 1em;
-    }
-
-    /**
-     * <label><input id="input1"> Label 1</label>
-     * <label><input id="input2"> Label 2</label>
-     */
-
-    & + label {
-      margin-left: 1em;
-    }
-  }
-}
-
-
-/* RTL */
-
-@include modernizr-rtl('.k-appearance.k-checked') {
-  input[type="checkbox"],
-  input[type="radio"] {
-    margin-left: .33em;
-    margin-right: 0;
-
-    &:before {
-      left: auto;
-      right: 0;
-    }
-  }
-
-  label {
-
-    & + input[type="checkbox"],
-    & + input[type="radio"] {
-      margin-left: auto;
-      margin-right: 1em;
-    }
-
-    & + label {
-      margin-left: auto;
-      margin-right: 1em;
-    }
-  }
-}
-
-
-
-/* ==========================================================================
-   CSS only styled checkbox
-   ========================================================================== */
-
-/**
- * 1. Remove rounded corners by default
- * 2. Display a check icon in the psuedo before element
- * 3. Height of the box minus the border size
- * 4. Height of the psuedo element minus a 1px padding/margin to move icon
-      away from the side of the box
- * 5. Set the color of the check icon
- */
-
-@include modernizr('.k-appearance.k-checked') {
-  input[type="checkbox"] {
-    border-radius: 0; /* 1 */
-
-    @include icon-before(check, true) {
-      /* 2 */
-      width: $form-option-size - ($form-option-border-size * 2); /* 3 */
-      height: $form-option-size - ($form-option-border-size * 2); /* 3 */
-      line-height: $form-option-size - ($form-option-border-size * 2); /* 3 */
-      font-size: $form-option-size - ($form-option-border-size * 4); /* 4 */
-      color: $color-accent; /* 5 */
-    }
-  }
-}
-
-
-
-/* ==========================================================================
-   CSS only styled radio box
-   ========================================================================== */
-
-/**
- * 1. Making the radio box round
- * 2. Adding content to display the psuedo element
- * 3. Small inner circle, scaling with the box itself
- * 4. positioning the inner circle
- * 5. Making inner circle actually round
- */
-
-@include modernizr('.k-appearance.k-checked') {
-  input[type="radio"] {
-    border-radius: 50%; /* 1 */
-
-    &:before {
-      content: " "; /* 2 */
-      width: $form-option-size - ($form-option-border-size * 8); /* 3 */
-      height: $form-option-size - ($form-option-border-size * 8); /* 3 */
-      margin: 3px; /* 4 */
-      background: $form-option-color;
-      border-radius: 50%; /* 5 */
     }
   }
 }
