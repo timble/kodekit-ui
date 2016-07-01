@@ -19,9 +19,9 @@
         if ( ($toolbar.length || $titlebar.length ) && $wrapper.length && $content.length)
         {
             var toggle_button = '<div class="k-off-canvas-menu-toggle-holder"><button class="k-off-canvas-menu-toggle" type="button">' +
-                '<span class="bar1"></span>' +
-                '<span class="bar2"></span>' +
-                '<span class="bar3"></span>' +
+                '<span class="k-hamburger-bar1"></span>' +
+                '<span class="k-hamburger-bar2"></span>' +
+                '<span class="k-hamburger-bar3"></span>' +
                 '</button></div>',
                 sidebar_left  = $('.k-js-sidebar-left'),
                 sidebar_right = $('.k-js-sidebar-right');
@@ -33,12 +33,13 @@
                     toolbar = element.closest(kContainer).find('.k-toolbar')[0],
                     wrapper = element.closest(kContainer).find('.k-wrapper')[0],
                     content = element.closest(kContainer).find('.k-content')[0],
-                    toggle = element.closest(kContainer).find('.k-off-canvas-menu-toggle-holder--' + position),
+                    toggle = element.closest(kContainer).find('.k-off-canvas-menu-toggle--' + position),
                     $toggle = $(toggle_button),
+                    $toggleButton = '',
                     transitionElements = $(content);
 
                 // Add proper class to toggle buttons
-                $toggle.addClass('k-off-canvas-menu-toggle-holder--' + position);
+                $toggle.children('button').addClass('k-off-canvas-menu-toggle--' + position);
 
                 // Add toggle buttons
                 if ( toggle[0] == undefined ) {
@@ -48,6 +49,7 @@
                         } else if ( position == 'right') {
                             $(titlebar).append($toggle);
                         }
+                        $toggleButton = $('.k-off-canvas-menu-toggle--' + position);
                         transitionElements = [$(content), $(titlebar)]
                     } else if ( toolbar != undefined ) {
                         if ( position == 'left' ) {
@@ -55,11 +57,12 @@
                         } else if ( position == 'right') {
                             $(toolbar).append($toggle);
                         }
+                        $toggleButton = $('.k-off-canvas-menu-toggle--' + position);
                     }
 
                     // Initialize the offcanvas plugin
                     element.offCanvasMenu({
-                        menuToggle: $toggle,
+                        menuToggle: $toggleButton,
                         wrapper: $(wrapper),
                         container: $(content),
                         position: position,
@@ -207,11 +210,10 @@
             $sidebarToggle.find('.k-sidebar-item__header').append('<div class="k-sidebar-item__toggle"><span class="visually-hidden">Toggle</span></div>');
             var $sidebarToggleHandler = $('.k-sidebar-item__toggle');
             $sidebarToggle.on('click', '.k-sidebar-item__toggle', function() {
-                $sidebarToggleHandler.toggleClass('is-active').parent().next().slideToggle(180);
+                $sidebarToggleHandler.toggleClass('k-is-active').parent().next().slideToggle(180);
             });
         }
 
     });
 
 })(kQuery);
-

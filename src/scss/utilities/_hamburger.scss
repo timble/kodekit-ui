@@ -38,9 +38,9 @@
    * Styling the hamburger bars
    */
 
-  .bar1,
-  .bar2,
-  .bar3 {
+  .k-hamburger-bar1,
+  .k-hamburger-bar2,
+  .k-hamburger-bar3 {
     position: absolute;
     left: round(($button-size - $bar-width) / 2);
     display: block;
@@ -53,23 +53,23 @@
   }
 
   @include rtl {
-    .bar1,
-    .bar2,
-    .bar3 {
+    .k-hamburger-bar1,
+    .k-hamburger-bar2,
+    .k-hamburger-bar3 {
       left: auto;
       right: round(($button-size - $bar-width) / 2);
     }
   }
 
-  .bar1 {
+  .k-hamburger-bar1 {
     top: round(($button-size - $bar-width) / 2);
   }
 
-  .bar2 {
+  .k-hamburger-bar2 {
     top: round((($button-size - $bar-width) / 2) + ($bar-height * 2));
   }
 
-  .bar3 {
+  .k-hamburger-bar3 {
     top: round((($button-size - $bar-width) / 2) + ($bar-height * 4));
   }
 }
@@ -102,14 +102,14 @@
  * Transform hamburger into a cross when the sidebar is opened
  */
 
-.show-left-menu {
+.k-show-left-menu {
   .k-off-canvas-menu-toggle-holder--left {
-    .bar1 {
+    .k-hamburger-bar1 {
       top: round(($button-size / 2) - ($bar-height / 2));
       transform: rotate(135deg);
     }
 
-    .bar2 {
+    .k-hamburger-bar2 {
       opacity: 0;
       transform: translate(-100%, 0);
 
@@ -118,21 +118,21 @@
       }
     }
 
-    .bar3 {
+    .k-hamburger-bar3 {
       top: round(($button-size / 2) - ($bar-height / 2));
       transform: rotate(-135deg);
     }
   }
 }
 
-.show-right-menu {
+.k-show-right-menu {
   .k-off-canvas-menu-toggle-holder--right {
-    .bar1 {
+    .k-hamburger-bar1 {
       top: round(($button-size / 2) - ($bar-height / 2));
       transform: rotate(135deg);
     }
 
-    .bar2 {
+    .k-hamburger-bar2 {
       opacity: 0;
       transform: translate(-100%, 0);
 
@@ -141,7 +141,7 @@
       }
     }
 
-    .bar3 {
+    .k-hamburger-bar3 {
       top: round(($button-size / 2) - ($bar-height / 2));
       transform: rotate(-135deg);
     }

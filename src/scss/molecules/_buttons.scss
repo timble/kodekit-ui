@@ -14,7 +14,6 @@ Button styling
 
 markup:
 <button type="button" class="k-button {$modifiers}">
-    <sg-insert>2.12-171</sg-insert>
     Button text
 </button>
 
@@ -33,8 +32,8 @@ Button states
 
 Different button states
 
-.is-active - Active buttons
-.is-disabled - Disabled buttons
+.k-is-active - Active buttons
+.k-is-disabled - Disabled buttons
 
 markup:
 <button type="button" class="k-button k-button--default {$modifiers}">Button text</button>
@@ -74,7 +73,7 @@ Styleguide 2.3.1
 
   &,
   &:active,
-  &.is-active {
+  &.k-is-active {
     &:focus,
     &.focus {
       @include tab-focus;
@@ -88,13 +87,13 @@ Styleguide 2.3.1
   }
 
   &:active,
-  &.is-active {
+  &.k-is-active {
     outline: 0;
     background-image: none;
   }
 
   &[disabled],
-  &.is-disabled {
+  &.k-is-disabled {
     cursor: $cursor-disabled;
     opacity: .65;
   }
@@ -110,7 +109,7 @@ Styleguide 2.3.1
     text-decoration: none; /* 1 */
   }
 
-  &.is-disabled {
+  &.k-is-disabled {
     pointer-events: none; /* 2 */
   }
 }
@@ -153,9 +152,9 @@ Styleguide 2.3.1
 
   &,
   &:active,
-  &.is-active,
+  &.k-is-active,
   &[disabled],
-  &.is-disabled {
+  &.k-is-disabled {
     background-color: transparent;
     box-shadow: none;
   }
@@ -175,7 +174,7 @@ Styleguide 2.3.1
   }
 
   &[disabled],
-  &.is-disabled {
+  &.k-is-disabled {
     &:hover,
     &:focus {
       color: $btn-link-disabled-color;
@@ -261,7 +260,7 @@ Styleguide 2.3.2
     &:hover,
     &:focus,
     &:active,
-    &.is-active {
+    &.k-is-active {
       z-index: 2;
     }
   }

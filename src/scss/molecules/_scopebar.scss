@@ -359,7 +359,7 @@ Styleguide 2.18
       left: 0;
     }
 
-    &.is-visible {
+    &.k-is-visible {
       display: inline-block;
     }
 
@@ -553,7 +553,7 @@ markup:
     <div class="k-scopebar__filters-wrapper">
         <!-- filters toggle button -->
         <button type="button" class="k-scopebar-icon-button k-toggle-filters k-js-toggle-filters">
-            <sg-insert>2.12-
+            <sg-insert>2.12.1-12</sg-insert>
             <span class="visually-hidden"><?= translate('Filters'); ?></span>
             <!-- Display label on toggle button to show there are filters -->
             <div class="js-filter-count k-scopebar__item__label"></div>
@@ -564,7 +564,7 @@ markup:
                 <div class="js-filter-prototype k-scopebar__item--filter k-scopebar-dropdown js-dropdown">
                     <button type="button" class="k-scopebar-dropdown__button js-dropdown-button koowa-tooltip">
                         <span class="js-dropdown-title k-scopebar__item--filter__title">{content}</span>
-                        <span class="k-scopebar__item--filter__icon k-icon-chevron-bottom"></span>
+                        <span class="k-scopebar__item--filter__icon k-icon-chevron-bottom" aria-hidden="true"></span>
                         <div class="js-dropdown-label k-scopebar__item__label">1</div>
                     </button>
                     <div class="k-scopebar-dropdown__body js-dropdown-body">
@@ -577,7 +577,7 @@ markup:
                 <div class="js-filter-prototype k-scopebar__item--filter k-scopebar-dropdown js-dropdown">
                     <button type="button" class="k-scopebar-dropdown__button js-dropdown-button koowa-tooltip">
                         <span class="js-dropdown-title k-scopebar__item--filter__title">{content}</span>
-                        <span class="k-scopebar__item--filter__icon k-icon-chevron-bottom"></span>
+                        <span class="k-scopebar__item--filter__icon k-icon-chevron-bottom" aria-hidden="true"></span>
                     </button>
                     <div class="k-scopebar-dropdown__body js-dropdown-body">
                         <div class="k-scopebar-dropdown__body__buttons">
@@ -590,7 +590,10 @@ markup:
         </div><!-- .k-scopebar__filters-content -->
         <!-- Search toggle button -->
         <div class="k-scopebar__search-toggle-wrapper">
-            <button type="button" class="k-scopebar-icon-button k-toggle-search k-js-toggle-search"><span class="k-icon-magnifying-glass"></span><span class="visually-hidden"><?= translate('Search'); ?></span></button>
+            <button type="button" class="k-scopebar-icon-button k-toggle-search k-js-toggle-search">
+            <sg-insert>2.12-144</sg-insert>
+            <span class="visually-hidden">Search icon</span>
+            </button>
         </div><!-- .k-scopebar__search-toggle-wrapper -->
     </div><!-- .k-scopebar__filters-wrapper -->
 </div><!-- .k-scopebar__item -->
@@ -607,7 +610,7 @@ Styleguide 2.18.1
     z-index: 2;
   }
 
-  &.is-active {
+  &.k-is-active {
     overflow: visible;
     z-index: 3;
 
@@ -620,7 +623,7 @@ Styleguide 2.18.1
     }
   }
 
-  &.is-active {
+  &.k-is-active {
     .k-scopebar-dropdown__button {
       background: $scopebar-buttons-background-hover;
     }
@@ -708,7 +711,8 @@ markup:
     <div class="k-search__container k-search__container--has-both-buttons">
         <input type="search" name="search" class="k-search__field" placeholder="Find by title or description…" value="">
         <button type="submit" class="k-search__button-search">
-            <span class="k-icon-magnifying-glass"></span>
+            <sg-insert>2.12-144</sg-insert>
+            <span class="visually-hidden">Search icon</span>
         </button>
         <button class="k-search__button-empty">
             <span>X</span>
@@ -740,7 +744,8 @@ Scopebar button
 markup:
 <div class="k-scopebar__item">
     <button class="k-scopebar__button">
-        <span class="k-icon-grid-three-up"></span>
+        <sg-insert>2.12-115</sg-insert>
+        <span class="visually-hidden">Grid icon</span>
     </button>
 </div>
 
@@ -777,12 +782,11 @@ Styleguide 2.18.3
     background: lighter($scopebar-background);
   }
 
-  &.is-active {
+  &.k-is-active {
     display: none;
   }
 
-  [class^="k-icon"],
-  [class^="koowa_icon"] {
+  [class^="k-icon"] {
     display: block;
     margin-top: round((($scopebar-size * .8) - (2px + 16px)) / 2); // absolute center
     margin-bottom: round((($scopebar-size * .8) - (2px + 16px)) / 2); // absolute center

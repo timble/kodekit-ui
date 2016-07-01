@@ -7,7 +7,7 @@ markup:
 <!-- List -->
 <ul class="k-list">
     <!-- Active item -->
-    <li class="is-active">
+    <li class="k-is-active">
         <a href="javascript:void(0)">
             <sg-insert>2.12-166</sg-insert>
             My documents
@@ -74,7 +74,7 @@ Styleguide 2.13
 
   /* Active link */
 
-  .is-active {
+  .k-is-active {
     a {
       font-weight: $bold;
       background: $list-active-background;

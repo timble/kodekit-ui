@@ -8,12 +8,12 @@
 // @font-face
 
 @font-face {
-  font-family: "koowa-icons";
-  src:    url("#{$icon-path}/koowa-icons/koowa-icons.eot");
-  src:    url("#{$icon-path}/koowa-icons/koowa-icons.eot?#iefix") format("embedded-opentype"),
-  url("#{$icon-path}/koowa-icons/koowa-icons.woff") format("woff"),
-  url("#{$icon-path}/koowa-icons/koowa-icons.ttf") format("truetype"),
-  url("#{$icon-path}/koowa-icons/koowa-icons.svg#koowa-icons") format("svg");
+  font-family: "k-icons";
+  src:    url("#{$icon-path}/k-icons/k-icons.eot");
+  src:    url("#{$icon-path}/k-icons/k-icons.eot?#iefix") format("embedded-opentype"),
+  url("#{$icon-path}/k-icons/k-icons.woff") format("woff"),
+  url("#{$icon-path}/k-icons/k-icons.ttf") format("truetype"),
+  url("#{$icon-path}/k-icons/k-icons.svg#k-icons") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -27,8 +27,8 @@
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
-    font-family: "koowa-icons";
-    src: url("#{$icon-path}/koowa-icons/koowa-icons.svg#koowa-icons") format("svg");
+    font-family: "k-icons";
+    src: url("#{$icon-path}/k-icons/k-icons.svg#k-icons") format("svg");
   }
 }
 
@@ -49,7 +49,7 @@
     style: normal;
     variant: normal;
     weight: normal;
-    family: 'koowa-icons';
+    family: 'k-icons';
   }
   &:before {
     display: inline-block;
@@ -285,33 +285,30 @@ $icons: (
   yen: "\f1dd",
   zoom-in: "\f1de",
   zoom-out: "\f1df",
-  k-archive: "\f1e0",
-  k-audio: "\f1e1",
-  k-calendar: "\f1e2",
-  k-close: "\f1e3",
-  k-default: "\f1e4",
-  k-disabled: "\f1e5",
-  k-document: "\f1e6",
-  k-enabled: "\f1e7",
-  k-filter: "\f1e8",
-  k-folder: "\f1e9",
-  k-folder_open: "\f1ea",
-  k-image: "\f1eb",
-  k-locked: "\f1ec",
-  k-menu: "\f1ed",
-  k-menu_open: "\f1ee",
-  k-open: "\f1ef",
-  k-pdf: "\f1f0",
-  k-spreadsheet: "\f1f1",
-  k-unlocked: "\f1f2",
-  k-video: "\f1f3",);
+  close: "\f1e0",
+  disabled: "\f1e1",
+  document-archive: "\f1e2",
+  document-audio: "\f1e3",
+  document-default: "\f1e4",
+  document-document: "\f1e5",
+  document-image: "\f1e6",
+  document-pdf: "\f1e7",
+  document-spreadsheet: "\f1e8",
+  document-video: "\f1e9",
+  enabled: "\f1ea",
+  filter: "\f1eb",
+  folder-closed: "\f1ec",
+  folder-opened: "\f1ed",
+  menu-closed: "\f1ee",
+  menu-opened: "\f1ef",
+  open: "\f1f0",);
 
 
 /**
  * Icon classes
  *
  * Creating a class name for each individual icon to be used in markup like:
- * <span class="k-icon-circle"></span>
+ * <span class="k-icon-[name]" aria-hidden="true"></span>
  */
 
 @each $name, $icon in $icons {

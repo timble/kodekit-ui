@@ -1,0 +1,10 @@
+// Alerts
+
+@mixin alert-variant($background, $text-color) {
+  background-color: $background;
+  color: $text-color;
+
+  .alert-link {
+    color: darken($text-color, 10%);
+  }
+}

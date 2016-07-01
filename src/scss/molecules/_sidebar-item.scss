@@ -108,7 +108,7 @@ Styleguide 2.20
       @include transition;
     }
 
-    &.is-active:after {
+    &.k-is-active:after {
       transform: rotate(180deg);
     }
 

@@ -239,7 +239,7 @@ Selected rows
 Styling for selected rows
 
 markup:
-<tr class="is-selected">
+<tr class="k-is-selected">
     <td>Item</td>
     <td>Item</td>
     <td>Item</td>
@@ -271,7 +271,7 @@ Styleguide 2.21.8
 */
 
 .k-table-container {
-  tr.is-selected {
+  tr.k-is-selected {
     td {
       background: $table-cell-accent-background;
       color: $table-cell-accent-color;
@@ -373,8 +373,7 @@ Styleguide 2.21.3
     @include transition;
   }
 
-  [class^="k-icon"],
-  [class^="koowa_icon"] {
+  [class^="k-icon"] {
     vertical-align: baseline;
     font-size: 16px;
     line-height: 23px;
@@ -685,7 +684,7 @@ markup:
             </select>
         </div>
         <ul class="k-pagination__pages">
-            <li class="is-active">
+            <li class="k-is-active">
                 <span>1</span>
             </li>
             <li>
@@ -794,8 +793,8 @@ Styleguide 2.21.1
       }
     }
 
-    & > .is-active > a,
-    & > .is-active > span {
+    & > .k-is-active > a,
+    & > .k-is-active > span {
       &,
       &:hover,
       &:focus {
@@ -836,7 +835,8 @@ markup:
         <thead>
             <tr>
                 <th width="1%" data-hide="phone">
-                    <span class="k-icon-move"></span>
+                    <sg-insert>2.12-161</sg-insert>
+                    <span class="visually-hidden">Move icon</sg-insert>
                 </th>
                 <th width="1%">
                     <input type="checkbox"/>
@@ -908,7 +908,7 @@ Styleguide 2.21.11
     }
   }
 
-  tr.is-selected {
+  tr.k-is-selected {
     .footable-toggle {
       border-color: $footable-toggle-color-active;
 
@@ -947,7 +947,7 @@ Positioner
 For drag and drop sorting
 
 default - Default - shows "no-drop" cursor
-.is-active - Active item - shows "move" cursor
+.k-is-active - Active item - shows "move" cursor
 
 markup:
 <span class="k-positioner {$modifiers}" data-position="1"></span>
@@ -983,7 +983,7 @@ Styleguide 2.21.9
   border-bottom: 1px solid $k-positioner-color;
   cursor: no-drop;
 
-  &.is-active {
+  &.k-is-active {
     cursor: move;
   }
 
@@ -1013,7 +1013,7 @@ Styleguide 2.21.9
 }
 
 .k-table-container {
-  tr.is-selected {
+  tr.k-is-selected {
     .k-positioner {
       &:after {
         color: white;

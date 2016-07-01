@@ -8,13 +8,13 @@ List view
 The default list view
 
 markup:
+<sg-insert>2.14</sg-insert>
 <!-- Wrapper -->
 <div class="k-wrapper">
-    <sg-insert>2.14</sg-insert>
     <!-- Content wrapper -->
     <div class="k-content-wrapper">
         <!-- Sidebar -->
-        <div class="k-sidebar-left js-sidebar-left">
+        <div class="k-sidebar-left k-js-sidebar-left">
             <div class="k-sidebar-item">
                 <sg-insert>2.16-all</sg-insert>
             </div>
@@ -72,7 +72,7 @@ markup:
     <!-- Content wrapper -->
     <div class="k-content-wrapper">
         <!-- Sidebar -->
-        <div class="k-sidebar-left js-sidebar-left">
+        <div class="k-sidebar-left k-js-sidebar-left">
             <sg-insert>2.16-all</sg-insert>
             <div class="k-sidebar-item">
                 <div class="k-sidebar-item__header">
@@ -94,7 +94,7 @@ markup:
             </div><!-- .k-component -->
         </div><!-- k-content -->
         <!-- Sidebar -->
-        <div class="k-sidebar-right js-sidebar-right">
+        <div class="k-sidebar-right k-js-sidebar-right">
             <div class="k-sidebar-item">
                 <div class="k-sidebar-item__header">
                     Selected file info
@@ -135,7 +135,7 @@ markup:
     <!-- Content wrapper -->
     <div class="k-content-wrapper">
         <!-- Sidebar -->
-        <div class="k-sidebar-left js-sidebar-left">
+        <div class="k-sidebar-left k-js-sidebar-left">
             <div class="k-sidebar-item">
                 <sg-insert>2.16-all</sg-insert>
             </div>

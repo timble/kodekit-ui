@@ -10936,8 +10936,8 @@ Koowa.Class = klass({
                     data: [], //Default empty value to avoid errors when there are no items yet
                     autoOpen: 0, //Auto open just "All Categories" by default, this value is the nesting level not the node id
                     useContextMenu: false, //This allows us to right-click menu items again
-                    toggler: [{folder: 'k-icon-folder'},//Styling options for toggler
-                              {folder: 'k-icon-folder--open'}],
+                    toggler: [{folder: 'k-icon-folder-closed'},//Styling options for toggler
+                              {folder: 'k-icon-folder-opened'}],
                     onCreateLi: function(node, $li){ //Method for customizing <li> markup
 
                         /**
@@ -11109,10 +11109,10 @@ Koowa.Class = klass({
             this.element.bind({
                 'tree.select': // The select event happens when a node is clicked
                     function(event) {
-                        $(this).find('.active').removeClass('active');
+                        $(this).find('.k-is-active').removeClass('k-is-active');
                         if(event.node) { // When event.node is null, it's actually a deselect event
                             //Style the clicked element
-                            $(this).find('.jqtree-selected').addClass('active');
+                            $(this).find('.jqtree-selected').addClass('k-is-active');
                         }
                     },
                 'tree.open':
@@ -11143,7 +11143,7 @@ Koowa.Class = klass({
                     },
                 'tree.refresh': //Refreshes reset the html, and happen on events like setState
                     function() {
-                        $(this).find('.jqtree-selected').addClass('active');
+                        $(this).find('.jqtree-selected').addClass('k-is-active');
                     }
             });
 
@@ -12689,10 +12689,10 @@ Koowa.Class = klass({
                 }
 
                 // Add overflowing shadow divs
-                $element.after('<div class="k-overflowing--top is-hidden">');
-                $element.after('<div class="k-overflowing--right is-hidden">');
-                $element.after('<div class="k-overflowing--bottom is-hidden">');
-                $element.after('<div class="k-overflowing--left is-hidden">');
+                $element.after('<div class="k-overflowing--top k-is-hidden">');
+                $element.after('<div class="k-overflowing--right k-is-hidden">');
+                $element.after('<div class="k-overflowing--bottom k-is-hidden">');
+                $element.after('<div class="k-overflowing--left k-is-hidden">');
             }
 
             // Overflowing?
@@ -12702,41 +12702,41 @@ Koowa.Class = klass({
 
                     // Show top overflowing div
                     if (element.scrollTop >= plugin.settings.offset && element.scrollTop >= plugin.settings.offset) {
-                        $('.k-overflowing--top').removeClass('is-hidden');
+                        $('.k-overflowing--top').removeClass('k-is-hidden');
                     } else {
-                        $('.k-overflowing--top').addClass('is-hidden');
+                        $('.k-overflowing--top').addClass('k-is-hidden');
                     }
 
                     // Show right overflowing div
                     if (element.scrollLeft <= (element.scrollWidth - element.clientWidth) - plugin.settings.offset) {
-                        $('.k-overflowing--right').removeClass('is-hidden');
+                        $('.k-overflowing--right').removeClass('k-is-hidden');
                     } else {
-                        $('.k-overflowing--right').addClass('is-hidden');
+                        $('.k-overflowing--right').addClass('k-is-hidden');
                     }
 
                     // Show bottom overflowing div
                     if (element.scrollTop < ((element.scrollHeight - element.clientHeight) - plugin.settings.offset)) {
-                        $('.k-overflowing--bottom').removeClass('is-hidden');
+                        $('.k-overflowing--bottom').removeClass('k-is-hidden');
                     } else {
-                        $('.k-overflowing--bottom').addClass('is-hidden');
+                        $('.k-overflowing--bottom').addClass('k-is-hidden');
                     }
 
                     // Show left overflowing div
                     if (element.scrollLeft >= plugin.settings.offset) {
-                        $('.k-overflowing--left').removeClass('is-hidden');
+                        $('.k-overflowing--left').removeClass('k-is-hidden');
                     } else {
-                        $('.k-overflowing--left').addClass('is-hidden');
+                        $('.k-overflowing--left').addClass('k-is-hidden');
                     }
                 }
 
                 if (element.clientWidth == element.scrollWidth) {
-                    $('.k-overflowing--left').addClass('is-hidden');
-                    $('.k-overflowing--right').addClass('is-hidden');
+                    $('.k-overflowing--left').addClass('k-is-hidden');
+                    $('.k-overflowing--right').addClass('k-is-hidden');
                 }
 
                 if (element.clientHeight == element.scrollHeight) {
-                    $('.k-overflowing--top').addClass('is-hidden');
-                    $('.k-overflowing--bottom').addClass('is-hidden');
+                    $('.k-overflowing--top').addClass('k-is-hidden');
+                    $('.k-overflowing--bottom').addClass('k-is-hidden');
                 }
             }
 
@@ -12915,9 +12915,9 @@ Koowa.Class = klass({
         var defaults = {
                 menu: $(element),
                 position: 'left',
-                menuExpandedClass: 'show-left-menu',
-                openedClass: 'opened',
-                noTransitionClass: 'no-transition',
+                menuExpandedClass: 'k-show-left-menu',
+                openedClass: 'k-is-opened',
+                noTransitionClass: 'k-no-transition',
                 wrapper: $(element).parent(),
                 container: $('.container'),
                 menuToggle: [],
@@ -12952,7 +12952,7 @@ Koowa.Class = klass({
 
             // Set proper menuExpandedClass if not set manually
             if ( position === 'right' && !options.menuExpandedClass ) {
-                menuExpandedClass = 'show-right-menu';
+                menuExpandedClass = 'k-show-right-menu';
             }
 
             // Set proper menuExpandedClass if not set manually
@@ -13037,9 +13037,9 @@ Koowa.Class = klass({
             }
 
             function toggleMenu(menu) {
-                var method = !wrapper.hasClass(menuExpandedClass) ? 'closed' : 'opened';
-                if ( method === 'closed' ) { openMenu(menu); }
-                if ( method === 'opened' ) { closeMenu(); }
+                var method = !wrapper.hasClass(menuExpandedClass) ? 'k-is-closed' : 'k-is-opened';
+                if ( method === 'k-is-closed' ) { openMenu(menu); }
+                if ( method === 'k-is-opened' ) { closeMenu(); }
             }
 
             // If we have a toggle button available
@@ -13281,9 +13281,9 @@ Koowa.Class = klass({
         if ( ($toolbar.length || $titlebar.length ) && $wrapper.length && $content.length)
         {
             var toggle_button = '<div class="k-off-canvas-menu-toggle-holder"><button class="k-off-canvas-menu-toggle" type="button">' +
-                '<span class="bar1"></span>' +
-                '<span class="bar2"></span>' +
-                '<span class="bar3"></span>' +
+                '<span class="k-hamburger-bar1"></span>' +
+                '<span class="k-hamburger-bar2"></span>' +
+                '<span class="k-hamburger-bar3"></span>' +
                 '</button></div>',
                 sidebar_left  = $('.k-js-sidebar-left'),
                 sidebar_right = $('.k-js-sidebar-right');
@@ -13295,12 +13295,13 @@ Koowa.Class = klass({
                     toolbar = element.closest(kContainer).find('.k-toolbar')[0],
                     wrapper = element.closest(kContainer).find('.k-wrapper')[0],
                     content = element.closest(kContainer).find('.k-content')[0],
-                    toggle = element.closest(kContainer).find('.k-off-canvas-menu-toggle-holder--' + position),
+                    toggle = element.closest(kContainer).find('.k-off-canvas-menu-toggle--' + position),
                     $toggle = $(toggle_button),
+                    $toggleButton = '',
                     transitionElements = $(content);
 
                 // Add proper class to toggle buttons
-                $toggle.addClass('k-off-canvas-menu-toggle-holder--' + position);
+                $toggle.children('button').addClass('k-off-canvas-menu-toggle--' + position);
 
                 // Add toggle buttons
                 if ( toggle[0] == undefined ) {
@@ -13310,6 +13311,7 @@ Koowa.Class = klass({
                         } else if ( position == 'right') {
                             $(titlebar).append($toggle);
                         }
+                        $toggleButton = $('.k-off-canvas-menu-toggle--' + position);
                         transitionElements = [$(content), $(titlebar)]
                     } else if ( toolbar != undefined ) {
                         if ( position == 'left' ) {
@@ -13317,11 +13319,12 @@ Koowa.Class = klass({
                         } else if ( position == 'right') {
                             $(toolbar).append($toggle);
                         }
+                        $toggleButton = $('.k-off-canvas-menu-toggle--' + position);
                     }
 
                     // Initialize the offcanvas plugin
                     element.offCanvasMenu({
-                        menuToggle: $toggle,
+                        menuToggle: $toggleButton,
                         wrapper: $(wrapper),
                         container: $(content),
                         position: position,
@@ -13469,14 +13472,13 @@ Koowa.Class = klass({
             $sidebarToggle.find('.k-sidebar-item__header').append('<div class="k-sidebar-item__toggle"><span class="visually-hidden">Toggle</span></div>');
             var $sidebarToggleHandler = $('.k-sidebar-item__toggle');
             $sidebarToggle.on('click', '.k-sidebar-item__toggle', function() {
-                $sidebarToggleHandler.toggleClass('is-active').parent().next().slideToggle(180);
+                $sidebarToggleHandler.toggleClass('k-is-active').parent().next().slideToggle(180);
             });
         }
 
     });
 
 })(kQuery);
-
 
 window.jQuery = globalCacheForjQueryReplacement;
 globalCacheForjQueryReplacement = undefined;

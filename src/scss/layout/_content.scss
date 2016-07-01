@@ -60,7 +60,7 @@ Styleguide 3.5
  * 3. Reset when screen is wide enough
  */
 
-.show-left-menu {
+.k-show-left-menu {
   .k-content {
     transform: translate($sidebar-width, 0); /* 1 */
 
@@ -80,7 +80,7 @@ Styleguide 3.5
   }
 }
 
-.show-right-menu {
+.k-show-right-menu {
   .k-content {
     transform: translate(-($sidebar-width), 0); /* 2 */
 
@@ -100,8 +100,8 @@ Styleguide 3.5
   }
 }
 
-.opened-left,
-.opened-right {
+.k-is-opened-left,
+.k-is-opened-right {
   .k-content {
     overflow: hidden;
 
@@ -147,15 +147,15 @@ Styleguide 3.5
  * 2. Set z-index to 1 so it will become visible
  */
 
-.show-left-menu,
-.show-right-menu {
+.k-show-left-menu,
+.k-show-right-menu {
   .k-off-canvas-overlay {
     opacity: $overlay-opacity; /* 1 */
   }
 }
 
-.opened-left,
-.opened-right {
+.k-is-opened-left,
+.k-is-opened-right {
   .k-off-canvas-overlay {
     z-index: 9; /* 2 */
   }

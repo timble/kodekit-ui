@@ -45,7 +45,7 @@ markup:
                                 </div>
                                 <div class="k-form-group">
                                     <div class="k-button-group">
-                                        <button type="button" class="k-button k-button--default is-active">Button</button>
+                                        <button type="button" class="k-button k-button--default k-is-active">Button</button>
                                         <button type="button" class="k-button k-button--default">Button</button>
                                         <button type="button" class="k-button k-button--default">Button</button>
                                     </div>
@@ -155,7 +155,7 @@ markup:
     <!-- Content wrapper -->
     <div class="k-content-wrapper">
         <!-- Sidebar -->
-        <div class="k-sidebar-left js-sidebar-left">
+        <div class="k-sidebar-left k-js-sidebar-left">
             <sg-insert>2.16-all</sg-insert>
             <div class="k-sidebar-item k-sidebar-item--overflow">
                 <div class="k-sidebar-item__header">

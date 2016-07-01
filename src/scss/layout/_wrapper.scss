@@ -2,7 +2,8 @@
 Wrapper
 
 The default wrapper
-- Use as <b>first child</b> of the `.koowa-container` container only
+- Use as <b>child</b> of the `.koowa-container` container only
+- Can be preceded by a `.k-masthead`
 - {unsureText}
 
 markup:
@@ -17,6 +18,8 @@ Styleguide 3.2
 /* Faking flexbox on older browsers by using table styling */
 
 .k-wrapper {
+  position: relative;
+
   @include breakpoint($desktop) {
     display: table;
     width: 100%;
@@ -41,8 +44,8 @@ Styleguide 3.2
  * 2. Set back to auto when screen is wide enough
  */
 
-.opened-left,
-.opened-right {
+.k-is-opened-left,
+.k-is-opened-right {
   overflow: hidden; /* 1 */
 
   @include breakpoint($desktop) {

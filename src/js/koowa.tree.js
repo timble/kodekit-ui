@@ -52,8 +52,8 @@
                     data: [], //Default empty value to avoid errors when there are no items yet
                     autoOpen: 0, //Auto open just "All Categories" by default, this value is the nesting level not the node id
                     useContextMenu: false, //This allows us to right-click menu items again
-                    toggler: [{folder: 'k-icon-folder'},//Styling options for toggler
-                              {folder: 'k-icon-folder--open'}],
+                    toggler: [{folder: 'k-icon-folder-closed'},//Styling options for toggler
+                              {folder: 'k-icon-folder-opened'}],
                     onCreateLi: function(node, $li){ //Method for customizing <li> markup
 
                         /**
@@ -225,10 +225,10 @@
             this.element.bind({
                 'tree.select': // The select event happens when a node is clicked
                     function(event) {
-                        $(this).find('.active').removeClass('active');
+                        $(this).find('.k-is-active').removeClass('k-is-active');
                         if(event.node) { // When event.node is null, it's actually a deselect event
                             //Style the clicked element
-                            $(this).find('.jqtree-selected').addClass('active');
+                            $(this).find('.jqtree-selected').addClass('k-is-active');
                         }
                     },
                 'tree.open':
@@ -259,7 +259,7 @@
                     },
                 'tree.refresh': //Refreshes reset the html, and happen on events like setState
                     function() {
-                        $(this).find('.jqtree-selected').addClass('active');
+                        $(this).find('.jqtree-selected').addClass('k-is-active');
                     }
             });
 

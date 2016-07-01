@@ -51,7 +51,7 @@ Styleguide 2.23
  * 3. Reset when screen is wide enough
  */
 
-.show-left-menu {
+.k-show-left-menu {
   & > .k-title-bar {
     transform: translate($sidebar-width, 0); /* 1 */
 
@@ -69,7 +69,7 @@ Styleguide 2.23
   }
 }
 
-.show-right-menu {
+.k-show-right-menu {
   & > .k-title-bar {
     transform: translate(-($sidebar-width), 0); /* 2 */
 
@@ -95,15 +95,15 @@ Styleguide 2.23
  * 2. Set z-index so it will become visible
  */
 
-.show-left-menu,
-.show-right-menu {
+.k-show-left-menu,
+.k-show-right-menu {
   .k-title-bar:before {
     opacity: .75; /* 1 */
   }
 }
 
-.opened-left,
-.opened-right {
+.k-is-opened-left,
+.k-is-opened-right {
   .k-title-bar:before {
     z-index: 2; /* 2 */
   }

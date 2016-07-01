@@ -98,20 +98,6 @@ Styleguide 2.26
   text-align: center;
 }
 
-.k-icon-folder {
-  @include icon-before(k-folder, true) {
-    font-size: 16px;
-    margin-bottom: -1px;
-  }
-}
-
-.k-icon-folder--open {
-  @include icon-before(k-folder_open, true) {
-    font-size: 16px;
-    margin-bottom: -1px;
-  }
-}
-
 .jqtree-title {
   padding: 0 0 0 5px;
 
@@ -125,7 +111,7 @@ Styleguide 2.26
     top: 50%;
     margin-top: -2px;
     left: 4px;
-    @include arrow(bottom);
+    @include caret(bottom);
     @include transition;
 
     @include rtl {

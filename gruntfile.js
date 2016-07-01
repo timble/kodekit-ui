@@ -45,10 +45,10 @@ module.exports = function(grunt) {
                     'node_modules/open-iconic/svg/*.svg',
                     '<%= srcPath %>/icons/*.svg'
                 ],
-                dest: '<%= distPath %>/fonts/koowa-icons',
+                dest: '<%= distPath %>/fonts/k-icons',
                 destCss: '<%= srcPath %>/scss/utilities',
                 options: {
-                    font: 'koowa-icons',
+                    font: 'k-icons',
                     hashes: false,
                     stylesheet: 'scss',
                     relativeFontPath: '../fonts/icons/',

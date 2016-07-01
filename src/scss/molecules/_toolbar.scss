@@ -74,8 +74,7 @@ Styleguide 2.24
    * By default we just want them aligned normally
    */
 
-  [class^="k-icon"],
-  [class^="koowa_icon"] {
+  [class^="k-icon"] {
     @include breakpoint(0, range, $charlie) {
       display: block;
       margin: 0;

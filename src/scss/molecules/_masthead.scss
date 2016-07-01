@@ -1,12 +1,16 @@
 /*
 Masthead
 
-Masthead
+The default masthead
+- Use as <b>first child</b> of the `.koowa-container` container only
+- Will always be followed by a `.k-wrapper` container
+- {unsureText}
 
 markup:
+<!-- masthead -->
 <div class="k-masthead">
     Joomlatools UI
-</div>
+</div><!-- .k-masthead-->
 
 Styleguide 2.14
 */

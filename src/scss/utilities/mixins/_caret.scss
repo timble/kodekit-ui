@@ -1,0 +1,67 @@
+// Carets
+// CSS only carets using borders
+
+@mixin caret(
+  $direction: right,
+  $size: 4px,
+  $color: false) {
+
+  // Top and bottom carets
+
+  @if $direction == top or $direction == bottom {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+  }
+
+
+  // Left and right carets
+
+  @if $direction == left or $direction == right {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+  }
+
+
+  // Top
+
+  @if $direction == top {
+    border-bottom: $size solid;
+
+    @if $color {
+      border-bottom-color: $color;
+    }
+  }
+
+
+  // Right
+
+  @if $direction == right {
+    border-left: $size solid;
+
+    @if $color {
+      border-left-color: $color;
+    }
+  }
+
+
+  // Bottom
+
+  @if $direction == bottom {
+    border-top: $size solid;
+
+    @if $color {
+      border-top-color: $color;
+    }
+  }
+
+
+  // Left
+
+  @if $direction == left {
+    border-right: $size solid;
+
+    @if $color {
+      border-right-color: $color;
+    }
+  }
+}

@@ -85,7 +85,7 @@ Styleguide 2.10
   @include setGridBreakpoint;
 
   // Selected styling
-  &.is-selected {
+  &.k-is-selected {
     .k-card__title {
       background: $color-accent;
       border-color: darkest($color-accent);

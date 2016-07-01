@@ -24,10 +24,10 @@
                 }
 
                 // Add overflowing shadow divs
-                $element.after('<div class="k-overflowing--top is-hidden">');
-                $element.after('<div class="k-overflowing--right is-hidden">');
-                $element.after('<div class="k-overflowing--bottom is-hidden">');
-                $element.after('<div class="k-overflowing--left is-hidden">');
+                $element.after('<div class="k-overflowing--top k-is-hidden">');
+                $element.after('<div class="k-overflowing--right k-is-hidden">');
+                $element.after('<div class="k-overflowing--bottom k-is-hidden">');
+                $element.after('<div class="k-overflowing--left k-is-hidden">');
             }
 
             // Overflowing?
@@ -37,41 +37,41 @@
 
                     // Show top overflowing div
                     if (element.scrollTop >= plugin.settings.offset && element.scrollTop >= plugin.settings.offset) {
-                        $('.k-overflowing--top').removeClass('is-hidden');
+                        $('.k-overflowing--top').removeClass('k-is-hidden');
                     } else {
-                        $('.k-overflowing--top').addClass('is-hidden');
+                        $('.k-overflowing--top').addClass('k-is-hidden');
                     }
 
                     // Show right overflowing div
                     if (element.scrollLeft <= (element.scrollWidth - element.clientWidth) - plugin.settings.offset) {
-                        $('.k-overflowing--right').removeClass('is-hidden');
+                        $('.k-overflowing--right').removeClass('k-is-hidden');
                     } else {
-                        $('.k-overflowing--right').addClass('is-hidden');
+                        $('.k-overflowing--right').addClass('k-is-hidden');
                     }
 
                     // Show bottom overflowing div
                     if (element.scrollTop < ((element.scrollHeight - element.clientHeight) - plugin.settings.offset)) {
-                        $('.k-overflowing--bottom').removeClass('is-hidden');
+                        $('.k-overflowing--bottom').removeClass('k-is-hidden');
                     } else {
-                        $('.k-overflowing--bottom').addClass('is-hidden');
+                        $('.k-overflowing--bottom').addClass('k-is-hidden');
                     }
 
                     // Show left overflowing div
                     if (element.scrollLeft >= plugin.settings.offset) {
-                        $('.k-overflowing--left').removeClass('is-hidden');
+                        $('.k-overflowing--left').removeClass('k-is-hidden');
                     } else {
-                        $('.k-overflowing--left').addClass('is-hidden');
+                        $('.k-overflowing--left').addClass('k-is-hidden');
                     }
                 }
 
                 if (element.clientWidth == element.scrollWidth) {
-                    $('.k-overflowing--left').addClass('is-hidden');
-                    $('.k-overflowing--right').addClass('is-hidden');
+                    $('.k-overflowing--left').addClass('k-is-hidden');
+                    $('.k-overflowing--right').addClass('k-is-hidden');
                 }
 
                 if (element.clientHeight == element.scrollHeight) {
-                    $('.k-overflowing--top').addClass('is-hidden');
-                    $('.k-overflowing--bottom').addClass('is-hidden');
+                    $('.k-overflowing--top').addClass('k-is-hidden');
+                    $('.k-overflowing--bottom').addClass('k-is-hidden');
                 }
             }
 

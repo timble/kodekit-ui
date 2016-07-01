@@ -243,26 +243,23 @@ Extra icons
 
 Extra icons that we added on top of open iconic
 
-.koowa_icon--archive - Archive
-.koowa_icon--audio - Audio
-.koowa_icon--calendar - Calendar
-.koowa_icon--close - Close
-.koowa_icon--default - Default
-.koowa_icon--disabled - Disabled
-.koowa_icon--document - Document
-.koowa_icon--enabled - Enabled
-.koowa_icon--filter - Filter
-.koowa_icon--folder - Folder
-.koowa_icon--folder_open - Folder open
-.koowa_icon--image - Image
-.koowa_icon--locked - Locked
-.koowa_icon--menu - Menu
-.koowa_icon--menu_open - Menu open
-.koowa_icon--open - Open
-.koowa_icon--pdf - PDF
-.koowa_icon--spreadsheet - Spreadsheet
-.koowa_icon--unlocked - Unlocked
-.koowa_icon--video - Video
+.k-icon-close - Close
+.k-icon-disabled - Disabled
+.k-icon-document-archive - Archive
+.k-icon-document-audio - Audio
+.k-icon-document-default - Default
+.k-icon-document-document - Document
+.k-icon-document-image - Image
+.k-icon-document-pdf - PDF
+.k-icon-document-spreadsheet - Spreadsheet
+.k-icon-document-video - Video
+.k-icon-enabled - Enabled
+.k-icon-filter - Filter
+.k-icon-folder-closed - Folder closed
+.k-icon-folder-opened - Folder opened
+.k-icon-menu-closed - Menu closed
+.k-icon-menu-opened - Menu opened
+.k-icon-open - Open
 
 markup:
 <span class="{$modifiers}" aria-hidden="true"></span>
@@ -273,55 +270,6 @@ sg-wrapper:
 Styleguide 2.12.1
 
 */
-
-.koowa_icon--archive,
-.koowa_icon--audio,
-.koowa_icon--calendar,
-.koowa_icon--close,
-.koowa_icon--default,
-.koowa_icon--disabled,
-.koowa_icon--document,
-.koowa_icon--enabled,
-.koowa_icon--filter,
-.koowa_icon--folder,
-.koowa_icon--folder_open,
-.koowa_icon--image,
-.koowa_icon--locked,
-.koowa_icon--menu,
-.koowa_icon--menu_open,
-.koowa_icon--open,
-.koowa_icon--pdf,
-.koowa_icon--spreadsheet,
-.koowa_icon--unlocked,
-.koowa_icon--video
-{
-  font-size: 16px;
-
-  i {
-    @extend .visually-hidden;
-  }
-}
-
-.koowa_icon--archive { @include icon-before(k-archive,true); }
-.koowa_icon--audio { @include icon-before(k-audio,true); }
-.koowa_icon--calendar { @include icon-before(k-calendar,true); }
-.koowa_icon--close { @include icon-before(k-close,true); }
-.koowa_icon--default { @include icon-before(k-default,true); }
-.koowa_icon--disabled { @include icon-before(k-disabled,true); }
-.koowa_icon--document { @include icon-before(k-document,true); }
-.koowa_icon--enabled { @include icon-before(k-enabled,true); }
-.koowa_icon--filter { @include icon-before(k-filter,true); }
-.koowa_icon--folder { @include icon-before(k-folder,true); }
-.koowa_icon--folder_open { @include icon-before(k-folder_open,true); }
-.koowa_icon--image { @include icon-before(k-image,true); }
-.koowa_icon--locked { @include icon-before(k-locked,true); }
-.koowa_icon--menu { @include icon-before(k-menu,true); }
-.koowa_icon--menu_open { @include icon-before(k-menu_open,true); }
-.koowa_icon--open { @include icon-before(k-open,true); }
-.koowa_icon--pdf { @include icon-before(k-pdf,true); }
-.koowa_icon--spreadsheet { @include icon-before(k-spreadsheet,true); }
-.koowa_icon--unlocked { @include icon-before(k-unlocked,true); }
-.koowa_icon--video { @include icon-before(k-video,true); }
 
 
 /*
@@ -367,7 +315,7 @@ Different sizes for icons
 .k-icon--size-64 - 64px
 
 markup:
-<span class="k-icon-home {$modifiers}" aria-hidden="true"></span>
+<span class="k-icon-document-default {$modifiers}" aria-hidden="true"></span>
 
 sg-wrapper:
 <div><sg-wrapper-content/></div>

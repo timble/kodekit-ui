@@ -1,0 +1,7 @@
+// JS enabled
+
+@mixin js-enabled {
+  @at-root .k-js-enabled & {
+    @content;
+  }
+}

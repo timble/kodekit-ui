@@ -11,9 +11,9 @@
         var defaults = {
                 menu: $(element),
                 position: 'left',
-                menuExpandedClass: 'show-left-menu',
-                openedClass: 'opened',
-                noTransitionClass: 'no-transition',
+                menuExpandedClass: 'k-show-left-menu',
+                openedClass: 'k-is-opened',
+                noTransitionClass: 'k-no-transition',
                 wrapper: $(element).parent(),
                 container: $('.container'),
                 menuToggle: [],
@@ -48,7 +48,7 @@
 
             // Set proper menuExpandedClass if not set manually
             if ( position === 'right' && !options.menuExpandedClass ) {
-                menuExpandedClass = 'show-right-menu';
+                menuExpandedClass = 'k-show-right-menu';
             }
 
             // Set proper menuExpandedClass if not set manually
@@ -133,9 +133,9 @@
             }
 
             function toggleMenu(menu) {
-                var method = !wrapper.hasClass(menuExpandedClass) ? 'closed' : 'opened';
-                if ( method === 'closed' ) { openMenu(menu); }
-                if ( method === 'opened' ) { closeMenu(); }
+                var method = !wrapper.hasClass(menuExpandedClass) ? 'k-is-closed' : 'k-is-opened';
+                if ( method === 'k-is-closed' ) { openMenu(menu); }
+                if ( method === 'k-is-opened' ) { closeMenu(); }
             }
 
             // If we have a toggle button available
