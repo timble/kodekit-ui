@@ -12,7 +12,8 @@ markup:
 <div class="k-breadcrumb">
     <ul>
         <li class="k-breadcrumb__home">
-            <a class="k-breadcrumb__item k-icon-home" href="javascript:void(0)">
+            <a class="k-breadcrumb__item" href="javascript:void(0)">
+                <sg-insert>2.12-121</sg-insert>
                 <span class="visually-hidden">Home</span>
             </a>
         </li>
@@ -29,7 +30,7 @@ markup:
     </ul>
 </div><!-- .k-breadcrumb -->
 
-Styleguide 2.4
+Styleguide 2.2
 
 */
 

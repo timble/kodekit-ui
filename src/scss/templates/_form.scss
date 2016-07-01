@@ -15,7 +15,7 @@ markup:
         <!-- Content -->
         <div class="k-content">
             <!-- Toolbar -->
-            <sg-insert>2.70</sg-insert>
+            <sg-insert>2.24</sg-insert>
             <!-- Component -->
             <div class="k-component">
                 <!-- Form -->
@@ -28,12 +28,12 @@ markup:
                         <!-- Main fields -->
                         <div class="k-container__main">
                             <fieldset>
-                                <div class="k-form-group-large">
-                                    <input class="-form-control" type="text" placeholder="{Title}">
+                                <div class="k-form-group k-form-group--large">
+                                    <input class="k-form-control" type="text" placeholder="{Title}">
                                 </div>
                                 <div class="k-form-group">
-                                    <div class="input-group input-group-sm">
-                                        <label for="todo_form_alias" class="input-group-addon">
+                                    <div class="k-input-group k-input-group--small">
+                                        <label for="todo_form_alias" class="k-input-group__addon">
                                             Alias
                                         </label>
                                         <input id="docman_form_alias" type="text" class="k-form-control" name="slug" maxlength="255" value="example" placeholder="Will be created automatically">
@@ -41,7 +41,7 @@ markup:
                                 </div>
                                 <div class="k-form-group">
                                     <label>Category</label>
-                                    <sg-insert>2.500</sg-insert>
+                                    <sg-insert>2.19</sg-insert>
                                 </div>
                                 <div class="k-form-group">
                                     <div class="k-button-group">
@@ -60,7 +60,7 @@ markup:
                                 </div>
                                 <div class="k-form-block__content">
                                     <div class="k-form-group">
-                                        <sg-insert>2.3</sg-insert>
+                                        <sg-insert>2.17.1</sg-insert>
                                     </div>
                                 </div>
                             </fieldset>
@@ -69,7 +69,7 @@ markup:
                                     Date
                                 </div>
                                 <div class="k-form-block__content">
-                                    <sg-insert>2.140</sg-insert>
+                                    <sg-insert>2.5</sg-insert>
                                 </div>
                             </fieldset>
                         </div><!-- .k-container__sub -->
@@ -103,7 +103,7 @@ markup:
         <!-- Content -->
         <div class="k-content">
             <!-- Toolbar -->
-            <sg-insert>2.70</sg-insert>
+            <sg-insert>2.24</sg-insert>
             <!-- Component -->
             <div class="k-component">
                 <!-- Container -->
@@ -116,7 +116,7 @@ markup:
                         <fieldset>
                             <div class="k-form-group">
                                 <label>Category</label>
-                                <sg-insert>2.500</sg-insert>
+                                <sg-insert>2.19</sg-insert>
                             </div>
                         </fieldset>
                     </form><!-- .k-container__main -->
@@ -124,7 +124,7 @@ markup:
                         <fieldset>
                             <legend>Documents</legend>
                             <div class="k-batch-list">
-                              <sg-insert>2.13.2</sg-insert>
+                              <sg-insert>2.9.2</sg-insert>
                             </div>
                         </fieldset>
                     </div>
@@ -156,24 +156,24 @@ markup:
     <div class="k-content-wrapper">
         <!-- Sidebar -->
         <div class="k-sidebar-left js-sidebar-left">
-            <sg-insert>2.15-all</sg-insert>
+            <sg-insert>2.16-all</sg-insert>
             <div class="k-sidebar-item k-sidebar-item--overflow">
                 <div class="k-sidebar-item__header">
                     Categories
                 </div>
-                <sg-insert>2.24</sg-insert>
+                <sg-insert>2.26</sg-insert>
             </div>
             <div class="k-sidebar-item">
                 <div class="k-sidebar-item__header">
                     Quick filters
                 </div>
-                <sg-insert>2.10</sg-insert>
+                <sg-insert>2.13</sg-insert>
             </div>
         </div>
         <!-- Content -->
         <div class="k-content">
             <!-- Toolbar -->
-            <sg-insert>2.70</sg-insert>
+            <sg-insert>2.24</sg-insert>
             <!-- Component -->
             <div class="k-component">
                 <!-- Form -->
@@ -186,12 +186,12 @@ markup:
                         <!-- Main fields -->
                         <div class="k-container__main">
                             <fieldset>
-                                <div class="k-form-group-large">
+                                <div class="k-form-group k-form-group--large">
                                     <input class="k-form-control" type="text" placeholder="{Title}">
                                 </div>
                                 <div class="k-form-group">
-                                    <div class="input-group input-group-sm">
-                                        <label for="todo_form_alias" class="input-group-addon">
+                                    <div class="k-input-group k-input-group--small">
+                                        <label for="todo_form_alias" class="k-input-group__addon">
                                             Alias
                                         </label>
                                         <input id="docman_form_alias" type="text" class="k-form-control" name="slug" maxlength="255" value="example" placeholder="Will be created automatically">
@@ -199,7 +199,7 @@ markup:
                                 </div>
                                 <div class="k-form-group">
                                     <label>Category</label>
-                                    <sg-insert>2.500</sg-insert>
+                                    <sg-insert>2.19</sg-insert>
                                 </div>
                             </fieldset>
                         </div><!-- .k-container__main -->
@@ -211,7 +211,7 @@ markup:
                                 </div>
                                 <div class="k-form-block__content">
                                     <div class="k-form-group">
-                                        <sg-insert>2.3</sg-insert>
+                                        <sg-insert>2.17.1</sg-insert>
                                     </div>
                                 </div>
                             </fieldset>

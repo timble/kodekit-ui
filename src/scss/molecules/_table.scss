@@ -20,44 +20,44 @@ markup:
         <tbody>
             <tr>
                 <td><input type="checkbox"/></td>
-                <sg-insert>2.50.3</sg-insert>
-                <td><sg-insert>2.50.5-2</sg-insert></td>
-                <sg-insert>2.50.2</sg-insert>
+                <sg-insert>2.21.3</sg-insert>
+                <td><sg-insert>2.21.5-2</sg-insert></td>
+                <sg-insert>2.21.2</sg-insert>
                 <td class="k-table-data--nowrap">01 January 1999</td>
             </tr>
             <tr>
                 <td><input type="checkbox"/></td>
-                <sg-insert>2.50.3</sg-insert>
-                <td><sg-insert>2.50.5-2</sg-insert></td>
-                <sg-insert>2.50.2</sg-insert>
+                <sg-insert>2.21.3</sg-insert>
+                <td><sg-insert>2.21.5-2</sg-insert></td>
+                <sg-insert>2.21.2</sg-insert>
                 <td class="k-table-data--nowrap">01 January 1999</td>
             </tr>
-            <sg-insert>2.50.6</sg-insert>
+            <sg-insert>2.21.6</sg-insert>
             <tr>
                 <td><input type="checkbox"/></td>
-                <sg-insert>2.50.3</sg-insert>
-                <td><sg-insert>2.50.5-2</sg-insert></td>
-                <sg-insert>2.50.2</sg-insert>
-                <td class="k-table-data--nowrap">01 January 1999</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox"/></td>
-                <sg-insert>2.50.3</sg-insert>
-                <td><sg-insert>2.50.5-2</sg-insert></td>
-                <sg-insert>2.50.2</sg-insert>
+                <sg-insert>2.21.3</sg-insert>
+                <td><sg-insert>2.21.5-2</sg-insert></td>
+                <sg-insert>2.21.2</sg-insert>
                 <td class="k-table-data--nowrap">01 January 1999</td>
             </tr>
             <tr>
                 <td><input type="checkbox"/></td>
-                <sg-insert>2.50.3</sg-insert>
-                <td><sg-insert>2.50.5-2</sg-insert></td>
-                <sg-insert>2.50.2</sg-insert>
+                <sg-insert>2.21.3</sg-insert>
+                <td><sg-insert>2.21.5-2</sg-insert></td>
+                <sg-insert>2.21.2</sg-insert>
+                <td class="k-table-data--nowrap">01 January 1999</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"/></td>
+                <sg-insert>2.21.3</sg-insert>
+                <td><sg-insert>2.21.5-2</sg-insert></td>
+                <sg-insert>2.21.2</sg-insert>
                 <td class="k-table-data--nowrap">01 January 1999</td>
             </tr>
         </tbody>
         </table>
     </div>
-    <sg-insert>2.50.1</sg-insert>
+    <sg-insert>2.21.1</sg-insert>
 </div>
 
 sg-wrapper:
@@ -65,7 +65,7 @@ sg-wrapper:
     <sg-wrapper-content/>
 </div>
 
-Styleguide 2.50
+Styleguide 2.21
 
 */
 
@@ -266,7 +266,7 @@ sg-wrapper:
     </div>
 </div>
 
-Styleguide 2.50.8
+Styleguide 2.21.8
 
 */
 
@@ -321,7 +321,7 @@ sg-wrapper:
 </div>
 
 
-Styleguide 2.50.2
+Styleguide 2.21.2
 
 */
 
@@ -349,7 +349,7 @@ sg-wrapper:
     </div>
 </div>
 
-Styleguide 2.50.3
+Styleguide 2.21.3
 
 */
 
@@ -411,7 +411,7 @@ sg-wrapper:
     </div>
 </div>
 
-Styleguide 2.50.4
+Styleguide 2.21.4
 
 */
 
@@ -500,7 +500,7 @@ markup:
     </div>
 </div>
 
-Styleguide 2.50.7
+Styleguide 2.21.7
 
 */
 
@@ -580,7 +580,7 @@ sg-wrapper:
     </div>
 </div>
 
-Styleguide 2.50.6
+Styleguide 2.21.6
 
 */
 
@@ -630,7 +630,7 @@ sg-wrapper:
     </div>
 </div>
 
-Styleguide 2.50.5
+Styleguide 2.21.5
 
 */
 
@@ -707,7 +707,7 @@ markup:
     </div>
 </div>
 
-Styleguide 2.50.1
+Styleguide 2.21.1
 
 */
 
@@ -855,7 +855,7 @@ markup:
         <tbody>
             <tr>
                 <td>
-                    <sg-insert>2.50.9</sg-insert>
+                    <sg-insert>2.21.9</sg-insert>
                 </td>
                 <td>
                     <input type="checkbox"/>
@@ -875,7 +875,7 @@ markup:
     </div>
 </div>
 
-Styleguide 2.50.11
+Styleguide 2.21.11
 
 */
 
@@ -967,7 +967,7 @@ sg-wrapper:
     </div>
 </div>
 
-Styleguide 2.50.9
+Styleguide 2.21.9
 
 */
 
@@ -1055,7 +1055,7 @@ sg-wrapper:
     </div>
 </div>
 
-Styleguide 2.50.10
+Styleguide 2.21.10
 
 */
 
@@ -1088,5 +1088,81 @@ th.k-sort-desc {
       margin-left: .5em;
       vertical-align: middle;
     }
+  }
+}
+
+
+
+/*
+Floating thead
+
+A floating thead so the head will stay on top when scrolling the tables
+
+markup:
+<table class="k-js-fixed-table-header">
+    <thead>
+    <tr>
+        <th>Heading</th>
+        <th>Heading</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Content</td>
+        <td>Content</td>
+    </tr>
+    <tr>
+        <td>Content</td>
+        <td>Content</td>
+    </tr>
+    <tr>
+        <td>Content</td>
+        <td>Content</td>
+    </tr>
+    <tr>
+        <td>Content</td>
+        <td>Content</td>
+    </tr>
+    <tr>
+        <td>Content</td>
+        <td>Content</td>
+    </tr>
+    <tr>
+        <td>Content</td>
+        <td>Content</td>
+    </tr>
+    </tbody>
+</table>
+
+sg-wrapper:
+<div class="sg-flexbox" style="height: 175px;">
+    <div class="k-table-container">
+        <div class="k-table">
+            <sg-wrapper-content/>
+        </div>
+    </div>
+</div>
+
+Styleguide 2.21.12
+
+*/
+
+/**
+ * This class is created by the floatThead plugin that's why it's not k-float-thead-wrapper
+ *
+ * 1. Overriding inline styling, we don't need a z-index of 1000+
+ */
+
+.floatThead-wrapper {
+  z-index: 1 !important;
+
+  @include flexbox {
+    display: flex;
+    flex: 0 1 auto;
+    overflow: auto;
+  }
+
+  @include resizing {
+    overflow: hidden;
   }
 }

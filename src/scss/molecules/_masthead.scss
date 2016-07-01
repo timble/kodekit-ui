@@ -1,0 +1,37 @@
+/*
+Masthead
+
+Masthead
+
+markup:
+<div class="k-masthead">
+    Joomlatools UI
+</div>
+
+Styleguide 2.14
+*/
+
+.k-masthead {
+  @include border(bottom, $masthead-border);
+  min-height: $masthead-height;
+  background: $masthead-background;
+  color: $masthead-color;
+  padding: ($masthead-height - $font-size-large) / 2;
+  line-height: $masthead-height - $font-size-large;
+  font-size: $font-size-large;
+
+
+  /* Faking flexbox for older browsers */
+
+  @include breakpoint($desktop) {
+    width: 100%;
+    display: table;
+  }
+
+
+  /* When flexbox is in use */
+
+  @include flexbox {
+    flex: 0 0 auto;
+  }
+}

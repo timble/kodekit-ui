@@ -4,17 +4,17 @@ Forms
 To be used in sidebar of forms<br />
 Data in these boxes should be non-required form elements
 
-.k-form-group - Default
-.k-form-group-small - Small form groups
-.k-form-group-large - Large form groups
+default - Default
+.k-form-group--small - Small form groups
+.k-form-group--large - Large form groups
 
 markup:
-<div class="{$modifiers}">
+<div class="k-form-group {$modifiers}">
     <label for="input{$modifiers}">Label</label>
     <input class="k-form-control" type="text" id="input{$modifiers}">
 </div>
 
-Styleguide 2.13
+Styleguide 2.9
 
 */
 
@@ -38,7 +38,7 @@ markup:
     <textarea class="k-form-control" id="form-textarea1"></textarea>
 </div>
 
-Styleguide 2.13.5
+Styleguide 2.9.5
 
 */
 
@@ -219,7 +219,7 @@ sg-wrapper:
     <sg-wrapper-content/>
 </div>
 
-Styleguide 2.13.4
+Styleguide 2.9.4
 
 */
 
@@ -420,7 +420,7 @@ Styled like a `<label>`
 markup:
 <p class="k-static-form-label">Static form control</p>
 
-Styleguide 2.13.6
+Styleguide 2.9.6
 
 */
 
@@ -458,7 +458,7 @@ Styleguide 2.13.6
  */
 
 @include input-size('.input-sm', $input-height-small, $padding-small-vertical, $padding-small-horizontal, 16px, $line-height-small, $input-border-radius-small);
-.k-form-group-small {
+.k-form-group--small {
   .k-form-control {
     height: $input-height-small;
     padding: $padding-small-vertical $padding-small-horizontal;
@@ -479,7 +479,7 @@ Styleguide 2.13.6
 }
 
 @include input-size('.input-lg', $input-height-large, $padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $input-border-radius-large);
-.k-form-group-large {
+.k-form-group--large {
   .k-form-control {
     height: $input-height-large;
     padding: $padding-large-vertical $padding-large-horizontal;
@@ -515,7 +515,7 @@ markup:
     <input class="k-form-control" type="text" id="form-input1">
 </div>
 
-Styleguide 2.13.7
+Styleguide 2.9.7
 
 */
 
@@ -543,10 +543,12 @@ markup:
         <label>Label 1</label>
         <div class="k-button-group">
             <a href="#" class="k-button k-button--default k-button--tiny">
-                <span class="k-icon-plus"></span>
+                <sg-insert>2.12-171</sg-insert>
+                <span class="visually-hidden">Plus icon</span>
             </a>
             <a href="#" class="k-button k-button--default k-button--tiny">
-                <span class="k-icon-minus"></span>
+                <sg-insert>2.12-158</sg-insert>
+                <span class="visually-hidden">Minus icon</span>
             </a>
         </div>
     </div>
@@ -554,10 +556,12 @@ markup:
         <label>Label 2</label>
         <div class="k-button-group">
             <a href="#" class="k-button k-button--default k-button--tiny">
-                <span class="k-icon-plus"></span>
+                <sg-insert>2.12-171</sg-insert>
+                <span class="visually-hidden">Plus icon</span>
             </a>
             <a href="#" class="k-button k-button--default k-button--tiny">
-                <span class="k-icon-minus"></span>
+                <sg-insert>2.12-158</sg-insert>
+                <span class="visually-hidden">Minus icon</span>
             </a>
         </div>
     </div>
@@ -565,16 +569,18 @@ markup:
         <label>Label 3</label>
         <div class="k-button-group">
             <a href="#" class="k-button k-button--default k-button--tiny">
-                <span class="k-icon-plus"></span>
+                <sg-insert>2.12-171</sg-insert>
+                <span class="visually-hidden">Plus icon</span>
             </a>
             <a href="#" class="k-button k-button--default k-button--tiny">
-                <span class="k-icon-minus"></span>
+                <sg-insert>2.12-158</sg-insert>
+                <span class="visually-hidden">Minus icon</span>
             </a>
         </div>
     </div>
 </div>
 
-Styleguide 2.13.1
+Styleguide 2.9.1
 
 */
 
@@ -615,12 +621,12 @@ Form row group
 
 markup:
 <div class="k-form-row-group">
-    <sg-insert>2.13.3</sg-insert>
-    <sg-insert>2.13.3</sg-insert>
-    <sg-insert>2.13.3</sg-insert>
+    <sg-insert>2.9.3</sg-insert>
+    <sg-insert>2.9.3</sg-insert>
+    <sg-insert>2.9.3</sg-insert>
 </div>
 
-Styleguide 2.13.2
+Styleguide 2.9.2
 
 */
 
@@ -642,7 +648,7 @@ markup:
 <form class="k-form-row">
     <div class="k-form-row__item k-form-row__item--button">
         <button class="k-button k-button--default k-button--small">
-            <span class="k-icon-minus k-icon-error"></span>
+            <span class="k-icon-minus k-icon--error" aria-hidden="true"></span>
         </button>
     </div>
     <div class="k-form-row__item k-form-row__item--label">
@@ -659,7 +665,7 @@ markup:
     </div>
 </form>
 
-Styleguide 2.13.3
+Styleguide 2.9.3
 
 */
 
@@ -761,3 +767,219 @@ Styleguide 2.13.3
     }
   }
 }
+
+
+/*
+Input group
+
+Input group
+
+default - Default
+.k-input-group--small - Small
+.k-input-group--large - Large
+
+markup:
+<div class="k-input-group {$modifiers}">
+    <div class="k-input-group__addon">Addon</div>
+    <input type="text" class="k-form-control" />
+    <div class="k-input-group__button">
+        <button class="k-button k-button--default" type="button">Button</button>
+    </div>
+</div>
+
+Styleguide 2.9.8
+
+*/
+
+/**
+ * 1. For dropdowns
+ * 2. Prevent input groups from inheriting border styles from table cells when placed within a table
+ * 3. Ensure that the input is always above the *appended* addon button for proper border colors.
+ * 4. IE9 fubars the placeholder attribute in text inputs and the arrows on
+      select elements in input groups. To fix it, we float the input.
+ * 5. Put focused element on top of the rest
+ */
+
+.k-input-group {
+  position: relative; /* 1 */
+  display: table;
+  border-collapse: separate; /* 2 */
+
+  .k-form-control {
+
+    /* 3 */
+    position: relative;
+    z-index: 2;
+
+    /* 4 */
+    float: left;
+
+    width: 100%;
+    margin-bottom: 0;
+
+    &:focus {
+      z-index: 3; /* 5 */
+    }
+  }
+}
+
+
+/* Sizes */
+
+.k-input-group--large > .k-form-control,
+.k-input-group--large > .k-input-group__addon,
+.k-input-group--large > .k-input-group__button > .k-button {
+  @extend .input-lg;
+}
+.k-input-group--small > .k-form-control,
+.k-input-group--small > .k-input-group__addon,
+.k-input-group--small > .k-input-group__button > .k-button {
+  @extend .input-sm;
+}
+
+/* Input group parts */
+
+.k-input-group__addon,
+.k-input-group__button,
+.k-input-group .k-form-control {
+  display: table-cell;
+
+  &:not(:first-child):not(:last-child) {
+    border-radius: 0;
+  }
+}
+
+
+/**
+ * Addon and addon wrapper for buttons
+ *
+ * 1. Match the inputs
+ */
+
+.k-input-group__addon,
+.k-input-group__button {
+  width: 1%;
+  white-space: nowrap;
+  vertical-align: middle; /* 1 */
+}
+
+
+/* Text addon */
+
+.k-input-group__addon {
+  padding: $padding-base-vertical $padding-base-horizontal;
+  font-size: $font-size-base;
+  font-weight: normal;
+  line-height: 1;
+  color: $input-color;
+  text-align: center;
+  background-color: $input-group-addon-bg;
+  border: 1px solid $input-group-addon-border-color;
+  border-radius: $input-border-radius;
+
+
+  /* Sizing */
+
+  &.input-sm {
+    padding: $padding-small-vertical $padding-small-horizontal;
+    font-size: $font-size-small;
+    border-radius: $input-border-radius-small;
+  }
+
+  &.input-lg {
+    padding: $padding-large-vertical $padding-large-horizontal;
+    font-size: $font-size-large;
+    border-radius: $input-border-radius-large;
+  }
+
+
+  /* Nuke default margins from checkboxes and radios to vertically center within. */
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    margin-top: 0;
+  }
+}
+
+
+/* Reset rounded corners */
+.k-input-group .k-form-control:first-child,
+.k-input-group__addon:first-child,
+.k-input-group__button:first-child > .k-button,
+.k-input-group__button:first-child > .k-button-group > .k-button,
+.k-input-group__button:first-child > .k-dropdown__toggle,
+.k-input-group__button:last-child > .k-button:not(:last-child):not(.k-dropdown__toggle),
+.k-input-group__button:last-child > .k-button-group:not(:last-child) > .k-button {
+  @include border-right-radius(0);
+}
+
+.k-input-group__addon:first-child {
+  border-right: 0;
+}
+
+.k-input-group .k-form-control:last-child,
+.k-input-group__addon:last-child,
+.k-input-group__button:last-child > .k-button,
+.k-input-group__button:last-child > .k-button-group > .k-button,
+.k-input-group__button:last-child > .k-dropdown__toggle,
+.k-input-group__button:first-child > .k-button:not(:first-child),
+.k-input-group__button:first-child > .k-button-group:not(:first-child) > .k-button {
+  @include border-left-radius(0);
+}
+
+.k-input-group__addon:last-child {
+  border-left: 0;
+}
+
+
+/**
+ * Button input groups
+ *
+ * 1. Jankily prevent input button groups from wrapping with `white-space` and
+      `font-size` in combination with `inline-block` on buttons.
+ * 2. Negative margin for spacing, position for bringing hovered/focused/actived
+      element above the siblings.
+ * 3. Bring the "active" button to the front
+ * 4. Negative margin to only have a 1px border between the two
+ */
+
+.k-input-group__button {
+  position: relative;
+
+  /* 1 */
+  font-size: 0;
+  white-space: nowrap;
+
+  /* 2 */
+  > .k-button {
+    position: relative;
+
+    + .k-button {
+      margin-left: -1px;
+    }
+
+    /* 3 */
+    &:hover,
+    &:focus,
+    &:active {
+      z-index: 2;
+    }
+  }
+
+  /* 4 */
+  &:first-child {
+    > .k-button,
+    > .k-button-group {
+      margin-right: -1px;
+    }
+  }
+
+  &:last-child {
+    > .k-button,
+    > .k-button-group {
+      z-index: 2;
+      margin-left: -1px;
+    }
+  }
+}
+

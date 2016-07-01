@@ -20,15 +20,14 @@ markup:
         <input class="k-form-control" type="text" name="date" value="" size="25" maxlength="19" placeholder="">
         <span class="k-input-group__button">
             <button type="button" class="k-button k-button--default k-js-datepicker">
-                <span class="k-icon-calendar">
-                    <span class="visually-hidden">calendar</span>
-                </span>
+                <sg-insert>2.12-44</sg-insert>
+                <span class="visually-hidden">calendar</span>
             </button>
         </span>
     </div>
 </div>
 
-Styleguide 2.140
+Styleguide 2.5
 
 */
 

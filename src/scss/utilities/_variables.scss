@@ -193,6 +193,17 @@ $content-background:   white !default;
 $content-border:       darker($content-background) !default;
 
 
+// Masthead
+// ==========================================================================
+//
+// Masthead
+
+$masthead-height:                        40px !default;
+$masthead-background:                    #232323 !default;
+$masthead-border:                        darkest($masthead-background) !default;;
+$masthead-color:                         colorpicker(primary, 5) !default;
+
+
 // Titlebar
 // ==========================================================================
 //
@@ -217,7 +228,6 @@ $mobile-title-border:       darkest($mobile-title-background) !default;
 
 $toolbar-spacing:                       round($font-size * 0.7) !default;
 $toolbar-height:                        50px !default;
-
 $toolbar-background:                    colorpicker(primary, 3) !default;
 $toolbar-border:                        darkest($toolbar-background) !default;
 $toolbar-color:                         $color-type !default;

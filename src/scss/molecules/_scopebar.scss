@@ -6,12 +6,12 @@ Default scopebar styling
 markup:
 <!-- Scopebar -->
 <div class="k-scopebar">
-    <sg-insert>2.40.1</sg-insert>
-    <sg-insert>2.40.3</sg-insert>
-    <sg-insert>2.40.2</sg-insert>
+    <sg-insert>2.18.1</sg-insert>
+    <sg-insert>2.18.3</sg-insert>
+    <sg-insert>2.18.2</sg-insert>
 </div><!-- .k-scopebar -->
 
-Styleguide 2.40
+Styleguide 2.18
 
 */
 
@@ -553,7 +553,7 @@ markup:
     <div class="k-scopebar__filters-wrapper">
         <!-- filters toggle button -->
         <button type="button" class="k-scopebar-icon-button k-toggle-filters k-js-toggle-filters">
-            <span class="k-icon-k-filter"></span>
+            <sg-insert>2.12-
             <span class="visually-hidden"><?= translate('Filters'); ?></span>
             <!-- Display label on toggle button to show there are filters -->
             <div class="js-filter-count k-scopebar__item__label"></div>
@@ -595,7 +595,7 @@ markup:
     </div><!-- .k-scopebar__filters-wrapper -->
 </div><!-- .k-scopebar__item -->
 
-Styleguide 2.40.1
+Styleguide 2.18.1
 
 */
 
@@ -716,7 +716,7 @@ markup:
     </div>
 </div>
 
-Styleguide 2.40.2
+Styleguide 2.18.2
 
 */
 
@@ -744,7 +744,7 @@ markup:
     </button>
 </div>
 
-Styleguide 2.40.3
+Styleguide 2.18.3
 
 */
 

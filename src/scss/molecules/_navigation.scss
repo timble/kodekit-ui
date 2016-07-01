@@ -3,7 +3,7 @@ Navigation
 
 Sidebar navigation styling
 
-.is-active - Active item
+.k-is-active - Active item
 
 markup:
 <!-- Navigation -->
@@ -20,7 +20,7 @@ markup:
     </li>
 </ul>
 
-Styleguide 2.15
+Styleguide 2.16
 
 */
 
@@ -111,7 +111,7 @@ Styleguide 2.15
 
   /* Active link */
 
-  .is-active {
+  .k-is-active {
     a {
       background: $navigation-active-background;
       color: $navigation-active-color;
