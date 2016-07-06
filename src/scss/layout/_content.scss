@@ -131,7 +131,7 @@ Styleguide 3.5
   display: block;
   opacity: 0; /* 3 */
   content: " ";
-  background: $overlay-background;
+  background: $off-canvas-overlay-background;
   @include transition(opacity);
 
   @include breakpoint($desktop) {
@@ -150,7 +150,7 @@ Styleguide 3.5
 .k-show-left-menu,
 .k-show-right-menu {
   .k-off-canvas-overlay {
-    opacity: $overlay-opacity; /* 1 */
+    opacity: $off-canvas-overlay-opacity; /* 1 */
   }
 }
 

@@ -19,12 +19,17 @@ markup:
         </li>
         <li>
             <a class="k-breadcrumb__item" href="javascript:void(0)">
-                {content}
+                Donec ullamcorper nulla non metus auctor fringilla.
             </a>
         </li>
-        <li class="k-breadcrumb__last">
+        <li>
+            <a class="k-breadcrumb__item" href="javascript:void(0)">
+                Donec ullamcorper nulla non metus auctor fringilla.
+            </a>
+        </li>
+        <li class="k-breadcrumb__active">
             <span class="k-breadcrumb__item">
-                {content}
+                Donec ullamcorper nulla non metus auctor fringilla.
             </span>
         </li>
     </ul>
@@ -40,6 +45,8 @@ Styleguide 2.2
 
 /**
  * 1. Scroll when items don't fit parent anymore
+ * 2. Hide scroll when resizing to avoid weird jumps on OSX
+ * 3. Don't flex in the layout structure
  */
 
 .k-breadcrumb {
@@ -47,20 +54,13 @@ Styleguide 2.2
   overflow: auto; /* 1 */
   background: $breadcrumb-background;
   color: $breadcrumb-color;
-  min-width: 100%;
 
   @include resizing {
-    overflow: hidden;
+    overflow: hidden; /* 2 */
   }
-}
 
-
-/* When flexbox is in use
-   ========================================================================== */
-
-@include flexbox {
-  .k-breadcrumb {
-    flex: 0 0 auto;
+  @include flexbox(0, 0) {
+    flex: 0 0 auto; /* 3 */
   }
 }
 
@@ -71,38 +71,18 @@ Styleguide 2.2
 .k-breadcrumb {
 
   /**
-   * Links
-   *
-   * 1. Full background hover
-   */
-
-  a {
-    color: $breadcrumb-color;
-    cursor: pointer;
-
-    &:focus,
-    &:hover {
-      background: $breadcrumb-background-hover; /* 1 */
-    }
-  }
-
-
-  /**
    * List
    *
    * 1. Reset unordered list styling
+   * 2. Flexing items to get overflow ellipsis
    */
 
   ul {
     @include reset; /* 1 */
 
-
-    /* Flexing items to get overflow ellipsis */
-
-    @include flexbox {
-      display: flex;
+    @include flexbox(0, 0) {
+      display: flex; /* 2 */
     }
-
   }
 
 
@@ -112,7 +92,7 @@ Styleguide 2.2
    * 1. Set z-index to 0 so the :after psuedo element will be on top
    * 2. Make room for the psuedo element separator
    * 3. Make each item at least one breadcrumb size wide
-   * 4. Hide by default so we can show only a few on mobile
+   * 4. Hide by default so we can show only a few on mobile / flexbox
    * 5. Hide overflowing content
    * 6. Proper spacing for non-flexbox use
    */
@@ -132,18 +112,17 @@ Styleguide 2.2
     }
 
 
-    /* Display on larger screens */
+    /* Flexing items to get overflow ellipsis */
 
-    @include breakpoint($breadcrumb-query) {
-      display: inline-block;
+    @include flexbox(0, 0) {
+      flex: 0 1 auto;
     }
 
 
-    /* Flexing items to get overflow ellipsis */
+    /* Display on larger screens but only when flexbox is available */
 
-    @include flexbox($horizontal:$breadcrumb-query) {
-      display: block;
-      flex: 0 1 auto;
+    @include flexbox($breadcrumb-query, 0) {
+      display: inline-block;
     }
 
 
@@ -186,23 +165,48 @@ Styleguide 2.2
      * Hover
      *
      * 1. Reset flexbox so the whole item is visible
+          No :focus since <li> can't be focused
+     * 2. Wrap the active item when another item is being hovered
      */
 
     &:hover {
       overflow: visible;
 
-      @include flexbox {
+      @include flexbox(0, 0) {
         flex: 0 0 auto; /* 1 */
+      }
+
+      & ~ li {
+        @include flexbox(0, 0) {
+          flex: 0 1 auto; /* 2 */
+        }
       }
     }
   }
 
 
   /**
-   * Home and last elements
+   * Links
+   *
+   * 1. Full background hover
+   */
+
+  a {
+    color: $breadcrumb-color;
+    cursor: pointer;
+
+    &:focus,
+    &:hover {
+      background: $breadcrumb-background-hover; /* 1 */
+    }
+  }
+
+
+  /**
+   * Home and active elements
    *
    * 1. Always display these items
-   * 2. No flexing for these items so the are readable
+   * 2. No flexing for these items so they are fully readable
    */
 
   .k-breadcrumb__active,
@@ -210,56 +214,32 @@ Styleguide 2.2
     display: inline-block; /* 1 */
     overflow: visible; /* 1 */
 
-    @include flexbox($horizontal:$breadcrumb-query) {
+    @include flexbox(0, 0) {
       flex: 0 0 auto; /* 2 */
     }
   }
-
-
-
-  /**
-   * Root element
-   *
-   * 1. Hide root text by default
-   * 2. Show and position it when root is the active item to show more then just a home icon
-   */
-
-  .k-breadcrumb_root-text {
-    @extend .visually-hidden; /* 1 */
-  }
-
-  .k-breadcrumb__home.k-breadcrumb__last {
-    .k-breadcrumb_root-text {
-      @extend .visually-shown; /* 2 */
-      padding-left: $spacing-tiny; /* 2 */
-      font-family: "Arial", sans-serif;
-
-      @include rtl {
-        padding-left: 0;
-        padding-right: $spacing-tiny;
-      }
-    }
-  }
-
 
 
   /**
    * One but last item
    *
    * Show this item on mobile to get a sense of where you are
+   * Only do this when flexbox is available
    *
    * 1. Set 'missing' content
    * 2. Reset to default content on wider screens
    */
 
   li:nth-last-child(2) {
-    display: inline-block;
+    @include flexbox(0, 0) {
+      display: inline-block;
 
-    &:before {
-      content: $breadcrumb-missing-content; /* 1 */
+      &:before {
+        content: $breadcrumb-missing-content; /* 1 */
 
-      @include breakpoint($breadcrumb-query) {
-        content: $breadcrumb-divider-content; /* 2 */
+        @include breakpoint($breadcrumb-query) {
+          content: $breadcrumb-divider-content; /* 2 */
+        }
       }
     }
   }
@@ -267,7 +247,7 @@ Styleguide 2.2
 
   /* Active item */
 
-  .k-breadcrumb__last {
+  .k-breadcrumb__active {
     .k-breadcrumb__item {
       font-weight: $bold;
     }
@@ -292,4 +272,3 @@ Styleguide 2.2
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-

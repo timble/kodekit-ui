@@ -2,6 +2,7 @@
 Scopebar
 
 Default scopebar styling
+- Either display with filters or with breadcrumbs
 
 markup:
 <!-- Scopebar -->
@@ -15,40 +16,210 @@ Styleguide 2.18
 
 */
 
-// @TODO: refactor this html on top and show some of the options or don't make options available at all
-
-
 .k-scopebar {
+  @include clearfix;
   background: $scopebar-background;
   color: $scopebar-color;
   min-width: 100%;
+  box-shadow: inset 0 -1px 0 $scopebar-border;
 
+  /* Faking flexbox */
   @include breakpoint($delta) {
     display: table;
     width: 100%;
   }
 
-
-  /**
-   * When flexbox is in use
-   */
-
-  @include flexbox {
-    flex: 0 0 auto;
-  }
-
-  @include flexbox($horizontal: $delta) {
+  /* Flexbox */
+  @include flexbox(0, 0) {
     display: flex;
     width: auto;
     flex: 0 0 auto;
+    flex-wrap: wrap;
   }
 
+  @include flexbox($delta, 0) {
+    flex-wrap: nowrap;
+  }
+}
 
-  /**
-   * Breadcrumbs in the scopebar
-   *
-   * When the breadcrumbs are in the scopebar the breadcrumbs should be flexing
-   */
+
+/**
+ * Scopebar items
+ */
+
+.k-scopebar__item {
+  @include clearfix;
+  @include border(bottom, $scopebar-border);
+  min-width: 0; // For wrapping text in combination with flexbox
+  box-shadow: 0 -1px 0px $scopebar-border;
+
+  /* Floating nicely */
+  @include breakpoint($alpha) {
+    float: left;
+  }
+
+  /* Faking flexbox */
+  @include breakpoint($delta) {
+    display: table-cell;
+    width: 99%;
+    float: none;
+  }
+
+  /* Flexbox */
+  @include flexbox(0, 0) {
+    flex: 1 1 auto;
+    width: auto;
+  }
+}
+
+
+/**
+ * Static scopebar items
+ */
+
+.k-scopebar__item--static {
+
+  /* Faking flexbox */
+  @include breakpoint($delta) {
+    width: 1%;
+    white-space: nowrap;
+  }
+
+  /* Flexbox */
+  @include flexbox(0, 0) {
+    display: block;
+    flex: 0 0 auto;
+  }
+}
+
+
+
+
+
+/**
+ * Toggle buttons
+ */
+
+.k-scopebar__item--toggle-buttons {
+  @include clearfix;
+
+  /* Floating nicely */
+  @include breakpoint($alpha) {
+    float: left;
+  }
+
+  @include breakpoint($beta) {
+    float: right;
+  }
+
+  /* Hide on larger screens */
+  @include breakpoint($delta) {
+    display: none;
+  }
+
+  /* Flexbox */
+  @include flexbox(0, 0) {
+    flex: 1 1 auto;
+  }
+
+  @include flexbox($beta, 0) {
+    flex: 0 0 auto;
+    order: 15;
+  }
+}
+
+
+/**
+ * Filters
+ */
+
+.k-scopebar__item--filters {
+
+  /* Hide when JS is enabled */
+  @include js-enabled {
+    display: none;
+
+    /* Show on larger screens */
+    @include breakpoint($alpha) {
+      width: 100%;
+    }
+
+    @include breakpoint($beta) {
+      width: auto;
+      display: block !important;
+    }
+
+    /* Faking flexbox */
+    @include breakpoint($delta) {
+      display: table-cell !important;
+      width: 99%;
+    }
+  }
+
+  /* Flexbox */
+  @include flexbox(0, 0) {
+    width: 100%;
+    flex: 1 1 auto;
+    order: 10;
+  }
+
+  @include flexbox($beta, 0) {
+    width: auto;
+    order: 0; /* Reset order */
+  }
+
+  @include flexbox($delta, 0) {
+    display: block !important;
+  }
+}
+
+
+/**
+ * Breadcrumbs
+ */
+
+.k-scopebar__item--breadcrumbs {
+
+  /* Hide when JS is enabled */
+  @include js-enabled {
+    display: none;
+
+    /* Show on larger screens */
+    @include breakpoint($alpha) {
+      width: 100%;
+    }
+
+    /* Show on larger screens */
+    @include breakpoint($beta) {
+      display: block !important;
+    }
+
+    /* Faking flexbox */
+    @include breakpoint($delta) {
+      display: table-cell !important;
+      overflow: auto;
+      max-width: 0;
+    }
+  }
+
+  /* Flexbox */
+  @include flexbox(0, 0) {
+    width: 100%;
+    flex: 1 1 auto;
+    order: 10;
+  }
+
+  @include flexbox($beta, 0) {
+    width: auto;
+    order: 0; /* Reset order */
+  }
+
+  @include flexbox($delta, 0) {
+    display: flex !important;
+    flex: 1 1 auto;
+    max-width: 100%;
+    overflow: hidden;
+  }
 
   .k-breadcrumb {
     flex: 1 1 auto;
@@ -58,53 +229,71 @@ Styleguide 2.18
 
 
 /**
- * Items
+ * Buttons
  */
 
-.k-scopebar__item {
-  @include border(bottom, $scopebar-border);
-  vertical-align: middle;
+.k-scopebar__item--buttons {
 
+  /* Floating nicely */
+  @include breakpoint($alpha) {
+    float: right;
+  }
 
-  /**
-   * When flexbox is in use
-   */
+  /* Stop floating on larger screens for faking flexbox */
+  @include breakpoint($delta) {
+    float: none;
+  }
 
-  @include flexbox($horizontal: $delta) {
+  /* Flexbox */
+  @include flexbox(0, 0) {
     display: block;
     flex: 0 0 auto;
-
-
-    /* Search item */
-
-    &.k-scopebar__item--search {
-      display: block;
-      flex: 0 0 auto;
-    }
   }
 }
-
 
 
 /**
- * Fluid item
- *
- * Put at least one fluid item in every scopebar for flexbox to work correctly
+ * Search
  */
 
-.k-scopebar__item--fluid {
-  @include clearfix;
+.k-scopebar__item--search {
 
-  @include breakpoint($delta) {
-    display: table-cell;
-    width: 99%;
+  /* Hide when JS is enabled */
+  @include js-enabled {
+    display: none;
+    width: 100%;
+
+    /* Show on larger screens and faking flexbox */
+    @include breakpoint($delta) {
+      display: table-cell !important;
+      float: none;
+    }
   }
 
-  @include flexbox($horizontal: $delta) {
+  /* Flexbox */
+  @include flexbox(0, 0) {
     flex: 1 1 auto;
-    width: auto;
+    order: 20;
+  }
+
+  @include flexbox($delta, 0) {
+    display: block !important;
+    flex: 0 0 auto;
+    order: 0; /* Reset order */
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -245,14 +434,6 @@ Styleguide 2.18
 
   @include breakpoint($echo) {
     @include allwidth(280px);
-  }
-
-  @include js-enabled {
-    display: none; /* 1 */
-
-    @include breakpoint($delta) {
-      display: table-cell!important; /* 2 */
-    }
   }
 
 
@@ -410,107 +591,9 @@ Styleguide 2.18
 
 
 
-/**
- * Search toggle button
- *
- * 1. Hide when search is visible
- */
-
-.k-scopebar-icon-button {
-  position: relative;
-  display: none;
-  width: $scopebar-size;
-  height: 0;
-  margin: 0;
-  border: none;
-  padding: 0;
-  padding-top: $scopebar-size;
-  background: transparent;
-
-  [class^="k-icon"] {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    font-size: 16px;
-    vertical-align: middle;
-    margin: -8px 0 0 -8px;
-
-    @include rtl {
-      left: auto;
-      right: 50%;
-      margin: -8px -8px 0 0;
-    }
-  }
-
-  @include js-enabled {
-    display: block;
-  }
-}
 
 
-.k-scopebar__search-toggle-wrapper {
-  width: $scopebar-size;
-  max-width: $scopebar-size;
-  height: $scopebar-size;
-  white-space: nowrap;
-}
 
-
-.k-scopebar__filters-wrapper {
-  display: table;
-  width: 100%;
-  height: auto;
-}
-
-.k-scopebar__filters-content,
-.k-scopebar__search-toggle-wrapper {
-  display: table-cell;
-  vertical-align: top;
-}
-
-.k-scopebar__search-toggle-wrapper {
-  @include breakpoint($delta) {
-    display: none;
-  }
-}
-
-.k-scopebar__filters-content {
-  min-height: $scopebar-size;
-  min-width: $scopebar-size;
-  width: 99%;
-}
-
-.k-scopebar__filters {
-  @include js-enabled {
-    display: none;
-
-    @include breakpoint($beta) {
-      display: block !important;
-    }
-  }
-}
-
-
-.k-toggle-filters {
-  @include js-enabled {
-    display: block;
-
-    @include breakpoint($beta) {
-      display: none;
-    }
-  }
-}
-
-.k-toggle-search {
-  @include js-enabled {
-    display: block;
-    float: right;
-
-    @include rtl {
-      float: left;
-    }
-  }
-}
 
 
 
@@ -548,54 +631,37 @@ Scopebar filters
 
 markup:
 <!-- Filters -->
-<div class="k-scopebar__item k-scopebar__item--fluid">
-    <!-- Filters wrapper -->
-    <div class="k-scopebar__filters-wrapper">
-        <!-- filters toggle button -->
-        <button type="button" class="k-scopebar-icon-button k-toggle-filters k-js-toggle-filters">
-            <sg-insert>2.12.1-12</sg-insert>
-            <span class="visually-hidden"><?= translate('Filters'); ?></span>
-            <!-- Display label on toggle button to show there are filters -->
-            <div class="js-filter-count k-scopebar__item__label"></div>
-        </button>
-        <!-- Filters content -->
-        <div class="k-scopebar__filters-content">
-            <div class="js-filter-container k-scopebar__filters">
-                <div class="js-filter-prototype k-scopebar__item--filter k-scopebar-dropdown js-dropdown">
-                    <button type="button" class="k-scopebar-dropdown__button js-dropdown-button koowa-tooltip">
-                        <span class="js-dropdown-title k-scopebar__item--filter__title">{content}</span>
-                        <span class="k-scopebar__item--filter__icon k-icon-chevron-bottom" aria-hidden="true"></span>
-                        <div class="js-dropdown-label k-scopebar__item__label">1</div>
-                    </button>
-                    <div class="k-scopebar-dropdown__body js-dropdown-body">
-                        <div class="k-scopebar-dropdown__body__buttons">
-                            <button type="button" class="js-clear-filter btn btn-sm">Clear</button>
-                            <button type="button" class="js-apply-filter btn btn-primary btn-sm">Apply filter</button>
-                        </div>
+<div class="k-scopebar__item k-scopebar__item--filters">
+    <!-- Filters content -->
+    <div class="k-scopebar__filters-content">
+        <div class="js-filter-container k-scopebar__filters">
+            <div class="js-filter-prototype k-scopebar__item--filter k-scopebar-dropdown js-dropdown">
+                <button type="button" class="k-scopebar-dropdown__button js-dropdown-button koowa-tooltip">
+                    <span class="js-dropdown-title k-scopebar__item--filter__title">{content}</span>
+                    <span class="k-scopebar__item--filter__icon k-icon-chevron-bottom" aria-hidden="true"></span>
+                    <div class="js-dropdown-label k-scopebar__item__label">1</div>
+                </button>
+                <div class="k-scopebar-dropdown__body js-dropdown-body">
+                    <div class="k-scopebar-dropdown__body__buttons">
+                        <button type="button" class="js-clear-filter btn btn-sm">Clear</button>
+                        <button type="button" class="js-apply-filter btn btn-primary btn-sm">Apply filter</button>
                     </div>
                 </div>
-                <div class="js-filter-prototype k-scopebar__item--filter k-scopebar-dropdown js-dropdown">
-                    <button type="button" class="k-scopebar-dropdown__button js-dropdown-button koowa-tooltip">
-                        <span class="js-dropdown-title k-scopebar__item--filter__title">{content}</span>
-                        <span class="k-scopebar__item--filter__icon k-icon-chevron-bottom" aria-hidden="true"></span>
-                    </button>
-                    <div class="k-scopebar-dropdown__body js-dropdown-body">
-                        <div class="k-scopebar-dropdown__body__buttons">
-                            <button type="button" class="js-clear-filter btn btn-sm">Clear</button>
-                            <button type="button" class="js-apply-filter btn btn-primary btn-sm">Apply filter</button>
-                        </div>
+            </div>
+            <div class="js-filter-prototype k-scopebar__item--filter k-scopebar-dropdown js-dropdown">
+                <button type="button" class="k-scopebar-dropdown__button js-dropdown-button koowa-tooltip">
+                    <span class="js-dropdown-title k-scopebar__item--filter__title">{content}</span>
+                    <span class="k-scopebar__item--filter__icon k-icon-chevron-bottom" aria-hidden="true"></span>
+                </button>
+                <div class="k-scopebar-dropdown__body js-dropdown-body">
+                    <div class="k-scopebar-dropdown__body__buttons">
+                        <button type="button" class="js-clear-filter btn btn-sm">Clear</button>
+                        <button type="button" class="js-apply-filter btn btn-primary btn-sm">Apply filter</button>
                     </div>
                 </div>
-            </div><!-- .k-scopebar__filters -->
-        </div><!-- .k-scopebar__filters-content -->
-        <!-- Search toggle button -->
-        <div class="k-scopebar__search-toggle-wrapper">
-            <button type="button" class="k-scopebar-icon-button k-toggle-search k-js-toggle-search">
-            <sg-insert>2.12-144</sg-insert>
-            <span class="visually-hidden">Search icon</span>
-            </button>
-        </div><!-- .k-scopebar__search-toggle-wrapper -->
-    </div><!-- .k-scopebar__filters-wrapper -->
+            </div>
+        </div><!-- .k-scopebar__filters -->
+    </div><!-- .k-scopebar__filters-content -->
 </div><!-- .k-scopebar__item -->
 
 Styleguide 2.18.1
@@ -737,12 +803,12 @@ Styleguide 2.18.2
 
 
 /*
-Scopebar button
+Scopebar buttons
 
-Scopebar button
+Scopebar buttons
 
 markup:
-<div class="k-scopebar__item">
+<div class="k-scopebar__item k-scopebar__item--buttons">
     <button class="k-scopebar__button">
         <sg-insert>2.12-115</sg-insert>
         <span class="visually-hidden">Grid icon</span>
@@ -757,6 +823,7 @@ Styleguide 2.18.3
 
 .k-scopebar__button {
   @include reset;
+  position: relative;
   display: block;
   float: left;
   height: round($scopebar-size * .8);
@@ -799,6 +866,95 @@ Styleguide 2.18.3
     &:before {
       font-size: 16px;
       line-height: 16px;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+/*
+Extended scopebar
+
+When space is tight and you don't need filters you could add the breadcrumbs bar to the scopebar like so:
+
+markup:
+<!-- Scopebar -->
+<div class="k-scopebar">
+    <div class="k-scopebar__item k-scopebar__item--breadcrumbs">
+        <sg-insert>2.2</sg-insert>
+    </div>
+    <sg-insert>2.18.3</sg-insert>
+    <sg-insert>2.18.2</sg-insert>
+</div><!-- .k-scopebar -->
+
+Styleguide 2.18.4
+
+*/
+
+.k-scopebar {
+  .k-breadcrumb {
+    border-bottom: none;
+    overflow: auto;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    bottom: auto;
+    top: auto;
+    position: static;
+    visibility: visible;
+  }
+}
+
+
+
+
+/*
+Toggle buttons
+
+These buttons are created automatically with JavaScript to toggle to following items on mobile
+- Filters
+- Breadcrumbs
+- Search
+
+*/
+
+.k-scopebar__item--toggle-buttons {
+  padding-left: 4px;
+
+  @include rtl {
+    padding-left: 0;
+    padding-right: 4px;
+  }
+
+  .k-toggle-scopebar-filters {
+    display: block;
+    float: left;
+
+    @include breakpoint($beta) {
+      display: none;
+    }
+  }
+
+  .k-toggle-scopebar-breadcrumbs {
+    display: block;
+    float: left;
+
+    @include breakpoint($beta) {
+      display: none;
+    }
+  }
+
+  .k-toggle-scopebar-search {
+    display: block;
+    float: right;
+
+    @include breakpoint($delta) {
+      display: none;
     }
   }
 }

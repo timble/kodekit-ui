@@ -13270,12 +13270,11 @@ Koowa.Class = klass({
             $toolbar = $('.k-toolbar'),
             $content = $('.k-content'),
             $fixedtable = $('.k-js-fixed-table-header'),
-            $searchtoggle = $('.k-js-toggle-search'),
-            $filtertoggle = $('.k-js-toggle-filters'),
             $footable = $('.k-js-responsive-table'),
             $overflow = $('.k-sidebar-item--overflow'),
             resizeClass = 'k-is-resizing',
-            $sidebarToggle = $('.k-sidebar-item--toggle');
+            $sidebarToggle = $('.k-sidebar-item--toggle'),
+            $scopebar = $('.k-scopebar');
 
         // Sidebar
         if ( ($toolbar.length || $titlebar.length ) && $wrapper.length && $content.length)
@@ -13384,15 +13383,73 @@ Koowa.Class = klass({
 
         fixedTable();
 
-        // Toggle search
-        $searchtoggle.click(function() {
-            $('.k-scopebar__item--search').slideToggle('fast');
-        });
 
-        // Filter search
-        $filtertoggle.click(function() {
-            $('.k-scopebar__filters').toggle('fast');
-        });
+        // Scopebar
+        if ( $scopebar.length ) {
+
+            $.each($scopebar, function(e) {
+
+                console.log(e, $(this));
+
+                var $scopebarFilters = $(this).find('.k-scopebar__item--filters'),
+                    $scopebarBreadcrumbs = $(this).find('.k-scopebar__item--breadcrumbs'),
+                    $scopebarSearch = $(this).find('.k-scopebar__item--search'),
+                    scopebarToggleClass = '.k-scopebar__item--toggle-buttons',
+                    scopebarToggleButtonContainer = '<div class="k-scopebar__item k-scopebar__item--toggle-buttons"></div>';
+
+                if ( !$(this).find(scopebarToggleClass).length ) {
+                    $(this).prepend(scopebarToggleButtonContainer);
+                }
+                var toggleButtons = $(this).find(scopebarToggleClass);
+
+                if ( $scopebarFilters.length && !$(this).find('.k-toggle-scopebar-filters').length ) {
+                    toggleButtons.prepend('<button type="button" class="k-scopebar__button k-toggle-scopebar-filters k-js-toggle-filters">' +
+                        '<span class="k-icon-filter" aria-hidden="true">' +
+                        '<span class="visually-hidden">Filters toggle</span>' +
+                        '<div class="js-filter-count k-scopebar__item__label"></div>' +
+                        '</button>');
+                }
+
+                if ( $scopebarBreadcrumbs.length && !$(this).find('.k-toggle-scopebar-breadcrumbs').length ) {
+                    toggleButtons.prepend('<button type="button" class="k-scopebar__button k-toggle-scopebar-breadcrumbs k-js-toggle-breadcrumbs">' +
+                        '<span class="k-icon-home" aria-hidden="true">' +
+                        '<span class="visually-hidden">Breadcrumbs toggle</span>' +
+                        '</button>');
+                }
+
+                if ( $scopebarSearch.length && !$(this).find('.k-toggle-scopebar-search').length ) {
+                    toggleButtons.prepend('<button type="button" class="k-scopebar__button k-toggle-scopebar-search k-js-toggle-search">' +
+                        '<span class="k-icon-magnifying-glass" aria-hidden="true">' +
+                        '<span class="visually-hidden">Search toggle</span>' +
+                        '</button>');
+                }
+
+            });
+
+            var $filtertoggle = $('.k-js-toggle-filters'),
+                $breadcrumbtoggle = $('.k-js-toggle-breadcrumbs'),
+                $searchtoggle = $('.k-js-toggle-search');
+
+            // Toggle search
+            if ( $filtertoggle.length || $breadcrumbtoggle.length || $searchtoggle.length ) {
+
+                $filtertoggle.on('click', function() {
+                    console.log($(this), 'click');
+                    $(this).parent().siblings('.k-scopebar__item--filters').slideToggle('fast');
+                });
+
+                $breadcrumbtoggle.on('click', function() {
+                    console.log($(this), 'click');
+                    $(this).parent().siblings('.k-scopebar__item--breadcrumbs').slideToggle('fast');
+                });
+
+                $searchtoggle.on('click', function() {
+                    console.log($(this), 'click');
+                    $(this).parent().siblings('.k-scopebar__item--search').slideToggle('fast');
+                });
+            }
+        }
+
 
         // Select2
         var $select2 = $('.k-js-select2');

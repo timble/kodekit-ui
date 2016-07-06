@@ -1,11 +1,14 @@
-/* ==========================================================================
-   List view
-   ========================================================================== */
+// List examples
+//
+// Example pages that can be used to quickly build pages.
+// - Just copy paste the markup for fast building components / pages
+//
+// Styleguide 4.0
+
+
 
 /*
-List view
-
-The default list view
+Complete list page
 
 markup:
 <sg-insert>2.14</sg-insert>
@@ -55,15 +58,11 @@ Styleguide 4.1
 
 
 
-
-/* ==========================================================================
-   List with a titlebar
-   ========================================================================== */
-
 /*
-List with titlebar
+List with title-bar
 
-A list with a titlebar
+Can be used as a modal for example
+- For full UI pages use a `.k-masthead` instead of a `.k-title-bar`
 
 markup:
 <!-- Wrapper -->
@@ -115,19 +114,16 @@ markup:
     </div><!-- .k-content-wrapper -->
 </div><!-- .k-wrapper -->
 
-Styleguide 4.1.1
+Styleguide 4.2
 
 */
 
 
-/* ==========================================================================
-   Grid view
-   ========================================================================== */
 
 /*
 Grid view
 
-The default list view displayed in a grid
+The default list view displayed in a grid layout
 
 markup:
 <!-- Wrapper -->
@@ -169,6 +165,6 @@ markup:
     </div><!-- .k-content-wrapper -->
 </div><!-- .k-wrapper -->
 
-Styleguide 4.1.2
+Styleguide 4.3
 
 */

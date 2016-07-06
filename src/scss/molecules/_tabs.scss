@@ -42,7 +42,7 @@ Styleguide 2.22
     & > a {
       position: relative;
       display: block;
-      padding: $nav-link-padding;
+      padding: $nav-tabs-link-padding;
       margin-right: 2px;
       line-height: $line-height-base;
       border: 1px solid transparent;
@@ -52,18 +52,18 @@ Styleguide 2.22
       &:hover,
       &:focus {
         text-decoration: none;
-        background-color: $nav-link-hover-bg;
+        background-color: $nav-tabs-link-hover-bg;
         border-color: $nav-tabs-link-hover-border-color $nav-tabs-link-hover-border-color $nav-tabs-border-color;
       }
     }
 
     // Disabled state sets text to gray and nukes hover/tab effects
     &.k-is-disabled > a {
-      color: $nav-disabled-link-color;
+      color: $nav-tabs-disabled-link-color;
 
       &:hover,
       &:focus {
-        color: $nav-disabled-link-hover-color;
+        color: $nav-tabs-disabled-link-hover-color;
         text-decoration: none;
         background-color: transparent;
         cursor: $cursor-disabled;
@@ -89,7 +89,7 @@ Styleguide 2.22
     &,
     &:hover,
     &:focus {
-      background-color: $nav-link-hover-bg;
+      background-color: $nav-tabs-link-hover-bg;
       border-color: $link-color;
     }
   }
