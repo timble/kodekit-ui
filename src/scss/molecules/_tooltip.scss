@@ -1,13 +1,4 @@
-//
-// Tooltips
-// --------------------------------------------------
-
-// @TODO: document this and put it in the styleguide / refactor
-
-
 /*
-Tooltip
-
 Tooltips
 
 markup:
@@ -22,26 +13,48 @@ Styleguide 2.25
 
 */
 
+/**
+ * 1. Our parent element can be arbitrary since tooltips are by default inserted as a sibling of their target element.
+ *    So reset our font and text properties to avoid inheriting weird values.
+ */
 
-// Base class
 .k-tooltip {
   position: absolute;
   z-index: $zindex-tooltip;
   display: block;
-  // Our parent element can be arbitrary since tooltips are by default inserted as a sibling of their target element.
-  // So reset our font and text properties to avoid inheriting weird values.
-  font-size: $font-size-small;
-
+  font-size: $font-size-small; /* 1 */
   opacity: 0;
 
-  &.in     { opacity: $tooltip-opacity; }
-  &.top    { margin-top:  -3px; padding: $tooltip-arrow-width 0; }
-  &.right  { margin-left:  3px; padding: 0 $tooltip-arrow-width; }
-  &.bottom { margin-top:   3px; padding: $tooltip-arrow-width 0; }
-  &.left   { margin-left: -3px; padding: 0 $tooltip-arrow-width; }
+  &.in {
+    opacity: $tooltip-opacity;
+  }
+
+  &.top {
+    margin-top: -3px;
+    padding: $tooltip-arrow-width 0;
+  }
+
+  &.right {
+    margin-left: 3px;
+    padding: 0 $tooltip-arrow-width;
+  }
+
+  &.bottom {
+    margin-top: 3px;
+    padding: $tooltip-arrow-width 0;
+  }
+
+  &.left {
+    margin-left: -3px;
+    padding: 0 $tooltip-arrow-width;
+  }
 }
 
-// Wrapper for the tooltip content
+
+/**
+ * Wrapper for the tooltip content
+ */
+
 .k-tooltip__inner {
   max-width: $tooltip-max-width;
   padding: 3px 8px;
@@ -51,7 +64,11 @@ Styleguide 2.25
   border-radius: $border-radius-base;
 }
 
-// Arrows
+
+/**
+ * Arrows
+ */
+
 .k-tooltip__arrow {
   position: absolute;
   width: 0;
@@ -59,7 +76,7 @@ Styleguide 2.25
   border-color: transparent;
   border-style: solid;
 }
-// Note: Deprecated .top-left, .top-right, .bottom-left, and .bottom-right as of v3.3.1
+
 .k-tooltip {
   &.top .k-tooltip__arrow {
     bottom: 0;
@@ -68,6 +85,7 @@ Styleguide 2.25
     border-width: $tooltip-arrow-width $tooltip-arrow-width 0;
     border-top-color: $tooltip-arrow-color;
   }
+
   &.top-left .k-tooltip__arrow {
     bottom: 0;
     right: $tooltip-arrow-width;
@@ -75,6 +93,7 @@ Styleguide 2.25
     border-width: $tooltip-arrow-width $tooltip-arrow-width 0;
     border-top-color: $tooltip-arrow-color;
   }
+
   &.top-right .k-tooltip__arrow {
     bottom: 0;
     left: $tooltip-arrow-width;
@@ -82,6 +101,7 @@ Styleguide 2.25
     border-width: $tooltip-arrow-width $tooltip-arrow-width 0;
     border-top-color: $tooltip-arrow-color;
   }
+
   &.right .k-tooltip__arrow {
     top: 50%;
     left: 0;
@@ -89,6 +109,7 @@ Styleguide 2.25
     border-width: $tooltip-arrow-width $tooltip-arrow-width $tooltip-arrow-width 0;
     border-right-color: $tooltip-arrow-color;
   }
+
   &.left .k-tooltip__arrow {
     top: 50%;
     right: 0;
@@ -96,6 +117,7 @@ Styleguide 2.25
     border-width: $tooltip-arrow-width 0 $tooltip-arrow-width $tooltip-arrow-width;
     border-left-color: $tooltip-arrow-color;
   }
+
   &.bottom .k-tooltip__arrow {
     top: 0;
     left: 50%;
@@ -103,6 +125,7 @@ Styleguide 2.25
     border-width: 0 $tooltip-arrow-width $tooltip-arrow-width;
     border-bottom-color: $tooltip-arrow-color;
   }
+
   &.bottom-left .k-tooltip__arrow {
     top: 0;
     right: $tooltip-arrow-width;
@@ -110,6 +133,7 @@ Styleguide 2.25
     border-width: 0 $tooltip-arrow-width $tooltip-arrow-width;
     border-bottom-color: $tooltip-arrow-color;
   }
+
   &.bottom-right .k-tooltip__arrow {
     top: 0;
     left: $tooltip-arrow-width;

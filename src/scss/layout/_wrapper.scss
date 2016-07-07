@@ -15,15 +15,9 @@ Styleguide 3.2
 
 */
 
-/* Faking flexbox on older browsers by using table styling */
 
 .k-wrapper {
   position: relative;
-
-  @include breakpoint($desktop) {
-    display: table;
-    width: 100%;
-  }
 
 
   /* When flexbox is in use */
@@ -42,6 +36,7 @@ Styleguide 3.2
  *
  * 1. Hide overflowing when menu is toggled
  * 2. Set back to auto when screen is wide enough
+ * 3. Hide all overflow when resizing to avoid jumpy layout
  */
 
 .k-is-opened-left,
@@ -53,6 +48,6 @@ Styleguide 3.2
   }
 
   @include resizing {
-    overflow: hidden;
+    overflow: hidden; /* 3 */
   }
 }

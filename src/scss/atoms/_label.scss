@@ -18,8 +18,8 @@ label {
   display: inline-block;
   vertical-align: middle;
   max-width: 100%; /* 1 */
-  margin-bottom: 5px;
-  font-weight: bold;
+  margin-bottom: $spacing-tiny;
+  font-weight: $bold;
 
   &:last-child {
     margin-bottom: 0;

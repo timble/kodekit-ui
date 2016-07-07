@@ -35,11 +35,11 @@ Styleguide 3.7
   padding: $spacing ($spacing / 2);
 
   /* When flexbox is in use */
-
   @include flexbox {
     flex: 0 0 auto;
   }
 
+  /* When resizing */
   @include resizing {
     overflow: hidden;
   }

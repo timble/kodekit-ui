@@ -36,6 +36,7 @@ Styleguide 2.17
     border-radius: $input-border-radius;
     background: white;
 
+
     /* Hiding the input but keeping accessible */
 
     input[type=radio] {
@@ -125,8 +126,6 @@ Styleguide 2.17
 }
 
 
-
-
 /*
 Boolean list
 
@@ -148,7 +147,6 @@ markup:
 Styleguide 2.17.1
 
 */
-
 
 /**
  * Check if :checked is supported using modernizr
@@ -358,6 +356,11 @@ Styleguide 2.17.1
     }
   }
 }
+
+
+/**
+ * RTL styling
+ */
 
 @include modernizr-rtl('.k-checked') {
   .k-booleanlist {

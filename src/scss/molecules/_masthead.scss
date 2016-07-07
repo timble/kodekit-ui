@@ -25,14 +25,6 @@ Styleguide 2.14
   font-size: $font-size-large;
 
 
-  /* Faking flexbox for older browsers */
-
-  @include breakpoint($desktop) {
-    width: 100%;
-    display: table;
-  }
-
-
   /* When flexbox is in use */
 
   @include flexbox {

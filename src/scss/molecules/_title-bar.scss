@@ -17,7 +17,6 @@ Styleguide 2.23
 
 */
 
-
 /**
  * 1. Set the z-index higher than the menus
  * 2. Setting a background so container will fall nicely over the sidebar
@@ -110,11 +109,15 @@ Styleguide 2.23
 }
 
 
-/* Titlebar contents */
+/**
+ * Titlebar contents
+ *
+ * 1. Also cover the bottom border
+ */
 
 .k-title-bar {
   .k-off-canvas-overlay {
-    bottom: -1px; /* Also cover the bottom border */
+    bottom: -1px; /* 1 */
   }
 
   .k-off-canvas-menu-toggle-holder,
@@ -141,7 +144,6 @@ Styleguide 2.23
     }
   }
 }
-
 
 
 /*

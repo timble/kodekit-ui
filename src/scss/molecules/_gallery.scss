@@ -40,10 +40,7 @@ Styleguide 2.10
 
 */
 
-
 .k-gallery-container {
-  background: $grid-background;
-
   @include flexbox {
     display: flex;
     flex-direction: column;
@@ -53,7 +50,6 @@ Styleguide 2.10
 }
 
 .k-gallery {
-  background: $grid-background;
   padding: $grid-spacing / 2;
   overflow: auto;
 
@@ -81,10 +77,18 @@ Styleguide 2.10
     float: right;
   }
 
-  // Set breakpoints
+
+  /**
+   * Set breakpoints
+   */
+
   @include setGridBreakpoint;
 
-  // Selected styling
+
+  /**
+   * Selected styling
+   */
+
   &.k-is-selected {
     .k-card__title {
       background: $color-accent;
@@ -110,7 +114,11 @@ Styleguide 2.10
   }
 }
 
-/* Make sure that the files are separated from the folders */
+
+/**
+ * Make sure that the files are separated from the folders
+ */
+
 .k-gallery__item--folder + .k-gallery__item--file {
   clear: left;
 }

@@ -30,9 +30,12 @@ Styleguide 3.4
   -webkit-overflow-scrolling: touch;
 
 
+  /* When resizing */
+
   @include resizing {
     overflow: hidden;
   }
+
 
   /* Faking flexbox on older browsers by using table styling */
 
@@ -115,7 +118,7 @@ Styleguide 3.4
 }
 
 
-/* When sidebar is toggled */
+/* When left sidebar is toggled */
 
 .k-is-opened-left {
   .k-sidebar-left {
@@ -149,7 +152,7 @@ Styleguide 3.4
 }
 
 
-/* When sidebar is toggled */
+/* When right sidebar is toggled */
 
 .k-is-opened-right {
   .k-sidebar-right {

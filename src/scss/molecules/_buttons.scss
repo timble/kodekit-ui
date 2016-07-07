@@ -26,7 +26,6 @@ Styleguide 2.3
 
 */
 
-
 /*
 Button states
 
@@ -47,20 +46,25 @@ Styleguide 2.3.1
 
 */
 
+/**
+ * 1. For input.k-button
+ * 2. Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+ */
+
 .k-button {
   display: inline-block;
-  margin-bottom: 0; // For input.k-button
+  margin-bottom: 0; /* 1 */
   font-weight: $regular;
   text-align: center;
   vertical-align: middle;
   touch-action: manipulation;
   cursor: pointer;
-  background-image: none; /* Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214 */
+  background-image: none; /* 2 */
   border: 1px solid transparent;
   white-space: nowrap;
   box-shadow: none;
   text-shadow: none;
-  padding: .35em .8em;
+  padding: 0.35em 0.8em;
   font-size: $font-size;
   line-height: 21px;
   border-radius: $radius;
@@ -95,9 +99,10 @@ Styleguide 2.3.1
   &[disabled],
   &.k-is-disabled {
     cursor: $cursor-disabled;
-    opacity: .65;
+    opacity: 0.65;
   }
 }
+
 
 /**
  * 1. Remove underline when button is an `<a>` element
@@ -143,6 +148,7 @@ Styleguide 2.3.1
 
 
 /* Link buttons */
+
 .k-button--link {
   color: $link-color;
   font-weight: normal;
@@ -193,17 +199,16 @@ Styleguide 2.3.1
 
 
 /* Sizes */
+
 .k-button--large {
   font-size: $font-size--large;
   line-height: $line-height--large;
 }
 
-
 .k-button--small {
   font-size: $font-size--small;
   line-height: $line-height--small;
 }
-
 
 .k-button--tiny {
   font-size: $font-size--tiny;
@@ -227,7 +232,6 @@ input[type="button"] {
     width: 100%;
   }
 }
-
 
 
 /*
@@ -256,7 +260,9 @@ Styleguide 2.3.2
     float: left;
     margin: 0;
 
+
     /* Bring the "active" button to the front */
+
     &:hover,
     &:focus,
     &:active,
@@ -265,7 +271,9 @@ Styleguide 2.3.2
     }
   }
 
+
   /* Prevent double borders when buttons are next to each other */
+
   .k-button + .k-button,
   .k-button + .k-button-group,
   .k-button-group + .k-button,
@@ -288,5 +296,4 @@ Styleguide 2.3.2
   & > .k-button:last-child:not(:first-child) {
     @include border-left-radius(0);
   }
-
 }

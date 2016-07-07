@@ -509,10 +509,9 @@ $empty-state-color:        $color-type !default;
 // Grid
 // ==========================================================================
 
-$grid-background:   colorpicker(primary, 6) !default;
-$grid-itemWidth:    140px !default;
-$grid-spacing:      16px !default;
-$grid-width:        2560px !default;
+$grid-itemWidth:  140px !default;
+$grid-spacing:    16px !default;
+$grid-width:      2560px !default;
 
 
 // Tabs
@@ -719,6 +718,8 @@ $input-group-addon-bg:           $gray-lighter !default;
 $input-group-addon-border-color: $input-border !default;
 
 $cursor-disabled:                not-allowed !default;
+
+
 
 // Dropdowns
 // ==========================================================================

@@ -53,23 +53,10 @@
 
 .koowa {
 
-  /* Border-box sizing */
   @import "../utilities/boxsizing";
-
-
-  /* Namespaced Normalize */
   @import "../utilities/normalize";
-
-
-  /* Layout */
   @import "../layout/layout";
-
-
-  /* Atoms */
   @import "../atoms/atoms";
-
-
-  /* Molecules */
   @import "../molecules/molecules";
 
 

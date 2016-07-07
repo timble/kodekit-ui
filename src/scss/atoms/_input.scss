@@ -2,39 +2,40 @@
  * Input
  *
  * Normalize form controls
+ *
+ * 1. Override content-box in Normalize (* isn't specific enough)
+ * 2. Position radios and checkboxes better
+ * 3. Make range inputs behave like textual form controls
+ * 4. Focus for file, radio, and checkbox
+ * 5. Better sized because of box-sizing
+ * 6. Make multiple select elements height not fixed
  */
 
-/* Override content-box in Normalize (* isn't specific enough) */
 input[type="search"] {
-  box-sizing: border-box;
+  box-sizing: border-box; /* 1 */
 }
 
-/* Position radios and checkboxes better */
 input[type="radio"],
 input[type="checkbox"] {
-  margin: 4px 0 0;
-  margin-top: 1px \9; // IE8-9
-  line-height: normal;
+  margin: 4px 0 0; /* 2 */
+  line-height: normal; /* 2 */
 }
 
 input[type="file"] {
-  display: block;
+  display: block; /* 2 */
 }
 
-/* Make range inputs behave like textual form controls */
 input[type="range"] {
-  display: block;
-  width: 100%;
+  display: block; /* 3 */
+  width: 100%; /* 3 */
 }
 
-/* Focus for file, radio, and checkbox */
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  @include tab-focus;
+  @include tab-focus; /* 4 */
 }
 
-/* Better sized because of box-sizing */
 select,
 textarea,
 input[type="text"],
@@ -52,11 +53,10 @@ input[type="search"],
 input[type="tel"],
 input[type="color"],
 .uneditable-input {
-  height: 32px;
+  height: 32px; /* 5 */
 }
 
-/* Make multiple select elements height not fixed */
 select[multiple],
 select[size] {
-  height: auto;
+  height: auto; /* 6 */
 }

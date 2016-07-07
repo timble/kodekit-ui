@@ -73,12 +73,14 @@
 
 
 /* Add padding to bottom of the field */
+
 @at-root :root:root:root .margin-bottom--small {
   padding-bottom: $spacing-small;
 }
 
 
 /* Hide the modal holders by default */
+
 .k-dynamic-content-holder.k-dynamic-content-holder.k-dynamic-content-holder {
   display: none;
 }

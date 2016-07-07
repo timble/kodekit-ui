@@ -1,8 +1,10 @@
 /*
 Card
 
-Card
+Options
 - Display either an image or an icon
+- Display either with or without title
+- Only display a title
 
 markup:
 <!-- Preview -->
@@ -23,9 +25,7 @@ Styleguide 2.4
 */
 
 /*
-Card (image)
-
-- Display image
+Card with image
 
 markup:
 <!-- Preview -->
@@ -46,9 +46,7 @@ Styleguide 2.4.1
 */
 
 /*
-Card (icon)
-
-- Display image
+Card with icon
 
 markup:
 <!-- Preview -->
@@ -68,10 +66,7 @@ Styleguide 2.4.2
 
 */
 
-
 /*
-Card with title
-
 Card with title
 
 markup:
@@ -95,11 +90,8 @@ Styleguide 2.4.3
 
 */
 
-
 /*
-Card with text only
-
-Card with text only
+Card with title only
 
 markup:
 <!-- Preview -->
@@ -132,9 +124,15 @@ Styleguide 2.4.4
   font-size: 14px;
   border: 1px solid #ddd;
 
+
+  /**
+   * 1. This is the <a> so put color here
+   * 2. This is the <a> so put cursor here
+   */
+
   a#{&} {
-    color: $color-accent; // This is the <a> so put color here
-    cursor: pointer; // This is the <a> so put cursor here
+    color: $color-accent; /* 1 */
+    cursor: pointer; /* 2 */
   }
 }
 
@@ -148,6 +146,11 @@ Styleguide 2.4.4
   overflow: hidden;
 }
 
+
+/**
+ * 1. Space images with 1px
+ */
+
 .k-card__preview-content {
   width: 100%;
   height: 100%;
@@ -158,7 +161,7 @@ Styleguide 2.4.4
   text-align: center;
   font-size: 0;
   white-space: nowrap;
-  padding: 1px; // space images with 1px
+  padding: 1px; /* 1 */
 
   &:before {
     content: ' ';

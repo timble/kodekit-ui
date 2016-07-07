@@ -39,10 +39,6 @@ Styleguide 2.2
 
 */
 
-
-/* Parent element
-   ========================================================================== */
-
 /**
  * 1. Scroll when items don't fit parent anymore
  * 2. Hide scroll when resizing to avoid weird jumps on OSX
@@ -62,13 +58,7 @@ Styleguide 2.2
   @include flexbox(0, 0) {
     flex: 0 0 auto; /* 3 */
   }
-}
 
-
-/* Breadcrumb contents
-   ========================================================================== */
-
-.k-breadcrumb {
 
   /**
    * List

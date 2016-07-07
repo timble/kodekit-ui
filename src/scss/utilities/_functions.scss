@@ -3,7 +3,6 @@
 // ==========================================================================
 
 
-
 // Lighten a color with a certain percentage
 // Doing this by using a function makes sure we can change all the 'lighten'
 // values in the whole project at once.
@@ -21,7 +20,6 @@
 }
 
 
-
 // Darken a color with a certain percentage
 // Doing this by using a function makes sure we can change all the 'darken'
 // values in the whole project at once.
@@ -37,7 +35,6 @@
 @function darkest($color, $percentage: $darkest-percentage) {
   @return darken($color, $percentage)
 }
-
 
 
 // Colorpicker function

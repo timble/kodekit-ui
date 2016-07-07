@@ -28,7 +28,7 @@ Styleguide 2.6
 /*
 Dropup
 
-Drop it up when there's no room anymore below
+Drop it up when there's no room below anymore
 
 markup:
 <div class="k-dropdown k-dropdown--dropup">
@@ -78,8 +78,9 @@ Styleguide 2.6.2
 
 */
 
-
-/* Dropdown arrow/caret */
+/**
+ * Dropdown arrow/caret
+ */
 
 .k-caret {
   display: inline-block;
@@ -93,7 +94,9 @@ Styleguide 2.6.2
 }
 
 
-/* The dropdown wrapper (div) */
+/**
+ * The dropdown wrapper (div)
+ */
 
 .k-dropdown {
   position: relative;
@@ -145,6 +148,7 @@ Styleguide 2.6.2
 
 
   /* RTL */
+
   @include rtl {
     left: auto;
     right: 0;
@@ -153,7 +157,9 @@ Styleguide 2.6.2
 
 
 
-/* Dividers (basically an hr) within the dropdown */
+/**
+ * Dividers (basically an hr) within the dropdown
+ */
 
 .k-dropdown__divider {
   height: 1px;
@@ -201,12 +207,18 @@ Styleguide 2.6.2
     color: $dropdown-link-disabled-color;
   }
 
-  /* Nuke hover/focus effects */
+
+  /**
+   * Nuke hover/focus effects
+   *
+   * 1. Remove CSS gradient
+   */
+
   &:hover,
   &:focus {
     text-decoration: none;
     background-color: transparent;
-    background-image: none; // Remove CSS gradient
+    background-image: none; /* 1 */
     cursor: $cursor-disabled;
   }
 }
@@ -216,12 +228,16 @@ Styleguide 2.6.2
 
 .k-dropdown.k-is-open {
 
+
   /* Show the menu */
+
   & > .k-dropdown__menu {
     display: block;
   }
 
+
   /* Remove the outline when :focus is triggered */
+
   & > a {
     outline: 0;
   }
@@ -248,23 +264,24 @@ Styleguide 2.6.2
 
 .k-dropdown--dropup {
 
+
   /* Reverse the caret */
+
   .k-caret {
     border-top: 0;
     border-bottom: $caret-width-base dashed;
     content: "";
   }
 
+
   /* Different positioning for bottom up menu */
+
   .k-dropdown__menu {
     top: auto;
     bottom: 100%;
     margin-bottom: 2px;
   }
 }
-
-
-
 
 
 /*

@@ -17,7 +17,6 @@ Styleguide 2.15
 
 */
 
-/* Magnific Popup CSS */
 .mfp-bg {
   top: 0;
   left: 0;
@@ -48,9 +47,6 @@ Styleguide 2.15
     left: auto;
     right: 0;
   }
-
-  // Importing the well here so the advanced permissions popup looks nice
-  @import "wells";
 }
 
 .mfp-container {
@@ -733,8 +729,6 @@ img.mfp-img {
   }
 }
 
-
-// @TODO: Added for LOGman, also refactor when working on DOCman
 
 .k-modal {
   background: white;

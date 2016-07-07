@@ -12,7 +12,6 @@ Styleguide 2.26
 */
 
 // @TODO: Styling like in docman with folders and correct spacers
-// @TODO: document this and put it in the styleguide / refactor
 
 .k-tree {
   @include clearfix;
@@ -37,13 +36,22 @@ Styleguide 2.26
 .jqtree-tree {
   @include clearfix;
 
-  /* Reset default ul li styling */
+
+  /**
+   * Reset default ul li styling
+   */
+
   &, ul {
     @include reset;
     @include clearfix;
     float: left;
     min-width: 100%;
   }
+
+
+  /**
+   * RTL styling
+   */
 
   @include rtl {
     &, ul {

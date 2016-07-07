@@ -2,33 +2,37 @@
 Toolbar
 
 Default toolbar
+- Always add an icon in front of the text since icons are used as only content on mobile
 
 Markup:
 <div class="k-toolbar">
-    <span class="k-toolbar-buttons">
-        <sg-insert>2.3-3</sg-insert>
-        <sg-insert>2.3-1</sg-insert>
-        <sg-insert>2.3.1-2</sg-insert>
-        <sg-insert>2.3.1-2</sg-insert>
-    </span>
+    <button type="button" class="k-button k-button--success">
+        <sg-insert>2.12-171</sg-insert>
+        Primary action
+    </button>
+    <button type="button" class="k-button k-button--default">
+        <sg-insert>2.12-164</sg-insert>
+        Other action
+    </button>
+    <button type="button" class="k-button k-button--default" disabled>
+        <sg-insert>2.12-113</sg-insert>
+        Disabled action
+    </button>
+    <button type="button" class="k-button k-button--default" disabled>
+        <sg-insert>2.12-52</sg-insert>
+        Disabled action
+    </button>
 </div><!-- .k-toolbar -->
 
-
 Styleguide 2.24
+
 */
 
 .k-toolbar {
   @include border(bottom, $toolbar-border);
   background: $toolbar-background;
   min-height: $toolbar-height;
-
-
-  /* Faking flexbox for older browsers */
-
-  @include breakpoint($desktop) {
-    width: 100%;
-    display: table;
-  }
+  padding-bottom: 10px;
 
 
   /* When flexbox is in use */
@@ -39,11 +43,14 @@ Styleguide 2.24
 }
 
 
-/* Toolbar contents */
+/**
+ * Toolbar contents
+ */
 
 .k-toolbar {
   .k-button {
-    margin: 10px 0 10px 10px;
+    margin: 10px 0 0 10px;
+
 
     /**
      * Make buttons square
@@ -63,9 +70,10 @@ Styleguide 2.24
 
   @include rtl {
     .k-button {
-      margin: 10px 10px 10px 0;
+      margin: 10px 10px 0 0;
     }
   }
+
 
   /**
    * Position the icons
