@@ -16,10 +16,10 @@ Styleguide 1.1
 */
 
 a {
-  color: $color-type;
+  color: $link-color;
 
   &:focus,
   &:hover {
-    color: $color-type;
+    color: $link-color;
   }
 }

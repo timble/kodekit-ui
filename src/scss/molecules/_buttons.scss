@@ -64,12 +64,11 @@ Styleguide 2.3.1
   white-space: nowrap;
   box-shadow: none;
   text-shadow: none;
-  padding: 0.35em 0.8em;
-  font-size: $font-size;
-  line-height: 21px;
-  border-radius: $radius;
   user-select: none;
+  border-radius: $border-radius;
   margin-right: $spacing-tiny;
+  line-height: $line-height;
+  padding: $spacing-base-vertical $spacing-base-horizontal;
 
   &:last-child {
     margin-right: 0;
@@ -150,7 +149,7 @@ Styleguide 2.3.1
 /* Link buttons */
 
 .k-button--link {
-  color: $link-color;
+  color: $color-type;
   font-weight: normal;
   border-radius: 0;
   padding-left: 0;
@@ -174,8 +173,8 @@ Styleguide 2.3.1
 
   &:hover,
   &:focus {
-    color: $link-hover-color;
-    text-decoration: $link-hover-decoration;
+    color: $color-type;
+    text-decoration: underline;
     background-color: transparent;
   }
 
@@ -198,21 +197,40 @@ Styleguide 2.3.1
 }
 
 
-/* Sizes */
+/*
+Button sizes
 
-.k-button--large {
-  font-size: $font-size--large;
-  line-height: $line-height--large;
+default - Default
+.k-button--tiny - Tiny
+.k-button--small - Small
+.k-button--large - Large
+
+markup:
+<button type="button" class="k-button k-button--default {$modifiers}">Button text</button>
+
+Styleguide 2.3.2
+
+*/
+
+.k-button--tiny {
+  border-radius: $border-radius-small;
+  font-size: $font-size-tiny;
+  line-height: $line-height-tiny;
+  padding: $spacing-tiny-vertical $spacing-tiny-horizontal;
 }
 
 .k-button--small {
-  font-size: $font-size--small;
-  line-height: $line-height--small;
+  border-radius: $border-radius-small;
+  font-size: $font-size-small;
+  line-height: $line-height-small;
+  padding: $spacing-small-vertical $spacing-small-horizontal;
 }
 
-.k-button--tiny {
-  font-size: $font-size--tiny;
-  line-height: $line-height--tiny;
+.k-button--large {
+  border-radius: $border-radius-large;
+  font-size: $font-size-large;
+  line-height: $line-height-large;
+  padding: $spacing-large-vertical $spacing-large-horizontal;
 }
 
 
@@ -246,7 +264,7 @@ markup:
     <sg-insert>2.3-1</sg-insert>
 </div>
 
-Styleguide 2.3.2
+Styleguide 2.3.3
 
 */
 

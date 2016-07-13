@@ -2,9 +2,7 @@
 Tree
 
 markup:
-<div class="k-tree">
-    <div id="k-jqtree"></div>
-</div>
+<div class="k-tree" id="k-jqtree"></div>
 <script>Add something here?</script>
 
 Styleguide 2.26
@@ -69,7 +67,6 @@ Styleguide 2.26
   display: block;
   width: 100%;
   font-size: 0;
-  line-height: 0;
   padding: 0;
   white-space: nowrap;
   height: auto;
@@ -82,7 +79,7 @@ Styleguide 2.26
 
   .jqtree-toggler {
     height: 0;
-    padding-top: 30px;
+    padding-top: $tree-size;
     overflow: hidden;
     color: inherit;
   }
@@ -93,38 +90,33 @@ Styleguide 2.26
 .jqtree-icon,
 .jqtree-title {
   display: inline-block;
-  font-size: 12px;
-  height: 30px;
-  line-height: 30px;
+  font-size: $font-size;
+  line-height: $tree-size;
+  height: $tree-size;
   vertical-align: middle;
 }
 
 .jqtree-whitespace,
 .jqtree-toggler,
 .jqtree-icon {
-  width: 18px;
+  width: $tree-size;
   text-align: center;
-}
-
-.jqtree-title {
-  padding: 0 0 0 5px;
-
-  @include rtl {
-    padding: 0 5px 0 0;
-  }
 }
 
 .jqtree-toggler {
   @include psuedo(before) {
     top: 50%;
-    margin-top: -2px;
-    left: 4px;
-    @include caret(bottom);
+    left: 50%;
+    margin-top: -(round($tree-toggle-size / 2) - 1px);
+    margin-left: -(round($tree-toggle-size * 2));
+    @include caret(bottom, $tree-toggle-size);
     @include transition;
 
     @include rtl {
       left: auto;
-      right: 4px;
+      right: 50%;
+      margin-left: auto;
+      margin-right: -(round($tree-toggle-size * 2));
     }
   }
 

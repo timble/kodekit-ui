@@ -166,7 +166,7 @@ Styleguide 2.2
         flex: 0 0 auto; /* 1 */
       }
 
-      & ~ li {
+      &:not(.k-breadcrumb__home) ~ li {
         @include flexbox(0, 0) {
           flex: 0 1 auto; /* 2 */
         }

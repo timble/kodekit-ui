@@ -9,13 +9,19 @@ markup:
     <li>
         <a href="#tab2" data-toggle="tab">Tab 2</a>
     </li>
+     <li class="k-is-disabled">
+        <a href="#tab3" data-toggle="tab">Tab 3 (disabled)</a>
+    </li>
 </ul>
 <div class="k-tabs-content">
     <div id="tab1" class="k-tab k-is-active">
-        Content
+        Content tab 1
     </div>
     <div id="tab2" class="k-tab">
-        Content
+        Content tab 2
+    </div>
+    <div id="tab3" class="k-tab">
+        Content tab 3
     </div>
 </div>
 
@@ -46,7 +52,7 @@ Styleguide 2.22
       margin-right: 2px;
       line-height: $line-height-base;
       border: 1px solid transparent;
-      border-radius: $border-radius-base $border-radius-base 0 0;
+      border-radius: $border-radius $border-radius 0 0;
       text-decoration: none;
 
       &:hover,
@@ -64,10 +70,12 @@ Styleguide 2.22
 
     &.k-is-disabled > a {
       color: $nav-tabs-disabled-link-color;
+      cursor: $cursor-disabled;
+      pointer-events: none;
 
       &:hover,
       &:focus {
-        color: $nav-tabs-disabled-link-hover-color;
+        color: inherit;
         text-decoration: none;
         background-color: transparent;
         cursor: $cursor-disabled;
@@ -102,7 +110,7 @@ Styleguide 2.22
     &:hover,
     &:focus {
       background-color: $nav-tabs-link-hover-bg;
-      border-color: $link-color;
+      border-color: $color-accent;
     }
   }
 }

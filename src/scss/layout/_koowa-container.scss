@@ -20,8 +20,7 @@ Styleguide 3.1
  *    to large for the koowa container. The reason we don't use min-width is
  *    because if the content is only 300px we don't need horizontal scrollbars
  * 2. Reset the max-width when viewport is as large as minwidth
- * 3. Default font settings
- * 4. Default styling
+ * 3. Default styling
  */
 
 &.koowa-container {
@@ -32,10 +31,8 @@ Styleguide 3.1
   overflow: hidden;
   padding: $koowa-padding;
 
-  font-size: $font-size; /* 3 */
-  line-height: $line-height; /* 3 */
-  background: $koowa-background; /* 4 */
-  color: $color-type; /* 4 */
+  background: $koowa-background; /* 3 */
+  color: $color-type; /* 3 */
 
   -webkit-font-smoothing: $webkit-font-smoothing;
   -moz-osx-font-smoothing: $firefox-font-smoothing;

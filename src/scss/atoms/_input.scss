@@ -8,7 +8,8 @@
  * 3. Make range inputs behave like textual form controls
  * 4. Focus for file, radio, and checkbox
  * 5. Better sized because of box-sizing
- * 6. Make multiple select elements height not fixed
+ * 6. Set font-size to 16px on touch supported devices so browser won't automatically zoom
+ * 7. Make multiple select elements height not fixed
  */
 
 input[type="search"] {
@@ -53,10 +54,18 @@ input[type="search"],
 input[type="tel"],
 input[type="color"],
 .uneditable-input {
-  height: 32px; /* 5 */
+  height: $input-height-base; /* 5 */
+
+  @include modernizr('.k-touchevents') {
+    &:focus,
+    &:active {
+      font-size: 16px !important; /* 6 */
+    }
+  }
+
 }
 
 select[multiple],
 select[size] {
-  height: auto; /* 6 */
+  height: auto; /* 7 */
 }

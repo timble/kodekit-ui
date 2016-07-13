@@ -307,10 +307,12 @@ Icon sizes
 
 Different sizes for icons
 
-.k-icon--size-16 - 16px
-.k-icon--size-32 - 32px
-.k-icon--size-48 - 48px
-.k-icon--size-64 - 64px
+.k-icon--size-tiny - 10px
+.k-icon--size-small - 13px
+.k-icon--size-default - 16px
+.k-icon--size-large - 32px
+.k-icon--size-xlarge - 48px
+.k-icon--size-huge - 64px
 
 markup:
 <span class="k-icon-document-default {$modifiers}" aria-hidden="true"></span>
@@ -322,18 +324,26 @@ Styleguide 2.12.3
 
 */
 
-.k-icon--size-16 {
-  font-size: 16px;
+.k-icon--size-tiny {
+  font-size: $icon-size-tiny;
 }
 
-.k-icon--size-32 {
-  font-size: 32px;
+.k-icon--size-small {
+  font-size: $icon-size-small;
 }
 
-.k-icon--size-48 {
-  font-size: 48px;
+.k-icon--size-default {
+  font-size: $icon-size;
 }
 
-.k-icon--size-64 {
-  font-size: 64px;
+.k-icon--size-large {
+  font-size: $icon-size-large;
+}
+
+.k-icon--size-xlarge {
+  font-size: $icon-size-xlarge;
+}
+
+.k-icon--size-huge {
+  font-size: $icon-size-huge;
 }

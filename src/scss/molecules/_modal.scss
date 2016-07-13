@@ -192,9 +192,7 @@ button::-moz-focus-inner {
   opacity: 0.65;
   padding: 0 0 18px 10px;
   color: white;
-  font-style: normal;
-  font-size: 28px;
-  font-family: Arial, Baskerville, monospace;
+  font-size: $font-size-huge;
 
   @include rtl-outside-koowa {
     right: auto;
@@ -239,8 +237,6 @@ button::-moz-focus-inner {
   top: 0;
   right: 0;
   color: #cccccc;
-  font-size: 12px;
-  line-height: 18px;
 
   @include rtl-outside-koowa {
     right: auto;
@@ -487,8 +483,6 @@ img.mfp-img {
 .mfp-figure small {
   color: #bdbdbd;
   display: block;
-  font-size: 12px;
-  line-height: 14px;
 }
 
 .mfp-image-holder .mfp-content {
@@ -661,9 +655,9 @@ img.mfp-img {
       text-align: center;
       width: 40px;
       height: 40px;
-      line-height: 40px;
       top: -40px;
-      font-size: 24px;
+      font-size: $font-size-huge;
+      line-height: $line-height-huge;
       right: -14px;
 
       @include rtl-outside-koowa {
@@ -733,7 +727,7 @@ img.mfp-img {
 .k-modal {
   background: white;
   border-radius: 3px;
-  box-shadow: 0 0 5px rgba(0,0,0,.5);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
 .k-modal--inline {

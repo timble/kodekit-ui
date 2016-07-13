@@ -22,7 +22,7 @@ Styleguide 3.3
   clear: both; /* 1 */
   margin: 0;
   overflow: hidden;
-  @include border(bottom, $sidebar-border);
+  @include border(bottom, $content-border);
 
 
   /* Faking flexbox on older browsers by using table styling */

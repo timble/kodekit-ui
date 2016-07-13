@@ -7,7 +7,7 @@
 
 .fade {
   opacity: 0;
-  @include transition(opacity, .5s, $transition-easing);
+  @include transition(opacity, 0.5s, $transition-easing);
 
   &.in {
     opacity: 1;
@@ -34,5 +34,5 @@ tbody.collapse.in {
   position: relative;
   height: 0;
   overflow: hidden;
-  @include transition(opacity, .5s, $transition-easing);
+  @include transition(opacity, 0.5s, $transition-easing);
 }

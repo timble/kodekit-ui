@@ -27,24 +27,16 @@ Styleguide 1.6
 legend {
   width: 100%;
   padding: 0;
-  color: $legend-color;
+  color: $color-type;
   border: 0;
   display: block;
-  margin-top: 0;
-  margin-bottom: $spacing;
+  margin: 0;
   border: none;
   border-bottom: 1px solid darker($component-background);
   padding-top: $spacing;
   padding-bottom: $spacing-tiny;
-  font-size: $font-size--huge;
-  line-height: $line-height--huge;
+  font-size: $font-size-huge;
+  line-height: $line-height-huge;
   font-weight: $regular;
-
-  &:first-child {
-    margin-top: 0; /* 1 */
-  }
-
-  &:last-child {
-    margin-bottom: 0; /* 2 */
-  }
+  @include content-block;
 }

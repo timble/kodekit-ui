@@ -23,11 +23,7 @@ Styleguide 2.1
 
 .k-alert {
   padding: $alert-padding;
-  margin-bottom: $line-height-computed;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
+  @include content-block;
 }
 
 

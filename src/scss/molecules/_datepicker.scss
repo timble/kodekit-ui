@@ -32,9 +32,6 @@ Styleguide 2.5
 */
 
 .datepicker {
-  font-family: $font-family;
-  font-size: $font-size;
-  line-height: $line-height;
   direction: ltr;
 
   &.datepicker-inline {
@@ -60,7 +57,7 @@ Styleguide 2.5
       border-right: 7px solid transparent;
       border-bottom: 7px solid #ccc;
       border-top: 0;
-      border-bottom-color: rgba(0, 0, 0, .2);
+      border-bottom-color: rgba(0, 0, 0, 0.2);
       position: absolute;
     }
     &:after {
@@ -150,19 +147,19 @@ Styleguide 2.5
 
   table tr td {
     &.day:hover {
-      background: $gray-lighter;
+      background: $color-primary-3;
       cursor: pointer;
     }
 
     &.old,
     &.new {
-      color: $gray-light;
+      color: $color-secondary-2;
     }
 
     &.disabled,
     &.disabled:hover {
       background: none;
-      color: $gray-light;
+      color: $color-secondary-2;
       cursor: default;
     }
 
@@ -189,7 +186,7 @@ Styleguide 2.5
     &.range:hover,
     &.range.disabled,
     &.range.disabled:hover {
-      background: $gray-lighter;
+      background: $color-primary-3;
       border-radius: 0;
     }
 
@@ -197,7 +194,7 @@ Styleguide 2.5
     &.range.today:hover,
     &.range.today.disabled,
     &.range.today.disabled:hover {
-      $todayBackground: mix(orange, $gray-lighter, 50%);
+      $todayBackground: mix(orange, $color-primary-3, 50%);
       background: $todayBackground;
       border-radius: 0;
     }
@@ -207,8 +204,8 @@ Styleguide 2.5
     &.selected.disabled,
     &.selected.disabled:hover {
       color: #fff;
-      text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
-      background: lighten($gray-light, 10);
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+      background: lighten($color-secondary-2, 10);
     }
 
     &.active,
@@ -216,7 +213,7 @@ Styleguide 2.5
     &.active.disabled,
     &.active.disabled:hover {
       color: #fff;
-      text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
       background: $btn-primary-bg;
     }
 
@@ -231,13 +228,13 @@ Styleguide 2.5
       border-radius: 4px;
 
       &:hover {
-        background: $gray-lighter;
+        background: $color-primary-3;
       }
 
       &.disabled,
       &.disabled:hover {
         background: none;
-        color: $gray-light;
+        color: $color-secondary-2;
         cursor: default;
       }
 
@@ -246,13 +243,13 @@ Styleguide 2.5
       &.active.disabled,
       &.active.disabled:hover {
         color: #fff;
-        text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
         background: $btn-primary-bg;
       }
 
       &.old,
       &.new {
-        color: $gray-light;
+        color: $color-secondary-2;
       }
     }
   }
@@ -265,13 +262,13 @@ Styleguide 2.5
   tfoot tr th {
     cursor: pointer;
     &:hover {
-      background: $gray-lighter;
+      background: $color-primary-3;
     }
   }
 
   // Basic styling for calendar-week cells
   .cw {
-    font-size: 10px;
+    font-size: $font-size-small;
     width: 12px;
     padding: 0 2px 0 5px;
     vertical-align: middle;
@@ -319,7 +316,7 @@ Styleguide 2.5
     text-align: center;
     text-shadow: 0 1px 0 white;
     vertical-align: middle;
-    background-color: $gray-lighter;
+    background-color: $color-primary-3;
     border: 1px solid #ccc;
     margin-left: -5px;
     margin-right: -5px;

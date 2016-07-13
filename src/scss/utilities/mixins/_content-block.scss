@@ -1,0 +1,7 @@
+@mixin content-block($spacing: 1.5em) {
+  margin-bottom: $spacing;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

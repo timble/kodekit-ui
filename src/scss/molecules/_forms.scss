@@ -75,16 +75,16 @@ Styleguide 2.9.5
   display: block;
   width: 100%;
   height: $input-height-base; /* 1 */
-  padding: $padding-base-vertical $padding-base-horizontal;
-  font-size: 16px;
-  line-height: $line-height-base;
+  padding: $spacing-base-vertical $spacing-base-horizontal;
+  font-size: $font-size;
+  line-height: $line-height;
   color: $input-color;
   background-color: $input-bg;
   background-image: none; /* 2 */
   border: 1px solid $input-border;
   border-radius: $input-border-radius; /* 3 */
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 
 
   /* 4 */
@@ -190,10 +190,58 @@ input[type="search"] {
  */
 
 .k-form-group {
-  margin: 0 0 $spacing 0;
+  margin: 0;
+  @include content-block;
+}
 
-  &:last-child {
-    margin-bottom: 0;
+
+/**
+ * Form control sizing
+ *
+ * Build on `.k-form-control` with modifier classes to decrease or increase the
+ * height and font-size of form controls.
+ *
+ * The `.k-form-group-* k-form-control` variations are sadly duplicated to avoid the
+ * issue documented in https://github.com/twbs/bootstrap/issues/15074.
+ */
+
+.k-form-group--small {
+  .k-form-control {
+    font-size: $font-size-small;
+    height: $input-height-small;
+    padding: $spacing-small-vertical $spacing-small-horizontal;
+    line-height: $line-height-small;
+    border-radius: $border-radius-small;
+  }
+
+  select.k-form-control {
+    height: $input-height-small;
+    line-height: $input-height-small;
+  }
+
+  textarea.k-form-control,
+  select[multiple].k-form-control {
+    height: auto;
+  }
+}
+
+.k-form-group--large {
+  .k-form-control {
+    font-size: $font-size-large;
+    height: $input-height-large;
+    padding: $spacing-large-vertical $spacing-large-horizontal;
+    line-height: $line-height-large;
+    border-radius: $border-radius-large;
+  }
+
+  select.k-form-control {
+    height: $input-height-large;
+    line-height: $input-height-large;
+  }
+
+  textarea.k-form-control,
+  select[multiple].k-form-control {
+    height: auto;
   }
 }
 
@@ -247,7 +295,7 @@ Styleguide 2.9.4
     margin-top: -1px; /* 3 */
     margin-bottom: 2px; /* 3 */
     margin-left: 0;
-    margin-right: .33em;
+    margin-right: 0.33em;
     border: $form-option-border-size solid $form-option-border;
     padding: 0;
     background: $form-option-background;
@@ -327,7 +375,7 @@ Styleguide 2.9.4
 @include modernizr-rtl('.k-appearance.k-checked') {
   input[type="checkbox"],
   input[type="radio"] {
-    margin-left: .33em;
+    margin-left: 0.33em;
     margin-right: 0;
 
     &:before {
@@ -437,65 +485,8 @@ Styleguide 2.9.6
   display: inline-block;
   vertical-align: middle;
   max-width: 100%; /* 1 */
-  margin-bottom: 5px;
   font-weight: bold;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-
-/**
- * Form control sizing
- *
- * Build on `.k-form-control` with modifier classes to decrease or increase the
- * height and font-size of form controls.
- *
- * The `.k-form-group-* k-form-control` variations are sadly duplicated to avoid the
- * issue documented in https://github.com/twbs/bootstrap/issues/15074.
- */
-
-@include input-size('.input-sm', $input-height-small, $padding-small-vertical, $padding-small-horizontal, 16px, $line-height-small, $input-border-radius-small);
-.k-form-group--small {
-  .k-form-control {
-    height: $input-height-small;
-    padding: $padding-small-vertical $padding-small-horizontal;
-    font-size: $font-size-small;
-    line-height: $line-height-small;
-    border-radius: $input-border-radius-small;
-  }
-
-  select.k-form-control {
-    height: $input-height-small;
-    line-height: $input-height-small;
-  }
-
-  textarea.k-form-control,
-  select[multiple].k-form-control {
-    height: auto;
-  }
-}
-
-@include input-size('.input-lg', $input-height-large, $padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $input-border-radius-large);
-.k-form-group--large {
-  .k-form-control {
-    height: $input-height-large;
-    padding: $padding-large-vertical $padding-large-horizontal;
-    font-size: $font-size-large;
-    line-height: $line-height-large;
-    border-radius: $input-border-radius-large;
-  }
-
-  select.k-form-control {
-    height: $input-height-large;
-    line-height: $input-height-large;
-  }
-
-  textarea.k-form-control,
-  select[multiple].k-form-control {
-    height: auto;
-  }
+  @include content-block(5px);
 }
 
 
@@ -785,6 +776,17 @@ markup:
         <button class="k-button k-button--default" type="button">Button</button>
     </div>
 </div>
+<div class="k-input-group {$modifiers}">
+    <div class="k-input-group__addon">Addon</div>
+    <select class="k-form-control k-js-select2">
+        <option>Option</option>
+        <option>Option</option>
+        <option>Option</option>
+    </select>
+    <div class="k-input-group__button">
+        <button class="k-button k-button--default" type="button">Button</button>
+    </div>
+</div>
 
 Styleguide 2.9.8
 
@@ -802,6 +804,7 @@ Styleguide 2.9.8
 .k-input-group {
   position: relative; /* 1 */
   display: table;
+  width: 100%;
   border-collapse: separate; /* 2 */
 
   .k-form-control {
@@ -825,15 +828,58 @@ Styleguide 2.9.8
 
 /* Sizes */
 
-.k-input-group--large > .k-form-control,
-.k-input-group--large > .k-input-group__addon,
-.k-input-group--large > .k-input-group__button > .k-button {
-  @extend .input-lg;
+.k-input-group--large {
+  & > .k-form-control,
+  & > .select2-container--bootstrap .select2-selection--single,
+  & > .k-input-group__addon,
+  & > .k-input-group__button > .k-button {
+    height: $input-height-large;
+    padding: $spacing-large-vertical $spacing-large-horizontal;
+    font-size: $font-size-large;
+    line-height: $line-height-large;
+    border-radius: $border-radius-large;
+  }
+
+  & > .select2-container--bootstrap .select2-selection--single .select2-selection--rendered {
+    line-height: $line-height-large;
+  }
+
+  select.k-form-control {
+    height: $input-height-large;
+    line-height: $input-height-large;
+  }
+
+  textarea.k-form-control,
+  select[multiple].k-form-control {
+    height: auto;
+  }
 }
-.k-input-group--small > .k-form-control,
-.k-input-group--small > .k-input-group__addon,
-.k-input-group--small > .k-input-group__button > .k-button {
-  @extend .input-sm;
+
+.k-input-group--small {
+  & > .k-form-control,
+  & > .select2-container--bootstrap .select2-selection--single,
+  & > .k-input-group__addon,
+  & > .k-input-group__button > .k-button {
+    height: $input-height-small;
+    padding: $spacing-small-vertical $spacing-small-horizontal;
+    font-size: $font-size-small;
+    line-height: $line-height-small;
+    border-radius: $border-radius-small;
+  }
+
+  & > .select2-container--bootstrap .select2-selection--single .select2-selection--rendered {
+    line-height: $line-height-small;
+  }
+
+  select.k-form-control {
+    height: $input-height-small;
+    line-height: $input-height-small;
+  }
+
+  textarea.k-form-control,
+  select[multiple].k-form-control {
+    height: auto;
+  }
 }
 
 /* Input group parts */
@@ -845,6 +891,19 @@ Styleguide 2.9.8
 
   &:not(:first-child):not(:last-child) {
     border-radius: 0;
+  }
+}
+
+.k-input-group .select2-container {
+  &:not(:first-child):not(:last-child) {
+    .select2-selection--single {
+      border-radius: 0;
+    }
+  }
+
+  &.select2-container--open,
+  &.select2-container--focus {
+    z-index: 3;
   }
 }
 
@@ -866,30 +925,16 @@ Styleguide 2.9.8
 /* Text addon */
 
 .k-input-group__addon {
-  padding: $padding-base-vertical $padding-base-horizontal;
-  font-size: $font-size-base;
+  font-size: $font-size;
+  line-height: $line-height;
+  height: $input-height-base;
+  padding: $spacing-base-vertical $spacing-base-horizontal;
   font-weight: normal;
-  line-height: 1;
   color: $input-color;
   text-align: center;
   background-color: $input-group-addon-bg;
   border: 1px solid $input-group-addon-border-color;
   border-radius: $input-border-radius;
-
-
-  /* Sizing */
-
-  &.input-sm {
-    padding: $padding-small-vertical $padding-small-horizontal;
-    font-size: $font-size-small;
-    border-radius: $input-border-radius-small;
-  }
-
-  &.input-lg {
-    padding: $padding-large-vertical $padding-large-horizontal;
-    font-size: $font-size-large;
-    border-radius: $input-border-radius-large;
-  }
 
 
   /* Nuke default margins from checkboxes and radios to vertically center within. */
@@ -952,6 +997,7 @@ Styleguide 2.9.8
   /* 2 */
   > .k-button {
     position: relative;
+    font-size: $font-size;
 
     + .k-button {
       margin-left: -1px;
@@ -981,4 +1027,3 @@ Styleguide 2.9.8
     }
   }
 }
-

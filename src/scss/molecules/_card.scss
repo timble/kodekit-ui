@@ -109,19 +109,14 @@ Styleguide 2.4.4
 
 .k-card {
   width: 100%;
-  margin-bottom: 1.5em;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
+  @include content-block;
 }
 
 .k-card__body {
   @include transition;
   display: block;
   backface-visibility: visible;
-  background: colorpicker(primary, 5);
-  font-size: 14px;
+  background: $color-primary-6;
   border: 1px solid #ddd;
 
 

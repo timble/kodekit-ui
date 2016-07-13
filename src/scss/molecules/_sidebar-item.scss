@@ -106,9 +106,9 @@ Styleguide 2.20
       width: 20px;
       height: 20px;
       text-align: center;
-      line-height: 20px;
       vertical-align: middle;
-      font-size: 10px;
+      font-size: $font-size-tiny;
+      line-height: $line-height-tiny;
       cursor: pointer;
       @include transition;
     }
@@ -157,7 +157,8 @@ Styleguide 2.20.1
   padding: $spacing $spacing 0;
   font-weight: $bold;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: $font-size-small;
+  line-height: $line-height-small;
 }
 
 

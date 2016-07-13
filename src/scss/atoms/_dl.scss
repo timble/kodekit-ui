@@ -19,19 +19,9 @@ Styleguide 1.2
 
 */
 
-/**
- * 1. Default bottom-margin of 1.5 times the font-size
- * 2. Using single colon so it works in IE8 as well
- * 3. No bottom-margin for all the last-childs so parents can have bottom padding
- */
-
 dl {
   @include clearfix;
-  margin-bottom: 1.5em; /* 1 */
-
-  &:last-child { /* 2 */
-    margin-bottom: 0; /* 3 */
-  }
+  @include content-block;
 }
 
 dt {
@@ -45,9 +35,5 @@ dt {
 dd {
   @include reset;
   display: block;
-  margin-bottom: $spacing-tiny;
-
-  &:last-child {
-    margin-bottom: 0; /* 3 */
-  }
+  @include content-block($spacing-tiny);
 }

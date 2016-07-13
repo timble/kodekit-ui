@@ -271,6 +271,15 @@
             });
         }
 
+        var easter_egg = new Konami(function() {
+            $('html').css({
+                'font-family': 'Comic Sans MS',
+                'font-size': '20px',
+                'line-height': '30px'
+            }).addClass('konami');
+        });
+
     });
 
 })(kQuery);
+

@@ -27,8 +27,10 @@ Styleguide 2.19
   /* Set proper line-height so text is vertically centered */
 
   .select2-selection--single {
+    padding: $spacing-base-vertical $spacing-base-horizontal;
+
     .select2-selection__rendered {
-      line-height: $line-height-base;
+      line-height: $line-height;
     }
   }
 

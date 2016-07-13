@@ -92,11 +92,11 @@ Styleguide 2.13
 
   [class^="k-icon"] {
     display: inline-block;
-    margin-right: .75em;
+    margin-right: 0.75em;
 
     @include rtl {
       margin-right: auto;
-      margin-left: .75em;
+      margin-left: 0.75em;
     }
   }
 }

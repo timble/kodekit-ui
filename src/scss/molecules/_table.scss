@@ -356,8 +356,8 @@ Styleguide 2.21.3
 .k-table-container {
   small {
     display: block;
-    font-size: 11px;
-    line-height: 11px;
+    font-size: $font-size-small;
+    line-height: $line-height-small;
   }
 
   a {
@@ -375,7 +375,7 @@ Styleguide 2.21.3
 
   [class^="k-icon"] {
     vertical-align: baseline;
-    font-size: 16px;
+    font-size: $icon-size;
     line-height: 23px;
   }
 }
@@ -586,10 +586,11 @@ Styleguide 2.21.6
 .k-table-container {
   .k-table__sub-header {
     th {
-      padding: .7em $table-cell-spacing-horizontal .5em;
+      padding: 0.7em $table-cell-spacing-horizontal 0.5em;
       height: auto;
-      font-size: .875em;
-      line-height: 1.2em;
+      font-size: $font-size-small;
+      line-height: $line-height-small;
+      font-weight: $bold;
       vertical-align: middle;
       text-transform: uppercase;
       white-space: nowrap;
@@ -717,7 +718,7 @@ Styleguide 2.21.1
 .k-table-pagination {
   padding: $table-pagination-spacing;
   background: $table-pagination-background;
-  @include border(top, #d2d2d2);
+  @include border(top, $table-pagination-border);
   @if $borders != false {
     box-shadow: 0 1px 0 $table-pagination-border; /* 1 */
   }
@@ -748,7 +749,7 @@ Styleguide 2.21.1
   .k-pagination__pages {
     padding-left: 0;
     margin: 0;
-    border-radius: $border-radius-base;
+    border-radius: $border-radius;
 
     & > li {
       display: inline; // Remove list-style and block-level defaults
@@ -770,14 +771,14 @@ Styleguide 2.21.1
         & > a,
         & > span {
           margin-left: 0;
-          @include border-left-radius($border-radius-base);
+          @include border-left-radius($border-radius);
         }
       }
 
       &:last-child {
         & > a,
         & > span {
-          @include border-right-radius($border-radius-base);
+          @include border-right-radius($border-radius);
         }
       }
     }
@@ -927,11 +928,7 @@ Styleguide 2.21.11
   }
 
   .footable-row-detail-row {
-    margin-bottom: $table-cell-spacing-vertical;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
+    @include content-block($table-cell-spacing-vertical);
   }
 
   .footable-row-detail-name {
@@ -1002,8 +999,6 @@ Styleguide 2.21.9
     top: -($k-positioner-width - 1px);
     left: -($k-positioner-width / 2);
     content: attr(data-position);
-    font-size: 10px;
-    line-height: ($k-positioner-width * 2.75);
     text-indent: 3px;
     vertical-align: bottom;
     color: #333;
@@ -1076,7 +1071,7 @@ th.k-sort-desc {
 th.k-sort-asc {
   a {
     @include icon-after(sort-ascending, true) {
-      margin-left: .5em;
+      margin-left: 0.5em;
       vertical-align: middle;
     }
   }
@@ -1085,7 +1080,7 @@ th.k-sort-asc {
 th.k-sort-desc {
   a {
     @include icon-after(sort-descending, true) {
-      margin-left: .5em;
+      margin-left: 0.5em;
       vertical-align: middle;
     }
   }
