@@ -216,36 +216,21 @@ Styleguide 2.18.2
 /*
 Scopebar Filters
 
-Scopebar filters
-
 markup:
 <!-- Filters -->
 <div class="k-scopebar__item k-scopebar__item--filters">
-    <!-- Filters content -->
     <div class="k-scopebar__filters-content">
-        <div class="js-filter-container k-scopebar__filters">
-            <div class="js-filter-prototype k-scopebar__item--filter k-scopebar-dropdown js-dropdown">
-                <button type="button" class="k-scopebar-dropdown__button js-dropdown-button koowa-tooltip">
-                    <span class="js-dropdown-title k-scopebar__item--filter__title">{content}</span>
+        <div class="k-scopebar__filters k-js-filter-container">
+            <div class="k-scopebar__item--filter k-scopebar-dropdown k-js-filter-prototype k-js-dropdown">
+                <button type="button" class="k-scopebar-dropdown__button k-js-dropdown-button">
+                    <span class="k-scopebar__item--filter__title k-js-dropdown-title">{content}</span>
                     <span class="k-scopebar__item--filter__icon k-icon-chevron-bottom" aria-hidden="true"></span>
-                    <div class="js-dropdown-label k-scopebar__item__label">1</div>
+                    <div class="k-scopebar__item__label k-js-dropdown-label">1</div>
                 </button>
-                <div class="k-scopebar-dropdown__body js-dropdown-body">
+                <div class="k-scopebar-dropdown__body k-js-dropdown-body">
                     <div class="k-scopebar-dropdown__body__buttons">
-                        <button type="button" class="js-clear-filter btn btn-sm">Clear</button>
-                        <button type="button" class="js-apply-filter btn btn-primary btn-sm">Apply filter</button>
-                    </div>
-                </div>
-            </div>
-            <div class="js-filter-prototype k-scopebar__item--filter k-scopebar-dropdown js-dropdown">
-                <button type="button" class="k-scopebar-dropdown__button js-dropdown-button koowa-tooltip">
-                    <span class="js-dropdown-title k-scopebar__item--filter__title">{content}</span>
-                    <span class="k-scopebar__item--filter__icon k-icon-chevron-bottom" aria-hidden="true"></span>
-                </button>
-                <div class="k-scopebar-dropdown__body js-dropdown-body">
-                    <div class="k-scopebar-dropdown__body__buttons">
-                        <button type="button" class="js-clear-filter btn btn-sm">Clear</button>
-                        <button type="button" class="js-apply-filter btn btn-primary btn-sm">Apply filter</button>
+                        <button type="button" class="k-button k-button--default k-button-small k-js-clear-filter">Clear</button>
+                        <button type="button" class="k-button k-button--primary k-button-small k-js-apply-filter">Apply filter</button>
                     </div>
                 </div>
             </div>
@@ -604,8 +589,6 @@ Styleguide 2.18.4
 /*
 Scopebar buttons
 
-Scopebar buttons
-
 markup:
 <div class="k-scopebar__item k-scopebar__item--buttons">
     <button class="k-scopebar__button">
@@ -695,19 +678,17 @@ Styleguide 2.18.5
 /*
 Scopebar search
 
-Scopebar search
-
 markup:
 <!-- Search -->
 <div class="k-scopebar__item k-scopebar__item--search">
     <div class="k-search k-search--has-both-buttons">
-        <label for="search">Search</label>
-        <input type="search" class="k-search__field" placeholder="Find by title or description…" id="search">
+        <label for="input-[2.18.6]-1">Search</label>
+        <input type="search" class="k-search__field" placeholder="Search…" id="input-[2.18.6]-1" />
         <button type="submit" class="k-search__submit">
             <sg-insert>2.12-144</sg-insert>
             <span class="visually-hidden">Search icon</span>
         </button>
-        <button class="k-search__empty k-is-visible">
+        <button type="button" class="k-search__empty k-is-visible">
             <span class="k-search__empty-area">
                 <sg-insert>2.12-220</sg-insert>
                 <span class="visually-hidden">Clear search</span>

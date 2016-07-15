@@ -5,31 +5,29 @@
 /*
 Breadcrumbs
 
-Default breadcrumbs styling
-
 markup:
 <!-- Breadcrumbs -->
 <div class="k-breadcrumb">
     <ul>
         <li class="k-breadcrumb__home">
-            <a class="k-breadcrumb__item" href="javascript:void(0)">
+            <a class="k-breadcrumb__content" href="javascript:void(0)">
                 <sg-insert>2.12-121</sg-insert>
                 <span class="visually-hidden">Home</span>
             </a>
         </li>
         <li>
-            <a class="k-breadcrumb__item" href="javascript:void(0)">
+            <a class="k-breadcrumb__content" href="javascript:void(0)">
                 Donec ullamcorper nulla non metus auctor fringilla.
             </a>
         </li>
         <li>
-            <a class="k-breadcrumb__item" href="javascript:void(0)">
-                Donec ullamcorper nulla non metus auctor fringilla.
+            <a class="k-breadcrumb__content" href="javascript:void(0)">
+                Risus Egestas Vulputate Fusce Ipsum.
             </a>
         </li>
         <li class="k-breadcrumb__active">
-            <span class="k-breadcrumb__item">
-                Donec ullamcorper nulla non metus auctor fringilla.
+            <span class="k-breadcrumb__content">
+                Ligula Inceptos Commodo Sem Ornare.
             </span>
         </li>
     </ul>
@@ -238,7 +236,7 @@ Styleguide 2.2
   /* Active item */
 
   .k-breadcrumb__active {
-    .k-breadcrumb__item {
+    .k-breadcrumb__content {
       font-weight: $bold;
     }
   }
@@ -248,7 +246,7 @@ Styleguide 2.2
 
 /* Single breadcrumb items */
 
-.k-breadcrumb__item {
+.k-breadcrumb__content {
   position: relative;
   z-index: 2;
   display: block;

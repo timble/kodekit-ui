@@ -61,3 +61,56 @@
  */
 
 @import "core/core";
+
+
+// <span class="k-loader">Loading...</span>
+
+.k-loader {
+  display: inline-block;
+  color: #464646;
+  font-size: 2px;
+  margin: 0 auto 12px;
+  position: relative;
+  text-indent: -9999em;
+  transform: translateZ(0);
+  animation-delay: -0.16s;
+  vertical-align: middle;
+
+  &,
+  &:before,
+  &:after {
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
+    animation-fill-mode: both;
+    animation: k-loader 1.8s infinite ease-in-out;
+  }
+
+  &:before {
+    left: -4em;
+    animation-delay: -0.32s;
+  }
+
+  &,
+  &:after {
+    left: 4em;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+  }
+}
+
+@keyframes k-loader {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 3em 0 -1.5em;
+  }
+  40% {
+    box-shadow: 0 3em 0 0;
+  }
+}

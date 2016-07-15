@@ -1,18 +1,16 @@
 /*
 Dropdown
 
-A simple dropdown
-
 markup:
 <div class="k-dropdown">
     <a class="k-dropdown__toggle" data-toggle="dropdown" href="javascript:void(0)">
         Dropdown trigger
-        <span class="k-caret"></span>
+        <span class="k-caret" aria-hidden="true"></span>
     </a>
     <ul class="k-dropdown__menu" role="menu">
-        <li><a href="javascript:void(0)">{content}</a></li>
-        <li><a href="javascript:void(0)">{content}</a></li>
-        <li><a href="javascript:void(0)">{content}</a></li>
+        <li><a href="javascript:void(0)">Dropdown item 1</a></li>
+        <li><a href="javascript:void(0)">Dropdown item 2</a></li>
+        <li><a href="javascript:void(0)">Dropdown item 3</a></li>
     </ul>
 </div>
 
@@ -28,7 +26,7 @@ Styleguide 2.6
 /*
 Dropup
 
-Drop it up when there's no room below anymore
+Drop it up when dropdown item is located at the bottom of a view
 
 markup:
 <div class="k-dropdown k-dropdown--dropup">
@@ -37,15 +35,15 @@ markup:
         <span class="k-caret" aria-hidden="true"></span>
     </a>
     <ul class="k-dropdown__menu" role="menu">
-        <li><a href="javascript:void(0)">{content}</a></li>
-        <li><a href="javascript:void(0)">{content}</a></li>
-        <li><a href="javascript:void(0)">{content}</a></li>
+        <li><a href="javascript:void(0)">Dropdown item 1</a></li>
+        <li><a href="javascript:void(0)">Dropdown item 2</a></li>
+        <li><a href="javascript:void(0)">Dropdown item 3</a></li>
     </ul>
 </div>
 
 sg-wrapper:
-<div style="height: 120px;">
-    <div style="width: 10px;height: 100px;"></div>
+<div style="height: 150px;">
+    <div style="width: 10px;height: 130px;"></div>
     <sg-wrapper-content/>
 </div>
 

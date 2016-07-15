@@ -1,8 +1,6 @@
 /*
 Buttons
 
-Button styling
-
 .k-button--default - Default style
 .k-button--primary - Primary color styling
 .k-button--success - Success color styling
@@ -35,7 +33,9 @@ Different button states
 .k-is-disabled - Disabled buttons
 
 markup:
-<button type="button" class="k-button k-button--default {$modifiers}">Button text</button>
+<button type="button" class="k-button k-button--default {$modifiers}">
+    Button text
+</button>
 
 sg-wrapper:
 <div>
@@ -206,7 +206,9 @@ default - Default
 .k-button--large - Large
 
 markup:
-<button type="button" class="k-button k-button--default {$modifiers}">Button text</button>
+<button type="button" class="k-button k-button--default {$modifiers}">
+    Button text
+</button>
 
 Styleguide 2.3.2
 
@@ -254,8 +256,6 @@ input[type="button"] {
 
 /*
 Button groups
-
-Groups of buttons
 
 markup:
 <div class="k-button-group">

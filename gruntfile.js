@@ -24,6 +24,7 @@ module.exports = function(grunt) {
             'node_modules/floatthead/dist/jquery.floatThead.min.js',
             'node_modules/select2/dist/js/select2.full.js',
             'node_modules/jqtree/tree.jquery.js',
+            '<%= srcPath %>/js/custom-file-input.js',
             '<%= srcPath %>/js/bootstrap-dropdown.js',
             '<%= srcPath %>/js/bootstrap-tab.js',
             '<%= srcPath %>/js/bootstrap-tooltip.js',
@@ -74,6 +75,7 @@ module.exports = function(grunt) {
                 ],
                 "uglify": false,
                 "tests": [
+                    "eventlistener",
                     "appearance",
                     "checked",
                     "flexbox",

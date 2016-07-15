@@ -1,6 +1,6 @@
 /*!
  * modernizr v3.3.1
- * Build http://modernizr.com/download?-appearance-checked-flexbox-flexboxlegacy-flexboxtweener-flexwrap-touchevents-prefixedcss-setclasses-shiv-dontmin-cssclassprefix:k-
+ * Build http://modernizr.com/download?-appearance-checked-eventlistener-flexbox-flexboxlegacy-flexboxtweener-flexwrap-touchevents-prefixedcss-setclasses-shiv-dontmin-cssclassprefix:k-
  *
  * Copyright (c)
  *  Faruk Ates
@@ -1228,6 +1228,24 @@
     return prefixedProp && domToCSS(prefixedProp);
   };
   
+/*!
+{
+  "name": "Event Listener",
+  "property": "eventlistener",
+  "authors": ["Andrew Betts (@triblondon)"],
+  "notes": [{
+    "name": "W3C Spec",
+    "href": "https://www.w3.org/TR/DOM-Level-2-Events/events.html#Events-Registration-interfaces"
+  }],
+  "polyfills": ["eventlistener"]
+}
+!*/
+/* DOC
+Detects native support for addEventListener
+*/
+
+  Modernizr.addTest('eventlistener', 'addEventListener' in window);
+
 
   /**
    * testAllProps determines whether a given CSS property is supported in the browser

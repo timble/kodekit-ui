@@ -1,17 +1,16 @@
 /*
 Option list
 
-CSS only animated option list
-- Use for several options
+- Use when more than two options
 
 markup:
 <div class="k-optionlist">
-  <input type="radio" name="name" id="id0" value="0" checked="checked">
-  <label for="id0">Option 1</label>
-  <input type="radio" name="name" id="id1" value="1">
-  <label for="id1">Option 2</label>
-  <input type="radio" name="name" id="id2" value="2">
-  <label for="id2">Option 3</label>
+  <input type="radio" name="group-[2.17]-1" id="input-[2.17]-1" value="0" checked="checked" />
+  <label for="input-[2.17]-1">Option 1</label>
+  <input type="radio" name="group-[2.17]-1" id="input-[2.17]-2" value="1" />
+  <label for="input-[2.17]-2">Option 2</label>
+  <input type="radio" name="group-[2.17]-1" id="input-[2.17]-3" value="2" />
+  <label for="input-[2.17]-3">Option 3</label>
   <div class="k-faux-focus"></div>
 </div>
 
@@ -129,8 +128,8 @@ Styleguide 2.17
 /*
 Boolean list
 
-A boolean list should only be used for true / false, 0 / 1, yes / no questions
-- Need more options? Use an option list instead
+A boolean list should only be used for `true / false`, `0 / 1`, `yes / no` questions
+- Need more options? Use the above option list instead
 - Booleanlist has a CSS only sliding animation. Option lists don't since it's not possible with CSS only
 
 default - Default style
@@ -138,10 +137,10 @@ default - Default style
 
 markup:
 <div class="k-booleanlist {$modifiers}">
-  <input type="radio" name="name{$modifiers}" id="id0{$modifiers}" value="1" checked="checked">
-  <label for="id0{$modifiers}">True</label>
-  <input type="radio" name="name{$modifiers}" id="id1{$modifiers}" value="0">
-  <label for="id1{$modifiers}">False</label>
+  <input type="radio" name="group-[2.17.1]-1-{$modifiers}" id="input-[2.17.1]-1-{$modifiers}" value="1" checked="checked" />
+  <label for="input-[2.17.1]-1-{$modifiers}">True</label>
+  <input type="radio" name="group-[2.17.1]-1-{$modifiers}" id="input-[2.17.1]-2-{$modifiers}" value="0" />
+  <label for="input-[2.17.1]-2-{$modifiers}">False</label>
 </div>
 
 Styleguide 2.17.1

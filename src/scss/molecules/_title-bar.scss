@@ -1,7 +1,6 @@
 /*
 Title bar
 
-The default titlebar
 - A titlebar that can be displayed above the `content-wrapper` when there's no toolbar
 - Very useful inside modal views
 - Always have at least a `k-titlebar` or a `k-toolbar` when there's a `k-sidebar` in your page!
@@ -10,7 +9,7 @@ The default titlebar
 
 markup:
 <div class="k-title-bar">
-    <h2>{Title}</h2>
+    <h2>Title</h2>
 </div><!-- .k-title-bar -->
 
 Styleguide 2.23
@@ -149,7 +148,7 @@ Styleguide 2.23
 /*
 Mobile title
 
-Title just for mobile
+Title just for mobile views since the navigation is hidden
 - Use <b>never</b> together with a `.k-title-bar`
 - Use <b>only</b> as <b>child</b> of `.k-content`
 - Only visible on smaller screens

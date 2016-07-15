@@ -1,19 +1,15 @@
 /*
 List
 
-Simple list
-
 markup:
 <!-- List -->
 <ul class="k-list">
-    <!-- Active item -->
     <li class="k-is-active">
         <a href="javascript:void(0)">
             <sg-insert>2.12-166</sg-insert>
             My documents
         </a>
     </li>
-    <!-- Other items -->
     <li>
         <a href="javascript:void(0)">
             <sg-insert>2.12-195</sg-insert>

@@ -1,7 +1,6 @@
 /*
 Card
 
-Options
 - Display either an image or an icon
 - Display either with or without title
 - Only display a title
@@ -13,12 +12,12 @@ markup:
         <div class="k-card__preview-content-wrapper">
             <div class="k-card__preview-content">
                 <div class="k-card__preview">
-                    {preview element}
+                    ...
                 </div>
             </div>
         </div>
     </div>
-</div>
+</div><!-- .k-card -->
 
 Styleguide 2.4
 
@@ -39,7 +38,7 @@ markup:
             </div>
         </div>
     </div>
-</div>
+</div><!-- .k-card -->
 
 Styleguide 2.4.1
 
@@ -60,7 +59,7 @@ markup:
             </div>
         </div>
     </div>
-</div>
+</div><!-- .k-card -->
 
 Styleguide 2.4.2
 
@@ -72,7 +71,7 @@ Card with title
 markup:
 <!-- Preview -->
 <div class="k-card">
-    <a class="k-card__body k-card__body--preview k-js-popup" href="joomlatools/images/placeholder-16-9.png">
+    <a href="javascript:void(0)" class="k-card__body k-card__body--preview">
         <div class="k-card__preview-content-wrapper">
             <div class="k-card__preview-content">
                 <div class="k-card__preview">
@@ -82,7 +81,7 @@ markup:
         </div>
     </a>
     <div class="k-card__title">
-        <label><input type="checkbox"/> Title</label>
+        <label><input type="checkbox" /> Title</label>
     </div>
 </div>
 
@@ -98,7 +97,7 @@ markup:
 <div class="k-card">
     <div class="k-card__body">
         <div class="k-card__title">
-            <label><input type="checkbox"/> <a href="javascript:void(0)">Title</a></label>
+            <label><input type="checkbox" /> <a href="javascript:void(0)">Title</a></label>
         </div>
     </div>
 </div>

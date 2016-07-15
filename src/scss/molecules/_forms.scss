@@ -1,68 +1,24 @@
 /*
 Forms
 
-To be used in sidebar of forms<br />
-Data in these boxes should be non-required form elements
-
-default - Default
-.k-form-group--small - Small form groups
-.k-form-group--large - Large form groups
-
 markup:
-<div class="k-form-group {$modifiers}">
-    <label for="input{$modifiers}">Label</label>
-    <input class="k-form-control" type="text" id="input{$modifiers}">
-</div>
+<p>
+    <input class="k-form-control" type="text" />
+</p>
+<p>
+    <select class="k-form-control">
+        <option>Option</option>
+    </select>
+</p>
+<p>
+    <textarea class="k-form-control"></textarea>
+</p>
 
 Styleguide 2.9
 
 */
 
-/*
-Form controls
-
-markup:
-<div class="k-form-group">
-    <label for="form-input1">Default input</label>
-    <input class="k-form-control" type="text" id="form-input1">
-</div>
-<div class="k-form-group">
-    <label for="form-select1">Select</label>
-    <select class="k-form-control" id="form-select1">
-        <option>Option</option>
-    </select>
-</div>
-<div class="k-form-group">
-    <label for="form-textarea1">Textarea</label>
-    <textarea class="k-form-control" id="form-textarea1"></textarea>
-</div>
-
-Styleguide 2.9.5
-
-*/
-
 /**
- * Common form controls
- * Shared size and type resets for form controls. Apply `.k-form-control` to any
- * of the following form controls:
- *
- * select
- * textarea
- * input[type="text"]
- * input[type="password"]
- * input[type="datetime"]
- * input[type="datetime-local"]
- * input[type="date"]
- * input[type="month"]
- * input[type="time"]
- * input[type="week"]
- * input[type="number"]
- * input[type="email"]
- * input[type="url"]
- * input[type="search"]
- * input[type="tel"]
- * input[type="color"]
- *
  * 1. Make inputs at least the height of their button counterpart (base line-height + padding + border)
  * 2. Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
  * 3. Note: This has no effect on <select>s in some browsers, due to the limited stylability of <select>s in CSS.
@@ -182,91 +138,29 @@ input[type="search"] {
 }
 
 
-/**
- * Form groups
- *
- * Designed to help with the organization and spacing of vertical forms. For
- * horizontal forms, use the predefined grid classes.
- */
-
-.k-form-group {
-  margin: 0;
-  @include content-block;
-}
-
-
-/**
- * Form control sizing
- *
- * Build on `.k-form-control` with modifier classes to decrease or increase the
- * height and font-size of form controls.
- *
- * The `.k-form-group-* k-form-control` variations are sadly duplicated to avoid the
- * issue documented in https://github.com/twbs/bootstrap/issues/15074.
- */
-
-.k-form-group--small {
-  .k-form-control {
-    font-size: $font-size-small;
-    height: $input-height-small;
-    padding: $spacing-small-vertical $spacing-small-horizontal;
-    line-height: $line-height-small;
-    border-radius: $border-radius-small;
-  }
-
-  select.k-form-control {
-    height: $input-height-small;
-    line-height: $input-height-small;
-  }
-
-  textarea.k-form-control,
-  select[multiple].k-form-control {
-    height: auto;
-  }
-}
-
-.k-form-group--large {
-  .k-form-control {
-    font-size: $font-size-large;
-    height: $input-height-large;
-    padding: $spacing-large-vertical $spacing-large-horizontal;
-    line-height: $line-height-large;
-    border-radius: $border-radius-large;
-  }
-
-  select.k-form-control {
-    height: $input-height-large;
-    line-height: $input-height-large;
-  }
-
-  textarea.k-form-control,
-  select[multiple].k-form-control {
-    height: auto;
-  }
-}
-
-
-
 /*
 Checkbox & Radio inputs
 
 CSS only styled checkboxes and radio boxes
 
 markup:
-<input type="checkbox" id="input1">
-<label for="input1">Label 1</label>
-<input type="radio" id="input2">
-<label for="input2">Label 2</label>
-<!-- Or -->
-<label><input type="checkbox" id="input1"> Label 1</label>
-<label><input type="radio" id="input2"> Label 2</label>
-
-sg-wrapper:
 <div class="k-form-group">
-    <sg-wrapper-content/>
+    <input type="checkbox" id="input-[2.9.1]-1" />
+    <label for="input-[2.9.1]-1">Label 1</label>
+</div>
+<div class="k-form-group">
+    <input type="radio" id="input-[2.9.1]-2" />
+    <label for="input-[2.9.1]-2">Label 2</label>
+</div>
+<!-- Or -->
+<div class="k-form-group">
+    <label><input type="checkbox" id="input-[2.9.1]-3" /> Label 1</label>
+</div>
+<div class="k-form-group">
+    <label><input type="radio" id="input-[2.9.1]-3" /> Label 2</label>
 </div>
 
-Styleguide 2.9.4
+Styleguide 2.9.1
 
 */
 
@@ -282,8 +176,6 @@ Styleguide 2.9.4
      * 1. Resetting the default styling used by browsers. Don't do this for -moz-
           because the checkbox and radio box will look very ugly
      * 2. Positioning relative to position psuedo before element nicely
-     * 3. Vertically positioning next to text
-     * 4. Aligning vertically next to labels
      * 5. Indicate that element is clickable
      */
 
@@ -292,10 +184,7 @@ Styleguide 2.9.4
     position: relative; /* 2 */
     height: $form-option-size;
     width: $form-option-size;
-    margin-top: -1px; /* 3 */
-    margin-bottom: 2px; /* 3 */
-    margin-left: 0;
-    margin-right: 0.33em;
+    margin: 0 .33em 0 0;
     border: $form-option-border-size solid $form-option-border;
     padding: 0;
     background: $form-option-background;
@@ -305,17 +194,20 @@ Styleguide 2.9.4
     box-shadow: $form-option-shadow;
     @include transition(background);
 
+
     /* Hover to indicate element is clickable */
 
     &:hover {
       background: #f1f1f1;
     }
 
+
     /* Set disabled border color a bit lighter so it won't appear to be larger */
 
     &:disabled {
       border-color: #bbb;
     }
+
 
     /**
      * 1. Position psuedo element absolute to have full control
@@ -340,17 +232,18 @@ Styleguide 2.9.4
       visibility: visible; /* 4 */
       transform: scale(1,1); /* 4 */
     }
-
   }
 
-  /* Put some space between the box and the label */
+
+  /* Put some space between the second box and the first label */
+
   label {
 
     /**
-     * <input id="input1">
-     * <label for="input1">Label 1</label>
-     * <input id="input2">
-     * <label for="input2">Label 2</label>
+     * <input id="example1" />
+     * <label for="example1">Label 1</label>
+     * <input id="example2" />
+     * <label for="example2">Label 2</label>
      */
 
     & + input[type="checkbox"],
@@ -358,9 +251,10 @@ Styleguide 2.9.4
       margin-left: 1em;
     }
 
+
     /**
-     * <label><input id="input1"> Label 1</label>
-     * <label><input id="input2"> Label 2</label>
+     * <label><input id="example3" /> Label 1</label>
+     * <label><input id="example4" /> Label 2</label>
      */
 
     & + label {
@@ -375,8 +269,7 @@ Styleguide 2.9.4
 @include modernizr-rtl('.k-appearance.k-checked') {
   input[type="checkbox"],
   input[type="radio"] {
-    margin-left: 0.33em;
-    margin-right: 0;
+    margin: 0 0 0 .33em;
 
     &:before {
       left: auto;
@@ -400,12 +293,9 @@ Styleguide 2.9.4
 }
 
 
-
-/* ==========================================================================
-   CSS only styled checkbox
-   ========================================================================== */
-
 /**
+ * Checkbox
+ *
  * 1. Remove rounded corners by default
  * 2. Display a check icon in the psuedo before element
  * 3. Height of the box minus the border size
@@ -430,12 +320,9 @@ Styleguide 2.9.4
 }
 
 
-
-/* ==========================================================================
-   CSS only styled radio box
-   ========================================================================== */
-
 /**
+ * Radio
+ *
  * 1. Making the radio box round
  * 2. Adding content to display the psuedo element
  * 3. Small inner circle, scaling with the box itself
@@ -460,6 +347,34 @@ Styleguide 2.9.4
 
 
 /*
+Feedback states
+
+.k-has-success - Success
+.k-has-warning - Warning
+.k-has-error - Error
+
+markup:
+<div class="k-form-group {$modifiers}">
+    <label for="input-[2.9.2]-1-{$modifiers}">Default input</label>
+    <input class="k-form-control" type="text" id="input-[2.9.2]-1-{$modifiers}" />
+</div>
+
+Styleguide 2.9.2
+
+*/
+
+.k-has-success {
+  @include form-control-validation($state-success-text, $state-success-text, $state-success-bg);
+}
+.k-has-warning {
+  @include form-control-validation($state-warning-text, $state-warning-text, $state-warning-bg);
+}
+.k-has-error {
+  @include form-control-validation($state-danger-text, $state-danger-text, $state-danger-bg);
+}
+
+
+/*
 Static form label
 
 Styled like a `<label>`
@@ -467,7 +382,7 @@ Styled like a `<label>`
 markup:
 <p class="k-static-form-label">Static form control</p>
 
-Styleguide 2.9.6
+Styleguide 2.9.3
 
 */
 
@@ -491,277 +406,6 @@ Styleguide 2.9.6
 
 
 /*
-Feedback states
-
-Feedback states
-
-.k-has-success - Success
-.k-has-warning - Warning
-.k-has-error - Error
-
-markup:
-<div class="k-form-group {$modifiers}">
-    <label for="form-input1">Default input</label>
-    <input class="k-form-control" type="text" id="form-input1">
-</div>
-
-Styleguide 2.9.7
-
-*/
-
-.k-has-success {
-  @include form-control-validation($state-success-text, $state-success-text, $state-success-bg);
-}
-.k-has-warning {
-  @include form-control-validation($state-warning-text, $state-warning-text, $state-warning-bg);
-}
-.k-has-error {
-  @include form-control-validation($state-danger-text, $state-danger-text, $state-danger-bg);
-}
-
-
-
-/*
-Inline form group
-
-Inline form groups
-
-markup:
-<p class="k-static-form-label">Select from presets</p>
-<div class="k-form-group">
-    <div class="k-inline-form-group">
-        <label>Label 1</label>
-        <div class="k-button-group">
-            <a href="javascript:void(0)" class="k-button k-button--default k-button--tiny">
-                <sg-insert>2.12-171</sg-insert>
-                <span class="visually-hidden">Plus icon</span>
-            </a>
-            <a href="javascript:void(0)" class="k-button k-button--default k-button--tiny">
-                <sg-insert>2.12-158</sg-insert>
-                <span class="visually-hidden">Minus icon</span>
-            </a>
-        </div>
-    </div>
-    <div class="k-inline-form-group">
-        <label>Label 2</label>
-        <div class="k-button-group">
-            <a href="javascript:void(0)" class="k-button k-button--default k-button--tiny">
-                <sg-insert>2.12-171</sg-insert>
-                <span class="visually-hidden">Plus icon</span>
-            </a>
-            <a href="javascript:void(0)" class="k-button k-button--default k-button--tiny">
-                <sg-insert>2.12-158</sg-insert>
-                <span class="visually-hidden">Minus icon</span>
-            </a>
-        </div>
-    </div>
-    <div class="k-inline-form-group">
-        <label>Label 3</label>
-        <div class="k-button-group">
-            <a href="javascript:void(0)" class="k-button k-button--default k-button--tiny">
-                <sg-insert>2.12-171</sg-insert>
-                <span class="visually-hidden">Plus icon</span>
-            </a>
-            <a href="javascript:void(0)" class="k-button k-button--default k-button--tiny">
-                <sg-insert>2.12-158</sg-insert>
-                <span class="visually-hidden">Minus icon</span>
-            </a>
-        </div>
-    </div>
-</div>
-
-Styleguide 2.9.1
-
-*/
-
-
-.k-inline-form-group {
-  display: inline-block;
-  margin-right: 1em;
-
-  &:last-child {
-    margin-right: 0;
-  }
-
-  @include rtl {
-    margin-right: 0;
-    margin-left: 1em;
-
-    &:last-child {
-      margin-left: 0;
-      margin-right: 1em;
-    }
-  }
-
-  label {
-    font-weight: $regular;
-  }
-
-  .k-input-group,
-  .k-button-group {
-    display: block;
-  }
-}
-
-
-/*
-Form row group
-
-Form row group
-
-markup:
-<div class="k-form-row-group">
-    <sg-insert>2.9.3</sg-insert>
-    <sg-insert>2.9.3</sg-insert>
-    <sg-insert>2.9.3</sg-insert>
-</div>
-
-Styleguide 2.9.2
-
-*/
-
-.k-form-row-group {
-  background: #fff;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  margin-bottom: $spacing;
-}
-
-
-
-/*
-Form row
-
-Form row
-
-markup:
-<form class="k-form-row">
-    <div class="k-form-row__item k-form-row__item--button">
-        <button class="k-button k-button--default k-button--small">
-            <span class="k-icon-minus k-icon--error" aria-hidden="true"></span>
-        </button>
-    </div>
-    <div class="k-form-row__item k-form-row__item--label">
-        <label>File name:</label>
-    </div>
-    <div class="k-form-row__item k-form-row__item--input">
-        <input class="k-form-control" type="text" value="{value}" disabled="">
-    </div>
-    <div class="k-form-row__item k-form-row__item--label">
-        <label for="docman_title0">Title:</label>
-    </div>
-    <div class="k-form-row__item k-form-row__item--input">
-        <input id="docman_title0" class="k-form-control" type="text" name="title" value="{value}">
-    </div>
-</form>
-
-Styleguide 2.9.3
-
-*/
-
-.k-form-row {
-  margin: 0;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 10px;
-
-  @include breakpoint($beta) {
-    display: table;
-    width: 100%;
-    padding-bottom: 0;
-
-    @include rtl {
-      direction: rtl;
-    }
-
-    &:last-child {
-      border-bottom: none;
-    }
-  }
-
-  .k-form-row__item {
-    padding: 10px 10px 0 10px;
-    border-right: 1px solid #ccc;
-
-    @include rtl {
-      border-right: none;
-      border-left: 1px solid #ccc;
-    }
-
-    @include breakpoint($beta) {
-      display: table-cell;
-      vertical-align: middle;
-      padding: 10px;
-    }
-
-    &:last-child {
-      border-right: none;
-
-      @include rtl {
-        border-left: none;
-      }
-    }
-  }
-
-  .k-form-row__item--button,
-  .k-form-row__item--label {
-    width: 1%;
-    white-space: nowrap;
-  }
-
-  .k-form-row__item--label {
-    border-right: none;
-    padding-right: 0;
-
-    @include rtl {
-      border-left: none;
-      padding-right: 10px;
-      padding-left: 0;
-    }
-  }
-
-  .k-form-row__item--input {
-    @include breakpoint($beta) {
-      padding: 5px;
-    }
-  }
-
-  .k-form-control {
-    margin: 0;
-  }
-
-  .k-form-row__message {
-    a {
-      display: block;
-      padding: 10px;
-
-      &:focus,
-      &:hover {
-        background: #eee;
-      }
-    }
-  }
-
-  &:first-child {
-    .k-form-row__message {
-      a {
-        border-radius: 5px 5px 0 0;
-      }
-    }
-  }
-
-  &:last-child {
-    .k-form-row__message {
-      a {
-        border-radius: 0 0 5px 5px;
-      }
-    }
-  }
-}
-
-
-/*
-Input group
-
 Input group
 
 default - Default
@@ -773,22 +417,11 @@ markup:
     <div class="k-input-group__addon">Addon</div>
     <input type="text" class="k-form-control" />
     <div class="k-input-group__button">
-        <button class="k-button k-button--default" type="button">Button</button>
-    </div>
-</div>
-<div class="k-input-group {$modifiers}">
-    <div class="k-input-group__addon">Addon</div>
-    <select class="k-form-control k-js-select2">
-        <option>Option</option>
-        <option>Option</option>
-        <option>Option</option>
-    </select>
-    <div class="k-input-group__button">
-        <button class="k-button k-button--default" type="button">Button</button>
+        <button type="button" class="k-button k-button--default">Button</button>
     </div>
 </div>
 
-Styleguide 2.9.8
+Styleguide 2.9.4
 
 */
 
@@ -1024,6 +657,458 @@ Styleguide 2.9.8
     > .k-button-group {
       z-index: 2;
       margin-left: -1px;
+    }
+  }
+}
+
+
+/*
+Form groups
+
+default - Default
+.k-form-group--small - Small form groups
+.k-form-group--large - Large form groups
+
+markup:
+<div class="k-form-group {$modifiers}">
+    <label for="input-[2.9]-1-{$modifiers}">Label</label>
+    <input class="k-form-control" type="text" id="input-[2.9]-1-{$modifiers}" />
+</div>
+
+Styleguide 2.9.5
+
+*/
+
+/**
+ * Designed to help with the organization and spacing of vertical forms. For
+ * horizontal forms, use the predefined grid classes.
+ */
+
+.k-form-group {
+  margin: 0;
+  @include content-block;
+}
+
+
+/**
+ * Form control sizing
+ *
+ * Build on `.k-form-control` with modifier classes to decrease or increase the
+ * height and font-size of form controls.
+ *
+ * The `.k-form-group-* k-form-control` variations are sadly duplicated to avoid the
+ * issue documented in https://github.com/twbs/bootstrap/issues/15074.
+ */
+
+.k-form-group--small {
+  .k-form-control {
+    font-size: $font-size-small;
+    height: $input-height-small;
+    padding: $spacing-small-vertical $spacing-small-horizontal;
+    line-height: $line-height-small;
+    border-radius: $border-radius-small;
+  }
+
+  select.k-form-control {
+    height: $input-height-small;
+    line-height: $input-height-small;
+  }
+
+  textarea.k-form-control,
+  select[multiple].k-form-control {
+    height: auto;
+  }
+}
+
+.k-form-group--large {
+  .k-form-control {
+    font-size: $font-size-large;
+    height: $input-height-large;
+    padding: $spacing-large-vertical $spacing-large-horizontal;
+    line-height: $line-height-large;
+    border-radius: $border-radius-large;
+  }
+
+  select.k-form-control {
+    height: $input-height-large;
+    line-height: $input-height-large;
+  }
+
+  textarea.k-form-control,
+  select[multiple].k-form-control {
+    height: auto;
+  }
+}
+
+
+/*
+Inline form group
+
+markup:
+<div class="k-inline-form-group">
+    <label for="input-[2.9.6.1]-1">Label</label>
+    <input class="k-form-control" type="text" id="input-[2.9.6.1]-1" />
+</div><!-- .k-inline-form-group -->
+
+sg-wrapper:
+<div class="k-form-group">
+    <sg-wrapper-content/>
+    <sg-wrapper-content/>
+    <sg-wrapper-content/>
+</div><!-- .k-form-group -->
+
+Styleguide 2.9.6
+
+*/
+
+/*
+Inline form group with buttons
+
+markup:
+<div class="k-inline-form-group">
+    <p class="k-static-form-label">Label 1</p>
+    <div class="k-button-group">
+        <button type="button" class="k-button k-button--default k-button--tiny">
+            <sg-insert>2.12-171</sg-insert>
+            <span class="visually-hidden">Plus icon</span>
+        </a>
+        <button type="button" class="k-button k-button--default k-button--tiny">
+            <sg-insert>2.12-158</sg-insert>
+            <span class="visually-hidden">Minus icon</span>
+        </a>
+    </div>
+</div><!-- .k-inline-form-group -->
+
+Styleguide 2.9.6.1
+
+*/
+
+
+.k-inline-form-group {
+  display: inline-block;
+  margin-right: 1em;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @include rtl {
+    margin-right: 0;
+    margin-left: 1em;
+
+    &:last-child {
+      margin-left: 0;
+      margin-right: 1em;
+    }
+  }
+
+  .k-input-group,
+  .k-button-group {
+    display: block;
+  }
+}
+
+
+/*
+Form row group
+
+markup:
+<div class="k-form-row-group">
+    <sg-insert>2.9.8</sg-insert>
+    <sg-insert>2.9.8</sg-insert>
+    <sg-insert>2.9.8</sg-insert>
+</div>
+
+Styleguide 2.9.7
+
+*/
+
+.k-form-row-group {
+  background: #fff;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: $spacing;
+}
+
+
+
+/*
+Form row
+
+markup:
+<form class="k-form-row">
+    <div class="k-form-row__item k-form-row__item--button">
+        <button class="k-button k-button--default k-button--small">
+            <span class="k-icon-minus k-icon--error" aria-hidden="true"></span>
+            <span class="visually-hidden">Remove</span>
+        </button>
+    </div>
+    <div class="k-form-row__item k-form-row__item--label">
+        <label for="input-[2.9.8]-1">File name:</label>
+    </div>
+    <div class="k-form-row__item k-form-row__item--input">
+        <input class="k-form-control" type="text" value="{value}" disabled="" id="input-[2.9.8]-1" />
+    </div>
+    <div class="k-form-row__item k-form-row__item--label">
+        <label for="input-[2.9.8]-2">Title:</label>
+    </div>
+    <div class="k-form-row__item k-form-row__item--input">
+        <input class="k-form-control" type="text" name="title" value="{value}" id="input-[2.9.8]-2" />
+    </div>
+</form>
+
+Styleguide 2.9.8
+
+*/
+
+.k-form-row {
+  margin: 0;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+
+  @include breakpoint($beta) {
+    display: table;
+    width: 100%;
+    padding-bottom: 0;
+
+    @include rtl {
+      direction: rtl;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .k-form-row__item {
+    padding: 10px 10px 0 10px;
+    border-right: 1px solid #ccc;
+
+    @include rtl {
+      border-right: none;
+      border-left: 1px solid #ccc;
+    }
+
+    @include breakpoint($beta) {
+      display: table-cell;
+      vertical-align: middle;
+      padding: 10px;
+    }
+
+    &:last-child {
+      border-right: none;
+
+      @include rtl {
+        border-left: none;
+      }
+    }
+  }
+
+  .k-form-row__item--button,
+  .k-form-row__item--label {
+    width: 1%;
+    white-space: nowrap;
+  }
+
+  .k-form-row__item--label {
+    border-right: none;
+    padding-right: 0;
+
+    @include rtl {
+      border-left: none;
+      padding-right: 10px;
+      padding-left: 0;
+    }
+  }
+
+  .k-form-row__item--input {
+    @include breakpoint($beta) {
+      padding: 5px;
+    }
+  }
+
+  .k-form-control {
+    margin: 0;
+  }
+
+  .k-form-row__message {
+    a {
+      display: block;
+      padding: 10px;
+
+      &:focus,
+      &:hover {
+        background: #eee;
+      }
+    }
+  }
+
+  &:first-child {
+    .k-form-row__message {
+      a {
+        border-radius: 5px 5px 0 0;
+      }
+    }
+  }
+
+  &:last-child {
+    .k-form-row__message {
+      a {
+        border-radius: 0 0 5px 5px;
+      }
+    }
+  }
+}
+
+
+
+/*
+Styled file input
+
+markup:
+<div class="k-file-input-container">
+    <div class="k-file-input">
+        <input class="k-js-file-input" type="file" id="input-[5.1]-2" data-multiple-caption="{count} files selected" multiple />
+        <label for="input-[5.1]-2">
+            <span class="k-file-input__button">
+                <sg-insert>2.12-62</sg-insert>
+                Choose a file&hellip;
+            </span>
+            <span class="k-file-input__files"></span>
+        </label>
+    </div>
+</div>
+
+Styleguide 2.9.9
+
+*/
+
+.k-file-input {
+  position: relative;
+  display: inline-block;
+
+  /* The original file input select */
+
+  input {
+
+    /**
+     * 1. Style only when JS is enabled / addEventlistener is available
+     *    We want to show it regularly when we don't have addEventListener for usability sake
+     * 2. Hide the label by default and only show it when addEventListener is available (e.g. when file input is hidden)
+     * 3. Display label when file input is hidden
+     */
+
+    @include modernizr('.k-eventlistener') {
+      @include coverall($left: false);
+      margin: 0;
+      padding: 0;
+      cursor: pointer;
+      font-size: 99px;
+      opacity: 0;
+      filter: alpha(opacity=0);
+    }
+
+    + label {
+      display: none; /* 2 */
+
+      @include modernizr('.k-eventlistener') {
+        display: inline-block; /* 3 */
+      }
+    }
+
+
+    /* Styling the label, holding both the button and the selected files container */
+
+    + label {
+      max-width: 100%;
+      font-size: $font-size;
+      line-height: $line-height;
+      font-weight: $regular;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      cursor: pointer;
+      overflow: hidden;
+      vertical-align: middle;
+      color: $color-accent;
+      padding: 0;
+      text-align: center;
+    }
+
+
+    /* Focus state */
+
+    &:focus,
+    &.has-focus {
+      outline: none;
+
+      & + label {
+        outline: 1px dotted #000;
+        outline: -webkit-focus-ring-color auto 5px;
+      }
+    }
+
+
+    /* Hover / focus state */
+
+    &:focus,
+    &.has-focus,
+    &.has-drop-focus,
+    &:hover{
+      cursor: pointer;
+
+      & + label {
+        .k-file-input__button {
+          &, &:hover, &:focus {
+            background-color: darken($color-accent, 10%);
+          }
+        }
+      }
+    }
+  }
+
+
+  /* The button */
+
+  .k-file-input__button {
+    display: block;
+    background-color: $color-accent;
+    color: $color-accent-type;
+    height: $input-height-large;
+    pointer-events: none;
+    vertical-align: middle;
+    font-weight: $regular;
+    text-align: center;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none; /* 2 */
+    border: 1px solid transparent;
+    white-space: nowrap;
+    box-shadow: none;
+    text-shadow: none;
+    user-select: none;
+    margin-bottom: 0;
+    border-radius: $border-radius-large;
+    font-size: $font-size-large;
+    line-height: $line-height-large;
+    padding: $spacing-large-vertical $spacing-large-horizontal;
+  }
+
+
+  /* Selected files container */
+
+  .k-file-input__files {
+    width: 100%;
+    height: $line-height;
+    line-height: $line-height;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: top;
+    text-align: center;
+
+    &:empty {
+      display: none;
     }
   }
 }
