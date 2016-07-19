@@ -39,7 +39,7 @@ Styleguide 2.17
     /* Hiding the input but keeping accessible */
 
     input[type=radio] {
-      @extend .visually-hidden;
+      @extend .k-visually-hidden;
     }
 
 
@@ -168,7 +168,7 @@ Styleguide 2.17.1
     /* Hiding the input but keeping accessible */
 
     input[type="radio"] {
-      @extend .visually-hidden;
+      @extend .k-visually-hidden;
     }
 
 

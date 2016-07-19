@@ -1,6 +1,6 @@
 /*!
  * modernizr v3.3.1
- * Build http://modernizr.com/download?-appearance-checked-eventlistener-flexbox-flexboxlegacy-flexboxtweener-flexwrap-touchevents-prefixedcss-setclasses-shiv-dontmin-cssclassprefix:k-
+ * Build http://modernizr.com/download?-appearance-boxshadow-checked-cssanimations-eventlistener-flexbox-flexboxlegacy-flexboxtweener-flexwrap-touchevents-prefixedcss-setclasses-shiv-dontmin-cssclassprefix:k-
  *
  * Copyright (c)
  *  Faruk Ates
@@ -40,7 +40,19 @@ u.addTest("eventlistener","addEventListener"in a),t.testAllProps=r,/*!
   }]
 }
 !*/
-u.addTest("appearance",r("appearance"));var F=t.testStyles=j;/*!
+u.addTest("appearance",r("appearance")),/*!
+{
+  "name": "Box Shadow",
+  "property": "boxshadow",
+  "caniuse": "css-boxshadow",
+  "tags": ["css"],
+  "knownBugs": [
+    "WebOS false positives on this test.",
+    "The Kindle Silk browser false positives"
+  ]
+}
+!*/
+u.addTest("boxshadow",r("boxShadow","1px 1px",!0));var F=t.testStyles=j;/*!
 {
   "name": "CSS :checked pseudo-selector",
   "caniuse": "css-sel3",
@@ -53,6 +65,20 @@ u.addTest("appearance",r("appearance"));var F=t.testStyles=j;/*!
 }
 !*/
 u.addTest("checked",function(){return F("#modernizr {position:absolute} #modernizr input {margin-left:10px} #modernizr :checked {margin-left:20px;display:block}",function(a){var b=h("input");return b.setAttribute("type","checkbox"),b.setAttribute("checked","checked"),a.appendChild(b),20===b.offsetLeft})}),/*!
+{
+  "name": "CSS Animations",
+  "property": "cssanimations",
+  "caniuse": "css-animation",
+  "polyfills": ["transformie", "csssandpaper"],
+  "tags": ["css"],
+  "warnings": ["Android < 4 will pass this test, but can only animate a single property at a time"],
+  "notes": [{
+    "name" : "Article: 'Dispelling the Android CSS animation myths'",
+    "href": "https://goo.gl/OGw5Gm"
+  }]
+}
+!*/
+u.addTest("cssanimations",r("animationName","a",!0)),/*!
 {
   "name": "Flexbox",
   "property": "flexbox",

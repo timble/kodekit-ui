@@ -12,7 +12,7 @@ markup:
         <li class="k-breadcrumb__home">
             <a class="k-breadcrumb__content" href="javascript:void(0)">
                 <sg-insert>2.12-121</sg-insert>
-                <span class="visually-hidden">Home</span>
+                <span class="k-visually-hidden">Home</span>
             </a>
         </li>
         <li>
@@ -185,7 +185,7 @@ Styleguide 2.2
 
     &:focus,
     &:hover {
-      background: $breadcrumb-background-hover; /* 1 */
+      background: $breadcrumb-hover-background; /* 1 */
     }
   }
 

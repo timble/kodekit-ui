@@ -361,14 +361,15 @@ Styleguide 2.18.3
   z-index: 2;
   top: 2px;
   right: 2px;
-  min-width: 15px;
-  height: 15px;
+  min-width: $scopebar-filter-label-size;
+  height: $scopebar-filter-label-size;
   border-radius: 50%;
-  background: #d35400;
-  color: white;
-  font-size: $font-size-small;
-  line-height: 15px;
+  background: $scopebar-filter-label-background;
+  color: $scopebar-filter-label-color;
+  font-size: $scopebar-filter-label-font-size;
+  line-height: $scopebar-filter-label-size;
   text-align: center;
+  vertical-align: middle;
   font-weight: $bold;
   box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
   pointer-events: none;
@@ -427,7 +428,7 @@ Styleguide 2.18.3
 
   &.k-is-active {
     .k-scopebar-dropdown__button {
-      background: $scopebar-buttons-background-hover;
+      background: $scopebar-buttons-hover-background;
     }
   }
 }
@@ -441,7 +442,7 @@ Styleguide 2.18.3
 
   &:hover,
   &:focus {
-    background: $scopebar-buttons-background-hover;
+    background: $scopebar-buttons-hover-background;
   }
 
   @include breakpoint($beta) {
@@ -593,7 +594,7 @@ markup:
 <div class="k-scopebar__item k-scopebar__item--buttons">
     <button class="k-scopebar__button">
         <sg-insert>2.12-115</sg-insert>
-        <span class="visually-hidden">Grid icon</span>
+        <span class="k-visually-hidden">Grid icon</span>
     </button>
 </div>
 
@@ -686,12 +687,12 @@ markup:
         <input type="search" class="k-search__field" placeholder="Search…" id="input-[2.18.6]-1" />
         <button type="submit" class="k-search__submit">
             <sg-insert>2.12-144</sg-insert>
-            <span class="visually-hidden">Search icon</span>
+            <span class="k-visually-hidden">Search icon</span>
         </button>
         <button type="button" class="k-search__empty k-is-visible">
             <span class="k-search__empty-area">
                 <sg-insert>2.12-220</sg-insert>
-                <span class="visually-hidden">Clear search</span>
+                <span class="k-visually-hidden">Clear search</span>
             </span>
         </button>
     </div>
@@ -785,7 +786,7 @@ Styleguide 2.18.6
   /* Label */
 
   label {
-    @extend .visually-hidden;
+    @extend .k-visually-hidden;
   }
 
 
@@ -888,11 +889,11 @@ Styleguide 2.18.6
     &:focus,
     &:hover {
       .k-search__empty-area {
-        background: $color-error;
-        border: 1px dark($color-error);
-        color: $color-error-type;
-        text-shadow: 1px 1px 1px dark($color-error);
-        box-shadow: inset 1px 2px 1px light($color-error);
+        background: $scopebar-empty-button-hover-background;
+        border: 1px solid $scopebar-empty-button-hover-border;
+        color: $scopebar-empty-button-hover-color;
+        text-shadow: 1px 1px 1px dark($scopebar-empty-button-hover-background);
+        box-shadow: inset 1px 2px 1px light($scopebar-empty-button-hover-background);
       }
     }
   }

@@ -122,27 +122,27 @@ Styleguide 2.3.1
 /* Alternate buttons */
 
 .k-button--default {
-  @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
+  @include button-variant($btn-default-color, $btn-default-background, $btn-default-border);
 }
 
 .k-button--primary {
-  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+  @include button-variant($btn-primary-color, $btn-primary-background, $btn-primary-border);
 }
 
 .k-button--success {
-  @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
+  @include button-variant($btn-success-color, $btn-success-background, $btn-success-border);
 }
 
 .k-button--info {
-  @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
+  @include button-variant($btn-info-color, $btn-info-background, $btn-info-border);
 }
 
 .k-button--warning {
-  @include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border);
+  @include button-variant($btn-warning-color, $btn-warning-background, $btn-warning-border);
 }
 
 .k-button--danger {
-  @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
+  @include button-variant($btn-danger-color, $btn-danger-background, $btn-danger-border);
 }
 
 

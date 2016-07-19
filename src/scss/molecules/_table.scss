@@ -70,7 +70,6 @@ Styleguide 2.21
 */
 
 
-
 .k-table-container {
   background: $table-background;
 
@@ -85,7 +84,6 @@ Styleguide 2.21
     overflow: hidden;
   }
 }
-
 
 .k-table {
   overflow: auto;
@@ -177,7 +175,7 @@ Styleguide 2.21
 
       &:focus,
       &:hover {
-        background: $table-header-background-hover;
+        background: $table-header-hover-background;
       }
     }
   }
@@ -216,12 +214,11 @@ Styleguide 2.21
     &:focus,
     &:hover {
       td {
-        background: $table-cell-background-even-hover;
+        background: $table-cell-hover-background-even;
       }
     }
   }
 }
-
 
 
 
@@ -287,7 +284,7 @@ Styleguide 2.21.8
     &:hover,
     &:focus {
       td {
-        background-color: $table-cell-accent-background-hover;
+        background-color: $table-cell-accent-hover-background;
       }
     }
   }
@@ -297,7 +294,6 @@ Styleguide 2.21.8
 /**
  * Table elements
  */
-
 
 /*
 Item title
@@ -754,11 +750,11 @@ Styleguide 2.21.1
       & > span {
         position: relative;
         float: left; // Collapse white-space
-        padding: $padding-base-vertical $padding-base-horizontal;
+        padding: $spacing-base-vertical $spacing-base-horizontal;
         line-height: $line-height;
         text-decoration: none;
         color: $pagination-color;
-        background-color: $pagination-bg;
+        background-color: $pagination-background;
         border: 1px solid $pagination-border;
         margin-left: -1px;
       }
@@ -785,7 +781,7 @@ Styleguide 2.21.1
       &:focus {
         z-index: 2;
         color: $pagination-hover-color;
-        background-color: $pagination-hover-bg;
+        background-color: $pagination-hover-background;
         border-color: $pagination-hover-border;
       }
     }
@@ -797,7 +793,7 @@ Styleguide 2.21.1
       &:focus {
         z-index: 3;
         color: $pagination-active-color;
-        background-color: $pagination-active-bg;
+        background-color: $pagination-active-background;
         border-color: $pagination-active-border;
         cursor: default;
       }
@@ -835,7 +831,7 @@ markup:
             <tr>
                 <th width="1%" data-hide="phone">
                     <sg-insert>2.12-161</sg-insert>
-                    <span class="visually-hidden">Move icon</sg-insert>
+                    <span class="k-visually-hidden">Move icon</sg-insert>
                 </th>
                 <th width="1%">
                     <input type="checkbox" />

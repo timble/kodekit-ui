@@ -12,14 +12,14 @@
 // 3. Separate $desktop variable is being used so all styles
 //    change together when going from small to larger screen.
 
-$alpha:               400px !default;
-$beta:                600px !default;
-$charlie:             768px !default;
-$delta:               1024px !default;
-$echo:                1200px !default;
+$alpha:     400px !default;
+$beta:      600px !default;
+$charlie:   768px !default;
+$delta:     1024px !default;
+$echo:      1200px !default;
 
-$minwidth:            $alpha !default; // 1
-$desktop:             $charlie !default; // 2
+$minwidth:  $alpha !default; // 1
+$desktop:   $charlie !default; // 2
 
 
 // Flexbox
@@ -81,15 +81,11 @@ $icon-path: '../fonts' !default;
 // can either be used as a padding or a margin on elements
 // Rounding so we won't get half pixels
 
-$spacing-tiny:    round($font-size / 2) !default;
-$spacing-small:   $font-size !default;
-$spacing:         round($font-size * 1.5) !default;
-$spacing-large:   $font-size * 2 !default;
-$spacing-huge:    $font-size * 3 !default;
-
-
-// Input / Button spacing
-// ==========================================================================
+$spacing-tiny:              round($font-size / 2) !default;
+$spacing-small:             $font-size !default;
+$spacing:                   round($font-size * 1.5) !default;
+$spacing-large:             $font-size * 2 !default;
+$spacing-huge:              $font-size * 3 !default;
 
 $spacing-base-vertical:     round($font-size * 0.4) !default;
 $spacing-base-horizontal:   round($font-size * 0.8) !default;
@@ -160,13 +156,13 @@ $color-primary-5: #f1f1f1 !default;
 $color-primary-6: #fafafa !default;
 $color-primary-7: #ffffff !default;
 
-$color-secondary-1: #222 !default;
-$color-secondary-2: #333 !default;
-$color-secondary-3: #555 !default;
-$color-secondary-4: #777 !default;
-$color-secondary-5: #999 !default;
-$color-secondary-6: #ccc !default;
-$color-secondary-7: #ddd !default;
+$color-secondary-1: #222222 !default;
+$color-secondary-2: #333333 !default;
+$color-secondary-3: #555555 !default;
+$color-secondary-4: #777777 !default;
+$color-secondary-5: #999999 !default;
+$color-secondary-6: #cccccc !default;
+$color-secondary-7: #dddddd !default;
 
 
 // Type
@@ -199,7 +195,7 @@ $color-warning-type:  white !default;
 // Links
 // ==========================================================================
 
-$link-color: $color-type;
+$link-color: $color-type !default;
 
 
 // Border
@@ -252,7 +248,7 @@ $title-bar-mobileborder:      darkest($title-bar-mobilebackground) !default;
 // ==========================================================================
 
 $toolbar-spacing:     round($font-size * 0.7) !default;
-$toolbar-height:      round($font-size * 4) !default;
+$toolbar-height:      $unit-size !default;
 $toolbar-background:  $color-primary-4 !default;
 $toolbar-border:      darkest($toolbar-background) !default;
 $toolbar-color:       $color-type !default;
@@ -276,17 +272,16 @@ $sidebar-color:             $color-type !default;
 // ==========================================================================
 
 $navigation-spacing:            $spacing-tiny !default;
+$navigation-font-size:          $font-size-large !default;
+
 $navigation-background:         $color-primary-2 !default;
 $navigation-border:             darkest($navigation-background) !default;
 $navigation-border-width:       5px !default;
 $navigation-color:              $color-type !default;
-$navigation-accent:             red !default;
-$navigation-font-size:          $font-size-large !default;
 
 $navigation-hover-background:   lighter($navigation-background) !default;
 $navigation-hover-border:       $color-accent !default;
 $navigation-hover-color:        $color-type !default;
-$navigation-hover-accent:       yellow !default;
 
 $navigation-active-background:  $navigation-background !default;
 $navigation-active-border:      $color-accent !default;
@@ -311,9 +306,9 @@ $list-active-color:       $color-type !default;
 // Tree
 // ==========================================================================
 
-$jqtree-hover-background:   lighter($sidebar-background) !default;
-$tree-size:                 round($font-size * 2) !default;
-$tree-toggle-size:          ceil($tree-size / 8) !default;
+$jqtree-hover-background: lighter($sidebar-background) !default;
+$tree-size:               $font-size * 2 !default;
+$tree-toggle-size:        ceil($tree-size / 8) !default;
 
 
 // Breadcrumbs
@@ -335,7 +330,7 @@ $breadcrumb-background:         $color-primary-5 !default;
 $breadcrumb-border:             darkest($breadcrumb-background) !default;
 $breadcrumb-color:              $color-type !default;
 
-$breadcrumb-background-hover:   darker($breadcrumb-background) !default;
+$breadcrumb-hover-background:   darker($breadcrumb-background) !default;
 
 
 // Scopebar
@@ -343,26 +338,35 @@ $breadcrumb-background-hover:   darker($breadcrumb-background) !default;
 //
 // 1. Height of the scopebar
 
-$scopebar-size:                   $unit-size !default; // 1
+$scopebar-size:                           $unit-size !default; // 1
 
-$scopebar-background:             $color-primary-5 !default;
-$scopebar-border:                 darkest($scopebar-background) !default;
-$scopebar-color:                  $color-type !default;
+$scopebar-background:                     $color-primary-5 !default;
+$scopebar-border:                         darkest($scopebar-background) !default;
+$scopebar-color:                          $color-type !default;
 
-$scopebar-search-background:      white !default;
-$scopebar-search-color:           $color-type !default;
+$scopebar-search-background:              white !default;
+$scopebar-search-color:                   $color-type !default;
 
-$scopebar-filter-font-size:       $font-size !default;
+$scopebar-filter-font-size:               $font-size !default;
 
-$scopebar-search-size-delta:      $font-size * 17 !default;
-$scopebar-search-size-echo:       $font-size * 22 !default;
+$scopebar-search-size-delta:              $font-size * 17 !default;
+$scopebar-search-size-echo:               $font-size * 22 !default;
 
-$scopebar-submit-button-spacing:  $font-size * 2 !default;
-$scopebar-submit-button-size:     $font-size !default;
+$scopebar-submit-button-spacing:          $font-size * 2 !default;
+$scopebar-submit-button-size:             $font-size !default;
 
-$scopebar-empty-button-spacing:   round($font-size * 1.5) !default;
-$scopebar-empty-button-size:      round($font-size * 0.75) !default;
-$scopebar-empty-button-color:     $color-secondary-4 !default;
+$scopebar-empty-button-spacing:           round($font-size * 1.5) !default;
+$scopebar-empty-button-size:              round($font-size * 0.75) !default;
+$scopebar-empty-button-color:             $color-secondary-4 !default;
+
+$scopebar-empty-button-hover-background:  $color-error !default;
+$scopebar-empty-button-hover-border:      dark($scopebar-empty-button-hover-background) !default;
+$scopebar-empty-button-hover-color:       dark($color-error-type) !default;
+
+$scopebar-filter-label-size:              round($font-size * 1.2) !default;
+$scopebar-filter-label-background:        $color-error !default;
+$scopebar-filter-label-color:             $color-error-type !default;
+$scopebar-filter-label-font-size:         $font-size-small !default;
 
 
 // Dropdowns
@@ -375,7 +379,8 @@ $dropdown-color:                      $color-type !default;
 $dropdown-buttons-background:         $color-primary-6 !default;
 $dropdown-buttons-border:             darkest($dropdown-background) !default;
 $dropdown-buttons-color:              $color-type !default;
-$scopebar-buttons-background-hover:   darker($dropdown-buttons-background) !default;
+
+$scopebar-buttons-hover-background:   darker($dropdown-buttons-background) !default;
 
 
 // Table
@@ -384,31 +389,34 @@ $scopebar-buttons-background-hover:   darker($dropdown-buttons-background) !defa
 // 1. Height of the table cells
 // 2. Table cell padding
 
-$table-background:                      $color-primary-7 !default;
-
-$table-cell-size:                       round($font-size * 3) !default; // 1
+$table-cell-size:                       $font-size * 3 !default; // 1
 $table-cell-spacing-vertical:           $spacing-tiny !default; // 2
 $table-cell-spacing-horizontal:         $spacing-tiny !default; // 2
+
+$table-background:                      $color-primary-7 !default;
 
 $table-header-background:               $color-primary-6 !default;
 $table-header-border:                   darkest($table-header-background) !default;
 $table-header-color:                    $color-type !default;
-$table-header-background-hover:         $color-primary-5 !default;
+$table-header-hover-background:         $color-primary-5 !default;
 
 $table-cell-background-even:            $color-primary-7 !default;
 $table-cell-background-odd:             $color-primary-7 !default;
-$table-cell-background-even-hover:      $color-primary-6 !default;
-$table-cell-background-odd-hover:       $color-primary-6 !default;
-$table-cell-border:                     darker($table-cell-background-odd) !default;
 $table-cell-color:                      $color-type !default;
-$table-cell-accent-background:          $color-accent !default;
-$table-cell-accent-color:               white !default;
-$table-cell-accent-background-hover:    darken($color-accent,10%) !default;
 
+$table-cell-hover-background-even:      $color-primary-6 !default;
+$table-cell-hover-background-odd:       $color-primary-6 !default;
+$table-cell-border:                     darker($table-cell-background-odd) !default;
+
+$table-cell-accent-background:          $color-accent !default;
+$table-cell-accent-color:               $color-accent-type !default;
+
+$table-cell-accent-hover-background:    darken($color-accent,10%) !default;
+
+$table-pagination-height:               ($line-height + ($spacing-base-vertical * 2) + 2px) !default;
+$table-pagination-spacing:              $spacing-tiny !default;
 $table-pagination-background:           $table-header-background !default;
 $table-pagination-border:               $table-header-border !default;
-$table-pagination-spacing:              $spacing-tiny !default;
-$table-pagination-height:               30px !default;
 
 
 // Footable
@@ -450,6 +458,223 @@ $form-block-header-border:      darkest($form-block-header-background) !default;
 $form-block-content-spacing:    $spacing-small !default;
 
 
+// Offcanvas container
+// ==========================================================================
+//
+// 1. The hamburger bar width, best to use a number dividable by 5
+// 2. The height is automatically calculated
+
+$off-canvas-overlay-background:  black !default;
+$off-canvas-overlay-opacity:     0.75 !default;
+$hamburger-button-size:          33px !default;
+$hamburger-button-background:    $color-accent !default;
+$hamburger-button-color:         white !default;
+$hamburger-button-radius:        3px !default;
+$hamburger-bar-width:            15px !default; // 1
+$hamburger-bar-height:           round($hamburger-bar-width / 5) !default; // 2
+
+
+// Form styles
+// ==========================================================================
+
+$form-option-size:          15px !default;
+$form-option-background:    white !default;
+$form-option-border:        $color-secondary-5 !default;
+$form-option-border-size:   1px !default;
+$form-option-color:         $color-accent !default;
+$form-option-shadow:        inset 0 1px 2px rgba(0, 0, 0, 0.15) !default;
+
+
+// Empty state
+// ==========================================================================
+
+$empty-state-background:   white !default;
+$empty-state-color:        $color-type !default;
+
+
+// Grid
+// ==========================================================================
+
+$grid-itemWidth:  $font-size * 10 !default;
+$grid-spacing:    $font-size-large !default;
+$grid-width:      2560px !default;
+
+
+// Tabs
+// ==========================================================================
+
+$nav-tabs-link-spacing:                     $spacing-tiny $spacing-small !default;
+
+$nav-tabs-link-hover-background:            $color-primary-3 !default;
+
+$nav-tabs-disabled-link-color:              $color-secondary-2 !default;
+$nav-tabs-disabled-link-hover-color:        $nav-tabs-disabled-link-color !default;
+
+$nav-tabs-border:                           $nav-tabs-link-hover-background !default;
+$nav-tabs-link-hover-border:                $nav-tabs-link-hover-background !default;
+
+$nav-tabs-active-link-hover-background:     white !default;
+$nav-tabs-active-link-hover-color:          $color-secondary-1 !default;
+$nav-tabs-active-link-hover-border:         $color-primary-2 !default;
+
+
+// Buttons
+// ==========================================================================
+
+$btn-default-color:             $color-type !default;
+$btn-default-background:        $color-primary-7 !default;
+$btn-default-border:            $color-secondary-6 !default;
+
+$btn-primary-color:             $color-accent-type !default;
+$btn-primary-background:        $color-accent !default;
+$btn-primary-border:            darken($btn-primary-background, 5%) !default;
+
+$btn-success-color:             $color-success-type !default;
+$btn-success-background:        $color-success !default
+$btn-success-border:            darken($btn-success-background, 5%) !default;
+
+$btn-info-color:                $color-neutral-type !default;
+$btn-info-background:           $color-neutral !default;
+$btn-info-border:               darken($btn-info-background, 5%) !default;
+
+$btn-warning-color:             $color-warning-type !default;
+$btn-warning-background:        $color-warning !default;
+$btn-warning-border:            darken($btn-warning-background, 5%) !default;
+
+$btn-danger-color:              $color-error-type !default;
+$btn-danger-background:         $color-error !default;
+$btn-danger-border:             darken($btn-danger-background, 5%) !default;
+
+$btn-link-disabled-color:       $color-secondary-2 !default;
+
+$btn-border-radius-base:        $border-radius !default;
+$btn-border-radius-large:       $border-radius-large !default;
+$btn-border-radius-small:       $border-radius-small !default;
+
+
+// Pagination
+// ==========================================================================
+
+$pagination-background:         $color-accent-type !default;
+$pagination-border:             $color-secondary-7 !default;
+$pagination-color:              $color-accent !default;
+
+$pagination-hover-background:   $color-primary-3 !default;
+$pagination-hover-color:        darker($color-accent) !default;
+$pagination-hover-border:       $color-secondary-7 !default;
+
+$pagination-active-background:  $color-accent !default;
+$pagination-active-color:       $color-accent-type !default;
+$pagination-active-border:      darker($color-accent) !default;
+
+
+// Tooltips
+// ==========================================================================
+
+$tooltip-max-width:     260px !default;
+$tooltip-color:         white !default;
+$tooltip-background:    black !default;
+$tooltip-opacity:       0.9 !default;
+$tooltip-arrow-width:   5px !default;
+$tooltip-arrow-color:   $tooltip-background !default;
+
+
+// Wells
+// ==========================================================================
+
+$well-background:   $color-primary-5 !default;
+$well-border:       darken($well-background, 7%) !default;
+
+
+// Feedback states
+// ==========================================================================
+
+$state-success-color:       darker($color-success) !default;
+$state-success-background:  adjust-hue(darken($color-success, 40%), 5%) !default;
+$state-success-border:      darkest($color-success) !default;
+
+$state-info-color:          darker($color-neutral) !default;
+$state-info-background:     lighten($color-neutral, 50%) !default;
+$state-info-border:         darkest($color-neutral) !default;
+
+$state-warning-color:       darker($color-warning) !default;
+$state-warning-background:  lighten($color-warning, 50%) !default;
+$state-warning-border:      darkest($color-warning) !default;
+
+$state-danger-color:        darker($color-error) !default;
+$state-danger-background:   lighten($color-error, 50%) !default;
+$state-danger-border:       darkest($color-error) !default;
+
+
+// Alerts
+// ==========================================================================
+
+$alert-spacing:             $spacing-small !default;
+$alert-border-radius:       $border-radius !default;
+$alert-link-font-weight:    $bold !default;
+
+$alert-success-background:  $color-success !default;
+$alert-success-color:       $color-success-type !default;
+
+$alert-info-background:     $color-neutral !default;
+$alert-info-color:          $color-neutral-type !default;
+
+$alert-warning-background:  $color-warning !default;
+$alert-warning-color:       $color-warning-type !default;
+
+$alert-danger-background:   $color-error !default;
+$alert-danger-color:        $color-error-type !default;
+
+
+// Dropdowns
+// ==========================================================================
+
+$dropdown-background:             white !default;
+$dropdown-border:                 $color-secondary-6 !default;
+$dropdown-fallback-border:        $color-secondary-6 !default;
+
+$dropdown-divider-background:     $color-primary-2 !default;
+
+$dropdown-link-color:             $color-type !default;
+
+$dropdown-link-hover-color:       darken($dropdown-link-color, 5%) !default;
+$dropdown-link-hover-background:  $color-primary-2 !default;
+
+$dropdown-link-active-color:      $color-accent-type !default;
+$dropdown-link-active-background: $color-accent !default;
+
+$dropdown-link-disabled-color:    $color-secondary-2 !default;
+
+$dropdown-header-color:           $color-secondary-2 !default;
+$dropdown-caret-color:            black !default;
+
+$caret-width-base:                4px !default;
+$caret-width-large:               5px !default;
+
+
+// Forms
+// ==========================================================================
+
+$input-background:                $color-primary-7 !default;
+$input-background-disabled:       $color-primary-3 !default;
+$input-border:                    $color-secondary-6 !default;
+$input-color:                     $color-secondary-1 !default;
+
+$input-border-radius:             $border-radius !default;
+$input-border-radius-large:       $border-radius-large !default;
+$input-border-radius-small:       $border-radius-small !default;
+
+$input-border-focus:              $color-neutral !default;
+$input-color-placeholder:         $color-secondary-5 !default;
+
+$input-group-addon-bg:            $color-primary-3 !default;
+$input-group-addon-border-color:  $input-border !default;
+
+$input-height-base:               ($line-height + ($spacing-base-vertical * 2) + 2px) !default;
+$input-height-large:              ($line-height-large + ($spacing-large-vertical * 2) + 2px) !default;
+$input-height-small:              ($line-height-small + ($spacing-small-vertical * 2) + 2px) !default;
+
+
 // Radio toggle
 // ==========================================================================
 //
@@ -482,235 +707,29 @@ $checkbox-toggle-neutral-0:       $color-secondary-7 !default;
 $checkbox-toggle-neutral-1:       $color-neutral !default;
 
 
-// Offcanvas container
-// ==========================================================================
-//
-// 1. The hamburger bar width, best to use a number dividable by 5
-// 2. The height is automatically calculated
-
-$off-canvas-overlay-background:  black !default;
-$off-canvas-overlay-opacity:     0.75 !default;
-$hamburger-button-size:          33px !default;
-$hamburger-button-background:    $color-accent !default;
-$hamburger-button-color:         white !default;
-$hamburger-button-radius:        3px !default;
-$hamburger-bar-width:            15px !default; // 1
-$hamburger-bar-height:           round($hamburger-bar-width / 5) !default; // 2
-
-
-// Form styles
+// Overrides for Select2-bootstrap theme
 // ==========================================================================
 
-$form-option-size:          15px !default;
-$form-option-background:    white !default;
-$form-option-border:        $color-secondary-5 !default;
-$form-option-border-size:   1px !default;
-$form-option-color:         $color-accent !default;
-$form-option-shadow:        inset 0 1px 2px rgba(0, 0, 0, 0.15) !default;
-
-
-// Info block
-// ==========================================================================
-
-$empty-state-background:   white !default;
-$empty-state-color:        $color-type !default;
-
-
-// Grid
-// ==========================================================================
-
-$grid-itemWidth:  round($font-size * 10) !default;
-$grid-spacing:    $font-size-large !default;
-$grid-width:      2560px !default;
-
-
-// Tabs
-// ==========================================================================
-
-$nav-tabs-link-padding:                     $spacing-tiny $spacing-small !default;
-$nav-tabs-link-hover-bg:                    $color-primary-3 !default;
-
-$nav-tabs-disabled-link-color:              $color-secondary-2 !default;
-$nav-tabs-disabled-link-hover-color:        $nav-tabs-disabled-link-color !default;
-
-$nav-tabs-border-color:                     $nav-tabs-link-hover-bg !default;
-$nav-tabs-link-hover-border-color:          $nav-tabs-link-hover-bg !default;
-
-$nav-tabs-active-link-hover-bg:             white !default;
-$nav-tabs-active-link-hover-color:          $color-secondary-1 !default;
-$nav-tabs-active-link-hover-border-color:   $color-primary-2 !default;
-
-
-// Buttons
-// ==========================================================================
-
-$btn-default-color:             $color-type !default;
-$btn-default-bg:                $color-primary-7 !default;
-$btn-default-border:            $color-secondary-6 !default;
-
-$btn-primary-color:             $color-accent-type !default;
-$btn-primary-bg:                $color-accent !default;
-$btn-primary-border:            darken($btn-primary-bg, 5%) !default;
-
-$btn-success-color:             $color-success-type !default;
-$btn-success-bg:                $color-success !default
-$btn-success-border:            darken($btn-success-bg, 5%) !default;
-
-$btn-info-color:                $color-neutral-type !default;
-$btn-info-bg:                   $color-neutral !default;
-$btn-info-border:               darken($btn-info-bg, 5%) !default;
-
-$btn-warning-color:             $color-warning-type !default;
-$btn-warning-bg:                $color-warning !default;
-$btn-warning-border:            darken($btn-warning-bg, 5%) !default;
-
-$btn-danger-color:              $color-error-type !default;
-$btn-danger-bg:                 $color-error !default;
-$btn-danger-border:             darken($btn-danger-bg, 5%) !default;
-
-$btn-link-disabled-color:       $color-secondary-2 !default;
-
-$btn-border-radius-base:        $border-radius !default;
-$btn-border-radius-large:       $border-radius-large !default;
-$btn-border-radius-small:       $border-radius-small !default;
-
-
-// Pagination
-// ==========================================================================
-
-$pagination-bg:               $color-accent-type !default;
-$pagination-color:            $color-accent !default;
-$pagination-border:           $color-secondary-7 !default;
-
-$pagination-hover-bg:         $color-primary-3 !default;
-$pagination-hover-color:      darker($color-accent) !default;
-$pagination-hover-border:     $color-secondary-7 !default;
-
-$pagination-active-bg:        $color-accent !default;
-$pagination-active-color:     $color-accent-type !default;
-$pagination-active-border:    darker($color-accent) !default;
-
-
-// Tooltips
-// ==========================================================================
-
-$tooltip-max-width:     260px !default;
-$tooltip-color:         white !default;
-$tooltip-bg:            black !default;
-$tooltip-opacity:       0.9 !default;
-$tooltip-arrow-width:   5px !default;
-$tooltip-arrow-color:   $tooltip-bg !default;
-
-
-// Wells
-// ==========================================================================
-
-$well-bg:       $color-primary-5 !default;
-$well-border:   darken($well-bg, 7%) !default;
-
-
-// Feedback states
-// ==========================================================================
-
-$state-success-text:    darker($color-success) !default;
-$state-success-bg:      adjust-hue(darken($color-success, 40%), 5%) !default;
-$state-success-border:  darkest($color-success) !default;
-
-$state-info-text:       darker($color-neutral) !default;
-$state-info-bg:         lighten($color-neutral, 50%) !default;
-$state-info-border:     darkest($color-neutral) !default;
-
-$state-warning-text:    darker($color-warning) !default;
-$state-warning-bg:      lighten($color-warning, 50%) !default;
-$state-warning-border:  darkest($color-warning) !default;
-
-$state-danger-text:     darker($color-error) !default;
-$state-danger-bg:       lighten($color-error, 50%) !default;
-$state-danger-border:   darkest($color-error) !default;
-
-
-// Alerts
-// ==========================================================================
-
-$alert-padding:           $spacing-small !default;
-$alert-border-radius:     $border-radius !default;
-$alert-link-font-weight:  $bold !default;
-
-$alert-success-bg:        $color-success !default;
-$alert-success-text:      $color-success-type !default;
-
-$alert-info-bg:           $color-neutral !default;
-$alert-info-text:         $color-neutral-type !default;
-
-$alert-warning-bg:        $color-warning !default;
-$alert-warning-text:      $color-warning-type !default;
-
-$alert-danger-bg:         $color-error !default;
-$alert-danger-text:       $color-error-type !default;
-
-
-// Needed for Bootstrap
-// ==========================================================================
-
-$font-family-base:                inherit !default;
-$font-size-base:                  $font-size !default;
-$line-height-base:                $line-height !default;
-$line-height-computed:            $line-height !default;
-
-$padding-base-vertical:           5px !default;
-$padding-base-horizontal:         10px !default;
-
-$padding-large-vertical:          10px !default;
-$padding-large-horizontal:        16px !default;
-
-$padding-small-vertical:          $padding-base-vertical !default;
-$padding-small-horizontal:        $padding-base-horizontal !default;
-
-$padding-xs-vertical:             1px !default;
-$padding-xs-horizontal:           5px !default;
-
-$line-height-large:               1.333333333 !default;
-$line-height-small:               1.5 !default;
-
-$component-active-bg:             $color-accent !default;
-$component-active-color:          $color-accent-type !default;
-
-$caret-width-base:                4px !default;
-$caret-width-large:               5px !default;
-
-$input-bg:                        $color-primary-7 !default;
-$input-bg-disabled:               $color-primary-3 !default;
-
-$input-color:                     $color-secondary-1 !default;
-$input-border:                    $color-secondary-6 !default;
-
-$input-border-radius:             $border-radius !default;
-$input-border-radius-large:       $border-radius-large !default;
-$input-border-radius-small:       $border-radius-small !default;
-
-$input-border-focus:              $color-neutral !default;
-$input-color-placeholder:         $color-secondary-5 !default;
-
-$input-group-addon-bg:            $color-primary-3 !default;
-$input-group-addon-border-color:  $input-border !default;
-
-$input-height-base:               ($line-height + ($spacing-base-vertical * 2) + 2px) !default;
-$input-height-large:              ($line-height-large + ($spacing-large-vertical * 2) + 2px) !default;
-$input-height-small:              ($line-height-small + ($spacing-small-vertical * 2) + 2px) !default;
-
-
-// Used by select2-bootstrap theme
-
-
-$dropdown-bg:                     white !default;
-$dropdown-border:                 $color-secondary-6 !default;
-$dropdown-fallback-border:        $color-secondary-6 !default;
-$dropdown-divider-bg:             $color-primary-2 !default;
-$dropdown-link-color:             $color-type !default;
-$dropdown-link-hover-color:       darken($dropdown-link-color, 5%) !default;
-$dropdown-link-hover-bg:          $color-primary-2 !default;
-$dropdown-link-active-color:      $component-active-color !default;
-$dropdown-link-active-bg:         $component-active-bg !default;
-$dropdown-link-disabled-color:    $color-secondary-2 !default;
-$dropdown-header-color:           $color-secondary-2 !default;
-$dropdown-caret-color:            black !default;
+$font-family-base:          inherit !default;
+$font-size-base:            $font-size !default;
+$line-height-base:          $line-height !default;
+
+$input-bg:                  $input-background !default;
+$input-bg-disabled:         $input-background-disabled !default;
+
+$padding-base-vertical:     $spacing-base-vertical !default;
+$padding-base-horizontal:   $spacing-base-horizontal !default;
+$padding-small-vertical:    $spacing-small-vertical !default;
+$padding-small-horizontal:  $spacing-small-horizontal !default;
+$padding-large-vertical:    $spacing-large-vertical !default;
+$padding-large-horizontal:  $spacing-large-horizontal !default;
+
+$dropdown-link-hover-bg:    $dropdown-link-hover-background !default;
+$dropdown-link-active-bg:   $dropdown-link-active-background !default;
+
+$btn-default-bg:            $btn-default-background !default;
+$btn-danger-bg:             $btn-danger-background !default;
+
+$state-warning-text:        $state-warning-color !default;
+$state-danger-text:         $state-danger-color !default;
+$state-success-text:        $state-success-color !default;

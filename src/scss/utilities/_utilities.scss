@@ -1,6 +1,9 @@
-/* ==========================================================================
-   Utilities
-   ========================================================================== */
+// Utilities
+//
+// Utilities
+//
+// Styleguide 6.0
+
 
 /**
  * Adding class three times so we win over most other classes without using
@@ -10,16 +13,182 @@
  */
 
 
-/* Just hide the content in a non-accessible way */
+/*
+Dynamic content holder
 
-.hidden.hidden.hidden {
+Add `<script>` and other hidden content (like modals) inside this div so the elements won't be in the way for flexbox
+
+markup:
+<div class="k-dynamic-content-holder">...</div>
+
+Styleguide 6.1
+
+*/
+
+.k-dynamic-content-holder.k-dynamic-content-holder.k-dynamic-content-holder {
   display: none;
 }
 
 
-/* Hide the content in an accessible way */
 
-.visually-hidden.visually-hidden.visually-hidden {
+/*
+Hidden
+
+Hide content in a non-accessible way. Content is hidden for everybody including screenreaders
+
+markup:
+<div class="k-hidden">...</div>
+
+Styleguide 6.2
+
+*/
+
+.k-hidden.k-hidden.k-hidden {
+  display: none;
+}
+
+
+
+/*
+Loader
+
+CSS only loading animation.
+- Falls back to `Loading...` on non capable browsers
+- Add `k-hidden` class to the element when items are done loading
+
+markup:
+<span class="k-loader">Loading...</span>
+
+sg-wrapper:
+<p>
+    <sg-wrapper-content/>
+</p>
+
+Styleguide 6.3
+
+*/
+
+.k-loader {
+  @include modernizr('.k-cssanimations.k-boxshadow') {
+    display: inline-block;
+    color: #464646;
+    font-size: 2px;
+    margin: 0 auto 12px;
+    position: relative;
+    text-indent: -9999em;
+    transform: translateZ(0);
+    animation-delay: -0.16s;
+    vertical-align: middle;
+
+    &,
+    &:before,
+    &:after {
+      border-radius: 50%;
+      width: 3em;
+      height: 3em;
+      animation-fill-mode: both;
+      animation: k-loader 1.8s infinite ease-in-out;
+    }
+
+    &:before {
+      left: -4em;
+      animation-delay: -0.32s;
+    }
+
+    &,
+    &:after {
+      left: 4em;
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  @keyframes k-loader {
+    0%,
+    80%,
+    100% {
+      box-shadow: 0 3em 0 -1.5em;
+    }
+    40% {
+      box-shadow: 0 3em 0 0;
+    }
+  }
+}
+
+
+
+/*
+No margin
+
+Remove all margins from an element
+
+markup:
+<div class="k-no-marginp">...</div>
+
+Styleguide 6.4
+
+*/
+
+.k-no-margin.k-no-margin.k-no-margin {
+  margin: 0;
+}
+
+
+
+/*
+No transition
+
+Disable all transitions
+
+markup:
+<div class="k-no-transition">...</div>
+
+Styleguide 6.5
+
+*/
+
+.k-no-transition.k-no-transition.k-no-transition {
+  transition: none;
+}
+
+
+
+/*
+No wrap
+
+Nowrap element
+
+markup:
+<div class="k-no-wrap">...</div>
+
+Styleguide 6.6
+
+*/
+
+.k-no-wrap.k-no-wrap.k-no-wrap {
+  white-space: nowrap;
+}
+
+
+
+/*
+Visually hidden
+
+Hide the content in an accessible way. Content is hidden for viewers but not for screenreaders
+
+markup:
+<div class="k-visually-hidden">...</div>
+
+Styleguide 6.7
+
+*/
+
+.k-visually-hidden.k-visually-hidden.k-visually-hidden {
   position: absolute;
   overflow: hidden;
   clip: rect(0 0 0 0);
@@ -32,55 +201,25 @@
 
 
 
-/* Show visually-hidden class items */
+/*
+Visually shown
 
-.visually-shown.visually-shown.visually-shown {
+Show content that have the visually-hidden class
+- Use as @extend for items that are already extending `.k-visually-hidden`
+- Try not to use `.k-visually-hidden` and `.k-visually-shown` classes together if possible.
+
+markup:
+<div class="k-visually-shown">...</div>
+
+Styleguide 6.8
+
+*/
+
+.k-visually-shown.k-visually-shown.k-visually-shown {
   position: static;
   overflow: visible;
   clip: auto;
   height: auto;
   width: auto;
   margin: 0;
-}
-
-
-/* Add bottom-margin to an element */
-
-.margin-bottom.margin-bottom.margin-bottom {
-  margin-bottom: $spacing;
-}
-
-
-/* Disable transitions */
-
-.no-transition.no-transition.no-transition {
-  transition: none;
-}
-
-
-/* Don't wrap content */
-
-.k-nowrap.k-nowrap.k-nowrap {
-  white-space: nowrap;
-}
-
-
-/* Remove all margins from an element */
-
-.no-margin.no-margin.no-margin {
-  margin: 0;
-}
-
-
-/* Add padding to bottom of the field */
-
-@at-root :root:root:root .margin-bottom--small {
-  padding-bottom: $spacing-small;
-}
-
-
-/* Hide the modal holders by default */
-
-.k-dynamic-content-holder.k-dynamic-content-holder.k-dynamic-content-holder {
-  display: none;
 }

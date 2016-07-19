@@ -35,7 +35,7 @@ Styleguide 2.9
   font-size: $font-size;
   line-height: $line-height;
   color: $input-color;
-  background-color: $input-bg;
+  background-color: $input-background;
   background-image: none; /* 2 */
   border: 1px solid $input-border;
   border-radius: $input-border-radius; /* 3 */
@@ -75,7 +75,7 @@ Styleguide 2.9
   &[disabled],
   &[readonly],
   fieldset[disabled] & {
-    background-color: $input-bg-disabled;
+    background-color: $input-background-disabled;
     opacity: 1; /* 6 */
   }
 
@@ -364,13 +364,13 @@ Styleguide 2.9.2
 */
 
 .k-has-success {
-  @include form-control-validation($state-success-text, $state-success-text, $state-success-bg);
+  @include form-control-validation($state-success-color, $state-success-color, $state-success-background);
 }
 .k-has-warning {
-  @include form-control-validation($state-warning-text, $state-warning-text, $state-warning-bg);
+  @include form-control-validation($state-warning-color, $state-warning-color, $state-warning-background);
 }
 .k-has-error {
-  @include form-control-validation($state-danger-text, $state-danger-text, $state-danger-bg);
+  @include form-control-validation($state-danger-color, $state-danger-color, $state-danger-background);
 }
 
 
@@ -770,11 +770,11 @@ markup:
     <div class="k-button-group">
         <button type="button" class="k-button k-button--default k-button--tiny">
             <sg-insert>2.12-171</sg-insert>
-            <span class="visually-hidden">Plus icon</span>
+            <span class="k-visually-hidden">Plus icon</span>
         </a>
         <button type="button" class="k-button k-button--default k-button--tiny">
             <sg-insert>2.12-158</sg-insert>
-            <span class="visually-hidden">Minus icon</span>
+            <span class="k-visually-hidden">Minus icon</span>
         </a>
     </div>
 </div><!-- .k-inline-form-group -->
@@ -840,7 +840,7 @@ markup:
     <div class="k-form-row__item k-form-row__item--button">
         <button class="k-button k-button--default k-button--small">
             <span class="k-icon-minus k-icon--error" aria-hidden="true"></span>
-            <span class="visually-hidden">Remove</span>
+            <span class="k-visually-hidden">Remove</span>
         </button>
     </div>
     <div class="k-form-row__item k-form-row__item--label">

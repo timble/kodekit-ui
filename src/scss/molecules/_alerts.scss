@@ -20,7 +20,7 @@ Styleguide 2.1
 */
 
 .k-alert {
-  padding: $alert-padding;
+  padding: $alert-spacing;
   @include content-block;
 }
 
@@ -28,17 +28,17 @@ Styleguide 2.1
 /* Alternate styles */
 
 .k-alert--success {
-  @include alert-variant($alert-success-bg, $alert-success-text);
+  @include alert-variant($alert-success-background, $alert-success-color);
 }
 
 .k-alert--info {
-  @include alert-variant($alert-info-bg, $alert-info-text);
+  @include alert-variant($alert-info-background, $alert-info-color);
 }
 
 .k-alert--warning {
-  @include alert-variant($alert-warning-bg, $alert-warning-text);
+  @include alert-variant($alert-warning-background, $alert-warning-color);
 }
 
 .k-alert--danger {
-  @include alert-variant($alert-danger-bg, $alert-danger-text);
+  @include alert-variant($alert-danger-background, $alert-danger-color);
 }

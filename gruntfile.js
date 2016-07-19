@@ -77,7 +77,9 @@ module.exports = function(grunt) {
                 "tests": [
                     "eventlistener",
                     "appearance",
+                    "boxshadow",
                     "checked",
+                    "cssanimations",
                     "flexbox",
                     "flexboxlegacy",
                     "flexboxtweener",
