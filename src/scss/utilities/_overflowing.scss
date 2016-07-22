@@ -1,5 +1,4 @@
-/* ==========================================================================
-   Overflowing
+/* Overflowing
    ========================================================================== */
 
 /**
@@ -16,7 +15,6 @@
  * 4. Add display: flex so child (actual overflowing container) can flex
  */
 
-// Shadow boxes on overflowing containers
 .k-overflowing {
   overflow: hidden; /* 1 */
   position: relative; /* 2 */

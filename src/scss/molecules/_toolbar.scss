@@ -1,7 +1,10 @@
+/* Toolbar
+   ========================================================================== */
+
 /*
 Toolbar
 
-- ! Always add an icon in front of the text since icons are used as only content on mobile
+- !!! Always add an icon in front of the text since icons are used as only content on mobile
 
 Markup:
 <!-- Toolbar -->
@@ -85,7 +88,7 @@ Styleguide 2.24
   [class^="k-icon"] {
     @include breakpoint(0, range, $charlie) {
       display: block;
-      margin: 0;
+      margin: 0 0 10px;
       width: $font-size-large;
       height: $font-size-large;
       font-size: $font-size-large;
@@ -94,6 +97,16 @@ Styleguide 2.24
 
     display: inline-block;
     margin: 0 0.25em 0 0.1em;
+  }
+
+
+  .k-off-canvas-menu-toggle-holder {
+    display: inline-block;
+    vertical-align: middle;
+
+    .k-off-canvas-menu-toggle {
+      margin-bottom: 0;
+    }
   }
 }
 

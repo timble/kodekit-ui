@@ -1,3 +1,6 @@
+/* Select2
+   ========================================================================== */
+
 /*
 Select2
 
@@ -43,10 +46,26 @@ Styleguide 2.19
     }
   }
 
+
   /* Set proper styling for the search input field */
 
   .select2-search__field {
     height: $input-height-base;
     margin: 0;
+  }
+
+
+  /**
+   * 1. Set font-size to 16px on touch supported devices so browser won't automatically zoom
+   */
+
+  [tabindex],
+  input {
+    @include modernizr('.k-touchevents') {
+      &:focus,
+      &:active {
+        font-size: 16px !important; /* 1 */
+      }
+    }
   }
 }

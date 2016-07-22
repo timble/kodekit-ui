@@ -1,3 +1,6 @@
+/* Hamburger
+   ========================================================================== */
+
 /**
  * Animated hamburger button
  *
@@ -72,38 +75,34 @@
   .k-hamburger-bar3 {
     top: round((($hamburger-button-size - $hamburger-bar-width) / 2) + ($hamburger-bar-height * 4));
   }
-}
 
 
-/**
- * Positioning the toggle button(s)
- */
+  /* Set proper margins */
 
-#left-menu-toggle {
-  left: 0;
+  &.k-off-canvas-menu-toggle--left {
+    margin-right: 0;
 
-  @include rtl {
-    left: auto;
-    right: 0;
+    @include rtl {
+      margin-right: 10px;
+      margin-left: 0;
+    }
+  }
+
+  &.k-off-canvas-menu-toggle--right {
+    margin-left: 0;
+
+    @include rtl {
+      margin-left: 10px;
+      margin-right: 0;
+    }
   }
 }
 
-#right-menu-toggle {
-  right: 0;
 
-  @include rtl {
-    right: auto;
-    left: 0;
-  }
-}
-
-
-/**
- * Transform hamburger into a cross when the sidebar is opened
- */
+/* Transform hamburger into a cross when the sidebar is opened */
 
 .k-show-left-menu {
-  .k-off-canvas-menu-toggle-holder--left {
+  .k-off-canvas-menu-toggle--left {
     .k-hamburger-bar1 {
       top: round(($hamburger-button-size / 2) - ($hamburger-bar-height / 2));
       transform: rotate(135deg);
@@ -126,7 +125,7 @@
 }
 
 .k-show-right-menu {
-  .k-off-canvas-menu-toggle-holder--right {
+  .k-off-canvas-menu-toggle--right {
     .k-hamburger-bar1 {
       top: round(($hamburger-button-size / 2) - ($hamburger-bar-height / 2));
       transform: rotate(135deg);

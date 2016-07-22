@@ -148,48 +148,55 @@ $icon-size-huge:        64px !default;
 // Colors
 // ==========================================================================
 
-$color-primary-1: #e1e1e1 !default;
-$color-primary-2: #e6e6e6 !default;
-$color-primary-3: #eeeeee !default;
-$color-primary-4: #ececec !default;
-$color-primary-5: #f1f1f1 !default;
-$color-primary-6: #fafafa !default;
-$color-primary-7: #ffffff !default;
+$color-primary:         #e1e1e1 !default;
 
-$color-secondary-1: #222222 !default;
-$color-secondary-2: #333333 !default;
-$color-secondary-3: #555555 !default;
-$color-secondary-4: #777777 !default;
-$color-secondary-5: #999999 !default;
-$color-secondary-6: #cccccc !default;
-$color-secondary-7: #dddddd !default;
+$color-primary-plus-1:  lighten($color-primary, 2%) !default;
+$color-primary-plus-2:  lighten($color-primary, 5%) !default;
+$color-primary-plus-3:  lighten($color-primary, 6%) !default;
+$color-primary-plus-4:  lighten($color-primary, 7%) !default;
+$color-primary-plus-5:  lighten($color-primary, 10%) !default;
+$color-primary-plus-6:  lighten($color-primary, 12%) !default;
+
+$color-primary-min-1:   darken($color-primary, 2%) !default;
+$color-primary-min-2:   darken($color-primary, 8%) !default;
+$color-primary-min-3:   darken($color-primary, 28%) !default;
+$color-primary-min-4:   darken($color-primary, 41%) !default;
+$color-primary-min-5:   darken($color-primary, 55%) !default;
+$color-primary-min-6:   darken($color-primary, 68%) !default;
+$color-primary-min-7:   darken($color-primary, 75%) !default;
 
 
 // Type
 
-$color-type:          $color-secondary-1 !default;
-$color-type-light:    lighten($color-type, 50%) !default;
+$color-type:            #222222 !default;
+$color-type-light:      lighten($color-type, 50%) !default;
 
 
 // Accent color
 
-$color-accent:        #3071a9 !default;
-$color-accent-type:   white !default;
+$color-accent:          #3071a9 !default;
+$color-accent-type:     white !default;
 
 
 // States
 
-$color-success:       #27ae60 !default;
-$color-success-type:  white !default;
+$color-success:         #27ae60 !default;
+$color-success-type:    white !default;
 
-$color-error:         #c0392b !default;
-$color-error-type:    white !default;
+$color-error:           #c0392b !default;
+$color-error-type:      white !default;
 
-$color-neutral:       #3498db !default;
-$color-neutral-type:  white !default;
+$color-neutral:         #3498db !default;
+$color-neutral-type:    white !default;
 
-$color-warning:       #e67e22 !default;
-$color-warning-type:  white !default;
+$color-warning:         #e67e22 !default;
+$color-warning-type:    white !default;
+
+
+// Elements
+$color-button:          white !default;
+$color-forms:           white !default;
+$color-forms-disabled:  #ddd !default;
 
 
 // Links
@@ -217,13 +224,13 @@ $koowa-background:  white !default;
 $koowa-padding:     0 !default;
 
 
-// Masthead
+// Menubar
 // ==========================================================================
 
-$masthead-height:       $unit-size !default;
-$masthead-background:   $color-secondary-1 !default;
-$masthead-border:       darkest($masthead-background) !default;;
-$masthead-color:        $color-primary-6 !default;
+$menubar-height:       $unit-size !default;
+$menubar-background:   $color-primary-min-7 !default;
+$menubar-border:       darkest($menubar-background) !default;;
+$menubar-color:        $color-primary-plus-5 !default;
 
 
 // Content
@@ -236,11 +243,11 @@ $content-border:       darkest($content-background) !default;
 // Title-bar
 // ==========================================================================
 
-$title-bar-background:        $color-primary-4 !default;
+$title-bar-background:        $color-primary-plus-3 !default;
 $title-bar-border:            darkest($title-bar-background) !default;
 $title-bar-color:             $color-type !default;
 
-$title-bar-mobilebackground:  $color-primary-1 !default;
+$title-bar-mobilebackground:  $color-primary !default;
 $title-bar-mobileborder:      darkest($title-bar-mobilebackground) !default;
 
 
@@ -249,7 +256,7 @@ $title-bar-mobileborder:      darkest($title-bar-mobilebackground) !default;
 
 $toolbar-spacing:     round($font-size * 0.7) !default;
 $toolbar-height:      $unit-size !default;
-$toolbar-background:  $color-primary-4 !default;
+$toolbar-background:  $color-primary-plus-3 !default;
 $toolbar-border:      darkest($toolbar-background) !default;
 $toolbar-color:       $color-type !default;
 
@@ -263,7 +270,7 @@ $toolbar-color:       $color-type !default;
 $sidebar-width-small:       210px !default; // 1
 $sidebar-width:             270px !default; // 2
 
-$sidebar-background:        $color-primary-3 !default;
+$sidebar-background:        $color-primary-plus-2 !default;
 $sidebar-border:            darkest($sidebar-background) !default;
 $sidebar-color:             $color-type !default;
 
@@ -274,7 +281,7 @@ $sidebar-color:             $color-type !default;
 $navigation-spacing:            $spacing-tiny !default;
 $navigation-font-size:          $font-size-large !default;
 
-$navigation-background:         $color-primary-2 !default;
+$navigation-background:         $color-primary-plus-1 !default;
 $navigation-border:             darkest($navigation-background) !default;
 $navigation-border-width:       5px !default;
 $navigation-color:              $color-type !default;
@@ -326,7 +333,7 @@ $breadcrumb-divider-size:       round($unit-size / 2) !default; // 3
 $breadcrumb-size:               $unit-size !default; // 4
 $breadcrumb-query:              $charlie !default; // 5
 
-$breadcrumb-background:         $color-primary-5 !default;
+$breadcrumb-background:         $color-primary-plus-4 !default;
 $breadcrumb-border:             darkest($breadcrumb-background) !default;
 $breadcrumb-color:              $color-type !default;
 
@@ -340,11 +347,11 @@ $breadcrumb-hover-background:   darker($breadcrumb-background) !default;
 
 $scopebar-size:                           $unit-size !default; // 1
 
-$scopebar-background:                     $color-primary-5 !default;
+$scopebar-background:                     $color-primary-plus-4 !default;
 $scopebar-border:                         darkest($scopebar-background) !default;
 $scopebar-color:                          $color-type !default;
 
-$scopebar-search-background:              white !default;
+$scopebar-search-background:              $color-forms !default;
 $scopebar-search-color:                   $color-type !default;
 
 $scopebar-filter-font-size:               $font-size !default;
@@ -357,7 +364,7 @@ $scopebar-submit-button-size:             $font-size !default;
 
 $scopebar-empty-button-spacing:           round($font-size * 1.5) !default;
 $scopebar-empty-button-size:              round($font-size * 0.75) !default;
-$scopebar-empty-button-color:             $color-secondary-4 !default;
+$scopebar-empty-button-color:             $color-primary-min-4 !default;
 
 $scopebar-empty-button-hover-background:  $color-error !default;
 $scopebar-empty-button-hover-border:      dark($scopebar-empty-button-hover-background) !default;
@@ -372,11 +379,11 @@ $scopebar-filter-label-font-size:         $font-size-small !default;
 // Dropdowns
 // ==========================================================================
 
-$dropdown-background:                 $color-primary-7 !default;
+$dropdown-background:                 $color-primary-plus-6 !default;
 $dropdown-border:                     darkest($dropdown-background) !default;
 $dropdown-color:                      $color-type !default;
 
-$dropdown-buttons-background:         $color-primary-6 !default;
+$dropdown-buttons-background:         $color-primary-plus-5 !default;
 $dropdown-buttons-border:             darkest($dropdown-background) !default;
 $dropdown-buttons-color:              $color-type !default;
 
@@ -393,19 +400,19 @@ $table-cell-size:                       $font-size * 3 !default; // 1
 $table-cell-spacing-vertical:           $spacing-tiny !default; // 2
 $table-cell-spacing-horizontal:         $spacing-tiny !default; // 2
 
-$table-background:                      $color-primary-7 !default;
+$table-background:                      $color-primary-plus-6 !default;
 
-$table-header-background:               $color-primary-6 !default;
+$table-header-background:               $color-primary-plus-5 !default;
 $table-header-border:                   darkest($table-header-background) !default;
 $table-header-color:                    $color-type !default;
-$table-header-hover-background:         $color-primary-5 !default;
+$table-header-hover-background:         $color-primary-plus-4 !default;
 
-$table-cell-background-even:            $color-primary-7 !default;
-$table-cell-background-odd:             $color-primary-7 !default;
+$table-cell-background-even:            $color-primary-plus-6 !default;
+$table-cell-background-odd:             $color-primary-plus-6 !default;
 $table-cell-color:                      $color-type !default;
 
-$table-cell-hover-background-even:      $color-primary-6 !default;
-$table-cell-hover-background-odd:       $color-primary-6 !default;
+$table-cell-hover-background-even:      $color-primary-plus-5 !default;
+$table-cell-hover-background-odd:       $color-primary-plus-5 !default;
 $table-cell-border:                     darker($table-cell-background-odd) !default;
 
 $table-cell-accent-background:          $color-accent !default;
@@ -442,17 +449,17 @@ $overflow-offset:   -($overflow-size) !default;
 // Component layout
 // ==========================================================================
 
-$component-background: $color-primary-6 !default;
+$component-background: $color-primary-plus-5 !default;
 
 
 // Form block
 // ==========================================================================
 
-$form-block-background:         $color-primary-7 !default;
+$form-block-background:         $color-primary-plus-6 !default;
 $form-block-border:             darkest($form-block-background) !default;
 
 $form-block-header-spacing:     $spacing-tiny !default;
-$form-block-header-background:  $color-primary-5 !default;
+$form-block-header-background:  $color-primary-plus-4 !default;
 $form-block-header-border:      darkest($form-block-header-background) !default;
 
 $form-block-content-spacing:    $spacing-small !default;
@@ -479,7 +486,7 @@ $hamburger-bar-height:           round($hamburger-bar-width / 5) !default; // 2
 
 $form-option-size:          15px !default;
 $form-option-background:    white !default;
-$form-option-border:        $color-secondary-5 !default;
+$form-option-border:        $color-primary-min-3 !default;
 $form-option-border-size:   1px !default;
 $form-option-color:         $color-accent !default;
 $form-option-shadow:        inset 0 1px 2px rgba(0, 0, 0, 0.15) !default;
@@ -505,25 +512,25 @@ $grid-width:      2560px !default;
 
 $nav-tabs-link-spacing:                     $spacing-tiny $spacing-small !default;
 
-$nav-tabs-link-hover-background:            $color-primary-3 !default;
+$nav-tabs-link-hover-background:            $color-primary-plus-2 !default;
 
-$nav-tabs-disabled-link-color:              $color-secondary-2 !default;
+$nav-tabs-disabled-link-color:              $color-primary-min-6 !default;
 $nav-tabs-disabled-link-hover-color:        $nav-tabs-disabled-link-color !default;
 
 $nav-tabs-border:                           $nav-tabs-link-hover-background !default;
 $nav-tabs-link-hover-border:                $nav-tabs-link-hover-background !default;
 
 $nav-tabs-active-link-hover-background:     white !default;
-$nav-tabs-active-link-hover-color:          $color-secondary-1 !default;
-$nav-tabs-active-link-hover-border:         $color-primary-2 !default;
+$nav-tabs-active-link-hover-color:          $color-primary-min-7 !default;
+$nav-tabs-active-link-hover-border:         $color-primary-plus-1 !default;
 
 
 // Buttons
 // ==========================================================================
 
 $btn-default-color:             $color-type !default;
-$btn-default-background:        $color-primary-7 !default;
-$btn-default-border:            $color-secondary-6 !default;
+$btn-default-background:        $color-button !default;
+$btn-default-border:            $color-primary-min-2 !default;
 
 $btn-primary-color:             $color-accent-type !default;
 $btn-primary-background:        $color-accent !default;
@@ -545,7 +552,7 @@ $btn-danger-color:              $color-error-type !default;
 $btn-danger-background:         $color-error !default;
 $btn-danger-border:             darken($btn-danger-background, 5%) !default;
 
-$btn-link-disabled-color:       $color-secondary-2 !default;
+$btn-link-disabled-color:       $color-primary-min-6 !default;
 
 $btn-border-radius-base:        $border-radius !default;
 $btn-border-radius-large:       $border-radius-large !default;
@@ -556,12 +563,12 @@ $btn-border-radius-small:       $border-radius-small !default;
 // ==========================================================================
 
 $pagination-background:         $color-accent-type !default;
-$pagination-border:             $color-secondary-7 !default;
+$pagination-border:             $color-primary-min-1 !default;
 $pagination-color:              $color-accent !default;
 
-$pagination-hover-background:   $color-primary-3 !default;
+$pagination-hover-background:   $color-primary-plus-2 !default;
 $pagination-hover-color:        darker($color-accent) !default;
-$pagination-hover-border:       $color-secondary-7 !default;
+$pagination-hover-border:       $color-primary-min-1 !default;
 
 $pagination-active-background:  $color-accent !default;
 $pagination-active-color:       $color-accent-type !default;
@@ -582,7 +589,7 @@ $tooltip-arrow-color:   $tooltip-background !default;
 // Wells
 // ==========================================================================
 
-$well-background:   $color-primary-5 !default;
+$well-background:   $color-primary-plus-4 !default;
 $well-border:       darken($well-background, 7%) !default;
 
 
@@ -630,22 +637,22 @@ $alert-danger-color:        $color-error-type !default;
 // ==========================================================================
 
 $dropdown-background:             white !default;
-$dropdown-border:                 $color-secondary-6 !default;
-$dropdown-fallback-border:        $color-secondary-6 !default;
+$dropdown-border:                 $color-primary-min-2 !default;
+$dropdown-fallback-border:        $color-primary-min-2 !default;
 
-$dropdown-divider-background:     $color-primary-2 !default;
+$dropdown-divider-background:     $color-primary-plus-1 !default;
 
 $dropdown-link-color:             $color-type !default;
 
 $dropdown-link-hover-color:       darken($dropdown-link-color, 5%) !default;
-$dropdown-link-hover-background:  $color-primary-2 !default;
+$dropdown-link-hover-background:  $color-primary-plus-1 !default;
 
 $dropdown-link-active-color:      $color-accent-type !default;
 $dropdown-link-active-background: $color-accent !default;
 
-$dropdown-link-disabled-color:    $color-secondary-2 !default;
+$dropdown-link-disabled-color:    $color-primary-min-6 !default;
 
-$dropdown-header-color:           $color-secondary-2 !default;
+$dropdown-header-color:           $color-primary-min-6 !default;
 $dropdown-caret-color:            black !default;
 
 $caret-width-base:                4px !default;
@@ -655,19 +662,19 @@ $caret-width-large:               5px !default;
 // Forms
 // ==========================================================================
 
-$input-background:                $color-primary-7 !default;
-$input-background-disabled:       $color-primary-3 !default;
-$input-border:                    $color-secondary-6 !default;
-$input-color:                     $color-secondary-1 !default;
+$input-background:                $color-forms !default;
+$input-background-disabled:       $color-forms-disabled !default;
+$input-border:                    $color-primary-min-2 !default;
+$input-color:                     $color-primary-min-7 !default;
 
 $input-border-radius:             $border-radius !default;
 $input-border-radius-large:       $border-radius-large !default;
 $input-border-radius-small:       $border-radius-small !default;
 
 $input-border-focus:              $color-neutral !default;
-$input-color-placeholder:         $color-secondary-5 !default;
+$input-color-placeholder:         $color-primary-min-3 !default;
 
-$input-group-addon-bg:            $color-primary-3 !default;
+$input-group-addon-bg:            $color-primary-plus-2 !default;
 $input-group-addon-border-color:  $input-border !default;
 
 $input-height-base:               ($line-height + ($spacing-base-vertical * 2) + 2px) !default;
@@ -703,7 +710,7 @@ $checkbox-toggle-width-inner:     ($checkbox-toggle-size * 2) - (($checkbox-togg
 $checkbox-toggle-height-inner:    $checkbox-toggle-size - (($checkbox-toggle-border-width + $checkbox-toggle-padding) * 2) !default;
 $checkbox-toggle-0:               $color-error !default;
 $checkbox-toggle-1:               $color-success !default;
-$checkbox-toggle-neutral-0:       $color-secondary-7 !default;
+$checkbox-toggle-neutral-0:       $color-primary-min-1 !default;
 $checkbox-toggle-neutral-1:       $color-neutral !default;
 
 

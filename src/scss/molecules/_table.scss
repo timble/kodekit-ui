@@ -1,3 +1,6 @@
+/* Table
+   ========================================================================== */
+
 /*
 Table
 
@@ -10,23 +13,23 @@ markup:
         <table class="k-js-fixed-table-header k-js-responsive-table">
         <thead>
             <tr>
-                <th width="1%"><input type="checkbox" /></th>
+                <th width="1%" data-toggle="true"><input type="checkbox" /></th>
                 <th class="k-sort-desc"><a href="javascript:void(0)">Item title</a></th>
-                <th width="5%"><a href="javascript:void(0)">State</a></th>
-                <th width="15%"><a href="javascript:void(0)">Category</a></th>
-                <th width="5%"><a href="javascript:void(0)">Date</a></th>
+                <th width="5%" data-hide="phone,tablet"><a href="javascript:void(0)">State</a></th>
+                <th width="15%" data-hide="phone"><a href="javascript:void(0)">Category</a></th>
+                <th width="5%" data-hide="phone,tablet,desktop"><a href="javascript:void(0)">Date</a></th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><input type="checkbox" /></td>
+                <td class="k-table-data--toggle"><input type="checkbox" /></td>
                 <sg-insert>2.21.3</sg-insert>
                 <td><sg-insert>2.21.5-2</sg-insert></td>
                 <sg-insert>2.21.2</sg-insert>
                 <td class="k-table-data--nowrap">01 January 1999</td>
             </tr>
             <tr>
-                <td><input type="checkbox" /></td>
+                <td class="k-table-data--toggle"><input type="checkbox" /></td>
                 <sg-insert>2.21.3</sg-insert>
                 <td><sg-insert>2.21.5-2</sg-insert></td>
                 <sg-insert>2.21.2</sg-insert>
@@ -34,21 +37,21 @@ markup:
             </tr>
             <sg-insert>2.21.6</sg-insert>
             <tr>
-                <td><input type="checkbox" /></td>
+                <td class="k-table-data--toggle"><input type="checkbox" /></td>
                 <sg-insert>2.21.3</sg-insert>
                 <td><sg-insert>2.21.5-2</sg-insert></td>
                 <sg-insert>2.21.2</sg-insert>
                 <td class="k-table-data--nowrap">01 January 1999</td>
             </tr>
             <tr>
-                <td><input type="checkbox" /></td>
+                <td class="k-table-data--toggle"><input type="checkbox" /></td>
                 <sg-insert>2.21.3</sg-insert>
                 <td><sg-insert>2.21.5-2</sg-insert></td>
                 <sg-insert>2.21.2</sg-insert>
                 <td class="k-table-data--nowrap">01 January 1999</td>
             </tr>
             <tr>
-                <td><input type="checkbox" /></td>
+                <td class="k-table-data--toggle"><input type="checkbox" /></td>
                 <sg-insert>2.21.3</sg-insert>
                 <td><sg-insert>2.21.5-2</sg-insert></td>
                 <sg-insert>2.21.2</sg-insert>
@@ -68,7 +71,6 @@ sg-wrapper:
 Styleguide 2.21
 
 */
-
 
 .k-table-container {
   background: $table-background;
@@ -209,6 +211,7 @@ Styleguide 2.21
 
 
   /* Hover background */
+
   tr,
   tr:nth-child(n) {
     &:focus,
@@ -219,7 +222,6 @@ Styleguide 2.21
     }
   }
 }
-
 
 
 /**
@@ -274,7 +276,7 @@ Styleguide 2.21.8
       color: $table-cell-accent-color;
 
       a, i, span {
-        color: $table-cell-accent-color; /* 1 */
+        color: $table-cell-accent-color;
       }
     }
 
@@ -375,7 +377,6 @@ Styleguide 2.21.3
 }
 
 
-
 /*
 Table cell settings
 
@@ -431,8 +432,6 @@ Styleguide 2.21.4
 
   .k-table-data--toggle {
     white-space: nowrap;
-    padding-left: 0;
-    padding-right: 0;
   }
 
   .k-table-data--ellipsis {
@@ -449,7 +448,6 @@ Styleguide 2.21.4
     }
   }
 }
-
 
 
 /*
@@ -519,6 +517,7 @@ Styleguide 2.21.7
     }
   }
 
+
   /* Set proper spacing before levels */
 
   @for $i from 1 through 15 {
@@ -541,13 +540,13 @@ Styleguide 2.21.7
     }
   }
 
+
   /* Do not display the level icon for the first level items */
 
   .k-table__item-level1:before {
     display: none;
   }
 }
-
 
 
 /*
@@ -595,7 +594,6 @@ Styleguide 2.21.6
 }
 
 
-
 /*
 Table item states
 
@@ -630,7 +628,9 @@ Styleguide 2.21.5
   .k-table__item--state {
     @include transition;
 
-    // pointers for clickable elements
+
+    /* pointers for clickable elements */
+
     button#{&},
     a#{&} {
       cursor: pointer;
@@ -658,7 +658,6 @@ Styleguide 2.21.5
     }
   }
 }
-
 
 
 /*
@@ -703,9 +702,9 @@ Styleguide 2.21.1
 
 */
 
-/*
-1. Faking a bottom border, this shadow will disappear when pagination is positioned to bottom
-*/
+/**
+ * 1. Faking a bottom border, this shadow will disappear when pagination is positioned to bottom
+ */
 
 .k-table-pagination {
   padding: $table-pagination-spacing;
@@ -736,7 +735,12 @@ Styleguide 2.21.1
   }
 
 
-  /* Pagination */
+  /**
+   * Pagination
+   *
+   * 1. Remove list-style and block-level defaults
+   * 2. Collapse white-space
+   */
 
   .k-pagination__pages {
     padding-left: 0;
@@ -744,12 +748,12 @@ Styleguide 2.21.1
     border-radius: $border-radius;
 
     & > li {
-      display: inline; // Remove list-style and block-level defaults
+      display: inline; /* 1 */
 
       & > a,
       & > span {
         position: relative;
-        float: left; // Collapse white-space
+        float: left; /* 2 */
         padding: $spacing-base-vertical $spacing-base-horizontal;
         line-height: $line-height;
         text-decoration: none;
@@ -833,10 +837,10 @@ markup:
                     <sg-insert>2.12-161</sg-insert>
                     <span class="k-visually-hidden">Move icon</sg-insert>
                 </th>
-                <th width="1%">
+                <th data-toggle="true" width="1%">
                     <input type="checkbox" />
                 </th>
-                <th data-toggle="true">
+                <th>
                     Title
                 </th>
                 <th data-hide="phone,tablet">
@@ -852,7 +856,7 @@ markup:
                 <td>
                     <sg-insert>2.21.9</sg-insert>
                 </td>
-                <td>
+                <td class="k-table-data--toggle">
                     <input type="checkbox" />
                 </td>
                 <td>
@@ -882,8 +886,9 @@ Styleguide 2.21.11
     line-height: ($footable-toggle-size - ($footable-toggle-border-size * 2));
     border: $footable-toggle-border-size solid $footable-toggle-color;
     border-radius: 50%;
-    margin-right: $table-cell-spacing-horizontal;
+    margin-right: $spacing-small;
     text-align: center;
+    vertical-align: middle;
 
     @include rtl {
       margin-right: 0;
@@ -928,8 +933,28 @@ Styleguide 2.21.11
   .footable-row-detail-name {
     font-weight: $bold;
   }
-}
 
+
+  /* Hide toggle button for sub headings */
+
+  th {
+    .footable-toggle {
+      display: none;
+    }
+  }
+
+  .k-table-data--toggle {
+    padding-right: ($footable-toggle-size + ($spacing-tiny * 2));
+
+    .footable-toggle {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      right: $spacing-tiny;
+      margin-top: -(round($footable-toggle-size / 2));
+    }
+  }
+}
 
 
 /*
@@ -1014,9 +1039,6 @@ Styleguide 2.21.9
 }
 
 
-
-
-
 /*
 Table heading sorting
 
@@ -1078,7 +1100,6 @@ th.k-sort-desc {
     }
   }
 }
-
 
 
 /*
@@ -1143,7 +1164,7 @@ Styleguide 2.21.12
  */
 
 .floatThead-wrapper {
-  z-index: 1 !important;
+  z-index: 1 !important; /* 1 */
 
   @include flexbox {
     display: flex;

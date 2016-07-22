@@ -1,3 +1,6 @@
+/* Grid
+   ========================================================================== */
+
 /*
 Grid
 
@@ -24,7 +27,6 @@ Styleguide 3.7
 
 */
 
-
 /* Container */
 
 .k-container {
@@ -50,10 +52,7 @@ Styleguide 3.7
    Grid children
    -------------------------------------------------------------------------- */
 
-
-/**
- * Main container
- */
+/* Main container */
 
 .k-container__main {
   margin-bottom: $spacing;
@@ -64,6 +63,7 @@ Styleguide 3.7
     width: calc(100% * 8/12 - #{$spacing});
   }
 }
+
 
 /* When a sidebar is active next to it */
 
@@ -79,9 +79,7 @@ Styleguide 3.7
 }
 
 
-/**
- * Sub container
- */
+/* Sub container */
 
 .k-container__sub {
   margin-bottom: $spacing;
@@ -92,6 +90,7 @@ Styleguide 3.7
     width: calc(100% * 4/12 - #{$spacing});
   }
 }
+
 
 /* When a sidebar is active next to it */
 
@@ -107,9 +106,7 @@ Styleguide 3.7
 }
 
 
-/**
- * Full container
- */
+/* Full container */
 
 .k-container__full {
   clear: both;

@@ -4,14 +4,12 @@
 //
 // Styleguide 6.0
 
-
 /**
  * Adding class three times so we win over most other classes without using
  * !important. Most selectors are max three long e.g.:
  * `.some.longer[css=selector]` will still lose from `.selector.selector.selector`
  * since we load this file last
  */
-
 
 /*
 Dynamic content holder

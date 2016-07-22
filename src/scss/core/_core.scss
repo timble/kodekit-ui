@@ -9,6 +9,7 @@
  * 1. Select2
  * 2. Select2 bootstrap theme to match the bootstrap forms
  * 3. We need the dropdowns for the datepicker to work
+ * 4. Modals are being generated outside of the koowa namespace
  */
 
 
@@ -18,9 +19,9 @@
 @import "../../../node_modules/select2/src/scss/core"; /* 1 */
 @import "../../../node_modules/select2-bootstrap-theme/src/select2-bootstrap"; /* 2 */
 @import "../molecules/dropdowns"; /* 3 */
-@import "../molecules/modal";
-@import "../molecules/select2";
-@import "../molecules/datepicker";
+@import "../molecules/modal"; /* 4 */
+@import "../molecules/select2"; /* 1 */
+@import "../molecules/datepicker"; /* 3 */
 
 
 /* Setup html and body

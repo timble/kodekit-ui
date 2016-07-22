@@ -1,3 +1,6 @@
+/* Dropdowns
+   ========================================================================== */
+
 /*
 Dropdown
 
@@ -76,9 +79,7 @@ Styleguide 2.6.2
 
 */
 
-/**
- * Dropdown arrow/caret
- */
+/* Dropdown arrow/caret */
 
 .k-caret {
   display: inline-block;
@@ -92,9 +93,7 @@ Styleguide 2.6.2
 }
 
 
-/**
- * The dropdown wrapper (div)
- */
+/* The dropdown wrapper (div) */
 
 .k-dropdown {
   position: relative;
@@ -153,7 +152,6 @@ Styleguide 2.6.2
 }
 
 
-
 /**
  * Dividers (basically an hr) within the dropdown
  */
@@ -166,7 +164,7 @@ Styleguide 2.6.2
 }
 
 
-/* Hover/Focus state */
+/* Hover / Focus state */
 
 .k-dropdown__menu a {
   &:hover,
@@ -190,6 +188,7 @@ Styleguide 2.6.2
     background-color: $dropdown-link-active-background;
   }
 }
+
 
 /**
  * Disabled state

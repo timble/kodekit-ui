@@ -1,3 +1,6 @@
+/* Forms
+   ========================================================================== */
+
 /*
 Forms
 
@@ -63,7 +66,9 @@ Styleguide 2.9
     color: $input-color-placeholder;
   }
 
+
   /* 5 */
+
   &::-ms-expand {
     border: 0;
     background-color: transparent;
@@ -164,9 +169,7 @@ Styleguide 2.9.1
 
 */
 
-/**
- * Shared styling between radio boxes and checkboxes
- */
+/* Shared styling between radio boxes and checkboxes */
 
 @include modernizr('.k-appearance.k-checked') {
   input[type="checkbox"],
@@ -174,7 +177,7 @@ Styleguide 2.9.1
 
     /**
      * 1. Resetting the default styling used by browsers. Don't do this for -moz-
-          because the checkbox and radio box will look very ugly
+     *    because the checkbox and radio box will look very ugly
      * 2. Positioning relative to position psuedo before element nicely
      * 5. Indicate that element is clickable
      */
@@ -515,6 +518,7 @@ Styleguide 2.9.4
   }
 }
 
+
 /* Input group parts */
 
 .k-input-group__addon,
@@ -580,6 +584,7 @@ Styleguide 2.9.4
 
 
 /* Reset rounded corners */
+
 .k-input-group .k-form-control:first-child,
 .k-input-group__addon:first-child,
 .k-input-group__button:first-child > .k-button,
@@ -824,9 +829,9 @@ Styleguide 2.9.7
 */
 
 .k-form-row-group {
-  background: #fff;
+  background: $color-primary-plus-6;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid $color-primary-min-2;
   margin-bottom: $spacing;
 }
 
@@ -863,8 +868,12 @@ Styleguide 2.9.8
 
 .k-form-row {
   margin: 0;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid $color-primary-min-2;
   padding-bottom: 10px;
+
+  &:last-child {
+    border-bottom: 0;
+  }
 
   @include breakpoint($beta) {
     display: table;
@@ -882,17 +891,17 @@ Styleguide 2.9.8
 
   .k-form-row__item {
     padding: 10px 10px 0 10px;
-    border-right: 1px solid #ccc;
-
-    @include rtl {
-      border-right: none;
-      border-left: 1px solid #ccc;
-    }
 
     @include breakpoint($beta) {
       display: table-cell;
       vertical-align: middle;
       padding: 10px;
+      border-right: 1px solid $color-primary-min-2;
+
+      @include rtl {
+        border-right: none;
+        border-left: 1px solid $color-primary-min-2;
+      }
     }
 
     &:last-child {
@@ -938,7 +947,7 @@ Styleguide 2.9.8
 
       &:focus,
       &:hover {
-        background: #eee;
+        background: $color-primary-plus-1;
       }
     }
   }
@@ -986,6 +995,7 @@ Styleguide 2.9.9
 .k-file-input {
   position: relative;
   display: inline-block;
+
 
   /* The original file input select */
 

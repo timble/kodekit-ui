@@ -1,3 +1,6 @@
+/* Tree
+   ========================================================================== */
+
 /*
 Tree
 
@@ -26,7 +29,24 @@ Styleguide 2.26
 
   .jqtree-selected {
     & > .jqtree-element {
-      color: $color-accent;
+      background: $color-accent;
+      color: $color-accent-type;
+    }
+
+    &:hover {
+      & > .jqtree-element {
+        background: dark($color-accent);
+      }
+    }
+
+    .jqtree-toggler {
+      &:hover {
+        color: $color-accent-type;
+
+        &:before {
+          border-top-color: $color-accent-type;
+        }
+      }
     }
   }
 }
@@ -35,9 +55,7 @@ Styleguide 2.26
   @include clearfix;
 
 
-  /**
-   * Reset default ul li styling
-   */
+  /* Reset default ul li styling */
 
   &, ul {
     @include reset;
@@ -47,9 +65,7 @@ Styleguide 2.26
   }
 
 
-  /**
-   * RTL styling
-   */
+  /* RTL styling */
 
   @include rtl {
     &, ul {

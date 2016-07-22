@@ -1,3 +1,6 @@
+/* Card
+   ========================================================================== */
+
 /*
 Card
 
@@ -115,8 +118,8 @@ Styleguide 2.4.4
   @include transition;
   display: block;
   backface-visibility: visible;
-  background: $color-primary-6;
-  border: 1px solid #ddd;
+  background: $color-primary-plus-5;
+  border: 1px solid $color-primary-min-1;
 
 
   /**

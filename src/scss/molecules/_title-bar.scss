@@ -1,3 +1,6 @@
+/* Title bar
+   ========================================================================== */
+
 /*
 Title bar
 
@@ -130,11 +133,11 @@ Styleguide 2.23
   }
 
   h2 {
-    width: 99%;
+    width: 100%;
     padding: $spacing-small;
     text-align: center;
 
-    @include breakpoint($beta) {
+    @include breakpoint($charlie) {
       text-align: left;
 
       @include rtl {

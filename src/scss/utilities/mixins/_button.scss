@@ -14,11 +14,13 @@
     background-color: darken($background, 10%);
     border-color: darken($border, 25%);
   }
+
   &:hover {
     color: $color;
     background-color: darken($background, 10%);
     border-color: darken($border, 12%);
   }
+
   &:active,
   &.k-is-active,
   .k-is-open > &.dropdown-toggle {
@@ -35,11 +37,13 @@
       border-color: darken($border, 25%);
     }
   }
+
   &:active,
   &.is-active,
   .k-is-open > &.dropdown-toggle {
     background-image: none;
   }
+
   &.k-is-disabled,
   &[disabled],
   fieldset[disabled] & {

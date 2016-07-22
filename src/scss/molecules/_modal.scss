@@ -1,3 +1,6 @@
+/* Modal
+   ========================================================================== */
+
 /*
 Modal
 
@@ -421,7 +424,9 @@ button::-moz-focus-inner {
   top: -40px;
 }
 
+
 /* Main image in popup */
+
 img.mfp-img {
   width: auto;
   max-width: 100%;
@@ -433,7 +438,9 @@ img.mfp-img {
   margin: 0 auto;
 }
 
+
 /* The shadow behind the image */
+
 .mfp-figure:after {
   content: '';
   position: absolute;
@@ -494,9 +501,10 @@ img.mfp-img {
 }
 
 @media screen and (max-width: 800px) and (orientation: landscape), screen and (max-height: 300px) {
-  /**
-   * Remove all paddings around the image on small screen
-   */
+
+
+  /* Remove all paddings around the image on small screen */
+
   .mfp-img-mobile .mfp-image-holder {
     padding-left: 0;
     padding-right: 0;
@@ -506,7 +514,9 @@ img.mfp-img {
     padding: 0;
   }
 
+
   /* The shadow behind the image */
+
   .mfp-img-mobile .mfp-figure:after {
     top: 0;
     bottom: 0;
@@ -621,9 +631,12 @@ img.mfp-img {
   }
 }
 
-// Custom classes
-// Namespace them inside bot wrap and container to win from all other mfp styles
-// This makes sure modals in both frontend and backend look the same
+
+/**
+ * Custom classes
+ * Namespace them inside bot wrap and container to win from all other mfp styles
+ * This makes sure modals in both frontend and backend look the same
+ */
 
 .mfp-wrap {
 
@@ -688,7 +701,9 @@ img.mfp-img {
   }
 }
 
-// Special classes for our file dialog popup
+
+/* Special classes for our file dialog popup */
+
 .koowa_dialog_modal {
   .mfp-content {
     max-height: 100%;
@@ -722,7 +737,6 @@ img.mfp-img {
     }
   }
 }
-
 
 .k-modal {
   background: white;

@@ -1,3 +1,6 @@
+/* Datepicker
+   ========================================================================== */
+
 /**
  * Datepicker for Bootstrap
  *
@@ -135,8 +138,12 @@ Styleguide 2.5
     border-radius: 4px;
   }
 
-  // Inline display inside a table presents some problems with
-  // border and background colors.
+
+  /**
+   * Inline display inside a table presents some problems with
+   * border and background colors.
+   */
+
   .table-striped & table tr {
     td, th {
       background-color: transparent;
@@ -145,21 +152,26 @@ Styleguide 2.5
 
   table tr td {
     &.day:hover {
-      background: $color-primary-3;
+      background: $color-primary-plus-2;
       cursor: pointer;
     }
 
     &.old,
     &.new {
-      color: $color-secondary-2;
+      color: $color-primary-min-6;
     }
 
     &.disabled,
     &.disabled:hover {
       background: none;
-      color: $color-secondary-2;
+      color: $color-primary-min-6;
       cursor: default;
     }
+
+
+    /**
+     * 1. Add last
+     */
 
     &.today,
     &.today:hover,
@@ -167,12 +179,13 @@ Styleguide 2.5
     &.today.disabled:hover {
       $todayBackground: lighten(orange, 30%);
       background: $todayBackground;
-      color: #000; // add last
+      color: #000; /* 1 */
     }
 
+
+    /* Thank bootstrap 2.0 for this selector... */
+
     &.today:hover:hover {
-      // Thank bootstrap 2.0 for this selector...
-      // TODO: Bump min BS to 2.1, use $textColor in buttonBackground above
       color: #000;
     }
 
@@ -184,7 +197,7 @@ Styleguide 2.5
     &.range:hover,
     &.range.disabled,
     &.range.disabled:hover {
-      background: $color-primary-3;
+      background: $color-primary-plus-2;
       border-radius: 0;
     }
 
@@ -192,7 +205,7 @@ Styleguide 2.5
     &.range.today:hover,
     &.range.today.disabled,
     &.range.today.disabled:hover {
-      $todayBackground: mix(orange, $color-primary-3, 50%);
+      $todayBackground: mix(orange, $color-primary-plus-2, 50%);
       background: $todayBackground;
       border-radius: 0;
     }
@@ -203,7 +216,7 @@ Styleguide 2.5
     &.selected.disabled:hover {
       color: #fff;
       text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-      background: lighten($color-secondary-2, 10);
+      background: lighten($color-primary-min-6, 10);
     }
 
     &.active,
@@ -226,13 +239,13 @@ Styleguide 2.5
       border-radius: 4px;
 
       &:hover {
-        background: $color-primary-3;
+        background: $color-primary-plus-2;
       }
 
       &.disabled,
       &.disabled:hover {
         background: none;
-        color: $color-secondary-2;
+        color: $color-primary-min-6;
         cursor: default;
       }
 
@@ -247,7 +260,7 @@ Styleguide 2.5
 
       &.old,
       &.new {
-        color: $color-secondary-2;
+        color: $color-primary-min-6;
       }
     }
   }
@@ -260,11 +273,13 @@ Styleguide 2.5
   tfoot tr th {
     cursor: pointer;
     &:hover {
-      background: $color-primary-3;
+      background: $color-primary-plus-2;
     }
   }
 
-  // Basic styling for calendar-week cells
+
+  /* Basic styling for calendar-week cells */
+
   .cw {
     font-size: $font-size-small;
     width: 12px;
@@ -314,7 +329,7 @@ Styleguide 2.5
     text-align: center;
     text-shadow: 0 1px 0 white;
     vertical-align: middle;
-    background-color: $color-primary-3;
+    background-color: $color-primary-plus-2;
     border: 1px solid #ccc;
     margin-left: -5px;
     margin-right: -5px;

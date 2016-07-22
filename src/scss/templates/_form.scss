@@ -98,15 +98,16 @@ markup:
                     <div class="k-container__full">
                         <div class="k-heading">Batch values</div>
                     </div>
-                    <!-- Main fields -->
-                    <form class="k-container__main">
-                        <fieldset>
-                            <div class="k-form-group">
-                                <label>Category</label>
-                                <sg-insert>2.19</sg-insert>
-                            </div>
-                        </fieldset>
-                    </form><!-- .k-container__main -->
+                    <div class="k-container__full">
+                        <form class="k-container__main">
+                            <fieldset>
+                                <div class="k-form-group">
+                                    <label>Category</label>
+                                    <sg-insert>2.19</sg-insert>
+                                </div>
+                            </fieldset>
+                        </form><!-- .k-container__main -->
+                    </div>
                     <div class="k-container__full">
                         <fieldset>
                             <legend>Documents</legend>

@@ -1,3 +1,5 @@
+// Grid
+
 @mixin setGridItemWidth($breakpoint,$columns) {
   @media (min-width: $breakpoint ) {
     width: percentage(1/$columns);

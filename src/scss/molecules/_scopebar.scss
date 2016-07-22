@@ -1,3 +1,6 @@
+/* Scopebar
+   ========================================================================== */
+
 /*
 Scopebar
 
@@ -47,7 +50,9 @@ Styleguide 2.18.2
 
 */
 
-/* 1. Faking a border for when items are not stretching */
+/**
+ * 1. Faking a border for when items are not stretching
+ */
 
 .k-scopebar {
   @include clearfix;
@@ -104,7 +109,7 @@ Styleguide 2.18.2
 
   @include breakpoint($delta) {
     display: table-cell;
-    width: 99%;
+    width: 100%;
     float: none;
   }
 
@@ -123,6 +128,7 @@ Styleguide 2.18.2
  */
 
 .k-scopebar__item--static {
+
 
   /* Faking flexbox */
 
@@ -212,9 +218,10 @@ Styleguide 2.18.2
 }
 
 
-
 /*
 Scopebar Filters
+
+- Hidden on small screens
 
 markup:
 <!-- Filters -->
@@ -244,6 +251,7 @@ Styleguide 2.18.3
 
 .k-scopebar__item--filters {
 
+
   /* Hide when JS is enabled */
 
   @include js-enabled {
@@ -266,12 +274,16 @@ Styleguide 2.18.3
 
     @include breakpoint($delta) {
       display: table-cell !important;
-      width: 99%;
+      width: 100%;
     }
   }
 
 
-  /* Flexbox */
+  /**
+   * Flexbox
+   *
+   * 1. Reset order
+   */
 
   @include flexbox(0, 0) {
     width: 100%;
@@ -281,7 +293,7 @@ Styleguide 2.18.3
 
   @include flexbox($beta, 0) {
     width: auto;
-    order: 0; /* Reset order */
+    order: 0; /* 1 */
   }
 
   @include flexbox($delta, 0) {
@@ -309,8 +321,8 @@ Styleguide 2.18.3
   float: left;
   width: auto;
   line-height: $scopebar-size;
-  @include border(right, #ccc);
-  @include border(bottom, #ccc);
+  @include border(right, $color-primary-min-2);
+  @include border(bottom, $color-primary-min-2);
   margin-bottom: -1px;
   height: $scopebar-size + 1px;
   font-size: $scopebar-filter-font-size;
@@ -499,12 +511,12 @@ Styleguide 2.18.3
 }
 
 
-
 /*
 Scopebar breadcrumbs
 
 When space is tight and you don't need filters you could add the breadcrumbs bar to the scopebar
 - Never add breadcrumbs and filter in the scopebar together
+- Hidden on small screens
 
 markup:
 <div class="k-scopebar__item k-scopebar__item--breadcrumbs">
@@ -516,6 +528,7 @@ Styleguide 2.18.4
 */
 
 .k-scopebar__item--breadcrumbs {
+
 
   /* Hide when JS is enabled */
 
@@ -547,7 +560,11 @@ Styleguide 2.18.4
   }
 
 
-  /* Flexbox */
+  /**
+   * Flexbox
+   *
+   * 1. Reset order
+   */
 
   @include flexbox(0, 0) {
     width: 100%;
@@ -557,7 +574,7 @@ Styleguide 2.18.4
 
   @include flexbox($beta, 0) {
     width: auto;
-    order: 0; /* Reset order */
+    order: 0; /* 1 */
   }
 
   @include flexbox($delta, 0) {
@@ -603,6 +620,7 @@ Styleguide 2.18.5
 */
 
 .k-scopebar__item--buttons {
+
 
   /* Floating nicely */
 
@@ -658,10 +676,15 @@ Styleguide 2.18.5
     display: none;
   }
 
+
+  /**
+   * 1. Absolute center
+   */
+
   [class^="k-icon"] {
     display: block;
-    margin-top: round((($scopebar-size * 0.8) - (2px + 16px)) / 2); // absolute center
-    margin-bottom: round((($scopebar-size * 0.8) - (2px + 16px)) / 2); // absolute center
+    margin-top: round((($scopebar-size * 0.8) - (2px + 16px)) / 2); /* 1 */
+    margin-bottom: round((($scopebar-size * 0.8) - (2px + 16px)) / 2); /* 1 */
     width: 16px;
     height: 16px;
     line-height: 0;
@@ -678,6 +701,8 @@ Styleguide 2.18.5
 
 /*
 Scopebar search
+
+- Hidden on small screens
 
 markup:
 <!-- Search -->
@@ -826,6 +851,7 @@ Styleguide 2.18.6
 
 
   /* Search buttons */
+
   .k-search__submit,
   .k-search__empty {
     @include reset;
@@ -899,9 +925,7 @@ Styleguide 2.18.6
   }
 
 
-  /**
-   * The active search label
-   */
+  /*  The active search label */
 
   .k-scopebar__item__label--numberless {
     position: absolute;

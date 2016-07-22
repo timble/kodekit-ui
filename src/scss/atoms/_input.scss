@@ -1,6 +1,7 @@
+/* Input
+   ========================================================================== */
+
 /**
- * Input
- *
  * Normalize form controls
  *
  * 1. Override content-box in Normalize (* isn't specific enough)
@@ -53,7 +54,8 @@ input[type="url"],
 input[type="search"],
 input[type="tel"],
 input[type="color"],
-.uneditable-input {
+.uneditable-input,
+[tabindex] {
   height: $input-height-base; /* 5 */
 
   @include modernizr('.k-touchevents') {

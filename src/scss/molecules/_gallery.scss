@@ -1,3 +1,6 @@
+/* Gallery
+   ========================================================================== */
+
 /*
 Gallery
 
@@ -78,16 +81,12 @@ Styleguide 2.10
   }
 
 
-  /**
-   * Set breakpoints
-   */
+  /* Set breakpoints */
 
   @include setGridBreakpoint;
 
 
-  /**
-   * Selected styling
-   */
+  /* Selected styling */
 
   &.k-is-selected {
     .k-card__title {
@@ -115,9 +114,7 @@ Styleguide 2.10
 }
 
 
-/**
- * Make sure that the files are separated from the folders
- */
+/* Make sure that the files are separated from the folders */
 
 .k-gallery__item--folder + .k-gallery__item--file {
   clear: left;
