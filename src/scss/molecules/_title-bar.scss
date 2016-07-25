@@ -12,7 +12,7 @@ Title bar
 
 markup:
 <div class="k-title-bar">
-    <h2>Title</h2>
+    <div class="k-title-bar__heading">Title</div>
 </div><!-- .k-title-bar -->
 
 Styleguide 2.23
@@ -33,6 +33,7 @@ Styleguide 2.23
   width: 100%;
   background: $title-bar-background; /* 2 */
   color: $title-bar-color;
+  font-size: $font-size-huge;
   @include transition(transform); /* 3 */
 
 
@@ -123,7 +124,7 @@ Styleguide 2.23
   }
 
   .k-off-canvas-menu-toggle-holder,
-  h2 {
+  .k-title-bar__heading {
     display: table-cell;
     vertical-align: middle;
   }
@@ -132,7 +133,7 @@ Styleguide 2.23
     white-space: nowrap;
   }
 
-  h2 {
+  .k-title-bar__heading {
     width: 100%;
     padding: $spacing-small;
     text-align: center;
@@ -160,7 +161,7 @@ Title just for mobile views since the navigation is hidden
 markup:
 <!-- Title when sidebar is invisible -->
 <div class="k-title-bar k-title-bar--mobile">
-  <h2>{Title}</h2>
+  <div class="k-title-bar__heading">{Title}</div>
 </div><!-- .k-title-bar -->
 
 Styleguide 2.23.1

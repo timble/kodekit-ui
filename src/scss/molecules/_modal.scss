@@ -86,7 +86,7 @@ Styleguide 2.15
   margin: 0 auto;
   text-align: left;
   z-index: 1045;
-  min-width: 300px;
+  min-width: 240px;
 
   @include rtl-outside-koowa {
     text-align: right;
@@ -650,6 +650,7 @@ img.mfp-img {
 
       .mfp-content {
         max-width: 1200px;
+        width: 100%;
         margin: 0 auto;
       }
     }
@@ -740,12 +741,13 @@ img.mfp-img {
 
 .k-modal {
   background: white;
-  border-radius: 3px;
+  border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  width: 100%;
 }
 
 .k-modal--inline {
-  padding: 15px;
+  padding: $spacing;
 
   form {
     margin: 0;
@@ -757,12 +759,15 @@ img.mfp-img {
 }
 
 .k-modal--small {
-  max-width: 400px;
+  position: relative;
+  max-width: 480px;
+  width: 100%;
   margin: auto;
 }
 
 .k-modal__title {
   margin: 0 0 $spacing 0;
-  text-transform: uppercase;
-  font-weight: bold;
+  font-weight: $regular;
+  font-size: $font-size-large;
+  line-height: $line-height-large;
 }

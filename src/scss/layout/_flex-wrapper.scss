@@ -18,6 +18,8 @@ Styleguide 3.8
 */
 
 .k-flex-wrapper {
+  @include reset;
+
   @include flexbox {
     display: flex;
     flex-direction: column;

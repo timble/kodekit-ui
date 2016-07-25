@@ -357,6 +357,7 @@ Styleguide 2.21.3
   }
 
   a {
+    display: inline-block;
     text-decoration: none;
 
     &:hover,
@@ -370,7 +371,7 @@ Styleguide 2.21.3
   }
 
   [class^="k-icon"] {
-    vertical-align: baseline;
+    vertical-align: middle;
     font-size: $icon-size;
     line-height: 23px;
   }
@@ -439,7 +440,6 @@ Styleguide 2.21.4
     overflow: hidden;
 
     a, span, input, svg, div, small {
-      display: block;
       vertical-align: middle;
       max-width: 100%;
       white-space: nowrap;

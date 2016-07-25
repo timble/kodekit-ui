@@ -144,7 +144,7 @@
                     toggleButtons.prepend('<button type="button" class="k-scopebar__button k-toggle-scopebar-filters k-js-toggle-filters">' +
                         '<span class="k-icon-filter" aria-hidden="true">' +
                         '<span class="visually-hidden">Filters toggle</span>' +
-                        '<div class="js-filter-count k-scopebar__item__label"></div>' +
+                        '<div class="js-filter-count k-scopebar__item-label"></div>' +
                         '</button>');
                 }
 

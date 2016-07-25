@@ -232,7 +232,7 @@ markup:
                 <button type="button" class="k-scopebar-dropdown__button k-js-dropdown-button">
                     <span class="k-scopebar__item--filter__title k-js-dropdown-title">{content}</span>
                     <span class="k-scopebar__item--filter__icon k-icon-chevron-bottom" aria-hidden="true"></span>
-                    <div class="k-scopebar__item__label k-js-dropdown-label">1</div>
+                    <div class="k-scopebar__item-label k-js-dropdown-label">1</div>
                 </button>
                 <div class="k-scopebar-dropdown__body k-js-dropdown-body">
                     <div class="k-scopebar-dropdown__body__buttons">
@@ -368,7 +368,7 @@ Styleguide 2.18.3
 
 /* Scopebar label showing how many active filters you have below a filter button */
 
-.k-scopebar__item__label {
+.k-scopebar__item-label {
   position: absolute;
   z-index: 2;
   top: 2px;
@@ -927,7 +927,7 @@ Styleguide 2.18.6
 
   /*  The active search label */
 
-  .k-scopebar__item__label--numberless {
+  .k-scopebar__item-label--numberless {
     position: absolute;
     right: auto;
     left: 13px;

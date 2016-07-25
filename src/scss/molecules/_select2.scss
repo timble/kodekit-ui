@@ -54,6 +54,22 @@ Styleguide 2.19
     margin: 0;
   }
 
+  .select2-search--inline {
+    &:first-child {
+      .select2-search__field {
+        width: auto !important;
+      }
+    }
+
+    .select2-search__field {
+      height: $input-height-base - 2px;
+      margin: 0;
+      box-shadow: none;
+      background: transparent;
+      border: none;
+    }
+  }
+
 
   /**
    * 1. Set font-size to 16px on touch supported devices so browser won't automatically zoom
