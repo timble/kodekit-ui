@@ -229,11 +229,20 @@
         }
 
         // Magnific
-        var magnific = $('.k-js-alal');
-        if ( magnific.length ) {
-            magnific.magnificPopup({type: 'image'});
+        var magnificImage = $('.k-js-image-modal');
+        if ( magnificImage.length ) {
+            magnificImage.magnificPopup({type:'image'});
         }
 
+        var magnificInline = $('.k-js-inline-modal');
+        if ( magnificInline.length ) {
+            magnificInline.magnificPopup({type:'inline'});
+        }
+
+        var magnificIframe = $('.k-js-iframe-modal');
+        if ( magnificIframe.length ) {
+            magnificIframe.magnificPopup({type:'iframe'});
+        }
 
         // Tooltips
         var tooltip = $('.k-js-tooltip');
@@ -283,3 +292,4 @@
     });
 
 })(kQuery);
+

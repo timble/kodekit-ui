@@ -7,7 +7,7 @@ Modal
 Modals, Using magnific popup
 
 markup:
-<a class="k-js-modal" href="joomlatools/images/placeholder-16-9.png">
+<a class="k-js-image-modal" href="joomlatools/images/placeholder-16-9.png">
     Open modal
 </a>
 
@@ -458,6 +458,11 @@ img.mfp-img {
 
 .mfp-figure {
   line-height: 0;
+
+  figure {
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .mfp-bottom-bar {
@@ -744,10 +749,10 @@ img.mfp-img {
 Inline modals
 
 markup:
-<a class="k-js-modal" data-mfp-src="#example-modal" href="javascript:void(0)">
+<a class="k-js-inline-modal" data-mfp-src="#example-modal" href="javascript:void(0)">
     Open modal
 </a>
-<div id="example-modal" class="k-modal k-modal--inline mfp-hide">
+<div id="example-modal" class="k-modal k-modal--inline k-modal--small mfp-hide">
   Modal content
 </div>
 
@@ -767,6 +772,7 @@ Styleguide 2.15.1
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   width: 100%;
+  box-sizing: border-box;
 }
 
 .k-modal--inline {
@@ -775,10 +781,6 @@ Styleguide 2.15.1
   form {
     margin: 0;
   }
-}
-
-.k-modal--padded {
-  padding: $spacing;
 }
 
 .k-modal--small {

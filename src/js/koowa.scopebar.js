@@ -11,28 +11,28 @@
         },
 
         _create: function() {
-            var prototype = $('.js-filter-prototype');
+            var prototype = $('.k-js-filter-prototype');
 
             this.template = prototype.clone();
-            this.template.removeClass('.js-filter-prototype');
+            this.template.removeClass('.k-js-filter-prototype');
 
             prototype.remove();
 
             this._addEvents();
 
-            var container = $('.js-filter-container');
+            var container = $('.k-js-filter-container');
 
-            $('.js-filters div[data-filter]').each(function(i, item) {
+            $('.k-js-filters div[data-filter]').each(function(i, item) {
                 var template = prototype.clone();
 
                 item = $(this);
 
-                item.addClass('js-dropdown-content k-dropdown__body__content');
+                item.addClass('k-js-dropdown-content k-dropdown__body__content');
 
-                template.find('.js-dropdown-body').prepend(item);
-                template.find('.js-dropdown-title').html(item.data('title'));
+                template.find('.k-js-dropdown-body').prepend(item);
+                template.find('.k-js-dropdown-title').html(item.data('title'));
 
-                var dropdown_button = template.find('.js-dropdown-button'),
+                var dropdown_button = template.find('.k-js-dropdown-button'),
                     tooltip = dropdown_button.data('tooltip-title');
 
                 if (tooltip) {
@@ -46,7 +46,7 @@
                 }
 
 
-                var label_el = template.find('.js-dropdown-label'),
+                var label_el = template.find('.k-js-dropdown-label'),
                     label = item.data('label'),
                     count = item.data('count');
 
@@ -65,7 +65,7 @@
 
                 container.append(template);
 
-                $('.js-filter-count').text(container.find('.js-dropdown-label:visible').length);
+                $('.k-js-filter-count').text(container.find('.k-js-dropdown-label:visible').length);
             });
         },
 
@@ -73,16 +73,16 @@
             // Dropdown menu
             var self = this,
                 hasActive = function() {
-                    return $('.js-dropdown').hasClass('is-active');
+                    return $('.k-js-dropdown').hasClass('k-is-active');
                 };
 
             // Keyboard navigation
             $(document).keyup(function (e) {
                 // Go to next dropdown with right arrow
                 if (e.keyCode == 39 && hasActive()) {
-                    var nextItem = $('.js-dropdown.is-active').next().find($('.js-dropdown-button'));
+                    var nextItem = $('.k-js-dropdown.k-is-active').next().find($('.k-js-dropdown-button'));
 
-                    if ( nextItem.hasClass('js-dropdown-button') ) {
+                    if ( nextItem.hasClass('k-js-dropdown-button') ) {
                         // Close active item
                         self.closeDropdown();
 
@@ -94,9 +94,9 @@
 
                 // Go to previous dropdown with left arrow
                 if (e.keyCode == 37 && hasActive()) {
-                    var prevItem = $('.js-dropdown.is-active').prev().find($('.js-dropdown-button'));
+                    var prevItem = $('.k-js-dropdown.k-is-active').prev().find($('.k-js-dropdown-button'));
 
-                    if ( prevItem.hasClass('js-dropdown-button') ) {
+                    if ( prevItem.hasClass('k-js-dropdown-button') ) {
                         // Close active item
                         self.closeDropdown();
 
@@ -119,7 +119,7 @@
                     isSelect2 = event.target.className.search('select2-') !== -1,
                     isDatepicker = (target.parents('.datepicker-dropdown').length > 0 || (target.is('td') && target.hasClass('day')));
 
-                if (!isSelect2 && !isDatepicker && target.parents('.js-filter-container').length === 0) {
+                if (!isSelect2 && !isDatepicker && target.parents('.k-js-filter-container').length === 0) {
                     self.closeDropdown();
                 }
             });
@@ -127,15 +127,15 @@
             this.element.on('click', '*', function(event) {
                 var button = $(event.target);
 
-                if (!button.hasClass('js-dropdown-button')) {
-                    button = button.parents('.js-dropdown-button');
+                if (!button.hasClass('k-js-dropdown-button')) {
+                    button = button.parents('.k-js-dropdown-button');
                 }
 
                 if (button.length === 0) {
                     return;
                 }
 
-                if (button.parent().hasClass('is-active')) {
+                if (button.parent().hasClass('k-is-active')) {
                     self.closeDropdown();
                 } else {
                     self.openDropdown(button);
@@ -147,8 +147,8 @@
             this.element.on('mouseenter mouseleave', '*', function(event) {
                 var button = $(event.target);
 
-                if (!button.hasClass('js-dropdown-button')) {
-                    button = button.parents('.js-dropdown-button');
+                if (!button.hasClass('k-js-dropdown-button')) {
+                    button = button.parents('.k-js-dropdown-button');
                 }
 
                 if (button.length === 0) {
@@ -157,7 +157,7 @@
 
                 // Check if any dropdown is active
                 // Check if the hovered item isn't the active item
-                if (hasActive() && (!button.parent().hasClass('is-active')) ) {
+                if (hasActive() && (!button.parent().hasClass('k-is-active')) ) {
                     // Close active item
                     self.closeDropdown();
 
@@ -184,10 +184,10 @@
                 form.submit();
             };
 
-            this.element.on('click', '.js-clear-filter', function(event) {
+            this.element.on('click', '.k-js-clear-filter', function(event) {
                 event.preventDefault();
 
-                var box = $(event.target).parents('.js-dropdown');
+                var box = $(event.target).parents('.k-js-dropdown');
 
                 box.find(':input')
                     .not(':button, :submit, :reset, :hidden')
@@ -203,11 +203,11 @@
                     submitForm(form, box);
                 }
 
-            }).on('click', '.js-apply-filter', function(event) {
+            }).on('click', '.k-js-apply-filter', function(event) {
                 event.preventDefault();
 
                 var form = event.target.form,
-                    box = $(event.target).parents('.js-dropdown');
+                    box = $(event.target).parents('.k-js-dropdown');
 
                 if (form) {
                     submitForm(form, box);
@@ -221,7 +221,7 @@
             this.closeDropdown();
 
             // Set active class to parent
-            parent.addClass('is-active');
+            parent.addClass('k-is-active');
 
             // Find select elements in dropdown
             var select = parent.find('select');
@@ -236,13 +236,13 @@
 
         closeDropdown: function() {
             // Find active dropdown
-            var activeItem = $('.js-dropdown.is-active');
+            var activeItem = $('.k-js-dropdown.k-is-active');
 
             // Find select elements in active dropdown
             var select = activeItem.find('select');
 
             // Remove active class from active item
-            activeItem.removeClass('is-active');
+            activeItem.removeClass('k-is-active');
 
             // Close select2 when closing dropdown
             if (select.data('select2')) {
@@ -251,6 +251,5 @@
         }
 
     });
-
 
 } (window, document, kQuery));

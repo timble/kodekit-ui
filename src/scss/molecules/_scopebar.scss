@@ -225,19 +225,30 @@ Scopebar Filters
 
 markup:
 <!-- Filters -->
+<div class="k-dynamic-content-holder">
+    <div class="k-js-filters">
+        <div data-filter data-title="Status" data-count="0">
+            <select name="enabled" data-placeholder="- Select -">
+                <option value=""  class="level1">- Select -</option>
+                <option value="1"  class="level1">Published</option>
+                <option value="0"  class="level1">Unpublished</option>
+            </select>
+        </div>
+    </div>
+</div>
 <div class="k-scopebar__item k-scopebar__item--filters">
     <div class="k-scopebar__filters-content">
         <div class="k-scopebar__filters k-js-filter-container">
-            <div class="k-scopebar__item--filter k-scopebar-dropdown k-js-filter-prototype k-js-dropdown">
-                <button type="button" class="k-scopebar-dropdown__button k-js-dropdown-button">
-                    <span class="k-scopebar__item--filter__title k-js-dropdown-title">{content}</span>
-                    <span class="k-scopebar__item--filter__icon k-icon-chevron-bottom" aria-hidden="true"></span>
-                    <div class="k-scopebar__item-label k-js-dropdown-label">1</div>
+            <div style="display: none" class="k-js-filter-prototype k-scopebar__item--filter k-dropdown k-js-dropdown">
+                <button type="button" class="k-dropdown__button k-js-dropdown-button" data-tooltip-title="Filter by %s">
+                    <span class="k-js-dropdown-title k-scopebar__item--filter__title"></span>
+                    <span class="k-scopebar__item--filter__icon k-icon-chevron-bottom"></span>
+                    <div class="k-js-dropdown-label k-scopebar__item__label"></div>
                 </button>
-                <div class="k-scopebar-dropdown__body k-js-dropdown-body">
-                    <div class="k-scopebar-dropdown__body__buttons">
-                        <button type="button" class="k-button k-button--default k-button-small k-js-clear-filter">Clear</button>
-                        <button type="button" class="k-button k-button--primary k-button-small k-js-apply-filter">Apply filter</button>
+                <div class="k-dropdown__body k-js-dropdown-body">
+                    <div class="k-dropdown__body__buttons">
+                        <button type="button" class="k-js-clear-filter btn btn-sm">Clear</button>
+                        <button type="button" class="k-js-apply-filter btn btn-primary btn-sm">Apply filter</button>
                     </div>
                 </div>
             </div>
@@ -714,7 +725,7 @@ markup:
             <sg-insert>2.12-144</sg-insert>
             <span class="k-visually-hidden">Search icon</span>
         </button>
-        <button type="button" class="k-search__empty">
+        <button type="button" class="k-search__empty ">
             <span class="k-search__empty-area">
                 <sg-insert>2.12.1-2</sg-insert>
                 <span class="k-visually-hidden">Clear search</span>

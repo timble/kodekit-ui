@@ -101,19 +101,19 @@ Koowa.Grid = Koowa.Class.extend({
                 parent = tr.parent();
 
             if (target.is('[type=radio]')) {
-                parent.find('.selected').removeClass('selected');
+                parent.find('.k-is-selected').removeClass('k-is-selected');
             }
 
-            $(this).prop('checked') ? tr.addClass('selected') : tr.removeClass('selected');
+            $(this).prop('checked') ? tr.addClass('k-is-selected') : tr.removeClass('k-is-selected');
 
-            selected = parent.find('.selected').length;
+            selected = parent.find('.k-is-selected').length;
 
             if(selected > 1) {
-                parent.addClass('selected-multiple').removeClass('selected-single')
+                parent.addClass('k-has-selected-multiple').removeClass('k-has-selected-single')
             } else if (selected === 1) {
-                parent.removeClass('selected-multiple').addClass('selected-single');
+                parent.removeClass('k-has-selected-multiple').addClass('k-has-selected-single');
             } else {
-                parent.removeClass('selected-multiple').removeClass('selected-single');
+                parent.removeClass('k-has-selected-multiple').removeClass('k-has-selected-single');
             }
         }).trigger('change', true);
     },
