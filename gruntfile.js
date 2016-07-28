@@ -31,6 +31,7 @@ module.exports = function(grunt) {
             '<%= srcPath %>/js/jquery.ui.widget.js',
             '<%= srcPath %>/js/koowa.scopebar.js',
             '<%= srcPath %>/js/koowa.class.js',
+            '<%= srcPath %>/js/koowa.grid.js',
             '<%= srcPath %>/js/koowa.tree.js',
             '<%= srcPath %>/js/datepicker.js',
             '<%= srcPath %>/js/koowa.datepicker.js',

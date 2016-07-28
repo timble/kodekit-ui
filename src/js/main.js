@@ -11,8 +11,9 @@
             $footable = $('.k-js-responsive-table'),
             $overflow = $('.k-sidebar-item--overflow'),
             resizeClass = 'k-is-resizing',
-            $sidebarToggle = $('.k-sidebar-item--toggle'),
-            $scopebar = $('.k-scopebar');
+            $sidebarToggle = $('.k-sidebar-item--toggle')
+            ;
+            //$scopebar = $('.k-scopebar');
 
         // Sidebar
         if ( ($toolbar.length || $titlebar.length ) && $wrapper.length && $content.length)
@@ -123,7 +124,7 @@
 
 
         // Scopebar
-        if ( $scopebar.length ) {
+        /*if ( $scopebar.length ) {
 
             $.each($scopebar, function(e) {
 
@@ -186,7 +187,7 @@
                     $(this).parent().siblings('.k-scopebar__item--search').slideToggle('fast');
                 });
             }
-        }
+        }*/
 
 
         // Select2
