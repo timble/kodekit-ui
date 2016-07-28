@@ -364,11 +364,6 @@ $scopebar-submit-button-size:             $font-size !default;
 
 $scopebar-empty-button-spacing:           round($font-size * 1.5) !default;
 $scopebar-empty-button-size:              round($font-size * 0.75) !default;
-$scopebar-empty-button-color:             $color-primary-min-4 !default;
-
-$scopebar-empty-button-hover-background:  $color-error !default;
-$scopebar-empty-button-hover-border:      dark($scopebar-empty-button-hover-background) !default;
-$scopebar-empty-button-hover-color:       dark($color-error-type) !default;
 
 $scopebar-filter-label-size:              round($font-size * 1.2) !default;
 $scopebar-filter-label-background:        $color-error !default;
@@ -419,6 +414,9 @@ $table-cell-accent-background:          $color-accent !default;
 $table-cell-accent-color:               $color-accent-type !default;
 
 $table-cell-accent-hover-background:    darken($color-accent,10%) !default;
+
+$table-row-positioner-size:             16px;
+$table-row-positioner-color:            $color-primary-min-2;
 
 $table-pagination-height:               ($line-height + ($spacing-base-vertical * 2) + 2px) !default;
 $table-pagination-spacing:              $spacing-tiny !default;
@@ -484,7 +482,7 @@ $hamburger-bar-height:           round($hamburger-bar-width / 5) !default; // 2
 // Form styles
 // ==========================================================================
 
-$form-option-size:          15px !default;
+$form-option-size:          16px !default;
 $form-option-background:    white !default;
 $form-option-border:        $color-primary-min-3 !default;
 $form-option-border-size:   1px !default;

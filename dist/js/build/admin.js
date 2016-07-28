@@ -14372,7 +14372,7 @@ var Konami = function (callback) {
                     toggleButtons.prepend('<button type="button" class="k-scopebar__button k-toggle-scopebar-filters k-js-toggle-filters">' +
                         '<span class="k-icon-filter" aria-hidden="true">' +
                         '<span class="visually-hidden">Filters toggle</span>' +
-                        '<div class="js-filter-count k-scopebar__item__label"></div>' +
+                        '<div class="js-filter-count k-scopebar__item-label"></div>' +
                         '</button>');
                 }
 
@@ -14500,7 +14500,7 @@ var Konami = function (callback) {
         }
 
         var easter_egg = new Konami(function() {
-            $('html').css({
+            $('html, .koowa-container').css({
                 'font-family': 'Comic Sans MS',
                 'font-size': '20px',
                 'line-height': '30px'
@@ -14510,7 +14510,6 @@ var Konami = function (callback) {
     });
 
 })(kQuery);
-
 
 window.jQuery = globalCacheForjQueryReplacement;
 globalCacheForjQueryReplacement = undefined;

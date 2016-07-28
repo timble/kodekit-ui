@@ -716,7 +716,7 @@ markup:
         </button>
         <button type="button" class="k-search__empty k-is-visible">
             <span class="k-search__empty-area">
-                <sg-insert>2.12-220</sg-insert>
+                <sg-insert>2.12.1-2</sg-insert>
                 <span class="k-visually-hidden">Clear search</span>
             </span>
         </button>
@@ -863,9 +863,19 @@ Styleguide 2.18.6
     vertical-align: middle;
     line-height: 1;
     cursor: pointer;
+    color: $color-primary-min-5;
 
     [class*="k-icon-"] {
       vertical-align: middle;
+    }
+
+    &:focus,
+    &:hover {
+      color: $color-primary-min-7;
+    }
+
+    &.k-is-visible {
+      display: inline-block;
     }
   }
 
@@ -888,6 +898,7 @@ Styleguide 2.18.6
   .k-search__empty {
     display: none;
     right: (($scopebar-empty-button-spacing - round($scopebar-size / 2)) / 2);
+    font-size: $scopebar-empty-button-size;
 
     @include rtl {
       right: auto;
@@ -896,31 +907,6 @@ Styleguide 2.18.6
 
     &.k-is-visible {
       display: inline-block;
-    }
-
-    .k-search__empty-area {
-      position: absolute;
-      top: ((round($scopebar-size / 2) - (ceil($scopebar-empty-button-size * 1.6))) / 2);
-      left: ((round($scopebar-size / 2) - (ceil($scopebar-empty-button-size * 1.6))) / 2);
-      width: ceil($scopebar-empty-button-size * 1.6);
-      height: ceil($scopebar-empty-button-size * 1.6);
-      font-size: $scopebar-empty-button-size;
-      display: inline-block;
-      line-height: ceil($scopebar-empty-button-size * 1.6);
-      text-align: center;
-      border-radius: 100%;
-      color: $scopebar-empty-button-color;
-    }
-
-    &:focus,
-    &:hover {
-      .k-search__empty-area {
-        background: $scopebar-empty-button-hover-background;
-        border: 1px solid $scopebar-empty-button-hover-border;
-        color: $scopebar-empty-button-hover-color;
-        text-shadow: 1px 1px 1px dark($scopebar-empty-button-hover-background);
-        box-shadow: inset 1px 2px 1px light($scopebar-empty-button-hover-background);
-      }
     }
   }
 

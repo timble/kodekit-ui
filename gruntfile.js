@@ -146,6 +146,16 @@ module.exports = function(grunt) {
                     interrupt: true,
                     atBegin: true
                 }
+            },
+            concat: {
+                files: [
+                    '<%= srcPath %>/js/*.js'
+                ],
+                tasks: ['concat'],
+                options: {
+                    interrupt: true,
+                    atBegin: true
+                }
             }
         }
 
@@ -153,6 +163,9 @@ module.exports = function(grunt) {
     });
 
     // The dev task will be used during development
-    grunt.registerTask('default', ['modernizr', 'watch']);
+    grunt.registerTask('default', ['modernizr', 'watch:webfont', 'watch:javascript']);
+
+    // JS only
+    grunt.registerTask('js', ['watch:concat']);
 
 };

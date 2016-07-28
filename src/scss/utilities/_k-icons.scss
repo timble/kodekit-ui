@@ -310,7 +310,7 @@ $icons: (
  * Icon classes
  *
  * Creating a class name for each individual icon to be used in markup like:
- * <span class="k-icon-[name]" aria-hidden="true"></span>
+ * <span class="k-icon-circle"></span>
  */
 
 @each $name, $icon in $icons {

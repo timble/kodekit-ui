@@ -272,7 +272,7 @@
         }
 
         var easter_egg = new Konami(function() {
-            $('html').css({
+            $('html, .koowa-container').css({
                 'font-family': 'Comic Sans MS',
                 'font-size': '20px',
                 'line-height': '30px'
@@ -282,4 +282,3 @@
     });
 
 })(kQuery);
-
