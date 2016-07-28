@@ -739,6 +739,29 @@ img.mfp-img {
   }
 }
 
+
+/*
+Inline modals
+
+markup:
+<a class="k-js-modal" data-mfp-src="#example-modal" href="javascript:void(0)">
+    Open modal
+</a>
+<div id="example-modal" class="k-modal k-modal--inline mfp-hide">
+  Modal content
+</div>
+
+sg-wrapper:
+<p>
+    <sg-wrapper-content/>
+</p>
+
+Styleguide 2.15.1
+
+*/
+
+/* @TODO: make sure iframe and inline modals work as well */
+
 .k-modal {
   background: white;
   border-radius: 5px;

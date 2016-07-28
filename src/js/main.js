@@ -229,7 +229,7 @@
         }
 
         // Magnific
-        var magnific = $('.k-js-modal');
+        var magnific = $('.k-js-alal');
         if ( magnific.length ) {
             magnific.magnificPopup({type: 'image'});
         }

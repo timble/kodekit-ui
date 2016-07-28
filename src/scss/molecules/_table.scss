@@ -13,8 +13,8 @@ markup:
         <table class="k-js-fixed-table-header k-js-responsive-table">
         <thead>
             <tr>
-                <th width="1%" data-toggle="true"><input type="checkbox" /></th>
-                <th width="1%"></th>
+                <th width="1%" class="k-table-data--form"><input type="checkbox" /></th>
+                <th width="1%" data-toggle="true" class="k-table-data--toggle"></th>
                 <th class="k-sort-desc"><a href="javascript:void(0)">Item title</a></th>
                 <th width="5%" data-hide="phone,tablet"><a href="javascript:void(0)">State</a></th>
                 <th width="15%" data-hide="phone"><a href="javascript:void(0)">Category</a></th>
@@ -23,16 +23,16 @@ markup:
         </thead>
         <tbody>
             <tr>
-                <td class="k-table-data--toggle"><input type="checkbox" /></td>
-                <td class="k-table-data--icon"><sg-insert>2.12.1-5</sg-insert></td>
+                <td class="k-table-data--form"><input type="checkbox" /></td>
+                <td class="k-table-data--icon k-table-data--toggle"><sg-insert>2.12.1-5</sg-insert></td>
                 <sg-insert>2.21.2</sg-insert>
                 <td><sg-insert>2.21.5-2</sg-insert></td>
                 <sg-insert>2.21.2</sg-insert>
                 <td class="k-table-data--nowrap">01 January 1999</td>
             </tr>
             <tr>
-                <td class="k-table-data--toggle"><input type="checkbox" /></td>
-                <td class="k-table-data--icon"><sg-insert>2.12.1-5</sg-insert></td>
+                <td class="k-table-data--form"><input type="checkbox" /></td>
+                <td class="k-table-data--icon k-table-data--toggle"><sg-insert>2.12.1-5</sg-insert></td>
                 <sg-insert>2.21.3</sg-insert>
                 <td><sg-insert>2.21.5-2</sg-insert></td>
                 <sg-insert>2.21.2</sg-insert>
@@ -40,24 +40,24 @@ markup:
             </tr>
             <sg-insert>2.21.6</sg-insert>
             <tr>
-                <td class="k-table-data--toggle"><input type="checkbox" /></td>
-                <td class="k-table-data--icon"><sg-insert>2.12.1-5</sg-insert></td>
+                <td class="k-table-data--form"><input type="checkbox" /></td>
+                <td class="k-table-data--icon k-table-data--toggle"><sg-insert>2.12.1-5</sg-insert></td>
                 <sg-insert>2.21.3</sg-insert>
                 <td><sg-insert>2.21.5-2</sg-insert></td>
                 <sg-insert>2.21.2</sg-insert>
                 <td class="k-table-data--nowrap">01 January 1999</td>
             </tr>
             <tr>
-                <td class="k-table-data--toggle"><input type="checkbox" /></td>
-                <td class="k-table-data--icon"><sg-insert>2.12.1-5</sg-insert></td>
+                <td class="k-table-data--form"><input type="checkbox" /></td>
+                <td class="k-table-data--icon k-table-data--toggle"><sg-insert>2.12.1-5</sg-insert></td>
                 <sg-insert>2.21.3</sg-insert>
                 <td><sg-insert>2.21.5-2</sg-insert></td>
                 <sg-insert>2.21.2</sg-insert>
                 <td class="k-table-data--nowrap">01 January 1999</td>
             </tr>
             <tr>
-                <td class="k-table-data--toggle"><input type="checkbox" /></td>
-                <td class="k-table-data--icon"><sg-insert>2.12.1-5</sg-insert></td>
+                <td class="k-table-data--form"><input type="checkbox" /></td>
+                <td class="k-table-data--icon k-table-data--toggle"><sg-insert>2.12.1-5</sg-insert></td>
                 <sg-insert>2.21.3</sg-insert>
                 <td><sg-insert>2.21.5-2</sg-insert></td>
                 <sg-insert>2.21.2</sg-insert>
@@ -137,6 +137,7 @@ Styleguide 2.21
     height: $table-cell-size;
     vertical-align: middle;
     text-align: left;
+    line-height: 1;
     @include transition;
 
     input {
@@ -208,7 +209,6 @@ Styleguide 2.21
     @include border(bottom, $table-cell-border);
     padding: $table-cell-spacing-vertical $table-cell-spacing-horizontal;
     background: $table-cell-background-even;
-    line-height: 18px;
   }
 
   tr:last-child {
@@ -236,73 +236,168 @@ Styleguide 2.21
       }
     }
   }
+
+  [class*="k-icon"] {
+    display: inline-block;
+  }
 }
 
 
-/**
- * Selected
- *
- * When rows are selected they are highlighted
- *
- * 1. Coloring Links and extra elements that don't color automatically with their parent
- */
-
 /*
-Selected rows
+Table pagination
 
-When rows are selected they are highlighted
+- Put right below `.k-table` container and inside `.k-table-container` container
 
 markup:
-<tr class="k-is-selected">
-    <td>Item</td>
-    <td>Item</td>
-    <td>Item</td>
-</tr>
-
-sg-wrapper:
-<div class="k-table-container">
-    <div class="k-table">
-        <table>
-        <tbody>
-            <tr>
-                <td>Item</td>
-                <td>Item</td>
-                <td>Item</td>
-            </tr>
-            <sg-wrapper-content/>
-            <tr>
-                <td>Item</td>
-                <td>Item</td>
-                <td>Item</td>
-            </tr>
-        </tbody>
-        </table>
+<div class="k-table-pagination">
+    <div class="k-pagination">
+        <div class="k-pagination__limit">
+            <select class="k-form-control">
+                <option value="5">5</option>
+                <option value="10" selected>10</option>
+                <option value="15">15</option>
+            </select>
+        </div>
+        <ul class="k-pagination__pages">
+            <li class="k-is-active">
+                <span>1</span>
+            </li>
+            <li>
+                <a href="javascript:void(0)">2</a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">3</a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">4</a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">5</a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">»</a>
+            </li>
+        </ul>
     </div>
 </div>
 
-Styleguide 2.21.8
+Styleguide 2.21.1
 
 */
 
-.k-table-container {
-  tr.k-is-selected {
-    td {
-      background: $table-cell-accent-background;
-      color: $table-cell-accent-color;
+/**
+ * 1. Faking a bottom border, this shadow will disappear when pagination is positioned to bottom
+ */
 
-      a, i, span {
-        color: $table-cell-accent-color;
+.k-table-pagination {
+  padding: $table-pagination-spacing;
+  background: $table-pagination-background;
+  @include border(top, $table-pagination-border);
+  @if $borders != false {
+    box-shadow: 0 1px 0 $table-pagination-border; /* 1 */
+  }
+
+
+  /* Flexbox */
+
+  @include flexbox {
+    flex: 0 0 auto;
+  }
+
+
+  /**
+   * Pagination contents
+   *
+   * 1. Align vertically
+   */
+
+  .k-pagination__limit,
+  .k-pagination__pages {
+    display: inline-block; /* 1 */
+    vertical-align: middle; /* 1 */
+  }
+
+
+  /**
+   * Pagination
+   *
+   * 1. Remove list-style and block-level defaults
+   * 2. Collapse white-space
+   */
+
+  .k-pagination__pages {
+    padding-left: 0;
+    margin: 0;
+    border-radius: $border-radius;
+
+    & > li {
+      display: inline; /* 1 */
+
+      & > a,
+      & > span {
+        position: relative;
+        float: left; /* 2 */
+        padding: $spacing-base-vertical $spacing-base-horizontal;
+        line-height: $line-height;
+        text-decoration: none;
+        color: $pagination-color;
+        background-color: $pagination-background;
+        border: 1px solid $pagination-border;
+        margin-left: -1px;
+      }
+
+      &:first-child {
+        & > a,
+        & > span {
+          margin-left: 0;
+          @include border-left-radius($border-radius);
+        }
+      }
+
+      &:last-child {
+        & > a,
+        & > span {
+          @include border-right-radius($border-radius);
+        }
       }
     }
 
-
-    /* Re-set background on td's while hovering th */
-
-    &:hover,
-    &:focus {
-      td {
-        background-color: $table-cell-accent-hover-background;
+    & > li > a,
+    & > li > span {
+      &:hover,
+      &:focus {
+        z-index: 2;
+        color: $pagination-hover-color;
+        background-color: $pagination-hover-background;
+        border-color: $pagination-hover-border;
       }
+    }
+
+    & > .k-is-active > a,
+    & > .k-is-active > span {
+      &,
+      &:hover,
+      &:focus {
+        z-index: 3;
+        color: $pagination-active-color;
+        background-color: $pagination-active-background;
+        border-color: $pagination-active-border;
+        cursor: default;
+      }
+    }
+  }
+
+
+  /* Limit */
+
+  select {
+    height: $table-pagination-height;
+    width: auto;
+    margin-right: $table-pagination-spacing;
+
+    @include rtl {
+      margin-right: auto;
+      margin-left: $table-pagination-spacing;
     }
   }
 }
@@ -364,16 +459,10 @@ Styleguide 2.21.3
 
 */
 
-/**
- * 1. Display block to align vertically in the middle
- * 2. Float left for possible tooltip alignment
- * 3. Clear the `<a>` title
- */
-
 .k-table-container {
   a {
-    display: block; /* 1 */
-    float: left; /* 2 */
+    display: inline-block;
+    vertical-align: middle;
     text-decoration: none;
     @include transition;
 
@@ -384,8 +473,7 @@ Styleguide 2.21.3
   }
 
   small {
-    display: block; /* 1 */
-    clear: both; /* 3 */
+    display: block;
     font-size: $font-size-small;
     line-height: $line-height-small;
   }
@@ -401,8 +489,9 @@ Different available table cell settings
 .k-table-data--center - Center aligned text
 .k-table-data--nowrap - Content will not be wrapped (useful for dates, file sizes etc.)
 .k-table-data--wrap - Wrap long content (useful for urls etc.)
-.k-table-data--toggle - The cell that will have a responsive toggle button
 .k-table-data--icon - Cells that only contain an icon
+.k-table-data--form - Cells that only contain a form element like a radio input or checkbox
+.k-table-data--toggle - The cell that will have a responsive toggle button
 .k-table-data--ellipsis - Break content at the end of the cell and add text ellipsis
 
 markup:
@@ -447,6 +536,7 @@ Styleguide 2.21.4
   }
 
   .k-table-data--toggle,
+  .k-table-data--form,
   .k-table-data--icon {
     white-space: nowrap;
     line-height: 1;
@@ -462,6 +552,12 @@ Styleguide 2.21.4
     }
   }
 
+  .k-table-data--form {
+    input {
+      margin: 0 !important;
+    }
+  }
+
   .k-table-data--ellipsis {
     max-width: 0;
     overflow: hidden;
@@ -472,6 +568,116 @@ Styleguide 2.21.4
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+  }
+}
+
+
+/*
+Table item states
+
+.k-table__item--state-pending - Pending
+.k-table__item--state-expired - Expired
+.k-table__item--state-unpublished - Unpublished
+.k-table__item--state-published - Published
+
+markup:
+<span class="k-table__item--state {$modifiers}">State</span>
+
+sg-wrapper:
+<div class="k-table-container">
+    <div class="k-table">
+        <table>
+        <tbody>
+            <tr>
+                <td>
+                    <sg-wrapper-content/>
+                </td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+
+Styleguide 2.21.5
+
+*/
+
+.k-table-container {
+  .k-table__item--state {
+    @include transition;
+
+
+    /* pointers for clickable elements */
+
+    button#{&},
+    a#{&} {
+      cursor: pointer;
+
+      &:focus,
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &-pending {
+      color: $color-warning;
+    }
+
+    &-expired {
+      color: $color-neutral;
+    }
+
+    &-unpublished {
+      color: $color-error;
+    }
+
+    &-published {
+      color: $color-success;
+    }
+  }
+}
+
+/*
+Table sub header
+
+Add sub headers in between rows
+
+markup:
+<tr class="k-table__sub-header">
+    <th colspan="7">
+        Sub header
+    </th>
+</tr>
+
+sg-wrapper:
+<div class="k-table-container">
+    <div class="k-table">
+        <table>
+        <tbody>
+            <sg-wrapper-content/>
+        </tbody>
+        </table>
+    </div>
+</div>
+
+Styleguide 2.21.6
+
+*/
+
+.k-table-container {
+  .k-table__sub-header {
+    th {
+      padding: 0.7em $table-cell-spacing-horizontal 0.5em;
+      height: auto;
+      font-size: $font-size-small;
+      line-height: $line-height-small;
+      font-weight: $bold;
+      vertical-align: middle;
+      text-transform: uppercase;
+      white-space: nowrap;
+      background: $table-header-background;
+      border-bottom-color: $table-cell-border;
     }
   }
 }
@@ -576,16 +782,24 @@ Styleguide 2.21.7
 }
 
 
-/*
-Table sub header
+/**
+ * Selected
+ *
+ * When rows are selected they are highlighted
+ *
+ * 1. Coloring Links and extra elements that don't color automatically with their parent
+ */
 
-Add sub headers in between rows
+/*
+Selected rows
+
+When rows are selected they are highlighted
 
 markup:
-<tr class="k-table__sub-header">
-    <th colspan="7">
-        Sub header
-    </th>
+<tr class="k-is-selected">
+    <td>Item</td>
+    <td>Item</td>
+    <td>Item</td>
 </tr>
 
 sg-wrapper:
@@ -593,392 +807,45 @@ sg-wrapper:
     <div class="k-table">
         <table>
         <tbody>
+            <tr>
+                <td>Item</td>
+                <td>Item</td>
+                <td>Item</td>
+            </tr>
             <sg-wrapper-content/>
+            <tr>
+                <td>Item</td>
+                <td>Item</td>
+                <td>Item</td>
+            </tr>
         </tbody>
         </table>
     </div>
 </div>
 
-Styleguide 2.21.6
+Styleguide 2.21.8
 
 */
 
 .k-table-container {
-  .k-table__sub-header {
-    th {
-      padding: 0.7em $table-cell-spacing-horizontal 0.5em;
-      height: auto;
-      font-size: $font-size-small;
-      line-height: $line-height-small;
-      font-weight: $bold;
-      vertical-align: middle;
-      text-transform: uppercase;
-      white-space: nowrap;
-      background: $table-header-background;
-      border-bottom-color: $table-cell-border;
-    }
-  }
-}
-
-
-/*
-Table item states
-
-.k-table__item--state-pending - Pending
-.k-table__item--state-expired - Expired
-.k-table__item--state-unpublished - Unpublished
-.k-table__item--state-published - Published
-
-markup:
-<span class="k-table__item--state {$modifiers}">State</span>
-
-sg-wrapper:
-<div class="k-table-container">
-    <div class="k-table">
-        <table>
-        <tbody>
-            <tr>
-                <td>
-                    <sg-wrapper-content/>
-                </td>
-            </tr>
-        </tbody>
-        </table>
-    </div>
-</div>
-
-Styleguide 2.21.5
-
-*/
-
-.k-table-container {
-  .k-table__item--state {
-    @include transition;
-
-
-    /* pointers for clickable elements */
-
-    button#{&},
-    a#{&} {
-      cursor: pointer;
-
-      &:focus,
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-
-    &-pending {
-      color: $color-warning;
-    }
-
-    &-expired {
-      color: $color-neutral;
-    }
-
-    &-unpublished {
-      color: $color-error;
-    }
-
-    &-published {
-      color: $color-success;
-    }
-  }
-}
-
-
-/*
-Table pagination
-
-- Put right below `.k-table` container and inside `.k-table-container` container
-
-markup:
-<div class="k-table-pagination">
-    <div class="k-pagination">
-        <div class="k-pagination__limit">
-            <select class="k-form-control">
-                <option value="5">5</option>
-                <option value="10" selected>10</option>
-                <option value="15">15</option>
-            </select>
-        </div>
-        <ul class="k-pagination__pages">
-            <li class="k-is-active">
-                <span>1</span>
-            </li>
-            <li>
-                <a href="javascript:void(0)">2</a>
-            </li>
-            <li>
-                <a href="javascript:void(0)">3</a>
-            </li>
-            <li>
-                <a href="javascript:void(0)">4</a>
-            </li>
-            <li>
-                <a href="javascript:void(0)">5</a>
-            </li>
-            <li>
-                <a href="javascript:void(0)">»</a>
-            </li>
-        </ul>
-    </div>
-</div>
-
-Styleguide 2.21.1
-
-*/
-
-/**
- * 1. Faking a bottom border, this shadow will disappear when pagination is positioned to bottom
- */
-
-.k-table-pagination {
-  padding: $table-pagination-spacing;
-  background: $table-pagination-background;
-  @include border(top, $table-pagination-border);
-  @if $borders != false {
-    box-shadow: 0 1px 0 $table-pagination-border; /* 1 */
-  }
-
-
-  /* Flexbox */
-
-  @include flexbox {
-      flex: 0 0 auto;
-  }
-
-
-  /**
-   * Pagination contents
-   *
-   * 1. Align vertically
-   */
-
-  .k-pagination__limit,
-  .k-pagination__pages {
-    display: inline-block; /* 1 */
-    vertical-align: middle; /* 1 */
-  }
-
-
-  /**
-   * Pagination
-   *
-   * 1. Remove list-style and block-level defaults
-   * 2. Collapse white-space
-   */
-
-  .k-pagination__pages {
-    padding-left: 0;
-    margin: 0;
-    border-radius: $border-radius;
-
-    & > li {
-      display: inline; /* 1 */
-
-      & > a,
-      & > span {
-        position: relative;
-        float: left; /* 2 */
-        padding: $spacing-base-vertical $spacing-base-horizontal;
-        line-height: $line-height;
-        text-decoration: none;
-        color: $pagination-color;
-        background-color: $pagination-background;
-        border: 1px solid $pagination-border;
-        margin-left: -1px;
-      }
-
-      &:first-child {
-        & > a,
-        & > span {
-          margin-left: 0;
-          @include border-left-radius($border-radius);
-        }
-      }
-
-      &:last-child {
-        & > a,
-        & > span {
-          @include border-right-radius($border-radius);
-        }
-      }
-    }
-
-    & > li > a,
-    & > li > span {
-      &:hover,
-      &:focus {
-        z-index: 2;
-        color: $pagination-hover-color;
-        background-color: $pagination-hover-background;
-        border-color: $pagination-hover-border;
-      }
-    }
-
-    & > .k-is-active > a,
-    & > .k-is-active > span {
-      &,
-      &:hover,
-      &:focus {
-        z-index: 3;
-        color: $pagination-active-color;
-        background-color: $pagination-active-background;
-        border-color: $pagination-active-border;
-        cursor: default;
-      }
-    }
-  }
-
-
-  /* Limit */
-
-  select {
-    height: $table-pagination-height;
-    width: auto;
-    margin-right: $table-pagination-spacing;
-
-    @include rtl {
-      margin-right: auto;
-      margin-left: $table-pagination-spacing;
-    }
-  }
-}
-
-
-/*
-Responsive table
-
-- Add the `.k-js-responsive-table` class to the `<table>`
-- Use [data-hide="phone/tablet/desktop"] on `<th>` to hide cell on different screen sizes
-- Set [data-toggle="true"] to the title cell
-
-markup:
-<div class="k-table-container">
-    <div class="k-table">
-        <table class="k-js-responsive-table">
-        <thead>
-            <tr>
-                <th width="1%" data-hide="phone">
-                    <sg-insert>2.12-161</sg-insert>
-                    <span class="k-visually-hidden">Move icon</sg-insert>
-                </th>
-                <th data-toggle="true" width="1%">
-                    <input type="checkbox" />
-                </th>
-                <th>
-                    Title
-                </th>
-                <th data-hide="phone,tablet">
-                    Category
-                </th>
-                <th data-hide="phone,tablet,desktop">
-                    Downloads
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <sg-insert>2.21.9</sg-insert>
-                </td>
-                <td class="k-table-data--toggle">
-                    <input type="checkbox" />
-                </td>
-                <td>
-                    <a href="javascript:void(0)">Title</a>
-                </td>
-                <td>
-                    Category
-                </td>
-                <td>
-                    12
-                </td>
-            </tr>
-        </tbody>
-        </table>
-    </div>
-</div>
-
-Styleguide 2.21.11
-
-*/
-
-.footable.breakpoint {
-  .footable-toggle {
-    display: inline-block;
-    width: $footable-toggle-size;
-    height: $footable-toggle-size;
-    line-height: ($footable-toggle-size - ($footable-toggle-border-size * 2));
-    border: $footable-toggle-border-size solid $footable-toggle-color;
-    border-radius: 50%;
-    margin-right: $spacing-small;
-    text-align: center;
-    vertical-align: middle;
-
-    @include rtl {
-      margin-right: 0;
-      margin-left: $table-cell-spacing-horizontal;
-    }
-
-    @include icon-after(chevron-bottom, true) {
-      display: inline-block;
-      width: $footable-toggle-icon-size;
-      height: $footable-toggle-icon-size;
-      margin: ((($footable-toggle-size - $footable-toggle-icon-size) / 2) - $footable-toggle-border-size);
-      color: $footable-toggle-color;
-      font-size: $footable-toggle-icon-size;
-      line-height: 1.3em;
-      transform: rotate(-90deg);
-      @include transition;
-    }
-  }
-
   tr.k-is-selected {
-    .footable-toggle {
-      border-color: $footable-toggle-color-active;
+    td {
+      background: $table-cell-accent-background;
+      color: $table-cell-accent-color;
 
-      &:after {
-        color: $footable-toggle-color-active;
+      a, i, span {
+        color: $table-cell-accent-color;
       }
     }
-  }
 
-  tr.footable-detail-show {
-    .footable-toggle {
-      &:after {
-        transform: rotate(0deg);
+
+    /* Re-set background on td's while hovering th */
+
+    &:hover,
+    &:focus {
+      td {
+        background-color: $table-cell-accent-hover-background;
       }
-    }
-  }
-
-  .footable-row-detail-row {
-    @include content-block($table-cell-spacing-vertical);
-  }
-
-  .footable-row-detail-name {
-    font-weight: $bold;
-  }
-
-
-  /* Hide toggle button for sub headings */
-
-  th {
-    .footable-toggle {
-      display: none;
-    }
-  }
-
-  .k-table-data--toggle {
-    padding-right: ($footable-toggle-size + ($spacing-tiny * 2));
-
-    .footable-toggle {
-      margin: 0;
-      position: absolute;
-      top: 50%;
-      right: $spacing-tiny;
-      margin-top: -(round($footable-toggle-size / 2));
     }
   }
 }
@@ -1123,6 +990,156 @@ th.k-sort-desc {
     @include icon-after(sort-descending, true) {
       margin-left: 0.5em;
       vertical-align: middle;
+    }
+  }
+}
+
+
+/*
+Responsive table
+
+- Add the `.k-js-responsive-table` class to the `<table>`
+- Use [data-hide="phone/tablet/desktop"] on `<th>` to hide cell on different screen sizes
+- Set [data-toggle="true"] to the title cell
+
+markup:
+<div class="k-table-container">
+    <div class="k-table">
+        <table class="k-js-responsive-table">
+        <thead>
+            <tr>
+                <th width="1%" data-hide="phone">
+                    <sg-insert>2.12-161</sg-insert>
+                    <span class="k-visually-hidden">Move icon</sg-insert>
+                </th>
+                <th width="1%" class="k-table-data--form">
+                    <input type="checkbox" />
+                </th>
+                <th data-toggle="true" width="0" class="k-table-data--toggle">
+                    Title
+                </th>
+                <th data-hide="phone,tablet">
+                    Category
+                </th>
+                <th data-hide="phone,tablet,desktop">
+                    Downloads
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <sg-insert>2.21.9</sg-insert>
+                </td>
+                <td class="k-table-data--form">
+                    <input type="checkbox" />
+                </td>
+                <td>
+                    <a href="javascript:void(0)">Title</a>
+                </td>
+                <td>
+                    Category
+                </td>
+                <td>
+                    12
+                </td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+
+Styleguide 2.21.11
+
+*/
+
+.footable.breakpoint {
+  .footable-toggle {
+    content: " ";
+    display: inline-block;
+    width: $footable-toggle-size;
+    height: $footable-toggle-size;
+    line-height: ($footable-toggle-size - ($footable-toggle-border-size * 2));
+    border: $footable-toggle-border-size solid $footable-toggle-color;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    margin-right: $table-cell-spacing-horizontal;
+
+    @include rtl {
+      margin-right: 0;
+      margin-left: $table-cell-spacing-horizontal;
+    }
+
+    @include icon-after(chevron-bottom, true) {
+      display: inline-block;
+      width: $footable-toggle-icon-size;
+      height: $footable-toggle-icon-size;
+      margin: ((($footable-toggle-size - $footable-toggle-icon-size) / 2) - $footable-toggle-border-size);
+      color: $footable-toggle-color;
+      font-size: $footable-toggle-icon-size;
+      line-height: 1.3em;
+      transform: rotate(-90deg);
+      @include transition;
+    }
+  }
+
+  tr.k-is-selected {
+    .footable-toggle {
+      border-color: $footable-toggle-color-active;
+
+      &:after {
+        color: $footable-toggle-color-active;
+      }
+    }
+  }
+
+
+  /**
+   * Reset padding, and re-set them on individual divs
+   */
+
+  .footable-row-detail-cell {
+    padding: 0;
+  }
+
+  tr.footable-detail-show {
+    .footable-toggle {
+      &:after {
+        transform: rotate(0deg);
+      }
+    }
+  }
+
+  .footable-row-detail-row {
+    @include clearfix;
+    @include content-block($table-cell-spacing-vertical);
+  }
+
+  .footable-row-detail-name {
+    font-weight: $bold;
+  }
+
+
+  /**
+   * 1. Just like table cells
+   * 2. Almost as tall as the main table rows
+   * 3. Same spacing as on table cells
+   */
+
+  .footable-row-detail-name,
+  .footable-row-detail-value {
+    position: relative; /* 1 */
+    min-height: round($unit-size * 0.75); /* 2 */
+    padding: $table-cell-spacing-vertical $table-cell-spacing-horizontal; /* 3 */
+  }
+
+
+  /* Hide toggle button for sub headings */
+
+  th {
+    .footable-toggle {
+      display: none;
     }
   }
 }
