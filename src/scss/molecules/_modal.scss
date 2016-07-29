@@ -2,9 +2,78 @@
    ========================================================================== */
 
 /*
-Modal
+Modals
 
-Modals, Using magnific popup
+Modals using magnific popup (http://dimsemenov.com/plugins/magnific-popup/)
+- Default modals are inline modals
+- Add an element to open the button
+- Add an element to be opened as a modal
+
+markup:
+<a class="k-js-inline-modal" data-mfp-src="#example-inline-modal" href="mobile-friendly-page.html">
+    Open modal
+</a>
+<div id="example-inline-modal" class="k-modal k-modal--inline mfp-hide">
+  Modal content
+</div>
+
+sg-wrapper:
+<div>
+    <sg-wrapper-content/>
+</div>
+
+Styleguide 2.15
+
+*/
+
+/*
+Modal title
+
+markup:
+<a class="k-js-inline-modal" data-mfp-src="#example-inline-modal2" href="mobile-friendly-page.html">
+    Open modal
+</a>
+<div id="example-inline-modal2" class="k-modal k-modal--inline mfp-hide">
+  <div class="k-modal__title">Title</div>
+  Content
+</div>
+
+Styleguide 2.15.1
+
+*/
+
+/*
+Small modal
+
+markup:
+<a class="k-js-inline-modal" data-mfp-src="#example-inline-modal3" href="mobile-friendly-page.html">
+    Open modal
+</a>
+<div id="example-inline-modal3" class="k-modal k-modal--inline k-modal--small mfp-hide">
+  <div class="k-modal__title">Title</div>
+  I'm a small modal
+</div>
+
+Styleguide 2.15.2
+
+*/
+
+/*
+Iframe modal
+
+markup:
+<a class="k-js-iframe-modal" href="http://ui.joomlatools.com/#/section/4.2/fullscreen">
+    Open modal
+</a>
+
+Styleguide 2.15.3
+
+*/
+
+/*
+Image modals
+
+Image modals do not need an item to be shown in a modal but use the `<a href="">` attribute instead
 
 markup:
 <a class="k-js-image-modal" href="joomlatools/images/placeholder-16-9.png">
@@ -12,11 +81,8 @@ markup:
 </a>
 
 sg-wrapper:
-<p>
-    <sg-wrapper-content/>
-</p>
 
-Styleguide 2.15
+Styleguide 2.15.4
 
 */
 
@@ -744,28 +810,6 @@ img.mfp-img {
   }
 }
 
-
-/*
-Inline modals
-
-markup:
-<a class="k-js-inline-modal" data-mfp-src="#example-modal" href="javascript:void(0)">
-    Open modal
-</a>
-<div id="example-modal" class="k-modal k-modal--inline k-modal--small mfp-hide">
-  Modal content
-</div>
-
-sg-wrapper:
-<p>
-    <sg-wrapper-content/>
-</p>
-
-Styleguide 2.15.1
-
-*/
-
-/* @TODO: make sure iframe and inline modals work as well */
 
 .k-modal {
   background: white;

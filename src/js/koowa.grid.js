@@ -47,7 +47,7 @@ Koowa.Grid = Koowa.Class.extend({
         this.setTableRows();
     },
     setScopebar: function() {
-        $('.js-filter-container', this.form).scopebar();
+        $('.k-js-filter-container', this.form).scopebar();
     },
     setTableHeaders: function() {
         //Make the table headers "clickable" and make checkall work

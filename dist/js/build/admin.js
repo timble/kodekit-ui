@@ -11347,7 +11347,7 @@ module.exports = '1.3.3';
 
                 item = $(this);
 
-                item.addClass('k-js-dropdown-content k-dropdown__body__content');
+                item.addClass('k-js-dropdown-content k-scopebar-dropdown__body__content');
 
                 template.find('.k-js-dropdown-body').prepend(item);
                 template.find('.k-js-dropdown-title').html(item.data('title'));
@@ -11791,7 +11791,7 @@ Koowa.Grid = Koowa.Class.extend({
         this.setTableRows();
     },
     setScopebar: function() {
-        $('.js-filter-container', this.form).scopebar();
+        $('.k-js-filter-container', this.form).scopebar();
     },
     setTableHeaders: function() {
         //Make the table headers "clickable" and make checkall work
@@ -14406,9 +14406,8 @@ var Konami = function (callback) {
             $footable = $('.k-js-responsive-table'),
             $overflow = $('.k-sidebar-item--overflow'),
             resizeClass = 'k-is-resizing',
-            $sidebarToggle = $('.k-sidebar-item--toggle')
-            ;
-            //$scopebar = $('.k-scopebar');
+            $sidebarToggle = $('.k-sidebar-item--toggle'),
+            $scopebar = $('.k-scopebar');
 
         // Sidebar
         if ( ($toolbar.length || $titlebar.length ) && $wrapper.length && $content.length)
@@ -14519,11 +14518,9 @@ var Konami = function (callback) {
 
 
         // Scopebar
-        /*if ( $scopebar.length ) {
+        if ( $scopebar.length ) {
 
             $.each($scopebar, function(e) {
-
-                console.log(e, $(this));
 
                 var $scopebarFilters = $(this).find('.k-scopebar__item--filters'),
                     $scopebarBreadcrumbs = $(this).find('.k-scopebar__item--breadcrumbs'),
@@ -14568,21 +14565,18 @@ var Konami = function (callback) {
             if ( $filtertoggle.length || $breadcrumbtoggle.length || $searchtoggle.length ) {
 
                 $filtertoggle.on('click', function() {
-                    console.log($(this), 'click');
                     $(this).parent().siblings('.k-scopebar__item--filters').slideToggle('fast');
                 });
 
                 $breadcrumbtoggle.on('click', function() {
-                    console.log($(this), 'click');
                     $(this).parent().siblings('.k-scopebar__item--breadcrumbs').slideToggle('fast');
                 });
 
                 $searchtoggle.on('click', function() {
-                    console.log($(this), 'click');
                     $(this).parent().siblings('.k-scopebar__item--search').slideToggle('fast');
                 });
             }
-        }*/
+        }
 
 
         // Select2
@@ -14687,7 +14681,6 @@ var Konami = function (callback) {
     });
 
 })(kQuery);
-
 
 window.jQuery = globalCacheForjQueryReplacement;
 globalCacheForjQueryReplacement = undefined;

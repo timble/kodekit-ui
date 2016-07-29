@@ -27,7 +27,7 @@
 
                 item = $(this);
 
-                item.addClass('k-js-dropdown-content k-dropdown__body__content');
+                item.addClass('k-js-dropdown-content k-scopebar-dropdown__body__content');
 
                 template.find('.k-js-dropdown-body').prepend(item);
                 template.find('.k-js-dropdown-title').html(item.data('title'));

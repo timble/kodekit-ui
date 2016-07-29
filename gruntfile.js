@@ -164,7 +164,7 @@ module.exports = function(grunt) {
     });
 
     // The dev task will be used during development
-    grunt.registerTask('default', ['modernizr', 'watch:webfont', 'watch:javascript']);
+    grunt.registerTask('default', ['modernizr', 'watch']);
 
     // JS only
     grunt.registerTask('js', ['watch:concat']);

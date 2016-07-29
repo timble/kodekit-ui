@@ -11,9 +11,8 @@
             $footable = $('.k-js-responsive-table'),
             $overflow = $('.k-sidebar-item--overflow'),
             resizeClass = 'k-is-resizing',
-            $sidebarToggle = $('.k-sidebar-item--toggle')
-            ;
-            //$scopebar = $('.k-scopebar');
+            $sidebarToggle = $('.k-sidebar-item--toggle'),
+            $scopebar = $('.k-scopebar');
 
         // Sidebar
         if ( ($toolbar.length || $titlebar.length ) && $wrapper.length && $content.length)
@@ -124,11 +123,9 @@
 
 
         // Scopebar
-        /*if ( $scopebar.length ) {
+        if ( $scopebar.length ) {
 
             $.each($scopebar, function(e) {
-
-                console.log(e, $(this));
 
                 var $scopebarFilters = $(this).find('.k-scopebar__item--filters'),
                     $scopebarBreadcrumbs = $(this).find('.k-scopebar__item--breadcrumbs'),
@@ -173,21 +170,18 @@
             if ( $filtertoggle.length || $breadcrumbtoggle.length || $searchtoggle.length ) {
 
                 $filtertoggle.on('click', function() {
-                    console.log($(this), 'click');
                     $(this).parent().siblings('.k-scopebar__item--filters').slideToggle('fast');
                 });
 
                 $breadcrumbtoggle.on('click', function() {
-                    console.log($(this), 'click');
                     $(this).parent().siblings('.k-scopebar__item--breadcrumbs').slideToggle('fast');
                 });
 
                 $searchtoggle.on('click', function() {
-                    console.log($(this), 'click');
                     $(this).parent().siblings('.k-scopebar__item--search').slideToggle('fast');
                 });
             }
-        }*/
+        }
 
 
         // Select2
@@ -292,4 +286,3 @@
     });
 
 })(kQuery);
-
