@@ -6,7 +6,21 @@ Tree
 
 markup:
 <div class="k-tree" id="k-jqtree"></div>
-<script>Add something here?</script>
+<script type="text/javascript" defer>
+(function($) {
+    $(document).ready(function () {
+        new Koowa.Tree('#k-jqtree', {
+            "data": [
+                {"label":"Main category","id":4},
+                {"label":"Sub category 1","id":5,"parent":4},
+                {"label":"Sub category 2","id":6,"parent":4},
+                {"label":"Deeper category","id":7,"parent":6},
+                {"label":"Sub category 3","id":8,"parent":4}
+            ]
+        });
+    });
+});
+</script>
 
 Styleguide 2.26
 
@@ -119,12 +133,31 @@ Styleguide 2.26
   text-align: center;
 }
 
+.jqtree-whitespace + .jqtree_common:not(.jqtree-toggler) {
+  @include psuedo(after) {
+    width: 6px;
+    height: 6px;
+    border-left: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    top: 50%;
+    margin-top: -3px;
+    left: -(($tree-size / 2) + 3px);
+
+    @include rtl {
+      border-left: none;
+      border-right: 1px solid #aaa;
+      left: auto;
+      right: -(($tree-size / 2) + 3px);
+    }
+  }
+}
+
 .jqtree-toggler {
   @include psuedo(before) {
     top: 50%;
     left: 50%;
     margin-top: -(round($tree-toggle-size / 2) - 1px);
-    margin-left: -(round($tree-toggle-size * 2));
+    margin-left: -($tree-toggle-size);
     @include caret(bottom, $tree-toggle-size);
     @include transition;
 

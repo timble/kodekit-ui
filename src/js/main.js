@@ -184,38 +184,22 @@
         }
 
 
+        // Tree
+        new Koowa.Tree('#k-jqtree', {
+            "data": [
+                {"label":"Main category","id":4},
+                {"label":"Sub category 1","id":5,"parent":4},
+                {"label":"Sub category 2","id":6,"parent":4},
+                {"label":"Deeper category","id":7,"parent":6},
+                {"label":"Sub category 3","id":8,"parent":4}
+            ]
+        });
+
         // Select2
         var $select2 = $('.k-js-select2');
         $select2.select2({
             theme: "bootstrap"
         });
-
-        // jqTree
-        var jqTree = $('#k-jqtree');
-        if ( jqTree.length ) {
-
-            var jqTreeData = [
-                {
-                    name: 'node1',
-                    children: [
-                        { name: 'child1' },
-                        { name: 'child2' }
-                    ]
-                },
-                {
-                    name: 'node2',
-                    children: [
-                        { name: 'child3' }
-                    ]
-                }
-            ];
-
-
-            /*jqTree.tree({
-                data: jqTreeData
-            })*/
-        }
-        new Koowa.Tree('#k-jqtree', {"data":[{"label":"foo","id":4}, {"label":"bar","id":5,"parent":4}]});
 
         // Datepicker
         var datepicker = $('.k-js-datepicker');
