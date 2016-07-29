@@ -13,8 +13,10 @@ markup:
 <a class="k-js-inline-modal" data-mfp-src="#example-inline-modal" href="mobile-friendly-page.html">
     Open modal
 </a>
-<div id="example-inline-modal" class="k-modal k-modal--inline mfp-hide">
-  Modal content
+<div id="example-inline-modal" class="mfp-hide">
+    <div class="k-inline-modal">
+        <p>Modal content</p>
+    </div>
 </div>
 
 sg-wrapper:
@@ -33,9 +35,11 @@ markup:
 <a class="k-js-inline-modal" data-mfp-src="#example-inline-modal2" href="mobile-friendly-page.html">
     Open modal
 </a>
-<div id="example-inline-modal2" class="k-modal k-modal--inline mfp-hide">
-  <div class="k-modal__title">Title</div>
-  Content
+<div id="example-inline-modal2" class="mfp-hide">
+    <div class="k-inline-modal">
+        <div class="k-inline-modal__title">Title</div>
+        <p>Content</p>
+    </div>
 </div>
 
 Styleguide 2.15.1
@@ -49,9 +53,11 @@ markup:
 <a class="k-js-inline-modal" data-mfp-src="#example-inline-modal3" href="mobile-friendly-page.html">
     Open modal
 </a>
-<div id="example-inline-modal3" class="k-modal k-modal--inline k-modal--small mfp-hide">
-  <div class="k-modal__title">Title</div>
-  I'm a small modal
+<div id="example-inline-modal3" class="mfp-hide">
+    <div class="k-inline-modal k-inline-modal--small">
+        <div class="k-inline-modal__title">Title</div>
+        <p>I'm a small modal</p>
+    </div>
 </div>
 
 Styleguide 2.15.2
@@ -123,14 +129,34 @@ Styleguide 2.15.4
   position: absolute;
   width: 100%;
   height: 100%;
+  max-height: 100%;
   left: 0;
   top: 0;
   padding: 0 8px;
   box-sizing: border-box;
+  min-height: 420px;
 
   @include rtl-outside-koowa {
     left: auto;
     right: 0;
+  }
+
+  &.mfp-inline-holder {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .mfp-inline {
+    display: block;
+    width: auto;
+    height: auto;
+    padding: 15px;
+  }
+
+  .mfp-iframe-scaler .mfp-iframe,
+  .mfp-inline {
+    background: white;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
   }
 }
 
@@ -153,6 +179,8 @@ Styleguide 2.15.4
   text-align: left;
   z-index: 1045;
   min-width: 240px;
+  max-width: 1080px !important;
+  max-height: 800px !important;
 
   @include rtl-outside-koowa {
     text-align: right;
@@ -161,8 +189,11 @@ Styleguide 2.15.4
 
 .mfp-inline-holder .mfp-content,
 .mfp-ajax-holder .mfp-content {
-  width: auto;
   cursor: auto;
+  max-width: 1200px;
+  width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
 }
 
 .mfp-ajax-cur {
@@ -250,36 +281,38 @@ button::-moz-focus-inner {
 }
 
 .mfp-close {
-  width: 44px;
-  height: 44px;
-  line-height: 44px;
   position: absolute;
-  right: 0;
-  top: 0;
   text-decoration: none;
-  text-align: center;
   opacity: 0.65;
-  padding: 0 0 18px 10px;
+  margin: 0;
+  padding: 0;
   color: white;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  top: -40px;
   font-size: $font-size-huge;
+  line-height: $line-height-huge;
+  right: -14px;
 
   @include rtl-outside-koowa {
     right: auto;
-    left: 0;
-    padding: 0 10px 18px 0;
+    left: -14px;
+  }
+
+  &:hover,
+  &:focus {
+    border: none;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    color: white;
+    opacity: 1;
   }
 }
 
-.mfp-close:hover, .mfp-close:focus {
-  opacity: 1;
-}
-
-.mfp-close:active {
-  top: 1px;
-}
-
 .mfp-close-btn-in .mfp-close {
-  color: #333333;
+  color: white;
 }
 
 .mfp-image-holder .mfp-close,
@@ -289,6 +322,7 @@ button::-moz-focus-inner {
   text-align: right;
   padding-right: 6px;
   width: 100%;
+  top: 0;
 }
 
 @include rtl-outside-koowa {
@@ -460,7 +494,9 @@ button::-moz-focus-inner {
 .mfp-iframe-holder .mfp-content {
   line-height: 0;
   width: 100%;
-  max-width: 900px;
+  height: 100%;
+  max-width: 1080px !important;
+  max-height: 800px !important;
 }
 
 .mfp-iframe-scaler {
@@ -704,139 +740,36 @@ img.mfp-img {
 
 
 /**
- * Custom classes
- * Namespace them inside bot wrap and container to win from all other mfp styles
- * This makes sure modals in both frontend and backend look the same
+ * Custom styling for inline modals
  */
 
-.mfp-wrap {
-
-  .mfp-container {
-
-    min-height: 420px;
-
-    &.mfp-inline-holder {
-      padding-top: 40px;
-      padding-bottom: 40px;
-
-      .mfp-content {
-        max-width: 1200px;
-        width: 100%;
-        margin: 0 auto;
-      }
-    }
-
-    .mfp-inline {
-      display: block;
-      width: auto;
-      height: auto;
-      padding: 15px;
-    }
-
-    .mfp-close {
-      margin: 0;
-      padding: 0;
-      color: white;
-      text-align: center;
-      width: 40px;
-      height: 40px;
-      top: -40px;
-      font-size: $font-size-huge;
-      line-height: $line-height-huge;
-      right: -14px;
-
-      @include rtl-outside-koowa {
-        right: auto;
-        left: -14px;
-      }
-
-      &:hover {
-        border: none;
-        background: transparent;
-        margin: 0;
-        padding: 0;
-        color: white;
-      }
-    }
-
-    &.mfp-image-holder {
-      .mfp-close {
-        top: 0;
-      }
-    }
-
-    .mfp-iframe-scaler .mfp-iframe,
-    .mfp-inline {
-      background: white;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
-    }
-  }
-}
-
-
-/* Special classes for our file dialog popup */
-
-.koowa_dialog_modal {
-  .mfp-content {
-    max-height: 100%;
-    min-height: 100%;
-    height: 100%;
-  }
-  .mfp-content .mfp-iframe-scaler {
-    padding: 0;
-    margin: 0;
-    height: 100%;
-
-    .mfp-iframe {
-      position: relative;
-    }
-  }
-
-  @media screen and (min-width: 712px) {
-    .mfp-content {
-      min-height: 0;
-      max-width: 1080px !important;
-      max-height: 800px !important;
-    }
-    .mfp-content .mfp-iframe-scaler {
-      height: 100%;
-      max-height: 100% !important;
-
-      iframe {
-        height: 100%;
-        max-height: 100% !important;
-      }
-    }
-  }
-}
-
-
-.k-modal {
+.k-inline-modal {
+  padding: $spacing;
   background: white;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   width: 100%;
   box-sizing: border-box;
-}
-
-.k-modal--inline {
-  padding: $spacing;
+  max-width: 1080px !important;
+  max-height: 800px !important;
+  overflow: auto;
 
   form {
     margin: 0;
   }
 }
 
-.k-modal--small {
+.k-inline-modal--small {
   position: relative;
   max-width: 480px;
   width: 100%;
   margin: auto;
 }
 
-.k-modal__title {
+.k-inline-modal__title {
   margin: 0 0 $spacing 0;
   font-weight: $regular;
   font-size: $font-size-large;
   line-height: $line-height-large;
 }
+
