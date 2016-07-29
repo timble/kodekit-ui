@@ -210,11 +210,12 @@
                 }
             ];
 
-            jqTree.tree({
-                data: jqTreeData
-            })
-        }
 
+            /*jqTree.tree({
+                data: jqTreeData
+            })*/
+        }
+        new Koowa.Tree('#k-jqtree', {"data":[{"label":"foo","id":4}, {"label":"bar","id":5,"parent":4}]});
 
         // Datepicker
         var datepicker = $('.k-js-datepicker');
