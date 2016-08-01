@@ -13,7 +13,7 @@ markup:
         <table class="k-js-fixed-table-header k-js-responsive-table">
         <thead>
             <tr>
-                <th width="1%" class="k-table-data--form"><input class="-koowa-grid-checkall" type="checkbox" /></th>
+                <th width="1%" class="k-table-data--form"><input class="k-js-grid-checkall" type="checkbox" /></th>
                 <th width="1%" data-toggle="true" class="k-table-data--toggle"></th>
                 <th class="k-sort-desc"><a href="javascript:void(0)">Item title</a></th>
                 <th width="5%" data-hide="phone,tablet"><a href="javascript:void(0)">State</a></th>
@@ -23,7 +23,7 @@ markup:
         </thead>
         <tbody>
             <tr>
-                <td width="1%" class="k-table-data--form"><input class="-koowa-grid-checkbox" type="checkbox" /></td>
+                <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox" /></td>
                 <td class="k-table-data--icon k-table-data--toggle"><sg-insert>2.12.1-5</sg-insert></td>
                 <sg-insert>2.21.2</sg-insert>
                 <td><sg-insert>2.21.5-2</sg-insert></td>
@@ -31,7 +31,7 @@ markup:
                 <td class="k-table-data--nowrap">01 January 1999</td>
             </tr>
             <tr>
-                <td width="1%" class="k-table-data--form"><input class="-koowa-grid-checkbox" type="checkbox" /></td>
+                <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox" /></td>
                 <td class="k-table-data--icon k-table-data--toggle"><sg-insert>2.12.1-5</sg-insert></td>
                 <sg-insert>2.21.3</sg-insert>
                 <td><sg-insert>2.21.5-2</sg-insert></td>
@@ -40,7 +40,7 @@ markup:
             </tr>
             <sg-insert>2.21.6</sg-insert>
             <tr>
-                <td width="1%" class="k-table-data--form"><input class="-koowa-grid-checkbox" type="checkbox" /></td>
+                <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox" /></td>
                 <td class="k-table-data--icon k-table-data--toggle"><sg-insert>2.12.1-5</sg-insert></td>
                 <sg-insert>2.21.3</sg-insert>
                 <td><sg-insert>2.21.5-2</sg-insert></td>
@@ -48,7 +48,7 @@ markup:
                 <td class="k-table-data--nowrap">01 January 1999</td>
             </tr>
             <tr>
-                <td width="1%" class="k-table-data--form"><input class="-koowa-grid-checkbox" type="checkbox" /></td>
+                <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox" /></td>
                 <td class="k-table-data--icon k-table-data--toggle"><sg-insert>2.12.1-5</sg-insert></td>
                 <sg-insert>2.21.3</sg-insert>
                 <td><sg-insert>2.21.5-2</sg-insert></td>
@@ -56,7 +56,7 @@ markup:
                 <td class="k-table-data--nowrap">01 January 1999</td>
             </tr>
             <tr>
-                <td width="1%" class="k-table-data--form"><input class="-koowa-grid-checkbox" type="checkbox" /></td>
+                <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox" /></td>
                 <td class="k-table-data--icon k-table-data--toggle"><sg-insert>2.12.1-5</sg-insert></td>
                 <sg-insert>2.21.3</sg-insert>
                 <td><sg-insert>2.21.5-2</sg-insert></td>

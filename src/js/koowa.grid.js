@@ -21,8 +21,8 @@ Koowa.Grid = Koowa.Class.extend({
 
         this.element    = $(element);
         this.form       = this.element.is('form') ? this.element : this.element.closest('form');
-        this.toggles    = this.element.find('.-koowa-grid-checkall');
-        this.checkboxes = this.element.find('.-koowa-grid-checkbox').filter(function(i, checkbox) {
+        this.toggles    = this.element.find('.k-js-grid-checkall');
+        this.checkboxes = this.element.find('.k-js-grid-checkbox').filter(function(i, checkbox) {
             return !$(checkbox).prop('disabled');
         });
 
@@ -64,7 +64,7 @@ Koowa.Grid = Koowa.Class.extend({
                 }
             }
             else {
-                var checkall = $target.find('.-koowa-grid-checkall');
+                var checkall = $target.find('.k-js-grid-checkall');
 
                 if (checkall.length) {
                     checkall.prop('checked', checkall.is(':checked') ? false : true).trigger('change');
@@ -82,7 +82,7 @@ Koowa.Grid = Koowa.Class.extend({
             }
 
             var tr = target.is('tr') ? target : target.parents('tr'),
-                checkbox = tr.find('.-koowa-grid-checkbox');
+                checkbox = tr.find('.k-js-grid-checkbox');
 
             if(tr.data('readonly') == true || !checkbox.length) {
                 return;
@@ -94,7 +94,7 @@ Koowa.Grid = Koowa.Class.extend({
         });
 
         // Checkbox should add selected and selected-multiple classes to the row
-        this.form.on('change.koowa', '.-koowa-grid-checkbox', function(event) {
+        this.form.on('change.koowa', '.k-js-grid-checkbox', function(event) {
             var selected,
                 target = $(event.target),
                 tr     = target.parents('tr'),
@@ -145,7 +145,7 @@ Koowa.Grid = Koowa.Class.extend({
  * @return  array           The items' ids
  */
 Koowa.Grid.getAllSelected = function(context) {
-    return $('.-koowa-grid-checkbox:checked', context);
+    return $('.k-js-grid-checkbox:checked', context);
 };
 
 /**
