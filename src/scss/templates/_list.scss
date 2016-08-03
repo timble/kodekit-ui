@@ -12,7 +12,7 @@ markup:
 <div class="koowa-container koowa">
     <sg-insert>2.14</sg-insert>
     <!-- Wrapper -->
-    <div class="k-wrapper">
+    <div class="k-wrapper k-js-wrapper">
         <!-- Content wrapper -->
         <div class="k-content-wrapper">
             <!-- Sidebar -->
@@ -20,13 +20,13 @@ markup:
                 <div class="k-sidebar-item">
                     <sg-insert>2.16-all</sg-insert>
                 </div>
-                <div class="k-sidebar-item k-sidebar-item--overflow">
+                <div class="k-sidebar-item k-js-sidebar-overflow-item">
                     <div class="k-sidebar-item__header">
                         Categories
                     </div>
                     <sg-insert>2.26</sg-insert>
                 </div>
-                <div class="k-sidebar-item k-sidebar-item--toggle">
+                <div class="k-sidebar-item k-sidebar-item--toggle k-js-sidebar-toggle-item">
                     <div class="k-sidebar-item__header">
                         Quick filters
                     </div>
@@ -34,7 +34,7 @@ markup:
                 </div>
             </div>
             <!-- Content -->
-            <div class="k-content">
+            <div class="k-content k-js-content">
                 <sg-insert>2.23.1</sg-insert>
                 <sg-insert>2.24</sg-insert>
                 <!-- Component -->
@@ -66,7 +66,7 @@ List with title-bar
 markup:
 <div class="koowa-container koowa">
     <!-- Wrapper -->
-    <div class="k-wrapper">
+    <div class="k-wrapper k-js-wrapper">
         <sg-insert>2.23</sg-insert>
         <!-- Content wrapper -->
         <div class="k-content-wrapper">
@@ -81,7 +81,7 @@ markup:
                 </div>
             </div>
             <!-- Content -->
-            <div class="k-content">
+            <div class="k-content k-js-content">
                 <!-- Component -->
                 <div class="k-component">
                     <!-- Form -->
@@ -129,7 +129,7 @@ The default list view displayed in a gallery layout
 markup:
 <div class="koowa-container koowa">
     <!-- Wrapper -->
-    <div class="k-wrapper">
+    <div class="k-wrapper k-js-wrapper">
         <!-- Content wrapper -->
         <div class="k-content-wrapper">
             <!-- Sidebar -->
@@ -137,13 +137,13 @@ markup:
                 <div class="k-sidebar-item">
                     <sg-insert>2.16-all</sg-insert>
                 </div>
-                <div class="k-sidebar-item k-sidebar-item--overflow">
+                <div class="k-sidebar-item k-js-sidebar-overflow-item">
                     <div class="k-sidebar-item__header">
                         Categories
                     </div>
                     <sg-insert>2.26</sg-insert>
                 </div>
-                <div class="k-sidebar-item k-sidebar-item--toggle">
+                <div class="k-sidebar-item k-sidebar-item--toggle k-js-sidebar-toggle-item">
                     <div class="k-sidebar-item__header">
                         Quick filters
                     </div>
@@ -151,7 +151,7 @@ markup:
                 </div>
             </div>
             <!-- Content -->
-            <div class="k-content">
+            <div class="k-content k-js-content">
                 <sg-insert>2.23.1</sg-insert>
                 <sg-insert>2.24</sg-insert>
                 <!-- Component -->

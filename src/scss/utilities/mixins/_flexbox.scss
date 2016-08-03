@@ -9,16 +9,35 @@
 
 @mixin flexbox(
   $horizontal: $flexbox-horizontal,
-  $vertical: $flexbox-vertical) {
+  $vertical: $flexbox-vertical,
+  $root: false) {
 
   @if $flexbox == true { // 1
-    @at-root { // 2
-      .k-flexbox &, // 3
-      .k-flexboxlegacy & { // 3
-        @media (min-width: $horizontal) and (min-height: $vertical) { // 4
-          @content
+
+    @if $root == false {
+      @at-root { // 2
+        .k-flexbox &, // 3
+        .k-flexboxlegacy & { // 3
+          @media (min-width: $horizontal) and (min-height: $vertical) { // 4
+            @content
+          }
         }
       }
     }
+
+
+    // Same level as selectors (useful for when inside modernizr mixin for example)
+
+    @if $root == true {
+      @at-root { // 2
+        .k-flexbox#{&}, // 3
+        .k-flexboxlegacy#{&} { // 3
+          @media (min-width: $horizontal) and (min-height: $vertical) { // 4
+            @content
+          }
+        }
+      }
+    }
+
   }
 }

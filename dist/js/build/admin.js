@@ -11765,8 +11765,8 @@ Koowa.Grid = Koowa.Class.extend({
 
         this.element    = $(element);
         this.form       = this.element.is('form') ? this.element : this.element.closest('form');
-        this.toggles    = this.element.find('.-koowa-grid-checkall');
-        this.checkboxes = this.element.find('.-koowa-grid-checkbox').filter(function(i, checkbox) {
+        this.toggles    = this.element.find('.k-js-grid-checkall');
+        this.checkboxes = this.element.find('.k-js-grid-checkbox').filter(function(i, checkbox) {
             return !$(checkbox).prop('disabled');
         });
 
@@ -11808,7 +11808,7 @@ Koowa.Grid = Koowa.Class.extend({
                 }
             }
             else {
-                var checkall = $target.find('.-koowa-grid-checkall');
+                var checkall = $target.find('.k-js-grid-checkall');
 
                 if (checkall.length) {
                     checkall.prop('checked', checkall.is(':checked') ? false : true).trigger('change');
@@ -11826,7 +11826,7 @@ Koowa.Grid = Koowa.Class.extend({
             }
 
             var tr = target.is('tr') ? target : target.parents('tr'),
-                checkbox = tr.find('.-koowa-grid-checkbox');
+                checkbox = tr.find('.k-js-grid-checkbox');
 
             if(tr.data('readonly') == true || !checkbox.length) {
                 return;
@@ -11838,7 +11838,7 @@ Koowa.Grid = Koowa.Class.extend({
         });
 
         // Checkbox should add selected and selected-multiple classes to the row
-        this.form.on('change.koowa', '.-koowa-grid-checkbox', function(event) {
+        this.form.on('change.koowa', '.k-js-grid-checkbox', function(event) {
             var selected,
                 target = $(event.target),
                 tr     = target.parents('tr'),
@@ -11889,7 +11889,7 @@ Koowa.Grid = Koowa.Class.extend({
  * @return  array           The items' ids
  */
 Koowa.Grid.getAllSelected = function(context) {
-    return $('.-koowa-grid-checkbox:checked', context);
+    return $('.k-js-grid-checkbox:checked', context);
 };
 
 /**
@@ -14244,7 +14244,7 @@ $(function() {
 
                     $.each(transitionElements, function() {
                         container.removeAttr('style').removeClass(noTransitionClass);
-                        $('.k-title-bar').removeAttr('style').removeClass(noTransitionClass);
+                        $('.k-js-title-bar').removeAttr('style').removeClass(noTransitionClass);
                     });
                     $.each(offCanvasOverlay, function() {
                         $(this).removeAttr('style').removeClass(noTransitionClass);
@@ -14398,16 +14398,16 @@ var Konami = function (callback) {
     $(document).ready(function () {
 
         // Variables
-        var $wrapper = $('.k-wrapper'),
-            $titlebar = $('.k-title-bar'),
-            $toolbar = $('.k-toolbar'),
-            $content = $('.k-content'),
+        var $wrapper = $('.k-js-wrapper'),
+            $titlebar = $('.k-js-title-bar'),
+            $toolbar = $('.k-js-toolbar'),
+            $content = $('.k-js-content'),
             $fixedtable = $('.k-js-fixed-table-header'),
             $footable = $('.k-js-responsive-table'),
-            $overflow = $('.k-sidebar-item--overflow'),
+            $overflow = $('.k-js-sidebar-overflow-item'),
             resizeClass = 'k-is-resizing',
-            $sidebarToggle = $('.k-sidebar-item--toggle'),
-            $scopebar = $('.k-scopebar');
+            $sidebarToggle = $('.k-js-sidebar-toggle-item'),
+            $scopebar = $('.k-js-scopebar');
 
         // Sidebar
         if ( ($toolbar.length || $titlebar.length ) && $wrapper.length && $content.length)
@@ -14423,10 +14423,10 @@ var Konami = function (callback) {
             function addOffCanvasButton(element, position) {
                 // Variables
                 var kContainer = '.koowa-container',
-                    titlebar = element.closest(kContainer).find('.k-title-bar')[0],
-                    toolbar = element.closest(kContainer).find('.k-toolbar')[0],
-                    wrapper = element.closest(kContainer).find('.k-wrapper')[0],
-                    content = element.closest(kContainer).find('.k-content')[0],
+                    titlebar = element.closest(kContainer).find('.k-js-title-bar')[0],
+                    toolbar = element.closest(kContainer).find('.k-js-toolbar')[0],
+                    wrapper = element.closest(kContainer).find('.k-js-wrapper')[0],
+                    content = element.closest(kContainer).find('.k-js-content')[0],
                     toggle = element.closest(kContainer).find('.k-off-canvas-menu-toggle--' + position),
                     $toggle = $(toggle_button),
                     $toggleButton = '',
@@ -14480,7 +14480,7 @@ var Konami = function (callback) {
 
         // Overflowing items
         if ( $overflow.length ) {
-            $overflow.overflowing();
+            $overflow.addClass('k-sidebar-item--overflow').overflowing();
         }
 
         // Footable
@@ -14648,7 +14648,7 @@ var Konami = function (callback) {
 
         if ( $sidebarToggle.length )
         {
-            $sidebarToggle.find('.k-sidebar-item__header').append('<div class="k-sidebar-item__toggle"><span class="visually-hidden">Toggle</span></div>');
+            $sidebarToggle.addClass('k-sidebar-item--toggle').find('.k-sidebar-item__header').append('<div class="k-sidebar-item__toggle"><span class="visually-hidden">Toggle</span></div>');
             var $sidebarToggleHandler = $('.k-sidebar-item__toggle');
             $sidebarToggle.on('click', '.k-sidebar-item__toggle', function() {
                 $sidebarToggleHandler.toggleClass('k-is-active').parent().next().slideToggle(180);

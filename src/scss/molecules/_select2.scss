@@ -47,6 +47,19 @@ Styleguide 2.19
   }
 
 
+  .select2-selection--multiple {
+    .select2-selection__rendered {
+      padding-right: 5px;
+    }
+
+    .select2-selection__choice {
+      max-width: 300px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+
   /* Set proper styling for the search input field */
 
   .select2-search__field {

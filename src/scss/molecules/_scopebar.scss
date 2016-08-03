@@ -8,7 +8,7 @@ The default scopebar is displayed with filters and a search field
 
 markup:
 <!-- Scopebar -->
-<div class="k-scopebar">
+<div class="k-scopebar k-js-scopebar">
     <sg-insert>2.18.3</sg-insert>
     <sg-insert>2.18.6</sg-insert>
 </div><!-- .k-scopebar -->
@@ -24,7 +24,7 @@ When you don't need any filters, but do need breadcrumbs, it's possible to combi
 
 markup:
 <!-- Scopebar -->
-<div class="k-scopebar">
+<div class="k-scopebar k-js-scopebar">
     <sg-insert>2.18.4</sg-insert>
     <sg-insert>2.18.6</sg-insert>
 </div><!-- .k-scopebar -->
@@ -40,7 +40,7 @@ Need some extra buttons? For example to switch a list layout to a grid layout? P
 
 markup:
 <!-- Scopebar -->
-<div class="k-scopebar">
+<div class="k-scopebar k-js-scopebar">
     <sg-insert>2.18.3</sg-insert>
     <sg-insert>2.18.5</sg-insert>
     <sg-insert>2.18.6</sg-insert>
@@ -331,12 +331,9 @@ Styleguide 2.18.3
   display: block;
   float: left;
   width: auto;
-  line-height: $scopebar-size;
   @include border(right, $color-primary-min-2);
   @include border(bottom, $color-primary-min-2);
   margin-bottom: -1px;
-  height: $scopebar-size + 1px;
-  font-size: $scopebar-filter-font-size;
 
   @include breakpoint($beta) {
     position: relative;
@@ -462,6 +459,9 @@ Styleguide 2.18.3
   background: transparent;
   margin: 0;
   padding: 0 6px;
+  line-height: $scopebar-size;
+  height: $scopebar-size;
+  font-size: $scopebar-filter-font-size;
 
   &:hover,
   &:focus {

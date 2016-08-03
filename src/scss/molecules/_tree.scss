@@ -26,8 +26,6 @@ Styleguide 2.26
 
 */
 
-// @TODO: Styling like in docman with folders and correct spacers
-
 .k-tree {
   @include clearfix;
   margin: $list-spacing 0;
@@ -41,6 +39,14 @@ Styleguide 2.26
     }
   }
 
+  & > .jqtree-tree {
+    & > .jqtree-folder {
+      .jqtree-element {
+        padding-left: 15px;
+      }
+    }
+  }
+
   .jqtree-selected {
     & > .jqtree-element {
       background: $color-accent;
@@ -50,16 +56,6 @@ Styleguide 2.26
     &:hover {
       & > .jqtree-element {
         background: dark($color-accent);
-      }
-    }
-
-    .jqtree-toggler {
-      &:hover {
-        color: $color-accent-type;
-
-        &:before {
-          border-top-color: $color-accent-type;
-        }
       }
     }
   }
@@ -190,6 +186,16 @@ Styleguide 2.26
 .jqtree-selected {
   & > .jqtree-element {
     font-weight: $bold;
+  }
+
+  & > .jqtree_common > .jqtree-toggler {
+    &:hover {
+      color: $color-accent-type;
+
+      &:before {
+        border-top-color: $color-accent-type;
+      }
+    }
   }
 }
 

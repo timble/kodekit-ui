@@ -8,14 +8,14 @@ Sidebar item
 - Adds flexbox styling
 - Hidden on small screens
 - Add `.k-sidebar-item--flex` to the sidebar items that need to <b>grow</b> with the layout
-- Add `.k-sidebar-item--overflow` to the sidebar items that need to <b>shrink</b> and <b>overflow</b> it's contents
+- Add `.k-js-sidebar-overflow-item` to the sidebar items that need to <b>shrink</b> and <b>overflow</b> it's contents
 - Use <b>only</b> inside a `.k-sidebar`
 - {unsureText}
 
 default - Default
 .k-sidebar-item--flex - Flexing container that will grow (and not shrink)
-.k-sidebar-item--overflow - Flexing container that will shrink (and not grow) and overflow it's content
-.k-sidebar-item--toggle - Adds a toggle button on certain screen sizes
+.k-js-sidebar-overflow-item - Flexing container that will shrink (and not grow) and overflow it's content
+.k-sidebar-item--toggle.k-js-sidebar-toggle-item - Adds a toggle button on certain screen sizes
 
 markup:
 <div class="k-sidebar-item {$modifiers}">

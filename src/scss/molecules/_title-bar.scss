@@ -11,7 +11,7 @@ Title bar
 - {unsureText}
 
 markup:
-<div class="k-title-bar">
+<div class="k-title-bar k-js-title-bar">
     <div class="k-title-bar__heading">Title</div>
 </div><!-- .k-title-bar -->
 
@@ -160,7 +160,7 @@ Title just for mobile views since the navigation is hidden
 
 markup:
 <!-- Title when sidebar is invisible -->
-<div class="k-title-bar k-title-bar--mobile">
+<div class="k-title-bar k-title-bar--mobile k-js-title-bar">
   <div class="k-title-bar__heading">{Title}</div>
 </div><!-- .k-title-bar -->
 
@@ -174,5 +174,34 @@ Styleguide 2.23.1
 
   @include breakpoint($charlie) {
     display: none;
+  }
+}
+
+
+/*
+Inline title bar
+
+Title just for mobile views since the navigation is hidden
+- Use <b>never</b> together with a `.k-title-bar`
+- Use <b>only</b> as <b>child</b> of `.k-content`
+- Only visible on smaller screens
+- {unsureText}
+
+markup:
+<!-- Title when sidebar is invisible -->
+<div class="k-title-bar k-title-bar--mobile k-js-title-bar">
+  <div class="k-title-bar__heading">{Title}</div>
+</div><!-- .k-title-bar -->
+
+Styleguide 2.23.2
+
+*/
+
+.k-title-bar--inline {
+  background: transparent;
+  border: none;
+
+  .k-title-bar__heading {
+    padding: 0;
   }
 }

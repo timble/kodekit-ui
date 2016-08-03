@@ -53,8 +53,8 @@ markup:
 <a class="k-js-inline-modal" data-mfp-src="#example-inline-modal3" href="mobile-friendly-page.html">
     Open modal
 </a>
-<div id="example-inline-modal3" class="mfp-hide">
-    <div class="k-inline-modal k-inline-modal--small">
+<div id="example-inline-modal3" class="mfp-hide k-small-inline-modal-holder">
+    <div class="k-inline-modal">
         <div class="k-inline-modal__title">Title</div>
         <p>I'm a small modal</p>
     </div>
@@ -743,6 +743,13 @@ img.mfp-img {
  * Custom styling for inline modals
  */
 
+.k-small-inline-modal-holder {
+  position: relative;
+  max-width: 480px !important;
+  width: 100%;
+  margin: auto;
+}
+
 .k-inline-modal {
   padding: $spacing;
   background: white;
@@ -757,13 +764,6 @@ img.mfp-img {
   form {
     margin: 0;
   }
-}
-
-.k-inline-modal--small {
-  position: relative;
-  max-width: 480px;
-  width: 100%;
-  margin: auto;
 }
 
 .k-inline-modal__title {

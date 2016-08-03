@@ -312,7 +312,7 @@
 
                     $.each(transitionElements, function() {
                         container.removeAttr('style').removeClass(noTransitionClass);
-                        $('.k-title-bar').removeAttr('style').removeClass(noTransitionClass);
+                        $('.k-js-title-bar').removeAttr('style').removeClass(noTransitionClass);
                     });
                     $.each(offCanvasOverlay, function() {
                         $(this).removeAttr('style').removeClass(noTransitionClass);

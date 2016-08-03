@@ -10,11 +10,11 @@ Complete form page
 markup:
 <div class="koowa-container koowa">
     <!-- Wrapper -->
-    <div class="k-wrapper">
+    <div class="k-wrapper k-js-wrapper">
         <!-- Content wrapper -->
         <div class="k-content-wrapper">
             <!-- Content -->
-            <div class="k-content">
+            <div class="k-content k-js-content">
                 <sg-insert>2.24</sg-insert>
                 <!-- Component -->
                 <div class="k-component">
@@ -88,11 +88,11 @@ Batch form view
 markup:
 <div class="koowa-container koowa">
     <!-- Wrapper -->
-    <div class="k-wrapper">
+    <div class="k-wrapper k-js-wrapper">
         <!-- Content wrapper -->
         <div class="k-content-wrapper">
             <!-- Content -->
-            <div class="k-content">
+            <div class="k-content k-js-content">
                 <sg-insert>2.24</sg-insert>
                 <!-- Component -->
                 <div class="k-component">
@@ -138,13 +138,13 @@ Only use a sidebar next to a form when also using autosave since we don't want u
 markup:
 <div class="koowa-container koowa">
     <!-- Wrapper -->
-    <div class="k-wrapper">
+    <div class="k-wrapper k-js-wrapper">
         <!-- Content wrapper -->
         <div class="k-content-wrapper">
             <!-- Sidebar -->
             <div class="k-sidebar-left k-js-sidebar-left">
                 <sg-insert>2.16-all</sg-insert>
-                <div class="k-sidebar-item k-sidebar-item--overflow">
+                <div class="k-sidebar-item k-js-sidebar-overflow-item">
                     <div class="k-sidebar-item__header">
                         Categories
                     </div>
@@ -158,7 +158,7 @@ markup:
                 </div>
             </div>
             <!-- Content -->
-            <div class="k-content">
+            <div class="k-content k-js-content">
                 <sg-insert>2.24</sg-insert>
                 <!-- Component -->
                 <div class="k-component">

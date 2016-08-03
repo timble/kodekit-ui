@@ -3,16 +3,16 @@
     $(document).ready(function () {
 
         // Variables
-        var $wrapper = $('.k-wrapper'),
-            $titlebar = $('.k-title-bar'),
-            $toolbar = $('.k-toolbar'),
-            $content = $('.k-content'),
+        var $wrapper = $('.k-js-wrapper'),
+            $titlebar = $('.k-js-title-bar'),
+            $toolbar = $('.k-js-toolbar'),
+            $content = $('.k-js-content'),
             $fixedtable = $('.k-js-fixed-table-header'),
             $footable = $('.k-js-responsive-table'),
-            $overflow = $('.k-sidebar-item--overflow'),
+            $overflow = $('.k-js-sidebar-overflow-item'),
             resizeClass = 'k-is-resizing',
-            $sidebarToggle = $('.k-sidebar-item--toggle'),
-            $scopebar = $('.k-scopebar');
+            $sidebarToggle = $('.k-js-sidebar-toggle-item'),
+            $scopebar = $('.k-js-scopebar');
 
         // Sidebar
         if ( ($toolbar.length || $titlebar.length ) && $wrapper.length && $content.length)
@@ -28,10 +28,10 @@
             function addOffCanvasButton(element, position) {
                 // Variables
                 var kContainer = '.koowa-container',
-                    titlebar = element.closest(kContainer).find('.k-title-bar')[0],
-                    toolbar = element.closest(kContainer).find('.k-toolbar')[0],
-                    wrapper = element.closest(kContainer).find('.k-wrapper')[0],
-                    content = element.closest(kContainer).find('.k-content')[0],
+                    titlebar = element.closest(kContainer).find('.k-js-title-bar')[0],
+                    toolbar = element.closest(kContainer).find('.k-js-toolbar')[0],
+                    wrapper = element.closest(kContainer).find('.k-js-wrapper')[0],
+                    content = element.closest(kContainer).find('.k-js-content')[0],
                     toggle = element.closest(kContainer).find('.k-off-canvas-menu-toggle--' + position),
                     $toggle = $(toggle_button),
                     $toggleButton = '',
@@ -85,7 +85,7 @@
 
         // Overflowing items
         if ( $overflow.length ) {
-            $overflow.overflowing();
+            $overflow.addClass('k-sidebar-item--overflow').overflowing();
         }
 
         // Footable
@@ -253,7 +253,7 @@
 
         if ( $sidebarToggle.length )
         {
-            $sidebarToggle.find('.k-sidebar-item__header').append('<div class="k-sidebar-item__toggle"><span class="visually-hidden">Toggle</span></div>');
+            $sidebarToggle.addClass('k-sidebar-item--toggle').find('.k-sidebar-item__header').append('<div class="k-sidebar-item__toggle"><span class="visually-hidden">Toggle</span></div>');
             var $sidebarToggleHandler = $('.k-sidebar-item__toggle');
             $sidebarToggle.on('click', '.k-sidebar-item__toggle', function() {
                 $sidebarToggleHandler.toggleClass('k-is-active').parent().next().slideToggle(180);
