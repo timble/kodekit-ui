@@ -494,8 +494,9 @@ $form-option-shadow:        inset 0 1px 2px rgba(0, 0, 0, 0.15) !default;
 // Empty state
 // ==========================================================================
 
-$empty-state-background:   white !default;
-$empty-state-color:        $color-type !default;
+$empty-state-background:    white !default;
+$empty-state-color:         $color-type !default;
+$empty-state-spacing:       $spacing !default;
 
 
 // Grid
@@ -711,6 +712,19 @@ $checkbox-toggle-0:               $color-error !default;
 $checkbox-toggle-1:               $color-success !default;
 $checkbox-toggle-neutral-0:       $color-primary-min-1 !default;
 $checkbox-toggle-neutral-1:       $color-neutral !default;
+
+
+// Loader
+// ==========================================================================
+
+$loader-size-small:             5px !default;
+$loader-size-medium:            10px !default;
+$loader-size-large:             20px !default;
+$loader-color:                  $color-accent !default;
+$loader-duration:               1.61s !default;
+
+$loader-container-background:   white !default;
+$loader-container-opacity:      0.8 !default;
 
 
 // Overrides for Select2-bootstrap theme

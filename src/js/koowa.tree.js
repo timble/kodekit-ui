@@ -52,6 +52,7 @@
                     data: [], //Default empty value to avoid errors when there are no items yet
                     autoOpen: 0, //Auto open just "All Categories" by default, this value is the nesting level not the node id
                     useContextMenu: false, //This allows us to right-click menu items again
+                    keyboardSupport: false, // Disable annoying always active keyboard controls
                     toggler: [{folder: 'k-icon-folder-closed'},//Styling options for toggler
                               {folder: 'k-icon-folder-opened'}],
                     onCreateLi: function(node, $li){ //Method for customizing <li> markup

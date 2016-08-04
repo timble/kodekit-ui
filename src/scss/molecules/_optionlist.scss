@@ -174,10 +174,10 @@ Styleguide 2.17
     /* Display on focus and active */
 
     input:active ~ .k-optionlist__focus,
-    input:focus ~ .k-optionlist__focus {
-      opacity: 1; /* 3 */
-      visibility: visible; /* 3 */
-    }
+     input:focus ~ .k-optionlist__focus {
+       opacity: 1; /* 3 */
+       visibility: visible; /* 3 */
+     }
   }
 }
 
@@ -196,6 +196,7 @@ markup:
         <label for="input-[2.17.1]-1-{$modifiers}">True</label>
         <input type="radio" name="group-[2.17.1]-1-{$modifiers}" id="input-[2.17.1]-2-{$modifiers}" value="0" />
         <label for="input-[2.17.1]-2-{$modifiers}">False</label>
+        <div class="k-optionlist__focus"></div>
     </div>
 </div>
 
@@ -234,6 +235,7 @@ markup:
         <label for="input-[2.17.2]-1-{$modifiers}">True</label>
         <input type="radio" name="group-[2.17.2]-1-{$modifiers}" id="input-[2.17.2]-2-{$modifiers}" value="0" />
         <label for="input-[2.17.2]-2-{$modifiers}">False</label>
+        <div class="k-optionlist__focus"></div>
     </div>
 </div>
 
@@ -257,6 +259,47 @@ Styleguide 2.17.2
     &.k-optionlist--boolean {
       label {
         width: 50%;
+      }
+    }
+  }
+}
+
+
+/*
+Disabled items
+
+markup:
+<div class="k-optionlist k-optionlist--block">
+    <div class="k-optionlist__content">
+        <input type="radio" name="group-[2.17.3]-1-{$modifiers}" id="input-[2.17.3]-1-{$modifiers}" value="1" checked="checked" />
+        <label for="input-[2.17.3]-1-{$modifiers}">True</label>
+        <input type="radio" name="group-[2.17.3]-1-{$modifiers}" id="input-[2.17.3]-2-{$modifiers}" value="0" />
+        <label for="input-[2.17.3]-2-{$modifiers}">False</label>
+        <input type="radio" name="group-[2.17.3]-1-{$modifiers}" id="input-[2.17.3]-3-{$modifiers}" value="0" disabled="disabled" />
+        <label for="input-[2.17.3]-3-{$modifiers}">False</label>
+        <div class="k-optionlist__focus"></div>
+    </div>
+</div>
+
+Styleguide 2.17.3
+
+*/
+
+@include modernizr('.k-checked') {
+
+  /* Block element to clear from other floating / inline-block elements */
+
+  .k-optionlist {
+    [disabled] + label {
+      cursor: $cursor-disabled;
+      opacity: 0.6;
+
+      &:hover {
+        background: transparent;
+      }
+
+      &:active ~ .k-optionlist__focus {
+        border-color: $color-error;
       }
     }
   }

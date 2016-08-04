@@ -38,6 +38,7 @@ Styleguide 2.7.1
   text-align: center;
   background: $empty-state-background;
   color: $empty-state-color;
+  padding: $empty-state-spacing;
 
   @include flexbox {
     display: flex;
