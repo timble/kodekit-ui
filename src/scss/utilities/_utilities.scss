@@ -144,6 +144,7 @@ Styleguide 6.3
 Loader container
 
 Cover it's entire parent (the parent with an `absolute` or `relative` position)
+- Add `k-hidden` class to the element when items are done loading
 
 markup:
 <div class="k-loader-container">
@@ -164,6 +165,7 @@ Styleguide 6.3.1
 
 .k-loader-container {
   @include coverall;
+  z-index: 5;
   background: rgba($loader-container-background,$loader-container-opacity);
   display: flex;
   align-items: center;
