@@ -233,6 +233,8 @@ Styleguide 2.4.9
   .k-card__header,
   .k-card__section,
   .k-card__footer {
+    overflow: hidden;
+
     &:only-child {
       border-radius: $card-radius - 1px;
     }
@@ -437,7 +439,10 @@ Styleguide 2.4.9
     }
   }
 
+  .k-card__header,
+  .k-card__footer,
   .k-card__caption {
+    border-color: $card-selected-border;
     background: $card-selected-background;
     color: $card-selected-color;
   }

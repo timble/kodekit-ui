@@ -93,10 +93,6 @@ module.exports = function(grunt) {
         },
 
 
-        // Javascript
-
-
-
         // Concatenate files
         concat: {
             js: {
