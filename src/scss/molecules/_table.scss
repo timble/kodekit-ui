@@ -354,6 +354,12 @@ Styleguide 2.21.1
         background-color: $pagination-background;
         border: 1px solid $pagination-border;
         margin-left: -1px;
+
+        @include rtl {
+          float: right;
+          margin-left: 0;
+          margin-right: -1px;
+        }
       }
 
       &:first-child {
@@ -361,6 +367,12 @@ Styleguide 2.21.1
         & > span {
           margin-left: 0;
           @include border-left-radius($border-radius);
+
+          @include rtl {
+            margin-right: 0;
+            @include border-left-radius(0);
+            @include border-right-radius($border-radius);
+          }
         }
       }
 
@@ -368,6 +380,11 @@ Styleguide 2.21.1
         & > a,
         & > span {
           @include border-right-radius($border-radius);
+
+          @include rtl {
+            @include border-right-radius(0);
+            @include border-left-radius($border-radius);
+          }
         }
       }
     }

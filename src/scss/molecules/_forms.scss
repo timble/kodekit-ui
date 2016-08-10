@@ -443,6 +443,10 @@ Styleguide 2.9.4
   width: 100%;
   border-collapse: separate; /* 2 */
 
+  @include rtl {
+    direction: rtl;
+  }
+
   .k-form-control {
 
     /* 3 */
@@ -451,6 +455,10 @@ Styleguide 2.9.4
 
     /* 4 */
     float: left;
+
+    @include rtl {
+      float: right;
+    }
 
     width: 100%;
     margin-bottom: 0;
@@ -474,6 +482,10 @@ Styleguide 2.9.4
     font-size: $font-size-large;
     line-height: $line-height-large;
     border-radius: $border-radius-large;
+
+    @include rtl {
+      border-radius: $border-radius-large;
+    }
   }
 
   & > .select2-container--bootstrap .select2-selection--single .select2-selection--rendered {
@@ -501,6 +513,10 @@ Styleguide 2.9.4
     font-size: $font-size-small;
     line-height: $line-height-small;
     border-radius: $border-radius-small;
+
+    @include rtl {
+      border-radius: $border-radius-small;
+    }
   }
 
   & > .select2-container--bootstrap .select2-selection--single .select2-selection--rendered {
@@ -595,8 +611,26 @@ Styleguide 2.9.4
   @include border-right-radius(0);
 }
 
+@include rtl {
+  .k-input-group .k-form-control:first-child,
+  .k-input-group__addon:first-child,
+  .k-input-group__button:first-child > .k-button,
+  .k-input-group__button:first-child > .k-button-group > .k-button,
+  .k-input-group__button:first-child > .k-dropdown__toggle,
+  .k-input-group__button:last-child > .k-button:not(:last-child):not(.k-dropdown__toggle),
+  .k-input-group__button:last-child > .k-button-group:not(:last-child) > .k-button {
+    @include border-right-radius($input-border-radius);
+    @include border-left-radius(0);
+  }
+}
+
 .k-input-group__addon:first-child {
-  border-right: 0;
+  border-right: none;
+
+  @include rtl {
+    border-right: 1px solid $input-border;
+    border-left: none;
+  }
 }
 
 .k-input-group .k-form-control:last-child,
@@ -609,8 +643,26 @@ Styleguide 2.9.4
   @include border-left-radius(0);
 }
 
+@include rtl {
+  .k-input-group .k-form-control:last-child,
+  .k-input-group__addon:last-child,
+  .k-input-group__button:last-child > .k-button,
+  .k-input-group__button:last-child > .k-button-group > .k-button,
+  .k-input-group__button:last-child > .k-dropdown__toggle,
+  .k-input-group__button:first-child > .k-button:not(:first-child),
+  .k-input-group__button:first-child > .k-button-group:not(:first-child) > .k-button {
+    @include border-left-radius($input-border-radius);
+    @include border-right-radius(0);
+  }
+}
+
 .k-input-group__addon:last-child {
-  border-left: 0;
+  border-left: 1px solid $input-border;
+
+  @include rtl {
+    border-left-width: 1px;
+    border-right: none;
+  }
 }
 
 
@@ -1154,196 +1206,4 @@ Styleguide 2.9.10
   margin-top: 0.75em;
   @include content-block;
   color: $color-type-lighter;
-}
-
-
-/*
-Styled checkbox
-
-markup:
-<div class="k-checkbox-toggle">
-    <input type="checkbox" name="group1" id="group1a" value="1">
-    <label for="group1a">
-        <span data-true="✓" data-false="✖">Do something? lorem ipsum dolor sit amet consectetuer adipsign leit</span>
-    </label>
-</div>
-
-sg-wrapper:
-<div class="k-form-group">
-    <sg-wrapper-content/>
-</div>
-
-Styleguide 2.9.11
-
-*/
-// Variables
-$red: #BF342B;
-$green: #27AE60;
-$blue: #2980b9;
-$transition: all .2s ease-in-out;
-$checkbox-toggle-width: 60px;
-$checkbox-toggle-height: 32px;
-$checkbox-toggle-border-width: 1px;
-$checkbox-toggle-padding: 1px;
-$checkbox-toggle-border-radius: 4px;
-$checkbox-toggle-width-inner: $checkbox-toggle-width - (($checkbox-toggle-border-width + $checkbox-toggle-padding) * 2);
-$checkbox-toggle-height-inner: $checkbox-toggle-height - (($checkbox-toggle-border-width + $checkbox-toggle-padding) * 2);
-
-// The :not(old-ie) makes sure nothing get added to older IE
-@include modernizr('.k-appearance.k-checked') {
-  .k-checkbox-toggle {
-    display: table;
-    width: 100%;
-    position: relative;
-
-    // Hiding the input but keeping accessible
-    input[type="checkbox"] {
-      width: 1px;
-      height: 1px;
-      position: absolute;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0 0 0 0);
-    }
-
-    label {
-      display: block;
-      line-height: $checkbox-toggle-height;
-    }
-
-    // Making label and span fully clickable
-    label, span {
-      display: block;
-      cursor: pointer;
-      margin: 0;
-      position: relative;
-
-      &:before,
-      &:after {
-        display: block;
-        position: absolute;
-      }
-    }
-
-    label:before {
-      content: " ";
-      width: $checkbox-toggle-width;
-      height: $checkbox-toggle-height;
-      top: 0;
-      left: 0;
-      background: white;
-      border: $checkbox-toggle-border-width solid #cdcdcd;
-      border-radius: $checkbox-toggle-border-radius;
-      transition: $transition;
-    }
-
-    label:after {
-      content: " ";
-      width: $checkbox-toggle-width-inner;
-      height: $checkbox-toggle-height-inner;
-      top: $checkbox-toggle-border-width + $checkbox-toggle-padding;
-      left: $checkbox-toggle-border-width + $checkbox-toggle-padding;
-      background: $red;
-      border-radius: $checkbox-toggle-border-radius - $checkbox-toggle-padding;
-      transition: $transition;
-    }
-
-    span:before,
-    span:after {
-      font-size: 10px;
-      line-height: $checkbox-toggle-height-inner - 2;
-      text-transform: uppercase;
-      text-align: center;
-      transition: $transition;
-    }
-
-    span:before {
-      content: attr(data-false);
-      width: $checkbox-toggle-width-inner - $checkbox-toggle-height-inner;
-      height: $checkbox-toggle-height-inner;
-      top: $checkbox-toggle-border-width + $checkbox-toggle-padding;
-      left: $checkbox-toggle-border-width + $checkbox-toggle-padding;
-      color: white;
-      border: 1px solid transparent;
-    }
-
-    span:after {
-      content: attr(data-true);
-      width: $checkbox-toggle-height-inner;
-      height: $checkbox-toggle-height-inner;
-      background: white;
-      text-indent: -($checkbox-toggle-width-inner);
-      text-align: center;
-      top: $checkbox-toggle-border-width + $checkbox-toggle-padding;
-      border-radius: $checkbox-toggle-border-radius - $checkbox-toggle-padding;
-      color: white;
-      left: $checkbox-toggle-width - $checkbox-toggle-height-inner - ($checkbox-toggle-border-width + $checkbox-toggle-padding);
-      border: 1px solid $red;
-      transition: $transition;
-    }
-
-    span {
-      display: block;
-      position: relative;
-      z-index: 1;
-      overflow: hidden;
-      padding-left: 70px;
-    }
-
-    input:active,
-    input:focus {
-      & + label:before {
-        border: 1px solid #66afe9;
-        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
-      }
-    }
-
-    input:checked + label {
-      &:after {
-        background: $green;
-      }
-
-      span {
-        &:before {
-          right: -($checkbox-toggle-width-inner - $checkbox-toggle-height-inner);
-        }
-
-        &:after {
-          right: $checkbox-toggle-border-width + $checkbox-toggle-padding;
-          border-color: $green;
-        }
-      }
-    }
-
-    &.checkbox-toggle--neutral {
-
-      label {
-        &:after {
-          background: #ddd;
-        }
-      }
-
-      span {
-        &:before {
-          color: #666;
-        }
-
-        &:after {
-          border-color: #999;
-        }
-      }
-
-      input:checked + label {
-        &:after {
-          background: $blue;
-        }
-
-        span {
-          &:after {
-            border-color: $blue;
-          }
-        }
-      }
-    }
-  }
 }

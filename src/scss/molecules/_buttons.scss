@@ -115,10 +115,10 @@ Styleguide 2.3.1
   &, &:hover, &:focus, &:active {
     text-decoration: none; /* 1 */
   }
+}
 
-  &.k-is-disabled {
-    pointer-events: none; /* 2 */
-  }
+button.k-button.k-is-disabled {
+  pointer-events: none; /* 2 */
 }
 
 

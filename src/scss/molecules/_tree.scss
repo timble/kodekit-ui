@@ -33,6 +33,10 @@ Styleguide 2.26
   .jqtree-element {
     padding: 0 $spacing-tiny 0 $spacing;
 
+    @include rtl {
+      padding: 0 $spacing 0 $spacing-tiny;
+    }
+
     &:hover,
     &:focus {
       background: $jqtree-hover-background;
@@ -42,7 +46,12 @@ Styleguide 2.26
   & > .jqtree-tree {
     & > .jqtree-folder {
       .jqtree-element {
-        padding-left: 15px;
+        padding-left: 0;
+
+        @include rtl {
+          padding-left: $spacing-tiny;
+          padding-right: 0;
+        }
       }
     }
   }
@@ -61,6 +70,23 @@ Styleguide 2.26
   }
 }
 
+.k-sidebar-item {
+  .k-tree {
+    & > .jqtree-tree {
+      & > .jqtree-folder {
+        .jqtree-element {
+          padding-left: 15px;
+
+          @include rtl {
+            padding-left: $spacing-tiny;
+            padding-right: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
 .jqtree-tree {
   @include clearfix;
 
@@ -72,13 +98,8 @@ Styleguide 2.26
     @include clearfix;
     float: left;
     min-width: 100%;
-  }
 
-
-  /* RTL styling */
-
-  @include rtl {
-    &, ul {
+    @include rtl {
       float: right;
     }
   }
@@ -157,12 +178,7 @@ Styleguide 2.26
     @include caret(bottom, $tree-toggle-size);
     @include transition;
 
-    @include rtl {
-      left: auto;
-      right: 50%;
-      margin-left: auto;
-      margin-right: -(round($tree-toggle-size * 2));
-    }
+    // @include rtl { works fine without RTL }
   }
 
   &:hover,

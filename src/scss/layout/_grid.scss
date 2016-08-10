@@ -61,6 +61,10 @@ Styleguide 3.7
     float: left;
     margin: 0 ($spacing / 2) $spacing;
     width: calc(100% * 8/12 - #{$spacing});
+
+    @include rtl {
+      float: right;
+    }
   }
 }
 
@@ -88,6 +92,10 @@ Styleguide 3.7
     float: left;
     margin: 0 ($spacing / 2) $spacing;
     width: calc(100% * 4/12 - #{$spacing});
+
+    @include rtl {
+      float: right;
+    }
   }
 }
 

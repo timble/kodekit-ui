@@ -502,7 +502,7 @@ $empty-state-spacing:       $spacing !default;
 // Grid
 // ==========================================================================
 
-$grid-itemWidth:  $font-size * 10 !default;
+$grid-itemWidth:  $font-size * 12 !default;
 $grid-spacing:    $font-size-large !default;
 $grid-width:      2560px !default;
 
@@ -591,6 +591,30 @@ $tooltip-arrow-color:   $tooltip-background !default;
 
 $well-background:   $color-primary-plus-4 !default;
 $well-border:       darken($well-background, 7%) !default;
+
+
+// Cards
+// ==========================================================================
+
+$card-background:           $color-primary-plus-6 !default;
+$card-border:               $color-primary-min-1 !default;
+$card-color:                $color-type !default;
+$card-radius:               $border-radius !default;
+$card-hover-border:         darkest($card-border) !default;
+
+$card-selected-background:  $color-accent !default;
+$card-selected-border:      $color-accent !default;
+$card-selected-color:       $color-accent-type !default;
+
+$card-header-background:    $color-primary-plus-5 !default;
+$card-header-border:        $color-primary-min-1 !default;
+$card-header-color:         $color-type !default;
+$card-header-hover-border:  darkest($card-header-border) !default;
+
+$card-footer-background:    $color-primary-plus-5 !default;
+$card-footer-border:        $color-primary-min-1 !default;
+$card-footer-color:         $color-type !default;
+$card-footer-hover-border:  darkest($card-footer-border) !default;
 
 
 // Feedback states

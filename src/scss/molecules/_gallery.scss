@@ -89,7 +89,7 @@ Styleguide 2.10
   /* Selected styling */
 
   &.k-is-selected {
-    .k-card__title {
+    .k-card__header {
       background: $color-accent;
       border-color: darkest($color-accent);
       color: $color-accent-type;
@@ -106,7 +106,7 @@ Styleguide 2.10
 
     &:hover,
     &:focus {
-      .k-card__title {
+      .k-card__header {
         background: darkest($color-accent);
       }
     }
