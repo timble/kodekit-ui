@@ -18291,7 +18291,7 @@ var Konami = function (callback) {
         // Datepicker
         var datepicker = $('.k-js-datepicker');
         if ( datepicker.length ) {
-            datepicker.koowaDatepicker();
+            datepicker.datepicker();
         }
 
         // Magnific
@@ -18344,6 +18344,7 @@ var Konami = function (callback) {
             var $sidebarToggleHandler = $('.k-sidebar-item__toggle');
             $sidebarToggle.on('click', '.k-sidebar-item__toggle', function() {
                 $sidebarToggleHandler.toggleClass('k-is-active').parent().next().slideToggle(180);
+                $sidebarToggleHandler.toggleCfatpickerlass('k-is-active').parent().next().slideToggle(180);
             });
         }
 
