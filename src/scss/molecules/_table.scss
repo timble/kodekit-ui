@@ -621,6 +621,12 @@ Styleguide 2.21.4
     }
   }
 
+  th.k-table-data--icon {
+    a {
+      line-height: $table-cell-size - ($table-cell-spacing-vertical * 2);
+    }
+  }
+
   .k-table-data--ellipsis {
     max-width: 0;
     overflow: hidden;
@@ -1024,12 +1030,16 @@ Styleguide 2.21.9
 /*
 Table heading sorting
 
-.k-sort-asc - Ascending
-.k-sort-desc - Descending
+sort-ascending - Ascending
+sort-descending - Descending
 
 markup:
-<th class="{$modifiers}">
-    <a href="javascript:void(0)">Title</a>
+<th>
+    <a href="javascript:void(0)">
+        Title
+        <span class="k-icon-{$modifiers}" aria-hidden="true">
+        <span class="k-visually-hidden">Sort column</span>
+    </a>
 </th>
 
 sg-wrapper:
@@ -1051,34 +1061,18 @@ Styleguide 2.21.10
 
 */
 
-th.k-sort-asc,
-th.k-sort-desc {
-  font-weight: $bold;
-
-  a {
-    cursor: pointer;
-
-    &:focus,
-    &:hover {
-      text-decoration: none;
-    }
+th {
+  .k-icon-sort-ascending,
+  .k-icon-sort-descending {
+    margin-left: 0.5em;
+    vertical-align: middle;
   }
-}
 
-th.k-sort-asc {
-  a {
-    @include icon-after(sort-ascending, true) {
-      margin-left: 0.5em;
-      vertical-align: middle;
-    }
-  }
-}
-
-th.k-sort-desc {
-  a {
-    @include icon-after(sort-descending, true) {
-      margin-left: 0.5em;
-      vertical-align: middle;
+  @include rtl {
+    .k-icon-sort-ascending,
+    .k-icon-sort-descending {
+      margin-left: 0;
+      margin-right: 0.5em;
     }
   }
 }

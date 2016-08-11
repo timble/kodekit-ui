@@ -24,7 +24,7 @@ When you don't need any filters, but do need breadcrumbs, it's possible to combi
 
 markup:
 <!-- Scopebar -->
-<div class="k-scopebar k-js-scopebar">
+<div class="k-scopebar k-js-scopebar k-scopebar--breadcrumbs">
     <sg-insert>2.18.4</sg-insert>
     <sg-insert>2.18.6</sg-insert>
 </div><!-- .k-scopebar -->
@@ -179,11 +179,13 @@ Styleguide 2.18.2
 
   @include flexbox(0, 0) {
     flex: 1 1 auto;
+    order: 15;
+    width: auto;
   }
 
   @include flexbox($beta, 0) {
+    width: auto;
     flex: 0 0 auto;
-    order: 15;
   }
 
 
@@ -213,6 +215,14 @@ Styleguide 2.18.2
 
     @include breakpoint($delta) {
       display: none;
+    }
+  }
+}
+
+.k-scopebar--breadcrumbs {
+  .k-scopebar__item--toggle-buttons {
+    @include flexbox(0, 0) {
+      flex: 0 0 auto;
     }
   }
 }
@@ -578,9 +588,10 @@ Styleguide 2.18.4
    */
 
   @include flexbox(0, 0) {
-    width: 100%;
+    width: auto;
     flex: 1 1 auto;
-    order: 10;
+    order: -1;
+    display: block;
   }
 
   @include flexbox($beta, 0) {
