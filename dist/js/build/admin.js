@@ -9122,7 +9122,7 @@ $.magnificPopup.registerModule(RETINA_NS, {
     }
 })(jQuery, window);
 
-// @preserve jQuery.floatThead 1.4.0 - http://mkoryak.github.io/floatThead/ - Copyright (c) 2012 - 2016 Misha Koryak
+// @preserve jQuery.floatThead 1.4.2 - http://mkoryak.github.io/floatThead/ - Copyright (c) 2012 - 2016 Misha Koryak
 // @license MIT
 
 /* @author Misha Koryak
@@ -9165,7 +9165,13 @@ $.magnificPopup.registerModule(RETINA_NS, {
     copyTableClass: true, //copy 'class' attribute from table into the floated table so that the styles match.
     enableAria: false, //will copy header text from the floated header back into the table for screen readers. Might cause the css styling to be off. beware!
     autoReflow: false, //(undocumented) - use MutationObserver api to reflow automatically when internal table DOM changes
-    debug: false //print possible issues (that don't prevent script loading) to console, if console exists.
+    debug: false, //print possible issues (that don't prevent script loading) to console, if console exists.
+    support: { //should we bind events that expect these frameworks to be present and/or check for them?
+      bootstrap: true,
+      datatables: true,
+      jqueryUI: true,
+      perfectScrollbar: true
+    }
   };
 
   var util = window._;
@@ -9232,27 +9238,19 @@ $.magnificPopup.registerModule(RETINA_NS, {
     }
   }
 
-  function getTrueOffsetParent($elem) {
+  function getClosestScrollContainer($elem) {
     var elem = $elem[0];
-    var parent = elem.offsetParent;
+    var parent = elem.parentElement;
 
-    if (!parent) {
-      parent = elem.parentElement;
+    do {
+      var pos = window
+          .getComputedStyle(parent)
+          .getPropertyValue('overflow');
 
-      do {
-        var pos = window
-            .getComputedStyle(parent)
-            .getPropertyValue('position');
+      if (pos != 'visible') break;
 
-        if (pos != 'static') break;
+    } while (parent = parent.parentElement);
 
-        if (parent.offsetParent) {
-          parent = parent.offsetParent;
-          break;
-        }
-
-      } while (parent = parent.parentElement)
-    }
     if(parent == document.body){
       return $([]);
     }
@@ -9276,9 +9274,9 @@ $.magnificPopup.registerModule(RETINA_NS, {
    */
   function scrollbarWidth() {
     var $div = $( //borrowed from anti-scroll
-        '<div style="width:50px;height:50px;overflow-y:scroll;'
-        + 'position:absolute;top:-200px;left:-200px;"><div style="height:100px;width:100%">'
-        + '</div>'
+                  '<div style="width:50px;height:50px;overflow-y:scroll;'
+                  + 'position:absolute;top:-200px;left:-200px;"><div style="height:100px;width:100%">'
+                  + '</div>'
     );
     $('body').append($div);
     var w1 = $div.innerWidth();
@@ -9341,6 +9339,7 @@ $.magnificPopup.registerModule(RETINA_NS, {
 
     if(util.isString(map)){
       var command = map;
+      var args = Array.prototype.slice.call(arguments, 1);
       var ret = this;
       this.filter('table').each(function(){
         var $this = $(this);
@@ -9350,8 +9349,8 @@ $.magnificPopup.registerModule(RETINA_NS, {
         }
         var obj = $this.data('floatThead-attached');
         if(obj && util.isFunction(obj[command])){
-          var r = obj[command]();
-          if(typeof r !== 'undefined'){
+          var r = obj[command].apply(this, args);
+          if(r !== undefined){
             ret = r;
           }
         }
@@ -9403,7 +9402,7 @@ $.magnificPopup.registerModule(RETINA_NS, {
       var lastColumnCount = 0; //used by columnNum()
 
       if(opts.scrollContainer === true){
-        opts.scrollContainer = getTrueOffsetParent;
+        opts.scrollContainer = getClosestScrollContainer;
       }
 
       var $scrollContainer = opts.scrollContainer($table) || $([]); //guard against returned nulls
@@ -9484,16 +9483,19 @@ $.magnificPopup.registerModule(RETINA_NS, {
         $floatTable.attr('class', $table.attr('class'));
       }
       $floatTable.attr({ //copy over some deprecated table attributes that people still like to use. Good thing people don't use colgroups...
-        'cellpadding': $table.attr('cellpadding'),
-        'cellspacing': $table.attr('cellspacing'),
-        'border': $table.attr('border')
-      });
+                         'cellpadding': $table.attr('cellpadding'),
+                         'cellspacing': $table.attr('cellspacing'),
+                         'border': $table.attr('border')
+                       });
       var tableDisplayCss = $table.css('display');
       $floatTable.css({
-        'borderCollapse': $table.css('borderCollapse'),
-        'border': $table.css('border'),
-        'display': tableDisplayCss
-      });
+                        'borderCollapse': $table.css('borderCollapse'),
+                        'border': $table.css('border'),
+                        'display': tableDisplayCss
+                      });
+      if(!locked){
+        $floatTable.css('width', 'auto');
+      }
       if(tableDisplayCss == 'none'){
         floatTableHidden = true;
       }
@@ -9527,11 +9529,11 @@ $.magnificPopup.registerModule(RETINA_NS, {
 
 
       $floatContainer.css({
-        position: useAbsolutePositioning ? 'absolute' : 'fixed',
-        marginTop: 0,
-        top:  useAbsolutePositioning ? 0 : 'auto',
-        zIndex: opts.zIndex
-      });
+                            position: useAbsolutePositioning ? 'absolute' : 'fixed',
+                            marginTop: 0,
+                            top:  useAbsolutePositioning ? 0 : 'auto',
+                            zIndex: opts.zIndex
+                          });
       $floatContainer.addClass(opts.floatContainerClass);
       updateScrollingOffsets();
 
@@ -9672,8 +9674,8 @@ $.magnificPopup.registerModule(RETINA_NS, {
         if(useAbsolutePositioning != isAbsolute){
           useAbsolutePositioning = isAbsolute;
           $floatContainer.css({
-            position: useAbsolutePositioning ? 'absolute' : 'fixed'
-          });
+                                position: useAbsolutePositioning ? 'absolute' : 'fixed'
+                              });
         }
       }
       function getSizingRow($table, $cols, $fthCells, ieVersion){
@@ -9695,6 +9697,8 @@ $.magnificPopup.registerModule(RETINA_NS, {
         var numCols = columnNum(); //if the tables columns changed dynamically since last time (datatables), rebuild the sizer rows and get a new count
 
         return function(){
+          //Cache the current scrollLeft value so that it can be reset post reflow
+          var scrollLeft = $floatContainer.scrollLeft();
           $tableCells = $tableColGroup.find('col');
           var $rowCells = getSizingRow($table, $tableCells, $fthCells, ieVersion);
 
@@ -9720,6 +9724,8 @@ $.magnificPopup.registerModule(RETINA_NS, {
             $floatTable.css(layoutAuto);
             setHeaderHeight();
           }
+          //Set back the current scrollLeft value on floatContainer
+          $floatContainer.scrollLeft(scrollLeft);
           $table.triggerHandler("reflowed", [$floatContainer]);
         };
       }
@@ -9894,9 +9900,9 @@ $.magnificPopup.registerModule(RETINA_NS, {
         return function(pos, setWidth, setHeight){
           if(pos != null && (oldTop != pos.top || oldLeft != pos.left)){
             $floatContainer.css({
-              top: pos.top,
-              left: pos.left
-            });
+                                  top: pos.top,
+                                  left: pos.left
+                                });
             oldTop = pos.top;
             oldLeft = pos.left;
           }
@@ -9919,14 +9925,23 @@ $.magnificPopup.registerModule(RETINA_NS, {
        */
       function calculateScrollBarSize(){ //this should happen after the floating table has been positioned
         if($scrollContainer.length){
-          if($scrollContainer.data().perfectScrollbar){
+          if(opts.support && opts.support.perfectScrollbar && $scrollContainer.data().perfectScrollbar){
             scrollbarOffset = {horizontal:0, vertical:0};
           } else {
-            var sw = $scrollContainer.width(), sh = $scrollContainer.height(), th = $table.height(), tw = tableWidth($table, $fthCells);
-            var offseth = sw < tw ? scWidth : 0;
-            var offsetv = sh < th ? scWidth : 0;
-            scrollbarOffset.horizontal = sw - offsetv < tw ? scWidth : 0;
-            scrollbarOffset.vertical = sh - offseth < th ? scWidth : 0;
+            if($scrollContainer.css('overflow-x') == 'scroll'){
+              scrollbarOffset.horizontal = scWidth;
+            } else {
+              var sw = $scrollContainer.width(), tw = tableWidth($table, $fthCells);
+              var offsetv = sh < th ? scWidth : 0;
+              scrollbarOffset.horizontal = sw - offsetv < tw ? scWidth : 0;
+            }
+            if($scrollContainer.css('overflow-y') == 'scroll'){
+              scrollbarOffset.vertical = scWidth;
+            } else {
+              var sh = $scrollContainer.height(), th = $table.height();
+              var offseth = sw < tw ? scWidth : 0;
+              scrollbarOffset.vertical = sh - offseth < th ? scWidth : 0;
+            }
           }
         }
       }
@@ -9986,7 +10001,7 @@ $.magnificPopup.registerModule(RETINA_NS, {
 
       /////// printing stuff
       var beforePrint = function(){
-        $table.floatThead('destroy', [true]);
+        $table.floatThead('destroy', true);
       };
       var afterPrint = function(){
         $table.floatThead(opts);
@@ -10024,15 +10039,19 @@ $.magnificPopup.registerModule(RETINA_NS, {
 
       windowResize(eventName('resize'), windowResizeEvent);
       $table.on('reflow', reflowEvent);
-      if(isDatatable($table)){
+      if(opts.support && opts.support.datatables && isDatatable($table)){
         $table
             .on('filter', reflowEvent)
             .on('sort',   reflowEvent)
             .on('page',   reflowEvent);
       }
 
-      $window.on(eventName('shown.bs.tab'), reflowEvent); // people cant seem to figure out how to use this plugin with bs3 tabs... so this :P
-      $window.on(eventName('tabsactivate'), reflowEvent); // same thing for jqueryui
+      if(opts.support && opts.support.bootstrap) {
+        $window.on(eventName('shown.bs.tab'), reflowEvent); // people cant seem to figure out how to use this plugin with bs3 tabs... so this :P
+      }
+      if(opts.support && opts.support.jqueryUI) {
+        $window.on(eventName('tabsactivate'), reflowEvent); // same thing for jqueryui
+      }
 
 
       if (canObserveMutations) {
@@ -10062,7 +10081,7 @@ $.magnificPopup.registerModule(RETINA_NS, {
 
       //attach some useful functions to the table.
       $table.data('floatThead-attached', {
-        destroy: function(e, isPrintEvent){
+        destroy: function(isPrintEvent){
           var ns = '.fth-'+floatTheadId;
           unfloat();
           $table.css(layoutAuto);
@@ -10124,7 +10143,7 @@ $.magnificPopup.registerModule(RETINA_NS, {
   };
 })(jQuery);
 
-/* jQuery.floatThead.utils - http://mkoryak.github.io/floatThead/ - Copyright (c) 2012 - 2014 Misha Koryak
+/* jQuery.floatThead.utils - http://mkoryak.github.io/floatThead/ - Copyright (c) 2012 - 2016 Misha Koryak
  * License: MIT
  *
  * This file is required if you do not use underscore in your project and you want to use floatThead.
@@ -10190,7 +10209,7 @@ $.magnificPopup.registerModule(RETINA_NS, {
 
 
 /*
-JqTree 1.3.3
+JqTree 1.3.4
 
 Copyright 2015 Marco Braak
 
@@ -10207,11 +10226,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var $, DragAndDropHandler, DragElement, HitAreasGenerator, Position, VisibleNodeIterator, node_module,
+var $, DragAndDropHandler, DragElement, HitAreasGenerator, Position, VisibleNodeIterator, node_module, util,
   extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
   hasProp = {}.hasOwnProperty;
 
 node_module = require('./node');
+
+util = require('./util');
 
 Position = node_module.Position;
 
@@ -10661,9 +10682,11 @@ HitAreasGenerator = (function(superClass) {
 
 DragElement = (function() {
   function DragElement(node, offset_x, offset_y, $tree) {
+    var node_name;
     this.offset_x = offset_x;
     this.offset_y = offset_y;
-    this.$element = $("<span class=\"jqtree-title jqtree-dragging\">" + node.name + "</span>");
+    node_name = util.html_escape(node.name);
+    this.$element = $("<span class=\"jqtree-title jqtree-dragging\">" + node_name + "</span>");
     this.$element.css("position", "absolute");
     $tree.append(this.$element);
   }
@@ -10689,7 +10712,7 @@ module.exports = {
   HitAreasGenerator: HitAreasGenerator
 };
 
-},{"./node":5}],2:[function(require,module,exports){
+},{"./node":5,"./util":12}],2:[function(require,module,exports){
 var $, ElementsRenderer, NodeElement, html_escape, node_element, util;
 
 node_element = require('./node_element');
@@ -11554,10 +11577,16 @@ Node = (function() {
   };
 
   Node.prototype.getNodeByName = function(name) {
+    return this.getNodeByCallback(function(node) {
+      return node.name === name;
+    });
+  };
+
+  Node.prototype.getNodeByCallback = function(callback) {
     var result;
     result = null;
     this.iterate(function(node) {
-      if (node.name === name) {
+      if (callback(node)) {
         result = node;
         return false;
       } else {
@@ -12653,13 +12682,13 @@ SimpleWidget = (function() {
 module.exports = SimpleWidget;
 
 },{}],11:[function(require,module,exports){
-var $, BorderDropHint, DragAndDropHandler, DragElement, ElementsRenderer, FolderElement, GhostDropHint, HitAreasGenerator, JqTreeWidget, KeyHandler, MouseWidget, Node, NodeElement, Position, SaveStateHandler, ScrollHandler, SelectNodeHandler, SimpleWidget, __version__, node_module, ref, ref1, util_module,
+var $, BorderDropHint, DragAndDropHandler, DragElement, ElementsRenderer, FolderElement, GhostDropHint, HitAreasGenerator, JqTreeWidget, KeyHandler, MouseWidget, Node, NodeElement, Position, SaveStateHandler, ScrollHandler, SelectNodeHandler, SimpleWidget, __version__, drag_and_drop_handler, node_module, ref, util_module,
   extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
   hasProp = {}.hasOwnProperty;
 
 __version__ = require('./version');
 
-ref = require('./drag_and_drop_handler'), DragAndDropHandler = ref.DragAndDropHandler, DragElement = ref.DragElement, HitAreasGenerator = ref.HitAreasGenerator;
+drag_and_drop_handler = require('./drag_and_drop_handler');
 
 ElementsRenderer = require('./elements_renderer');
 
@@ -12683,7 +12712,9 @@ Position = node_module.Position;
 
 util_module = require('./util');
 
-ref1 = require('./node_element'), BorderDropHint = ref1.BorderDropHint, FolderElement = ref1.FolderElement, GhostDropHint = ref1.GhostDropHint, NodeElement = ref1.NodeElement;
+ref = require('./node_element'), BorderDropHint = ref.BorderDropHint, FolderElement = ref.FolderElement, GhostDropHint = ref.GhostDropHint, NodeElement = ref.NodeElement;
+
+DragAndDropHandler = drag_and_drop_handler.DragAndDropHandler, DragElement = drag_and_drop_handler.DragElement, HitAreasGenerator = drag_and_drop_handler.HitAreasGenerator;
 
 $ = jQuery;
 
@@ -13019,6 +13050,14 @@ JqTreeWidget = (function(superClass) {
 
   JqTreeWidget.prototype.getNodesByProperty = function(key, value) {
     return this.tree.getNodesByProperty(key, value);
+  };
+
+  JqTreeWidget.prototype.getNodeByHtmlElement = function(element) {
+    return this._getNode($(element));
+  };
+
+  JqTreeWidget.prototype.getNodeByCallback = function(callback) {
+    return this.tree.getNodeByCallback(callback);
   };
 
   JqTreeWidget.prototype.openNode = function(node, slide) {
@@ -13369,7 +13408,7 @@ JqTreeWidget = (function(superClass) {
   };
 
   JqTreeWidget.prototype._setInitialState = function() {
-    var autoOpenNodes, is_restored, must_load_on_demand, ref2, restoreState;
+    var autoOpenNodes, is_restored, must_load_on_demand, ref1, restoreState;
     restoreState = (function(_this) {
       return function() {
         var must_load_on_demand, state;
@@ -13408,7 +13447,7 @@ JqTreeWidget = (function(superClass) {
         return must_load_on_demand;
       };
     })(this);
-    ref2 = restoreState(), is_restored = ref2[0], must_load_on_demand = ref2[1];
+    ref1 = restoreState(), is_restored = ref1[0], must_load_on_demand = ref1[1];
     if (!is_restored) {
       must_load_on_demand = autoOpenNodes();
     }
@@ -13707,7 +13746,8 @@ JqTreeWidget.getModule = function(name) {
   var modules;
   modules = {
     'node': node_module,
-    'util': util_module
+    'util': util_module,
+    'drag_and_drop_handler': drag_and_drop_handler
   };
   return modules[name];
 };
@@ -13761,7 +13801,7 @@ module.exports = {
 };
 
 },{}],13:[function(require,module,exports){
-module.exports = '1.3.3';
+module.exports = '1.3.4';
 
 },{}]},{},[11]);
 
@@ -18090,67 +18130,66 @@ var Konami = function (callback) {
     $(document).ready(function () {
 
         // Variables
-        var $wrapper = $('.k-js-wrapper'),
-            $titlebar = $('.k-js-title-bar'),
-            $toolbar = $('.k-js-toolbar'),
-            $content = $('.k-js-content'),
-            $fixedtable = $('.k-js-fixed-table-header'),
+        var $fixedtable = $('.k-js-fixed-table-header'),
             $footable = $('.k-js-responsive-table'),
             $overflow = $('.k-js-sidebar-overflow-item'),
-            resizeClass = 'k-is-resizing',
             $sidebarToggle = $('.k-js-sidebar-toggle-item'),
             $scopebar = $('.k-js-scopebar');
 
         // Sidebar
-        if ( ($toolbar.length || $titlebar.length ) && $wrapper.length && $content.length)
+        if ($('.k-js-title-bar, .k-js-toolbar').length && $('.k-js-wrapper').length && $('.k-js-content').length)
         {
             var toggle_button = '<div class="k-off-canvas-menu-toggle-holder"><button class="k-off-canvas-menu-toggle" type="button">' +
-                '<span class="k-hamburger-bar1"></span>' +
-                '<span class="k-hamburger-bar2"></span>' +
-                '<span class="k-hamburger-bar3"></span>' +
-                '</button></div>',
+                    '<span class="k-hamburger-bar1"></span>' +
+                    '<span class="k-hamburger-bar2"></span>' +
+                    '<span class="k-hamburger-bar3"></span>' +
+                    '</button></div>',
                 sidebar_left  = $('.k-js-sidebar-left'),
                 sidebar_right = $('.k-js-sidebar-right');
 
             function addOffCanvasButton(element, position) {
                 // Variables
                 var kContainer = '.koowa-container',
-                    titlebar = element.closest(kContainer).find('.k-js-title-bar')[0],
-                    toolbar = element.closest(kContainer).find('.k-js-toolbar')[0],
-                    wrapper = element.closest(kContainer).find('.k-js-wrapper')[0],
-                    content = element.closest(kContainer).find('.k-js-content')[0],
-                    toggle = element.closest(kContainer).find('.k-off-canvas-menu-toggle--' + position),
+                    container = element.closest(kContainer),
+                    titlebar = container.find('.k-js-title-bar'),
+                    toolbar = container.find('.k-js-toolbar'),
+                    wrapper = container.find('.k-js-wrapper'),
+                    content = container.find('.k-js-content'),
+                    toggle = container.find('.k-off-canvas-menu-toggle--' + position),
                     $toggle = $(toggle_button),
-                    $toggleButton = '',
-                    transitionElements = $(content);
+                    $toggleButton = null,
+                    transitionElements = content;
 
                 // Add proper class to toggle buttons
                 $toggle.children('button').addClass('k-off-canvas-menu-toggle--' + position);
 
                 // Add toggle buttons
-                if ( toggle[0] == undefined ) {
-                    if ( titlebar != undefined ) {
+                if (toggle.length === 0) {
+                    if ( titlebar.length) {
                         if ( position == 'left' ) {
-                            $(titlebar).prepend($toggle);
+                            titlebar.prepend($toggle);
                         } else if ( position == 'right') {
-                            $(titlebar).append($toggle);
+                            titlebar.append($toggle);
                         }
+
                         $toggleButton = $('.k-off-canvas-menu-toggle--' + position);
-                        transitionElements = [$(content), $(titlebar)]
-                    } else if ( toolbar != undefined ) {
+                        transitionElements = [content, titlebar];
+
+                    } else if (toolbar.length) {
                         if ( position == 'left' ) {
-                            $(toolbar).prepend($toggle);
+                            toolbar.prepend($toggle);
                         } else if ( position == 'right') {
-                            $(toolbar).append($toggle);
+                            toolbar.append($toggle);
                         }
+
                         $toggleButton = $('.k-off-canvas-menu-toggle--' + position);
                     }
 
                     // Initialize the offcanvas plugin
                     element.offCanvasMenu({
                         menuToggle: $toggleButton,
-                        wrapper: $(wrapper),
-                        container: $(content),
+                        wrapper: wrapper,
+                        container: content,
                         position: position,
                         transitionElements: transitionElements
                     });
@@ -18164,35 +18203,31 @@ var Konami = function (callback) {
             }
 
             if (sidebar_right.length) {
-                $.each(sidebar_right, function(i) {
+                $.each(sidebar_right, function() {
                     addOffCanvasButton($(this), 'right');
                 });
             }
         }
 
         // Overflowing items
-        if ( $overflow.length ) {
-            $overflow.addClass('k-sidebar-item--overflow').overflowing();
-        }
+        $overflow.addClass('k-sidebar-item--overflow').overflowing();
 
         // Footable
-        if ( $footable.length ) {
-            $footable.on('click', '.footable-toggle', function(event){
-                event.stopPropagation();
-            }).footable({
-                toggleSelector: '.footable-toggle',
-                breakpoints: {
-                    phone: 400,
-                    tablet: 600,
-                    desktop: 800
-                }
-            }).bind('footable_resizing', function() {
-                $fixedtable.floatThead('destroy');
-            }).bind('footable_resized', function() {
-                fixedTable();
-                $fixedtable.floatThead('reflow');
-            });
-        }
+        $footable.on('click', '.footable-toggle', function(event){
+            event.stopPropagation();
+        }).footable({
+            toggleSelector: '.footable-toggle',
+            breakpoints: {
+                phone: 400,
+                tablet: 600,
+                desktop: 800
+            }
+        }).bind('footable_resizing', function() {
+            $fixedtable.floatThead('destroy');
+        }).bind('footable_resized', function() {
+            fixedTable();
+            $fixedtable.floatThead('reflow');
+        });
 
         // Sticky table header and footer
         function fixedTable() {
@@ -18208,70 +18243,106 @@ var Konami = function (callback) {
 
         fixedTable();
 
-
-        // Scopebar
+        // Filter and search toggle buttons in the scopebar
         if ( $scopebar.length ) {
 
-            $.each($scopebar, function(e) {
+            $.each($scopebar, function() {
 
-                var $scopebarFilters = $(this).find('.k-scopebar__item--filters'),
-                    $scopebarBreadcrumbs = $(this).find('.k-scopebar__item--breadcrumbs'),
-                    $scopebarSearch = $(this).find('.k-scopebar__item--search'),
+                var $this = $(this),
+                    $scopebarFilters = $this.find('.k-scopebar__item--filters'),
+                    $scopebarSearch = $this.find('.k-scopebar__item--search'),
                     scopebarToggleClass = '.k-scopebar__item--toggle-buttons',
                     scopebarToggleButtonContainer = '<div class="k-scopebar__item k-scopebar__item--toggle-buttons"></div>';
 
-                if ( !$(this).find(scopebarToggleClass).length ) {
-                    $(this).prepend(scopebarToggleButtonContainer);
+                if ( !$this.find(scopebarToggleClass).length ) {
+                    $this.prepend(scopebarToggleButtonContainer);
                 }
-                var toggleButtons = $(this).find(scopebarToggleClass);
+                var toggleButtons = $this.find(scopebarToggleClass);
 
-                if ( $scopebarFilters.length && !$(this).find('.k-toggle-scopebar-filters').length ) {
+                if ( $scopebarFilters.length && !$this.find('.k-toggle-scopebar-filters').length ) {
                     toggleButtons.prepend('<button type="button" class="k-scopebar__button k-toggle-scopebar-filters k-js-toggle-filters">' +
                         '<span class="k-icon-filter" aria-hidden="true">' +
-                        '<span class="visually-hidden">Filters toggle</span>' +
+                        '<span class="k-visually-hidden">Filters toggle</span>' +
                         '<div class="js-filter-count k-scopebar__item-label"></div>' +
                         '</button>');
                 }
 
-                if ( $scopebarBreadcrumbs.length && !$(this).find('.k-toggle-scopebar-breadcrumbs').length ) {
-                    toggleButtons.prepend('<button type="button" class="k-scopebar__button k-toggle-scopebar-breadcrumbs k-js-toggle-breadcrumbs">' +
-                        '<span class="k-icon-home" aria-hidden="true">' +
-                        '<span class="visually-hidden">Breadcrumbs toggle</span>' +
-                        '</button>');
-                }
-
-                if ( $scopebarSearch.length && !$(this).find('.k-toggle-scopebar-search').length ) {
+                if ( $scopebarSearch.length && !$this.find('.k-toggle-scopebar-search').length ) {
                     toggleButtons.prepend('<button type="button" class="k-scopebar__button k-toggle-scopebar-search k-js-toggle-search">' +
                         '<span class="k-icon-magnifying-glass" aria-hidden="true">' +
-                        '<span class="visually-hidden">Search toggle</span>' +
+                        '<span class="k-visually-hidden">Search toggle</span>' +
                         '</button>');
                 }
-
             });
 
-            var $filtertoggle = $('.k-js-toggle-filters'),
-                $breadcrumbtoggle = $('.k-js-toggle-breadcrumbs'),
-                $searchtoggle = $('.k-js-toggle-search');
-
             // Toggle search
-            if ( $filtertoggle.length || $breadcrumbtoggle.length || $searchtoggle.length ) {
+            $('.k-js-toggle-filters').on('click', function() {
+                $(this).parent().siblings('.k-scopebar__item--filters').slideToggle('fast');
+            });
 
-                $filtertoggle.on('click', function() {
-                    $(this).parent().siblings('.k-scopebar__item--filters').slideToggle('fast');
-                });
-
-                $breadcrumbtoggle.on('click', function() {
-                    $(this).parent().siblings('.k-scopebar__item--breadcrumbs').slideToggle('fast');
-                });
-
-                $searchtoggle.on('click', function() {
-                    $(this).parent().siblings('.k-scopebar__item--search').slideToggle('fast');
-                });
-            }
+            $('.k-js-toggle-search').on('click', function() {
+                $(this).parent().siblings('.k-scopebar__item--search').slideToggle('fast');
+            });
         }
 
+        // Select2
+        $('.k-js-select2').select2({
+            theme: "bootstrap"
+        });
 
-        // Tree
+        // Datepicker
+        $('.k-js-datepicker').datepicker();
+
+        // Magnific
+        $('.k-js-image-modal').magnificPopup({type:'image'});
+        $('.k-js-inline-modal').magnificPopup({type:'inline'});
+        $('.k-js-iframe-modal').magnificPopup({type:'iframe'});
+
+        // Tooltips
+        $('.k-js-tooltip').tooltip({
+            animation: true,
+            placement: 'top',
+            delay: { show: 200, hide: 50 },
+            container: '.koowa-container'
+        });
+
+        // Add a class during resizing event so we can hide overflowing stuff
+        var resizeTimer,
+            resizeClass = 'k-is-resizing';
+
+        $(window).on('resize', function() {
+            $('body').addClass(resizeClass);
+
+            // Remove the class when resize is done
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                $('body').removeClass(resizeClass);
+                $fixedtable.floatThead('reflow');
+            }, 250);
+        });
+
+        // Sidebar block toggle (e.g. quick filters)
+        if ( $sidebarToggle.length ) {
+            var toggle = $('<div class="k-sidebar-item__toggle"><span class="k-visually-hidden">Toggle</span></div>');
+
+            $sidebarToggle.addClass('k-sidebar-item--toggle')
+                .find('.k-sidebar-item__header').append(toggle);
+
+            $sidebarToggle.on('click', '.k-sidebar-item__toggle', function(event) {
+                toggle.toggleClass('k-is-active').parent().next().slideToggle(180);
+            });
+        }
+
+        // Konami
+        new Konami(function() {
+            $('html, .koowa-container').css({
+                'font-family': 'Comic Sans MS',
+                'font-size': '20px',
+                'line-height': '30px'
+            }).addClass('konami');
+        });
+
+        // Styleguide tree
         new Koowa.Tree('#k-jqtree', {
             "data": [
                 {"label":"Main category","id":4},
@@ -18281,80 +18352,6 @@ var Konami = function (callback) {
                 {"label":"Sub category 3","id":8,"parent":4}
             ]
         });
-
-        // Select2
-        var $select2 = $('.k-js-select2');
-        $select2.select2({
-            theme: "bootstrap"
-        });
-
-        // Datepicker
-        var datepicker = $('.k-js-datepicker');
-        if ( datepicker.length ) {
-            datepicker.datepicker();
-        }
-
-        // Magnific
-        var magnificImage = $('.k-js-image-modal');
-        if ( magnificImage.length ) {
-            magnificImage.magnificPopup({type:'image'});
-        }
-
-        var magnificInline = $('.k-js-inline-modal');
-        if ( magnificInline.length ) {
-            magnificInline.magnificPopup({type:'inline'});
-        }
-
-        var magnificIframe = $('.k-js-iframe-modal');
-        if ( magnificIframe.length ) {
-            magnificIframe.magnificPopup({type:'iframe'});
-        }
-
-        // Tooltips
-        var tooltip = $('.k-js-tooltip');
-        if ( tooltip.length ) {
-            tooltip.tooltip({
-                animation: true,
-                placement: 'top',
-                delay: { show: 200, hide: 50 },
-                container: '.koowa-container'
-            });
-        }
-
-        // Add a class during resizing event so we can hide overflowing stuff
-        var resizeTimer;
-
-        $(window).on('resize', function(e) {
-
-            // Add the class
-            $('body').addClass(resizeClass);
-
-            // Remove the class when resize is done
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(function() {
-                $('body').removeClass(resizeClass);
-                $fixedtable.floatThead('reflow');
-            }, 250);
-
-        });
-
-        if ( $sidebarToggle.length )
-        {
-            $sidebarToggle.addClass('k-sidebar-item--toggle').find('.k-sidebar-item__header').append('<div class="k-sidebar-item__toggle"><span class="visually-hidden">Toggle</span></div>');
-            var $sidebarToggleHandler = $('.k-sidebar-item__toggle');
-            $sidebarToggle.on('click', '.k-sidebar-item__toggle', function() {
-                $sidebarToggleHandler.toggleClass('k-is-active').parent().next().slideToggle(180);
-            });
-        }
-
-        var easter_egg = new Konami(function() {
-            $('html, .koowa-container').css({
-                'font-family': 'Comic Sans MS',
-                'font-size': '20px',
-                'line-height': '30px'
-            }).addClass('konami');
-        });
-
     });
 
 })(kQuery);
