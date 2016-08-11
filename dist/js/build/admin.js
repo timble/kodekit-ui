@@ -15703,7 +15703,7 @@ $(function() {
             if(this.options.onBeforeInitialize) this.options.onBeforeInitialize.call(this);
 
             // For scrollTo to work, needs to be position:relative;
-            $(window).load($.proxy(function(){
+            $(window).on('load', $.proxy(function(){
                 if(this.element.css('position') != 'relative') {
                     this.element.css('position', 'relative');
                     //Warn that a css optimization should be done
@@ -18214,7 +18214,7 @@ var Konami = function (callback) {
 
         // Footable
         $footable.on('click', '.footable-toggle', function(event){
-            event.stopPropagation();
+           // event.stopPropagation();
         }).footable({
             toggleSelector: '.footable-toggle',
             breakpoints: {
@@ -18241,7 +18241,7 @@ var Konami = function (callback) {
             }
         }
 
-        fixedTable();
+        //fixedTable();
 
         // Filter and search toggle buttons in the scopebar
         if ( $scopebar.length ) {
