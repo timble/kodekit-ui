@@ -447,7 +447,9 @@ Styleguide 2.21.1
 Item title
 
 markup:
-<td class="k-table-data--ellipsis"><a href="javascript:void(0)">Item title</a></td>
+<td class="k-table-data--ellipsis">
+  <a href="javascript:void(0)">Item title</a>
+</td>
 
 sg-wrapper:
 <div class="k-table-container">
