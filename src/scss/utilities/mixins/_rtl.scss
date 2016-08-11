@@ -1,24 +1,18 @@
 // Koowa RTL
 //
-// Three mixins for RTL
-// - `@include rtl` to use inside the Koowa namespace but outside the Modernizr namespace
-// - `@include modernizr-rtl` to use outside Modernizr otherwise the mixin will fail
-// - `@include rtl-outside-koowa` to be used for @imports outside the Koowa namespace
+// Two mixins for RTL
+// - `@include rtl` to use outside the Modernizr namespace
+// - `@include modernizr-rtl` to use outside Modernizr mixin otherwise the mixin will fail
 //
-// What to watch out for when styling RTL in Nooku UI:
-// ===================================================
+// What to watch out for when styling RTL in Kodekit UI:
+// =====================================================
 //
-// 1. Namespacing
-// --------------
-// Use the `rtl-outside-koowa` Mixin outside the koowa namspace
-//
-//
-// 2. Modernizr
+// 1. Modernizr
 // ------------
 // Use the `modernnizr-rtl` Mixin when inside a `modernizr` Mixin
 //
 //
-// 3. Specificity
+// 2. Specificity
 // --------------
 // Be sure to check specificity. Since we are using a lot of mixins we are adding some complexity to rtl. For example:
 //
@@ -44,7 +38,7 @@
 //   padding-left: 10px;
 // }
 //
-// .koowa--rtl.koowa .foo {
+// [dir="rtl"] .koowa .foo {
 //   padding-left: 0;
 //   padding-right: 10px;
 // }
@@ -97,7 +91,7 @@
 // }
 // ```
 //
-// The other way around is possible tho:
+// The other way around is possible though:
 //
 // ```
 // .foo,
@@ -115,22 +109,14 @@
 
 
 @mixin rtl {
-  @at-root .koowa--rtl#{&} {
+  @at-root [dir="rtl"] #{&} {
     @content;
-  }
-}
-
-@mixin rtl-outside-koowa {
-  @at-root {
-    [dir="rtl"] #{&} {
-      @content
-    }
   }
 }
 
 @mixin modernizr-rtl($classes) {
   @at-root {
-    #{$classes} .koowa--rtl#{&} {
+    [dir="rtl"]#{$classes} #{&} {
       @content
     }
   }

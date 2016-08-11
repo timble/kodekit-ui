@@ -114,7 +114,11 @@ Styleguide 2.21
 }
 
 
-/* Default table settings */
+/**
+ * Default table settings
+ *
+ * 1. override browser default
+ */
 
 .k-table-container {
   table {
@@ -122,6 +126,7 @@ Styleguide 2.21
     text-align: left;
     border-collapse: separate;
     border-spacing: 0;
+    font-size: inherit; /* 1 */
 
     @include rtl {
       text-align: right;

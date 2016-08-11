@@ -443,10 +443,6 @@ Styleguide 2.9.4
   width: 100%;
   border-collapse: separate; /* 2 */
 
-  @include rtl {
-    direction: rtl;
-  }
-
   .k-form-control {
 
     /* 3 */
@@ -693,6 +689,7 @@ Styleguide 2.9.4
   > .k-button {
     position: relative;
     font-size: $font-size;
+    margin: 0;
 
     + .k-button {
       margin-left: -1px;
@@ -712,6 +709,14 @@ Styleguide 2.9.4
     > .k-button-group {
       margin-right: -1px;
     }
+
+    @include rtl {
+      > .k-button,
+      > .k-button-group {
+        margin-right: 0;
+        margin-left: -1px;
+      }
+    }
   }
 
   &:last-child {
@@ -719,6 +724,14 @@ Styleguide 2.9.4
     > .k-button-group {
       z-index: 2;
       margin-left: -1px;
+    }
+
+    @include rtl {
+      > .k-button,
+      > .k-button-group {
+        margin-left: 0;
+        margin-right: -1px;
+      }
     }
   }
 }

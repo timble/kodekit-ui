@@ -103,7 +103,7 @@ Styleguide 2.15.4
   background: #0b0b0b;
   opacity: 0.8;
 
-  @include rtl-outside-koowa {
+  @include rtl {
     left: auto;
     right: 0;
   }
@@ -118,7 +118,7 @@ Styleguide 2.15.4
   position: fixed;
   -webkit-backface-visibility: hidden;
 
-  @include rtl-outside-koowa {
+  @include rtl {
     left: auto;
     right: 0;
   }
@@ -136,7 +136,7 @@ Styleguide 2.15.4
   box-sizing: border-box;
   min-height: 420px;
 
-  @include rtl-outside-koowa {
+  @include rtl {
     left: auto;
     right: 0;
   }
@@ -182,7 +182,7 @@ Styleguide 2.15.4
   max-width: 1080px !important;
   max-height: 800px !important;
 
-  @include rtl-outside-koowa {
+  @include rtl {
     text-align: right;
   }
 }
@@ -295,7 +295,7 @@ button::-moz-focus-inner {
   line-height: $line-height-huge;
   right: -14px;
 
-  @include rtl-outside-koowa {
+  @include rtl {
     right: auto;
     left: -14px;
   }
@@ -315,33 +315,13 @@ button::-moz-focus-inner {
   color: white;
 }
 
-.mfp-image-holder .mfp-close,
-.mfp-iframe-holder .mfp-close {
-  color: white;
-  right: -6px;
-  text-align: right;
-  padding-right: 6px;
-  width: 100%;
-  top: 0;
-}
-
-@include rtl-outside-koowa {
-  .mfp-image-holder .mfp-close,
-  .mfp-iframe-holder .mfp-close {
-    right: auto;
-    left: -6px;
-    padding-right: 0;
-    padding-left: 6px;
-  }
-}
-
 .mfp-counter {
   position: absolute;
   top: 0;
   right: 0;
   color: #cccccc;
 
-  @include rtl-outside-koowa {
+  @include rtl {
     right: auto;
     left: 0;
   }
@@ -383,7 +363,7 @@ button::-moz-focus-inner {
   border: medium inset transparent;
 }
 
-@include rtl-outside-koowa {
+@include rtl {
   .mfp-arrow:before, .mfp-arrow:after,
   .mfp-arrow .mfp-b,
   .mfp-arrow .mfp-a {
@@ -410,7 +390,7 @@ button::-moz-focus-inner {
 .mfp-arrow-left {
   left: 0;
 
-  @include rtl-outside-koowa {
+  @include rtl {
     left: auto;
     right: 0;
   }
@@ -422,7 +402,7 @@ button::-moz-focus-inner {
   margin-left: 31px;
 }
 
-@include rtl-outside-koowa {
+@include rtl {
   .mfp-arrow-left:after,
   .mfp-arrow-left .mfp-a {
     border-right: none;
@@ -438,7 +418,7 @@ button::-moz-focus-inner {
   margin-left: 25px;
 }
 
-@include rtl-outside-koowa {
+@include rtl {
   .mfp-arrow-left:before,
   .mfp-arrow-left .mfp-b {
     border-right: none;
@@ -451,7 +431,7 @@ button::-moz-focus-inner {
 .mfp-arrow-right {
   right: 0;
 
-  @include rtl-outside-koowa {
+  @include rtl {
     right: auto;
     left: 0;
   }
@@ -463,7 +443,7 @@ button::-moz-focus-inner {
   margin-left: 39px;
 }
 
-@include rtl-outside-koowa {
+@include rtl {
   .mfp-arrow-right:after,
   .mfp-arrow-right .mfp-a {
     border-left: none;
@@ -478,7 +458,7 @@ button::-moz-focus-inner {
   border-left: 27px solid #3f3f3f;
 }
 
-@include rtl-outside-koowa {
+@include rtl {
   .mfp-arrow-right:before,
   .mfp-arrow-right .mfp-b {
     border-left: none;
@@ -516,7 +496,7 @@ button::-moz-focus-inner {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
   background: black;
 
-  @include rtl-outside-koowa {
+  @include rtl {
     left: auto;
     right: 0;
   }
@@ -575,7 +555,7 @@ img.mfp-img {
   width: 100%;
   cursor: auto;
 
-  @include rtl-outside-koowa {
+  @include rtl {
     left: auto;
     right: 0;
   }
@@ -587,7 +567,7 @@ img.mfp-img {
   color: #f3f3f3;
   padding-right: 36px;
 
-  @include rtl-outside-koowa {
+  @include rtl {
     text-align: right;
     padding-right: 0;
     padding-left: 36px;
@@ -647,7 +627,7 @@ img.mfp-img {
     right: 5px;
     top: 3px;
 
-    @include rtl-outside-koowa {
+    @include rtl {
       right: auto;
       left: 5px;
     }
@@ -664,7 +644,7 @@ img.mfp-img {
     text-align: center;
     padding: 0;
 
-    @include rtl-outside-koowa {
+    @include rtl {
       right: auto;
       left: 0;
     }
@@ -674,7 +654,7 @@ img.mfp-img {
     display: inline;
     margin-left: 5px;
 
-    @include rtl-outside-koowa {
+    @include rtl {
       margin-left: 0;
       margin-right: 5px;
     }
@@ -711,7 +691,7 @@ img.mfp-img {
   margin-top: 5px;
   padding-bottom: 5px;
 
-  @include rtl-outside-koowa {
+  @include rtl {
     left: auto;
     right: 50%;
     margin-left: 0;
@@ -732,7 +712,7 @@ img.mfp-img {
   right: 0;
   padding-top: 0;
 
-  @include rtl-outside-koowa {
+  @include rtl {
     right: auto;
     left: 0;
   }

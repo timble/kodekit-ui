@@ -33,6 +33,10 @@ Styleguide 2.13
   @include reset($margin: false); /* 1 */
   margin: $list-spacing 0;
 
+  @include rtl {
+    margin: $list-spacing 0;
+  }
+
 
   /* Items */
 
