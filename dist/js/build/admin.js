@@ -13872,10 +13872,10 @@ module.exports = '1.3.4';
  /* DROPDOWN CLASS DEFINITION
   * ========================= */
 
-  var toggle = '[data-toggle=dropdown]'
+  var toggle = '[data-k-toggle=dropdown]'
     , Dropdown = function (element) {
-        var $el = $(element).on('click.dropdown.data-api', this.toggle)
-        $('html').on('click.dropdown.data-api', function () {
+        var $el = $(element).on('click.k-dropdown.data-api', this.toggle)
+        $('html').on('click.k-dropdown.data-api', function () {
           $el.parent().removeClass('k-is-open')
         })
       }
@@ -13980,24 +13980,24 @@ module.exports = '1.3.4';
   /* DROPDOWN PLUGIN DEFINITION
    * ========================== */
 
-  var old = $.fn.dropdown
+  var old = $.fn.kdropdown
 
-  $.fn.dropdown = function (option) {
+  $.fn.kdropdown = function (option) {
     return this.each(function () {
       var $this = $(this)
-        , data = $this.data('dropdown')
-      if (!data) $this.data('dropdown', (data = new Dropdown(this)))
+        , data = $this.data('kdropdown')
+      if (!data) $this.data('kdropdown', (data = new Dropdown(this)))
       if (typeof option == 'string') data[option].call($this)
     })
   }
 
-  $.fn.dropdown.Constructor = Dropdown
+  $.fn.kdropdown.Constructor = Dropdown
 
 
  /* DROPDOWN NO CONFLICT
   * ==================== */
 
-  $.fn.dropdown.noConflict = function () {
+  $.fn.kdropdown.noConflict = function () {
     $.fn.dropdown = old
     return this
   }
@@ -14007,10 +14007,10 @@ module.exports = '1.3.4';
    * =================================== */
 
   $(document)
-    .on('click.dropdown.data-api', clearMenus)
-    .on('click.dropdown.data-api', '.k-dropdown form', function (e) { e.stopPropagation() })
-    .on('click.dropdown.data-api'  , toggle, Dropdown.prototype.toggle)
-    .on('keydown.dropdown.data-api', toggle + ', [role=menu]' , Dropdown.prototype.keydown)
+    .on('click.k-dropdown.data-api', clearMenus)
+    .on('click.k-dropdown.data-api', '.k-dropdown form', function (e) { e.stopPropagation() })
+    .on('click.k-dropdown.data-api'  , toggle, Dropdown.prototype.toggle)
+    .on('keydown.k-dropdown.data-api', toggle + ', [role=menu]' , Dropdown.prototype.keydown)
 
 }(window.jQuery);
 
@@ -14128,23 +14128,23 @@ module.exports = '1.3.4';
 
   var old = $.fn.tab
 
-  $.fn.tab = function ( option ) {
+  $.fn.ktab = function ( option ) {
     return this.each(function () {
       var $this = $(this)
-        , data = $this.data('tab')
-      if (!data) $this.data('tab', (data = new Tab(this)))
+        , data = $this.data('ktab')
+      if (!data) $this.data('ktab', (data = new Tab(this)))
       if (typeof option == 'string') data[option]()
     })
   }
 
-  $.fn.tab.Constructor = Tab
+  $.fn.ktab.Constructor = Tab
 
 
  /* TAB NO CONFLICT
   * =============== */
 
-  $.fn.tab.noConflict = function () {
-    $.fn.tab = old
+  $.fn.ktab.noConflict = function () {
+    $.fn.ktab = old
     return this
   }
 
@@ -14152,9 +14152,9 @@ module.exports = '1.3.4';
  /* TAB DATA-API
   * ============ */
 
-  $(document).on('click.tab.data-api', '[data-toggle="tab"], [data-toggle="pill"]', function (e) {
+  $(document).on('click.k-tab.data-api', '[data-k-toggle="tab"], [data-k-toggle="pill"]', function (e) {
     e.preventDefault()
-    $(this).tab('show')
+    $(this).ktab('show')
   })
 
 }(window.jQuery);
@@ -14188,7 +14188,7 @@ module.exports = '1.3.4';
   * =============================== */
 
   var Tooltip = function (element, options) {
-    this.init('tooltip', element, options)
+    this.init('ktooltip', element, options)
   }
 
   Tooltip.prototype = {
@@ -14485,19 +14485,19 @@ module.exports = '1.3.4';
 
   var old = $.fn.tooltip
 
-  $.fn.tooltip = function ( option ) {
+  $.fn.ktooltip = function ( option ) {
     return this.each(function () {
       var $this = $(this)
-        , data = $this.data('tooltip')
+        , data = $this.data('ktooltip')
         , options = typeof option == 'object' && option
-      if (!data) $this.data('tooltip', (data = new Tooltip(this, options)))
+      if (!data) $this.data('ktooltip', (data = new Tooltip(this, options)))
       if (typeof option == 'string') data[option]()
     })
   }
 
-  $.fn.tooltip.Constructor = Tooltip
+  $.fn.ktooltip.Constructor = Tooltip
 
-  $.fn.tooltip.defaults = {
+  $.fn.ktooltip.defaults = {
     animation: true
   , placement: 'top'
   , selector: false
@@ -14513,10 +14513,12 @@ module.exports = '1.3.4';
  /* TOOLTIP NO CONFLICT
   * =================== */
 
-  $.fn.tooltip.noConflict = function () {
+  /*$.fn.tooltip.noConflict = function () {
     $.fn.tooltip = old
     return this
   }
+
+  $.fn.ktooltip = $.fn.tooltip.noConflict();*/
 
 }(window.jQuery);
 
@@ -15126,7 +15128,7 @@ module.exports = '1.3.4';
                 if (tooltip) {
                     tooltip = tooltip.replace('%s', item.data('title'));
 
-                    dropdown_button.tooltip({
+                    dropdown_button.ktooltip({
                         "container":".koowa-container",
                         "delay":{"show":500,"hide":50},
                         'title': tooltip
@@ -18213,9 +18215,7 @@ var Konami = function (callback) {
         $overflow.addClass('k-sidebar-item--overflow').overflowing();
 
         // Footable
-        $footable.on('click', '.footable-toggle', function(event){
-           // event.stopPropagation();
-        }).footable({
+        $footable.footable({
             toggleSelector: '.footable-toggle',
             breakpoints: {
                 phone: 400,
@@ -18299,7 +18299,7 @@ var Konami = function (callback) {
         $('.k-js-iframe-modal').magnificPopup({type:'iframe'});
 
         // Tooltips
-        $('.k-js-tooltip').tooltip({
+        $('.k-js-tooltip').ktooltip({
             animation: true,
             placement: 'top',
             delay: { show: 200, hide: 50 },

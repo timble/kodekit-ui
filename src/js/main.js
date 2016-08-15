@@ -170,7 +170,7 @@
         $('.k-js-iframe-modal').magnificPopup({type:'iframe'});
 
         // Tooltips
-        $('.k-js-tooltip').tooltip({
+        $('.k-js-tooltip').ktooltip({
             animation: true,
             placement: 'top',
             delay: { show: 200, hide: 50 },

@@ -112,23 +112,23 @@
 
   var old = $.fn.tab
 
-  $.fn.tab = function ( option ) {
+  $.fn.ktab = function ( option ) {
     return this.each(function () {
       var $this = $(this)
-        , data = $this.data('tab')
-      if (!data) $this.data('tab', (data = new Tab(this)))
+        , data = $this.data('ktab')
+      if (!data) $this.data('ktab', (data = new Tab(this)))
       if (typeof option == 'string') data[option]()
     })
   }
 
-  $.fn.tab.Constructor = Tab
+  $.fn.ktab.Constructor = Tab
 
 
  /* TAB NO CONFLICT
   * =============== */
 
-  $.fn.tab.noConflict = function () {
-    $.fn.tab = old
+  $.fn.ktab.noConflict = function () {
+    $.fn.ktab = old
     return this
   }
 
@@ -136,9 +136,9 @@
  /* TAB DATA-API
   * ============ */
 
-  $(document).on('click.tab.data-api', '[data-toggle="tab"], [data-toggle="pill"]', function (e) {
+  $(document).on('click.k-tab.data-api', '[data-k-toggle="tab"], [data-k-toggle="pill"]', function (e) {
     e.preventDefault()
-    $(this).tab('show')
+    $(this).ktab('show')
   })
 
 }(window.jQuery);

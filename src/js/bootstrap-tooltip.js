@@ -28,7 +28,7 @@
   * =============================== */
 
   var Tooltip = function (element, options) {
-    this.init('tooltip', element, options)
+    this.init('ktooltip', element, options)
   }
 
   Tooltip.prototype = {
@@ -325,19 +325,19 @@
 
   var old = $.fn.tooltip
 
-  $.fn.tooltip = function ( option ) {
+  $.fn.ktooltip = function ( option ) {
     return this.each(function () {
       var $this = $(this)
-        , data = $this.data('tooltip')
+        , data = $this.data('ktooltip')
         , options = typeof option == 'object' && option
-      if (!data) $this.data('tooltip', (data = new Tooltip(this, options)))
+      if (!data) $this.data('ktooltip', (data = new Tooltip(this, options)))
       if (typeof option == 'string') data[option]()
     })
   }
 
-  $.fn.tooltip.Constructor = Tooltip
+  $.fn.ktooltip.Constructor = Tooltip
 
-  $.fn.tooltip.defaults = {
+  $.fn.ktooltip.defaults = {
     animation: true
   , placement: 'top'
   , selector: false
@@ -353,9 +353,11 @@
  /* TOOLTIP NO CONFLICT
   * =================== */
 
-  $.fn.tooltip.noConflict = function () {
+  /*$.fn.tooltip.noConflict = function () {
     $.fn.tooltip = old
     return this
   }
+
+  $.fn.ktooltip = $.fn.tooltip.noConflict();*/
 
 }(window.jQuery);

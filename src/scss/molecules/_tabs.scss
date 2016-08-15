@@ -7,13 +7,13 @@ Tabs
 markup:
 <ul class="k-tabs">
     <li class="k-is-active">
-        <a href="#tab1" data-toggle="tab">Tab 1</a>
+        <a href="#tab1" data-k-toggle="tab">Tab 1</a>
     </li>
     <li>
-        <a href="#tab2" data-toggle="tab">Tab 2</a>
+        <a href="#tab2" data-k-toggle="tab">Tab 2</a>
     </li>
      <li class="k-is-disabled">
-        <a href="#tab3" data-toggle="tab">Tab 3 (disabled)</a>
+        <a href="#tab3" data-k-toggle="tab">Tab 3 (disabled)</a>
     </li>
 </ul>
 <div class="k-tabs-content">

@@ -26,10 +26,10 @@
  /* DROPDOWN CLASS DEFINITION
   * ========================= */
 
-  var toggle = '[data-toggle=dropdown]'
+  var toggle = '[data-k-toggle=dropdown]'
     , Dropdown = function (element) {
-        var $el = $(element).on('click.dropdown.data-api', this.toggle)
-        $('html').on('click.dropdown.data-api', function () {
+        var $el = $(element).on('click.k-dropdown.data-api', this.toggle)
+        $('html').on('click.k-dropdown.data-api', function () {
           $el.parent().removeClass('k-is-open')
         })
       }
@@ -134,24 +134,24 @@
   /* DROPDOWN PLUGIN DEFINITION
    * ========================== */
 
-  var old = $.fn.dropdown
+  var old = $.fn.kdropdown
 
-  $.fn.dropdown = function (option) {
+  $.fn.kdropdown = function (option) {
     return this.each(function () {
       var $this = $(this)
-        , data = $this.data('dropdown')
-      if (!data) $this.data('dropdown', (data = new Dropdown(this)))
+        , data = $this.data('kdropdown')
+      if (!data) $this.data('kdropdown', (data = new Dropdown(this)))
       if (typeof option == 'string') data[option].call($this)
     })
   }
 
-  $.fn.dropdown.Constructor = Dropdown
+  $.fn.kdropdown.Constructor = Dropdown
 
 
  /* DROPDOWN NO CONFLICT
   * ==================== */
 
-  $.fn.dropdown.noConflict = function () {
+  $.fn.kdropdown.noConflict = function () {
     $.fn.dropdown = old
     return this
   }
@@ -161,9 +161,9 @@
    * =================================== */
 
   $(document)
-    .on('click.dropdown.data-api', clearMenus)
-    .on('click.dropdown.data-api', '.k-dropdown form', function (e) { e.stopPropagation() })
-    .on('click.dropdown.data-api'  , toggle, Dropdown.prototype.toggle)
-    .on('keydown.dropdown.data-api', toggle + ', [role=menu]' , Dropdown.prototype.keydown)
+    .on('click.k-dropdown.data-api', clearMenus)
+    .on('click.k-dropdown.data-api', '.k-dropdown form', function (e) { e.stopPropagation() })
+    .on('click.k-dropdown.data-api'  , toggle, Dropdown.prototype.toggle)
+    .on('keydown.k-dropdown.data-api', toggle + ', [role=menu]' , Dropdown.prototype.keydown)
 
 }(window.jQuery);
