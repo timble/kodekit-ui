@@ -108,7 +108,7 @@ module.exports = function(grunt) {
         uglify: {
             options: {
                 sourceMap: true,
-                preserveComments: 'some' // preserve @license tags
+                preserveComments: /(?:^!|@(?:license|preserve|cc_on))/ // preserve @license tags
             },
             build: {
                 files: {
