@@ -116,8 +116,11 @@ Styleguide 2.21.1
                 & > span {
                     margin-left: 0;
                     @include border-left-radius($border-radius);
+                }
 
-                    @include rtl {
+                @include rtl {
+                    & > a,
+                    & > span {
                         margin-right: 0;
                         @include border-left-radius(0);
                         @include border-right-radius($border-radius);
