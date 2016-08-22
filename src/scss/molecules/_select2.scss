@@ -1,0 +1,100 @@
+/* Select2
+   ========================================================================== */
+
+/*
+Select2
+
+- Just add the class `k-js-select2` to any `<select>` element to transform it into a select2 element
+
+markup:
+<select class="k-form-control k-js-select2">
+    <option value="1" selected>Example 1</option>
+    <option value="2">Example 2</option>
+    <option value="3">Example 3</option>
+</select>
+
+Styleguide 2.19
+
+*/
+
+/**
+ * 100% wide by default instead of just 220px making it responsive
+ * Important because width is being added by JS as inline styling
+ */
+
+.select2-container.select2-container--bootstrap {
+  width: 100% !important;
+  max-width: 100% !important;
+
+
+  /* Set proper line-height so text is vertically centered */
+
+  .select2-selection--single {
+    padding: $spacing-base-vertical $spacing-base-horizontal;
+
+    .select2-selection__rendered {
+      line-height: $line-height;
+    }
+  }
+
+
+  /* Set proper height so arrow is vertically centered */
+
+  .select2-selection--single {
+    .select2-selection__arrow {
+      height: $input-height-base;
+    }
+  }
+
+
+  .select2-selection--multiple {
+    .select2-selection__rendered {
+      padding-right: 5px;
+    }
+
+    .select2-selection__choice {
+      max-width: 300px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+
+  /* Set proper styling for the search input field */
+
+  .select2-search__field {
+    height: $input-height-base;
+    margin: 0;
+  }
+
+  .select2-search--inline {
+    &:first-child {
+      .select2-search__field {
+        width: auto !important;
+      }
+    }
+
+    .select2-search__field {
+      height: $input-height-base - 2px;
+      margin: 0;
+      box-shadow: none;
+      background: transparent;
+      border: none;
+    }
+  }
+
+
+  /**
+   * 1. Set font-size to 16px on touch supported devices so browser won't automatically zoom
+   */
+
+  [tabindex],
+  input {
+    @include modernizr('.k-touchevents') {
+      &:focus,
+      &:active {
+        font-size: 16px !important; /* 1 */
+      }
+    }
+  }
+}

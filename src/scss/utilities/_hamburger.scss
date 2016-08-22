@@ -1,0 +1,148 @@
+/* Hamburger
+   ========================================================================== */
+
+/**
+ * Animated hamburger button
+ *
+ * 1. Hide when JS is disabled, we don't need a toggle when there's no JS
+ * 2. Show when JS is enabled
+ * 3. Hide when the sidebar is visible
+ */
+
+.k-off-canvas-menu-toggle {
+  position: relative;
+  z-index: 10;
+  float: left;
+  display: none; /* 1 */
+  width: $hamburger-button-size;
+  height: $hamburger-button-size;
+  padding: 0;
+  border: none;
+  border-radius: $hamburger-button-radius;
+  margin: 10px;
+  background: $hamburger-button-background;
+  color: $hamburger-button-color;
+
+  @include rtl {
+    left: auto;
+    float: right;
+  }
+
+  @include js-enabled {
+    display: block; /* 2 */
+
+    @include breakpoint($desktop) {
+      display: none; /* 3 */
+    }
+  }
+
+
+  /**
+   * Styling the hamburger bars
+   */
+
+  .k-hamburger-bar1,
+  .k-hamburger-bar2,
+  .k-hamburger-bar3 {
+    position: absolute;
+    left: round(($hamburger-button-size - $hamburger-bar-width) / 2);
+    display: block;
+    width: $hamburger-bar-width;
+    height: $hamburger-bar-height;
+    border-radius: 1px;
+    background: $hamburger-button-color;
+    vertical-align: middle;
+    @include transition;
+  }
+
+  @include rtl {
+    .k-hamburger-bar1,
+    .k-hamburger-bar2,
+    .k-hamburger-bar3 {
+      left: auto;
+      right: round(($hamburger-button-size - $hamburger-bar-width) / 2);
+    }
+  }
+
+  .k-hamburger-bar1 {
+    top: round(($hamburger-button-size - $hamburger-bar-width) / 2);
+  }
+
+  .k-hamburger-bar2 {
+    top: round((($hamburger-button-size - $hamburger-bar-width) / 2) + ($hamburger-bar-height * 2));
+  }
+
+  .k-hamburger-bar3 {
+    top: round((($hamburger-button-size - $hamburger-bar-width) / 2) + ($hamburger-bar-height * 4));
+  }
+
+
+  /* Set proper margins */
+
+  &.k-off-canvas-menu-toggle--left {
+    margin-right: 0;
+
+    @include rtl {
+      margin-right: 10px;
+      margin-left: 0;
+    }
+  }
+
+  &.k-off-canvas-menu-toggle--right {
+    margin-left: 0;
+
+    @include rtl {
+      margin-left: 10px;
+      margin-right: 0;
+    }
+  }
+}
+
+
+/* Transform hamburger into a cross when the sidebar is opened */
+
+.k-show-left-menu {
+  .k-off-canvas-menu-toggle--left {
+    .k-hamburger-bar1 {
+      top: round(($hamburger-button-size / 2) - ($hamburger-bar-height / 2));
+      transform: rotate(135deg);
+    }
+
+    .k-hamburger-bar2 {
+      opacity: 0;
+      transform: translate(-100%, 0);
+
+      @include rtl {
+        transform: translate(100%, 0);
+      }
+    }
+
+    .k-hamburger-bar3 {
+      top: round(($hamburger-button-size / 2) - ($hamburger-bar-height / 2));
+      transform: rotate(-135deg);
+    }
+  }
+}
+
+.k-show-right-menu {
+  .k-off-canvas-menu-toggle--right {
+    .k-hamburger-bar1 {
+      top: round(($hamburger-button-size / 2) - ($hamburger-bar-height / 2));
+      transform: rotate(135deg);
+    }
+
+    .k-hamburger-bar2 {
+      opacity: 0;
+      transform: translate(-100%, 0);
+
+      @include rtl {
+        transform: translate(100%, 0);
+      }
+    }
+
+    .k-hamburger-bar3 {
+      top: round(($hamburger-button-size / 2) - ($hamburger-bar-height / 2));
+      transform: rotate(-135deg);
+    }
+  }
+}

@@ -1,0 +1,780 @@
+// Breakpoints
+// ==========================================================================
+//
+// Only work with either
+// - (min-width)
+// - (min-width) and (max-width)
+//
+// Never use (max-width) alone since that is not mobile-first
+//
+// 1. The min width of the interface. Will create a horizontal scrollbar.
+//    This way we have a base width to work from regarding styling items next to each other
+// 3. Separate $desktop variable is being used so all styles
+//    change together when going from small to larger screen.
+
+$alpha:     400px !default;
+$beta:      600px !default;
+$charlie:   768px !default;
+$delta:     1024px !default;
+$echo:      1200px !default;
+
+$minwidth:  $alpha !default; // 1
+$desktop:   $charlie !default; // 2
+
+
+// Flexbox
+// ==========================================================================
+//
+// 1. Wether or not to Use flexbox in layouts
+// 2. Separate $flexbox variables are being used
+//    - 300px so flexbox will at least be active on 320px wide screens
+//    - 391px so flexbox will at least be active on 400px tall screens
+//      - 25-09-2015 http://mydevice.io/devices/
+//        The only phones at the time to have flexbox in landscape mode are:
+//        - Samsung Galaxy Note (This is where the 391 number comes from)
+//        - Blackberry passport
+
+$flexbox:             true !default; // 1
+$flexbox-horizontal:  300px !default; // 2
+$flexbox-vertical:    391px !default; // 2
+
+
+// Typography
+// ==========================================================================
+//
+// 1. Borrowed font-stack from WordPress
+//    - https://make.wordpress.org/core/2016/07/07/native-fonts-in-4-6/
+
+$font-family:             -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !default;
+
+$font-size:               13px !default;
+$line-height:             round($font-size * 1.5) !default;
+
+$font-size-tiny:          round($font-size * 0.6) !default;
+$line-height-tiny:        round($font-size-tiny * 1.5) !default;
+
+$font-size-small:         round($font-size * 0.85) !default;
+$line-height-small:       round($font-size-small * 1.5) !default;
+
+$font-size-large:         round($font-size * 1.38) !default;
+$line-height-large:       round($font-size-large * 1.3) !default;
+
+$font-size-huge:          round($font-size * 1.62) !default;
+$line-height-huge:        round($font-size-huge * 1.2) !default;
+
+$bold:                    700 !default;
+$regular:                 400 !default;
+
+$webkit-font-smoothing:   antialiased !default;
+$firefox-font-smoothing:  grayscale !default;
+
+
+// Icons
+// ==========================================================================
+
+$icon-path: '../fonts' !default;
+
+
+// Spacing
+// ==========================================================================
+//
+// can either be used as a padding or a margin on elements
+// Rounding so we won't get half pixels
+
+$spacing-tiny:              round($font-size / 2) !default;
+$spacing-small:             $font-size !default;
+$spacing:                   round($font-size * 1.5) !default;
+$spacing-large:             $font-size * 2 !default;
+$spacing-huge:              $font-size * 3 !default;
+
+$spacing-base-vertical:     round($font-size * 0.4) !default;
+$spacing-base-horizontal:   round($font-size * 0.8) !default;
+
+$spacing-tiny-vertical:     round($font-size-tiny * 0.4) !default;
+$spacing-tiny-horizontal:   round($font-size-tiny * 0.8) !default;
+
+$spacing-small-vertical:    round($font-size-small * 0.4) !default;
+$spacing-small-horizontal:  round($font-size-small * 0.8) !default;
+
+$spacing-large-vertical:    round($font-size-large * 0.4) !default;
+$spacing-large-horizontal:  round($font-size-large * 0.8) !default;
+
+
+// Sizes
+// ==========================================================================
+
+$unit-size:             $spacing-huge !default;
+$border-radius:         4px !default;
+$border-radius-large:   6px !default;
+$border-radius-small:   3px !default;
+
+
+// Function variables
+// ==========================================================================
+//
+// These are used by our light, lighter, lightest, dark, darker and darkest funxtions
+// This way we can change the amounts all in one.
+// Overwrite-able per function call
+
+$light-percentage:      3% !default;
+$lighter-percentage:    7% !default;
+$lightest-percentage:   12% !default;
+
+$dark-percentage:       3% !default;
+$darker-percentage:     7% !default;
+$darkest-percentage:    12% !default;
+
+
+// Helpers
+// ==========================================================================
+
+$cursor-disabled:       not-allowed !default;
+
+$zindex-dropdown:       1000 !default;
+$zindex-tooltip:        1070 !default;
+
+$transition-duration:   180ms !default;
+$transition-easing:     cubic-bezier(0.2, 0.57, 0.44, 0.83) !default;
+$transition:            all $transition-duration $transition-easing !default;
+
+$icon-size-tiny:        10px !default;
+$icon-size-small:       13px !default;
+$icon-size:             16px !default;
+$icon-size-medium:      24px !default;
+$icon-size-large:       32px !default;
+$icon-size-xlarge:      48px !default;
+$icon-size-huge:        64px !default;
+
+
+// Colors
+// ==========================================================================
+
+$color-primary:         #e1e1e1 !default;
+
+$color-primary-plus-1:  lighten($color-primary, 2%) !default;
+$color-primary-plus-2:  lighten($color-primary, 5%) !default;
+$color-primary-plus-3:  lighten($color-primary, 6%) !default;
+$color-primary-plus-4:  lighten($color-primary, 7%) !default;
+$color-primary-plus-5:  lighten($color-primary, 10%) !default;
+$color-primary-plus-6:  lighten($color-primary, 12%) !default;
+
+$color-primary-min-1:   darken($color-primary, 2%) !default;
+$color-primary-min-2:   darken($color-primary, 8%) !default;
+$color-primary-min-3:   darken($color-primary, 28%) !default;
+$color-primary-min-4:   darken($color-primary, 41%) !default;
+$color-primary-min-5:   darken($color-primary, 55%) !default;
+$color-primary-min-6:   darken($color-primary, 68%) !default;
+$color-primary-min-7:   darken($color-primary, 75%) !default;
+
+
+// Type
+
+$color-type:            #222222 !default;
+$color-type-lighter:    #444444 !default;
+$color-type-light:      lighten($color-type, 50%) !default;
+
+
+// Accent color
+
+$color-accent:          #3071a9 !default;
+$color-accent-type:     white !default;
+
+
+// States
+
+$color-success:         #27ae60 !default;
+$color-success-type:    white !default;
+
+$color-error:           #c0392b !default;
+$color-error-type:      white !default;
+
+$color-neutral:         #3498db !default;
+$color-neutral-type:    white !default;
+
+$color-warning:         #e67e22 !default;
+$color-warning-type:    white !default;
+
+
+// Elements
+$color-button:          white !default;
+$color-forms:           white !default;
+$color-forms-disabled:  #ddd !default;
+
+
+// Links
+// ==========================================================================
+
+$link-color: $color-type !default;
+
+
+// Border
+// ==========================================================================
+//
+// Set borders to false if you don't want any borders in your theme
+// You can override borders in each separate module
+
+$borders:       true !default;
+$border-color:  false !default;
+$border-width:  1px !default;
+$border-style:  solid !default;
+
+
+// Koowa
+// ==========================================================================
+
+$koowa-background:  white !default;
+$koowa-padding:     0 !default;
+
+
+// Menubar
+// ==========================================================================
+
+$menubar-height:       $unit-size !default;
+$menubar-background:   $color-primary-min-7 !default;
+$menubar-border:       darkest($menubar-background) !default;;
+$menubar-color:        $color-primary-plus-5 !default;
+
+
+// Content
+// ==========================================================================
+
+$content-background:   white !default;
+$content-border:       darkest($content-background) !default;
+
+
+// Title-bar
+// ==========================================================================
+
+$title-bar-background:        $color-primary-plus-3 !default;
+$title-bar-border:            darkest($title-bar-background) !default;
+$title-bar-color:             $color-type !default;
+
+$title-bar-mobilebackground:  $color-primary !default;
+$title-bar-mobileborder:      darkest($title-bar-mobilebackground) !default;
+
+
+// Toolbar
+// ==========================================================================
+
+$toolbar-spacing:     round($font-size * 0.7) !default;
+$toolbar-height:      $unit-size !default;
+$toolbar-background:  $color-primary-plus-3 !default;
+$toolbar-border:      darkest($toolbar-background) !default;
+$toolbar-color:       $color-type !default;
+
+
+// Sidebar
+// ==========================================================================
+//
+// 1. Sidebar width on smaller screens
+// 2. Sidebar width when screen is "$desktop"
+
+$sidebar-width-small:       210px !default; // 1
+$sidebar-width:             270px !default; // 2
+
+$sidebar-background:        $color-primary-plus-2 !default;
+$sidebar-border:            darkest($sidebar-background) !default;
+$sidebar-color:             $color-type !default;
+
+
+// Navigation
+// ==========================================================================
+
+$navigation-spacing:            $spacing-tiny !default;
+$navigation-font-size:          $font-size-large !default;
+
+$navigation-background:         $color-primary-plus-1 !default;
+$navigation-border:             darkest($navigation-background) !default;
+$navigation-border-width:       5px !default;
+$navigation-color:              $color-type !default;
+
+$navigation-hover-background:   lighter($navigation-background) !default;
+$navigation-hover-border:       $color-accent !default;
+$navigation-hover-color:        $color-type !default;
+
+$navigation-active-background:  $navigation-background !default;
+$navigation-active-border:      $color-accent !default;
+$navigation-active-color:       $color-accent !default;
+
+
+// List
+// ==========================================================================
+
+$list-spacing:            $spacing-tiny !default;
+
+$list-background:         $sidebar-background !default;
+$list-color:              $sidebar-color !default;
+
+$list-hover-background:   lighter($sidebar-background) !default;
+$list-hover-color:        $color-type !default;
+
+$list-active-background:  $list-background !default;
+$list-active-color:       $color-type !default;
+
+
+// Tree
+// ==========================================================================
+
+$jqtree-hover-background: lighter($sidebar-background) !default;
+$tree-size:               $font-size * 2 !default;
+$tree-toggle-size:        ceil($tree-size / 8) !default;
+
+
+// Breadcrumbs
+// ==========================================================================
+//
+// 1. On mobile we don't show all breadcrumb items
+// 2. The content of the divider
+// 3. The width of dividers between breadcrumb items
+// 4. Height of each breadcrumb item
+// 5. The width when showing all breadcrumbs instead of only first and last
+
+$breadcrumb-missing-content:    "…" !default; // 4
+$breadcrumb-divider-content:    "»" !default; // 2
+$breadcrumb-divider-size:       round($unit-size / 2) !default; // 3
+$breadcrumb-size:               $unit-size !default; // 4
+$breadcrumb-query:              $charlie !default; // 5
+
+$breadcrumb-background:         $color-primary-plus-4 !default;
+$breadcrumb-border:             darkest($breadcrumb-background) !default;
+$breadcrumb-color:              $color-type !default;
+
+$breadcrumb-hover-background:   darker($breadcrumb-background) !default;
+
+
+// Scopebar
+// ==========================================================================
+//
+// 1. Height of the scopebar
+
+$scopebar-size:                           $unit-size !default; // 1
+
+$scopebar-background:                     $color-primary-plus-4 !default;
+$scopebar-border:                         darkest($scopebar-background) !default;
+$scopebar-color:                          $color-type !default;
+
+$scopebar-search-background:              $color-forms !default;
+$scopebar-search-color:                   $color-type !default;
+
+$scopebar-filter-font-size:               $font-size !default;
+
+$scopebar-search-size-delta:              $font-size * 17 !default;
+$scopebar-search-size-echo:               $font-size * 22 !default;
+
+$scopebar-submit-button-spacing:          $font-size * 2 !default;
+$scopebar-submit-button-size:             $font-size !default;
+
+$scopebar-empty-button-spacing:           round($font-size * 1.5) !default;
+$scopebar-empty-button-size:              round($font-size * 0.75) !default;
+
+$scopebar-filter-label-size:              round($font-size * 1.2) !default;
+$scopebar-filter-label-background:        $color-error !default;
+$scopebar-filter-label-color:             $color-error-type !default;
+$scopebar-filter-label-font-size:         $font-size-small !default;
+
+
+// Dropdowns
+// ==========================================================================
+
+$dropdown-background:                 $color-primary-plus-6 !default;
+$dropdown-border:                     darkest($dropdown-background) !default;
+$dropdown-color:                      $color-type !default;
+
+$dropdown-buttons-background:         $color-primary-plus-5 !default;
+$dropdown-buttons-border:             darkest($dropdown-background) !default;
+$dropdown-buttons-color:              $color-type !default;
+
+$scopebar-buttons-hover-background:   darker($dropdown-buttons-background) !default;
+
+
+// Table
+// ==========================================================================
+//
+// 1. Height of the table cells
+// 2. Table cell padding
+
+$table-cell-size:                       $font-size * 3 !default; // 1
+$table-cell-spacing-vertical:           $spacing-tiny !default; // 2
+$table-cell-spacing-horizontal:         $spacing-tiny !default; // 2
+
+$table-background:                      $color-primary-plus-6 !default;
+
+$table-header-background:               $color-primary-plus-5 !default;
+$table-header-border:                   darkest($table-header-background) !default;
+$table-header-color:                    $color-type !default;
+$table-header-hover-background:         $color-primary-plus-4 !default;
+
+$table-cell-background-even:            $color-primary-plus-6 !default;
+$table-cell-background-odd:             $color-primary-plus-6 !default;
+$table-cell-color:                      $color-type !default;
+
+$table-cell-hover-background-even:      $color-primary-plus-5 !default;
+$table-cell-hover-background-odd:       $color-primary-plus-5 !default;
+$table-cell-border:                     darker($table-cell-background-odd) !default;
+
+$table-cell-accent-background:          $color-accent !default;
+$table-cell-accent-color:               $color-accent-type !default;
+
+$table-cell-accent-hover-background:    darken($color-accent,10%) !default;
+
+$table-row-positioner-size:             16px;
+$table-row-positioner-color:            $color-primary-min-2;
+
+$table-pagination-height:               ($line-height + ($spacing-base-vertical * 2) + 2px) !default;
+$table-pagination-spacing:              $spacing-tiny !default;
+$table-pagination-background:           $table-header-background !default;
+$table-pagination-border:               $table-header-border !default;
+
+
+// Footable
+// ==========================================================================
+
+$footable-toggle-size:          20px !default;
+$footable-toggle-color:         $color-type-light !default;
+$footable-toggle-color-active:  $table-cell-accent-color !default;
+$footable-toggle-border-size:   1px !default;
+$footable-toggle-icon-size:     10px !default;
+
+
+// Overflowing
+// ==========================================================================
+//
+// Overflowing shadows to show there's more behind the scrollbars
+
+$overflow-size:     20px !default;
+$overflow-blur:     $overflow-size * 2 !default;
+$overflow-offset:   -($overflow-size) !default;
+
+
+// Component layout
+// ==========================================================================
+
+$component-background: $color-primary-plus-5 !default;
+
+
+// Form block
+// ==========================================================================
+
+$form-block-background:         $color-primary-plus-6 !default;
+$form-block-border:             darkest($form-block-background) !default;
+
+$form-block-header-spacing:     $spacing-tiny !default;
+$form-block-header-background:  $color-primary-plus-4 !default;
+$form-block-header-border:      darkest($form-block-header-background) !default;
+
+$form-block-content-spacing:    $spacing-small !default;
+
+
+// Offcanvas container
+// ==========================================================================
+//
+// 1. The hamburger bar width, best to use a number dividable by 5
+// 2. The height is automatically calculated
+
+$off-canvas-overlay-background:  black !default;
+$off-canvas-overlay-opacity:     0.75 !default;
+$hamburger-button-size:          33px !default;
+$hamburger-button-background:    $color-accent !default;
+$hamburger-button-color:         white !default;
+$hamburger-button-radius:        3px !default;
+$hamburger-bar-width:            15px !default; // 1
+$hamburger-bar-height:           round($hamburger-bar-width / 5) !default; // 2
+
+
+// Form styles
+// ==========================================================================
+
+$form-option-size:          16px !default;
+$form-option-background:    white !default;
+$form-option-border:        $color-primary-min-3 !default;
+$form-option-border-size:   1px !default;
+$form-option-color:         $color-accent !default;
+$form-option-shadow:        inset 0 1px 2px rgba(0, 0, 0, 0.15) !default;
+
+
+// Empty state
+// ==========================================================================
+
+$empty-state-background:    white !default;
+$empty-state-color:         $color-type !default;
+$empty-state-spacing:       $spacing !default;
+
+
+// Grid
+// ==========================================================================
+
+$grid-itemWidth:  $font-size * 12 !default;
+$grid-spacing:    $font-size-large !default;
+$grid-width:      2560px !default;
+
+
+// Tabs
+// ==========================================================================
+
+$nav-tabs-link-spacing:                     $spacing-tiny $spacing-small !default;
+
+$nav-tabs-link-hover-background:            $color-primary-plus-2 !default;
+
+$nav-tabs-disabled-link-color:              $color-primary-min-6 !default;
+$nav-tabs-disabled-link-hover-color:        $nav-tabs-disabled-link-color !default;
+
+$nav-tabs-border:                           $nav-tabs-link-hover-background !default;
+$nav-tabs-link-hover-border:                $nav-tabs-link-hover-background !default;
+
+$nav-tabs-active-link-hover-background:     white !default;
+$nav-tabs-active-link-hover-color:          $color-primary-min-7 !default;
+$nav-tabs-active-link-hover-border:         $color-primary-plus-1 !default;
+
+
+// Buttons
+// ==========================================================================
+
+$btn-default-color:             $color-type !default;
+$btn-default-background:        $color-button !default;
+$btn-default-border:            $color-primary-min-2 !default;
+
+$btn-primary-color:             $color-accent-type !default;
+$btn-primary-background:        $color-accent !default;
+$btn-primary-border:            darken($btn-primary-background, 5%) !default;
+
+$btn-success-color:             $color-success-type !default;
+$btn-success-background:        $color-success !default
+$btn-success-border:            darken($btn-success-background, 5%) !default;
+
+$btn-info-color:                $color-neutral-type !default;
+$btn-info-background:           $color-neutral !default;
+$btn-info-border:               darken($btn-info-background, 5%) !default;
+
+$btn-warning-color:             $color-warning-type !default;
+$btn-warning-background:        $color-warning !default;
+$btn-warning-border:            darken($btn-warning-background, 5%) !default;
+
+$btn-danger-color:              $color-error-type !default;
+$btn-danger-background:         $color-error !default;
+$btn-danger-border:             darken($btn-danger-background, 5%) !default;
+
+$btn-link-disabled-color:       $color-primary-min-6 !default;
+
+$btn-border-radius-base:        $border-radius !default;
+$btn-border-radius-large:       $border-radius-large !default;
+$btn-border-radius-small:       $border-radius-small !default;
+
+
+// Pagination
+// ==========================================================================
+
+$pagination-background:         $color-accent-type !default;
+$pagination-border:             $color-primary-min-1 !default;
+$pagination-color:              $color-accent !default;
+
+$pagination-hover-background:   $color-primary-plus-2 !default;
+$pagination-hover-color:        darker($color-accent) !default;
+$pagination-hover-border:       $color-primary-min-1 !default;
+
+$pagination-active-background:  $color-accent !default;
+$pagination-active-color:       $color-accent-type !default;
+$pagination-active-border:      darker($color-accent) !default;
+
+
+// Tooltips
+// ==========================================================================
+
+$tooltip-max-width:     260px !default;
+$tooltip-color:         white !default;
+$tooltip-background:    black !default;
+$tooltip-opacity:       0.9 !default;
+$tooltip-arrow-width:   5px !default;
+$tooltip-arrow-color:   $tooltip-background !default;
+
+
+// Wells
+// ==========================================================================
+
+$well-background:   $color-primary-plus-4 !default;
+$well-border:       darken($well-background, 7%) !default;
+
+
+// Cards
+// ==========================================================================
+
+$card-background:           $color-primary-plus-6 !default;
+$card-border:               $color-primary-min-1 !default;
+$card-color:                $color-type !default;
+$card-radius:               $border-radius !default;
+$card-hover-border:         darkest($card-border) !default;
+
+$card-selected-background:  $color-accent !default;
+$card-selected-border:      $color-accent !default;
+$card-selected-color:       $color-accent-type !default;
+
+$card-header-background:    $color-primary-plus-5 !default;
+$card-header-border:        $color-primary-min-1 !default;
+$card-header-color:         $color-type !default;
+$card-header-hover-border:  darkest($card-header-border) !default;
+
+$card-footer-background:    $color-primary-plus-5 !default;
+$card-footer-border:        $color-primary-min-1 !default;
+$card-footer-color:         $color-type !default;
+$card-footer-hover-border:  darkest($card-footer-border) !default;
+
+
+// Feedback states
+// ==========================================================================
+
+$state-success-color:       darker($color-success) !default;
+$state-success-background:  adjust-hue(darken($color-success, 40%), 5%) !default;
+$state-success-border:      darkest($color-success) !default;
+
+$state-info-color:          darker($color-neutral) !default;
+$state-info-background:     lighten($color-neutral, 50%) !default;
+$state-info-border:         darkest($color-neutral) !default;
+
+$state-warning-color:       darker($color-warning) !default;
+$state-warning-background:  lighten($color-warning, 50%) !default;
+$state-warning-border:      darkest($color-warning) !default;
+
+$state-danger-color:        darker($color-error) !default;
+$state-danger-background:   lighten($color-error, 50%) !default;
+$state-danger-border:       darkest($color-error) !default;
+
+
+// Alerts
+// ==========================================================================
+
+$alert-spacing:             $spacing-small !default;
+$alert-border-radius:       $border-radius !default;
+$alert-link-font-weight:    $bold !default;
+
+$alert-success-background:  $color-success !default;
+$alert-success-color:       $color-success-type !default;
+
+$alert-info-background:     $color-neutral !default;
+$alert-info-color:          $color-neutral-type !default;
+
+$alert-warning-background:  $color-warning !default;
+$alert-warning-color:       $color-warning-type !default;
+
+$alert-danger-background:   $color-error !default;
+$alert-danger-color:        $color-error-type !default;
+
+
+// Dropdowns
+// ==========================================================================
+
+$dropdown-background:             white !default;
+$dropdown-border:                 $color-primary-min-2 !default;
+$dropdown-fallback-border:        $color-primary-min-2 !default;
+
+$dropdown-divider-background:     $color-primary-plus-1 !default;
+
+$dropdown-link-color:             $color-type !default;
+
+$dropdown-link-hover-color:       darken($dropdown-link-color, 5%) !default;
+$dropdown-link-hover-background:  $color-primary-plus-1 !default;
+
+$dropdown-link-active-color:      $color-accent-type !default;
+$dropdown-link-active-background: $color-accent !default;
+
+$dropdown-link-disabled-color:    $color-primary-min-6 !default;
+
+$dropdown-header-color:           $color-primary-min-6 !default;
+$dropdown-caret-color:            black !default;
+
+$caret-width-base:                4px !default;
+$caret-width-large:               5px !default;
+
+
+// Forms
+// ==========================================================================
+
+$input-background:                $color-forms !default;
+$input-background-disabled:       $color-forms-disabled !default;
+$input-border:                    $color-primary-min-2 !default;
+$input-color:                     $color-primary-min-7 !default;
+
+$input-border-radius:             $border-radius !default;
+$input-border-radius-large:       $border-radius-large !default;
+$input-border-radius-small:       $border-radius-small !default;
+
+$input-border-focus:              $color-neutral !default;
+$input-color-placeholder:         $color-primary-min-3 !default;
+
+$input-group-addon-bg:            $color-primary-plus-2 !default;
+$input-group-addon-border-color:  $input-border !default;
+
+$input-height-base:               ($line-height + ($spacing-base-vertical * 2) + 2px) !default;
+$input-height-large:              ($line-height-large + ($spacing-large-vertical * 2) + 2px) !default;
+$input-height-small:              ($line-height-small + ($spacing-small-vertical * 2) + 2px) !default;
+
+
+// Radio toggle
+// ==========================================================================
+//
+// 1. Use styled radio toggles?
+// 2. The color for "false"/0 items
+// 3. The color for "true"/1 items
+// 4. The color for neutral items
+
+$radio-toggle:          true !default; // 1
+$radio-toggle-0:        $color-error !default; // 2
+$radio-toggle-1:        $color-success !default; // 3
+$radio-toggle-neutral:  $color-neutral !default; // 4
+
+
+// Checkbox toggle
+// ==========================================================================
+//
+// 1. Use styled checkbox toggles?
+
+$checkbox-toggle:                 true !default; // 1
+$checkbox-toggle-size:            32px !default;
+$checkbox-toggle-border-width:    1px !default;
+$checkbox-toggle-padding:         1px !default;
+$checkbox-toggle-border-radius:   6px !default;
+$checkbox-toggle-width-inner:     ($checkbox-toggle-size * 2) - (($checkbox-toggle-border-width + $checkbox-toggle-padding) * 2) !default;
+$checkbox-toggle-height-inner:    $checkbox-toggle-size - (($checkbox-toggle-border-width + $checkbox-toggle-padding) * 2) !default;
+$checkbox-toggle-0:               $color-error !default;
+$checkbox-toggle-1:               $color-success !default;
+$checkbox-toggle-neutral-0:       $color-primary-min-1 !default;
+$checkbox-toggle-neutral-1:       $color-neutral !default;
+
+
+// Loader
+// ==========================================================================
+
+$loader-size-small:             5px !default;
+$loader-size-medium:            10px !default;
+$loader-size-large:             20px !default;
+$loader-color:                  $color-accent !default;
+$loader-duration:               1.61s !default;
+
+$loader-container-background:   white !default;
+$loader-container-opacity:      0.8 !default;
+
+
+// Overrides for Select2-bootstrap theme
+// ==========================================================================
+
+$font-family-base:          inherit !default;
+$font-size-base:            $font-size !default;
+$line-height-base:          $line-height !default;
+
+$input-bg:                  $input-background !default;
+$input-bg-disabled:         $input-background-disabled !default;
+
+$padding-base-vertical:     $spacing-base-vertical !default;
+$padding-base-horizontal:   $spacing-base-horizontal !default;
+$padding-small-vertical:    $spacing-small-vertical !default;
+$padding-small-horizontal:  $spacing-small-horizontal !default;
+$padding-large-vertical:    $spacing-large-vertical !default;
+$padding-large-horizontal:  $spacing-large-horizontal !default;
+
+$dropdown-link-hover-bg:    $dropdown-link-hover-background !default;
+$dropdown-link-active-bg:   $dropdown-link-active-background !default;
+
+$btn-default-bg:            $btn-default-background !default;
+$btn-danger-bg:             $btn-danger-background !default;
+
+$state-warning-text:        $state-warning-color !default;
+$state-danger-text:         $state-danger-color !default;
+$state-success-text:        $state-success-color !default;

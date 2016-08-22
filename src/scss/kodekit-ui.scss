@@ -1,0 +1,59 @@
+/* Testing variabel overrides */
+// Overrides to test UI
+//$flexbox:               false;
+//$font-family:           "Comic Sans MS", cursive, sans-serif;
+//$font-size:             24px;
+//$transition-duration:   1s;
+//$transition-easing:     cubic-bezier(0.2, 0.57, 0.44, 0.83);
+//$transition:            all $transition-duration $transition-easing;
+//
+//$color-primary:       black;
+//$color-primary-plus-1:       black;
+//$color-primary-plus-2:       black;
+//$color-primary-plus-3:       black;
+//$color-primary-plus-4:       black;
+//$color-primary-plus-5:       black;
+//$color-primary-plus-6:       black;
+//
+//$color-primary-min-7:     black;
+//$color-primary-min-6:     black;
+//$color-primary-min-5:     black;
+//$color-primary-min-4:     black;
+//$color-primary-min-3:     black;
+//$color-primary-min-2:     black;
+//$color-primary-min-1:     black;
+//
+//$color-accent:          black;
+//$color-accent-type:     yellow;
+//
+//$color-success:         black;
+//$color-success-type:    yellow;
+//
+//$color-error:           black;
+//$color-error-type:      yellow;
+//
+//$color-neutral:         black;
+//$color-neutral-type:    yellow;
+//
+//$color-warning:         black;
+//$color-warning-type:    yellow;
+//
+//$borders:               false;
+
+
+/* ==========================================================================
+   Global tools
+   ========================================================================== */
+
+/* Containing different libraries, variables, mixins and functions */
+
+@import "core/tools";
+
+
+/* ==========================================================================
+   Core styling
+   ========================================================================== */
+
+/*  Loading all SCSS files */
+
+@import "core/core";

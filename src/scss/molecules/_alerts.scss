@@ -1,0 +1,43 @@
+/* Alerts
+   ========================================================================== */
+
+/*
+Alerts
+
+.k-alert--success - Success style
+.k-alert--info - Info style
+.k-alert--warning - Warning style
+.k-alert--danger - Danger style
+
+markup:
+<div class="k-alert {$modifiers}">
+    This is an alert
+</div>
+
+Styleguide 2.1
+
+*/
+
+.k-alert {
+  padding: $alert-spacing;
+  @include content-block;
+}
+
+
+/* Alternate styles */
+
+.k-alert--success {
+  @include alert-variant($alert-success-background, $alert-success-color);
+}
+
+.k-alert--info {
+  @include alert-variant($alert-info-background, $alert-info-color);
+}
+
+.k-alert--warning {
+  @include alert-variant($alert-warning-background, $alert-warning-color);
+}
+
+.k-alert--danger {
+  @include alert-variant($alert-danger-background, $alert-danger-color);
+}

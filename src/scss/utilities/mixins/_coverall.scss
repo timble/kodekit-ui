@@ -1,0 +1,48 @@
+// Cover all
+// Cover the entire parent element
+
+@mixin coverall(
+  $margin: 0,
+  $top: true,
+  $right: true,
+  $bottom: true,
+  $left: true,
+  $reset: false,
+  $position: true) {
+
+  @if $position == true {
+    position: absolute;
+  }
+
+  @if $top == true {
+    top: $margin;
+  } @else if $top != false {
+    top: $top;
+  }
+
+  @if $right == true {
+    right: $margin;
+  } @else if $right != false {
+    right: $right;
+  }
+
+  @if $bottom == true {
+    bottom: $margin;
+  } @else if $bottom != false {
+    bottom: $bottom;
+  }
+
+  @if $left == true {
+    left: $margin;
+  } @else if $left != false {
+    left: $left;
+  }
+
+  @if $reset == true {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+  }
+}

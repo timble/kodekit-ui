@@ -1,0 +1,68 @@
+// Grid
+
+@mixin setGridItemWidth($breakpoint,$columns) {
+  @media (min-width: $breakpoint ) {
+    width: percentage(1/$columns);
+    @content;
+  }
+}
+
+// Calculate the grid items
+@mixin setGridBreakpoint($width: $grid-itemWidth, $spacing: $grid-spacing, $gridwidth: $grid-width) {
+
+  // Calculating max number
+  $number: floor($gridwidth / $width);
+
+  // From 2 to 20 columns
+  @for $i from 2 through $number {
+
+    // Calculating breakpoint
+    $prev-breakpoint-width: (($i - 1) * $width) + ($i * $spacing);
+    $breakpoint-width: ($i * $width) + (($i + 1) * $spacing);
+    $columns: $i;
+    $breakpoint: $breakpoint-width;
+
+    // Setting separate breakpoint for $desktop width
+    @if ( $breakpoint-width > $desktop and $prev-breakpoint-width < $desktop ) {
+      $breakpoint: $desktop;
+      $columns: floor(($desktop - $sidebar-width-small - $spacing) / ($width + $spacing));
+      @include setGridItemWidth($breakpoint,$columns);
+    }
+
+    // All breakpoints above $desktop
+    @if ( $breakpoint-width > $desktop and $breakpoint-width < $delta ) {
+      $columns: floor(($breakpoint-width - $sidebar-width-small - $spacing) / ($width + $spacing));
+      $breakpoint: $sidebar-width-small + (($columns * $width) + (($columns + 1) * $spacing));
+      @if ( $breakpoint < $desktop ) {
+        $breakpoint: $breakpoint + ($width + $spacing);
+      }
+    }
+
+    // Setting separate breakpoint for $delta width
+    @if ( $breakpoint-width > $delta and $prev-breakpoint-width < $delta ) {
+      $breakpoint: $delta;
+      $columns: floor(($delta - $sidebar-width - $spacing) / ($width + $spacing));
+      @include setGridItemWidth($breakpoint,$columns);
+    }
+
+    // All breakpoints above $delta
+    @if ( $breakpoint-width > $delta ) {
+      $columns: floor(($breakpoint-width - $sidebar-width - $spacing) / ($width + $spacing));
+      $breakpoint: $sidebar-width + (($columns * $width) + (($columns + 1) * $spacing));
+      @if ( $breakpoint < $delta ) {
+        $breakpoint: $breakpoint + ($width + $spacing);
+      }
+    }
+
+    // Setting breakpoints
+    @include setGridItemWidth($breakpoint,$columns);
+  }
+}
+
+
+// Creates a wrapper for a series of columns
+@mixin make-row($gutter: $grid-gutter-width) {
+  margin-left:  ceil(($gutter / -2));
+  margin-right: floor(($gutter / -2));
+  @include clearfix;
+}

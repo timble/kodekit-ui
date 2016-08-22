@@ -1,0 +1,409 @@
+// Utilities
+//
+// Utilities
+//
+// Styleguide 6.0
+
+/**
+ * Adding class three times so we win over most other classes without using
+ * !important. Most selectors are max three long e.g.:
+ * `.some.longer[css=selector]` will still lose from `.selector.selector.selector`
+ * since we load this file last
+ */
+
+/*
+Dynamic content holder
+
+Add `<script>` and other hidden content (like modals) inside this div so the elements won't be in the way for flexbox
+
+markup:
+<div class="k-dynamic-content-holder">...</div>
+
+Styleguide 6.1
+
+*/
+
+.k-dynamic-content-holder.k-dynamic-content-holder.k-dynamic-content-holder {
+  display: none;
+}
+
+
+
+/*
+Hidden
+
+Hide content in a non-accessible way. Content is hidden for everybody including screenreaders
+
+markup:
+<div class="k-hidden">...</div>
+
+Styleguide 6.2
+
+*/
+
+.k-is-hidden.k-is-hidden.k-is-hidden {
+  display: none;
+}
+
+
+
+/*
+Loader
+
+CSS only loading animation.
+- Falls back to `Loading...` on non capable browsers
+- Add `k-hidden` class to the element when items are done loading
+
+.k-loader--small - Small
+.k-loader--medium - Medium
+.k-loader--large - Large
+
+markup:
+<span class="k-loader {$modifiers}">Loading...</span>
+
+sg-wrapper:
+<div>
+    <sg-wrapper-content/>
+</div>
+
+Styleguide 6.3
+
+*/
+
+.k-loader {
+  @include modernizr('.k-cssanimations.k-boxshadow') {
+    display: inline-block;
+    color: $loader-color;
+    font-size: $loader-size-small;
+    margin: 0 auto 2em;
+    position: relative;
+    text-indent: -9999em;
+    vertical-align: middle;
+
+    &,
+    &:before,
+    &:after {
+      border-radius: 50%;
+      width: 1em;
+      height: 1em;
+      animation-fill-mode: both;
+      animation: k-loader $loader-duration infinite ease-in-out;
+    }
+
+    & {
+      left: 1.25em;
+    }
+
+    &:before {
+      left: -1.25em;
+      animation-delay: -($loader-duration / 8);
+    }
+
+    &:after {
+      left: 1.25em;
+      animation-delay: ($loader-duration / 8);
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+    }
+
+
+    /* Sizes */
+
+    &.k-loader--small {
+      font-size: $loader-size-small;
+    }
+
+    &.k-loader--medium {
+      font-size: $loader-size-medium;
+    }
+
+    &.k-loader--large {
+      font-size: $loader-size-large;
+    }
+  }
+
+  @keyframes k-loader {
+    0%,
+    80%,
+    100% {
+      box-shadow: 0 1em 0 -0.5em;
+    }
+    40% {
+      box-shadow: 0 1em 0 0;
+    }
+  }
+}
+
+/*
+Loader container
+
+Cover it's entire parent (the parent with an `absolute` or `relative` position)
+- Add `k-hidden` class to the element when items are done loading
+
+markup:
+<div class="k-loader-container">
+    <span class="k-loader k-loader--large">Loading...</span>
+</div>
+
+sg-wrapper:
+<div style="position:relative;">
+    <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui.</p>
+    <p>Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec ullamcorper nulla non metus auctor fringilla. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <sg-wrapper-content/>
+</div>
+
+Styleguide 6.3.1
+
+*/
+
+.k-loader-container {
+  @include coverall;
+  z-index: 5;
+  background: rgba($loader-container-background,$loader-container-opacity);
+  display: flex;
+  align-items: center;
+
+  .k-loader {
+    @include modernizr('.k-cssanimations.k-boxshadow') {
+      left: 0;
+    }
+  }
+}
+
+
+
+/*
+No margin
+
+Remove all margins from an element
+
+markup:
+<div class="k-no-margin">...</div>
+
+Styleguide 6.4
+
+*/
+
+.k-no-margin.k-no-margin.k-no-margin {
+  margin: 0;
+}
+
+
+
+/*
+No transition
+
+Disable all transitions
+
+markup:
+<div class="k-no-transition">...</div>
+
+Styleguide 6.5
+
+*/
+
+.k-no-transition.k-no-transition.k-no-transition {
+  transition: none;
+}
+
+
+
+/*
+No wrap
+
+Nowrap element
+
+markup:
+<div class="k-no-wrap">...</div>
+
+Styleguide 6.6
+
+*/
+
+.k-no-wrap.k-no-wrap.k-no-wrap {
+  white-space: nowrap;
+}
+
+
+
+/*
+Visually hidden
+
+Hide the content in an accessible way. Content is hidden for viewers but not for screenreaders
+
+markup:
+<div class="k-visually-hidden">...</div>
+
+Styleguide 6.7
+
+*/
+
+.k-visually-hidden.k-visually-hidden.k-visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+
+
+/*
+Visually shown
+
+Show content that have the visually-hidden class
+- Use as @extend for items that are already extending `.k-visually-hidden`
+- Try not to use `.k-visually-hidden` and `.k-visually-shown` classes together if possible.
+
+markup:
+<div class="k-visually-shown">...</div>
+
+Styleguide 6.8
+
+*/
+
+.k-visually-shown.k-visually-shown.k-visually-shown {
+  position: static;
+  overflow: visible;
+  clip: auto;
+  height: auto;
+  width: auto;
+  margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+/*
+Ratio content
+
+markup:
+<div class="k-ratio-block k-ratio-block--16-to-9">
+    <div class="k-loader"></div>
+    <img class="k-ratio-block__body" src="{image source}" alt="{alternative text}" />
+</div>
+<div class="k-ratio-block k-ratio-block--16-to-9">
+    <div class="k-ratio-block__body">
+        <div class="k-ratio-block__centered">
+            ...
+        </div>
+    </div>
+</div>
+<div class="k-ratio-block k-ratio-block--16-to-9">
+    <div class="k-ratio-block__body">
+        <div class="k-ratio-block__centered">
+            <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper.</p>
+        </div>
+    </div>
+</div>
+
+sg-wrapper:
+<div style="width: 280px">
+    <sg-wrapper-content/>
+</div>
+
+Styleguide 6.9
+
+*/
+
+.k-ratio-block {
+  position: relative;
+  width: 100%;
+
+  &--16-to-9 {
+    @include ratio-block(16 to 9);
+  }
+
+  &--4-to-3 {
+    @include ratio-block(4 to 3);
+  }
+
+  &--3-to-2 {
+    @include ratio-block(3 to 2);
+  }
+
+  &--2-to-3 {
+    @include ratio-block(2 to 3);
+  }
+
+  &--2-to-1 {
+    @include ratio-block(2 to 1);
+  }
+
+  &--1-to-2 {
+    @include ratio-block(1 to 2);
+  }
+
+  &--1-to-1 {
+    @include ratio-block(1 to 1);
+  }
+
+  &.k-is-loaded {
+    .k-loader.k-loader {
+      opacity: 0;
+    }
+  }
+
+  .k-loader.k-loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  .k-ratio-block__body {
+    @include coverall;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .k-ratio-block__centered {
+    display: block;
+    flex: 0 0 auto;
+    overflow: auto;
+    max-width: 100%;
+    max-height: 100%;
+    backface-visibility: hidden;
+    
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+}
+
+
+.k-color-error {
+  color: $color-error;
+}
+
+
+.k-content-block {
+  @include content-block;
+}
+
+
+
+.k-position-relative {
+  position: relative;
+}

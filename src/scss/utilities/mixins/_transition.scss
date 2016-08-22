@@ -1,0 +1,12 @@
+// Transition
+// Set a default transition to be used in the whole project
+// 1. No 1 pixel jumps on smooth transitons
+
+@mixin transition(
+  $properties: all,
+  $duration: $transition-duration,
+  $easing: $transition-easing) {
+
+  transition: $properties $duration $easing;
+  -webkit-backface-visibility:hidden; // 1
+}

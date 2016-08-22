@@ -1,0 +1,31 @@
+// Graphical psuedo element
+// Set element to position relative and add a psuedo element with position absolute and a "content"
+
+@mixin psuedo(
+  $psuedo: after,
+  $parentposition: true,
+  $display: true,
+  $position: true,
+  $content: true) {
+
+  @if $parentposition == true {
+    position: relative;
+  }
+
+  &:#{$psuedo} {
+
+    @if $display == true {
+      display: block;
+    }
+
+    @if $position == true {
+      position: absolute;
+    }
+
+    @if $content == true {
+      content: " ";
+    }
+
+    @content;
+  }
+}

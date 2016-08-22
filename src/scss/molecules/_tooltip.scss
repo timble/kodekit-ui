@@ -1,0 +1,145 @@
+/* Tooltip
+   ========================================================================== */
+
+/*
+Tooltips
+
+markup:
+<a href="javascript:void(0)" class="k-js-tooltip" data-toggle="tooltip" data-original-title="Tooltip">Tooltip on top</a>
+
+sg-wrapper:
+<p style="margin: 30px 0;">
+    <sg-wrapper-content/>
+</p>
+
+Styleguide 2.25
+
+*/
+
+/**
+ * 1. Our parent element can be arbitrary since tooltips are by default inserted as a sibling of their target element.
+ *    So reset our font and text properties to avoid inheriting weird values.
+ */
+
+.k-tooltip {
+  position: absolute;
+  z-index: $zindex-tooltip;
+  display: block;
+  font-size: $font-size-small; /* 1 */
+  opacity: 0;
+
+  &.in {
+    opacity: $tooltip-opacity;
+  }
+
+  &.top {
+    margin-top: -3px;
+    padding: $tooltip-arrow-width 0;
+  }
+
+  &.right {
+    margin-left: 3px;
+    padding: 0 $tooltip-arrow-width;
+  }
+
+  &.bottom {
+    margin-top: 3px;
+    padding: $tooltip-arrow-width 0;
+  }
+
+  &.left {
+    margin-left: -3px;
+    padding: 0 $tooltip-arrow-width;
+  }
+}
+
+
+/**
+ * Wrapper for the tooltip content
+ */
+
+.k-tooltip__inner {
+  max-width: $tooltip-max-width;
+  padding: 3px 8px;
+  color: $tooltip-color;
+  text-align: center;
+  background-color: $tooltip-background;
+  border-radius: $border-radius;
+}
+
+
+/* Arrows */
+
+.k-tooltip__arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+
+.k-tooltip {
+  &.top .k-tooltip__arrow {
+    bottom: 0;
+    left: 50%;
+    margin-left: -$tooltip-arrow-width;
+    border-width: $tooltip-arrow-width $tooltip-arrow-width 0;
+    border-top-color: $tooltip-arrow-color;
+  }
+
+  &.top-left .k-tooltip__arrow {
+    bottom: 0;
+    right: $tooltip-arrow-width;
+    margin-bottom: -$tooltip-arrow-width;
+    border-width: $tooltip-arrow-width $tooltip-arrow-width 0;
+    border-top-color: $tooltip-arrow-color;
+  }
+
+  &.top-right .k-tooltip__arrow {
+    bottom: 0;
+    left: $tooltip-arrow-width;
+    margin-bottom: -$tooltip-arrow-width;
+    border-width: $tooltip-arrow-width $tooltip-arrow-width 0;
+    border-top-color: $tooltip-arrow-color;
+  }
+
+  &.right .k-tooltip__arrow {
+    top: 50%;
+    left: 0;
+    margin-top: -$tooltip-arrow-width;
+    border-width: $tooltip-arrow-width $tooltip-arrow-width $tooltip-arrow-width 0;
+    border-right-color: $tooltip-arrow-color;
+  }
+
+  &.left .k-tooltip__arrow {
+    top: 50%;
+    right: 0;
+    margin-top: -$tooltip-arrow-width;
+    border-width: $tooltip-arrow-width 0 $tooltip-arrow-width $tooltip-arrow-width;
+    border-left-color: $tooltip-arrow-color;
+  }
+
+  &.bottom .k-tooltip__arrow {
+    top: 0;
+    left: 50%;
+    margin-left: -$tooltip-arrow-width;
+    border-width: 0 $tooltip-arrow-width $tooltip-arrow-width;
+    border-bottom-color: $tooltip-arrow-color;
+  }
+
+  &.bottom-left .k-tooltip__arrow {
+    top: 0;
+    right: $tooltip-arrow-width;
+    margin-top: -$tooltip-arrow-width;
+    border-width: 0 $tooltip-arrow-width $tooltip-arrow-width;
+    border-bottom-color: $tooltip-arrow-color;
+  }
+
+  &.bottom-right .k-tooltip__arrow {
+    top: 0;
+    left: $tooltip-arrow-width;
+    margin-top: -$tooltip-arrow-width;
+    border-width: 0 $tooltip-arrow-width $tooltip-arrow-width;
+    border-bottom-color: $tooltip-arrow-color;
+  }
+}

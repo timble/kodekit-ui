@@ -1,0 +1,46 @@
+/* Content wrapper
+   ========================================================================== */
+
+/*
+Content wrapper
+
+- Use as <b>child</b> of the `.k-wrapper` container only
+- {unsureText}
+
+markup:
+<div class="k-content-wrapper">
+    ...
+</div><!-- .k-content-wrapper -->
+
+Styleguide 3.3
+
+*/
+
+/**
+ * 1. Clearing toolbar floats when flexbox is not in use
+ */
+
+.k-content-wrapper {
+  clear: both; /* 1 */
+  margin: 0;
+  overflow: hidden;
+  @include border(bottom, $content-border);
+
+
+  /* Faking flexbox on older browsers by using table styling */
+
+  @include breakpoint($desktop) {
+    display: table;
+    width: 100%;
+  }
+
+
+  /* When flexbox is in use */
+
+  @include flexbox {
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+    border-bottom: none;
+  }
+}

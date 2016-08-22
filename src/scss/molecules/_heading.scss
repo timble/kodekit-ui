@@ -1,0 +1,21 @@
+/* Heading
+   ========================================================================== */
+
+/*
+Heading
+
+markup:
+<!-- Heading -->
+<div class="k-heading">
+    Heading
+</div><!--.k-heading-->
+
+Styleguide 2.11
+
+*/
+
+.k-heading {
+  font-size: $font-size-huge;
+  line-height: $line-height-huge;
+  @include content-block($spacing);
+}

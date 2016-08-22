@@ -1,0 +1,33 @@
+/* Component
+   ========================================================================== */
+
+/*
+Component
+
+- Use as <b>child</b> of the `.k-content` container only
+- Can be preceded by a `.k-title-bar.k-title-bar--mobile` or a `.k-toolbar`
+- {unsureText}
+
+markup:
+<div class="k-component">
+    ...
+</div><!-- .k-component -->
+
+Styleguide 3.6
+
+*/
+
+.k-component {
+  background: $component-background;
+
+  @include flexbox {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    overflow: auto;
+  }
+
+  @include resizing {
+    overflow: hidden;
+  }
+}

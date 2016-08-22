@@ -1,0 +1,976 @@
+/* Table
+   ========================================================================== */
+
+/*
+Table
+
+A complete table
+
+markup:
+<!-- Table -->
+<div class="k-table-container">
+    <div class="k-table">
+        <table class="k-js-fixed-table-header k-js-responsive-table">
+        <thead>
+            <tr>
+                <th width="1%" class="k-table-data--form"><input class="k-js-grid-checkall" type="checkbox" /></th>
+                <th width="1%" data-toggle="true" class="k-table-data--toggle"></th>
+                <th width="1%" class="k-table-data--icon"></th>
+                <th class="k-sort-desc"><a href="javascript:void(0)">Item title</a></th>
+                <th width="5%" data-hide="phone,tablet"><a href="javascript:void(0)">State</a></th>
+                <th width="15%" data-hide="phone"><a href="javascript:void(0)">Category</a></th>
+                <th width="5%" data-hide="phone,tablet,desktop"><a href="javascript:void(0)">Date</a></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox" /></td>
+                <td class="k-table-data--toggle"></td>
+                <td class="k-table-data--icon"><sg-insert>2.12.1-5</sg-insert></td>
+                <sg-insert>2.21.2</sg-insert>
+                <td><sg-insert>2.21.5-2</sg-insert></td>
+                <sg-insert>2.21.2</sg-insert>
+                <td class="k-table-data--nowrap">01 January 1999</td>
+            </tr>
+            <tr>
+                <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox" /></td>
+                <td class="k-table-data--toggle"></td>
+                <td class="k-table-data--icon"><sg-insert>2.12.1-5</sg-insert></td>
+                <sg-insert>2.21.3</sg-insert>
+                <td><sg-insert>2.21.5-2</sg-insert></td>
+                <sg-insert>2.21.2</sg-insert>
+                <td class="k-table-data--nowrap">01 January 1999</td>
+            </tr>
+            <tr class="k-table__sub-header">
+                <th colspan="7">
+                    Sub header
+                </th>
+            </tr>
+            <tr>
+                <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox" /></td>
+                <td class="k-table-data--toggle"></td>
+                <td class="k-table-data--icon"><sg-insert>2.12.1-5</sg-insert></td>
+                <sg-insert>2.21.3</sg-insert>
+                <td><sg-insert>2.21.5-2</sg-insert></td>
+                <sg-insert>2.21.2</sg-insert>
+                <td class="k-table-data--nowrap">01 January 1999</td>
+            </tr>
+            <tr>
+                <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox" /></td>
+                <td class="k-table-data--toggle"></td>
+                <td class="k-table-data--icon"><sg-insert>2.12.1-5</sg-insert></td>
+                <sg-insert>2.21.3</sg-insert>
+                <td><sg-insert>2.21.5-2</sg-insert></td>
+                <sg-insert>2.21.2</sg-insert>
+                <td class="k-table-data--nowrap">01 January 1999</td>
+            </tr>
+            <tr>
+                <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox" /></td>
+                <td class="k-table-data--toggle"></td>
+                <td class="k-table-data--icon"><sg-insert>2.12.1-5</sg-insert></td>
+                <sg-insert>2.21.3</sg-insert>
+                <td><sg-insert>2.21.5-2</sg-insert></td>
+                <sg-insert>2.21.2</sg-insert>
+                <td class="k-table-data--nowrap">01 January 1999</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    <sg-insert>2.21.1</sg-insert>
+</div>
+
+sg-wrapper:
+<div class="k-component">
+    <sg-wrapper-content/>
+</div>
+
+Styleguide 2.21
+
+*/
+
+.k-table-container {
+  background: $table-background;
+
+  @include flexbox {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    overflow: auto;
+  }
+
+  @include resizing {
+    overflow: hidden;
+  }
+}
+
+.k-table {
+  overflow: auto;
+
+  @include flexbox {
+    display: flex;
+    flex: 1 1 auto;
+    background: $table-cell-background-even;
+  }
+}
+
+
+/**
+ * Default table settings
+ *
+ * 1. override browser default
+ */
+
+.k-table-container {
+  table {
+    width: 100%;
+    text-align: left;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: inherit; /* 1 */
+
+    @include rtl {
+      text-align: right;
+    }
+
+    @include flexbox {
+      flex: 1 1 auto;
+    }
+  }
+
+
+  /**
+   * Cells
+   *
+   * 1. Position checkbox
+   * 2. Remove default margin
+   */
+
+  th,
+  td {
+    border: none;
+    position: relative;
+    height: $table-cell-size;
+    vertical-align: middle;
+    text-align: left;
+    line-height: 1;
+    @include transition;
+
+    input {
+      display: inline-block; /* 1 */
+      vertical-align: middle; /* 1 */
+      margin: 0; /* 2 */
+    }
+  }
+
+  @include rtl {
+    th,
+    td {
+      text-align: right;
+    }
+  }
+
+
+  /**
+   * Head
+   *
+   * 1. Don't set a vertical padding on table headers. Set padding on table heading children
+   *    We do this so <a> elements are fully clickable for sorting
+   * 2. Don't use long header titles since they won't be wrapped
+   * 3. Whole <th> should be clickable
+   * 4. Set padding here
+   */
+
+  th {
+    @include border(bottom, $table-header-border);
+    z-index: 1;
+    padding: 0 $table-cell-spacing-horizontal; /* 1 */
+    white-space: nowrap; /* 2 */
+    background: $table-header-background;
+    font-weight: $regular;
+
+    a {
+      display: block; /* 3 */
+      padding: $table-cell-spacing-vertical $table-cell-spacing-horizontal; /* 4 */
+      margin-left: -$table-cell-spacing-horizontal;
+      margin-right: -$table-cell-spacing-horizontal;
+      line-height: $table-cell-size - ($table-cell-spacing-vertical * 2);
+      text-decoration: none;
+      @include transition;
+
+      &:focus,
+      &:hover {
+        background: $table-header-hover-background;
+      }
+    }
+
+
+    /* Size icons accordingly */
+
+    [class*="k-icon"] {
+      font-size: $icon-size;
+      line-height: 1;
+      vertical-align: middle;
+    }
+  }
+
+
+  /**
+   * Body
+   *
+   * 1. Small extra info below title display:block to display below title
+   */
+
+  td {
+    @include border(bottom, $table-cell-border);
+    padding: $table-cell-spacing-vertical $table-cell-spacing-horizontal;
+    background: $table-cell-background-even;
+  }
+
+  tr:last-child {
+    td {
+      border-bottom: none;
+    }
+  }
+
+
+  tr:nth-child(odd) {
+    td {
+      background: $table-cell-background-odd;
+    }
+  }
+
+
+  /* Hover background */
+
+  tr,
+  tr:nth-child(n) {
+    &:focus,
+    &:hover {
+      td {
+        background: $table-cell-hover-background-even;
+      }
+    }
+  }
+
+  [class*="k-icon"] {
+    display: inline-block;
+  }
+}
+
+@import "pagination";
+
+
+/**
+ * Table elements
+ */
+
+/*
+Item title
+
+markup:
+<td class="k-table-data--ellipsis">
+  <a href="javascript:void(0)">Item title</a>
+</td>
+
+sg-wrapper:
+<div class="k-table-container">
+    <div class="k-table">
+        <table>
+        <tbody>
+            <tr>
+                <sg-wrapper-content/>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+
+
+Styleguide 2.21.2
+
+*/
+
+/*
+Item subtitle
+
+- Use the `small` element for subtitle
+
+markup:
+<td class="k-table-data--ellipsis">
+    <a href="javascript:void(0)">Curabitur blandit tempus porttitor.</a>
+    <small>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</small>
+</td>
+
+sg-wrapper:
+<div class="k-table-container">
+    <div class="k-table">
+        <table>
+        <tbody>
+            <tr>
+                <sg-wrapper-content/>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+
+Styleguide 2.21.3
+
+*/
+
+.k-table-container {
+  a {
+    display: inline-block;
+    vertical-align: middle;
+    text-decoration: none;
+    @include transition;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  small {
+    display: block;
+    font-size: $font-size-small;
+    line-height: $line-height-small;
+  }
+}
+
+
+/*
+Table cell settings
+
+Different available table cell settings
+
+.k-table-data--right - Right aligned text
+.k-table-data--center - Center aligned text
+.k-table-data--nowrap - Content will not be wrapped (useful for dates, file sizes etc.)
+.k-table-data--wrap - Wrap long content (useful for urls etc.)
+.k-table-data--icon - Cells that only contain an icon
+.k-table-data--form - Cells that only contain a form element like a radio input or checkbox
+.k-table-data--toggle - Empty cell that will hold the responsive toggle button
+.k-table-data--ellipsis - Break content at the end of the cell and add text ellipsis
+
+markup:
+<td class="{$modifiers}">Content</td>
+
+sg-wrapper:
+<div class="k-table-container">
+    <div class="k-table">
+        <table>
+        <tbody>
+            <tr>
+                <sg-wrapper-content/>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+
+Styleguide 2.21.4
+
+*/
+
+.k-table-container {
+  .k-table-data--right {
+    text-align: right;
+
+    @include rtl {
+      text-align: left;
+    }
+  }
+
+  .k-table-data--center {
+    text-align: center;
+  }
+
+  .k-table-data--nowrap {
+    white-space: nowrap;
+  }
+
+  .k-table-data--wrap {
+    word-break: break-all;
+  }
+
+  .k-table-data--toggle,
+  .k-table-data--form,
+  .k-table-data--icon {
+    white-space: nowrap;
+    line-height: 1;
+    vertical-align: middle;
+
+    a, span, input, svg, div, small {
+      vertical-align: middle;
+      line-height: 1;
+    }
+
+    [class*="k-icon"] {
+      font-size: $icon-size;
+    }
+  }
+
+  .k-table-data--toggle {
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+    overflow: hidden;
+    width: 0;
+    visibility: visible;
+  }
+
+  .k-table-data--toggle--hidden {
+    padding: 0;
+
+    span, div, img, a {
+      display: none !important;
+    }
+  }
+
+  .footable.breakpoint {
+    .k-table-data--toggle {
+      width: 1%;
+      padding-left: $table-cell-spacing-horizontal;
+      padding-right: $table-cell-spacing-horizontal;
+    }
+  }
+
+  .k-table-data--form {
+    input {
+      margin: 0 !important;
+    }
+  }
+
+  th.k-table-data--icon {
+    a {
+      line-height: $table-cell-size - ($table-cell-spacing-vertical * 2);
+    }
+  }
+
+  .k-table-data--ellipsis {
+    max-width: 0;
+    overflow: hidden;
+
+    a, span, input, svg, div, small {
+      vertical-align: middle;
+      max-width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+
+/*
+Table item states
+
+.k-table__item--state-pending - Pending
+.k-table__item--state-expired - Expired
+.k-table__item--state-unpublished - Unpublished
+.k-table__item--state-published - Published
+
+markup:
+<span class="k-table__item--state {$modifiers}">State</span>
+
+sg-wrapper:
+<div class="k-table-container">
+    <div class="k-table">
+        <table>
+        <tbody>
+            <tr>
+                <td>
+                    <sg-wrapper-content/>
+                </td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+
+Styleguide 2.21.5
+
+*/
+
+.k-table-container {
+  .k-table__item--state {
+    @include transition;
+
+
+    /* pointers for clickable elements */
+
+    button#{&},
+    a#{&} {
+      cursor: pointer;
+
+      &:focus,
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &-pending {
+      color: $color-warning;
+    }
+
+    &-expired {
+      color: $color-neutral;
+    }
+
+    &-unpublished {
+      color: $color-error;
+    }
+
+    &-published {
+      color: $color-success;
+    }
+  }
+}
+
+/*
+Table sub header
+
+Add sub headers in between rows
+
+markup:
+<tr class="k-table__sub-header">
+    <th colspan="[amount of cells]">
+        Sub header
+    </th>
+</tr>
+
+sg-wrapper:
+<div class="k-table-container">
+    <div class="k-table">
+        <table>
+        <tbody>
+            <sg-wrapper-content/>
+        </tbody>
+        </table>
+    </div>
+</div>
+
+Styleguide 2.21.6
+
+*/
+
+.k-table-container {
+  .k-table__sub-header {
+    th {
+      padding: 0.7em $table-cell-spacing-horizontal 0.5em;
+      height: auto;
+      font-size: $font-size-small;
+      line-height: $line-height-small;
+      font-weight: $bold;
+      vertical-align: middle;
+      text-transform: uppercase;
+      white-space: nowrap;
+      background: $table-header-background;
+      border-bottom-color: $table-cell-border;
+    }
+  }
+}
+
+
+/*
+Table levels
+
+A table displaying multiple levels
+
+markup:
+<div class="k-table-container">
+    <div class="k-table">
+        <table>
+        <thead>
+            <tr>
+                <th width="1%"><input type="checkbox" /></th>
+                <th>Heading</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td class="k-table__item-level k-table__item-level1">Level 1</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td class="k-table__item-level k-table__item-level2">Level 2</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td class="k-table__item-level k-table__item-level3">Level 3</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td class="k-table__item-level k-table__item-level1">Level 1</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td class="k-table__item-level k-table__item-level1">Level 1</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+
+Styleguide 2.21.7
+
+*/
+
+.k-table-container {
+  .k-table__item-level {
+    white-space: nowrap;
+
+    &:before {
+      content: " ";
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-left: 1px solid #bbb;
+      border-bottom: 1px solid #bbb;
+      position: absolute;
+      top: 50%;
+      margin-top: -.25em;
+
+      @include rtl {
+        border-left: none;
+        border-right: 1px solid #bbb;
+      }
+    }
+  }
+
+
+  /* Set proper spacing before levels */
+
+  @for $i from 1 through 15 {
+    .k-table__item-level#{$i} {
+      padding-left: 24px * ($i - 1) + $table-cell-spacing-horizontal;
+
+      @include rtl {
+        padding-left: 0;
+        padding-right: 24px * ($i - 1) + $table-cell-spacing-horizontal;
+      }
+
+      &:before {
+        left: (24px * ($i - 1)) - (18px - $table-cell-spacing-horizontal);
+
+        @include rtl {
+          left: auto;
+          right: (24px * ($i - 1)) - (18px - $table-cell-spacing-horizontal);
+        }
+      }
+    }
+  }
+
+
+  /* Do not display the level icon for the first level items */
+
+  .k-table__item-level1:before {
+    display: none;
+  }
+
+
+  /* Space icons away from text */
+
+  .k-table__item-level__icon-item {
+    position: relative;
+    padding-left: $icon-size + $spacing-tiny;
+
+    @include rtl {
+      padding-left: 0;
+      padding-right: $icon-size + $spacing-tiny;
+    }
+
+    [class*="k-icon"] {
+      position: absolute;
+      font-size: $icon-size;
+      top: 50%;
+      left: 0;
+      margin-top: -(round($icon-size / 2));
+
+      @include rtl {
+        left: auto;
+        right: 0;
+      }
+    }
+  }
+}
+
+
+/**
+ * Selected
+ *
+ * When rows are selected they are highlighted
+ *
+ * 1. Coloring Links and extra elements that don't color automatically with their parent
+ */
+
+/*
+Selected rows
+
+When rows are selected they are highlighted
+
+markup:
+<tr class="k-is-selected">
+    <td>Item</td>
+    <td>Item</td>
+    <td>Item</td>
+</tr>
+
+sg-wrapper:
+<div class="k-table-container">
+    <div class="k-table">
+        <table>
+        <tbody>
+            <tr>
+                <td>Item</td>
+                <td>Item</td>
+                <td>Item</td>
+            </tr>
+            <sg-wrapper-content/>
+            <tr>
+                <td>Item</td>
+                <td>Item</td>
+                <td>Item</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+
+Styleguide 2.21.8
+
+*/
+
+.k-table-container {
+  tr.k-is-selected {
+    td {
+      background: $table-cell-accent-background;
+      color: $table-cell-accent-color;
+
+      a, i, span {
+        color: $table-cell-accent-color;
+      }
+    }
+
+
+    /* Re-set background on td's while hovering th */
+
+    &:hover,
+    &:focus {
+      td {
+        background-color: $table-cell-accent-hover-background;
+      }
+    }
+  }
+}
+
+
+/*
+Positioner
+
+For drag and drop sorting
+- Add [data-position] to display a position on the positioner
+
+default - Default - shows "no-drop" cursor
+.k-is-active - Active item - shows "move" cursor
+
+markup:
+<span class="k-positioner {$modifiers}" data-position="1"></span>
+
+sg-wrapper:
+<div class="k-table-container">
+    <div class="k-table">
+        <table>
+        <tbody>
+            <tr>
+                <td>
+                    <sg-wrapper-content/>
+                </td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+
+Styleguide 2.21.9
+
+*/
+
+.k-positioner {
+  display: inline-block;
+  vertical-align: middle;
+  width: $table-row-positioner-size;
+  height: round($table-row-positioner-size / 4);
+  margin-top: round(($table-row-positioner-size - (round($table-row-positioner-size / 4))) / 2);
+  margin-bottom: round(($table-row-positioner-size - (round($table-row-positioner-size / 4))) / 2);
+  border-top: 1px solid $table-row-positioner-color;
+  border-bottom: 1px solid $table-row-positioner-color;
+  cursor: no-drop;
+
+  &.k-is-active {
+    cursor: move;
+  }
+
+  @include psuedo(before) {
+    width: $table-row-positioner-size;
+    height: round(($table-row-positioner-size / 2) + 2px);
+    border-top: 1px solid $table-row-positioner-color;
+    border-bottom: 1px solid $table-row-positioner-color;
+    top: -(round($table-row-positioner-size / 4));
+  }
+
+  &:after {
+    position: absolute;
+    width: ($table-row-positioner-size * 2);
+    height: ($table-row-positioner-size * 2);
+    top: -($table-row-positioner-size - 1px);
+    left: -($table-row-positioner-size / 2);
+    content: attr(data-position);
+    text-indent: 3px;
+    vertical-align: bottom;
+    color: #333;
+    text-shadow: 0 0 3px white;
+    @include transition;
+  }
+}
+
+.k-table-container {
+  tr.k-is-selected {
+    .k-positioner {
+      &:after {
+        color: white;
+        text-shadow: none;
+      }
+    }
+  }
+}
+
+
+/*
+Table heading sorting
+
+sort-ascending - Ascending
+sort-descending - Descending
+
+markup:
+<th>
+    <a href="javascript:void(0)">
+        Title
+        <span class="k-icon-{$modifiers}" aria-hidden="true">
+        <span class="k-visually-hidden">Sort column</span>
+    </a>
+</th>
+
+sg-wrapper:
+<div class="k-table-container">
+    <div class="k-table">
+        <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <sg-wrapper-content/>
+                <th>Title</th>
+            </tr>
+        </thead>
+        </table>
+    </div>
+</div>
+
+Styleguide 2.21.10
+
+*/
+
+th {
+  .k-icon-sort-ascending,
+  .k-icon-sort-descending {
+    margin-left: 0.5em;
+    vertical-align: middle;
+  }
+
+  @include rtl {
+    .k-icon-sort-ascending,
+    .k-icon-sort-descending {
+      margin-left: 0;
+      margin-right: 0.5em;
+    }
+  }
+}
+
+@import "responsive-table";
+
+/*
+Floating thead
+
+A floating thead so the head will stay on top when scrolling the tables
+- Add the `.k-js-foxed-table` class to the `<table>`
+
+markup:
+<table class="k-js-fixed-table-header">
+    <thead>
+    <tr>
+        <th>Heading</th>
+        <th>Heading</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Content</td>
+        <td>Content</td>
+    </tr>
+    <tr>
+        <td>Content</td>
+        <td>Content</td>
+    </tr>
+    <tr>
+        <td>Content</td>
+        <td>Content</td>
+    </tr>
+    <tr>
+        <td>Content</td>
+        <td>Content</td>
+    </tr>
+    <tr>
+        <td>Content</td>
+        <td>Content</td>
+    </tr>
+    <tr>
+        <td>Content</td>
+        <td>Content</td>
+    </tr>
+    </tbody>
+</table>
+
+sg-wrapper:
+<div class="sg-flexbox" style="height: 175px;">
+    <div class="k-table-container">
+        <div class="k-table">
+            <sg-wrapper-content/>
+        </div>
+    </div>
+</div>
+
+Styleguide 2.21.12
+
+*/
+
+/**
+ * This class is created by the floatThead plugin that's why it's not k-float-thead-wrapper
+ *
+ * 1. Overriding inline styling, we don't need a z-index of 1000+
+ */
+
+.floatThead-wrapper {
+  z-index: 1 !important; /* 1 */
+
+  @include flexbox {
+    display: flex;
+    flex: 0 1 auto;
+    overflow: auto;
+  }
+
+  @include resizing {
+    overflow: hidden;
+  }
+}

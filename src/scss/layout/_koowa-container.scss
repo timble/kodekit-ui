@@ -1,0 +1,63 @@
+/* Koowa container
+   ========================================================================== */
+
+/*
+Koowa container
+
+This is the most outer container of each page.
+- A `.koowa-container` may only live once on the page and should be handled as an `id`
+- Need to namespace something outside this container? Use the `.koowa` class
+- The `koowa` class should always be added to the `koowa-container` element for namespacing purposes
+
+markup:
+<div class="koowa-container koowa">
+    ...
+</div><!-- .koowa-container -->
+
+Styleguide 3.1
+
+*/
+
+/**
+ * 1. By using a max-width we essentially set a min-width when the contents are
+ *    to large for the koowa container. The reason we don't use min-width is
+ *    because if the content is only 300px we don't need horizontal scrollbars
+ * 2. Reset the max-width when viewport is as large as minwidth
+ * 3. Default styling
+ */
+
+&.koowa-container {
+  max-width: $minwidth; /* 1 */
+  margin: 0; /* 6 */
+  border: none; /* 6 */
+  width: 100%;
+  overflow: hidden;
+  padding: $koowa-padding;
+
+  background: $koowa-background; /* 3 */
+  color: $color-type; /* 3 */
+
+  -webkit-font-smoothing: $webkit-font-smoothing;
+  -moz-osx-font-smoothing: $firefox-font-smoothing;
+  -webkit-overflow-scrolling: touch;
+
+  @include breakpoint($minwidth) {
+    max-width: none; /* 2 */
+  }
+
+
+  /* When flexbox is enabled */
+
+  @include flexbox {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+  }
+
+
+  /* RTL */
+
+  @include rtl {
+    direction: rtl;
+  }
+}

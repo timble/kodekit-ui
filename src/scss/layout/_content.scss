@@ -1,0 +1,164 @@
+/* Content
+   ========================================================================== */
+
+/*
+Content
+
+- Use as <b>child</b> of the `.k-content-wrapper` container only
+- {unsureText}
+
+markup:
+<div class="k-content k-js-content">
+    ...
+</div><!-- .k-content -->
+
+Styleguide 3.5
+
+*/
+
+/**
+ * 1. Set the z-index higher than the menus
+ * 2. Setting a background so container will fall nicely over the sidebar
+ * 3. Set transition for off canvas sidebar
+ */
+
+.k-content {
+  position: relative; /* 1 */
+  z-index: 2; /* 1 */
+  background: $content-background; /* 2 */
+  @include transition(transform); /* 3 */
+
+
+  /* Faking flexbox on older browsers by using table styling */
+
+  @include breakpoint($desktop) {
+    display: table-cell;
+    width: 100%;
+  }
+
+
+  /**
+   * When flexbox is in use
+   *
+   * 1. Reset width needed for table
+   * 2. Set overflow for breadcrumbs to properly work
+   */
+
+  @include flexbox {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    width: auto; /* 1 */
+    overflow: hidden; /* 2 */
+  }
+}
+
+
+/**
+ * Container when toggled
+ *
+ * 1. Set left to the width of the menu so the menu will appear
+ * 2. Set right to the negative width of the menu so the menu will appear
+ * 3. Reset when screen is wide enough
+ */
+
+.k-show-left-menu {
+  .k-content {
+    transform: translate($sidebar-width, 0); /* 1 */
+
+    @include breakpoint($desktop) {
+      transform: translate(0, 0); /* 3 */
+    }
+  }
+
+  @include rtl {
+    .k-content {
+      transform: translate(-($sidebar-width), 0);
+
+      @include breakpoint($desktop) {
+        transform: translate(0, 0);
+      }
+    }
+  }
+}
+
+.k-show-right-menu {
+  .k-content {
+    transform: translate(-($sidebar-width), 0); /* 2 */
+
+    @include breakpoint($desktop) {
+      transform: translate(0, 0); /* 3 */
+    }
+  }
+
+  @include rtl {
+    .k-content {
+      transform: translate($sidebar-width, 0);
+
+      @include breakpoint($desktop) {
+        transform: translate(0, 0);
+      }
+    }
+  }
+}
+
+.k-is-opened-left,
+.k-is-opened-right {
+  .k-content {
+    overflow: hidden;
+
+    @include breakpoint($desktop) {
+      overflow: auto; /* 3 */
+    }
+
+    @include resizing {
+      overflow: hidden;
+    }
+  }
+}
+
+
+/**
+ * The overlay
+ *
+ * 1. Cover the entire container
+ * 2. Hide by setting z-index to -1 because item can't transition if display is set from none to block
+ * 3. Set opacity to 0 by default
+ * 4. Hide overlay when screen is wide enough
+ */
+
+.k-off-canvas-overlay {
+  @include coverall; /* 1 */
+  z-index: -1; /* 2 */
+  display: block;
+  opacity: 0; /* 3 */
+  content: " ";
+  background: $off-canvas-overlay-background;
+  @include transition(opacity);
+
+  @include breakpoint($desktop) {
+    display: none; /* 4 */
+  }
+}
+
+
+/**
+ * Overlay when toggled
+ *
+ * 1. Set opacity
+ * 2. Set z-index to 1 so it will become visible
+ */
+
+.k-show-left-menu,
+.k-show-right-menu {
+  .k-off-canvas-overlay {
+    opacity: $off-canvas-overlay-opacity; /* 1 */
+  }
+}
+
+.k-is-opened-left,
+.k-is-opened-right {
+  .k-off-canvas-overlay {
+    z-index: 9; /* 2 */
+  }
+}

@@ -1,0 +1,35 @@
+/* Menubar
+   ========================================================================== */
+
+/*
+Menubar
+
+- Use as <b>first child</b> of the `.koowa-container` container only
+- Will always be followed by a `.k-wrapper` container
+- {unsureText}
+
+markup:
+<!-- Menubar -->
+<div class="k-menubar">
+    Menubar
+</div><!-- .k-menubar-->
+
+Styleguide 2.14
+*/
+
+.k-menubar {
+  @include border(bottom, $menubar-border);
+  min-height: $menubar-height;
+  background: $menubar-background;
+  color: $menubar-color;
+  padding: ($menubar-height - $font-size-large) / 2;
+  line-height: $menubar-height - $font-size-large;
+  font-size: $font-size-large;
+
+
+  /* When flexbox is in use */
+
+  @include flexbox {
+    flex: 0 0 auto;
+  }
+}

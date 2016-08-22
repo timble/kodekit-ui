@@ -1,0 +1,207 @@
+/* Title bar
+   ========================================================================== */
+
+/*
+Title bar
+
+- A titlebar that can be displayed above the `content-wrapper` when there's no toolbar
+- Very useful inside modal views
+- Always have at least a `k-titlebar` or a `k-toolbar` when there's a `k-sidebar` in your page!
+- Use as <b>first child</b> of the `.k-wrapper` only
+- {unsureText}
+
+markup:
+<div class="k-title-bar k-js-title-bar">
+    <div class="k-title-bar__heading">Title</div>
+</div><!-- .k-title-bar -->
+
+Styleguide 2.23
+
+*/
+
+/**
+ * 1. Set the z-index higher than the menus
+ * 2. Setting a background so container will fall nicely over the sidebar
+ * 3. Set transition for off canvas sidebar
+ */
+
+.k-title-bar {
+  @include border(bottom, $title-bar-border);
+  position: relative; /* 1 */
+  z-index: 10; /* 1 */
+  display: table;
+  width: 100%;
+  background: $title-bar-background; /* 2 */
+  color: $title-bar-color;
+  font-size: $font-size-huge;
+  @include transition(transform); /* 3 */
+
+
+  /* When flexbox is in use */
+
+  @include flexbox {
+    flex: 0 0 auto;
+  }
+}
+
+
+/**
+ * Titlebar when toggled
+ *
+ * 1. Set left to the width of the menu so the menu will appear
+ * 2. Set right to the negative width of the menu so the menu will appear
+ * 3. Reset when screen is wide enough
+ */
+
+.k-show-left-menu {
+  & > .k-title-bar {
+    transform: translate($sidebar-width, 0); /* 1 */
+
+    @include rtl {
+      transform: translate(-($sidebar-width), 0);
+    }
+
+    @include breakpoint($desktop) {
+      transform: translate(0, 0); /* 3 */
+
+      @include rtl {
+        transform: translate(0, 0);
+      }
+    }
+  }
+}
+
+.k-show-right-menu {
+  & > .k-title-bar {
+    transform: translate(-($sidebar-width), 0); /* 2 */
+
+    @include rtl {
+      transform: translate($sidebar-width, 0); /* 2 */
+    }
+
+    @include breakpoint($desktop) {
+      transform: translate(0, 0); /* 3 */
+
+      @include rtl {
+        transform: translate(0, 0);
+      }
+    }
+  }
+}
+
+
+/**
+ * Fake Overlay when toggled
+ *
+ * 1. Set opacity
+ * 2. Set z-index so it will become visible
+ */
+
+.k-show-left-menu,
+.k-show-right-menu {
+  .k-title-bar:before {
+    opacity: 0.75; /* 1 */
+  }
+}
+
+.k-is-opened-left,
+.k-is-opened-right {
+  .k-title-bar:before {
+    z-index: 2; /* 2 */
+  }
+}
+
+
+/**
+ * Titlebar contents
+ *
+ * 1. Also cover the bottom border
+ */
+
+.k-title-bar {
+  .k-off-canvas-overlay {
+    bottom: -1px; /* 1 */
+  }
+
+  .k-off-canvas-menu-toggle-holder,
+  .k-title-bar__heading {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .k-off-canvas-menu-toggle-holder {
+    white-space: nowrap;
+  }
+
+  .k-title-bar__heading {
+    width: 100%;
+    padding: $spacing-small;
+    text-align: center;
+
+    @include breakpoint($charlie) {
+      text-align: left;
+
+      @include rtl {
+        text-align: right;
+      }
+    }
+  }
+}
+
+
+/*
+Mobile title
+
+Title just for mobile views since the navigation is hidden
+- Use <b>never</b> together with a `.k-title-bar`
+- Use <b>only</b> as <b>child</b> of `.k-content`
+- Only visible on smaller screens
+- {unsureText}
+
+markup:
+<!-- Title when sidebar is invisible -->
+<div class="k-title-bar k-title-bar--mobile k-js-title-bar">
+  <div class="k-title-bar__heading">{Title}</div>
+</div><!-- .k-title-bar -->
+
+Styleguide 2.23.1
+
+*/
+
+.k-title-bar--mobile {
+  @include border(bottom, $title-bar-mobileborder);
+  background: $title-bar-mobilebackground;
+
+  @include breakpoint($charlie) {
+    display: none;
+  }
+}
+
+
+/*
+Inline title bar
+
+Title just for mobile views since the navigation is hidden
+- Use <b>never</b> together with a `.k-title-bar`
+- Use <b>only</b> as <b>child</b> of `.k-content`
+- Only visible on smaller screens
+- {unsureText}
+
+markup:
+<!-- Title when sidebar is invisible -->
+<div class="k-title-bar k-title-bar--mobile k-js-title-bar">
+  <div class="k-title-bar__heading">{Title}</div>
+</div><!-- .k-title-bar -->
+
+Styleguide 2.23.2
+
+*/
+
+.k-title-bar--inline {
+  background: transparent;
+  border: none;
+
+  .k-title-bar__heading {
+    padding: 0;
+  }
+}
