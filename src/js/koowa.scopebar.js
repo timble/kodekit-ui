@@ -181,6 +181,8 @@
                     }
                 });
 
+                self._trigger('beforeSubmitForm', null, {form: form, box: box});
+
                 form.submit();
             };
 

@@ -15271,6 +15271,8 @@ module.exports = '1.3.4';
                     }
                 });
 
+                self._trigger('beforeSubmitForm', null, {form: form, box: box});
+
                 form.submit();
             };
 
@@ -15561,7 +15563,12 @@ Koowa.Grid = Koowa.Class.extend({
         this.setTableRows();
     },
     setScopebar: function() {
-        $('.k-js-filter-container', this.form).scopebar();
+        var self = this;
+        $('.k-js-filter-container', this.form).scopebar({
+            beforeSubmitForm: function () {
+                self.uncheckAll();
+            }
+        });
     },
     setTableHeaders: function() {
         //Make the table headers "clickable" and make checkall work
