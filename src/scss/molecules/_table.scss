@@ -401,7 +401,7 @@ Styleguide 2.21.4
     line-height: 1;
     vertical-align: middle;
 
-    a, span, input, svg, div, small {
+    a, span, input, svg, div, small, img {
       vertical-align: middle;
       line-height: 1;
     }
@@ -439,6 +439,12 @@ Styleguide 2.21.4
   .k-table-data--form {
     input {
       margin: 0 !important;
+    }
+  }
+
+  .k-table-data--icon {
+    img {
+      min-width: 16px;
     }
   }
 
