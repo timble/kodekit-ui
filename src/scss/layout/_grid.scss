@@ -48,6 +48,20 @@ Styleguide 3.7
 }
 
 
+/* Flex container */
+
+.k-container--flex {
+  margin: 0 auto;
+  padding: $spacing;
+
+  @include flexbox {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+  }
+}
+
+
 /* --------------------------------------------------------------------------
    Grid children
    -------------------------------------------------------------------------- */

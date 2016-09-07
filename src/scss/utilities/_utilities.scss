@@ -407,3 +407,16 @@ Styleguide 6.9
 .k-position-relative {
   position: relative;
 }
+
+
+.k-dont-flex.k-dont-flex.k-dont-flex {
+  @include flexbox {
+    flex: 0 0 auto;
+  }
+}
+
+.k-do-flex.k-do-flex.k-do-flex {
+  @include flexbox {
+    flex: 1 1 auto;
+  }
+}
