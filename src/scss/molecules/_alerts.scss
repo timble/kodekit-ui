@@ -21,6 +21,22 @@ Styleguide 2.1
 .k-alert {
   padding: $alert-spacing;
   @include content-block;
+
+  a {
+    color: inherit;
+  }
+}
+
+
+/* Overflowing alert with 33% max-height */
+
+.k-alert--overflow {
+  max-height: 33%;
+  overflow: auto;
+
+  @include flexbox {
+    flex: 0 1 auto;
+  }
 }
 
 
