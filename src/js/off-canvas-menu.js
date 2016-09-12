@@ -151,7 +151,9 @@
                 // Toggle button:
                 menuToggle.click(function(event){
                     event.stopPropagation();
-                    toggleMenu(menu);
+                    if ( menuToggle.is(':visible') ) {
+                        toggleMenu(menu);
+                    }
                 });
 
                 // Close menu by clicking anywhere
