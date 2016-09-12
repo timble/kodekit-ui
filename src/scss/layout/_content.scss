@@ -31,10 +31,8 @@ Styleguide 3.5
 
   /* Faking flexbox on older browsers by using table styling */
 
-  @include breakpoint($desktop) {
-    display: table-cell;
-    width: 100%;
-  }
+  display: table-cell;
+  width: 100%;
 
 
   /**
@@ -64,18 +62,18 @@ Styleguide 3.5
 
 .k-show-left-menu {
   .k-content {
-    transform: translate($sidebar-width, 0); /* 1 */
+    transform: translate($sidebar-left-width, 0); /* 1 */
 
-    @include breakpoint($desktop) {
+    @include breakpoint($sidebar-left-querie-width) {
       transform: translate(0, 0); /* 3 */
     }
   }
 
   @include rtl {
     .k-content {
-      transform: translate(-($sidebar-width), 0);
+      transform: translate(-($sidebar-left-width), 0);
 
-      @include breakpoint($desktop) {
+      @include breakpoint($sidebar-left-querie-width) {
         transform: translate(0, 0);
       }
     }
@@ -84,18 +82,18 @@ Styleguide 3.5
 
 .k-show-right-menu {
   .k-content {
-    transform: translate(-($sidebar-width), 0); /* 2 */
+    transform: translate(-($sidebar-right-width), 0); /* 2 */
 
-    @include breakpoint($desktop) {
+    @include breakpoint($sidebar-right-querie-width) {
       transform: translate(0, 0); /* 3 */
     }
   }
 
   @include rtl {
     .k-content {
-      transform: translate($sidebar-width, 0);
+      transform: translate($sidebar-right-width, 0);
 
-      @include breakpoint($desktop) {
+      @include breakpoint($sidebar-right-querie-width) {
         transform: translate(0, 0);
       }
     }
@@ -107,7 +105,11 @@ Styleguide 3.5
   .k-content {
     overflow: hidden;
 
-    @include breakpoint($desktop) {
+    @include breakpoint($sidebar-left-querie-width) {
+      overflow: auto; /* 3 */
+    }
+
+    @include breakpoint($sidebar-right-querie-width) {
       overflow: auto; /* 3 */
     }
 
@@ -135,10 +137,6 @@ Styleguide 3.5
   content: " ";
   background: $off-canvas-overlay-background;
   @include transition(opacity);
-
-  @include breakpoint($desktop) {
-    display: none; /* 4 */
-  }
 }
 
 

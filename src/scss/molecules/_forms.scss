@@ -463,6 +463,12 @@ Styleguide 2.9.4
       z-index: 3; /* 5 */
     }
   }
+
+  .k-input-group__button {
+    .k-button {
+      height: $input-height-base;
+    }
+  }
 }
 
 

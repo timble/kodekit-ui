@@ -25,14 +25,14 @@
     // Setting separate breakpoint for $desktop width
     @if ( $breakpoint-width > $desktop and $prev-breakpoint-width < $desktop ) {
       $breakpoint: $desktop;
-      $columns: floor(($desktop - $sidebar-width-small - $spacing) / ($width + $spacing));
+      $columns: floor(($desktop - $sidebar-left-width-small - $spacing) / ($width + $spacing));
       @include setGridItemWidth($breakpoint,$columns);
     }
 
     // All breakpoints above $desktop
     @if ( $breakpoint-width > $desktop and $breakpoint-width < $delta ) {
-      $columns: floor(($breakpoint-width - $sidebar-width-small - $spacing) / ($width + $spacing));
-      $breakpoint: $sidebar-width-small + (($columns * $width) + (($columns + 1) * $spacing));
+      $columns: floor(($breakpoint-width - $sidebar-left-width-small - $spacing) / ($width + $spacing));
+      $breakpoint: $sidebar-left-width-small + (($columns * $width) + (($columns + 1) * $spacing));
       @if ( $breakpoint < $desktop ) {
         $breakpoint: $breakpoint + ($width + $spacing);
       }
@@ -41,14 +41,14 @@
     // Setting separate breakpoint for $delta width
     @if ( $breakpoint-width > $delta and $prev-breakpoint-width < $delta ) {
       $breakpoint: $delta;
-      $columns: floor(($delta - $sidebar-width - $spacing) / ($width + $spacing));
+      $columns: floor(($delta - $sidebar-left-width - $spacing) / ($width + $spacing));
       @include setGridItemWidth($breakpoint,$columns);
     }
 
     // All breakpoints above $delta
     @if ( $breakpoint-width > $delta ) {
-      $columns: floor(($breakpoint-width - $sidebar-width - $spacing) / ($width + $spacing));
-      $breakpoint: $sidebar-width + (($columns * $width) + (($columns + 1) * $spacing));
+      $columns: floor(($breakpoint-width - $sidebar-left-width - $spacing) / ($width + $spacing));
+      $breakpoint: $sidebar-left-width + (($columns * $width) + (($columns + 1) * $spacing));
       @if ( $breakpoint < $delta ) {
         $breakpoint: $breakpoint + ($width + $spacing);
       }

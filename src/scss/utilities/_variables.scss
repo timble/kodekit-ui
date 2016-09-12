@@ -9,7 +9,7 @@
 //
 // 1. The min width of the interface. Will create a horizontal scrollbar.
 //    This way we have a base width to work from regarding styling items next to each other
-// 3. Separate $desktop variable is being used so all styles
+// 2. Separate $desktop variable is being used so all styles
 //    change together when going from small to larger screen.
 
 $alpha:     400px !default;
@@ -269,12 +269,17 @@ $toolbar-color:       $color-type !default;
 // 1. Sidebar width on smaller screens
 // 2. Sidebar width when screen is "$desktop"
 
-$sidebar-width-small:       210px !default; // 1
-$sidebar-width:             270px !default; // 2
+$sidebar-left-width-small:    210px !default; // 1
+$sidebar-left-width:          270px !default; // 2
+$sidebar-left-querie-width:   $charlie !default; // 2
 
-$sidebar-background:        $color-primary-plus-2 !default;
-$sidebar-border:            darkest($sidebar-background) !default;
-$sidebar-color:             $color-type !default;
+$sidebar-right-width-small:   210px !default; // 1
+$sidebar-right-width:         270px !default; // 2
+$sidebar-right-querie-width:  $beta !default; // 2
+
+$sidebar-background:          $color-primary-plus-2 !default;
+$sidebar-border:              darkest($sidebar-background) !default;
+$sidebar-color:               $color-type !default;
 
 
 // Navigation
@@ -470,15 +475,19 @@ $form-block-content-spacing:    $spacing-small !default;
 //
 // 1. The hamburger bar width, best to use a number dividable by 5
 // 2. The height is automatically calculated
+// 3. The information bar width, best to use a number dividable by 5
+// 4. The height is automatically calculated
 
-$off-canvas-overlay-background:  black !default;
-$off-canvas-overlay-opacity:     0.75 !default;
-$hamburger-button-size:          33px !default;
-$hamburger-button-background:    $color-accent !default;
-$hamburger-button-color:         white !default;
-$hamburger-button-radius:        3px !default;
-$hamburger-bar-width:            15px !default; // 1
-$hamburger-bar-height:           round($hamburger-bar-width / 5) !default; // 2
+$off-canvas-overlay-background:   black !default;
+$off-canvas-overlay-opacity:      0.75 !default;
+$toggle-button-size:              33px !default;
+$toggle-button-background:        $color-accent !default;
+$toggle-button-color:             white !default;
+$toggle-button-radius:            3px !default;
+$hamburger-bar-width:             15px !default; // 1
+$hamburger-bar-height:            round($hamburger-bar-width / 5) !default; // 2
+$info-bar-width:                  5px !default; // 3
+$info-bar-height:                 $info-bar-width * 2 !default; // 4
 
 
 // Form styles

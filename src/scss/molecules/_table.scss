@@ -888,18 +888,73 @@ Styleguide 2.21.10
 
 */
 
+.k-sort-ascending,
+.k-sort-descending {
+  position: relative;
+  display: inline-block;
+  width: 6px;
+  height: 3px;
+  background: transparent;
+
+  &:before,
+  &:after {
+    display: block;
+    content: " ";
+    position: absolute;
+    opacity: 0.33;
+    @include transition;
+  }
+
+  &:before {
+    @include caret(top, 4px);
+    bottom: 100%;
+  }
+
+  &:after {
+    @include caret(bottom, 4px);
+    top: 100%;
+  }
+}
+
+.k-sort-ascending {
+  &:before {
+    opacity: 1;
+  }
+}
+
+.k-sort-descending {
+  &:after {
+    opacity: 1;
+  }
+}
+
 th {
-  .k-icon-sort-ascending,
-  .k-icon-sort-descending {
-    margin-left: 0.5em;
+  .k-sort-ascending,
+  .k-sort-descending {
+    margin-left: 0.66em;
     vertical-align: middle;
   }
 
   @include rtl {
-    .k-icon-sort-ascending,
-    .k-icon-sort-descending {
+    .k-sort-ascending,
+    .k-sort-descending {
       margin-left: 0;
-      margin-right: 0.5em;
+      margin-right: 0.66em;
+    }
+  }
+
+  a:focus,
+  a:hover {
+    .k-sort-ascending {
+      &:after {
+        opacity: 0.66;
+      }
+    }
+
+    .k-sort-descending {
+      &:before {
+        opacity: 0.66;
+      }
     }
   }
 }

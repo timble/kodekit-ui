@@ -29,10 +29,8 @@ Styleguide 3.3
 
   /* Faking flexbox on older browsers by using table styling */
 
-  @include breakpoint($desktop) {
-    display: table;
-    width: 100%;
-  }
+  display: table;
+  width: 100%;
 
 
   /* When flexbox is in use */

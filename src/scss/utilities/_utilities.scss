@@ -420,3 +420,25 @@ Styleguide 6.9
     flex: 1 1 auto;
   }
 }
+
+
+.k-touchevents-hidden {
+  @include modernizr('.k-touchevents') {
+    display: none !important;
+  }
+}
+
+.k-ellipsis {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  a, span, input, svg, div, small {
+    vertical-align: middle;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

@@ -40,56 +40,105 @@ Styleguide 3.4
 
   /* Faking flexbox on older browsers by using table styling */
 
-  @include breakpoint($desktop) {
-    @include allwidth($sidebar-width-small);
-    display: table-cell;
-    vertical-align: top;
+  display: table-cell;
+  vertical-align: top;
+
+
+  /* When JavaScript is enabled */
+
+  @include js-enabled {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    height: 100%;
+    display: none;
+  }
+
+
+  /* When flexbox is in use */
+
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.k-sidebar-left {
+
+  /* Faking flexbox on older browsers by using table styling */
+
+  @include breakpoint($sidebar-left-querie-width) {
+    @include allwidth($sidebar-left-width-small);
   }
 
 
   /* Larger sidebar when space is available */
 
   @include breakpoint($delta) {
-    @include allwidth($sidebar-width);
+    @include allwidth($sidebar-left-width);
   }
 
 
   /* When JavaScript is enabled */
 
   @include js-enabled {
-    @include allwidth($sidebar-width);
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    height: 100%;
-    display: none;
+    @include allwidth($sidebar-left-width);
 
 
     /* On 'desktop' we 'open' the sidebar by default */
 
-    @include breakpoint($desktop) {
-      @include allwidth($sidebar-width-small);
+    @include breakpoint($sidebar-left-querie-width) {
       position: relative;
-      height: auto;
       display: table-cell;
+      height: auto;
+      @include allwidth($sidebar-left-width-small);
     }
 
 
     /* And we make it even larger when there's enough space */
 
     @include breakpoint($delta) {
-      @include allwidth($sidebar-width);
+      @include allwidth($sidebar-left-width);
     }
+  }
+}
 
+.k-sidebar-right {
+
+  /* Faking flexbox on older browsers by using table styling */
+
+  @include breakpoint($sidebar-right-querie-width) {
+    @include allwidth($sidebar-right-width-small);
   }
 
 
-  /* When flexbox is in use */
+  /* Larger sidebar when space is available */
 
-  @include flexbox($horizontal: $desktop) {
-    display: flex;
-    flex-direction: column;
-    flex: 0 0 auto;
+  @include breakpoint($sidebar-right-querie-width) {
+    @include allwidth($sidebar-right-width);
+  }
+
+
+  /* When JavaScript is enabled */
+
+  @include js-enabled {
+    @include allwidth($sidebar-right-width);
+
+
+    /* On 'desktop' we 'open' the sidebar by default */
+
+    @include breakpoint($sidebar-right-querie-width) {
+      position: relative;
+      display: table-cell;
+      height: auto;
+      @include allwidth($sidebar-right-width-small);
+    }
+
+
+    /* And we make it even larger when there's enough space */
+
+    @include breakpoint($delta) {
+      @include allwidth($sidebar-right-width);
+    }
   }
 }
 

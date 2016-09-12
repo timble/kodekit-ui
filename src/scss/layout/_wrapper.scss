@@ -45,7 +45,11 @@ Styleguide 3.2
 .k-is-opened-right {
   overflow: hidden; /* 1 */
 
-  @include breakpoint($desktop) {
+  @include breakpoint($sidebar-left-querie-width) {
+    overflow: auto; /* 2 */
+  }
+
+  @include breakpoint($sidebar-right-querie-width) {
     overflow: auto; /* 2 */
   }
 

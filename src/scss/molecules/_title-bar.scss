@@ -55,13 +55,13 @@ Styleguide 2.23
 
 .k-show-left-menu {
   & > .k-title-bar {
-    transform: translate($sidebar-width, 0); /* 1 */
+    transform: translate($sidebar-left-width, 0); /* 1 */
 
     @include rtl {
-      transform: translate(-($sidebar-width), 0);
+      transform: translate(-($sidebar-left-width), 0);
     }
 
-    @include breakpoint($desktop) {
+    @include breakpoint($sidebar-left-querie-width) {
       transform: translate(0, 0); /* 3 */
 
       @include rtl {
@@ -73,13 +73,13 @@ Styleguide 2.23
 
 .k-show-right-menu {
   & > .k-title-bar {
-    transform: translate(-($sidebar-width), 0); /* 2 */
+    transform: translate(-($sidebar-right-width), 0); /* 2 */
 
     @include rtl {
-      transform: translate($sidebar-width, 0); /* 2 */
+      transform: translate($sidebar-right-width, 0); /* 2 */
     }
 
-    @include breakpoint($desktop) {
+    @include breakpoint($sidebar-right-querie-width) {
       transform: translate(0, 0); /* 3 */
 
       @include rtl {
