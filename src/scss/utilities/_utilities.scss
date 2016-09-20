@@ -435,10 +435,32 @@ Styleguide 6.9
   white-space: nowrap;
 
   a, span, input, svg, div, small {
+    display: inline-block;
     vertical-align: middle;
     max-width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
+}
+
+.k-ellipsis__item {
+  // Item to be ellipsed
+}
+
+.k-link-coverall {
+  @include psuedo(after, false) {
+    @include coverall;
+  }
+}
+
+.k-link-ontop {
+  position: relative;
+  z-index: 1;
+}
+
+.k-this-or-that {
+  display: inline-block;
+  margin-right: $spacing-tiny;
+  vertical-align: middle;
 }

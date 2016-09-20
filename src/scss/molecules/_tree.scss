@@ -152,6 +152,12 @@ Styleguide 2.26
   text-align: center;
 }
 
+.jqtree-icon {
+  &:before {
+    line-height: 26px;
+  }
+}
+
 .jqtree-whitespace + .jqtree_common:not(.jqtree-toggler) {
   @include psuedo(after) {
     width: 6px;

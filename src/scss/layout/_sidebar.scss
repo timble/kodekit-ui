@@ -48,7 +48,7 @@ Styleguide 3.4
 
   @include js-enabled {
     position: absolute;
-    z-index: 1;
+    z-index: -1;
     top: 0;
     height: 100%;
     display: none;
@@ -57,9 +57,11 @@ Styleguide 3.4
 
   /* When flexbox is in use */
 
-  display: flex;
-  flex-direction: column;
-  flex: 0 0 auto;
+  @include flexbox {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+  }
 }
 
 .k-sidebar-left {
@@ -91,6 +93,7 @@ Styleguide 3.4
       display: table-cell;
       height: auto;
       @include allwidth($sidebar-left-width-small);
+      z-index: 1;
     }
 
 
@@ -98,6 +101,15 @@ Styleguide 3.4
 
     @include breakpoint($delta) {
       @include allwidth($sidebar-left-width);
+    }
+  }
+
+
+  /* Override js-enabled beta styling with flexbox */
+
+  @include flexbox {
+    @include breakpoint($sidebar-left-querie-width) {
+      display: flex;
     }
   }
 }
@@ -131,6 +143,7 @@ Styleguide 3.4
       display: table-cell;
       height: auto;
       @include allwidth($sidebar-right-width-small);
+      z-index: 1;
     }
 
 
@@ -138,6 +151,14 @@ Styleguide 3.4
 
     @include breakpoint($delta) {
       @include allwidth($sidebar-right-width);
+    }
+  }
+
+  /* Override js-enabled beta styling with flexbox */
+
+  @include flexbox {
+    @include breakpoint($sidebar-left-querie-width) {
+      display: flex;
     }
   }
 }
@@ -173,6 +194,7 @@ Styleguide 3.4
 .k-is-opened-left {
   .k-sidebar-left {
     display: block;
+    z-index: 1;
   }
 }
 
@@ -207,5 +229,6 @@ Styleguide 3.4
 .k-is-opened-right {
   .k-sidebar-right {
     display: block;
+    z-index: 1;
   }
 }

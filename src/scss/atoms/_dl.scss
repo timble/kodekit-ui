@@ -38,4 +38,13 @@ dd {
   @include reset;
   display: block;
   @include content-block($spacing-tiny);
+  max-width: 100%;
+
+  &.k-ellipsis {
+    vertical-align: bottom;
+
+    .k-ellipsis__item {
+      vertical-align: inherit;
+    }
+  }
 }

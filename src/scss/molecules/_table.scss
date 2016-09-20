@@ -352,6 +352,7 @@ Different available table cell settings
 .k-table-data--form - Cells that only contain a form element like a radio input or checkbox
 .k-table-data--toggle - Empty cell that will hold the responsive toggle button
 .k-table-data--ellipsis - Break content at the end of the cell and add text ellipsis
+.k-table-data--multiline - All items inside this cell are `display: inline` with `vertical-align: baseline`
 
 markup:
 <td class="{$modifiers}">Content</td>
@@ -411,6 +412,13 @@ Styleguide 2.21.4
     }
   }
 
+  .k-table-data--multiline {
+    a, span, input, svg, small, img {
+      display: inline;
+      vertical-align: baseline;
+    }
+  }
+
   .k-table-data--toggle {
     padding: 0;
     font-size: 0;
@@ -444,7 +452,7 @@ Styleguide 2.21.4
 
   .k-table-data--icon {
     img {
-      min-width: 16px;
+      @include allwidth(16px);
     }
   }
 

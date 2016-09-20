@@ -74,6 +74,22 @@
                 $.each(sidebar_left, function() {
                     addOffCanvasButton($(this), 'left');
                 });
+
+                var sidebarLeftTree = $('.k-tree'),
+                    sidebarLeftList = $('.k-list');
+
+                if ( ( sidebarLeftTree.length || sidebarLeftList.length ) ) {
+                    sidebarLeftTree.on('click', '.jqtree-title', function() {
+                        if ( $('.k-js-wrapper').hasClass('k-is-opened-left') ) {
+                            $('.k-off-canvas-menu-toggle--left').trigger('click');
+                        }
+                    });
+                    sidebarLeftList.on('click', 'a', function() {
+                        if ( $('.k-js-wrapper').hasClass('k-is-opened-left') ) {
+                            $('.k-off-canvas-menu-toggle--left').trigger('click');
+                        }
+                    });
+                }
             }
 
             if (sidebar_right.length) {
@@ -81,6 +97,7 @@
                 $.each(sidebar_right, function() {
                     addOffCanvasButton($(this), 'right');
                 });
+
 
                 // Open right sidebar on selecting items in table
                 // Only apply to actual `<a>` elements
