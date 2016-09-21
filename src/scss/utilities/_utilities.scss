@@ -402,6 +402,10 @@ Styleguide 6.9
   @include content-block;
 }
 
+.k-content-block--small {
+  @include content-block(1em);
+}
+
 
 
 .k-position-relative {
