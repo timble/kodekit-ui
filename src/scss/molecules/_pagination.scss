@@ -61,6 +61,7 @@ Styleguide 2.21.1
 }
 
 .k-pagination {
+
   /**
    * Pagination contents
    *
@@ -84,6 +85,16 @@ Styleguide 2.21.1
     padding-left: 0;
     margin: 0;
     border-radius: $border-radius;
+
+
+    /* Override for rtl ul-ol-li styling */
+
+    @include rtl {
+      padding: 0;
+    }
+
+
+    /* Contents */
 
     & > li {
       display: inline; /* 1 */

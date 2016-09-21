@@ -497,6 +497,10 @@ Styleguide 2.9.4
   select.k-form-control {
     height: $input-height-large;
     line-height: $input-height-large;
+
+    @include rtl {
+      direction: rtl;
+    }
   }
 
   textarea.k-form-control,

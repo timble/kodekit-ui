@@ -97,6 +97,10 @@ Styleguide 2.24
 
     display: inline-block;
     margin: 0 0.25em 0 0.1em;
+
+    @include rtl {
+      margin: 0 0.1em 0 0.25em;
+    }
   }
 
 

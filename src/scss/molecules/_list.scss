@@ -35,6 +35,11 @@ Styleguide 2.13
 
   @include rtl {
     margin: $list-spacing 0;
+
+
+    /* Override for rtl ul-ol-li styling */
+
+    padding: 0;
   }
 
 

@@ -37,8 +37,11 @@ Styleguide 2.16
   padding: ($navigation-spacing * 2) 0;
   background: $navigation-background;
 
+
+  /* Override for rtl ul-ol-li styling */
+
   @include rtl {
-    margin: 0;
+    padding: ($navigation-spacing * 2) 0;
   }
 
 
