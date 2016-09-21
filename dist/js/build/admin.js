@@ -18274,12 +18274,12 @@ var Konami = function (callback) {
                     scrollContainer: function($table){
                         return $table.closest('.k-table');
                     },
-                    enableAria: true
+                    position: 'absolute'
                 });
             }
         }
 
-        //fixedTable();
+        fixedTable();
 
         // Filter and search toggle buttons in the scopebar
         if ( $scopebar.length ) {
