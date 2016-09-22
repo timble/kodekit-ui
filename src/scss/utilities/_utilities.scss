@@ -137,6 +137,10 @@ Styleguide 6.3
       box-shadow: 0 1em 0 0;
     }
   }
+
+  @include rtl {
+    @include flip-item;
+  }
 }
 
 /*
@@ -467,4 +471,9 @@ Styleguide 6.9
   display: inline-block;
   margin-right: $spacing-tiny;
   vertical-align: middle;
+
+  @include rtl {
+    margin-right: 0;
+    margin-left: $spacing-tiny;
+  }
 }

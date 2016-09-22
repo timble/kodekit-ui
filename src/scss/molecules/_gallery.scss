@@ -118,4 +118,8 @@ Styleguide 2.10
 
 .k-gallery__item--folder + .k-gallery__item--file {
   clear: left;
+
+  @include rtl {
+    clear: right;
+  }
 }

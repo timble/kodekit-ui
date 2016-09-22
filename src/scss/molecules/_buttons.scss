@@ -341,20 +341,19 @@ Styleguide 2.3.3
     @include border-right-radius(0);
 
     @include rtl {
+      @include border-right-radius($border-radius);
       @include border-left-radius(0);
 
       &.k-button--tiny {
-        .k-button--tiny {
-          @include border-right-radius($border-radius-small);
-        }
+        @include border-right-radius($border-radius-small);
+      }
 
-        .k-button--small {
-          @include border-right-radius($border-radius-small);
-        }
+      &.k-button--small {
+        @include border-right-radius($border-radius-small);
+      }
 
-        .k-button--large {
-          @include border-right-radius($border-radius-large);
-        }
+      &.k-button--large {
+        @include border-right-radius($border-radius-large);
       }
     }
   }
@@ -363,17 +362,18 @@ Styleguide 2.3.3
     @include border-left-radius(0);
 
     @include rtl {
+      @include border-left-radius($border-radius);
       @include border-right-radius(0);
 
-      .k-button--tiny {
+      &.k-button--tiny {
         @include border-left-radius($border-radius-small);
       }
 
-      .k-button--small {
+      &.k-button--small {
         @include border-left-radius($border-radius-small);
       }
 
-      .k-button--large {
+      &.k-button--large {
         @include border-left-radius($border-radius-large);
       }
     }

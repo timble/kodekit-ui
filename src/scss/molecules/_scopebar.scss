@@ -685,7 +685,7 @@ Styleguide 2.18.5
 
   @include rtl {
     float: right;
-    margin-left: auto;
+    margin-left: round($scopebar-size * 0.1);
     margin-right: 0;
   }
 
