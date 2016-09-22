@@ -308,6 +308,12 @@ $icons: (
   open: "\f1f2",);
 
 
+// Test if the list conatins a certain value
+@function contains($list, $var) {
+  @return (null != index($list, $var));
+}
+
+
 /**
  * Icon classes
  *
@@ -320,6 +326,12 @@ $icons: (
     @extend %icon;
     &:before {
       content: "#{$icon}";
+
+      @if contains($rtlicons, $name) {
+        @include rtl {
+          @include flip-item;
+        }
+      }
     }
   }
 }
@@ -332,6 +344,12 @@ $icons: (
   &:before {
     @if $icon {
       content: "#{map-get($icons, $icon)}";
+
+      @if contains($rtlicons, $icon) {
+        @include rtl {
+          @include flip-item;
+        }
+      }
     }
     @if $styles {
       @extend %icon;
@@ -348,6 +366,12 @@ $icons: (
   &:after {
     @if $icon {
       content: "#{map-get($icons, $icon)}";
+
+      @if contains($rtlicons, $icon) {
+        @include rtl {
+          @include flip-item;
+        }
+      }
     }
     @if $styles {
       @extend %icon;

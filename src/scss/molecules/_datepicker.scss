@@ -48,8 +48,18 @@ Styleguide 2.5
   }
 
   &.datepicker-dropdown {
+    position: absolute;
     top: 0;
     left: 0;
+    z-index: $zindex-dropdown;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    list-style: none;
+    background-color: $dropdown-background;
+    border: 1px solid $dropdown-border;
+    border-radius: $border-radius;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    background-clip: padding-box;
 
     &:before {
       content: '';

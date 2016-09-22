@@ -67,6 +67,11 @@ $icons: (<% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { %>
   <%= glyphs[glyphIdx] %>: "<% if (addLigatures) { %><%= glyphs[glyphIdx] %><% } else { %>\<%= codepoints[glyphIdx] %><% } %>",<% } %>);
 
 
+// Test if the list conatins a certain value
+@function contains($list, $var) {
+  @return (null != index($list, $var));
+}
+
 /**
  * Icon classes
  *
@@ -79,6 +84,12 @@ $icons: (<% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { %>
     @extend %icon;
     &:before {
       content: "#{$icon}";
+
+      @if contains($rtlicons, $name) {
+        @include rtl {
+          @include flip-item;
+        }
+      }
     }
   }
 }
@@ -91,6 +102,12 @@ $icons: (<% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { %>
   &:before {
     @if $icon {
       content: "#{map-get($icons, $icon)}";
+
+      @if contains($rtlicons, $icon) {
+        @include rtl {
+          @include flip-item;
+        }
+      }
     }
     @if $styles {
       @extend %icon;
@@ -107,6 +124,12 @@ $icons: (<% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { %>
   &:after {
     @if $icon {
       content: "#{map-get($icons, $icon)}";
+
+      @if contains($rtlicons, $icon) {
+        @include rtl {
+          @include flip-item;
+        }
+      }
     }
     @if $styles {
       @extend %icon;

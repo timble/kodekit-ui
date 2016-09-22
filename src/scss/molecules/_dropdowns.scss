@@ -90,6 +90,11 @@ Styleguide 2.6.2
   border-top:   $caret-width-base dashed;
   border-right: $caret-width-base solid transparent;
   border-left:  $caret-width-base solid transparent;
+
+  @include rtl {
+    margin-left: 0;
+    margin-right: 2px;
+  }
 }
 
 

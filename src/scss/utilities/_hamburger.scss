@@ -84,7 +84,11 @@
 }
 
 
-/* Left button */
+/**
+ * Left button
+ *
+ * We don't need RTLstyling here since we're calculating the icons to be in the middle
+ */
 
 .k-off-canvas-menu-toggle--left {
   .k-toggle-button-bar1,
@@ -93,15 +97,6 @@
     left: round(($toggle-button-size - $hamburger-bar-width) / 2);
     width: $hamburger-bar-width;
     height: $hamburger-bar-height;
-  }
-
-  @include rtl {
-    .k-toggle-button-bar1,
-    .k-toggle-button-bar2,
-    .k-toggle-button-bar3 {
-      left: auto;
-      right: round(($toggle-button-size - $hamburger-bar-width) / 2);
-    }
   }
 
   .k-toggle-button-bar1 {
@@ -140,22 +135,17 @@
 }
 
 
-/* Right button */
+/**
+ * Right button
+ *
+ * We don't need RTLstyling here since we're calculating the icons to be in the middle
+ */
 
 .k-off-canvas-menu-toggle--right {
   .k-toggle-button-bar1,
   .k-toggle-button-bar2,
   .k-toggle-button-bar3 {
     left: round(($toggle-button-size - ($info-bar-width + $info-bar-height + (round($info-bar-height / 5)))) - round($info-bar-height / 5));
-  }
-
-  @include rtl {
-    .k-toggle-button-bar1,
-    .k-toggle-button-bar2,
-    .k-toggle-button-bar3 {
-      left: auto;
-      right: round(($toggle-button-size - ($info-bar-width + $info-bar-height + (round($info-bar-height / 5)))) / 2);
-    }
   }
 
   .k-toggle-button-bar1 {

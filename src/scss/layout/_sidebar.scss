@@ -180,8 +180,8 @@ Styleguide 3.4
     left: 0;
   }
 
-  @include rtl {
-    @include js-enabled {
+  @include js-enabled {
+    @include rtl {
       left: auto;
       right: 0;
     }
@@ -215,8 +215,8 @@ Styleguide 3.4
     right: 0;
   }
 
-  @include rtl {
-    @include js-enabled {
+  @include js-enabled {
+    @include rtl {
       right: auto;
       left: 0;
     }
