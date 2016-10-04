@@ -114,9 +114,6 @@
             }
         }
 
-        // Overflowing items
-        $overflow.addClass('k-sidebar-item--overflow').overflowing();
-
         // Footable
         $footable.footable({
             toggleSelector: '.footable-toggle',

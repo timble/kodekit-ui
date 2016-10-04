@@ -31,11 +31,28 @@ Styleguide 2.20
     margin-top: $spacing;
   }
 
-  @include flexbox {
-    flex: 0 0 auto;
+
+  /**
+   * 1. Should be the same as in `.k-sidebar-[left/right]`
+   */
+
+  @include flexbox($sidebar-left-querie-width, 599px) { /* 1 */
+    flex: 0 0 37px;
 
     &--flex {
-      flex: 1 0 auto;
+      display: flex;
+      flex-direction: column;
+      flex: 0 1 auto;
+      overflow: hidden;
+
+      div {
+        flex: 1 1 auto;
+        overflow: auto;
+      }
+
+      .k-sidebar-item__header {
+        flex: 0 0 auto;
+      }
     }
   }
 
@@ -50,44 +67,25 @@ Styleguide 2.20
     overflow: auto; /* 1 */
     width: 100%;
 
-    @include flexbox {
+    @include flexbox($vertical: 550px) {
       flex: 0 1 auto;
     }
 
     @include resizing {
       overflow: hidden;
     }
-
-
-    /**
-     * Box shadow for overflowing containers
-     *
-     * 1. Set as same color as background to make it look like text is fading
-     */
-
-    & ~ [class^="k-overflowing"] {
-      color: $sidebar-background;
-    }
   }
 }
 
 
-/* Toggle item */
+/**
+ * Toggle item
+ *
+ * 1. Same as width but minus 2px border width
+ */
 
 .k-sidebar-item--toggle {
   padding-bottom: $spacing-small;
-
-  .k-list {
-    @include js-enabled {
-      @media (min-height: $flexbox-vertical) {
-        display: none;
-      }
-    }
-
-    @media (min-height: 550px) {
-      display: block!important;
-    }
-  }
 
   .k-sidebar-item__header {
     position: relative;
@@ -97,7 +95,6 @@ Styleguide 2.20
     position: absolute;
     top: $spacing;
     right: $spacing;
-    display: none;
 
     @include icon-after(chevron-top, true) {
       display: block;
@@ -105,25 +102,16 @@ Styleguide 2.20
       border: 1px solid #ddd;
       border-radius: 10px;
       width: 20px;
-      height: 20px;
+      line-height: 18px; /* 1 */
       text-align: center;
       vertical-align: middle;
       font-size: $font-size-tiny;
-      line-height: $line-height-tiny;
       cursor: pointer;
       @include transition;
     }
 
     &.k-is-active:after {
       transform: rotate(180deg);
-    }
-
-    @media (min-height: $flexbox-vertical) {
-      display: block;
-    }
-
-    @media (min-height: 550px) {
-      display: none;
     }
 
     @include rtl {

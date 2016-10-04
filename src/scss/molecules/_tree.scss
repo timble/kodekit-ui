@@ -29,6 +29,7 @@ Styleguide 2.26
 .k-tree {
   @include clearfix;
   margin: $list-spacing 0;
+  overflow: auto;
 
   .jqtree-element {
     padding: 0 $spacing-tiny 0 $spacing;
