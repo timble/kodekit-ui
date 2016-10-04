@@ -55,9 +55,9 @@
                 }
 
                 if (label) {
-                    label_el.html(label);
+                    label_el.attr('data-has-label', '').html(label);
                 } else {
-                    label_el.hide();
+                    label_el.removeAttr('data-has-label').hide();
                 }
 
                 item.show();
@@ -65,7 +65,14 @@
 
                 container.append(template);
 
-                $('.k-js-filter-count').text(container.find('.k-js-dropdown-label:visible').length);
+                var length   = container.find('.k-js-dropdown-label[data-has-label]').length,
+                    count_el = $('.k-js-filter-count');
+
+                if (length) {
+                    count_el.show();
+                } else {
+                    count_el.hide();
+                }
             });
         },
 

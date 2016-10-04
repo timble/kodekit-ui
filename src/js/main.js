@@ -163,20 +163,21 @@
                     toggleButtons.prepend('<button type="button" class="k-scopebar__button k-toggle-scopebar-filters k-js-toggle-filters">' +
                         '<span class="k-icon-filter" aria-hidden="true">' +
                         '<span class="k-visually-hidden">Filters toggle</span>' +
-                        // @TODO: Ercan: START This should only be visible when there's an active filter
-                        '<div class="js-filter-count k-scopebar__item-label"></div>' +
-                        // @TODO: Ercan: END
+                        '<div class="k-js-filter-count k-scopebar__item-label"></div>' +
                         '</button>');
                 }
 
                 if ( $scopebarSearch.length && !$this.find('.k-toggle-scopebar-search').length ) {
+
                     toggleButtons.prepend('<button type="button" class="k-scopebar__button k-toggle-scopebar-search k-js-toggle-search">' +
                         '<span class="k-icon-magnifying-glass" aria-hidden="true">' +
                         '<span class="k-visually-hidden">Search toggle</span>' +
-                        // @TODO: Ercan: START This should only be visible when search is being used by the user
-                        '<div class="js-search-count k-scopebar__item-label"></div>' +
-                        // @TODO: Ercan: END
+                        '<div class="k-js-search-count k-scopebar__item-label" style="display: none"></div>' +
                         '</button>');
+
+                    if (toggleButtons.siblings('.k-scopebar__item--search').find('.k-search__field').val()) {
+                        $('.k-js-search-count').show();
+                    }
                 }
             });
 

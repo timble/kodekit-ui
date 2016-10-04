@@ -15145,9 +15145,9 @@ module.exports = '1.3.4';
                 }
 
                 if (label) {
-                    label_el.html(label);
+                    label_el.attr('data-has-label', '').html(label);
                 } else {
-                    label_el.hide();
+                    label_el.removeAttr('data-has-label').hide();
                 }
 
                 item.show();
@@ -15155,7 +15155,14 @@ module.exports = '1.3.4';
 
                 container.append(template);
 
-                $('.k-js-filter-count').text(container.find('.k-js-dropdown-label:visible').length);
+                var length   = container.find('.k-js-dropdown-label[data-has-label]').length,
+                    count_el = $('.k-js-filter-count');
+
+                if (length) {
+                    count_el.show();
+                } else {
+                    count_el.hide();
+                }
             });
         },
 
@@ -18197,20 +18204,21 @@ var Konami = function (callback) {
                     toggleButtons.prepend('<button type="button" class="k-scopebar__button k-toggle-scopebar-filters k-js-toggle-filters">' +
                         '<span class="k-icon-filter" aria-hidden="true">' +
                         '<span class="k-visually-hidden">Filters toggle</span>' +
-                        // @TODO: Ercan: START This should only be visible when there's an active filter
-                        '<div class="js-filter-count k-scopebar__item-label"></div>' +
-                        // @TODO: Ercan: END
+                        '<div class="k-js-filter-count k-scopebar__item-label"></div>' +
                         '</button>');
                 }
 
                 if ( $scopebarSearch.length && !$this.find('.k-toggle-scopebar-search').length ) {
+
                     toggleButtons.prepend('<button type="button" class="k-scopebar__button k-toggle-scopebar-search k-js-toggle-search">' +
                         '<span class="k-icon-magnifying-glass" aria-hidden="true">' +
                         '<span class="k-visually-hidden">Search toggle</span>' +
-                        // @TODO: Ercan: START This should only be visible when search is being used by the user
-                        '<div class="js-search-count k-scopebar__item-label"></div>' +
-                        // @TODO: Ercan: END
+                        '<div class="k-js-search-count k-scopebar__item-label" style="display: none"></div>' +
                         '</button>');
+
+                    if (toggleButtons.siblings('.k-scopebar__item--search').find('.k-search__field').val()) {
+                        $('.k-js-search-count').show();
+                    }
                 }
             });
 
