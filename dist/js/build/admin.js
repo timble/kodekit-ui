@@ -18203,7 +18203,7 @@ var Konami = function (callback) {
                     toggleButtons.prepend('<button type="button" class="k-scopebar__button k-toggle-scopebar-filters k-js-toggle-filters">' +
                         '<span class="k-icon-filter" aria-hidden="true">' +
                         '<span class="k-visually-hidden">Filters toggle</span>' +
-                        '<div class="k-js-filter-count k-scopebar__item-label"></div>' +
+                        '<div class="k-js-filter-count k-scopebar__item-label k-scopebar__item-label--numberless"></div>' +
                         '</button>');
                 }
 
@@ -18212,7 +18212,7 @@ var Konami = function (callback) {
                     toggleButtons.prepend('<button type="button" class="k-scopebar__button k-toggle-scopebar-search k-js-toggle-search">' +
                         '<span class="k-icon-magnifying-glass" aria-hidden="true">' +
                         '<span class="k-visually-hidden">Search toggle</span>' +
-                        '<div class="k-js-search-count k-scopebar__item-label" style="display: none"></div>' +
+                        '<div class="k-js-search-count k-scopebar__item-label k-scopebar__item-label--numberless" style="display: none"></div>' +
                         '</button>');
 
                     if (toggleButtons.siblings('.k-scopebar__item--search').find('.k-search__field').val()) {
