@@ -443,6 +443,16 @@ Styleguide 2.9.4
   width: 100%;
   border-collapse: separate; /* 2 */
 
+
+  /* Flexbox input groups for better overflow styling */
+
+  @include flexbox(0, 0) {
+    display: flex;
+  }
+
+
+  /* The form control */
+
   .k-form-control {
 
     /* 3 */
@@ -462,7 +472,18 @@ Styleguide 2.9.4
     &:focus {
       z-index: 3; /* 5 */
     }
+
+
+    /* Flexbox input groups for better overflow styling */
+
+    @include flexbox(0, 0) {
+      width: auto;
+      min-width: 15%;
+    }
   }
+
+
+  /* The button */
 
   .k-input-group__button {
     .k-button {
@@ -551,6 +572,14 @@ Styleguide 2.9.4
   &:not(:first-child):not(:last-child) {
     border-radius: 0;
   }
+
+
+  /* Flexbox input groups for better overflow styling */
+
+  @include flexbox(0, 0) {
+    display: block;
+    flex: 1 1 auto;
+  }
 }
 
 .k-input-group .select2-container {
@@ -578,6 +607,15 @@ Styleguide 2.9.4
   width: 1%;
   white-space: nowrap;
   vertical-align: middle; /* 1 */
+
+
+  /* Flexbox input groups for better overflow styling */
+
+  @include flexbox(0, 0) {
+    width: auto;
+    display: block;
+    flex: 0 0 auto;
+  }
 }
 
 
@@ -594,6 +632,8 @@ Styleguide 2.9.4
   background-color: $input-group-addon-bg;
   border: 1px solid $input-group-addon-border-color;
   border-radius: $input-border-radius;
+  overflow: hidden;
+  text-overflow: ellipsis;;
 
 
   /* Nuke default margins from checkboxes and radios to vertically center within. */

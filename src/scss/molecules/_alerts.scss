@@ -31,6 +31,7 @@ Styleguide 2.1
 /* Overflowing alert with 33% max-height */
 
 .k-alert--overflow {
+  min-height: 75px;
   max-height: 33%;
   overflow: auto;
 

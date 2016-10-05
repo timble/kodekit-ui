@@ -18046,7 +18046,6 @@ var Konami = function (callback) {
         // Variables
         var $fixedtable = $('.k-js-fixed-table-header'),
             $footable = $('.k-js-responsive-table'),
-            $overflow = $('.k-js-sidebar-overflow-item'),
             $sidebarToggle = $('.k-js-sidebar-toggle-item'),
             $scopebar = $('.k-js-scopebar');
 

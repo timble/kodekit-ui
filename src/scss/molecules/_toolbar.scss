@@ -78,6 +78,20 @@ Styleguide 2.24
   }
 
 
+  /* Autosave indicator */
+
+  .k-autosave-indicator {
+    margin: 10px 0 0 10px;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 5px;
+
+    @include rtl {
+      margin: 10px 10px 0 0;
+    }
+  }
+
+
   /**
    * Position the icons
    *
