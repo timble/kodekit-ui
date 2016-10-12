@@ -15758,7 +15758,7 @@ $(function() {
                          */
                         $li.find('.jqtree-element').attr('title', node.name);
 
-                        if(node.isFolder()) {
+                        if(node.isFolder()) { // has children
                             // states variable is for easy toggling on the click event
                             var states = self.options.toggler,
                                 state = states[node.is_open ? 1 : 0],
@@ -15778,17 +15778,21 @@ $(function() {
                             // prepend the toggler triangle and the folder icon to the title
                             $li.find('.jqtree-title').before(triangle);
                         } else {
+                            var $li_title = $li.find('.jqtree-title');
                             // prepend the folder icon, and an empty space for the triangle so the indendation is correct
-                            $li.find('.jqtree-title').before('<i class="jqtree-whitespace"></i>')
-                                .before('<span class="jqtree_common jqtree-icon '+self.options.toggler[0].folder+'"></span> ');
+                            if (node.getLevel() > 1) {
+                                $li_title.before('<i class="jqtree-whitespace"></i>')
+                            }
+
+                            $li_title.before('<span class="jqtree_common jqtree-icon '+self.options.toggler[0].folder+'"></span> ');
                         }
 
                         /**
                          * Generates indentation for each list item according to nesting level.
-                         * @TODO the node.getLevel() property lookup isn't cached, submit patch on the jqTree github
                          */
                         var level = node.getLevel(),
                             parent = $li.find('.jqtree-title').parent();
+
                         for (var i = 1; i < level; ++i) {
                             parent.prepend('<i class="jqtree-whitespace"></i>');
                         }
