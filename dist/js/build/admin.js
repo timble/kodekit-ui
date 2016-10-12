@@ -15780,9 +15780,7 @@ $(function() {
                         } else {
                             var $li_title = $li.find('.jqtree-title');
                             // prepend the folder icon, and an empty space for the triangle so the indendation is correct
-                            if (node.getLevel() > 1) {
-                                $li_title.before('<i class="jqtree-whitespace"></i>')
-                            }
+                            $li_title.before('<i class="jqtree-whitespace"></i>')
 
                             $li_title.before('<span class="jqtree_common jqtree-icon '+self.options.toggler[0].folder+'"></span> ');
                         }
