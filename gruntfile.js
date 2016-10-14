@@ -46,17 +46,19 @@ module.exports = function(grunt) {
         webfont: {
             icons: {
                 src: [
-                    'node_modules/open-iconic/svg/*.svg',
+                    'node_modules/openiconic/svg/*.svg',
                     '<%= srcPath %>/icons/*.svg'
                 ],
                 dest: '<%= distPath %>/fonts/k-icons',
                 destCss: '<%= srcPath %>/scss/utilities',
                 options: {
+                    codepointsFile: '<%= srcPath %>/fonts/k-icons-codepoints',
                     font: 'k-icons',
                     hashes: false,
                     stylesheet: 'scss',
                     relativeFontPath: '../fonts/icons/',
                     template: '<%= srcPath %>/icons/template.css',
+                    types: 'eot,woff,ttf,svg',
                     htmlDemo: false
                 }
             }
