@@ -28,7 +28,6 @@ Styleguide 6.1
 }
 
 
-
 /*
 Hidden
 
@@ -44,7 +43,6 @@ Styleguide 6.2
 .k-is-hidden.k-is-hidden.k-is-hidden {
   display: none;
 }
-
 
 
 /*
@@ -143,6 +141,7 @@ Styleguide 6.3
   }
 }
 
+
 /*
 Loader container
 
@@ -179,7 +178,6 @@ Styleguide 6.3.1
     }
   }
 }
-
 
 
 /*
@@ -283,14 +281,6 @@ Styleguide 6.8
   width: auto;
   margin: 0;
 }
-
-
-
-
-
-
-
-
 
 
 /*
@@ -397,10 +387,28 @@ Styleguide 6.9
 }
 
 
+/*
+Colors
+
+markup:
+<div class="k-color-error">...</div>
+
+*/
+
 .k-color-error {
   color: $color-error;
 }
 
+
+/*
+Content block
+
+Element with a bottom margin except when item itself is a last-child
+
+markup:
+<div class="k-content-block">...</div>
+
+*/
 
 .k-content-block {
   @include content-block;
@@ -411,11 +419,31 @@ Styleguide 6.9
 }
 
 
+/*
+Relative positioned element
+
+Could be useful to add to parnet sof absolutely positioned items
+
+markup:
+<div class="k-no-transition">...</div>
+
+*/
 
 .k-position-relative {
   position: relative;
 }
 
+
+/*
+Flexing boxes
+
+DO or don't flexing children. USeful inside flexing containers on elemtns that have no pre-defined styling for flexbox
+
+markup:
+<div class="k-dont-flex">...</div>
+<div class="k-do-flex">...</div>
+
+*/
 
 .k-dont-flex.k-dont-flex.k-dont-flex {
   @include flexbox {
@@ -430,11 +458,30 @@ Styleguide 6.9
 }
 
 
+/*
+Hide elements for touch enabled devices
+
+markup:
+<div class="k-no-transition">...</div>
+
+*/
+
 .k-touchevents-hidden {
   @include modernizr('.k-touchevents') {
     display: none !important;
   }
 }
+
+
+/*
+Text overflow
+
+markup:
+<div class="k-ellipsis">
+  <div class="k-ellipsis__item"></div>
+</div>
+
+*/
 
 .k-ellipsis {
   max-width: 100%;
@@ -456,16 +503,51 @@ Styleguide 6.9
   // Item to be ellipsed
 }
 
+
+/*
+"Cover all" link
+
+Use a psuedo element inside the `<a>` to vover the entire parent.
+- This way we don't have to make a the parent element a link.
+- Downside: You can't select the text anymore, but this could also be used to your advantage
+
+markup:
+<div class="k-link-coverall">...</div>
+
+*/
+
 .k-link-coverall {
   @include psuedo(after, false) {
     @include coverall;
   }
 }
 
+
+/*
+"On-top" links
+
+Use inside the same parent as the above "coverall" link to place this link on top of the psuedo element
+
+markup:
+<div class="k-link-ontop">...</div>
+
+*/
+
 .k-link-ontop {
   position: relative;
   z-index: 1;
 }
+
+
+/*
+This or that
+
+Line items up next to each other
+
+markup:
+<div class="k-this-or-that">...</div>
+
+*/
 
 .k-this-or-that {
   display: inline-block;

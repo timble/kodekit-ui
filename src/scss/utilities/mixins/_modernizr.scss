@@ -1,10 +1,21 @@
 // Modernizr
 // Use: @include modernizr('.k-appearance.k-checked') { ... }
 
-@mixin modernizr($classes) {
+@mixin modernizr($classes, $root: false) {
   @at-root {
     #{$classes} & {
       @content
+    }
+  }
+
+
+  // Same level as selectors (useful for when inside modernizr mixin for example)
+
+  @if $root == true {
+    @at-root {
+      #{$classes}#{&} {
+        @content
+      }
     }
   }
 }

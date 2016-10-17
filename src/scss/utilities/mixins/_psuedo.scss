@@ -24,6 +24,8 @@
 
     @if $content == true {
       content: " ";
+    } @else if $content != false {
+      content: $content;
     }
 
     @content;
