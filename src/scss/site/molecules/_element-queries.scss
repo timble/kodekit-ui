@@ -1,0 +1,92 @@
+/**
+ * Element querie parent
+ *
+ * 1. Hide overflowing negative margin
+ * 2. Clear margin on top and bottom
+ */
+
+$element-querie-min-width: 170px;
+$element-querie-spacing: 20px;
+$element-querie-min-width-column: $element-querie-min-width + $element-querie-spacing;
+$element-querie-spacing-half: $element-querie-spacing / 2;
+
+.k-element-querie-parent {
+  overflow: hidden; /* 1 */
+
+  &:before, /* 2 */
+  &:after { /* 2 */
+    display: table;
+    content: " ";
+    clear: both;
+  }
+}
+
+
+/**
+ * Element querie
+ *
+ * 1. Use flexbox for media queries
+ * 2. Make sure to wrap elements when there's no space
+ * 3. Set a negative margin so we can set positive margins on each separate child
+ */
+
+.k-element-querie {
+  display: flex; /* 1 */
+  flex-wrap: wrap; /* 2 */
+  margin: -($element-querie-spacing-half); /* 3 */
+}
+
+
+/**
+ * Element querie children
+ *
+ * 1. Set flexbox so we can flex the content container
+ * 2. Grow and shrink container to always fit
+ */
+
+.k-element-querie__main,
+.k-element-querie__sub {
+  display: flex; /* 1 */
+  flex-grow: 1; /* 2 */
+  flex-shrink: 1; /* 2 */
+}
+
+
+/**
+ * Main element
+ *
+ * Flex-basis of 50% effectively setting a min-width and make sure children are 25%
+ */
+
+.k-element-querie__main {
+  flex-basis: 50%;
+}
+
+
+/**
+ * Sub element
+ *
+ * Set a min-width of sub column width
+ */
+
+.k-element-querie__sub {
+  flex-basis: $element-querie-min-width-column;
+  min-width: $element-querie-min-width-column;
+}
+
+
+/**
+ * Content container
+ *
+ * 1. Fill parent container
+ * 2. Set width of 100%
+ * 3. Set the margin of items here
+ */
+
+.k-element-querie-content {
+  flex-grow: 1; /* 1 */
+  flex-shrink: 1; /* 1 */
+  max-width: 100%; /* 2 */
+  width: 100%; /* 2 */
+  margin: $element-querie-spacing-half; /* 3 */
+}
