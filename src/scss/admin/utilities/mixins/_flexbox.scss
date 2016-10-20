@@ -8,17 +8,17 @@
 // This is a good thing since we're not sure what we're showing / hiding with JS that might mess with flexbox
 
 @mixin flexbox(
-  $horizontal: $flexbox-horizontal,
-  $vertical: $flexbox-vertical,
-  $root: false) {
+  $k-horizontal: $k-flexbox-horizontal,
+  $k-vertical: $k-flexbox-vertical,
+  $k-root: false) {
 
-  @if $flexbox == true { // 1
+  @if $k-flexbox == true { // 1
 
-    @if $root == false {
+    @if $k-root == false {
       @at-root { // 2
         .k-flexbox &, // 3
         .k-flexboxlegacy & { // 3
-          @media (min-width: $horizontal) and (min-height: $vertical) { // 4
+          @media (min-width: $k-horizontal) and (min-height: $k-vertical) { // 4
             @content
           }
         }
@@ -28,11 +28,11 @@
 
     // Same level as selectors (useful for when inside modernizr mixin for example)
 
-    @if $root == true {
+    @if $k-root == true {
       @at-root { // 2
         .k-flexbox#{&}, // 3
         .k-flexboxlegacy#{&} { // 3
-          @media (min-width: $horizontal) and (min-height: $vertical) { // 4
+          @media (min-width: $k-horizontal) and (min-height: $k-vertical) { // 4
             @content
           }
         }

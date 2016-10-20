@@ -37,7 +37,7 @@ Styleguide 2.22
   margin-bottom: 0;
   padding-left: 0;
   list-style: none;
-  border-bottom: 1px solid $nav-tabs-border;
+  border-bottom: 1px solid $k-nav-tabs-border;
 
 
   /**
@@ -53,18 +53,18 @@ Styleguide 2.22
     & > a {
       position: relative;
       display: block;
-      padding: $nav-tabs-link-spacing;
+      padding: $k-nav-tabs-link-spacing;
       margin-right: 2px;
-      line-height: $line-height;
+      line-height: $k-line-height;
       border: 1px solid transparent;
-      border-radius: $border-radius $border-radius 0 0;
+      border-radius: $k-border-radius $k-border-radius 0 0;
       text-decoration: none;
 
       &:hover,
       &:focus {
         text-decoration: none;
-        background-color: $nav-tabs-link-hover-background;
-        border-color: $nav-tabs-link-hover-border $nav-tabs-link-hover-border $nav-tabs-border;
+        background-color: $k-nav-tabs-link-hover-background;
+        border-color: $k-nav-tabs-link-hover-border $k-nav-tabs-link-hover-border $k-nav-tabs-border;
       }
     }
 
@@ -74,8 +74,8 @@ Styleguide 2.22
      */
 
     &.k-is-disabled > a {
-      color: $nav-tabs-disabled-link-color;
-      cursor: $cursor-disabled;
+      color: $k-nav-tabs-disabled-link-color;
+      cursor: $k-cursor-disabled;
       pointer-events: none;
 
       &:hover,
@@ -83,7 +83,7 @@ Styleguide 2.22
         color: inherit;
         text-decoration: none;
         background-color: transparent;
-        cursor: $cursor-disabled;
+        cursor: $k-cursor-disabled;
       }
     }
 
@@ -96,9 +96,9 @@ Styleguide 2.22
       &,
       &:hover,
       &:focus {
-        color: $nav-tabs-active-link-hover-color;
-        background-color: $nav-tabs-active-link-hover-background;
-        border: 1px solid $nav-tabs-active-link-hover-border;
+        color: $k-nav-tabs-active-link-hover-color;
+        background-color: $k-nav-tabs-active-link-hover-background;
+        border: 1px solid $k-nav-tabs-active-link-hover-border;
         border-bottom-color: transparent;
         cursor: default;
       }
@@ -114,8 +114,8 @@ Styleguide 2.22
     &,
     &:hover,
     &:focus {
-      background-color: $nav-tabs-link-hover-background;
-      border-color: $color-accent;
+      background-color: $k-nav-tabs-link-hover-background;
+      border-color: $k-color-accent;
     }
   }
 }
@@ -129,7 +129,7 @@ Styleguide 2.22
 .k-tabs-content {
   & > .k-tab {
     display: none;
-    padding: $spacing-small;
+    padding: $k-spacing-small;
   }
 
   & > .k-is-active {

@@ -32,9 +32,9 @@ Styleguide 2.24
 */
 
 .k-toolbar {
-  @include border(bottom, $toolbar-border);
-  background: $toolbar-background;
-  min-height: $toolbar-height;
+  @include border(bottom, $k-toolbar-border);
+  background: $k-toolbar-background;
+  min-height: $k-toolbar-height;
   padding-bottom: 10px;
 
 
@@ -62,7 +62,7 @@ Styleguide 2.24
      * By default we just want them as buttons
      */
 
-    @include breakpoint(0, range, $charlie) {
+    @include breakpoint(0, range, $k-charlie) {
       overflow: hidden;
       width: 32px;
       height: 32px;
@@ -100,13 +100,13 @@ Styleguide 2.24
    */
 
   [class^="k-icon"] {
-    @include breakpoint(0, range, $charlie) {
+    @include breakpoint(0, range, $k-charlie) {
       display: block;
       margin: 0 0 10px;
-      width: $font-size-large;
-      height: $font-size-large;
-      font-size: $font-size-large;
-      line-height: $font-size-large;
+      width: $k-font-size-large;
+      height: $k-font-size-large;
+      font-size: $k-font-size-large;
+      line-height: $k-font-size-large;
     }
 
     display: inline-block;
@@ -132,7 +132,7 @@ Styleguide 2.24
 /* Text on the toolbar buttons */
 
 .k-toolbar__text {
-  @include breakpoint(0, range, $charlie) {
+  @include breakpoint(0, range, $k-charlie) {
     position: relative;
     z-index: -1;
     visibility: hidden;

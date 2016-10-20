@@ -2,43 +2,43 @@
 // Cover the entire parent element
 
 @mixin coverall(
-  $margin: 0,
-  $top: true,
-  $right: true,
-  $bottom: true,
-  $left: true,
-  $reset: false,
-  $position: true) {
+  $k-margin: 0,
+  $k-top: true,
+  $k-right: true,
+  $k-bottom: true,
+  $k-left: true,
+  $k-reset: false,
+  $k-position: true) {
 
-  @if $position == true {
+  @if $k-position == true {
     position: absolute;
   }
 
-  @if $top == true {
-    top: $margin;
-  } @else if $top != false {
-    top: $top;
+  @if $k-top == true {
+    top: $k-margin;
+  } @else if $k-top != false {
+    top: $k-top;
   }
 
-  @if $right == true {
-    right: $margin;
-  } @else if $right != false {
-    right: $right;
+  @if $k-right == true {
+    right: $k-margin;
+  } @else if $k-right != false {
+    right: $k-right;
   }
 
-  @if $bottom == true {
-    bottom: $margin;
-  } @else if $bottom != false {
-    bottom: $bottom;
+  @if $k-bottom == true {
+    bottom: $k-margin;
+  } @else if $k-bottom != false {
+    bottom: $k-bottom;
   }
 
-  @if $left == true {
-    left: $margin;
-  } @else if $left != false {
-    left: $left;
+  @if $k-left == true {
+    left: $k-margin;
+  } @else if $k-left != false {
+    left: $k-left;
   }
 
-  @if $reset == true {
+  @if $k-reset == true {
     position: relative;
     top: auto;
     right: auto;

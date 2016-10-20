@@ -25,7 +25,7 @@ Styleguide 3.5
 .k-content {
   position: relative; /* 1 */
   z-index: 2; /* 1 */
-  background: $content-background; /* 2 */
+  background: $k-content-background; /* 2 */
   @include transition(transform); /* 3 */
 
 
@@ -62,18 +62,18 @@ Styleguide 3.5
 
 .k-show-left-menu {
   .k-content {
-    transform: translate($sidebar-left-width, 0); /* 1 */
+    transform: translate($k-sidebar-left-width, 0); /* 1 */
 
-    @include breakpoint($sidebar-left-querie-width) {
+    @include breakpoint($k-sidebar-left-querie-width) {
       transform: translate(0, 0); /* 3 */
     }
   }
 
   @include rtl {
     .k-content {
-      transform: translate(-($sidebar-left-width), 0);
+      transform: translate(-($k-sidebar-left-width), 0);
 
-      @include breakpoint($sidebar-left-querie-width) {
+      @include breakpoint($k-sidebar-left-querie-width) {
         transform: translate(0, 0);
       }
     }
@@ -82,18 +82,18 @@ Styleguide 3.5
 
 .k-show-right-menu {
   .k-content {
-    transform: translate(-($sidebar-right-width), 0); /* 2 */
+    transform: translate(-($k-sidebar-right-width), 0); /* 2 */
 
-    @include breakpoint($sidebar-right-querie-width) {
+    @include breakpoint($k-sidebar-right-querie-width) {
       transform: translate(0, 0); /* 3 */
     }
   }
 
   @include rtl {
     .k-content {
-      transform: translate($sidebar-right-width, 0);
+      transform: translate($k-sidebar-right-width, 0);
 
-      @include breakpoint($sidebar-right-querie-width) {
+      @include breakpoint($k-sidebar-right-querie-width) {
         transform: translate(0, 0);
       }
     }
@@ -105,11 +105,11 @@ Styleguide 3.5
   .k-content {
     overflow: hidden;
 
-    @include breakpoint($sidebar-left-querie-width) {
+    @include breakpoint($k-sidebar-left-querie-width) {
       overflow: auto; /* 3 */
     }
 
-    @include breakpoint($sidebar-right-querie-width) {
+    @include breakpoint($k-sidebar-right-querie-width) {
       overflow: auto; /* 3 */
     }
 
@@ -135,7 +135,7 @@ Styleguide 3.5
   display: block;
   opacity: 0; /* 3 */
   content: " ";
-  background: $off-canvas-overlay-background;
+  background: $k-off-canvas-overlay-background;
   @include transition(opacity);
 }
 
@@ -150,7 +150,7 @@ Styleguide 3.5
 .k-show-left-menu,
 .k-show-right-menu {
   .k-off-canvas-overlay {
-    opacity: $off-canvas-overlay-opacity; /* 1 */
+    opacity: $k-off-canvas-overlay-opacity; /* 1 */
   }
 }
 

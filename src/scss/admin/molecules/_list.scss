@@ -30,11 +30,11 @@ Styleguide 2.13
  */
 
 .k-list {
-  @include reset($margin: false); /* 1 */
-  margin: $list-spacing 0;
+  @include reset($k-margin: false); /* 1 */
+  margin: $k-list-spacing 0;
 
   @include rtl {
-    margin: $list-spacing 0;
+    margin: $k-list-spacing 0;
 
 
     /* Override for rtl ul-ol-li styling */
@@ -47,7 +47,7 @@ Styleguide 2.13
 
   li {
     display: block;
-    line-height: $line-height;
+    line-height: $k-line-height;
   }
 
 
@@ -60,11 +60,11 @@ Styleguide 2.13
 
   a {
     display: block; /* 1 */
-    padding-top: $list-spacing;
-    padding-bottom: $list-spacing;
-    padding-right: $spacing;
-    padding-left: $spacing;
-    color: $list-color;
+    padding-top: $k-list-spacing;
+    padding-bottom: $k-list-spacing;
+    padding-right: $k-spacing;
+    padding-left: $k-spacing;
+    color: $k-list-color;
     text-decoration: none; /* 2 */
 
 
@@ -72,8 +72,8 @@ Styleguide 2.13
 
     &:hover,
     &:focus {
-      background: $list-hover-background;
-      color: $list-hover-color;
+      background: $k-list-hover-background;
+      color: $k-list-hover-color;
       text-decoration: none; /* 2 */
     }
   }
@@ -83,9 +83,9 @@ Styleguide 2.13
 
   .k-is-active {
     a {
-      font-weight: $bold;
-      background: $list-active-background;
-      color: $list-active-color;
+      font-weight: $k-bold;
+      background: $k-list-active-background;
+      color: $k-list-active-color;
 
       &:hover {
         background: transparent;

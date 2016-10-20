@@ -33,15 +33,15 @@ Styleguide 2.9
 .k-form-control {
   display: block;
   width: 100%;
-  height: $input-height-base; /* 1 */
-  padding: $spacing-base-vertical $spacing-base-horizontal;
-  font-size: $font-size;
-  line-height: $line-height;
-  color: $input-color;
-  background-color: $input-background;
+  height: $k-input-height-base; /* 1 */
+  padding: $k-spacing-base-vertical $k-spacing-base-horizontal;
+  font-size: $k-font-size;
+  line-height: $k-line-height;
+  color: $k-input-color;
+  background-color: $k-input-background;
   background-image: none; /* 2 */
-  border: 1px solid $input-border;
-  border-radius: $input-border-radius; /* 3 */
+  border: 1px solid $k-input-border;
+  border-radius: $k-input-border-radius; /* 3 */
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 
@@ -54,16 +54,16 @@ Styleguide 2.9
   /* Placeholders */
 
   &::-moz-placeholder {
-    color: $input-color-placeholder;
+    color: $k-input-color-placeholder;
     opacity: 1;
   }
 
   &:-ms-input-placeholder {
-    color: $input-color-placeholder;
+    color: $k-input-color-placeholder;
   }
 
   &::-webkit-input-placeholder  {
-    color: $input-color-placeholder;
+    color: $k-input-color-placeholder;
   }
 
 
@@ -80,13 +80,13 @@ Styleguide 2.9
   &[disabled],
   &[readonly],
   fieldset[disabled] & {
-    background-color: $input-background-disabled;
+    background-color: $k-input-background-disabled;
     opacity: 1; /* 6 */
   }
 
   &[disabled],
   fieldset[disabled] & {
-    cursor: $cursor-disabled;
+    cursor: $k-cursor-disabled;
   }
 }
 
@@ -129,15 +129,15 @@ input[type="search"] {
   input[type="datetime-local"],
   input[type="month"] {
     &.k-form-control {
-      line-height: $input-height-base;
+      line-height: $k-input-height-base;
     }
 
     .k-input-group--small & {
-      line-height: $input-height-small;
+      line-height: $k-input-height-small;
     }
 
     .k-input-group--large & {
-      line-height: $input-height-large;
+      line-height: $k-input-height-large;
     }
   }
 }
@@ -185,16 +185,16 @@ Styleguide 2.9.1
     -webkit-appearance: none; /* 1 */
     /* -moz-appearance: don't set this; /* 1 */
     position: relative; /* 2 */
-    height: $form-option-size;
-    width: $form-option-size;
+    height: $k-form-option-size;
+    width: $k-form-option-size;
     margin: 0 .33em 0 0;
-    border: $form-option-border-size solid $form-option-border;
+    border: $k-form-option-border-size solid $k-form-option-border;
     padding: 0;
-    background: $form-option-background;
+    background: $k-form-option-background;
     display: inline-block;
     vertical-align: middle;
     cursor: pointer; /* 5 */
-    box-shadow: $form-option-shadow;
+    box-shadow: $k-form-option-shadow;
     @include transition(background);
 
 
@@ -313,11 +313,11 @@ Styleguide 2.9.1
 
     @include icon-before(check, true) {
       /* 2 */
-      width: $form-option-size - ($form-option-border-size * 2); /* 3 */
-      height: $form-option-size - ($form-option-border-size * 2); /* 3 */
-      line-height: $form-option-size - ($form-option-border-size * 2); /* 3 */
-      font-size: $form-option-size - ($form-option-border-size * 4); /* 4 */
-      color: $color-accent; /* 5 */
+      width: $k-form-option-size - ($k-form-option-border-size * 2); /* 3 */
+      height: $k-form-option-size - ($k-form-option-border-size * 2); /* 3 */
+      line-height: $k-form-option-size - ($k-form-option-border-size * 2); /* 3 */
+      font-size: $k-form-option-size - ($k-form-option-border-size * 4); /* 4 */
+      color: $k-color-accent; /* 5 */
     }
   }
 }
@@ -339,10 +339,10 @@ Styleguide 2.9.1
 
     &:before {
       content: " "; /* 2 */
-      width: $form-option-size - ($form-option-border-size * 8); /* 3 */
-      height: $form-option-size - ($form-option-border-size * 8); /* 3 */
+      width: $k-form-option-size - ($k-form-option-border-size * 8); /* 3 */
+      height: $k-form-option-size - ($k-form-option-border-size * 8); /* 3 */
       margin: 3px; /* 4 */
-      background: $form-option-color;
+      background: $k-form-option-color;
       border-radius: 50%; /* 5 */
     }
   }
@@ -357,9 +357,9 @@ Feedback states
 .k-has-error - Error
 
 markup:
-<div class="k-form-group {$modifiers}">
-    <label for="input-[2.9.2]-1-{$modifiers}">Default input</label>
-    <input class="k-form-control" type="text" id="input-[2.9.2]-1-{$modifiers}" />
+<div class="k-form-group {$k-modifiers}">
+    <label for="input-[2.9.2]-1-{$k-modifiers}">Default input</label>
+    <input class="k-form-control" type="text" id="input-[2.9.2]-1-{$k-modifiers}" />
 </div>
 
 Styleguide 2.9.2
@@ -367,13 +367,13 @@ Styleguide 2.9.2
 */
 
 .k-has-success {
-  @include form-control-validation($state-success-color, $state-success-color, $state-success-background);
+  @include form-control-validation($k-state-success-color, $k-state-success-color, $k-state-success-background);
 }
 .k-has-warning {
-  @include form-control-validation($state-warning-color, $state-warning-color, $state-warning-background);
+  @include form-control-validation($k-state-warning-color, $k-state-warning-color, $k-state-warning-background);
 }
 .k-has-error {
-  @include form-control-validation($state-danger-color, $state-danger-color, $state-danger-background);
+  @include form-control-validation($k-state-danger-color, $k-state-danger-color, $k-state-danger-background);
 }
 
 
@@ -416,7 +416,7 @@ default - Default
 .k-input-group--large - Large
 
 markup:
-<div class="k-input-group {$modifiers}">
+<div class="k-input-group {$k-modifiers}">
     <div class="k-input-group__addon">Addon</div>
     <input type="text" class="k-form-control" />
     <div class="k-input-group__button">
@@ -487,7 +487,7 @@ Styleguide 2.9.4
 
   .k-input-group__button {
     .k-button {
-      height: $input-height-base;
+      height: $k-input-height-base;
     }
   }
 }
@@ -500,24 +500,24 @@ Styleguide 2.9.4
   & > .select2-container--bootstrap .select2-selection--single,
   & > .k-input-group__addon,
   & > .k-input-group__button > .k-button {
-    height: $input-height-large;
-    padding: $spacing-large-vertical $spacing-large-horizontal;
-    font-size: $font-size-large;
-    line-height: $line-height-large;
-    border-radius: $border-radius-large;
+    height: $k-input-height-large;
+    padding: $k-spacing-large-vertical $k-spacing-large-horizontal;
+    font-size: $k-font-size-large;
+    line-height: $k-line-height-large;
+    border-radius: $k-border-radius-large;
 
     @include rtl {
-      border-radius: $border-radius-large;
+      border-radius: $k-border-radius-large;
     }
   }
 
   & > .select2-container--bootstrap .select2-selection--single .select2-selection--rendered {
-    line-height: $line-height-large;
+    line-height: $k-line-height-large;
   }
 
   select.k-form-control {
-    height: $input-height-large;
-    line-height: $input-height-large;
+    height: $k-input-height-large;
+    line-height: $k-input-height-large;
 
     @include rtl {
       direction: rtl;
@@ -535,24 +535,24 @@ Styleguide 2.9.4
   & > .select2-container--bootstrap .select2-selection--single,
   & > .k-input-group__addon,
   & > .k-input-group__button > .k-button {
-    height: $input-height-small;
-    padding: $spacing-small-vertical $spacing-small-horizontal;
-    font-size: $font-size-small;
-    line-height: $line-height-small;
-    border-radius: $border-radius-small;
+    height: $k-input-height-small;
+    padding: $k-spacing-small-vertical $k-spacing-small-horizontal;
+    font-size: $k-font-size-small;
+    line-height: $k-line-height-small;
+    border-radius: $k-border-radius-small;
 
     @include rtl {
-      border-radius: $border-radius-small;
+      border-radius: $k-border-radius-small;
     }
   }
 
   & > .select2-container--bootstrap .select2-selection--single .select2-selection--rendered {
-    line-height: $line-height-small;
+    line-height: $k-line-height-small;
   }
 
   select.k-form-control {
-    height: $input-height-small;
-    line-height: $input-height-small;
+    height: $k-input-height-small;
+    line-height: $k-input-height-small;
   }
 
   textarea.k-form-control,
@@ -622,16 +622,16 @@ Styleguide 2.9.4
 /* Text addon */
 
 .k-input-group__addon {
-  font-size: $font-size;
-  line-height: $line-height;
-  height: $input-height-base;
-  padding: $spacing-base-vertical $spacing-base-horizontal;
+  font-size: $k-font-size;
+  line-height: $k-line-height;
+  height: $k-input-height-base;
+  padding: $k-spacing-base-vertical $k-spacing-base-horizontal;
   font-weight: normal;
-  color: $input-color;
+  color: $k-input-color;
   text-align: center;
-  background-color: $input-group-addon-bg;
-  border: 1px solid $input-group-addon-border-color;
-  border-radius: $input-border-radius;
+  background-color: $k-input-group-addon-bg;
+  border: 1px solid $k-input-group-addon-border-color;
+  border-radius: $k-input-border-radius;
   overflow: hidden;
   text-overflow: ellipsis;;
 
@@ -665,7 +665,7 @@ Styleguide 2.9.4
   .k-input-group__button:first-child > .k-dropdown__toggle,
   .k-input-group__button:last-child > .k-button:not(:last-child):not(.k-dropdown__toggle),
   .k-input-group__button:last-child > .k-button-group:not(:last-child) > .k-button {
-    @include border-right-radius($input-border-radius);
+    @include border-right-radius($k-input-border-radius);
     @include border-left-radius(0);
   }
 }
@@ -674,7 +674,7 @@ Styleguide 2.9.4
   border-right: none;
 
   @include rtl {
-    border-right: 1px solid $input-border;
+    border-right: 1px solid $k-input-border;
     border-left: none;
   }
 }
@@ -697,13 +697,13 @@ Styleguide 2.9.4
   .k-input-group__button:last-child > .k-dropdown__toggle,
   .k-input-group__button:first-child > .k-button:not(:first-child),
   .k-input-group__button:first-child > .k-button-group:not(:first-child) > .k-button {
-    @include border-left-radius($input-border-radius);
+    @include border-left-radius($k-input-border-radius);
     @include border-right-radius(0);
   }
 }
 
 .k-input-group__addon:last-child {
-  border-left: 1px solid $input-border;
+  border-left: 1px solid $k-input-border;
 
   @include rtl {
     border-left-width: 1px;
@@ -732,13 +732,13 @@ Styleguide 2.9.4
 
   .k-button,
   .k-dropdown__menu {
-    font-size: $font-size;
+    font-size: $k-font-size;
   }
 
   /* 2 */
   > .k-button {
     position: relative;
-    font-size: $font-size;
+    font-size: $k-font-size;
     margin: 0;
 
     + .k-button {
@@ -795,9 +795,9 @@ default - Default
 .k-form-group--large - Large form groups
 
 markup:
-<div class="k-form-group {$modifiers}">
-    <label for="input-[2.9]-1-{$modifiers}">Label</label>
-    <input class="k-form-control" type="text" id="input-[2.9]-1-{$modifiers}" />
+<div class="k-form-group {$k-modifiers}">
+    <label for="input-[2.9]-1-{$k-modifiers}">Label</label>
+    <input class="k-form-control" type="text" id="input-[2.9]-1-{$k-modifiers}" />
 </div>
 
 Styleguide 2.9.5
@@ -827,16 +827,16 @@ Styleguide 2.9.5
 
 .k-form-group--small {
   .k-form-control {
-    font-size: $font-size-small;
-    height: $input-height-small;
-    padding: $spacing-small-vertical $spacing-small-horizontal;
-    line-height: $line-height-small;
-    border-radius: $border-radius-small;
+    font-size: $k-font-size-small;
+    height: $k-input-height-small;
+    padding: $k-spacing-small-vertical $k-spacing-small-horizontal;
+    line-height: $k-line-height-small;
+    border-radius: $k-border-radius-small;
   }
 
   select.k-form-control {
-    height: $input-height-small;
-    line-height: $input-height-small;
+    height: $k-input-height-small;
+    line-height: $k-input-height-small;
   }
 
   textarea.k-form-control,
@@ -847,16 +847,16 @@ Styleguide 2.9.5
 
 .k-form-group--large {
   .k-form-control {
-    font-size: $font-size-large;
-    height: $input-height-large;
-    padding: $spacing-large-vertical $spacing-large-horizontal;
-    line-height: $line-height-large;
-    border-radius: $border-radius-large;
+    font-size: $k-font-size-large;
+    height: $k-input-height-large;
+    padding: $k-spacing-large-vertical $k-spacing-large-horizontal;
+    line-height: $k-line-height-large;
+    border-radius: $k-border-radius-large;
   }
 
   select.k-form-control {
-    height: $input-height-large;
-    line-height: $input-height-large;
+    height: $k-input-height-large;
+    line-height: $k-input-height-large;
   }
 
   textarea.k-form-control,
@@ -949,10 +949,10 @@ Styleguide 2.9.7
 */
 
 .k-form-row-group {
-  background: $color-primary-plus-6;
+  background: $k-color-primary-plus-6;
   border-radius: 5px;
-  border: 1px solid $color-primary-min-2;
-  margin-bottom: $spacing;
+  border: 1px solid $k-color-primary-min-2;
+  margin-bottom: $k-spacing;
 }
 
 
@@ -988,14 +988,14 @@ Styleguide 2.9.8
 
 .k-form-row {
   margin: 0;
-  border-bottom: 1px solid $color-primary-min-2;
+  border-bottom: 1px solid $k-color-primary-min-2;
   padding-bottom: 10px;
 
   &:last-child {
     border-bottom: 0;
   }
 
-  @include breakpoint($beta) {
+  @include breakpoint($k-beta) {
     display: table;
     width: 100%;
     padding-bottom: 0;
@@ -1012,15 +1012,15 @@ Styleguide 2.9.8
   .k-form-row__item {
     padding: 10px 10px 0 10px;
 
-    @include breakpoint($beta) {
+    @include breakpoint($k-beta) {
       display: table-cell;
       vertical-align: middle;
       padding: 10px;
-      border-right: 1px solid $color-primary-min-2;
+      border-right: 1px solid $k-color-primary-min-2;
 
       @include rtl {
         border-right: none;
-        border-left: 1px solid $color-primary-min-2;
+        border-left: 1px solid $k-color-primary-min-2;
       }
     }
 
@@ -1051,7 +1051,7 @@ Styleguide 2.9.8
   }
 
   .k-form-row__item--input {
-    @include breakpoint($beta) {
+    @include breakpoint($k-beta) {
       padding: 5px;
     }
   }
@@ -1067,7 +1067,7 @@ Styleguide 2.9.8
 
       &:focus,
       &:hover {
-        background: $color-primary-plus-1;
+        background: $k-color-primary-plus-1;
       }
     }
   }
@@ -1119,5 +1119,5 @@ Styleguide 2.9.10
 .k-form-info {
   margin-top: 0.75em;
   @include content-block(1em);
-  color: $color-type-lighter;
+  color: $k-color-type-lighter;
 }

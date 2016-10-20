@@ -2,7 +2,7 @@
 // Base styles
 //
 
-.alert {
+.k-alert {
   padding: $alert-padding;
   margin-bottom: $spacer-y;
   border: $alert-border-width solid transparent;
@@ -10,13 +10,13 @@
 }
 
 // Headings for larger alerts
-.alert-heading {
+.k-alert__heading {
   // Specified to prevent conflicts of changing $headings-color
   color: inherit;
 }
 
 // Provide class for links that match alerts
-.alert-link {
+.k-alert-link {
   font-weight: $alert-link-font-weight;
 }
 
@@ -25,11 +25,11 @@
 //
 // Expand the right padding and account for the close button's positioning.
 
-.alert-dismissible {
+.k-alert--dismissible {
   padding-right: ($alert-padding * 2);
 
   // Adjust close link position
-  .close {
+  .k-close {
     position: relative;
     top: -.125rem;
     right: -$alert-padding;
@@ -42,15 +42,18 @@
 //
 // Generate contextual modifier classes for colorizing the alert.
 
-.alert-success {
+.k-alert--success {
   @include alert-variant($alert-success-bg, $alert-success-border, $alert-success-text);
 }
-.alert-info {
+
+.k-alert--info {
   @include alert-variant($alert-info-bg, $alert-info-border, $alert-info-text);
 }
-.alert-warning {
+
+.k-alert--warning {
   @include alert-variant($alert-warning-bg, $alert-warning-border, $alert-warning-text);
 }
-.alert-danger {
+
+.k-alert--danger {
   @include alert-variant($alert-danger-bg, $alert-danger-border, $alert-danger-text);
 }

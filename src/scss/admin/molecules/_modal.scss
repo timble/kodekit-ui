@@ -291,8 +291,8 @@ button::-moz-focus-inner {
   width: 40px;
   height: 40px;
   top: -40px;
-  font-size: $font-size-huge;
-  line-height: $line-height-huge;
+  font-size: $k-font-size-huge;
+  line-height: $k-line-height-huge;
   right: -14px;
 
   @include rtl {
@@ -731,7 +731,7 @@ img.mfp-img {
 }
 
 .k-inline-modal {
-  padding: $spacing;
+  padding: $k-spacing;
   background: white;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
@@ -747,9 +747,8 @@ img.mfp-img {
 }
 
 .k-inline-modal__title {
-  margin: 0 0 $spacing 0;
-  font-weight: $regular;
-  font-size: $font-size-large;
-  line-height: $line-height-large;
+  margin: 0 0 $k-spacing 0;
+  font-weight: $k-regular;
+  font-size: $k-font-size-large;
+  line-height: $k-line-height-large;
 }
-

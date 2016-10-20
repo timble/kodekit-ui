@@ -62,21 +62,21 @@ Styleguide 2.21.11
   .footable-toggle {
     content: " ";
     display: inline-block;
-    width: $footable-toggle-size;
-    height: $footable-toggle-size;
-    line-height: ($footable-toggle-size - ($footable-toggle-border-size * 2));
-    border: $footable-toggle-border-size solid $footable-toggle-color;
+    width: $k-footable-toggle-size;
+    height: $k-footable-toggle-size;
+    line-height: ($k-footable-toggle-size - ($k-footable-toggle-border-size * 2));
+    border: $k-footable-toggle-border-size solid $k-footable-toggle-color;
     border-radius: 50%;
     text-align: center;
     vertical-align: middle;
 
     @include icon-after(chevron-bottom, true) {
       display: inline-block;
-      width: $footable-toggle-icon-size;
-      height: $footable-toggle-icon-size;
-      margin: ((($footable-toggle-size - $footable-toggle-icon-size) / 2) - $footable-toggle-border-size);
-      color: $footable-toggle-color;
-      font-size: $footable-toggle-icon-size;
+      width: $k-footable-toggle-icon-size;
+      height: $k-footable-toggle-icon-size;
+      margin: ((($k-footable-toggle-size - $k-footable-toggle-icon-size) / 2) - $k-footable-toggle-border-size);
+      color: $k-footable-toggle-color;
+      font-size: $k-footable-toggle-icon-size;
       line-height: 1.3em;
       transform: rotate(-90deg);
       @include transition;
@@ -85,10 +85,10 @@ Styleguide 2.21.11
 
   tr.k-is-selected {
     .footable-toggle {
-      border-color: $footable-toggle-color-active;
+      border-color: $k-footable-toggle-color-active;
 
       &:after {
-        color: $footable-toggle-color-active;
+        color: $k-footable-toggle-color-active;
       }
     }
   }
@@ -112,11 +112,11 @@ Styleguide 2.21.11
 
   .footable-row-detail-row {
     @include clearfix;
-    @include content-block($table-cell-spacing-vertical);
+    @include content-block($k-table-cell-spacing-vertical);
   }
 
   .footable-row-detail-name {
-    font-weight: $bold;
+    font-weight: $k-bold;
   }
 
 
@@ -129,8 +129,8 @@ Styleguide 2.21.11
   .footable-row-detail-name,
   .footable-row-detail-value {
     position: relative; /* 1 */
-    min-height: round($unit-size * 0.75); /* 2 */
-    padding: $table-cell-spacing-vertical $table-cell-spacing-horizontal; /* 3 */
+    min-height: round($k-unit-size * 0.75); /* 2 */
+    padding: $k-table-cell-spacing-vertical $k-table-cell-spacing-horizontal; /* 3 */
   }
 
 

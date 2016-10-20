@@ -87,9 +87,9 @@ Styleguide 2.6.2
   height: 0;
   margin-left: 2px;
   vertical-align: middle;
-  border-top:   $caret-width-base dashed;
-  border-right: $caret-width-base solid transparent;
-  border-left:  $caret-width-base solid transparent;
+  border-top:   $k-caret-width-base dashed;
+  border-right: $k-caret-width-base solid transparent;
+  border-left:  $k-caret-width-base solid transparent;
 
   @include rtl {
     margin-left: 0;
@@ -125,14 +125,14 @@ Styleguide 2.6.2
   position: absolute;
   top: 100%;
   left: 0;
-  z-index: $zindex-dropdown;
+  z-index: $k-zindex-dropdown;
   display: none; /* 1 */
   float: left;
   min-width: 160px;
   text-align: left; /* 2 */
-  background-color: $dropdown-background;
-  border: 1px solid $dropdown-border;
-  border-radius: $border-radius;
+  background-color: $k-dropdown-background;
+  border: 1px solid $k-dropdown-border;
+  border-radius: $k-border-radius;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   background-clip: padding-box;
 
@@ -157,8 +157,8 @@ Styleguide 2.6.2
     padding: 5px 15px;
     clear: both;
     font-weight: normal;
-    line-height: $line-height;
-    color: $dropdown-link-color;
+    line-height: $k-line-height;
+    color: $k-dropdown-link-color;
     white-space: nowrap; /* 1 */
   }
 
@@ -190,8 +190,8 @@ Styleguide 2.6.2
   &:hover,
   &:focus {
     text-decoration: none;
-    color: $dropdown-link-hover-color;
-    background-color: $dropdown-link-hover-background;
+    color: $k-dropdown-link-hover-color;
+    background-color: $k-dropdown-link-hover-background;
   }
 }
 
@@ -202,10 +202,10 @@ Styleguide 2.6.2
   &,
   &:hover,
   &:focus {
-    color: $dropdown-link-active-color;
+    color: $k-dropdown-link-active-color;
     text-decoration: none;
     outline: 0;
-    background-color: $dropdown-link-active-background;
+    background-color: $k-dropdown-link-active-background;
   }
 }
 
@@ -220,7 +220,7 @@ Styleguide 2.6.2
   &,
   &:hover,
   &:focus {
-    color: $dropdown-link-disabled-color;
+    color: $k-dropdown-link-disabled-color;
   }
 
 
@@ -235,7 +235,7 @@ Styleguide 2.6.2
     text-decoration: none;
     background-color: transparent;
     background-image: none; /* 1 */
-    cursor: $cursor-disabled;
+    cursor: $k-cursor-disabled;
   }
 }
 
@@ -268,7 +268,7 @@ Styleguide 2.6.2
   right: 0;
   bottom: 0;
   top: 0;
-  z-index: ($zindex-dropdown - 10);
+  z-index: ($k-zindex-dropdown - 10);
 }
 
 
@@ -285,7 +285,7 @@ Styleguide 2.6.2
 
   .k-caret {
     border-top: 0;
-    border-bottom: $caret-width-base dashed;
+    border-bottom: $k-caret-width-base dashed;
     content: "";
   }
 
@@ -440,7 +440,7 @@ Styleguide 2.6.3
       text-align: left;
       margin: 0 -5px;
       padding: 5px 15px;
-      border-radius: 0 0 $border-radius $border-radius;
+      border-radius: 0 0 $k-border-radius $k-border-radius;
 
       @include rtl {
         text-align: right;

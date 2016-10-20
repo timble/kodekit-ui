@@ -249,7 +249,7 @@ $caret-width-lg:         $caret-width !default;
 
 // Tables
 //
-// Customizes the `.table` component with basic values, each used across all table variations.
+// Customizes the `.k-table` component with basic values, each used across all table variations.
 
 $table-cell-padding:            .75rem !default;
 $table-sm-cell-padding:         .3rem !default;
@@ -658,9 +658,9 @@ $tag-danger-bg:             $brand-danger !default;
 
 $tag-color:                 #fff !default;
 $tag-link-hover-color:      #fff !default;
-$tag-font-size:             75% !default;
+$tag-font-size:             65% !default;
 $tag-font-weight:           bold !default;
-$tag-padding-x:             .4em !default;
+$tag-padding-x:             0.5em !default;
 $tag-padding-y:             .25em !default;
 
 $tag-pill-padding-x:        .6em !default;

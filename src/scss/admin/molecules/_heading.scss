@@ -15,7 +15,7 @@ Styleguide 2.11
 */
 
 .k-heading {
-  font-size: $font-size-huge;
-  line-height: $line-height-huge;
-  @include content-block($spacing);
+  font-size: $k-font-size-huge;
+  line-height: $k-line-height-huge;
+  @include content-block($k-spacing);
 }

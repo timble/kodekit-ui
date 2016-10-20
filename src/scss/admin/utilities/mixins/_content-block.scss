@@ -2,8 +2,8 @@
 // Sets a bottom margin and removes it for the last child
 // Using single colons for older browsers
 
-@mixin content-block($spacing: 1.5em) {
-  margin-bottom: $spacing;
+@mixin content-block($k-spacing: 1.5em) {
+  margin-bottom: $k-spacing;
 
   &:last-child {
     margin-bottom: 0;

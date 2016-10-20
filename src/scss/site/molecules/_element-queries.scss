@@ -1,14 +1,19 @@
+// Variables
+// Element querie kicks in at: 00px width (main width + sub width)
+
+$element-querie-main-width-pixels: 400px;
+$element-querie-min-width: 200px;
+$element-querie-spacing: 20px;
+$element-querie-min-width-column: $element-querie-min-width + $element-querie-spacing;
+$element-querie-spacing-half: $element-querie-spacing / 2;
+
+
 /**
  * Element querie parent
  *
  * 1. Hide overflowing negative margin
  * 2. Clear margin on top and bottom
  */
-
-$element-querie-min-width: 170px;
-$element-querie-spacing: 20px;
-$element-querie-min-width-column: $element-querie-min-width + $element-querie-spacing;
-$element-querie-spacing-half: $element-querie-spacing / 2;
 
 .k-element-querie-parent {
   overflow: hidden; /* 1 */
@@ -49,17 +54,17 @@ $element-querie-spacing-half: $element-querie-spacing / 2;
   display: flex; /* 1 */
   flex-grow: 1; /* 2 */
   flex-shrink: 1; /* 2 */
+  overflow: auto;
 }
 
 
 /**
  * Main element
- *
- * Flex-basis of 50% effectively setting a min-width and make sure children are 25%
  */
 
 .k-element-querie__main {
-  flex-basis: 50%;
+  flex-basis: $element-querie-main-width-pixels;
+  flex-grow: 5;
 }
 
 
@@ -71,7 +76,6 @@ $element-querie-spacing-half: $element-querie-spacing / 2;
 
 .k-element-querie__sub {
   flex-basis: $element-querie-min-width-column;
-  min-width: $element-querie-min-width-column;
 }
 
 
@@ -80,7 +84,7 @@ $element-querie-spacing-half: $element-querie-spacing / 2;
  *
  * 1. Fill parent container
  * 2. Set width of 100%
- * 3. Set the margin of items here
+ * 3. Set the padding of items here
  */
 
 .k-element-querie-content {
@@ -88,5 +92,87 @@ $element-querie-spacing-half: $element-querie-spacing / 2;
   flex-shrink: 1; /* 1 */
   max-width: 100%; /* 2 */
   width: 100%; /* 2 */
-  margin: $element-querie-spacing-half; /* 3 */
+  padding: $element-querie-spacing-half; /* 3 */
+}
+
+
+
+.k-float-right-element {
+  float: right;
+  margin-left: 1em;
+
+  @include rtl {
+    float: left;
+    margin-left: 0;
+    margin-right: 1em;
+  }
+}
+
+
+
+
+.k-max-width-third {
+  max-width: 33%;
+}
+
+
+.k-flag-object {
+  position: relative;
+  display: table;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+
+.k-flag-object--inline {
+  width: auto;
+}
+
+.k-flag-object__body {
+  display: table-cell;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.k-flag-object__aside {
+  display: table-cell;
+  white-space: nowrap;
+  vertical-align: middle;
+  padding-right: 0.5em;
+}
+
+
+
+
+.k-title {
+  @include content-block(1em);
+
+  a {
+    color: inherit;
+  }
+}
+
+.k-subtitle {
+  font-size: smaller;
+  margin-top: -1em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  @include content-block(1em);
+}
+
+
+
+.k-inline-list--separated {
+  .k-inline-list__item + .k-inline-list__item {
+    &:before {
+      content: "•";
+      padding: 0 0.5em;
+    }
+  }
+}
+
+.k-title-image {
+  max-width: 16px;
+  vertical-align: middle;
 }

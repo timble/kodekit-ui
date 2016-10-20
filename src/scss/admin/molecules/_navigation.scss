@@ -16,7 +16,7 @@ markup:
             {content}
         </a>
     </li>
-    <li class="{$modifiers}">
+    <li class="{$k-modifiers}">
         <a href="javascript:void(0)">
             {content}
         </a>
@@ -32,16 +32,16 @@ Styleguide 2.16
  */
 
 .k-navigation {
-  @include reset($padding: false, $background: false); /* 1 */
-  @include border(bottom, $navigation-border);
-  padding: ($navigation-spacing * 2) 0;
-  background: $navigation-background;
+  @include reset($k-padding: false, $k-background: false); /* 1 */
+  @include border(bottom, $k-navigation-border);
+  padding: ($k-navigation-spacing * 2) 0;
+  background: $k-navigation-background;
 
 
   /* Override for rtl ul-ol-li styling */
 
   @include rtl {
-    padding: ($navigation-spacing * 2) 0;
+    padding: ($k-navigation-spacing * 2) 0;
   }
 
 
@@ -49,7 +49,7 @@ Styleguide 2.16
 
   li {
     display: block;
-    line-height: $line-height;
+    line-height: $k-line-height;
   }
 
 
@@ -62,17 +62,17 @@ Styleguide 2.16
 
   a {
     display: block; /* 1 */
-    padding-top: $navigation-spacing;
-    padding-bottom: $navigation-spacing;
-    padding-right: round($navigation-spacing * 2);
-    padding-left: round($navigation-spacing * 3);
-    font-size: $navigation-font-size;
-    color: $navigation-color;
+    padding-top: $k-navigation-spacing;
+    padding-bottom: $k-navigation-spacing;
+    padding-right: round($k-navigation-spacing * 2);
+    padding-left: round($k-navigation-spacing * 3);
+    font-size: $k-navigation-font-size;
+    color: $k-navigation-color;
     text-decoration: none; // 2
 
     @include rtl {
-      padding-right: round($navigation-spacing * 3);
-      padding-left: round($navigation-spacing * 2);
+      padding-right: round($k-navigation-spacing * 3);
+      padding-left: round($k-navigation-spacing * 2);
     }
 
 
@@ -80,8 +80,8 @@ Styleguide 2.16
 
     &:hover,
     &:focus {
-      background: $list-hover-background;
-      color: $list-hover-color;
+      background: $k-list-hover-background;
+      color: $k-list-hover-color;
       text-decoration: none; /* 2 */
     }
 
@@ -95,7 +95,7 @@ Styleguide 2.16
     @include psuedo(after) {
       left: 0;
       top: 0;
-      width: $navigation-border-width;
+      width: $k-navigation-border-width;
       height: 100%;
 
       @include rtl {
@@ -109,10 +109,10 @@ Styleguide 2.16
 
     &:hover,
     &:focus {
-      background: $navigation-hover-background;
+      background: $k-navigation-hover-background;
 
       &:after {
-        background: $navigation-hover-border;
+        background: $k-navigation-hover-border;
       }
     }
   }
@@ -122,14 +122,14 @@ Styleguide 2.16
 
   .k-is-active {
     a {
-      background: $navigation-active-background;
-      color: $navigation-active-color;
-      font-weight: $bold;
+      background: $k-navigation-active-background;
+      color: $k-navigation-active-color;
+      font-weight: $k-bold;
 
       &:after {
         top: 12%;
         height: 76%;
-        background: $navigation-active-border;
+        background: $k-navigation-active-border;
       }
 
       &:hover {

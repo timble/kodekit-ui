@@ -3,16 +3,16 @@
 // Requires one of the contextual, color modifier classes for `color` and
 // `background-color`.
 
-.tag {
+.k-label {
   display: inline-block;
   padding: $tag-padding-y $tag-padding-x;
-  font-size: $tag-font-size;
+  font-size: small;
   font-weight: $tag-font-weight;
   line-height: 1;
   color: $tag-color;
   text-align: center;
   white-space: nowrap;
-  vertical-align: baseline;
+  vertical-align: middle;
   @include border-radius();
 
   // Empty tags collapse automatically
@@ -21,57 +21,30 @@
   }
 }
 
-// Quick fix for tags in buttons
-.btn .tag {
-  position: relative;
-  top: -1px;
-}
-
-// scss-lint:disable QualifyingElement
-// Add hover effects, but only for links
-a.tag {
-  @include hover-focus {
-    color: $tag-link-hover-color;
-    text-decoration: none;
-    cursor: pointer;
-  }
-}
-// scss-lint:enable QualifyingElement
-
-// Pill tags
-//
-// Make them extra rounded with a modifier to replace v3's badges.
-
-.tag-pill {
-  padding-right: $tag-pill-padding-x;
-  padding-left: $tag-pill-padding-x;
-  @include border-radius($tag-pill-border-radius);
-}
-
 // Colors
 //
 // Contextual variations (linked tags get darker on :hover).
 
-.tag-default {
+.k-label--default {
   @include tag-variant($tag-default-bg);
 }
 
-.tag-primary {
+.k-label--primary {
   @include tag-variant($tag-primary-bg);
 }
 
-.tag-success {
+.k-label--success {
   @include tag-variant($tag-success-bg);
 }
 
-.tag-info {
+.k-label--info {
   @include tag-variant($tag-info-bg);
 }
 
-.tag-warning {
+.k-label--warning {
   @include tag-variant($tag-warning-bg);
 }
 
-.tag-danger {
+.k-label--danger {
   @include tag-variant($tag-danger-bg);
 }

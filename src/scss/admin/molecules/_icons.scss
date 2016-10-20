@@ -231,7 +231,7 @@ Open iconic icons: https://useiconic.com/open/
 .k-icon-zoom-out - Zoom out
 
 markup:
-<span class="{$modifiers}" aria-hidden="true"></span>
+<span class="{$k-modifiers}" aria-hidden="true"></span>
 
 sg-wrapper:
 <div style="font-size: 16px;"><sg-wrapper-content/></div>
@@ -266,7 +266,7 @@ Extra icons that we added on top of open iconic
 .k-icon-open - Open
 
 markup:
-<span class="{$modifiers}" aria-hidden="true"></span>
+<span class="{$k-modifiers}" aria-hidden="true"></span>
 
 sg-wrapper:
 <div style="font-size: 16px;"><sg-wrapper-content/></div>
@@ -285,7 +285,7 @@ Give your icons more meaning by giving them a color
 .k-icon--error - Error color
 
 markup:
-<span class="k-icon-home {$modifiers}" aria-hidden="true"></span>
+<span class="k-icon-home {$k-modifiers}" aria-hidden="true"></span>
 
 sg-wrapper:
 <div style="font-size: 16px;"><sg-wrapper-content/></div>
@@ -295,15 +295,15 @@ Styleguide 2.12.2
 */
 
 .k-icon--accent {
-  color: $color-accent;
+  color: $k-color-accent;
 }
 
 .k-icon--success {
-  color: $color-success;
+  color: $k-color-success;
 }
 
 .k-icon--error {
-  color: $color-error;
+  color: $k-color-error;
 }
 
 
@@ -321,7 +321,7 @@ Different sizes for icons
 .k-icon--size-huge - 64px
 
 markup:
-<span class="k-icon-document-default {$modifiers}" aria-hidden="true"></span>
+<span class="k-icon-document-default {$k-modifiers}" aria-hidden="true"></span>
 
 sg-wrapper:
 <div><sg-wrapper-content/></div>
@@ -331,37 +331,37 @@ Styleguide 2.12.3
 */
 
 .k-icon--size-tiny {
-  font-size: $icon-size-tiny;
+  font-size: $k-icon-size-tiny;
 }
 
 .k-icon--size-small {
-  font-size: $icon-size-small;
+  font-size: $k-icon-size-small;
 }
 
 .k-icon--size-default {
-  font-size: $icon-size;
+  font-size: $k-icon-size;
 }
 
 .k-icon--size-medium {
-  font-size: $icon-size-medium;
+  font-size: $k-icon-size-medium;
 }
 
 .k-icon--size-large {
-  font-size: $icon-size-large;
+  font-size: $k-icon-size-large;
 }
 
 .k-icon--size-xlarge {
-  font-size: $icon-size-xlarge;
+  font-size: $k-icon-size-xlarge;
 }
 
 .k-icon--size-huge {
-  font-size: $icon-size-huge;
+  font-size: $k-icon-size-huge;
 }
 
 
 .k-icon-text-item {
   display: inline-block;
-  line-height: $line-height;
+  line-height: $k-line-height;
   vertical-align: middle;
   font-size: inherit!important;
   margin-right: 5px;

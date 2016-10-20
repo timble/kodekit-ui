@@ -3,10 +3,10 @@
 // 1. No 1 pixel jumps on smooth transitons
 
 @mixin transition(
-  $properties: all,
-  $duration: $transition-duration,
-  $easing: $transition-easing) {
+  $k-properties: all,
+  $k-duration: $k-transition-duration,
+  $k-easing: $k-transition-easing) {
 
-  transition: $properties $duration $easing;
+  transition: $k-properties $k-duration $k-easing;
   -webkit-backface-visibility:hidden; // 1
 }

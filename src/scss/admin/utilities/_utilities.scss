@@ -57,7 +57,7 @@ CSS only loading animation.
 .k-loader--large - Large
 
 markup:
-<span class="k-loader {$modifiers}">Loading...</span>
+<span class="k-loader {$k-modifiers}">Loading...</span>
 
 sg-wrapper:
 <div>
@@ -71,8 +71,8 @@ Styleguide 6.3
 .k-loader {
   @include modernizr('.k-cssanimations.k-boxshadow') {
     display: inline-block;
-    color: $loader-color;
-    font-size: $loader-size-small;
+    color: $k-loader-color;
+    font-size: $k-loader-size-small;
     margin: 0 auto 2em;
     position: relative;
     text-indent: -9999em;
@@ -85,7 +85,7 @@ Styleguide 6.3
       width: 1em;
       height: 1em;
       animation-fill-mode: both;
-      animation: k-loader $loader-duration infinite ease-in-out;
+      animation: k-loader $k-loader-duration infinite ease-in-out;
     }
 
     & {
@@ -94,12 +94,12 @@ Styleguide 6.3
 
     &:before {
       left: -1.25em;
-      animation-delay: -($loader-duration / 8);
+      animation-delay: -($k-loader-duration / 8);
     }
 
     &:after {
       left: 1.25em;
-      animation-delay: ($loader-duration / 8);
+      animation-delay: ($k-loader-duration / 8);
     }
 
     &:before,
@@ -113,15 +113,15 @@ Styleguide 6.3
     /* Sizes */
 
     &.k-loader--small {
-      font-size: $loader-size-small;
+      font-size: $k-loader-size-small;
     }
 
     &.k-loader--medium {
-      font-size: $loader-size-medium;
+      font-size: $k-loader-size-medium;
     }
 
     &.k-loader--large {
-      font-size: $loader-size-large;
+      font-size: $k-loader-size-large;
     }
   }
 
@@ -168,7 +168,7 @@ Styleguide 6.3.1
 .k-loader-container {
   @include coverall;
   z-index: 5;
-  background: rgba($loader-container-background,$loader-container-opacity);
+  background: rgba($k-loader-container-background,$k-loader-container-opacity);
   display: flex;
   align-items: center;
 
@@ -396,7 +396,7 @@ markup:
 */
 
 .k-color-error {
-  color: $color-error;
+  color: $k-color-error;
 }
 
 
@@ -533,6 +533,7 @@ markup:
 
 */
 
+.k-coverall-ontop,
 .k-link-ontop {
   position: relative;
   z-index: 1;
@@ -551,11 +552,11 @@ markup:
 
 .k-this-or-that {
   display: inline-block;
-  margin-right: $spacing-tiny;
+  margin-right: $k-spacing-tiny;
   vertical-align: middle;
 
   @include rtl {
     margin-right: 0;
-    margin-left: $spacing-tiny;
+    margin-left: $k-spacing-tiny;
   }
 }

@@ -24,7 +24,7 @@ Styleguide 3.3
   clear: both; /* 1 */
   margin: 0;
   overflow: hidden;
-  @include border(bottom, $content-border);
+  @include border(bottom, $k-content-border);
 
 
   /* Faking flexbox on older browsers by using table styling */

@@ -67,9 +67,10 @@
  * 4. Modals are being generated outside of the koowa namespace
  */
 
-@import "../../../node_modules/select2/src/scss/core"; /* 1 */
-@import "../../../node_modules/select2-bootstrap-theme/src/select2-bootstrap"; /* 2 */
+
+
+@import "../../../../node_modules/select2/src/scss/core"; /* 1 */
+@import "../molecules/select2"; /* 2 */
 @import "../molecules/dropdowns"; /* 3 */
 @import "../molecules/modal"; /* 4 */
-@import "../molecules/select2"; /* 1 */
 @import "../molecules/datepicker"; /* 3 */

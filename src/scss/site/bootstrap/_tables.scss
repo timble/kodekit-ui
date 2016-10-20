@@ -1,0 +1,96 @@
+//
+// Basic Bootstrap table
+//
+
+.k-table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+
+  @include content-block;
+
+  th,
+  td {
+    padding: 0.65em;
+    vertical-align: top;
+    border-top: $table-border-width solid $table-border-color;
+    text-align: left;
+  }
+
+  thead th {
+    vertical-align: bottom;
+    border-bottom: (2 * $table-border-width) solid $table-border-color;
+  }
+
+  tbody + tbody {
+    border-top: (2 * $table-border-width) solid $table-border-color;
+  }
+}
+
+
+// Zebra-striping
+//
+// Default zebra-stripe styles (alternating gray and transparent backgrounds)
+
+.k-table--striped {
+  tbody tr:nth-of-type(odd) {
+    background-color: $table-bg-accent;
+  }
+}
+
+
+// Responsive table
+
+.k-table--responsive {
+
+  /* Overflow content */
+
+  overflow: auto;
+
+
+  /* Force table to not be like tables anymore */
+
+  &, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+
+  /* Let table elemtns behave like tables once again */
+
+  @include breakpoint($k-beta) {
+    & {
+      display: table;
+    }
+
+    thead {
+      display: table-header-group;
+    }
+
+    tbody {
+      display: table-row-group;
+    }
+
+    tr {
+      display: table-row;
+    }
+
+    th, td {
+      display: table-cell;
+    }
+  }
+
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+
+  thead tr {
+    @include visually-hidden;
+
+    @include breakpoint($k-beta) {
+      @include visually-shown;
+    }
+  }
+
+  td:not(:first-child) {
+    border: none;
+  }
+}

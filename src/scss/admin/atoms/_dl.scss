@@ -28,16 +28,16 @@ dl {
 
 dt {
   @include reset;
-  font-weight: $bold;
+  font-weight: $k-bold;
   float: left;
   clear: left;
-  margin-right: $spacing-tiny;
+  margin-right: $k-spacing-tiny;
 }
 
 dd {
   @include reset;
   display: block;
-  @include content-block($spacing-tiny);
+  @include content-block($k-spacing-tiny);
   max-width: 100%;
 
   &.k-ellipsis {

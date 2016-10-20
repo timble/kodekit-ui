@@ -43,10 +43,10 @@ Styleguide 2.2
  */
 
 .k-breadcrumb {
-  @include border(bottom, $breadcrumb-border);
+  @include border(bottom, $k-breadcrumb-border);
   overflow: auto; /* 1 */
-  background: $breadcrumb-background;
-  color: $breadcrumb-color;
+  background: $k-breadcrumb-background;
+  color: $k-breadcrumb-color;
 
   @include resizing {
     overflow: hidden; /* 2 */
@@ -87,15 +87,15 @@ Styleguide 2.2
   li {
     position: relative; /* 1 */
     z-index: 0; /* 1 */
-    padding-left: $breadcrumb-divider-size; /* 2 */
-    min-width: $breadcrumb-size; /* 3 */
+    padding-left: $k-breadcrumb-divider-size; /* 2 */
+    min-width: $k-breadcrumb-size; /* 3 */
     display: none; /* 4 */
     overflow: hidden; /* 5 */
     vertical-align: middle; /* 6 */
 
     @include rtl {
       padding-left: 0;
-      padding-right: $breadcrumb-divider-size;
+      padding-right: $k-breadcrumb-divider-size;
     }
 
 
@@ -108,23 +108,23 @@ Styleguide 2.2
 
     /* Display on larger screens but only when flexbox is available */
 
-    @include flexbox($breadcrumb-query, 0) {
+    @include flexbox($k-breadcrumb-query, 0) {
       display: inline-block;
     }
 
 
     /* List item separator */
 
-    @include psuedo(before, $content: false) {
+    @include psuedo(before, $k-content: false) {
       top: 0;
       bottom: 0;
       left: 0;
-      width: $breadcrumb-divider-size;
-      padding-top: $breadcrumb-size / 4;
-      padding-bottom: $breadcrumb-size / 4;
+      width: $k-breadcrumb-divider-size;
+      padding-top: $k-breadcrumb-size / 4;
+      padding-bottom: $k-breadcrumb-size / 4;
       text-align: center;
-      line-height: $breadcrumb-size / 2;
-      content: $breadcrumb-divider-content;
+      line-height: $k-breadcrumb-size / 2;
+      content: $k-breadcrumb-divider-content;
 
       @include rtl {
         left: auto;
@@ -179,12 +179,12 @@ Styleguide 2.2
    */
 
   a {
-    color: $breadcrumb-color;
+    color: $k-breadcrumb-color;
     cursor: pointer;
 
     &:focus,
     &:hover {
-      background: $breadcrumb-hover-background; /* 1 */
+      background: $k-breadcrumb-hover-background; /* 1 */
     }
   }
 
@@ -222,10 +222,10 @@ Styleguide 2.2
       display: inline-block;
 
       &:before {
-        content: $breadcrumb-missing-content; /* 1 */
+        content: $k-breadcrumb-missing-content; /* 1 */
 
-        @include breakpoint($breadcrumb-query) {
-          content: $breadcrumb-divider-content; /* 2 */
+        @include breakpoint($k-breadcrumb-query) {
+          content: $k-breadcrumb-divider-content; /* 2 */
         }
       }
     }
@@ -236,7 +236,7 @@ Styleguide 2.2
 
   .k-breadcrumb__active {
     .k-breadcrumb__content {
-      font-weight: $bold;
+      font-weight: $k-bold;
     }
   }
 
@@ -249,12 +249,12 @@ Styleguide 2.2
   position: relative;
   z-index: 2;
   display: block;
-  padding: round($breadcrumb-size / 4);
-  min-width: $breadcrumb-size;
-  min-height: $breadcrumb-size;
+  padding: round($k-breadcrumb-size / 4);
+  min-width: $k-breadcrumb-size;
+  min-height: $k-breadcrumb-size;
   overflow: hidden;
   text-align: center;
-  line-height: floor($breadcrumb-size / 2);
+  line-height: floor($k-breadcrumb-size / 2);
   text-decoration: none;
   white-space: nowrap;
   text-overflow: ellipsis;

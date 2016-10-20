@@ -16,7 +16,7 @@ default - Default
 .k-sidebar-item--toggle.k-js-sidebar-toggle-item - Adds a toggle button on certain screen sizes
 
 markup:
-<div class="k-sidebar-item {$modifiers}">
+<div class="k-sidebar-item {$k-modifiers}">
     ...
 </div><!-- .k-sidebar-item -->
 
@@ -26,7 +26,7 @@ Styleguide 2.20
 
 .k-sidebar-item {
   & + & {
-    margin-top: $spacing;
+    margin-top: $k-spacing;
   }
 
 
@@ -34,7 +34,7 @@ Styleguide 2.20
    * 1. Should be the same as in `.k-sidebar-[left/right]`
    */
 
-  @include flexbox($sidebar-left-querie-width, 599px) { /* 1 */
+  @include flexbox($k-sidebar-left-querie-width, 599px) { /* 1 */
     flex: 0 0 37px;
 
     &--flex {
@@ -65,7 +65,7 @@ Styleguide 2.20
     overflow: auto; /* 1 */
     width: 100%;
 
-    @include flexbox($vertical: 550px) {
+    @include flexbox($k-vertical: 550px) {
       flex: 0 1 auto;
     }
 
@@ -83,7 +83,7 @@ Styleguide 2.20
  */
 
 .k-sidebar-item--toggle {
-  padding-bottom: $spacing-small;
+  padding-bottom: $k-spacing-small;
 
   .k-sidebar-item__header {
     position: relative;
@@ -91,8 +91,8 @@ Styleguide 2.20
 
   .k-sidebar-item__toggle {
     position: absolute;
-    top: $spacing;
-    right: $spacing;
+    top: $k-spacing;
+    right: $k-spacing;
 
     @include icon-after(chevron-top, true) {
       display: block;
@@ -103,7 +103,7 @@ Styleguide 2.20
       line-height: 18px; /* 1 */
       text-align: center;
       vertical-align: middle;
-      font-size: $font-size-tiny;
+      font-size: $k-font-size-tiny;
       cursor: pointer;
       @include transition;
     }
@@ -114,7 +114,7 @@ Styleguide 2.20
 
     @include rtl {
       right: auto;
-      left: $spacing;
+      left: $k-spacing;
     }
   }
 }
@@ -140,11 +140,11 @@ Styleguide 2.20.1
 */
 
 .k-sidebar-item__header {
-  padding: $spacing $spacing 0;
-  font-weight: $bold;
+  padding: $k-spacing $k-spacing 0;
+  font-weight: $k-bold;
   text-transform: uppercase;
-  font-size: $font-size-small;
-  line-height: $line-height-small;
+  font-size: $k-font-size-small;
+  line-height: $k-line-height-small;
 }
 
 
@@ -158,7 +158,7 @@ default - Default
 .k-sidebar-item__content--small - Smaller padding
 
 markup:
-<div class="k-sidebar-item__content {$modifiers}">
+<div class="k-sidebar-item__content {$k-modifiers}">
     <sg-wrapper-content/>
 </div><!-- .k-sidebar-item__content -->
 
@@ -172,15 +172,15 @@ Styleguide 2.20.2
 */
 
 .k-sidebar-item__content {
-  padding: $spacing;
+  padding: $k-spacing;
 }
 
 .k-sidebar-item__content--small {
-  padding: $spacing-small $spacing;
+  padding: $k-spacing-small $k-spacing;
 }
 
 .k-sidebar-item__content--horizontal {
-  padding: 0 $spacing;
+  padding: 0 $k-spacing;
 }
 
 

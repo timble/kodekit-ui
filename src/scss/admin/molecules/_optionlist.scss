@@ -46,9 +46,9 @@ Styleguide 2.17
     position: relative;
     display: table;
     margin: 0;
-    border: 1px solid $input-border;
+    border: 1px solid $k-input-border;
     padding: 1px;
-    border-radius: $input-border-radius;
+    border-radius: $k-input-border-radius;
     background: white;
 
     @include flexbox(0,0,true) {
@@ -78,12 +78,12 @@ Styleguide 2.17
       z-index: 1;
       display: table-cell; /* 1 */
       margin: 0;
-      padding: floor(($input-height-base - $font-size - 6px) / 2) 10px;
+      padding: floor(($k-input-height-base - $k-font-size - 6px) / 2) 10px;
       line-height: 1.25em;
       text-align: center;
-      color: $input-color;
+      color: $k-input-color;
       font-weight: normal;
-      border-radius: $input-border-radius - 1px; /* 2 */
+      border-radius: $k-input-border-radius - 1px; /* 2 */
       cursor: pointer;
       user-select: none; /* 3 */
       word-wrap: break-word;
@@ -111,9 +111,9 @@ Styleguide 2.17
         display: block;
         content: " ";
         opacity: 0; /* 3 */
-        border-radius: $input-border-radius - 1px; /* 4 */
+        border-radius: $k-input-border-radius - 1px; /* 4 */
         transform: scale(0,0); /* 5 */
-        background: $color-neutral;
+        background: $k-color-neutral;
         @include transition;
       }
 
@@ -136,7 +136,7 @@ Styleguide 2.17
     input:checked + label {
       &, &:hover, &:focus {
         background: transparent; /* 1 */
-        color: $color-neutral-type;
+        color: $k-color-neutral-type;
       }
 
       &:before {
@@ -165,9 +165,9 @@ Styleguide 2.17
       display: block;
       opacity: 0; /* 2 */
       visibility: hidden; /* 2 */
-      border-radius: $input-border-radius; /* 4 */
-      border: 1px solid $input-border-focus;
-      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($input-border-focus, 0.6);
+      border-radius: $k-input-border-radius; /* 4 */
+      border: 1px solid $k-input-border-focus;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($k-input-border-focus, 0.6);
     }
 
 
@@ -200,10 +200,10 @@ A boolean list should only be used for `true / false`, `0 / 1`, `yes / no` quest
 markup:
 <div class="k-optionlist k-optionlist--boolean">
     <div class="k-optionlist__content">
-        <input type="radio" name="group-[2.17.1]-1-{$modifiers}" id="input-[2.17.1]-1-{$modifiers}" value="1" checked="checked" />
-        <label for="input-[2.17.1]-1-{$modifiers}">True</label>
-        <input type="radio" name="group-[2.17.1]-1-{$modifiers}" id="input-[2.17.1]-2-{$modifiers}" value="0" />
-        <label for="input-[2.17.1]-2-{$modifiers}">False</label>
+        <input type="radio" name="group-[2.17.1]-1-{$k-modifiers}" id="input-[2.17.1]-1-{$k-modifiers}" value="1" checked="checked" />
+        <label for="input-[2.17.1]-1-{$k-modifiers}">True</label>
+        <input type="radio" name="group-[2.17.1]-1-{$k-modifiers}" id="input-[2.17.1]-2-{$k-modifiers}" value="0" />
+        <label for="input-[2.17.1]-2-{$k-modifiers}">False</label>
         <div class="k-optionlist__focus"></div>
     </div>
 </div>
@@ -220,13 +220,13 @@ Styleguide 2.17.1
   .k-optionlist--boolean {
     input[value="1"] + label {
       &:before {
-        background: $radio-toggle-1; /* 1 */
+        background: $k-radio-toggle-1; /* 1 */
       }
     }
 
     input[value="0"] + label {
       &:before {
-        background: $radio-toggle-0; /* 1 */
+        background: $k-radio-toggle-0; /* 1 */
       }
     }
   }
@@ -239,10 +239,10 @@ Block list
 markup:
 <div class="k-optionlist k-optionlist--block">
     <div class="k-optionlist__content">
-        <input type="radio" name="group-[2.17.2]-1-{$modifiers}" id="input-[2.17.2]-1-{$modifiers}" value="1" checked="checked" />
-        <label for="input-[2.17.2]-1-{$modifiers}">True</label>
-        <input type="radio" name="group-[2.17.2]-1-{$modifiers}" id="input-[2.17.2]-2-{$modifiers}" value="0" />
-        <label for="input-[2.17.2]-2-{$modifiers}">False</label>
+        <input type="radio" name="group-[2.17.2]-1-{$k-modifiers}" id="input-[2.17.2]-1-{$k-modifiers}" value="1" checked="checked" />
+        <label for="input-[2.17.2]-1-{$k-modifiers}">True</label>
+        <input type="radio" name="group-[2.17.2]-1-{$k-modifiers}" id="input-[2.17.2]-2-{$k-modifiers}" value="0" />
+        <label for="input-[2.17.2]-2-{$k-modifiers}">False</label>
         <div class="k-optionlist__focus"></div>
     </div>
 </div>
@@ -279,12 +279,12 @@ Disabled items
 markup:
 <div class="k-optionlist k-optionlist--block">
     <div class="k-optionlist__content">
-        <input type="radio" name="group-[2.17.3]-1-{$modifiers}" id="input-[2.17.3]-1-{$modifiers}" value="1" checked="checked" />
-        <label for="input-[2.17.3]-1-{$modifiers}">True</label>
-        <input type="radio" name="group-[2.17.3]-1-{$modifiers}" id="input-[2.17.3]-2-{$modifiers}" value="0" />
-        <label for="input-[2.17.3]-2-{$modifiers}">False</label>
-        <input type="radio" name="group-[2.17.3]-1-{$modifiers}" id="input-[2.17.3]-3-{$modifiers}" value="0" disabled="disabled" />
-        <label for="input-[2.17.3]-3-{$modifiers}">False</label>
+        <input type="radio" name="group-[2.17.3]-1-{$k-modifiers}" id="input-[2.17.3]-1-{$k-modifiers}" value="1" checked="checked" />
+        <label for="input-[2.17.3]-1-{$k-modifiers}">True</label>
+        <input type="radio" name="group-[2.17.3]-1-{$k-modifiers}" id="input-[2.17.3]-2-{$k-modifiers}" value="0" />
+        <label for="input-[2.17.3]-2-{$k-modifiers}">False</label>
+        <input type="radio" name="group-[2.17.3]-1-{$k-modifiers}" id="input-[2.17.3]-3-{$k-modifiers}" value="0" disabled="disabled" />
+        <label for="input-[2.17.3]-3-{$k-modifiers}">False</label>
         <div class="k-optionlist__focus"></div>
     </div>
 </div>
@@ -299,7 +299,7 @@ Styleguide 2.17.3
 
   .k-optionlist {
     [disabled] + label {
-      cursor: $cursor-disabled;
+      cursor: $k-cursor-disabled;
       opacity: 0.6;
 
       &:hover {
@@ -307,7 +307,7 @@ Styleguide 2.17.3
       }
 
       &:active ~ .k-optionlist__focus {
-        border-color: $color-error;
+        border-color: $k-color-error;
       }
     }
   }

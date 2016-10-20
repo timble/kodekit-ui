@@ -17,10 +17,10 @@ Styleguide 1.1
 */
 
 a {
-  color: $link-color;
+  color: $k-link-color;
 
   &:focus,
   &:hover {
-    color: $link-color;
+    color: $k-link-color;
   }
 }

@@ -18,7 +18,7 @@ Styleguide 3.6
 */
 
 .k-component {
-  background: $component-background;
+  background: $k-component-background;
 
   @include flexbox {
     display: flex;

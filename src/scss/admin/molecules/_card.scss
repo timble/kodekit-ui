@@ -9,7 +9,7 @@ default - Default
 .k-card--center - Center content
 
 markup:
-<div class="k-card {$modifiers}">
+<div class="k-card {$k-modifiers}">
     <div class="k-card__body">
         <div class="k-card__image">
             <img src="{image source}" alt="{alternative text}">
@@ -92,7 +92,7 @@ default - Default
 markup:
 <div class="k-card">
     <div class="k-card__body">
-        <div class="k-card__section {$modifiers}">
+        <div class="k-card__section {$k-modifiers}">
             Section
         </div>
     </div>
@@ -131,7 +131,7 @@ markup:
             Section
         </div>
     </div>
-    <div class="k-card__caption {$modifiers}">
+    <div class="k-card__caption {$k-modifiers}">
         Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
     </div>
 </div>
@@ -219,12 +219,12 @@ Styleguide 2.4.9
 
 .k-card--rounded {
   .k-card__body {
-    border-radius: $card-radius;
+    border-radius: $k-card-radius;
   }
 
   .k-card__caption {
-    border-bottom-left-radius: $card-radius - 1px;
-    border-bottom-right-radius: $card-radius - 1px;
+    border-bottom-left-radius: $k-card-radius - 1px;
+    border-bottom-right-radius: $k-card-radius - 1px;
   }
 
   .k-card__image img,
@@ -236,24 +236,24 @@ Styleguide 2.4.9
     overflow: hidden;
 
     &:only-child {
-      border-radius: $card-radius - 1px;
+      border-radius: $k-card-radius - 1px;
     }
     &:first-child {
-      border-top-left-radius: $card-radius - 1px;
-      border-top-right-radius: $card-radius - 1px;
+      border-top-left-radius: $k-card-radius - 1px;
+      border-top-right-radius: $k-card-radius - 1px;
     }
     &:last-child {
-      border-bottom-left-radius: $card-radius - 1px;
-      border-bottom-right-radius: $card-radius - 1px;
+      border-bottom-left-radius: $k-card-radius - 1px;
+      border-bottom-right-radius: $k-card-radius - 1px;
     }
   }
 
   .k-card__image--background {
-    border-radius: $card-radius - 1px;
+    border-radius: $k-card-radius - 1px;
   }
 
   .k-card__image--spaced-background {
-    border-radius: $card-radius - 2px;
+    border-radius: $k-card-radius - 2px;
   }
 }
 
@@ -266,22 +266,22 @@ Styleguide 2.4.9
   position: relative;
   display: block;
   backface-visibility: hidden;
-  background: $card-background;
-  border: 1px solid $card-border;
-  color: $card-color;
+  background: $k-card-background;
+  border: 1px solid $k-card-border;
+  color: $k-card-color;
   text-decoration: none;
   @include transition;
 
   &:focus,
   &:hover {
-    border-color: $card-hover-border;
+    border-color: $k-card-hover-border;
 
     .k-card__header {
-      border-color: $card-header-hover-border;
+      border-color: $k-card-header-hover-border;
     }
 
     .k-card__footer {
-      border-color: $card-footer-hover-border;
+      border-color: $k-card-footer-hover-border;
     }
   }
 }
@@ -323,10 +323,10 @@ Styleguide 2.4.9
   z-index: 1;
   display: block;
   padding: 10px;
-  font-weight: $bold;
-  background: $card-header-background;
-  border-bottom: 1px solid $card-header-border;
-  color: $card-header-color;
+  font-weight: $k-bold;
+  background: $k-card-header-background;
+  border-bottom: 1px solid $k-card-header-border;
+  color: $k-card-header-color;
   text-decoration: none;
   @include transition;
 
@@ -335,12 +335,12 @@ Styleguide 2.4.9
   }
 
   &:not(:first-child) {
-    border-top: 1px solid $card-header-border;
+    border-top: 1px solid $k-card-header-border;
   }
 
   &:focus,
   &:hover {
-    border-color: $card-header-hover-border;
+    border-color: $k-card-header-hover-border;
   }
 }
 
@@ -375,9 +375,9 @@ Styleguide 2.4.9
   z-index: 1;
   display: block;
   padding: 10px;
-  background: $card-footer-background;
-  border-top: 1px solid $card-footer-border;
-  color: $card-footer-color;
+  background: $k-card-footer-background;
+  border-top: 1px solid $k-card-footer-border;
+  color: $k-card-footer-color;
   text-decoration: none;
   @include transition;
 
@@ -386,12 +386,12 @@ Styleguide 2.4.9
   }
 
   &:not(:last-child) {
-    border-bottom: 1px solid $card-footer-border;
+    border-bottom: 1px solid $k-card-footer-border;
   }
 
   &:focus,
   &:hover {
-    border-color: $card-footer-hover-border;
+    border-color: $k-card-footer-hover-border;
   }
 }
 
@@ -404,7 +404,7 @@ Styleguide 2.4.9
   display: block;
   width: 100%;
   padding: 1em 10px;
-  font-weight: $regular;
+  font-weight: $k-regular;
   text-decoration: none;
   @include transition;
 }
@@ -424,7 +424,7 @@ Styleguide 2.4.9
 
 .k-card.k-is-selected {
   .k-card__body {
-    border-color: $card-selected-border;
+    border-color: $k-card-selected-border;
 
     &:not(:last-child) {
       border-bottom-left-radius: 0;
@@ -433,8 +433,8 @@ Styleguide 2.4.9
 
     &:only-child {
       .k-card__header {
-        background: $card-selected-background;
-        color: $card-selected-color;
+        background: $k-card-selected-background;
+        color: $k-card-selected-color;
       }
     }
   }
@@ -442,8 +442,8 @@ Styleguide 2.4.9
   .k-card__header,
   .k-card__footer,
   .k-card__caption {
-    border-color: $card-selected-border;
-    background: $card-selected-background;
-    color: $card-selected-color;
+    border-color: $k-card-selected-border;
+    background: $k-card-selected-background;
+    color: $k-card-selected-color;
   }
 }
