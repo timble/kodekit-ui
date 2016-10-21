@@ -34,3 +34,8 @@ img {
     backface-visibility: hidden; /* 3 */
   }
 }
+
+
+.k-image-16 {
+  @include allwidth(16px);
+}

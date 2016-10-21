@@ -696,17 +696,30 @@ Styleguide 2.21.7
       padding-right: $icon-size + $spacing-tiny;
     }
 
-    [class*="k-icon"] {
+    [class*="k-icon"],
+    [class*="k-image"] {
       position: absolute;
-      font-size: $icon-size;
-      top: 50%;
       left: 0;
-      margin-top: -(round($icon-size / 2));
+    }
 
-      @include rtl {
+    @include rtl {
+      [class*="k-icon"],
+      [class*="k-image"] {
         left: auto;
         right: 0;
       }
+    }
+
+    [class*="k-icon"] {
+      top: 50%;
+      font-size: $icon-size;
+      margin-top: -(round($icon-size / 2));
+    }
+
+    [class*="k-image"] {
+      height: $icon-size;
+      line-height: $icon-size;
+      vertical-align: middle;
     }
   }
 }
