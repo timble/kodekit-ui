@@ -35,13 +35,14 @@ Styleguide 2.20
    */
 
   @include flexbox($sidebar-left-querie-width, 599px) { /* 1 */
-    flex: 0 0 37px;
+    flex: 0 0 auto;
 
     &--flex {
       display: flex;
       flex-direction: column;
       flex: 0 1 auto;
       overflow: hidden;
+      min-height: 100px;
 
       div {
         flex: 1 1 auto;

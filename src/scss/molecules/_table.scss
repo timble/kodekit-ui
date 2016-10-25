@@ -127,6 +127,7 @@ Styleguide 2.21
     border-collapse: separate;
     border-spacing: 0;
     font-size: inherit; /* 1 */
+    min-width: 0 !important;
 
     @include rtl {
       text-align: right;
