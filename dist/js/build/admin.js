@@ -18292,11 +18292,10 @@ var Konami = function (callback) {
         if ( $sidebarToggle.length ) {
             var toggle = $('<div class="k-sidebar-item__toggle"><span class="k-visually-hidden">Toggle</span></div>');
 
-            $sidebarToggle.addClass('k-sidebar-item--toggle')
-                .find('.k-sidebar-item__header').append(toggle);
+            $sidebarToggle.addClass('k-sidebar-item--toggle').find('.k-sidebar-item__header').append(toggle);
 
             $sidebarToggle.on('click', '.k-sidebar-item__toggle', function(event) {
-                toggle.toggleClass('k-is-active').parent().next().slideToggle(180);
+                $(this).toggleClass('k-is-active').parent().next().slideToggle(180);
             });
         }
 
