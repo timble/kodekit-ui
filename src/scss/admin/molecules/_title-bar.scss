@@ -22,7 +22,6 @@ Styleguide 2.23
 /**
  * 1. Set the z-index higher than the menus
  * 2. Setting a background so container will fall nicely over the sidebar
- * 3. Set transition for off canvas sidebar
  */
 
 .k-title-bar {
@@ -34,7 +33,6 @@ Styleguide 2.23
   background: $k-title-bar-background; /* 2 */
   color: $k-title-bar-color;
   font-size: $k-font-size-huge;
-  @include transition(transform); /* 3 */
 
 
   /* When flexbox is in use */
@@ -46,83 +44,10 @@ Styleguide 2.23
 
 
 /**
- * Titlebar when toggled
- *
- * 1. Set left to the width of the menu so the menu will appear
- * 2. Set right to the negative width of the menu so the menu will appear
- * 3. Reset when screen is wide enough
- */
-
-.k-show-left-menu {
-  & > .k-title-bar {
-    transform: translate($k-sidebar-left-width, 0); /* 1 */
-
-    @include rtl {
-      transform: translate(-($k-sidebar-left-width), 0);
-    }
-
-    @include breakpoint($k-sidebar-left-querie-width) {
-      transform: translate(0, 0); /* 3 */
-
-      @include rtl {
-        transform: translate(0, 0);
-      }
-    }
-  }
-}
-
-.k-show-right-menu {
-  & > .k-title-bar {
-    transform: translate(-($k-sidebar-right-width), 0); /* 2 */
-
-    @include rtl {
-      transform: translate($k-sidebar-right-width, 0); /* 2 */
-    }
-
-    @include breakpoint($k-sidebar-right-querie-width) {
-      transform: translate(0, 0); /* 3 */
-
-      @include rtl {
-        transform: translate(0, 0);
-      }
-    }
-  }
-}
-
-
-/**
- * Fake Overlay when toggled
- *
- * 1. Set opacity
- * 2. Set z-index so it will become visible
- */
-
-.k-show-left-menu,
-.k-show-right-menu {
-  .k-title-bar:before {
-    opacity: 0.75; /* 1 */
-  }
-}
-
-.k-is-opened-left,
-.k-is-opened-right {
-  .k-title-bar:before {
-    z-index: 2; /* 2 */
-  }
-}
-
-
-/**
  * Titlebar contents
- *
- * 1. Also cover the bottom border
  */
 
 .k-title-bar {
-  .k-off-canvas-overlay {
-    bottom: -1px; /* 1 */
-  }
-
   .k-off-canvas-menu-toggle-holder,
   .k-title-bar__heading {
     display: table-cell;
@@ -154,7 +79,7 @@ Mobile title
 
 Title just for mobile views since the navigation is hidden
 - Use <b>never</b> together with a `.k-title-bar`
-- Use <b>only</b> as <b>child</b> of `.k-content`
+- Use <b>only</b> as <b>child</b> of `.k-wrapper`
 - Only visible on smaller screens
 - {unsureText}
 
@@ -177,6 +102,8 @@ Styleguide 2.23.1
   }
 }
 
+
+// @TODO: Can this be removed?
 
 /*
 Inline title bar
@@ -205,3 +132,5 @@ Styleguide 2.23.2
     padding: 0;
   }
 }
+
+// @TODO: end

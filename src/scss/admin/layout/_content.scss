@@ -56,8 +56,7 @@ Styleguide 3.5
  * Container when toggled
  *
  * 1. Set left to the width of the menu so the menu will appear
- * 2. Set right to the negative width of the menu so the menu will appear
- * 3. Reset when screen is wide enough
+ * 2. Reset when screen is wide enough
  */
 
 .k-show-left-menu {
@@ -65,7 +64,7 @@ Styleguide 3.5
     transform: translate($k-sidebar-left-width, 0); /* 1 */
 
     @include breakpoint($k-sidebar-left-querie-width) {
-      transform: translate(0, 0); /* 3 */
+      transform: translate(0, 0); /* 2 */
     }
   }
 
@@ -78,85 +77,39 @@ Styleguide 3.5
       }
     }
   }
-}
 
-.k-show-right-menu {
+
+  /* Set opacity */
+
   .k-content {
-    transform: translate(-($k-sidebar-right-width), 0); /* 2 */
-
-    @include breakpoint($k-sidebar-right-querie-width) {
-      transform: translate(0, 0); /* 3 */
-    }
-  }
-
-  @include rtl {
-    .k-content {
-      transform: translate($k-sidebar-right-width, 0);
-
-      @include breakpoint($k-sidebar-right-querie-width) {
-        transform: translate(0, 0);
-      }
+    & > .k-off-canvas-overlay {
+      opacity: $k-off-canvas-overlay-opacity;
     }
   }
 }
 
-.k-is-opened-left,
-.k-is-opened-right {
+
+.k-is-opened-left {
   .k-content {
     overflow: hidden;
 
     @include breakpoint($k-sidebar-left-querie-width) {
-      overflow: auto; /* 3 */
+      overflow: auto;
     }
 
     @include breakpoint($k-sidebar-right-querie-width) {
-      overflow: auto; /* 3 */
+      overflow: auto;
     }
 
     @include resizing {
       overflow: hidden;
     }
-  }
-}
 
 
-/**
- * The overlay
- *
- * 1. Cover the entire container
- * 2. Hide by setting z-index to -1 because item can't transition if display is set from none to block
- * 3. Set opacity to 0 by default
- * 4. Hide overlay when screen is wide enough
- */
+    /* 2. Set z-index so it will become visible */
 
-.k-off-canvas-overlay {
-  @include coverall; /* 1 */
-  z-index: -1; /* 2 */
-  display: block;
-  opacity: 0; /* 3 */
-  content: " ";
-  background: $k-off-canvas-overlay-background;
-  @include transition(opacity);
-}
-
-
-/**
- * Overlay when toggled
- *
- * 1. Set opacity
- * 2. Set z-index to 1 so it will become visible
- */
-
-.k-show-left-menu,
-.k-show-right-menu {
-  .k-off-canvas-overlay {
-    opacity: $k-off-canvas-overlay-opacity; /* 1 */
-  }
-}
-
-.k-is-opened-left,
-.k-is-opened-right {
-  .k-off-canvas-overlay {
-    z-index: 9; /* 2 */
+    & > .k-off-canvas-overlay {
+      z-index: 9;
+    }
   }
 }

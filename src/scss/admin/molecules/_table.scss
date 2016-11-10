@@ -127,6 +127,7 @@ Styleguide 2.21
     border-collapse: separate;
     border-spacing: 0;
     font-size: inherit; /* 1 */
+    min-width: 0 !important;
 
     @include rtl {
       text-align: right;
@@ -696,17 +697,30 @@ Styleguide 2.21.7
       padding-right: $k-icon-size + $k-spacing-tiny;
     }
 
-    [class*="k-icon"] {
+    [class*="k-icon"],
+    [class*="k-image"] {
       position: absolute;
-      font-size: $k-icon-size;
-      top: 50%;
       left: 0;
-      margin-top: -(round($k-icon-size / 2));
+    }
 
-      @include rtl {
+    @include rtl {
+      [class*="k-icon"],
+      [class*="k-image"] {
         left: auto;
         right: 0;
       }
+    }
+
+    [class*="k-icon"] {
+      top: 50%;
+      font-size: $k-icon-size;
+      margin-top: -(round($k-icon-size / 2));
+    }
+
+    [class*="k-image"] {
+      height: $k-icon-size;
+      line-height: $k-icon-size;
+      vertical-align: middle;
     }
   }
 }
