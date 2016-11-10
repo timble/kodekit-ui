@@ -74,6 +74,6 @@ Styleguide 3.2
   display: block;
   opacity: 0; /* 3 */
   content: " ";
-  background: $off-canvas-overlay-background;
+  background: $k-off-canvas-overlay-background;
   @include transition(opacity);
 }
