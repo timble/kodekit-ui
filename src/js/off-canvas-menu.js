@@ -132,7 +132,14 @@
                 }, transitionDuration);
             }
 
-            function toggleMenu(menu) {
+            function toggleMenu(menu, event) {
+                // Close other menu when opened
+                if ( wrapper.is('[class*="'+openedClass+'"]') && !wrapper.is('[class*="'+openedClass+'-'+position+'"]') ) {
+                    var brother = wrapper.find('button[class^="k-off-canvas-menu-toggle"]').not(menuToggle);
+                    brother.trigger('click');
+                }
+                // Decide wether to open or close the menu
+                event.stopPropagation();
                 var method = !wrapper.hasClass(menuExpandedClass) ? 'k-is-closed' : 'k-is-opened';
                 if ( method === 'k-is-closed' ) { openMenu(menu); }
                 if ( method === 'k-is-opened' ) { closeMenu(); }
@@ -149,10 +156,9 @@
                 });
 
                 // Toggle button:
-                menuToggle.click(function(event){
-                    event.stopPropagation();
+                menuToggle.click(function(event) {
                     if ( menuToggle.is(':visible') ) {
-                        toggleMenu(menu);
+                        toggleMenu(menu, event);
                     }
                 });
 

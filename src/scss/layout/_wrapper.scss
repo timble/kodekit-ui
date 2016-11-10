@@ -57,3 +57,23 @@ Styleguide 3.2
     overflow: hidden; /* 3 */
   }
 }
+
+
+/**
+ * The overlay
+ *
+ * 1. Cover the entire container
+ * 2. Hide by setting z-index to -1 because item can't transition if display is set from none to block
+ * 3. Set opacity to 0 by default
+ * 4. Hide overlay when screen is wide enough
+ */
+
+.k-off-canvas-overlay {
+  @include coverall; /* 1 */
+  z-index: -1; /* 2 */
+  display: block;
+  opacity: 0; /* 3 */
+  content: " ";
+  background: $off-canvas-overlay-background;
+  @include transition(opacity);
+}

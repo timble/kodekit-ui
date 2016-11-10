@@ -31,11 +31,23 @@ Styleguide 2.24
 
 */
 
+/**
+ * 1. Buttons have margin-top and margin-left to separate them from each other
+ *    Setting a bottom padding to separate buttons from bottom of toolbar
+ * 2. Set a right padding for the toggle button
+ */
+
 .k-toolbar {
   @include border(bottom, $toolbar-border);
   background: $toolbar-background;
   min-height: $toolbar-height;
-  padding-bottom: 10px;
+  padding-bottom: 10px; /* 1 */
+  padding-right: 10px; /* 2 */
+
+  @include rtl {
+    padding-right: 0;
+    padding-left: 10px; /* 2 */
+  }
 
 
   /* When flexbox is in use */
@@ -78,7 +90,12 @@ Styleguide 2.24
   }
 
 
-  /* Autosave indicator */
+  /**
+   * Autosave indicator
+   *
+   * Position of the autosave indicator
+   * Use a k-loader for the indicator itself
+   */
 
   .k-autosave-indicator {
     margin: 10px 0 0 10px;
@@ -124,6 +141,14 @@ Styleguide 2.24
 
     .k-off-canvas-menu-toggle {
       margin-bottom: 0;
+    }
+  }
+
+  .k-off-canvas-menu-toggle-holder--right {
+    float: right;
+
+    @include rtl {
+      float: left;
     }
   }
 }
