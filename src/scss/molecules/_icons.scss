@@ -366,3 +366,15 @@ Styleguide 2.12.3
   font-size: inherit!important;
   margin-right: 5px;
 }
+
+
+/**
+ * Custom background image icons
+ *
+ * Make sure that custom icons get background-size cover so they fit their container nicely
+ */
+
+[class^="k-icon-document-"]:before,
+[class*=" k-icon-document-"]:before {
+  background-size: cover;
+}
