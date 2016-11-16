@@ -14392,7 +14392,7 @@ module.exports = '1.3.4';
           var mHide = window.Element.prototype.hide;
           window.Element.implement({
               hide: function() {
-                  if ($(this).is('[data-k-tooltip]')) {
+                  if ($(this).data('ktooltip')) {
                       return this;
                   }
                   mHide.apply(this, arguments);
