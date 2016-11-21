@@ -3,13 +3,13 @@
 // Kickstart any navigation component with a set of style resets. Works with
 // `<nav>`s or `<ul>`s.
 
-.nav {
+.k-nav {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
 }
 
-.nav-link {
+.k-nav-link {
   display: inline-block;
 
   @include hover-focus {
@@ -17,7 +17,7 @@
   }
 
   // Disabled state lightens text and removes hover/tab effects
-  &.disabled {
+  &.k-is-disabled {
     color: $nav-disabled-link-color;
 
     @include plain-hover-focus {
@@ -31,13 +31,13 @@
 
 // Nav inline
 
-.nav-inline {
-  .nav-item {
+.k-nav-inline {
+  .k-nav-item {
     display: inline-block;
   }
 
-  .nav-item + .nav-item,
-  .nav-link + .nav-link {
+  .k-nav-item + .k-nav-item,
+  .k-nav-link + .k-nav-link {
     margin-left: $nav-item-inline-spacer;
   }
 }
@@ -47,16 +47,16 @@
 // Tabs
 //
 
-.nav-tabs {
+.k-nav-tabs {
   border-bottom: $nav-tabs-border-width solid $nav-tabs-border-color;
   @include clearfix();
 
-  .nav-item {
+  .k-nav-item {
     float: left;
     // Make the list-items overlay the bottom border
     margin-bottom: -$nav-tabs-border-width;
 
-    + .nav-item {
+    + .k-nav-item {
       margin-left: $nav-item-margin;
     }
   }
@@ -71,7 +71,7 @@
       border-color: $nav-tabs-link-hover-border-color $nav-tabs-link-hover-border-color $nav-tabs-border-color;
     }
 
-    &.disabled {
+    &.k-is-disabled {
       @include plain-hover-focus {
         color: $nav-disabled-link-color;
         background-color: transparent;
@@ -80,8 +80,8 @@
     }
   }
 
-  .nav-link.active,
-  .nav-item.open .nav-link {
+  .k-nav-link.k-is-active,
+  .k-nav-item.k-is-open .k-nav-link {
     @include plain-hover-focus {
       color: $nav-tabs-active-link-hover-color;
       background-color: $nav-tabs-active-link-hover-bg;
@@ -89,7 +89,7 @@
     }
   }
 
-  .dropdown-menu {
+  .k-dropdown-menu {
     // Make dropdown border overlap tab border
     margin-top: -$nav-tabs-border-width;
     // Remove the top rounded corners here since there is a hard edge above the menu
@@ -102,25 +102,25 @@
 // Pills
 //
 
-.nav-pills {
+.k-nav-pills {
   @include clearfix();
 
-  .nav-item {
+  .k-nav-item {
     float: left;
 
-    + .nav-item {
+    + .k-nav-item {
       margin-left: $nav-item-margin;
     }
   }
 
-  .nav-link {
+  .k-nav-link {
     display: block;
     padding: $nav-link-padding;
     @include border-radius($nav-pills-border-radius);
   }
 
-  .nav-link.active,
-  .nav-item.open .nav-link {
+  .k-nav-link.k-is-active,
+  .k-nav-item.k-is-open .k-nav-link {
     @include plain-hover-focus {
       color: $nav-pills-active-link-color;
       cursor: default;
@@ -129,12 +129,12 @@
   }
 }
 
-.nav-stacked {
-  .nav-item {
+.k-nav-stacked {
+  .k-nav-item {
     display: block;
     float: none;
 
-    + .nav-item {
+    + .k-nav-item {
       margin-top: $nav-item-margin;
       margin-left: 0;
     }
@@ -147,11 +147,11 @@
 //
 
 // Hide tabbable panes to start, show them when `.active`
-.tab-content {
-  > .tab-pane {
+.k-tab-content {
+  > .k-tab-pane {
     display: none;
   }
-  > .active {
+  > .k-active {
     display: block;
   }
 }

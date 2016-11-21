@@ -2,7 +2,7 @@
 // Base styles
 //
 
-.card {
+.k-card {
   position: relative;
   display: block;
   margin-bottom: $card-spacer-y;
@@ -12,51 +12,43 @@
   border: $card-border-width solid $card-border-color;
 }
 
-.card-block {
+.k-card-block {
   @include clearfix;
   padding: $card-spacer-x;
 }
 
-.card-title {
+.k-card-title {
   margin-bottom: $card-spacer-y;
 }
 
-.card-subtitle {
+.k-card-subtitle {
   margin-top: -($card-spacer-y / 2);
   margin-bottom: 0;
 }
 
-.card-text:last-child {
+.k-card-text:last-child {
   margin-bottom: 0;
 }
 
-// .card-actions {
-//   padding: $card-spacer-y $card-spacer-x;
-
-//   .card-link + .card-link {
-//     margin-left: $card-spacer-x;
-//   }
-// }
-
-.card-link {
+.k-card-link {
   @include hover {
     text-decoration: none;
   }
 
-  + .card-link {
+  + .k-card-link {
     margin-left: $card-spacer-x;
   }
 }
 
-.card {
-  > .list-group:first-child {
-    .list-group-item:first-child {
+.k-card {
+  > .k-list-group:first-child {
+    .k-list-group-item:first-child {
       @include border-top-radius($card-border-radius);
     }
   }
 
-  > .list-group:last-child {
-    .list-group-item:last-child {
+  > .k-list-group:last-child {
+    .k-list-group-item:last-child {
       @include border-bottom-radius($card-border-radius);
     }
   }
@@ -67,7 +59,7 @@
 // Optional textual caps
 //
 
-.card-header {
+.k-card-header {
   @include clearfix;
   padding: $card-spacer-y $card-spacer-x;
   margin-bottom: 0; // Removes the default margin-bottom of <hN>
@@ -79,7 +71,7 @@
   }
 }
 
-.card-footer {
+.k-card-footer {
   @include clearfix;
   padding: $card-spacer-y $card-spacer-x;
   background-color: $card-cap-bg;
@@ -95,14 +87,14 @@
 // Header navs
 //
 
-.card-header-tabs {
+.k-card-header-tabs {
   margin-right: -($card-spacer-x / 2);
   margin-bottom: -$card-spacer-y;
   margin-left: -($card-spacer-x / 2);
   border-bottom: 0;
 }
 
-.card-header-pills {
+.k-card-header-pills {
   margin-right: -($card-spacer-x / 2);
   margin-left: -($card-spacer-x / 2);
 }
@@ -112,39 +104,39 @@
 // Background variations
 //
 
-.card-primary {
+.k-card-primary {
   @include card-variant($brand-primary, $brand-primary);
 }
-.card-success {
+.k-card-success {
   @include card-variant($brand-success, $brand-success);
 }
-.card-info {
+.k-card-info {
   @include card-variant($brand-info, $brand-info);
 }
-.card-warning {
+.k-card-warning {
   @include card-variant($brand-warning, $brand-warning);
 }
-.card-danger {
+.k-card-danger {
   @include card-variant($brand-danger, $brand-danger);
 }
 
 // Remove all backgrounds
-.card-outline-primary {
+.k-card-outline-primary {
   @include card-outline-variant($btn-primary-bg);
 }
-.card-outline-secondary {
+.k-card-outline-secondary {
   @include card-outline-variant($btn-secondary-border);
 }
-.card-outline-info {
+.k-card-outline-info {
   @include card-outline-variant($btn-info-bg);
 }
-.card-outline-success {
+.k-card-outline-success {
   @include card-outline-variant($btn-success-bg);
 }
-.card-outline-warning {
+.k-card-outline-warning {
   @include card-outline-variant($btn-warning-bg);
 }
-.card-outline-danger {
+.k-card-outline-danger {
   @include card-outline-variant($btn-danger-bg);
 }
 
@@ -152,7 +144,7 @@
 // Inverse text within a card for use with dark backgrounds
 //
 
-.card-inverse {
+.k-card-inverse {
   @include card-inverse;
 }
 
@@ -160,18 +152,19 @@
 // Blockquote
 //
 
-.card-blockquote {
+.k-card-blockquote {
   padding: 0;
   margin-bottom: 0;
   border-left: 0;
 }
 
 // Card image
-.card-img {
+.k-card-img {
   // margin: -1.325rem;
   @include border-radius($card-border-radius-inner);
 }
-.card-img-overlay {
+
+.k-card-img-overlay {
   position: absolute;
   top: 0;
   right: 0;
@@ -183,10 +176,11 @@
 
 
 // Card image caps
-.card-img-top {
+.k-card-img-top {
   @include border-top-radius($card-border-radius-inner);
 }
-.card-img-bottom {
+
+.k-card-img-bottom {
   @include border-bottom-radius($card-border-radius-inner);
 }
 
@@ -202,14 +196,14 @@
 
 @if $enable-flex {
   @include media-breakpoint-up(sm) {
-    .card-deck {
+    .k-card-deck {
       display: flex;
       flex-flow: row wrap;
       margin-right: -$card-deck-margin;
       margin-bottom: $card-spacer-y; // Margin balancing
       margin-left: -$card-deck-margin;
 
-      .card {
+      .k-card {
         flex: 1 0 0;
         margin-right: $card-deck-margin;
         margin-bottom: 0; // Margin balancing
@@ -220,20 +214,21 @@
 } @else {
   @include media-breakpoint-up(sm) {
     $space-between-cards: (2 * $card-deck-margin);
-    .card-deck {
+    .k-card-deck {
       display: table;
       width: 100%;
       margin-bottom: $card-spacer-y; // Margin balancing
       table-layout: fixed;
       border-spacing: $space-between-cards 0;
 
-      .card {
+      .k-card {
         display: table-cell;
         margin-bottom: 0; // Margin balancing
         vertical-align: top;
       }
     }
-    .card-deck-wrapper {
+
+    .k-card-deck-wrapper {
       margin-right: (-$space-between-cards);
       margin-left: (-$space-between-cards);
     }
@@ -245,7 +240,7 @@
 //
 
 @include media-breakpoint-up(sm) {
-  .card-group {
+  .k-card-group {
     @if $enable-flex {
       display: flex;
       flex-flow: row wrap;
@@ -255,7 +250,7 @@
       table-layout: fixed;
     }
 
-    .card {
+    .k-card {
       @if $enable-flex {
         flex: 1 0 0;
       } @else {
@@ -263,7 +258,7 @@
         vertical-align: top;
       }
 
-      + .card {
+      + .k-card {
         margin-left: 0;
         border-left: 0;
       }
@@ -273,20 +268,20 @@
         &:first-child {
           @include border-right-radius(0);
 
-          .card-img-top {
+          .k-card-img-top {
             border-top-right-radius: 0;
           }
-          .card-img-bottom {
+          .k-card-img-bottom {
             border-bottom-right-radius: 0;
           }
         }
         &:last-child {
           @include border-left-radius(0);
 
-          .card-img-top {
+          .k-card-img-top {
             border-top-left-radius: 0;
           }
-          .card-img-bottom {
+          .k-card-img-bottom {
             border-bottom-left-radius: 0;
           }
         }
@@ -294,8 +289,8 @@
         &:not(:first-child):not(:last-child) {
           border-radius: 0;
 
-          .card-img-top,
-          .card-img-bottom {
+          .k-card-img-top,
+          .k-card-img-bottom {
             border-radius: 0;
           }
         }
@@ -310,11 +305,11 @@
 //
 
 @include media-breakpoint-up(sm) {
-  .card-columns {
+  .k-card-columns {
     column-count: 3;
     column-gap: $card-columns-sm-up-column-gap;
 
-    .card {
+    .k-card {
       display: inline-block; // Don't let them vertically span multiple columns
       width: 100%; // Don't let them exceed the column width
     }
