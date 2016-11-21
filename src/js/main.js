@@ -21,7 +21,7 @@
 
             function addOffCanvasButton(element, position) {
                 // Variables
-                var kContainer = '.koowa-container',
+                var kContainer = '.k-ui-container',
                     container = element.closest(kContainer),
                     titlebar = container.find('.k-js-title-bar'),
                     toolbar = container.find('.k-js-toolbar'),
@@ -208,7 +208,7 @@
             animation: true,
             placement: 'top',
             delay: { show: 200, hide: 50 },
-            container: '.koowa-container'
+            container: '.k-ui-container'
         });
 
         // Add a class during resizing event so we can hide overflowing stuff
@@ -239,7 +239,7 @@
 
         // Konami
         new Konami(function() {
-            $('html, .koowa-container').css({
+            $('html, .k-ui-container').css({
                 'font-family': 'Comic Sans MS',
                 'font-size': '20px',
                 'line-height': '30px'
@@ -259,3 +259,4 @@
     });
 
 })(kQuery);
+

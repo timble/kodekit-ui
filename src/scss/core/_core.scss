@@ -31,7 +31,7 @@
  * For example when using Kodekit UI inside of another framework or CMS like Joomla! or WordPress
  */
 
-.koowa {
+.k-ui-namespace {
 
   @import "../utilities/boxsizing";
   @import "../utilities/normalize";
@@ -59,7 +59,7 @@
 /**
  * Markup might be rendered outside of a <div class="koowa"> therefor we need
  * to put the CSS outside of the namespace as well.
- * Placing after the .koowa namespace styling to win easier over classes like `.koowa ...`
+ * Placing after the .k-ui-namespace namespace styling to win easier over classes like `.k-ui-namespace ...`
  *
  * 1. Select2
  * 2. Select2 bootstrap theme to match the bootstrap forms

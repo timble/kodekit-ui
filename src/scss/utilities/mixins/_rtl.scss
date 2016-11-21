@@ -34,23 +34,23 @@
 // Will result in:
 //
 // ```
-// .koowa .foo {
+// .k-ui-namespace .foo {
 //   padding-left: 10px;
 // }
 //
-// [dir="rtl"] .koowa .foo {
+// [dir="rtl"] .k-ui-namespace .foo {
 //   padding-left: 0;
 //   padding-right: 10px;
 // }
 //
 // @media (min-width: 600px) {
-//   .koowa .foo {
+//   .k-ui-namespace .foo {
 //     padding-left: 20px;
 //   }
 // }
 // ```
 //
-// Since the `.koowa--rtl.koowa` .foo has a higher specificity than the media querie, the RTL styling will be there for non-rtl as well. So watch out for specificity and do this:
+// Since the `.k-ui-namespace--rtl.k-ui-namespace` .foo has a higher specificity than the media querie, the RTL styling will be there for non-rtl as well. So watch out for specificity and do this:
 //
 // ```
 // .foo {
