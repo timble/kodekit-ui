@@ -1,0 +1,153 @@
+// Mobile first CSS only dropdown filters
+.k-filters {
+
+  // Override for search styling
+  input[type="search"] {
+    box-sizing: border-box;
+    height: 34px;
+  }
+
+  // By default hide the filter toggle
+  .k-checkbox-dropdown-toggle,
+  .k-checkbox-dropdown-label {
+    display: none;
+  }
+
+  // Accessible hide the toggle box
+  .k-checkbox-dropdown-toggle {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+
+    @include rtl {
+      left: auto;
+      right: -10000px;
+    }
+  }
+
+  // Pull label back
+  .k-checkbox-dropdown-label {
+    position: relative;
+    margin: 0;
+    padding: 8px 25px;
+    font-weight: inherit;
+
+    &:focus,
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+
+      // Highlight arrow and close button on hover
+      &:before,
+      &:after {
+        opacity: 1;
+      }
+    }
+
+    // The toggle arrow
+    &:before {
+      display: block;
+      content: " ";
+      border-top: 5px solid transparent;
+      border-left: 5px solid;
+      border-bottom: 5px solid transparent;
+      position: absolute;
+      top: 0.4em;
+      left: 2px;
+      margin: 8px;
+      transition: all 0.3s ease-in-out;
+      opacity: 0.6;
+
+      @include rtl {
+        border-left: none;
+        border-right: 5px solid;
+        left: auto;
+        right: 0;
+      }
+    }
+
+    // The close button
+    &:after {
+      display: block;
+      font-family: sans-serif;
+      content: "✖";
+      font-size: 16px;
+      line-height: 16px;
+      position: absolute;
+      top: 0.2em;
+      right: 0.2em;
+      margin: 8px;
+      transition: all 0.3s ease-in-out;
+      transform: translate(0, -50px);
+      opacity: 0.6;
+
+      @include rtl {
+        right: auto;
+        left: 0.2em;
+      }
+    }
+  }
+
+  // When the toggleable class is active
+  &--toggleable {
+    overflow: hidden;
+
+    // For non ancient browsers
+    &:not(ancient) {
+      .k-checkbox-dropdown-toggle,
+      .k-checkbox-dropdown-label {
+        display: block;
+      }
+    }
+
+    // Hide the toggleable content by setting max-height to 0 and make sure it's transitionable
+    .k-checkbox-dropdown-content:not(ancient) {
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: opacity 0.3s ease-out;
+
+      // Space the first item in content from the toggle title
+      & > .form-group:first-child {
+        margin-top: 1em;
+      }
+    }
+
+    // Remove styling when unchecked
+    .k-checkbox-dropdown-toggle:not(:checked) {
+      & ~ * .k-checkbox-dropdown-content,
+      & ~ .k-checkbox-dropdown-content {
+        @include reset;
+      }
+    }
+
+    .k-checkbox-dropdown-toggle:checked {
+
+      // Set max-height to slide down smoothly with CSS
+      & ~ * .k-checkbox-dropdown-content,
+      & ~ .k-checkbox-dropdown-content {
+        max-height: 9999px;
+        opacity: 1;
+      }
+
+      // Rotate the toggle arrow
+      & ~ * .k-checkbox-dropdown-label:before,
+      & ~ .k-checkbox-dropdown-label:before {
+        transform: rotate(90deg);
+
+        @include rtl {
+          transform: rotate(-90deg);
+        }
+      }
+
+      // Position the close button
+      & ~ * .k-checkbox-dropdown-label:after,
+      & ~ .k-checkbox-dropdown-label:after {
+        transform: translate(0, 0);
+      }
+    }
+  }
+}

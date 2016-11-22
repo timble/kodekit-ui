@@ -366,3 +366,41 @@ Styleguide 2.12.3
   font-size: inherit!important;
   margin-right: 5px;
 }
+
+
+/* Sizes for images that replace icons */
+
+.k-image--size-tiny {
+  max-width: $k-icon-size-tiny;
+  max-height: $k-icon-size-tiny;
+}
+
+.k-image--size-small {
+  max-width: $k-icon-size-small;
+  max-height: $k-icon-size-small;
+}
+
+.k-image--size-default {
+  max-width: $k-icon-size;
+  max-height: $k-icon-size;
+}
+
+.k-image--size-medium {
+  max-width: $k-icon-size-medium;
+  max-height: $k-icon-size-medium;
+}
+
+.k-image--size-large {
+  max-width: $k-icon-size-large;
+  max-height: $k-icon-size-large;
+}
+
+.k-image--size-xlarge {
+  max-width: $k-icon-size-xlarge;
+  max-height: $k-icon-size-xlarge;
+}
+
+.k-image--size-huge {
+  max-width: $k-icon-size-huge;
+  max-height: $k-icon-size-huge;
+}

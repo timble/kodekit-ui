@@ -23,9 +23,8 @@ $k-icon-path: '../../koowa/com_koowa/fonts';
 
 
 
-.koowa {
-  @import "admin/utilities/normalize";
 
+.koowa {
   @import "admin/utilities/boxsizing";
 
   @import "admin/molecules/icons";
@@ -40,6 +39,9 @@ $k-icon-path: '../../koowa/com_koowa/fonts';
 
   @import "site/bootstrap/bootstrap";
   @import "site/molecules/element-queries";
+  @import "site/molecules/filters";
+
+
 
 
 
@@ -146,3 +148,6 @@ $k-icon-path: '../../koowa/com_koowa/fonts';
     }
   }
 }
+
+@import "../../node_modules/select2/src/scss/core";
+@import "admin/molecules/select2";

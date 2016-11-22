@@ -121,36 +121,66 @@ $element-querie-spacing-half: $element-querie-spacing / 2;
   display: table;
   width: 100%;
   max-width: 100%;
-  overflow: hidden;
 }
-
 
 .k-flag-object--inline {
   width: auto;
 }
 
-.k-flag-object__body {
+.k-flag-object__body,
+.k-flag-object__aside {
   display: table-cell;
-  overflow: hidden;
   vertical-align: middle;
+}
+
+.k-flag-object--top {
+  .k-flag-object__body,
+  .k-flag-object__aside {
+    vertical-align: top;
+  }
+}
+
+.k-flag-object--bottom {
+  .k-flag-object__body,
+  .k-flag-object__aside {
+    vertical-align: bottom;
+  }
 }
 
 .k-flag-object__aside {
-  display: table-cell;
   white-space: nowrap;
-  vertical-align: middle;
-  padding-right: 0.5em;
+  line-height: 1;
+
+  [class*="k-icon"],
+  [class*="k-icon"]:before,
+  img {
+    display: block;
+  }
 }
 
+.k-flag-object__aside + .k-flag-object__body {
+  padding-left: 0.5em;
 
+  @include rtl {
+    padding-left: 0;
+    padding-right: 0.5em;
+  }
+}
+
+.k-flag-object__body + .k-flag-object__aside {
+  padding-left: 0.5em;
+
+  @include rtl {
+    padding-left: 0;
+    padding-right: 0.5em;
+  }
+}
 
 
 .k-title {
   @include content-block(1em);
-
-  a {
-    color: inherit;
-  }
+  padding: 1px 0; // Make sure that icons and images do not get cut-off by overflow: hidden
+  overflow: hidden; // We need this for the k-link-coverleft to be able to click on icons / images without the need for an extra link
 }
 
 .k-subtitle {
@@ -172,7 +202,48 @@ $element-querie-spacing-half: $element-querie-spacing / 2;
   }
 }
 
-.k-title-image {
-  max-width: 16px;
-  vertical-align: middle;
+
+.k-section {
+  @include clearfix;
+  @include content-block(1em);
+}
+
+.k-float-left {
+  float: left;
+
+  @include rtl {
+    float: right;
+  }
+}
+
+.k-float-right {
+  float: right;
+
+  @include rtl {
+    float: left;
+  }
+}
+
+.k-thumbnail {
+  width: 33%;
+  max-width: 240px;
+}
+
+.k-wrapped-content {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.k-link-coverleft {
+  @include psuedo(before) {
+    width: 240px;
+    top: -1em;
+    right: 100%;
+    bottom: -1em;
+    background: transparent;
+  }
 }

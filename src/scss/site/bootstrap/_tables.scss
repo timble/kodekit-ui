@@ -1,5 +1,5 @@
 //
-// Basic Bootstrap table
+// Basic table
 //
 
 .k-table {
@@ -12,7 +12,7 @@
   th,
   td {
     padding: 0.65em;
-    vertical-align: top;
+    vertical-align: middle;
     border-top: $table-border-width solid $table-border-color;
     text-align: left;
   }
@@ -48,14 +48,24 @@
   overflow: auto;
 
 
-  /* Force table to not be like tables anymore */
+  /* Force table to not be like table */
 
   &, thead, tbody, th, td, tr {
     display: block;
+
+
+    /**
+     * Cell widths
+     * Not very mobile first but we'd like to keep the widths set in the markup actually working on larger screens
+     */
+
+    @include breakpoint(0, range, $k-beta - 1px) {
+      width: 100%;
+    }
   }
 
 
-  /* Let table elemtns behave like tables once again */
+  /* Let table element behave like table again */
 
   @include breakpoint($k-beta) {
     & {
@@ -90,7 +100,14 @@
     }
   }
 
-  td:not(:first-child) {
-    border: none;
+  /**
+   * Borders
+   * Not very mobile first but we'd like to keep the borders set in the classes actually working on larger screens
+   */
+
+  @include breakpoint(0, range, $k-beta - 1px) {
+    td:not(:first-child) {
+      border: none;
+    }
   }
 }

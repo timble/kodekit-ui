@@ -67,12 +67,12 @@
 .k-input-group-lg > .k-form-control,
 .k-input-group-lg > .k-input-group-addon,
 .k-input-group-lg > .k-input-group-btn > .k-btn {
-  @extend .form-control-lg;
+  @extend .k-form-control-lg;
 }
 .k-input-group-sm > .k-form-control,
 .k-input-group-sm > .k-input-group-addon,
 .k-input-group-sm > .k-input-group-btn > .k-btn {
-  @extend .form-control-sm;
+  @extend .k-form-control-sm;
 }
 
 

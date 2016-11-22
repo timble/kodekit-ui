@@ -187,6 +187,11 @@ select.k-form-control-lg {
 
 .k-form-group {
   margin-bottom: $form-group-margin-bottom;
+
+  label {
+    display: inline-block;
+    margin-bottom: 0.5em;
+  }
 }
 
 .k-form-text {

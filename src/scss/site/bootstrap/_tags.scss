@@ -13,7 +13,9 @@
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
-  @include border-radius();
+  margin-top: -0.1em;
+  margin-left: 0.25em;
+  @include border-radius;
 
   // Empty tags collapse automatically
   &:empty {
