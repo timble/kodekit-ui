@@ -1,5 +1,6 @@
 // Mobile first CSS only dropdown filters
 .k-filters {
+  @include content-block($section-spacing);
 
   // Override for search styling
   input[type="search"] {

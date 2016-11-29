@@ -178,17 +178,17 @@ $element-querie-spacing-half: $element-querie-spacing / 2;
 
 
 .k-title {
-  @include content-block(1em);
+  @include content-block($section-spacing);
   padding: 1px 0; // Make sure that icons and images do not get cut-off by overflow: hidden
   overflow: hidden; // We need this for the k-link-coverleft to be able to click on icons / images without the need for an extra link
 }
 
 .k-subtitle {
   font-size: smaller;
-  margin-top: -1em;
+  margin-top: -($section-spacing);
   padding-bottom: 0.5em;
   border-bottom: 1px solid rgba(0,0,0,0.1);
-  @include content-block(1em);
+  @include content-block($section-spacing);
 }
 
 
@@ -205,7 +205,7 @@ $element-querie-spacing-half: $element-querie-spacing / 2;
 
 .k-section {
   @include clearfix;
-  @include content-block(1em);
+  @include content-block($section-spacing);
 }
 
 .k-float-left {
@@ -245,5 +245,94 @@ $element-querie-spacing-half: $element-querie-spacing / 2;
     right: 100%;
     bottom: -1em;
     background: transparent;
+  }
+}
+
+
+.k-gallery-container,
+.k-section,
+.k-table,
+.k-title,
+.k-manage,
+.k-pagination,
+.k-filters,
+.k-subtitle {
+  //outline: 1px solid magenta;
+}
+
+.k-table-pagination {
+  @include content-block($section-spacing);
+}
+
+.k-toolbar {
+  @include content-block($section-spacing);
+  padding: 1em;
+  background: rgba(0, 0, 0, 0.033);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.088);
+}
+
+.k-manage {
+  @include content-block($section-spacing);
+}
+.k-manage__item {
+  display: inline-block;
+}
+
+
+.k-title + .k-manage,
+.k-subtitle + .k-manage {
+  margin-top: -($section-spacing / 2);
+}
+
+
+
+
+/**
+ * Card overrides
+ */
+
+.k-card__body {
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+a.k-card__body,
+a.k-card__section {
+  &:focus,
+  &:hover {
+    border-color: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.05);
+
+    .k-card__header {
+      border-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .k-card__footer {
+      border-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+.k-card__header {
+  background: rgba(0, 0, 0, 0.075);
+  color: inherit;
+
+  &:not(:first-child) {
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+  }
+}
+
+.k-card__section {
+  &:not(:first-child) {
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+  }
+}
+
+.k-card__footer {
+  background: rgba(0, 0, 0, 0.075);
+  color: inherit;
+
+  &:not(:first-child) {
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
   }
 }

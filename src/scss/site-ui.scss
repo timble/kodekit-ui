@@ -21,16 +21,20 @@ $k-icon-path: '../../koowa/com_koowa/fonts';
 }
 
 
+$section-spacing: 20px;
+
 
 
 
 .koowa {
+  @import "admin/atoms/img";
+
+
   @import "admin/utilities/boxsizing";
 
   @import "admin/molecules/icons";
   @import "admin/molecules/tree";
   @import "admin/molecules/card";
-  @import "admin/molecules/gallery";
   @import "admin/molecules/buttons";
   @import "admin/molecules/pagination";
   @import "admin/molecules/styled-file-input";
@@ -40,6 +44,7 @@ $k-icon-path: '../../koowa/com_koowa/fonts';
   @import "site/bootstrap/bootstrap";
   @import "site/molecules/element-queries";
   @import "site/molecules/filters";
+  @import "site/molecules/gallery";
 
 
 
