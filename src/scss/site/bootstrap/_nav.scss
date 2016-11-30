@@ -4,8 +4,8 @@
 // `<nav>`s or `<ul>`s.
 
 .k-nav {
-  padding-left: 0;
-  margin-bottom: 0;
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
@@ -61,7 +61,7 @@
     }
   }
 
-  .nav-link {
+  .k-nav-link {
     display: block;
     padding: $nav-link-padding;
     border: $nav-tabs-border-width solid transparent;

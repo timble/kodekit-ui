@@ -28,6 +28,7 @@ $section-spacing: 20px;
 
 .koowa {
   @import "admin/atoms/img";
+  @import "admin/atoms/legend";
 
 
   @import "admin/utilities/boxsizing";
@@ -151,6 +152,26 @@ $section-spacing: 20px;
         text-overflow: ellipsis;
       }
     }
+  }
+
+
+
+
+
+
+  // Extending Joomla core classes
+  .btn-toolbar {
+    margin-top: 1em;
+    @include content-block(1em);
+  }
+
+  .btn {
+    @extend .k-button;
+    @extend .k-button--default;
+  }
+
+  .pull-right {
+    text-align: right;
   }
 }
 

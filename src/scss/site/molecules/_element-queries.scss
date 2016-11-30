@@ -336,3 +336,68 @@ a.k-card__section {
     border-top: 1px solid rgba(0, 0, 0, 0.15);
   }
 }
+
+.k-list-item {
+  @include clearfix;
+  background-image: linear-gradient(top,rgba(0,0,0,.05),transparent);
+  padding: 15px;
+  border-top: 1px solid rgba(255,255,255,.1);
+  border-bottom: 1px solid rgba(0,0,0,.05);
+}
+
+
+.k-list {
+  ul {
+    @include reset;
+    @include content-block($section-spacing);
+  }
+
+  li {
+    @include content-block(0.4em);
+  }
+
+  .k-title {
+    margin: 0;
+  }
+}
+
+.k-list--indented {
+  li {
+    ul {
+      margin-top: 0.4em;
+    }
+
+    li {
+      padding-left: 1.5em;
+
+      @include psuedo(after) {
+        width: 0.5em;
+        height: 0.5em;
+        border-left: 1px solid rgba(0, 0, 0, 0.2);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        top: 50%;
+        margin-top: -0.33em;
+        left: 0.33em;
+
+        @include rtl {
+          border-left: none;
+          border-right: 1px solid #aaa;
+          left: auto;
+          right: -(($k-tree-size / 2) + 3px);
+        }
+      }
+    }
+  }
+}
+
+legend {
+  margin-bottom: 1em;
+
+  &:first-child {
+    padding-top: 0;
+  }
+}
+
+.editor {
+  @include clearfix;
+}
