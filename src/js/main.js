@@ -27,35 +27,33 @@
                     toolbar = container.find('.k-js-toolbar'),
                     wrapper = container.find('.k-js-wrapper'),
                     content = container.find('.k-js-content'),
+                    component = container.find('.k-js-component'),
                     toggle = container.find('.k-off-canvas-menu-toggle--' + position),
                     $toggle = $(toggle_button),
                     $toggleButton = null,
                     transitionElements = content;
 
                 // Add proper class to toggle buttons
-                $toggle.children('button').addClass('k-off-canvas-menu-toggle--' + position);
+                $toggle.addClass('k-off-canvas-menu-toggle-holder--' + position).children('button').addClass('k-off-canvas-menu-toggle--' + position);
 
                 // Add toggle buttons
                 if (toggle.length === 0) {
-                    if ( titlebar.length) {
-                        if ( position == 'left' ) {
+                    if ( position == 'left' ) {
+                        if ( titlebar.length) {
                             titlebar.prepend($toggle);
-                        } else if ( position == 'right') {
+                        } else if (toolbar.length) {
+                            toolbar.prepend($toggle);
+                        }
+                    } else if ( position == 'right') {
+                        if ( toolbar.length) {
+                            toolbar.append($toggle);
+                        } else if (titlebar.length) {
                             titlebar.append($toggle);
                         }
-
-                        $toggleButton = $('.k-off-canvas-menu-toggle--' + position);
-                        transitionElements = [content, titlebar];
-
-                    } else if (toolbar.length) {
-                        if ( position == 'left' ) {
-                            toolbar.prepend($toggle);
-                        } else if ( position == 'right') {
-                            toolbar.append($toggle);
-                        }
-
-                        $toggleButton = $('.k-off-canvas-menu-toggle--' + position);
+                        transitionElements = component;
                     }
+
+                    $toggleButton = $('.k-off-canvas-menu-toggle--' + position);
 
                     // Initialize the offcanvas plugin
                     element.offCanvasMenu({
