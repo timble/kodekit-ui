@@ -19,14 +19,17 @@ Styleguide 3.6
 
 /**
  * 1. Needed for the off-canvas-overlay
- * 2. Set transition for off canvas sidebar
+ * 2. Reset for when item is a form
+ * 3. Set transition for off canvas sidebar
  */
 
 .k-component {
   position: relative; /* 1 */
   z-index: 2; /* 1 */
   background: $component-background;
-  @include transition(transform); /* 2 */
+  margin: 0; /* 2 */
+  padding: 0; /* 2 */
+  @include transition(transform); /* 3 */
 
   @include flexbox {
     display: flex;
