@@ -20,11 +20,11 @@ Styleguide 2.19
 /**
  * 100% wide by default instead of just 220px making it responsive
  * Important because width is being added by JS as inline styling
- * But only inside koowa container
+ * But only inside k-ui-namespace container
  */
 
 
-.koowa .select2.select2-container--bootstrap {
+.k-ui-namespace .select2.select2-container--bootstrap {
   width: 100% !important;
   max-width: 100% !important;
 }

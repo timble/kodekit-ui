@@ -15146,7 +15146,7 @@ module.exports = '1.3.4';
                     tooltip = tooltip.replace('%s', item.data('title'));
 
                     dropdown_button.ktooltip({
-                        "container":".koowa-container",
+                        "container":".k-ui-container",
                         "delay":{"show":500,"hide":50},
                         'title': tooltip
                     });
@@ -18093,7 +18093,7 @@ var Konami = function (callback) {
 
             function addOffCanvasButton(element, position) {
                 // Variables
-                var kContainer = '.koowa-container',
+                var kContainer = '.k-ui-container',
                     container = element.closest(kContainer),
                     titlebar = container.find('.k-js-title-bar'),
                     toolbar = container.find('.k-js-toolbar'),
@@ -18278,7 +18278,7 @@ var Konami = function (callback) {
             animation: true,
             placement: 'top',
             delay: { show: 200, hide: 50 },
-            container: '.koowa-container'
+            container: '.k-ui-container'
         });
 
         // Add a class during resizing event so we can hide overflowing stuff
@@ -18309,7 +18309,7 @@ var Konami = function (callback) {
 
         // Konami
         new Konami(function() {
-            $('html, .koowa-container').css({
+            $('html, .k-ui-container').css({
                 'font-family': 'Comic Sans MS',
                 'font-size': '20px',
                 'line-height': '30px'
@@ -18329,6 +18329,7 @@ var Konami = function (callback) {
     });
 
 })(kQuery);
+
 
 window.jQuery = globalCacheForjQueryReplacement;
 globalCacheForjQueryReplacement = undefined;
