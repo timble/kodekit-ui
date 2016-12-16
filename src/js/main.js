@@ -119,26 +119,52 @@
                 tablet: 600,
                 desktop: 800
             }
-        }).bind('footable_resizing', function() {
-            $fixedtable.floatThead('destroy');
-        }).bind('footable_resized', function() {
-            fixedTable();
-            $fixedtable.floatThead('reflow');
         });
 
         // Sticky table header and footer
         function fixedTable() {
-            if ( $fixedtable.length ) {
-                $fixedtable.floatThead({
-                    scrollContainer: function($table){
-                        return $table.closest('.k-table');
-                    },
-                    position: 'absolute'
+            var result = false;
+
+            if (navigator.userAgent.toLowerCase().indexOf('firefox') === -1) {
+                if ( $fixedtable.length ) {
+                    $fixedtable.floatThead({
+                        scrollContainer: function($table){
+                            return $table.closest('.k-table');
+                        },
+                        position: 'absolute'
+                    });
+                }
+
+                $footable.bind('footable_resizing', function() {
+                    $fixedtable.floatThead('destroy');
+                }).bind('footable_resized', function() {
+                    $fixedtable.floatThead('reflow');
                 });
+
+                result = true;
             }
+
+            return result;
         }
 
-        fixedTable();
+        var has_fixed_table = fixedTable();
+
+        // Add a class during resizing event so we can hide overflowing stuff
+        var resizeTimer, resizeClass = 'k-is-resizing';
+
+        $(window).on('resize', function() {
+            $('body').addClass(resizeClass);
+
+            // Remove the class when resize is done
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                $('body').removeClass(resizeClass);
+
+                if (has_fixed_table) {
+                    $fixedtable.floatThead('reflow');
+                }
+            }, 250);
+        });
 
         // Filter and search toggle buttons in the scopebar
         if ( $scopebar.length ) {
@@ -207,21 +233,6 @@
             placement: 'top',
             delay: { show: 200, hide: 50 },
             container: '.k-ui-container'
-        });
-
-        // Add a class during resizing event so we can hide overflowing stuff
-        var resizeTimer,
-            resizeClass = 'k-is-resizing';
-
-        $(window).on('resize', function() {
-            $('body').addClass(resizeClass);
-
-            // Remove the class when resize is done
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(function() {
-                $('body').removeClass(resizeClass);
-                $fixedtable.floatThead('reflow');
-            }, 250);
         });
 
         // Sidebar block toggle (e.g. quick filters)
