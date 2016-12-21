@@ -1,0 +1,58 @@
+.k-list {
+  ul {
+    @include reset;
+    @include content-block($section-spacing);
+  }
+
+  li {
+    @include content-block(0.5em);
+    line-height: 1.5em;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    padding-top: 0.5em;
+  }
+
+  .k-title {
+    margin: 0;
+  }
+
+  .k-subtitle {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+}
+
+.k-list--icons {
+  .k-subtitle {
+    padding-left: 0.5em;
+    border-left: 16px solid transparent;
+  }
+}
+
+.k-list--indented {
+  li {
+    ul {
+      margin-top: 0.5em;
+    }
+
+    li {
+      padding-left: 1.5em;
+
+      @include psuedo(after) {
+        width: 0.5em;
+        height: 0.5em;
+        border-left: 1px solid rgba(0, 0, 0, 0.2);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        top: 1em;
+        left: 0.375em;
+
+        @include rtl {
+          border-left: none;
+          border-right: 1px solid #aaa;
+          left: auto;
+          right: -(($k-tree-size / 2) + 3px);
+        }
+      }
+    }
+  }
+}

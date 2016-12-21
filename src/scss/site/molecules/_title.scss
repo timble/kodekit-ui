@@ -1,0 +1,12 @@
+/**
+ * Title
+ *
+ * 1. Make sure that icons and images do not get cut-off by overflow: hidden
+ * 2. We need this for the k-link-coverleft to be able to click on icons / images without the need for an extra link
+ */
+
+.k-title {
+  @include content-block($section-spacing);
+  padding: 1px 0; /* 1 */
+  overflow: hidden; /* 2 */
+}

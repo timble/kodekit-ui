@@ -1,6 +1,6 @@
-//
-// Basic table
-//
+/**
+ * Basic table
+ */
 
 .k-table {
   width: 100%;
@@ -27,9 +27,11 @@
 }
 
 
-// Zebra-striping
-//
-// Default zebra-stripe styles (alternating gray and transparent backgrounds)
+/**
+ * Zebra-striping
+ *
+ * Default zebra-stripe styles (alternating gray and transparent backgrounds)
+ */
 
 .k-table--striped {
   tbody tr:nth-of-type(odd) {
@@ -38,9 +40,12 @@
 }
 
 
-// Responsive table
+/**
+ * Responsive table
+ */
 
 .k-table--responsive {
+
 
   /* Overflow content */
 
@@ -108,5 +113,77 @@
     td:not(:first-child) {
       border: none;
     }
+  }
+}
+
+
+/**
+ * Table data styling
+ */
+
+.k-table-data--right {
+  text-align: right;
+
+  @include rtl {
+    text-align: left;
+  }
+}
+
+.k-table-data--center {
+  text-align: center;
+}
+
+.k-table-data--nowrap {
+  white-space: nowrap;
+}
+
+.k-table-data--wrap {
+  word-break: break-all;
+}
+
+.k-table-data--form,
+.k-table-data--icon {
+  white-space: nowrap;
+  line-height: 1;
+  vertical-align: middle;
+
+  a, span, input, svg, div, small, img {
+    vertical-align: middle;
+    line-height: 1;
+  }
+
+  [class*="k-icon"] {
+    font-size: $k-icon-size;
+  }
+}
+
+.k-table-data--form {
+  input {
+    margin: 0 !important;
+  }
+}
+
+.k-table-data--icon {
+  img {
+    @include allwidth(16px);
+  }
+}
+
+th.k-table-data--icon {
+  a {
+    line-height: $k-table-cell-size - ($k-table-cell-spacing-vertical * 2);
+  }
+}
+
+.k-table-data--ellipsis {
+  max-width: 0;
+  overflow: hidden;
+
+  a, span, input, svg, div, small {
+    vertical-align: middle;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

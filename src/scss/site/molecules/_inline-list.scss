@@ -1,0 +1,16 @@
+.k-inline-list--separated {
+  .k-inline-list__item {
+    display: inline-block;
+
+    &:after {
+      content: "•";
+      padding: 0 0.5em;
+    }
+  }
+
+  .k-inline-list__item:last-child {
+    &:after {
+      display: none;
+    }
+  }
+}

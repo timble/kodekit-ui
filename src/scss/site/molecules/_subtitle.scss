@@ -1,0 +1,14 @@
+/**
+ * Subtitle
+ *
+ * 1. Use `smaller` as font-size to have a smaller font-size than the title itself while respecting teh template font size for the heading
+ * 2. Closer to title element
+ */
+
+.k-subtitle {
+  font-size: smaller; /* 1 */
+  margin-top: -($section-spacing); /* 2 */
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  @include content-block($section-spacing);
+}

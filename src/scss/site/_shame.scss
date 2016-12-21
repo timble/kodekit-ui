@@ -1,0 +1,53 @@
+.k-section {
+  @include clearfix;
+  @include content-block($section-spacing);
+}
+
+.k-thumbnail {
+  width: 33%;
+  max-width: 240px;
+}
+
+.k-wrapped-content {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.k-link-coverleft {
+  @include psuedo(before) {
+    width: 240px;
+    top: -1em;
+    right: 100%;
+    bottom: -1em;
+    background: transparent;
+  }
+}
+
+.k-table-pagination {
+  @include content-block($section-spacing);
+}
+
+.k-manage {
+  @include content-block($section-spacing);
+}
+.k-manage__item {
+  display: inline-block;
+}
+
+.k-title + .k-manage,
+.k-subtitle + .k-manage {
+  margin-top: -($section-spacing / 2);
+}
+
+
+.k-list-item {
+  @include clearfix;
+  background-image: linear-gradient(top,rgba(0,0,0,.05),transparent);
+  padding: 15px;
+  border-top: 1px solid rgba(255,255,255,.1);
+  border-bottom: 1px solid rgba(0,0,0,.05);
+}

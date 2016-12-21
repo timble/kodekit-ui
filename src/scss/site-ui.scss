@@ -2,36 +2,46 @@
    Global tools
    ========================================================================== */
 
-/* Containing different libraries, variables, mixins and functions */
+
+/* Set icon path variable before loading core tools to override them */
 
 $k-icon-path: '../../koowa/com_koowa/fonts';
+
+
+/* Load core tools and icons */
 
 @import "admin/core/tools";
 @import "admin/utilities/k-icons";
 
 
-@mixin variable {
-  @supports( (--a: 0) ) {
-    @at-root {
-      .koowa#{&} {
-        @content;
-      }
-    }
-  }
-}
+/* Load site variables and mixins */
+
+@import "site/utilities/variables";
+@import "site/utilities/mixins";
 
 
-$section-spacing: 20px;
-
-
-
+/* namespaced styling */
 
 .koowa {
+
+
+  /* Border-box-size everything */
+
+  @import "admin/utilities/boxsizing";
+
+
+  /* Custom selected admin atoms */
+
   @import "admin/atoms/img";
   @import "admin/atoms/legend";
 
 
-  @import "admin/utilities/boxsizing";
+  /* Site atoms */
+
+  @import "site/atoms/legend";
+
+
+  /* Custom selected admin molecules */
 
   @import "admin/molecules/icons";
   @import "admin/molecules/tree";
@@ -40,140 +50,44 @@ $section-spacing: 20px;
   @import "admin/molecules/pagination";
   @import "admin/molecules/styled-file-input";
 
-  @import "admin/utilities/utilities";
 
-  @import "site/bootstrap/bootstrap";
+  /* Site molecules */
+
+  @import "site/molecules/alert";
+  @import "site/molecules/card";
   @import "site/molecules/element-queries";
   @import "site/molecules/filters";
+  @import "site/molecules/flag-object";
+  @import "site/molecules/forms";
   @import "site/molecules/gallery";
+  @import "site/molecules/inline-list";
+  @import "site/molecules/input-group";
+  @import "site/molecules/list";
+  @import "site/molecules/list-group";
+  @import "site/molecules/media";
+  @import "site/molecules/nav";
+  @import "site/molecules/responsive-embed";
+  @import "site/molecules/subtitle";
+  @import "site/molecules/tables";
+  @import "site/molecules/tags";
+  @import "site/molecules/title";
+  @import "site/molecules/toolbar";
 
 
+  /* Utilities */
+
+  @import "admin/utilities/utilities";
+  @import "site/utilities/utilities";
 
 
+  /* Shame */
 
+  @import "site/shame";
 
-  .k-table {
-    .k-table-data--right {
-      text-align: right;
-
-      @include rtl {
-        text-align: left;
-      }
-    }
-
-    .k-table-data--center {
-      text-align: center;
-    }
-
-    .k-table-data--nowrap {
-      white-space: nowrap;
-    }
-
-    .k-table-data--wrap {
-      word-break: break-all;
-    }
-
-    .k-table-data--toggle,
-    .k-table-data--form,
-    .k-table-data--icon {
-      white-space: nowrap;
-      line-height: 1;
-      vertical-align: middle;
-
-      a, span, input, svg, div, small, img {
-        vertical-align: middle;
-        line-height: 1;
-      }
-
-      [class*="k-icon"] {
-        font-size: $k-icon-size;
-      }
-    }
-
-    .k-table-data--multiline {
-      a, span, input, svg, small, img {
-        display: inline;
-        vertical-align: baseline;
-      }
-    }
-
-    .k-table-data--toggle {
-      padding: 0;
-      font-size: 0;
-      line-height: 0;
-      overflow: hidden;
-      width: 0;
-      visibility: visible;
-    }
-
-    .k-table-data--toggle--hidden {
-      padding: 0;
-
-      span, div, img, a {
-        display: none !important;
-      }
-    }
-
-    .footable.breakpoint {
-      .k-table-data--toggle {
-        width: 1%;
-        padding-left: $k-table-cell-spacing-horizontal;
-        padding-right: $k-table-cell-spacing-horizontal;
-      }
-    }
-
-    .k-table-data--form {
-      input {
-        margin: 0 !important;
-      }
-    }
-
-    .k-table-data--icon {
-      img {
-        @include allwidth(16px);
-      }
-    }
-
-    th.k-table-data--icon {
-      a {
-        line-height: $k-table-cell-size - ($k-table-cell-spacing-vertical * 2);
-      }
-    }
-
-    .k-table-data--ellipsis {
-      max-width: 0;
-      overflow: hidden;
-
-      a, span, input, svg, div, small {
-        vertical-align: middle;
-        max-width: 100%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-    }
-  }
-
-
-
-
-
-
-  // Extending Joomla core classes
-  .btn-toolbar {
-    margin-top: 1em;
-    @include content-block(1em);
-  }
-
-  .btn {
-    @extend .k-button;
-    @extend .k-button--default;
-  }
-
-  .pull-right {
-    text-align: right;
-  }
 }
+
+
+/* Outside the namespace container */
 
 @import "../../node_modules/select2/src/scss/core";
 @import "admin/molecules/select2";
