@@ -22,7 +22,7 @@ $k-icon-path: '../../koowa/com_koowa/fonts';
 
 /* namespaced styling */
 
-.koowa {
+.k-ui-namespace {
 
 
   /* Border-box-size everything */
@@ -58,7 +58,7 @@ $k-icon-path: '../../koowa/com_koowa/fonts';
   @import "site/molecules/dropdown-toggle";
   @import "site/molecules/element-querie";
   @import "site/molecules/flag-object";
-  @import "site/molecules/forms";
+  @import "site/molecules/form";
   @import "site/molecules/gallery";
   @import "site/molecules/inline-list";
   @import "site/molecules/input-group";
