@@ -1,6 +1,9 @@
+/* Toolbar
+   ========================================================================== */
+
 .k-toolbar {
   @include content-block($section-spacing);
   padding: 1em;
-  background: rgba(0, 0, 0, 0.033);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.088);
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }

@@ -1,13 +1,3 @@
-// Variables
-// Element querie kicks in at: 620px width (main width + sub width + spacing)
-
-$element-querie-main-width-pixels: 400px;
-$element-querie-min-width: 200px;
-$element-querie-spacing: 20px;
-$element-querie-min-width-column: $element-querie-min-width + $element-querie-spacing;
-$element-querie-spacing-half: $element-querie-spacing / 2;
-
-
 /**
  * Element querie parent
  *

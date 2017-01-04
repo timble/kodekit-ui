@@ -33,14 +33,36 @@ Styleguide 2.26
 
   .jqtree-element {
     padding: 0 $k-spacing-tiny 0 $k-spacing;
+    overflow: hidden;
 
     @include rtl {
       padding: 0 $k-spacing 0 $k-spacing-tiny;
     }
 
+    &:after {
+      display: block;
+      content: " ";
+      z-index: 0;
+      border-top: 100px solid;
+      position: absolute;
+      top: -20px;
+      left: 0;
+      width: 100%;
+      opacity: 0;
+      pointer-events: none;
+    }
+
     &:hover,
     &:focus {
-      background: $k-jqtree-hover-background;
+      &:after {
+        border-color: $k-jqtree-hover-background;
+        opacity: 1;
+      }
+    }
+
+    .jqtree_common {
+      position: relative;
+      z-index: 1;
     }
   }
 
@@ -62,13 +84,19 @@ Styleguide 2.26
 
   .jqtree-selected {
     & > .jqtree-element {
-      background: $k-color-accent;
       color: $k-color-accent-type;
+
+      &:after {
+        border-color: $k-color-accent;
+        opacity: 1;
+      }
     }
 
     &:hover {
       & > .jqtree-element {
-        background: dark($k-color-accent);
+        &:after {
+          border-color: dark($k-color-accent);
+        }
       }
     }
   }
@@ -168,15 +196,16 @@ Styleguide 2.26
       @include psuedo(after) {
         width: 6px;
         height: 6px;
-        border-left: 1px solid #aaa;
-        border-bottom: 1px solid #aaa;
+        border-left: 1px solid;
+        border-bottom: 1px solid;
         top: 50%;
         margin-top: -3px;
         left: -(($k-tree-size / 2) + 3px);
+        opacity: 0.333;
 
         @include rtl {
           border-left: none;
-          border-right: 1px solid #aaa;
+          border-right: 1px solid;
           left: auto;
           right: -(($k-tree-size / 2) + 3px);
         }

@@ -1,5 +1,7 @@
 /**
  * Flag object
+ *
+ * Use display table for cross browser availability
  */
 
 .k-flag-object {
@@ -9,15 +11,30 @@
   max-width: 100%;
 }
 
+
+/**
+ * Inline flag object
+ */
+
 .k-flag-object--inline {
   width: auto;
 }
+
+
+/**
+ * Flag object children
+ */
 
 .k-flag-object__body,
 .k-flag-object__aside {
   display: table-cell;
   vertical-align: middle;
 }
+
+
+/**
+ * Top aligned flag object
+ */
 
 .k-flag-object--top {
   .k-flag-object__body,
@@ -26,12 +43,22 @@
   }
 }
 
+
+/**
+ * Bottom aligned flag object
+ */
+
 .k-flag-object--bottom {
   .k-flag-object__body,
   .k-flag-object__aside {
     vertical-align: bottom;
   }
 }
+
+
+/**
+ * Aside
+ */
 
 .k-flag-object__aside {
   white-space: nowrap;
@@ -43,6 +70,11 @@
     display: block;
   }
 }
+
+
+/**
+ * Horizontal spacing
+ */
 
 .k-flag-object__aside + .k-flag-object__body {
   padding-left: 0.5em;

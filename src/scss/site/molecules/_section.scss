@@ -1,0 +1,11 @@
+/**
+ * Section
+ *
+ * 1. Clearfix so both top and bottom will be cleared of floats and margin
+ * 2. Content block adds bottom margin to all except the last-child
+ */
+
+.k-section {
+  @include clearfix;
+  @include content-block($section-spacing);
+}

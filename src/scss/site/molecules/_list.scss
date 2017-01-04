@@ -41,14 +41,15 @@
       @include psuedo(after) {
         width: 0.5em;
         height: 0.5em;
-        border-left: 1px solid rgba(0, 0, 0, 0.2);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        border-left: 1px solid;
+        border-bottom: 1px solid;
         top: 1em;
         left: 0.375em;
+        opacity: 0.333;
 
         @include rtl {
           border-left: none;
-          border-right: 1px solid #aaa;
+          border-right: 1px solid;
           left: auto;
           right: -(($k-tree-size / 2) + 3px);
         }

@@ -285,19 +285,16 @@ $nav-disabled-link-color:       $gray-light !default;
 $nav-disabled-link-hover-color: $gray-light !default;
 $nav-disabled-link-hover-bg:    transparent !default;
 
-$nav-tabs-border-color:                       #ddd !default;
+$nav-tabs-border-color:                       rgba(0, 0, 0, 0.15) !default;
 $nav-tabs-border-width:                       $border-width !default;
 $nav-tabs-border-radius:                      $border-radius !default;
 $nav-tabs-link-hover-border-color:            $gray-lighter !default;
+$nav-tabs-link-hover-bg:                      rgba(0, 0, 0, 0.05) !default;
 $nav-tabs-active-link-hover-color:            $gray !default;
 $nav-tabs-active-link-hover-bg:               $body-bg !default;
 $nav-tabs-active-link-hover-border-color:     #ddd !default;
 $nav-tabs-justified-link-border-color:        #ddd !default;
 $nav-tabs-justified-active-link-border-color: $body-bg !default;
-
-$nav-pills-border-radius:     $border-radius !default;
-$nav-pills-active-link-color: $component-active-color !default;
-$nav-pills-active-link-bg:    $component-active-bg !default;
 
 
 // Form states and alerts
@@ -410,6 +407,19 @@ $close-color:                 #000 !default;
 $close-text-shadow:           0 1px 0 #fff !default;
 
 
+
+
 // KUI
 
 $section-spacing: 20px;
+
+
+
+// Variables
+// Element querie kicks in at: 620px width (main width + sub width + spacing)
+
+$element-querie-main-width-pixels: 400px;
+$element-querie-min-width: 200px;
+$element-querie-spacing: 20px;
+$element-querie-min-width-column: $element-querie-min-width + $element-querie-spacing;
+$element-querie-spacing-half: $element-querie-spacing / 2;

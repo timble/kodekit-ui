@@ -1,0 +1,98 @@
+/* Tabs
+   ========================================================================== */
+
+.k-tabs {
+  @include reset;
+  @include clearfix();
+  overflow: hidden;
+  padding-bottom: $nav-tabs-border-width; // Make room for the bottom border
+}
+
+.k-tab__item {
+  position: relative;
+  float: left;
+
+  + .k-tab__item {
+    margin-left: $nav-item-margin;
+  }
+
+  &:first-child {
+    .k-tab__link {
+      &.k-is-active {
+        &:before {
+          right: -($nav-item-margin);
+        }
+      }
+    }
+  }
+
+  &:last-child {
+    .k-tab__link {
+      &:before {
+        right: -9999px;
+      }
+    }
+  }
+}
+
+.k-tab__link {
+  display: block;
+  padding: $nav-link-padding;
+  border: $nav-tabs-border-width solid transparent;
+  border-bottom: none;
+  text-decoration: none;
+  @include border-top-radius($nav-tabs-border-radius);
+
+  &.k-is-disabled {
+    @include plain-hover-focus {
+      color: inherit;
+      cursor: $cursor-disabled;
+      background-color: transparent;
+    }
+  }
+
+  &:before {
+    display: block;
+    content: " ";
+    position: absolute;
+    bottom: -($nav-tabs-border-width);
+    left: $nav-tabs-border-width;
+    right: -($nav-item-margin);
+    height: $nav-tabs-border-width;
+    margin-right: -($nav-tabs-border-width);
+    background: $nav-tabs-border-color;
+  }
+
+  &:after {
+    display: none;
+  }
+
+  @include hover-focus {
+    text-decoration: none;
+    background: $nav-tabs-link-hover-bg;
+  }
+
+  &.k-is-disabled {
+    @include plain-hover-focus {
+      color: inherit;
+      background-color: transparent;
+      border-color: transparent;
+    }
+  }
+}
+
+.k-tab__link.k-is-active,
+.k-tab__item.k-is-open .k-tab__link {
+  &:before {
+    left: 100%;
+    margin-left: -($nav-tabs-border-width);
+  }
+
+  @include plain-hover-focus {
+    color: inherit;
+    background-color: transparent;
+    border-color: $nav-tabs-border-color;
+  }
+}
+
+// @TODO: Accessible hide and show tabs when the JS is available

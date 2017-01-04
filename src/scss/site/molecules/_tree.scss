@@ -1,0 +1,36 @@
+/**
+ * Admin tree overrides
+ *
+ * Use RGBA to fit template style
+ */
+
+.k-tree {
+  .jqtree-element {
+    &:hover,
+    &:focus {
+      &:after {
+        border-color: inherit;
+        opacity: 0.085;
+      }
+    }
+  }
+
+  .jqtree-selected {
+    & > .jqtree-element {
+      color: inherit;
+
+      &:after {
+        border-color: inherit;
+        opacity: 0.15;
+      }
+    }
+
+    &:hover {
+      & > .jqtree-element {
+        &:after {
+          border-color: inherit;
+        }
+      }
+    }
+  }
+}

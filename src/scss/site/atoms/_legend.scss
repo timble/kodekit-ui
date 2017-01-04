@@ -1,5 +1,16 @@
+/* Legend
+   ========================================================================== */
+
+/**
+ * Admin legend overrides
+ *
+ * Use RGBA to fit template style
+ */
+
 legend {
-  margin-bottom: 1em;
+  @include content-block(1em);
+  color: inherit;
+  border-bottom-color: rgba(0,0,0,0.1);
 
   &:first-child {
     padding-top: 0;

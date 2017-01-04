@@ -1,12 +1,11 @@
-/**
- * Alerts
- */
+/* Alerts
+   ========================================================================== */
 
 .k-alert {
   padding: $alert-padding;
   margin-bottom: $spacer-y;
   border: $alert-border-width solid transparent;
-  @include border-radius($alert-border-radius);
+  border-radius: $alert-border-radius;
 }
 
 
@@ -29,6 +28,7 @@
 
 .k-alert-link {
   font-weight: $alert-link-font-weight;
+  color: inherit;
 }
 
 
@@ -54,9 +54,7 @@
 
 
 /**
- * Alert styles
- *
- * Generate contextual modifier classes for colorizing the alert.
+ * Alternate styles
  */
 
 .k-alert--success {

@@ -1,7 +1,5 @@
-// Base class
-//
-// Requires one of the contextual, color modifier classes for `color` and
-// `background-color`.
+/* Labels
+   ========================================================================== */
 
 .k-label {
   display: inline-block;
@@ -15,17 +13,22 @@
   vertical-align: middle;
   margin-top: -0.1em;
   margin-left: 0.25em;
-  @include border-radius;
+  border-radius: $border-radius;
 
-  // Empty tags collapse automatically
+
+  /* Empty tags collapse automatically */
+
   &:empty {
     display: none;
   }
 }
 
-// Colors
-//
-// Contextual variations (linked tags get darker on :hover).
+
+/**
+ * Colors
+ *
+ * Contextual variations (linked tags get darker on :hover).
+ */
 
 .k-label--default {
   @include tag-variant($tag-default-bg);
