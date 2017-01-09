@@ -2,12 +2,29 @@
    ========================================================================== */
 
 /**
- * 1. Make sure that icons and images do not get cut-off by overflow: hidden
- * 2. We need this for the k-link-coverleft to be able to click on icons / images without the need for an extra link
+ * 1. We need this for the k-link-coverleft to be able to click on icons / images without the need for an extra link
  */
 
 .k-title {
   @include content-block($section-spacing);
-  padding: 1px 0; /* 1 */
-  overflow: hidden; /* 2 */
+  margin-top: 0;
+  overflow-x: hidden; /* 1 */
+}
+
+/**
+ * Subtitle
+ *
+ * 1. Using `smaller` as font-size to have a smaller font-size than the body text while respecting the template font size
+ * 2. Closer to title element
+ */
+
+.k-subtitle {
+  font-size: smaller; /* 1 */
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  @include content-block($section-spacing);
+}
+
+.k-title + .k-subtitle {
+  margin-top: -($section-spacing); /* 2 */
 }

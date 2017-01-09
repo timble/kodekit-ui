@@ -10,9 +10,9 @@ This is the most outer container of each page.
 - The `koowa` class should always be added to the `koowa-container` element for namespacing purposes
 
 markup:
-<div class="koowa-container koowa">
+<div class="k-ui-container k-ui-namespace">
     ...
-</div><!-- .koowa-container -->
+</div><!-- .k-ui-container -->
 
 Styleguide 3.1
 
@@ -26,7 +26,7 @@ Styleguide 3.1
  * 3. Default styling
  */
 
-&.koowa-container {
+&.k-ui-container {
   max-width: $k-minwidth; /* 1 */
   margin: 0; /* 6 */
   border: none; /* 6 */

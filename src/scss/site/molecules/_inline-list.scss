@@ -1,4 +1,6 @@
-.k-inline-list--separated {
+.k-inline-list {
+  @include reset;
+
   .k-inline-list__item {
     display: inline-block;
 

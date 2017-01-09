@@ -14,10 +14,10 @@
 
 .k-link-coverleft {
   @include psuedo(before) {
-    width: 240px;
-    top: -1em;
+    top: 0;
     right: 100%;
-    bottom: -1em;
+    left: -100%;
+    bottom: 0;
     background: transparent;
   }
 }

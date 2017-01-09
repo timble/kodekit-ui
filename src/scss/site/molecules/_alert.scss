@@ -3,32 +3,33 @@
 
 .k-alert {
   padding: $alert-padding;
-  margin-bottom: $spacer-y;
-  border: $alert-border-width solid transparent;
-  border-radius: $alert-border-radius;
-}
+  border-top: $alert-border-width solid transparent;
+  border-bottom: $alert-border-width solid transparent;
+  @include content-block($spacer-y);
 
+  address, h1, h2, h3, h4, h5, h6, p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 
-/**
- * Alert heading
- *
- * 1. Specified to prevent conflicts of changing $headings-color
- */
+  h1, h2, h3, h4, h5, h6 {
+    @include reset($k-margin: false);
+    margin: 0 0 0.5em;
+  }
 
-.k-alert__heading {
-  color: inherit; /* 1 */
-}
+  h1, h2, h3, h4, h5, h6, a {
+    color: inherit
+  }
 
+  a {
+    text-decoration: underline;
 
-/**
- * Alert link
- *
- * Provide class for links that match alerts
- */
-
-.k-alert__link {
-  font-weight: $alert-link-font-weight;
-  color: inherit;
+    &:focus,
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 

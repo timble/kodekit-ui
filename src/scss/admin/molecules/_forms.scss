@@ -37,6 +37,7 @@ Styleguide 2.9
   max-width: 100%; /* 1 */
   height: $k-input-height-base; /* 2 */
   padding: $k-spacing-base-vertical $k-spacing-base-horizontal;
+  margin: 0;
   font-size: $k-font-size;
   line-height: $k-line-height;
   color: $k-input-color;
@@ -313,13 +314,12 @@ Styleguide 2.9.1
   input[type="checkbox"] {
     border-radius: 0; /* 1 */
 
-    @include icon-before(check, true) {
-      /* 2 */
-      width: $k-form-option-size - ($k-form-option-border-size * 2); /* 3 */
-      height: $k-form-option-size - ($k-form-option-border-size * 2); /* 3 */
-      line-height: $k-form-option-size - ($k-form-option-border-size * 2); /* 3 */
-      font-size: $k-form-option-size - ($k-form-option-border-size * 4); /* 4 */
-      color: $k-color-accent; /* 5 */
+    &:before {
+      content: " "; /* 2 */
+      width: $k-form-option-size - ($k-form-option-border-size * 8); /* 3 */
+      height: $k-form-option-size - ($k-form-option-border-size * 8); /* 3 */
+      margin: 3px; /* 4 */
+      background: $k-form-option-color;
     }
   }
 }

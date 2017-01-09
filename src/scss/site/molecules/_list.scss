@@ -1,14 +1,27 @@
 .k-list {
-  ul {
-    @include reset;
-    @include content-block($section-spacing);
-  }
+  @include reset;
+  @include content-block($section-spacing);
+  overflow-x: hidden;
 
-  li {
-    @include content-block(0.5em);
-    line-height: 1.5em;
-    border-top: 1px solid rgba(0,0,0,0.1);
-    padding-top: 0.5em;
+  & > .k-list__item:first-child {
+    &:before {
+      display: none;
+    }
+  }
+}
+
+.k-list__item {
+  @include content-block(0.5em);
+  line-height: 1.5em;
+  padding-top: 0.5em;
+  margin-top: 1px;
+
+  @include psuedo(before) {
+    top: -1px;
+    left: -999px;
+    right: 0;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.1);
   }
 
   .k-title {
@@ -16,9 +29,39 @@
   }
 
   .k-subtitle {
-    margin: 0;
     padding: 0;
     border: none;
+  }
+
+  .k-title + .k-subtitle {
+    margin: 0.25em 0 0;
+  }
+
+  .k-list__level {
+    @include reset;
+    @include content-block($section-spacing);
+    margin-top: 0.5em;
+  }
+
+  .k-list__item {
+    padding-left: 1.5em;
+
+    @include psuedo(after) {
+      width: 0.5em;
+      height: 0.5em;
+      border-left: 1px solid;
+      border-bottom: 1px solid;
+      top: 1em;
+      left: 0.375em;
+      opacity: 0.333;
+
+      @include rtl {
+        border-left: none;
+        border-right: 1px solid;
+        left: auto;
+        right: -(($k-tree-size / 2) + 3px);
+      }
+    }
   }
 }
 
@@ -26,34 +69,5 @@
   .k-subtitle {
     padding-left: 0.5em;
     border-left: 16px solid transparent;
-  }
-}
-
-.k-list--indented {
-  li {
-    ul {
-      margin-top: 0.5em;
-    }
-
-    li {
-      padding-left: 1.5em;
-
-      @include psuedo(after) {
-        width: 0.5em;
-        height: 0.5em;
-        border-left: 1px solid;
-        border-bottom: 1px solid;
-        top: 1em;
-        left: 0.375em;
-        opacity: 0.333;
-
-        @include rtl {
-          border-left: none;
-          border-right: 1px solid;
-          left: auto;
-          right: -(($k-tree-size / 2) + 3px);
-        }
-      }
-    }
   }
 }
