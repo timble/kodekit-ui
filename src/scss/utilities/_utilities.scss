@@ -418,6 +418,14 @@ markup:
   @include content-block(1em);
 }
 
+.k-content-block-top {
+  @include content-block-top;
+}
+
+.k-content-block--small {
+  @include content-block-top(1em);
+}
+
 
 /*
 Relative positioned element
