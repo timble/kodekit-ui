@@ -18401,6 +18401,5 @@ var Konami = function (callback) {
 
 })(kQuery);
 
-
 window.jQuery = globalCacheForjQueryReplacement;
 globalCacheForjQueryReplacement = undefined;
