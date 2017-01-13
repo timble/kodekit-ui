@@ -13,7 +13,7 @@
   },
   "homepage": "https://github.com/timble/kodekit-ui#readme",
   "devDependencies": {
-    "floatthead": "1.4.2",
+    "floatthead": "^1.4.5",
     "footable": "git+https://github.com/fooplugins/FooTable.git#2.0.3",
     "grunt": "1.0.0",
     "grunt-contrib-concat": "1.0.1",

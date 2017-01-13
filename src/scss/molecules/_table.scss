@@ -1,6 +1,8 @@
 /* Table
    ========================================================================== */
 
+/* WARNING: Do not use transition on any element since this will hit scroll performance big on certain browsers! */
+
 /*
 Table
 
@@ -95,7 +97,7 @@ Styleguide 2.21
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;
-    overflow: auto;
+    overflow: hidden;
   }
 
   @include resizing {
@@ -105,12 +107,8 @@ Styleguide 2.21
 
 .k-table {
   overflow: auto;
-
-  @include flexbox {
-    display: flex;
-    flex: 1 1 auto;
-    background: $table-cell-background-even;
-  }
+  backface-visibility: hidden;
+  will-change: overflow;
 }
 
 
@@ -154,7 +152,6 @@ Styleguide 2.21
     vertical-align: middle;
     text-align: left;
     line-height: 1;
-    @include transition;
 
     input {
       display: inline-block; /* 1 */
@@ -196,7 +193,6 @@ Styleguide 2.21
       margin-right: -$table-cell-spacing-horizontal;
       line-height: $table-cell-size - ($table-cell-spacing-vertical * 2);
       text-decoration: none;
-      @include transition;
 
       &:focus,
       &:hover {
@@ -324,7 +320,6 @@ Styleguide 2.21.3
     display: inline-block;
     vertical-align: middle;
     text-decoration: none;
-    @include transition;
 
     &:hover,
     &:focus {
@@ -510,7 +505,6 @@ Styleguide 2.21.5
 
 .k-table-container {
   .k-table__item--state {
-    @include transition;
 
 
     /* pointers for clickable elements */
@@ -860,7 +854,6 @@ Styleguide 2.21.9
     vertical-align: bottom;
     color: #333;
     text-shadow: 0 0 3px white;
-    @include transition;
   }
 }
 
@@ -924,7 +917,6 @@ Styleguide 2.21.10
     content: " ";
     position: absolute;
     opacity: 0.33;
-    @include transition;
   }
 
   &:before {
