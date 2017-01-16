@@ -21,7 +21,6 @@ module.exports = function(grunt) {
             'node_modules/select2/dist/js/select2.full.js',
             'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
             'node_modules/footable/js/footable.js',
-            'node_modules/floatthead/dist/jquery.floatThead.js',
             'node_modules/jqtree/tree.jquery.js',
             '<%= srcPath %>/js/custom-file-input.js',
             '<%= srcPath %>/js/bootstrap-dropdown.js',
