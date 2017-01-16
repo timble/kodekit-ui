@@ -7,15 +7,13 @@
   border-bottom: $alert-border-width solid transparent;
   @include content-block($spacer-y);
 
-  address, h1, h2, h3, h4, h5, h6, p {
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
 
   h1, h2, h3, h4, h5, h6 {
-    @include reset($k-margin: false);
-    margin: 0 0 0.5em;
+    @include reset;
+  }
+
+  .k-alert__heading, address, h1, h2, h3, h4, h5, h6, p {
+    @include content-block(0.5em);
   }
 
   h1, h2, h3, h4, h5, h6, a {
