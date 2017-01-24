@@ -5,7 +5,7 @@
 
 /* Set icon path variable before loading core tools to override them */
 
-$k-icon-path: '../../koowa/com_koowa/fonts';
+$k-icon-path: '../../koowa/com_koowa/fonts' !default;
 
 
 /* Load core tools and icons */
@@ -60,7 +60,6 @@ $k-icon-path: '../../koowa/com_koowa/fonts';
   @import "site/molecules/flag-object";
   @import "site/molecules/gallery";
   @import "site/molecules/inline-list";
-  @import "site/molecules/input-group";
   @import "site/molecules/label";
   @import "site/molecules/list";
   @import "site/molecules/list-group";
