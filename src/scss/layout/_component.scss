@@ -35,7 +35,7 @@ Styleguide 3.6
     display: flex;
     flex-direction: column;
     flex: 1 1 auto;
-    overflow: hidden;
+    overflow: auto;
   }
 
   @include resizing {
