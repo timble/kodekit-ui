@@ -144,6 +144,7 @@ Styleguide 2.15.4
   &.mfp-inline-holder {
     padding-top: 40px;
     padding-bottom: 40px;
+    white-space: nowrap;
   }
 
   .mfp-inline {
@@ -178,9 +179,9 @@ Styleguide 2.15.4
   margin: 0 auto;
   text-align: left;
   z-index: 1045;
-  min-width: 240px;
-  max-width: 1080px !important;
-  max-height: 800px !important;
+  min-width: 280px;
+  max-width: 100% !important;
+  max-height: 100% !important;
 
   @include rtl {
     text-align: right;
@@ -190,8 +191,9 @@ Styleguide 2.15.4
 .mfp-inline-holder .mfp-content,
 .mfp-ajax-holder .mfp-content {
   cursor: auto;
-  max-width: 1200px;
-  width: 100%;
+  max-width: 100% !important;
+  width: auto;
+  height: auto;
   max-height: 100%;
   margin: 0 auto;
 }
@@ -480,10 +482,7 @@ button::-moz-focus-inner {
 }
 
 .mfp-iframe-scaler {
-  width: 100%;
-  height: 0;
-  overflow: hidden;
-  padding-top: 56.25%;
+  @include clearfix;
 }
 
 .mfp-iframe-scaler iframe {
@@ -730,6 +729,19 @@ img.mfp-img {
   margin: auto;
 }
 
+.k-huge-inline-modal-holder {
+  position: relative;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  width: 100%;
+  margin: auto;
+
+  .k-inline-modal {
+    max-width: 100% !important;
+    max-height: 100% !important;
+  }
+}
+
 .k-inline-modal {
   padding: $spacing;
   background: white;
@@ -739,7 +751,7 @@ img.mfp-img {
   box-sizing: border-box;
   max-width: 1080px !important;
   max-height: 800px !important;
-  overflow: auto;
+  white-space: normal;
 
   form {
     margin: 0;
