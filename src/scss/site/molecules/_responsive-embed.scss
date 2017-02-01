@@ -6,6 +6,8 @@
   height: 0;
   padding: 0;
   overflow: hidden;
+  padding-bottom: percentage(9 / 16);
+  @include content-block;
 
   .k-embed-responsive-item,
   iframe,
@@ -22,18 +24,14 @@
   }
 }
 
-.k-embed-responsive-21by9 {
+.k-embed-responsive--21by9 {
   padding-bottom: percentage(9 / 21);
 }
 
-.k-embed-responsive-16by9 {
-  padding-bottom: percentage(9 / 16);
-}
-
-.k-embed-responsive-4by3 {
+.k-embed-responsive--4by3 {
   padding-bottom: percentage(3 / 4);
 }
 
-.k-embed-responsive-1by1 {
+.k-embed-responsive--1by1 {
   padding-bottom: percentage(1 / 1);
 }

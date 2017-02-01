@@ -11,11 +11,11 @@
 }
 
 .k-list__item {
-  @include content-block(0.5em);
   line-height: 1.5em;
   padding-top: 0.5em;
-  margin-top: 1px;
+  padding-bottom: 0.5em;
 
+  // Use psuedo element so border always has left: 0; even when list has levels
   @include psuedo(before) {
     top: -1px;
     left: -999px;
@@ -34,17 +34,17 @@
   }
 
   .k-title + .k-subtitle {
-    margin: 0.25em 0 0;
-  }
-
-  .k-list__level {
-    @include reset;
-    @include content-block($section-spacing);
-    margin-top: 0.5em;
+    margin-top: 0.25em;
   }
 
   .k-list__item {
+    margin-top: 0.5em;
     padding-left: 1.5em;
+
+    @include rtl {
+      padding-left: 0;
+      padding-right: 1.5em;
+    }
 
     @include psuedo(after) {
       width: 0.5em;
@@ -62,6 +62,24 @@
         right: -(($k-tree-size / 2) + 3px);
       }
     }
+  }
+}
+
+.k-list--bordered {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  .k-list__item {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+}
+
+.k-list--rounded {
+  border-radius: $border-radius;
+
+  .k-list__item {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
   }
 }
 
