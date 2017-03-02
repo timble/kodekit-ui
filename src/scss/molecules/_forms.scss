@@ -951,10 +951,16 @@ Styleguide 2.9.7
 */
 
 .k-form-row-group {
+  display: table; /* To make sure we don't get empty pixels on the right */
+  width: 100%; /* To make sure we don't get empty pixels on the right */
   background: $color-primary-plus-6;
   border-radius: 5px;
   border: 1px solid $color-primary-min-2;
   margin-bottom: $spacing;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 
@@ -1009,6 +1015,12 @@ Styleguide 2.9.8
     &:last-child {
       border-bottom: none;
     }
+  }
+
+  .k-form-row__header {
+    width: 100%;
+    background: $color-primary-plus-4;
+    padding: 10px;
   }
 
   .k-form-row__item {
@@ -1080,6 +1092,10 @@ Styleguide 2.9.8
         border-radius: 5px 5px 0 0;
       }
     }
+
+    .k-form-row__header {
+      border-radius: 5px 5px 0 0;
+    }
   }
 
   &:last-child {
@@ -1087,6 +1103,10 @@ Styleguide 2.9.8
       a {
         border-radius: 0 0 5px 5px;
       }
+    }
+
+    .k-form-row__header {
+      border-radius: 0 0 5px 5px;
     }
   }
 }
