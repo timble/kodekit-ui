@@ -32,7 +32,6 @@ module.exports = function(grunt) {
             '<%= srcPath %>/js/koowa.grid.js',
             '<%= srcPath %>/js/koowa.tree.js',
             '<%= srcPath %>/js/datepicker.js',
-            '<%= srcPath %>/js/koowa.datepicker.js',
             '<%= srcPath %>/js/overflowing.js',
             '<%= srcPath %>/js/tabbable.js',
             '<%= srcPath %>/js/off-canvas-menu.js',
