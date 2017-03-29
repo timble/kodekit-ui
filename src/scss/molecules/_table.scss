@@ -427,6 +427,18 @@ Styleguide 2.21.4
       display: inline;
       vertical-align: baseline;
     }
+
+
+    /* Give anchors underlines to set them apart from default text */
+
+    a {
+      text-decoration: underline;
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
+    }
   }
 
   .k-table-data--toggle {
