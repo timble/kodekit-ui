@@ -25,7 +25,7 @@
 //     padding-right: 10px;
 //   }
 //
-//   @include breakpoint($beta) {
+//   @include breakpoint($k-beta) {
 //     padding-left: 20px;
 //   }
 // }
@@ -50,7 +50,7 @@
 // }
 // ```
 //
-// Since the `.k-ui-namespace--rtl.k-ui-namespace` .foo has a higher specificity than the media querie, the RTL styling will be there for non-rtl as well. So watch out for specificity and do this:
+// Since the `.k-ui--rtl.k-ui-namespace` .foo has a higher specificity than the media querie, the RTL styling will be there for non-rtl as well. So watch out for specificity and do this:
 //
 // ```
 // .foo {
@@ -61,7 +61,7 @@
 //     padding-right: 10px;
 //   }
 //
-//   @include breakpoint($beta) {
+//   @include breakpoint($k-beta) {
 //     @include rtl {
 //       padding-left: 0;
 //       padding-right: 20px;
@@ -114,9 +114,9 @@
   }
 }
 
-@mixin modernizr-rtl($classes) {
+@mixin modernizr-rtl($k-classes) {
   @at-root {
-    [dir="rtl"]#{$classes} #{&} {
+    [dir="rtl"]#{$k-classes} #{&} {
       @content
     }
   }

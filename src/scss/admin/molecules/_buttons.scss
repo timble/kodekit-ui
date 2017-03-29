@@ -57,7 +57,7 @@ Styleguide 2.3.1
 .k-button {
   display: inline-block;
   margin-bottom: 0; /* 1 */
-  font-weight: $regular;
+  font-weight: $k-regular;
   text-align: center;
   vertical-align: middle;
   touch-action: manipulation;
@@ -68,10 +68,10 @@ Styleguide 2.3.1
   box-shadow: none;
   text-shadow: none;
   user-select: none;
-  border-radius: $border-radius;
-  margin-right: $spacing-tiny;
-  line-height: $line-height;
-  padding: $spacing-base-vertical $spacing-base-horizontal;
+  border-radius: $k-border-radius;
+  margin-right: $k-spacing-tiny;
+  line-height: $k-line-height;
+  padding: $k-spacing-base-vertical $k-spacing-base-horizontal;
 
   &:last-child {
     margin-right: 0;
@@ -79,7 +79,7 @@ Styleguide 2.3.1
 
   @include rtl {
     margin-right: 0;
-    margin-left: $spacing-tiny;
+    margin-left: $k-spacing-tiny;
 
     &:last-child {
       margin-left: 0;
@@ -97,7 +97,7 @@ Styleguide 2.3.1
 
   &:hover,
   &:focus {
-    color: $btn-default-color;
+    color: $k-btn-default-color;
     text-decoration: none;
   }
 
@@ -109,7 +109,7 @@ Styleguide 2.3.1
 
   &[disabled],
   &.k-is-disabled {
-    cursor: $cursor-disabled;
+    cursor: $k-cursor-disabled;
     opacity: 0.65;
   }
 }
@@ -134,34 +134,34 @@ button.k-button.k-is-disabled {
 /* Alternate buttons */
 
 .k-button--default {
-  @include button-variant($btn-default-color, $btn-default-background, $btn-default-border);
+  @include button-variant($k-btn-default-color, $k-btn-default-background, $k-btn-default-border);
 }
 
 .k-button--primary {
-  @include button-variant($btn-primary-color, $btn-primary-background, $btn-primary-border);
+  @include button-variant($k-btn-primary-color, $k-btn-primary-background, $k-btn-primary-border);
 }
 
 .k-button--success {
-  @include button-variant($btn-success-color, $btn-success-background, $btn-success-border);
+  @include button-variant($k-btn-success-color, $k-btn-success-background, $k-btn-success-border);
 }
 
 .k-button--info {
-  @include button-variant($btn-info-color, $btn-info-background, $btn-info-border);
+  @include button-variant($k-btn-info-color, $k-btn-info-background, $k-btn-info-border);
 }
 
 .k-button--warning {
-  @include button-variant($btn-warning-color, $btn-warning-background, $btn-warning-border);
+  @include button-variant($k-btn-warning-color, $k-btn-warning-background, $k-btn-warning-border);
 }
 
 .k-button--danger {
-  @include button-variant($btn-danger-color, $btn-danger-background, $btn-danger-border);
+  @include button-variant($k-btn-danger-color, $k-btn-danger-background, $k-btn-danger-border);
 }
 
 
 /* Link buttons */
 
 .k-button--link {
-  color: $color-type;
+  color: $k-color-type;
   font-weight: normal;
   border-radius: 0;
   padding-left: 0;
@@ -185,7 +185,7 @@ button.k-button.k-is-disabled {
 
   &:hover,
   &:focus {
-    color: $color-type;
+    color: $k-color-type;
     text-decoration: underline;
     background-color: transparent;
   }
@@ -194,7 +194,7 @@ button.k-button.k-is-disabled {
   &.k-is-disabled {
     &:hover,
     &:focus {
-      color: $btn-link-disabled-color;
+      color: $k-btn-link-disabled-color;
       text-decoration: none;
     }
   }
@@ -227,24 +227,24 @@ Styleguide 2.3.2
 */
 
 .k-button--tiny {
-  border-radius: $border-radius-small;
-  font-size: $font-size-tiny;
-  line-height: $line-height-tiny;
-  padding: $spacing-tiny-vertical $spacing-tiny-horizontal;
+  border-radius: $k-border-radius-small;
+  font-size: $k-font-size-tiny;
+  line-height: $k-line-height-tiny;
+  padding: $k-spacing-tiny-vertical $k-spacing-tiny-horizontal;
 }
 
 .k-button--small {
-  border-radius: $border-radius-small;
-  font-size: $font-size-small;
-  line-height: $line-height-small;
-  padding: $spacing-small-vertical $spacing-small-horizontal;
+  border-radius: $k-border-radius-small;
+  font-size: $k-font-size-small;
+  line-height: $k-line-height-small;
+  padding: $k-spacing-small-vertical $k-spacing-small-horizontal;
 }
 
 .k-button--large {
-  border-radius: $border-radius-large;
-  font-size: $font-size-large;
-  line-height: $line-height-large;
-  padding: $spacing-large-vertical $spacing-large-horizontal;
+  border-radius: $k-border-radius-large;
+  font-size: $k-font-size-large;
+  line-height: $k-line-height-large;
+  padding: $k-spacing-large-vertical $k-spacing-large-horizontal;
 }
 
 
@@ -341,19 +341,19 @@ Styleguide 2.3.3
     @include border-right-radius(0);
 
     @include rtl {
-      @include border-right-radius($border-radius);
+      @include border-right-radius($k-border-radius);
       @include border-left-radius(0);
 
       &.k-button--tiny {
-        @include border-right-radius($border-radius-small);
+        @include border-right-radius($k-border-radius-small);
       }
 
       &.k-button--small {
-        @include border-right-radius($border-radius-small);
+        @include border-right-radius($k-border-radius-small);
       }
 
       &.k-button--large {
-        @include border-right-radius($border-radius-large);
+        @include border-right-radius($k-border-radius-large);
       }
     }
   }
@@ -362,19 +362,19 @@ Styleguide 2.3.3
     @include border-left-radius(0);
 
     @include rtl {
-      @include border-left-radius($border-radius);
+      @include border-left-radius($k-border-radius);
       @include border-right-radius(0);
 
       &.k-button--tiny {
-        @include border-left-radius($border-radius-small);
+        @include border-left-radius($k-border-radius-small);
       }
 
       &.k-button--small {
-        @include border-left-radius($border-radius-small);
+        @include border-left-radius($k-border-radius-small);
       }
 
       &.k-button--large {
-        @include border-left-radius($border-radius-large);
+        @include border-left-radius($k-border-radius-large);
       }
     }
   }

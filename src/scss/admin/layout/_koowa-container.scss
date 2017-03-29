@@ -27,21 +27,21 @@ Styleguide 3.1
  */
 
 &.k-ui-container {
-  max-width: $minwidth; /* 1 */
+  max-width: $k-minwidth; /* 1 */
   margin: 0; /* 6 */
   border: none; /* 6 */
   width: 100%;
   overflow: hidden;
-  padding: $koowa-padding;
+  padding: $k-koowa-padding;
 
-  background: $koowa-background; /* 3 */
-  color: $color-type; /* 3 */
+  background: $k-koowa-background; /* 3 */
+  color: $k-color-type; /* 3 */
 
-  -webkit-font-smoothing: $webkit-font-smoothing;
-  -moz-osx-font-smoothing: $firefox-font-smoothing;
+  -webkit-font-smoothing: $k-webkit-font-smoothing;
+  -moz-osx-font-smoothing: $k-firefox-font-smoothing;
   -webkit-overflow-scrolling: touch;
 
-  @include breakpoint($minwidth) {
+  @include breakpoint($k-minwidth) {
     max-width: none; /* 2 */
   }
 

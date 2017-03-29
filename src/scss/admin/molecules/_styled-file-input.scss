@@ -36,7 +36,7 @@ Styleguide 2.9.9
      */
 
     @include modernizr('.k-eventlistener') {
-      @include coverall($left: false);
+      @include coverall($k-left: false);
       margin: 0;
       padding: 0;
       cursor: pointer;
@@ -58,15 +58,15 @@ Styleguide 2.9.9
 
     + label {
       max-width: 100%;
-      font-size: $font-size;
-      line-height: $line-height;
-      font-weight: $regular;
+      font-size: $k-font-size;
+      line-height: $k-line-height;
+      font-weight: $k-regular;
       text-overflow: ellipsis;
       white-space: nowrap;
       cursor: pointer;
       overflow: hidden;
       vertical-align: middle;
-      color: $color-accent;
+      color: $k-color-accent;
       padding: 0;
       text-align: center;
     }
@@ -96,7 +96,7 @@ Styleguide 2.9.9
       & + label {
         .k-file-input__button {
           &, &:hover, &:focus {
-            background-color: darken($color-accent, 10%);
+            background-color: darken($k-color-accent, 10%);
           }
         }
       }
@@ -108,11 +108,11 @@ Styleguide 2.9.9
 
   .k-file-input__button {
     display: block;
-    background-color: $color-accent;
-    color: $color-accent-type;
+    background-color: $k-color-accent;
+    color: $k-color-accent-type;
     pointer-events: none;
     vertical-align: middle;
-    font-weight: $regular;
+    font-weight: $k-regular;
     text-align: center;
     touch-action: manipulation;
     cursor: pointer;
@@ -123,10 +123,10 @@ Styleguide 2.9.9
     text-shadow: none;
     user-select: none;
     margin-bottom: 0;
-    border-radius: $border-radius-large;
-    font-size: $font-size-large;
-    line-height: $line-height-large;
-    padding: $spacing-large-vertical $spacing-large-horizontal;
+    border-radius: $k-border-radius-large;
+    font-size: $k-font-size-large;
+    line-height: $k-line-height-large;
+    padding: $k-spacing-large-vertical $k-spacing-large-horizontal;
   }
 
 
@@ -134,8 +134,8 @@ Styleguide 2.9.9
 
   .k-file-input__files {
     width: 100%;
-    height: $line-height;
-    line-height: $line-height;
+    height: $k-line-height;
+    line-height: $k-line-height;
     display: inline-block;
     text-overflow: ellipsis;
     white-space: nowrap;

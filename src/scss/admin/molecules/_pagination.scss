@@ -45,11 +45,11 @@ Styleguide 2.21.1
  */
 
 .k-table-pagination {
-  padding: $table-pagination-spacing;
-  background: $table-pagination-background;
-  @include border(top, $table-pagination-border);
-  @if $borders != false {
-    box-shadow: 0 1px 0 $table-pagination-border; /* 1 */
+  padding: $k-table-pagination-spacing;
+  background: $k-table-pagination-background;
+  @include border(top, $k-table-pagination-border);
+  @if $k-borders != false {
+    box-shadow: 0 1px 0 $k-table-pagination-border; /* 1 */
   }
 
   /* Flexbox */
@@ -84,7 +84,7 @@ Styleguide 2.21.1
   .k-pagination__pages {
     padding-left: 0;
     margin: 0;
-    border-radius: $border-radius;
+    border-radius: $k-border-radius;
 
 
     /* Override for rtl ul-ol-li styling */
@@ -104,12 +104,12 @@ Styleguide 2.21.1
         display: block;
         position: relative;
         float: left; /* 2 */
-        padding: $spacing-base-vertical $spacing-base-horizontal;
-        line-height: $line-height;
+        padding: $k-spacing-base-vertical $k-spacing-base-horizontal;
+        line-height: $k-line-height;
         text-decoration: none;
-        color: $pagination-color;
-        background-color: $pagination-background;
-        border: 1px solid $pagination-border;
+        color: $k-pagination-color;
+        background-color: $k-pagination-background;
+        border: 1px solid $k-pagination-border;
         margin-left: -1px;
       }
 
@@ -126,7 +126,7 @@ Styleguide 2.21.1
         & > a,
         & > span {
           margin-left: 0;
-          @include border-left-radius($border-radius);
+          @include border-left-radius($k-border-radius);
         }
 
         @include rtl {
@@ -134,7 +134,7 @@ Styleguide 2.21.1
           & > span {
             margin-right: 0;
             @include border-left-radius(0);
-            @include border-right-radius($border-radius);
+            @include border-right-radius($k-border-radius);
           }
         }
       }
@@ -142,11 +142,11 @@ Styleguide 2.21.1
       &:last-child {
         & > a,
         & > span {
-          @include border-right-radius($border-radius);
+          @include border-right-radius($k-border-radius);
 
           @include rtl {
             @include border-right-radius(0);
-            @include border-left-radius($border-radius);
+            @include border-left-radius($k-border-radius);
           }
         }
       }
@@ -157,9 +157,9 @@ Styleguide 2.21.1
       &:hover,
       &:focus {
         z-index: 2;
-        color: $pagination-hover-color;
-        background-color: $pagination-hover-background;
-        border-color: $pagination-hover-border;
+        color: $k-pagination-hover-color;
+        background-color: $k-pagination-hover-background;
+        border-color: $k-pagination-hover-border;
       }
     }
 
@@ -169,9 +169,9 @@ Styleguide 2.21.1
       &:hover,
       &:focus {
         z-index: 3;
-        color: $pagination-active-color;
-        background-color: $pagination-active-background;
-        border-color: $pagination-active-border;
+        color: $k-pagination-active-color;
+        background-color: $k-pagination-active-background;
+        border-color: $k-pagination-active-border;
         cursor: default;
       }
     }
@@ -180,14 +180,14 @@ Styleguide 2.21.1
   /* Limit */
 
   select {
-    height: $table-pagination-height;
+    height: $k-table-pagination-height;
     width: auto;
     margin: 0;
-    margin-right: $table-pagination-spacing;
+    margin-right: $k-table-pagination-spacing;
 
     @include rtl {
       margin-right: auto;
-      margin-left: $table-pagination-spacing;
+      margin-left: $k-table-pagination-spacing;
     }
   }
 }

@@ -13,12 +13,12 @@ html {
   height: 100%; /* 1 */
   padding: 0; /* 2 */
   margin: 0; /* 2 */
-  font-family: $font-family; /* 3 */
-  font-size: $font-size; /* 3 */
-  line-height: $line-height; /* 3 */
-  font-weight: $regular; /* 3 */
-  color: $color-type;
+  font-family: $k-font-family; /* 3 */
+  font-size: $k-font-size; /* 3 */
+  line-height: $k-line-height; /* 3 */
+  font-weight: $k-regular; /* 3 */
+  color: $k-color-type;
 
-  -webkit-font-smoothing: $webkit-font-smoothing;
-  -moz-osx-font-smoothing: $firefox-font-smoothing;
+  -webkit-font-smoothing: $k-webkit-font-smoothing;
+  -moz-osx-font-smoothing: $k-firefox-font-smoothing;
 }

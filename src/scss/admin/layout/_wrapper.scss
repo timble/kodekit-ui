@@ -45,11 +45,11 @@ Styleguide 3.2
 .k-is-opened-right {
   overflow: hidden; /* 1 */
 
-  @include breakpoint($sidebar-left-querie-width) {
+  @include breakpoint($k-sidebar-left-querie-width) {
     overflow: auto; /* 2 */
   }
 
-  @include breakpoint($sidebar-right-querie-width) {
+  @include breakpoint($k-sidebar-right-querie-width) {
     overflow: auto; /* 2 */
   }
 
@@ -74,6 +74,6 @@ Styleguide 3.2
   display: block;
   opacity: 0; /* 3 */
   content: " ";
-  background: $off-canvas-overlay-background;
+  background: $k-off-canvas-overlay-background;
   @include transition(opacity);
 }

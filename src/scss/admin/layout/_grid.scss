@@ -33,8 +33,8 @@ Styleguide 3.7
   @include clearfix;
   overflow: hidden;
   width: 100%;
-  margin: 0 auto (-($spacing));
-  padding: $spacing ($spacing / 2);
+  margin: 0 auto (-($k-spacing));
+  padding: $k-spacing ($k-spacing / 2);
 
   /* When flexbox is in use */
   @include flexbox {
@@ -52,7 +52,7 @@ Styleguide 3.7
 
 .k-container--flex {
   margin: 0 auto;
-  padding: $spacing;
+  padding: $k-spacing;
 
   @include flexbox {
     display: flex;
@@ -69,12 +69,12 @@ Styleguide 3.7
 /* Main container */
 
 .k-container__main {
-  margin-bottom: $spacing;
+  margin-bottom: $k-spacing;
 
-  @include breakpoint($charlie) {
+  @include breakpoint($k-charlie) {
     float: left;
-    margin: 0 ($spacing / 2) $spacing;
-    width: calc(100% * 8/12 - #{$spacing});
+    margin: 0 ($k-spacing / 2) $k-spacing;
+    width: calc(100% * 8/12 - #{$k-spacing});
 
     @include rtl {
       float: right;
@@ -86,12 +86,12 @@ Styleguide 3.7
 /* When a sidebar is active next to it */
 
 .k-sidebar + .k-content .k-container__main {
-  @include breakpoint($charlie) {
+  @include breakpoint($k-charlie) {
     width: 100%;
   }
 
-  @include breakpoint($delta) {
-    width: calc(100% * 8/12 - #{$spacing});
+  @include breakpoint($k-delta) {
+    width: calc(100% * 8/12 - #{$k-spacing});
     margin-bottom: 0;
   }
 }
@@ -100,12 +100,12 @@ Styleguide 3.7
 /* Sub container */
 
 .k-container__sub {
-  margin-bottom: $spacing;
+  margin-bottom: $k-spacing;
 
-  @include breakpoint($charlie) {
+  @include breakpoint($k-charlie) {
     float: left;
-    margin: 0 ($spacing / 2) $spacing;
-    width: calc(100% * 4/12 - #{$spacing});
+    margin: 0 ($k-spacing / 2) $k-spacing;
+    width: calc(100% * 4/12 - #{$k-spacing});
 
     @include rtl {
       float: right;
@@ -117,12 +117,12 @@ Styleguide 3.7
 /* When a sidebar is active next to it */
 
 .k-sidebar + .k-content .k-container__sub {
-  @include breakpoint($charlie) {
+  @include breakpoint($k-charlie) {
     width: 100%;
   }
 
-  @include breakpoint($delta) {
-    width: calc(100% * 4/12 - #{$spacing});
+  @include breakpoint($k-delta) {
+    width: calc(100% * 4/12 - #{$k-spacing});
     margin-bottom: 0;
   }
 }
@@ -133,5 +133,5 @@ Styleguide 3.7
 .k-container__full {
   clear: both;
   width: auto;
-  margin: 0 ($spacing / 2) $spacing;
+  margin: 0 ($k-spacing / 2) $k-spacing;
 }

@@ -1,9 +1,9 @@
 // Modernizr
 // Use: @include modernizr('.k-appearance.k-checked') { ... }
 
-@mixin modernizr($classes, $root: false) {
+@mixin modernizr($k-classes, $k-root: false) {
   @at-root {
-    #{$classes} & {
+    #{$k-classes} & {
       @content
     }
   }
@@ -11,9 +11,9 @@
 
   // Same level as selectors (useful for when inside modernizr mixin for example)
 
-  @if $root == true {
+  @if $k-root == true {
     @at-root {
-      #{$classes}#{&} {
+      #{$k-classes}#{&} {
         @content
       }
     }

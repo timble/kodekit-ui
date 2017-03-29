@@ -25,7 +25,7 @@ Styleguide 3.5
 .k-content {
   position: relative; /* 1 */
   z-index: 2; /* 1 */
-  background: $content-background; /* 2 */
+  background: $k-content-background; /* 2 */
   @include transition(transform); /* 3 */
 
 
@@ -61,18 +61,18 @@ Styleguide 3.5
 
 .k-show-left-menu {
   .k-content {
-    transform: translate($sidebar-left-width, 0); /* 1 */
+    transform: translate($k-sidebar-left-width, 0); /* 1 */
 
-    @include breakpoint($sidebar-left-querie-width) {
+    @include breakpoint($k-sidebar-left-querie-width) {
       transform: translate(0, 0); /* 2 */
     }
   }
 
   @include rtl {
     .k-content {
-      transform: translate(-($sidebar-left-width), 0);
+      transform: translate(-($k-sidebar-left-width), 0);
 
-      @include breakpoint($sidebar-left-querie-width) {
+      @include breakpoint($k-sidebar-left-querie-width) {
         transform: translate(0, 0);
       }
     }
@@ -83,7 +83,7 @@ Styleguide 3.5
 
   .k-content {
     & > .k-off-canvas-overlay {
-      opacity: $off-canvas-overlay-opacity;
+      opacity: $k-off-canvas-overlay-opacity;
     }
   }
 }
@@ -93,11 +93,11 @@ Styleguide 3.5
   .k-content {
     overflow: hidden;
 
-    @include breakpoint($sidebar-left-querie-width) {
+    @include breakpoint($k-sidebar-left-querie-width) {
       overflow: auto;
     }
 
-    @include breakpoint($sidebar-right-querie-width) {
+    @include breakpoint($k-sidebar-right-querie-width) {
       overflow: auto;
     }
 

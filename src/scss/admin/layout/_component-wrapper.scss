@@ -19,7 +19,7 @@ Styleguide 3.6
 
 .k-component-wrapper {
   position: relative;
-  background: $component-background;
+  background: $k-component-background;
 
   @include flexbox {
     display: flex;

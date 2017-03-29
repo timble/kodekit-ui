@@ -6,16 +6,16 @@
 // Doing this by using a function makes sure we can change all the 'lighten'
 // values in the whole project at once.
 
-@function light($color, $percentage: $light-percentage){
-  @return lighten($color, $percentage)
+@function light($k-color, $k-percentage: $k-light-percentage){
+  @return lighten($k-color, $k-percentage)
 }
 
-@function lighter($color, $percentage: $lighter-percentage){
-  @return lighten($color, $percentage)
+@function lighter($k-color, $k-percentage: $k-lighter-percentage){
+  @return lighten($k-color, $k-percentage)
 }
 
-@function lightest($color, $percentage: $lightest-percentage){
-  @return lighten($color, $percentage)
+@function lightest($k-color, $k-percentage: $k-lightest-percentage){
+  @return lighten($k-color, $k-percentage)
 }
 
 
@@ -23,14 +23,14 @@
 // Doing this by using a function makes sure we can change all the 'darken'
 // values in the whole project at once.
 
-@function dark($color, $percentage: $dark-percentage) {
-  @return darken($color, $percentage)
+@function dark($k-color, $k-percentage: $k-dark-percentage) {
+  @return darken($k-color, $k-percentage)
 }
 
-@function darker($color, $percentage: $darker-percentage) {
-  @return darken($color, $percentage)
+@function darker($k-color, $k-percentage: $k-darker-percentage) {
+  @return darken($k-color, $k-percentage)
 }
 
-@function darkest($color, $percentage: $darkest-percentage) {
-  @return darken($color, $percentage)
+@function darkest($k-color, $k-percentage: $k-darkest-percentage) {
+  @return darken($k-color, $k-percentage)
 }

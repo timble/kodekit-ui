@@ -72,11 +72,11 @@ Styleguide 3.4
    * 1. Should be the same as in `.k-sidebar-item--flex`
    */
 
-  @media (min-width: $sidebar-left-querie-width) and (min-height: $flexbox-vertical) {
+  @media (min-width: $k-sidebar-left-querie-width) and (min-height: $k-flexbox-vertical) {
     overflow: auto;
   }
 
-  @media (min-width: $sidebar-left-querie-width) and (min-height: 599px) { /* 1 */
+  @media (min-width: $k-sidebar-left-querie-width) and (min-height: 599px) { /* 1 */
     overflow: hidden;
   }
 }
@@ -85,39 +85,39 @@ Styleguide 3.4
 
   /* Faking flexbox on older browsers by using table styling */
 
-  @include breakpoint($sidebar-left-querie-width) {
-    @include allwidth($sidebar-left-width-small);
+  @include breakpoint($k-sidebar-left-querie-width) {
+    @include allwidth($k-sidebar-left-width-small);
   }
 
 
   /* Larger sidebar when space is available */
 
-  @include breakpoint($delta) {
-    @include allwidth($sidebar-left-width);
+  @include breakpoint($k-delta) {
+    @include allwidth($k-sidebar-left-width);
   }
 
 
   /* When JavaScript is enabled */
 
   @include js-enabled {
-    @include allwidth($sidebar-left-width);
+    @include allwidth($k-sidebar-left-width);
 
 
     /* On 'desktop' we 'open' the sidebar by default */
 
-    @include breakpoint($sidebar-left-querie-width) {
+    @include breakpoint($k-sidebar-left-querie-width) {
       position: relative;
       display: table-cell;
       height: auto;
-      @include allwidth($sidebar-left-width-small);
+      @include allwidth($k-sidebar-left-width-small);
       z-index: 1;
     }
 
 
     /* And we make it even larger when there's enough space */
 
-    @include breakpoint($delta) {
-      @include allwidth($sidebar-left-width);
+    @include breakpoint($k-delta) {
+      @include allwidth($k-sidebar-left-width);
     }
   }
 
@@ -125,7 +125,7 @@ Styleguide 3.4
   /* Override js-enabled beta styling with flexbox */
 
   @include flexbox {
-    @include breakpoint($sidebar-left-querie-width) {
+    @include breakpoint($k-sidebar-left-querie-width) {
       display: flex;
     }
   }
@@ -135,46 +135,46 @@ Styleguide 3.4
 
   /* Faking flexbox on older browsers by using table styling */
 
-  @include breakpoint($sidebar-right-querie-width) {
-    @include allwidth($sidebar-right-width-small);
+  @include breakpoint($k-sidebar-right-querie-width) {
+    @include allwidth($k-sidebar-right-width-small);
   }
 
 
   /* Larger sidebar when space is available */
 
-  @include breakpoint($sidebar-right-querie-width) {
-    @include allwidth($sidebar-right-width);
+  @include breakpoint($k-sidebar-right-querie-width) {
+    @include allwidth($k-sidebar-right-width);
   }
 
 
   /* When JavaScript is enabled */
 
   @include js-enabled {
-    @include allwidth($sidebar-right-width);
+    @include allwidth($k-sidebar-right-width);
 
 
     /* On 'desktop' we 'open' the sidebar by default */
 
-    @include breakpoint($sidebar-right-querie-width) {
+    @include breakpoint($k-sidebar-right-querie-width) {
       position: relative;
       display: table-cell;
       height: auto;
-      @include allwidth($sidebar-right-width-small);
+      @include allwidth($k-sidebar-right-width-small);
       z-index: 1;
     }
 
 
     /* And we make it even larger when there's enough space */
 
-    @include breakpoint($delta) {
-      @include allwidth($sidebar-right-width);
+    @include breakpoint($k-delta) {
+      @include allwidth($k-sidebar-right-width);
     }
   }
 
   /* Override js-enabled beta styling with flexbox */
 
   @include flexbox {
-    @include breakpoint($sidebar-left-querie-width) {
+    @include breakpoint($k-sidebar-left-querie-width) {
       display: flex;
     }
   }
@@ -184,13 +184,13 @@ Styleguide 3.4
 /* Left sidebar specific styling */
 
 .k-sidebar-left {
-  @include border(right, $sidebar-border);
-  background: $sidebar-background;
-  color: $sidebar-color;
+  @include border(right, $k-sidebar-border);
+  background: $k-sidebar-background;
+  color: $k-sidebar-color;
 
   @include rtl {
     border-right: none;
-    @include border(left, $sidebar-border);
+    @include border(left, $k-sidebar-border);
   }
 
   @include js-enabled {
@@ -219,13 +219,13 @@ Styleguide 3.4
 /* Right sidebar specific styling */
 
 .k-sidebar-right {
-  @include border(left, $sidebar-border);
-  background: $sidebar-background;
-  color: $sidebar-color;
+  @include border(left, $k-sidebar-border);
+  background: $k-sidebar-background;
+  color: $k-sidebar-color;
 
   @include rtl {
     border-left: none;
-    @include border(right, $sidebar-border);
+    @include border(right, $k-sidebar-border);
   }
 
   @include js-enabled {

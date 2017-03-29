@@ -53,7 +53,7 @@ Styleguide 2.10
 }
 
 .k-gallery {
-  padding: $grid-spacing / 2;
+  padding: $k-grid-spacing / 2;
   overflow: auto;
 
   @include flexbox {
@@ -73,7 +73,7 @@ Styleguide 2.10
 
 .k-gallery__item {
   float: left;
-  padding: $grid-spacing / 2;
+  padding: $k-grid-spacing / 2;
   width: 100%;
 
   @include rtl {
@@ -90,24 +90,24 @@ Styleguide 2.10
 
   &.k-is-selected {
     .k-card__header {
-      background: $color-accent;
-      border-color: darkest($color-accent);
-      color: $color-accent-type;
+      background: $k-color-accent;
+      border-color: darkest($k-color-accent);
+      color: $k-color-accent-type;
 
       a {
-        color: $color-accent-type;
+        color: $k-color-accent-type;
       }
     }
 
     .k-card__body {
-      color: $color-accent-type;
-      border-color: darker($color-accent);
+      color: $k-color-accent-type;
+      border-color: darker($k-color-accent);
     }
 
     &:hover,
     &:focus {
       .k-card__header {
-        background: darkest($color-accent);
+        background: darkest($k-color-accent);
       }
     }
   }

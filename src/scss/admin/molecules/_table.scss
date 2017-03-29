@@ -91,7 +91,7 @@ Styleguide 2.21
 */
 
 .k-table-container {
-  background: $table-background;
+  background: $k-table-background;
 
   @include flexbox {
     display: flex;
@@ -162,7 +162,7 @@ Styleguide 2.21
   td {
     border: none;
     position: relative;
-    height: $table-cell-size;
+    height: $k-table-cell-size;
     vertical-align: middle;
     text-align: left;
     line-height: 1;
@@ -193,24 +193,24 @@ Styleguide 2.21
    */
 
   th {
-    @include border(bottom, $table-header-border);
+    @include border(bottom, $k-table-header-border);
     z-index: 1;
-    padding: 0 $table-cell-spacing-horizontal; /* 1 */
+    padding: 0 $k-table-cell-spacing-horizontal; /* 1 */
     white-space: nowrap; /* 2 */
-    background: $table-header-background;
-    font-weight: $regular;
+    background: $k-table-header-background;
+    font-weight: $k-regular;
 
     a {
       display: block; /* 3 */
-      padding: $table-cell-spacing-vertical $table-cell-spacing-horizontal; /* 4 */
-      margin-left: -$table-cell-spacing-horizontal;
-      margin-right: -$table-cell-spacing-horizontal;
-      line-height: $table-cell-size - ($table-cell-spacing-vertical * 2);
+      padding: $k-table-cell-spacing-vertical $k-table-cell-spacing-horizontal; /* 4 */
+      margin-left: -$k-table-cell-spacing-horizontal;
+      margin-right: -$k-table-cell-spacing-horizontal;
+      line-height: $k-table-cell-size - ($k-table-cell-spacing-vertical * 2);
       text-decoration: none;
 
       &:focus,
       &:hover {
-        background: $table-header-hover-background;
+        background: $k-table-header-hover-background;
       }
     }
 
@@ -218,7 +218,7 @@ Styleguide 2.21
     /* Size icons accordingly */
 
     [class*="k-icon"] {
-      font-size: $icon-size;
+      font-size: $k-icon-size;
       line-height: 1;
       vertical-align: middle;
     }
@@ -232,9 +232,9 @@ Styleguide 2.21
    */
 
   td {
-    @include border(bottom, $table-cell-border);
-    padding: $table-cell-spacing-vertical $table-cell-spacing-horizontal;
-    background: $table-cell-background-even;
+    @include border(bottom, $k-table-cell-border);
+    padding: $k-table-cell-spacing-vertical $k-table-cell-spacing-horizontal;
+    background: $k-table-cell-background-even;
   }
 
   tr:last-child {
@@ -246,7 +246,7 @@ Styleguide 2.21
 
   tr:nth-child(odd) {
     td {
-      background: $table-cell-background-odd;
+      background: $k-table-cell-background-odd;
     }
   }
 
@@ -258,7 +258,7 @@ Styleguide 2.21
     &:focus,
     &:hover {
       td {
-        background: $table-cell-hover-background-even;
+        background: $k-table-cell-hover-background-even;
       }
     }
   }
@@ -343,8 +343,8 @@ Styleguide 2.21.3
 
   small {
     display: block;
-    font-size: $font-size-small;
-    line-height: $line-height-small;
+    font-size: $k-font-size-small;
+    line-height: $k-line-height-small;
   }
 }
 
@@ -418,7 +418,7 @@ Styleguide 2.21.4
     }
 
     [class*="k-icon"] {
-      font-size: $icon-size;
+      font-size: $k-icon-size;
     }
   }
 
@@ -461,8 +461,8 @@ Styleguide 2.21.4
   .footable.breakpoint {
     .k-table-data--toggle {
       width: 1%;
-      padding-left: $table-cell-spacing-horizontal;
-      padding-right: $table-cell-spacing-horizontal;
+      padding-left: $k-table-cell-spacing-horizontal;
+      padding-right: $k-table-cell-spacing-horizontal;
     }
   }
 
@@ -480,7 +480,7 @@ Styleguide 2.21.4
 
   th.k-table-data--icon {
     a {
-      line-height: $table-cell-size - ($table-cell-spacing-vertical * 2);
+      line-height: $k-table-cell-size - ($k-table-cell-spacing-vertical * 2);
     }
   }
 
@@ -546,19 +546,19 @@ Styleguide 2.21.5
     }
 
     &-pending {
-      color: $color-warning;
+      color: $k-color-warning;
     }
 
     &-expired {
-      color: $color-neutral;
+      color: $k-color-neutral;
     }
 
     &-unpublished {
-      color: $color-error;
+      color: $k-color-error;
     }
 
     &-published {
-      color: $color-success;
+      color: $k-color-success;
     }
   }
 }
@@ -593,16 +593,16 @@ Styleguide 2.21.6
 .k-table-container {
   .k-table__sub-header {
     th {
-      padding: 0.7em $table-cell-spacing-horizontal 0.5em;
+      padding: 0.7em $k-table-cell-spacing-horizontal 0.5em;
       height: auto;
-      font-size: $font-size-small;
-      line-height: $line-height-small;
-      font-weight: $bold;
+      font-size: $k-font-size-small;
+      line-height: $k-line-height-small;
+      font-weight: $k-bold;
       vertical-align: middle;
       text-transform: uppercase;
       white-space: nowrap;
-      background: $table-header-background;
-      border-bottom-color: $table-cell-border;
+      background: $k-table-header-background;
+      border-bottom-color: $k-table-cell-border;
     }
   }
 }
@@ -678,21 +678,21 @@ Styleguide 2.21.7
 
   /* Set proper spacing before levels */
 
-  @for $i from 1 through 15 {
-    .k-table__item-level#{$i} {
-      padding-left: 24px * ($i - 1) + $table-cell-spacing-horizontal;
+  @for $k-i from 1 through 15 {
+    .k-table__item-level#{$k-i} {
+      padding-left: 24px * ($k-i - 1) + $k-table-cell-spacing-horizontal;
 
       @include rtl {
         padding-left: 0;
-        padding-right: 24px * ($i - 1) + $table-cell-spacing-horizontal;
+        padding-right: 24px * ($k-i - 1) + $k-table-cell-spacing-horizontal;
       }
 
       &:before {
-        left: (24px * ($i - 1)) - (18px - $table-cell-spacing-horizontal);
+        left: (24px * ($k-i - 1)) - (18px - $k-table-cell-spacing-horizontal);
 
         @include rtl {
           left: auto;
-          right: (24px * ($i - 1)) - (18px - $table-cell-spacing-horizontal);
+          right: (24px * ($k-i - 1)) - (18px - $k-table-cell-spacing-horizontal);
         }
       }
     }
@@ -710,11 +710,11 @@ Styleguide 2.21.7
 
   .k-table__item-level__icon-item {
     position: relative;
-    padding-left: $icon-size + $spacing-tiny;
+    padding-left: $k-icon-size + $k-spacing-tiny;
 
     @include rtl {
       padding-left: 0;
-      padding-right: $icon-size + $spacing-tiny;
+      padding-right: $k-icon-size + $k-spacing-tiny;
     }
 
     [class*="k-icon"],
@@ -733,13 +733,13 @@ Styleguide 2.21.7
 
     [class*="k-icon"] {
       top: 50%;
-      font-size: $icon-size;
-      margin-top: -(round($icon-size / 2));
+      font-size: $k-icon-size;
+      margin-top: -(round($k-icon-size / 2));
     }
 
     [class*="k-image"] {
-      height: $icon-size;
-      line-height: $icon-size;
+      height: $k-icon-size;
+      line-height: $k-icon-size;
       vertical-align: middle;
     }
   }
@@ -794,11 +794,11 @@ Styleguide 2.21.8
 .k-table-container {
   tr.k-is-selected {
     td {
-      background: $table-cell-accent-background;
-      color: $table-cell-accent-color;
+      background: $k-table-cell-accent-background;
+      color: $k-table-cell-accent-color;
 
       a, i, span {
-        color: $table-cell-accent-color;
+        color: $k-table-cell-accent-color;
       }
     }
 
@@ -808,7 +808,7 @@ Styleguide 2.21.8
     &:hover,
     &:focus {
       td {
-        background-color: $table-cell-accent-hover-background;
+        background-color: $k-table-cell-accent-hover-background;
       }
     }
   }
@@ -849,12 +849,12 @@ Styleguide 2.21.9
 .k-positioner {
   display: inline-block;
   vertical-align: middle;
-  width: $table-row-positioner-size;
-  height: round($table-row-positioner-size / 4);
-  margin-top: round(($table-row-positioner-size - (round($table-row-positioner-size / 4))) / 2);
-  margin-bottom: round(($table-row-positioner-size - (round($table-row-positioner-size / 4))) / 2);
-  border-top: 1px solid $table-row-positioner-color;
-  border-bottom: 1px solid $table-row-positioner-color;
+  width: $k-table-row-positioner-size;
+  height: round($k-table-row-positioner-size / 4);
+  margin-top: round(($k-table-row-positioner-size - (round($k-table-row-positioner-size / 4))) / 2);
+  margin-bottom: round(($k-table-row-positioner-size - (round($k-table-row-positioner-size / 4))) / 2);
+  border-top: 1px solid $k-table-row-positioner-color;
+  border-bottom: 1px solid $k-table-row-positioner-color;
   cursor: no-drop;
 
   &.k-is-active {
@@ -862,19 +862,19 @@ Styleguide 2.21.9
   }
 
   @include psuedo(before) {
-    width: $table-row-positioner-size;
-    height: round(($table-row-positioner-size / 2) + 2px);
-    border-top: 1px solid $table-row-positioner-color;
-    border-bottom: 1px solid $table-row-positioner-color;
-    top: -(round($table-row-positioner-size / 4));
+    width: $k-table-row-positioner-size;
+    height: round(($k-table-row-positioner-size / 2) + 2px);
+    border-top: 1px solid $k-table-row-positioner-color;
+    border-bottom: 1px solid $k-table-row-positioner-color;
+    top: -(round($k-table-row-positioner-size / 4));
   }
 
   &:after {
     position: absolute;
-    width: ($table-row-positioner-size * 2);
-    height: ($table-row-positioner-size * 2);
-    top: -($table-row-positioner-size - 1px);
-    left: -($table-row-positioner-size / 2);
+    width: ($k-table-row-positioner-size * 2);
+    height: ($k-table-row-positioner-size * 2);
+    top: -($k-table-row-positioner-size - 1px);
+    left: -($k-table-row-positioner-size / 2);
     content: attr(data-position);
     text-indent: 3px;
     vertical-align: bottom;

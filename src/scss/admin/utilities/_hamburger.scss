@@ -14,14 +14,14 @@
   z-index: 10;
   float: left;
   display: none; /* 1 */
-  width: $toggle-button-size;
-  height: $toggle-button-size;
+  width: $k-toggle-button-size;
+  height: $k-toggle-button-size;
   padding: 0;
   border: none;
-  border-radius: $toggle-button-radius;
+  border-radius: $k-toggle-button-radius;
   margin: 10px;
-  background: $toggle-button-background;
-  color: $toggle-button-color;
+  background: $k-toggle-button-background;
+  color: $k-toggle-button-color;
 
   @include rtl {
     left: auto;
@@ -31,13 +31,13 @@
   @include js-enabled {
     display: block; /* 2 */
 
-    @include breakpoint($sidebar-left-querie-width) {
+    @include breakpoint($k-sidebar-left-querie-width) {
       &--left {
         display: none; /* 3 */
       }
     }
 
-    @include breakpoint($sidebar-right-querie-width) {
+    @include breakpoint($k-sidebar-right-querie-width) {
       &--right {
         display: none; /* 3 */
       }
@@ -76,9 +76,9 @@
   .k-toggle-button-bar3 {
     position: absolute;
     display: block;
-    background: $toggle-button-color;
+    background: $k-toggle-button-color;
     vertical-align: middle;
-    border-radius: $toggle-button-radius;
+    border-radius: $k-toggle-button-radius;
     @include transition(0.3s);
   }
 }
@@ -94,21 +94,21 @@
   .k-toggle-button-bar1,
   .k-toggle-button-bar2,
   .k-toggle-button-bar3 {
-    left: round(($toggle-button-size - $hamburger-bar-width) / 2);
-    width: $hamburger-bar-width;
-    height: $hamburger-bar-height;
+    left: round(($k-toggle-button-size - $k-hamburger-bar-width) / 2);
+    width: $k-hamburger-bar-width;
+    height: $k-hamburger-bar-height;
   }
 
   .k-toggle-button-bar1 {
-    top: round(($toggle-button-size - $hamburger-bar-width) / 2);
+    top: round(($k-toggle-button-size - $k-hamburger-bar-width) / 2);
   }
 
   .k-toggle-button-bar2 {
-    top: round((($toggle-button-size - $hamburger-bar-width) / 2) + ($hamburger-bar-height * 2));
+    top: round((($k-toggle-button-size - $k-hamburger-bar-width) / 2) + ($k-hamburger-bar-height * 2));
   }
 
   .k-toggle-button-bar3 {
-    top: round((($toggle-button-size - $hamburger-bar-width) / 2) + ($hamburger-bar-height * 4));
+    top: round((($k-toggle-button-size - $k-hamburger-bar-width) / 2) + ($k-hamburger-bar-height * 4));
   }
 }
 
@@ -118,7 +118,7 @@
 .k-show-left-menu {
   .k-off-canvas-menu-toggle--left {
     .k-toggle-button-bar1 {
-      top: round(($toggle-button-size / 2) - ($hamburger-bar-height / 2));
+      top: round(($k-toggle-button-size / 2) - ($k-hamburger-bar-height / 2));
       transform: rotate(135deg);
     }
 
@@ -128,7 +128,7 @@
     }
 
     .k-toggle-button-bar3 {
-      top: round(($toggle-button-size / 2) - ($hamburger-bar-height / 2));
+      top: round(($k-toggle-button-size / 2) - ($k-hamburger-bar-height / 2));
       transform: rotate(-135deg);
     }
   }
@@ -145,20 +145,20 @@
   .k-toggle-button-bar1,
   .k-toggle-button-bar2,
   .k-toggle-button-bar3 {
-    left: round(($toggle-button-size - ($info-bar-width + $info-bar-height + (round($info-bar-height / 5)))) - round($info-bar-height / 5));
+    left: round(($k-toggle-button-size - ($k-info-bar-width + $k-info-bar-height + (round($k-info-bar-height / 5)))) - round($k-info-bar-height / 5));
   }
 
   .k-toggle-button-bar1 {
-    width: $info-bar-width;
-    height: $info-bar-width;
-    top: round(($toggle-button-size - ($info-bar-width + $info-bar-height + (round($info-bar-height / 5)))) / 2);
+    width: $k-info-bar-width;
+    height: $k-info-bar-width;
+    top: round(($k-toggle-button-size - ($k-info-bar-width + $k-info-bar-height + (round($k-info-bar-height / 5)))) / 2);
   }
 
   .k-toggle-button-bar2,
   .k-toggle-button-bar3 {
-    width: $info-bar-width;
-    height: $info-bar-height;
-    top: round((($toggle-button-size - ($info-bar-width + $info-bar-height + (round($info-bar-height / 5)))) - round($info-bar-height / 10)));
+    width: $k-info-bar-width;
+    height: $k-info-bar-height;
+    top: round((($k-toggle-button-size - ($k-info-bar-width + $k-info-bar-height + (round($k-info-bar-height / 5)))) - round($k-info-bar-height / 10)));
   }
 }
 
@@ -173,20 +173,20 @@
     }
 
     .k-toggle-button-bar2 {
-      top: round(($toggle-button-size - $hamburger-bar-width) / 2);
-      left: round(($toggle-button-size - $hamburger-bar-width) - $hamburger-bar-height);
-      height: $hamburger-bar-width;
+      top: round(($k-toggle-button-size - $k-hamburger-bar-width) / 2);
+      left: round(($k-toggle-button-size - $k-hamburger-bar-width) - $k-hamburger-bar-height);
+      height: $k-hamburger-bar-width;
       transform: rotate(135deg);
       opacity: 1;
-      width: $hamburger-bar-height;
+      width: $k-hamburger-bar-height;
     }
 
     .k-toggle-button-bar3 {
-      top: round(($toggle-button-size - $hamburger-bar-width) / 2);
-      left: round(($toggle-button-size - $hamburger-bar-width) - $hamburger-bar-height);
+      top: round(($k-toggle-button-size - $k-hamburger-bar-width) / 2);
+      left: round(($k-toggle-button-size - $k-hamburger-bar-width) - $k-hamburger-bar-height);
       transform: rotate(-135deg);
-      height: $hamburger-bar-width;
-      width: $hamburger-bar-height;
+      height: $k-hamburger-bar-width;
+      width: $k-hamburger-bar-height;
     }
   }
 }

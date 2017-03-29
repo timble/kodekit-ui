@@ -23,33 +23,33 @@ Styleguide 2.25
 
 .k-tooltip {
   position: absolute;
-  z-index: $zindex-tooltip;
+  z-index: $k-zindex-tooltip;
   display: block;
-  font-size: $font-size-small; /* 1 */
+  font-size: $k-font-size-small; /* 1 */
   opacity: 0;
 
   &.in {
-    opacity: $tooltip-opacity;
+    opacity: $k-tooltip-opacity;
   }
 
   &.top {
     margin-top: -3px;
-    padding: $tooltip-arrow-width 0;
+    padding: $k-tooltip-arrow-width 0;
   }
 
   &.right {
     margin-left: 3px;
-    padding: 0 $tooltip-arrow-width;
+    padding: 0 $k-tooltip-arrow-width;
   }
 
   &.bottom {
     margin-top: 3px;
-    padding: $tooltip-arrow-width 0;
+    padding: $k-tooltip-arrow-width 0;
   }
 
   &.left {
     margin-left: -3px;
-    padding: 0 $tooltip-arrow-width;
+    padding: 0 $k-tooltip-arrow-width;
   }
 }
 
@@ -59,12 +59,12 @@ Styleguide 2.25
  */
 
 .k-tooltip__inner {
-  max-width: $tooltip-max-width;
+  max-width: $k-tooltip-max-width;
   padding: 3px 8px;
-  color: $tooltip-color;
+  color: $k-tooltip-color;
   text-align: center;
-  background-color: $tooltip-background;
-  border-radius: $border-radius;
+  background-color: $k-tooltip-background;
+  border-radius: $k-border-radius;
 }
 
 
@@ -82,64 +82,64 @@ Styleguide 2.25
   &.top .k-tooltip__arrow {
     bottom: 0;
     left: 50%;
-    margin-left: -$tooltip-arrow-width;
-    border-width: $tooltip-arrow-width $tooltip-arrow-width 0;
-    border-top-color: $tooltip-arrow-color;
+    margin-left: -$k-tooltip-arrow-width;
+    border-width: $k-tooltip-arrow-width $k-tooltip-arrow-width 0;
+    border-top-color: $k-tooltip-arrow-color;
   }
 
   &.top-left .k-tooltip__arrow {
     bottom: 0;
-    right: $tooltip-arrow-width;
-    margin-bottom: -$tooltip-arrow-width;
-    border-width: $tooltip-arrow-width $tooltip-arrow-width 0;
-    border-top-color: $tooltip-arrow-color;
+    right: $k-tooltip-arrow-width;
+    margin-bottom: -$k-tooltip-arrow-width;
+    border-width: $k-tooltip-arrow-width $k-tooltip-arrow-width 0;
+    border-top-color: $k-tooltip-arrow-color;
   }
 
   &.top-right .k-tooltip__arrow {
     bottom: 0;
-    left: $tooltip-arrow-width;
-    margin-bottom: -$tooltip-arrow-width;
-    border-width: $tooltip-arrow-width $tooltip-arrow-width 0;
-    border-top-color: $tooltip-arrow-color;
+    left: $k-tooltip-arrow-width;
+    margin-bottom: -$k-tooltip-arrow-width;
+    border-width: $k-tooltip-arrow-width $k-tooltip-arrow-width 0;
+    border-top-color: $k-tooltip-arrow-color;
   }
 
   &.right .k-tooltip__arrow {
     top: 50%;
     left: 0;
-    margin-top: -$tooltip-arrow-width;
-    border-width: $tooltip-arrow-width $tooltip-arrow-width $tooltip-arrow-width 0;
-    border-right-color: $tooltip-arrow-color;
+    margin-top: -$k-tooltip-arrow-width;
+    border-width: $k-tooltip-arrow-width $k-tooltip-arrow-width $k-tooltip-arrow-width 0;
+    border-right-color: $k-tooltip-arrow-color;
   }
 
   &.left .k-tooltip__arrow {
     top: 50%;
     right: 0;
-    margin-top: -$tooltip-arrow-width;
-    border-width: $tooltip-arrow-width 0 $tooltip-arrow-width $tooltip-arrow-width;
-    border-left-color: $tooltip-arrow-color;
+    margin-top: -$k-tooltip-arrow-width;
+    border-width: $k-tooltip-arrow-width 0 $k-tooltip-arrow-width $k-tooltip-arrow-width;
+    border-left-color: $k-tooltip-arrow-color;
   }
 
   &.bottom .k-tooltip__arrow {
     top: 0;
     left: 50%;
-    margin-left: -$tooltip-arrow-width;
-    border-width: 0 $tooltip-arrow-width $tooltip-arrow-width;
-    border-bottom-color: $tooltip-arrow-color;
+    margin-left: -$k-tooltip-arrow-width;
+    border-width: 0 $k-tooltip-arrow-width $k-tooltip-arrow-width;
+    border-bottom-color: $k-tooltip-arrow-color;
   }
 
   &.bottom-left .k-tooltip__arrow {
     top: 0;
-    right: $tooltip-arrow-width;
-    margin-top: -$tooltip-arrow-width;
-    border-width: 0 $tooltip-arrow-width $tooltip-arrow-width;
-    border-bottom-color: $tooltip-arrow-color;
+    right: $k-tooltip-arrow-width;
+    margin-top: -$k-tooltip-arrow-width;
+    border-width: 0 $k-tooltip-arrow-width $k-tooltip-arrow-width;
+    border-bottom-color: $k-tooltip-arrow-color;
   }
 
   &.bottom-right .k-tooltip__arrow {
     top: 0;
-    left: $tooltip-arrow-width;
-    margin-top: -$tooltip-arrow-width;
-    border-width: 0 $tooltip-arrow-width $tooltip-arrow-width;
-    border-bottom-color: $tooltip-arrow-color;
+    left: $k-tooltip-arrow-width;
+    margin-top: -$k-tooltip-arrow-width;
+    border-width: 0 $k-tooltip-arrow-width $k-tooltip-arrow-width;
+    border-bottom-color: $k-tooltip-arrow-color;
   }
 }

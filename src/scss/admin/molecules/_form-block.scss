@@ -23,23 +23,23 @@ Styleguide 2.8
 */
 
 .k-form-block {
-  @include border(all, $form-block-border);
-  background: $form-block-background;
+  @include border(all, $k-form-block-border);
+  background: $k-form-block-background;
 }
 
 
 /* The header */
 
 .k-form-block__header {
-  @include border(bottom, $form-block-header-border);
-  padding: $form-block-header-spacing;
-  background: $form-block-header-background;
-  font-weight: $bold;
+  @include border(bottom, $k-form-block-header-border);
+  padding: $k-form-block-header-spacing;
+  background: $k-form-block-header-background;
+  font-weight: $k-bold;
 }
 
 
 /* The content */
 
 .k-form-block__content {
-  padding: $form-block-content-spacing;
+  padding: $k-form-block-content-spacing;
 }
