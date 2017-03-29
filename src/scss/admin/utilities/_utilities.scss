@@ -370,18 +370,6 @@ Styleguide 6.9
     justify-content: center;
     align-items: center;
   }
-
-  .k-ratio-block__centered {
-    display: block;
-    flex: 0 0 auto;
-    overflow: hidden;
-    max-width: 100%;
-    backface-visibility: hidden;
-    
-    img {
-      max-width: 100%;
-    }
-  }
 }
 
 
@@ -420,7 +408,7 @@ markup:
   @include content-block-top;
 }
 
-.k-content-block--small {
+.k-content-block-top--small {
   @include content-block-top(1em);
 }
 
@@ -539,6 +527,7 @@ markup:
 
 */
 
+.k-coverall-ontop,
 .k-link-ontop {
   position: relative;
   z-index: 1;

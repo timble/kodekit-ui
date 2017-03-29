@@ -842,8 +842,6 @@ $loader-container-opacity:      0.8 !default;
 // Overrides for Select2-bootstrap theme
 // ==========================================================================
 
-$border-radius-base:        $border-radius !default;
-
 $font-family-base:          inherit !default;
 $font-size-base:            $font-size !default;
 $line-height-base:          $line-height !default;
@@ -867,4 +865,3 @@ $btn-danger-bg:             $btn-danger-background !default;
 $state-warning-text:        $state-warning-color !default;
 $state-danger-text:         $state-danger-color !default;
 $state-success-text:        $state-success-color !default;
-
