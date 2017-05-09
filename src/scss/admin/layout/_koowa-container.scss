@@ -31,6 +31,7 @@ Styleguide 3.1
   margin: 0; /* 6 */
   border: none; /* 6 */
   width: 100%;
+  min-height: 100%;
   overflow: hidden;
   padding: $k-koowa-padding;
 
@@ -52,6 +53,7 @@ Styleguide 3.1
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;
+    height: auto;
   }
 
 

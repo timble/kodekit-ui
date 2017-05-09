@@ -29,28 +29,37 @@ Styleguide 2.20
     margin-top: $k-spacing;
   }
 
+  @mixin item--flex {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 auto;
+    overflow: hidden;
+    min-height: 100px;
 
-  /**
-   * 1. Should be the same as in `.k-sidebar-[left/right]`
-   */
+    div {
+      flex: 1 1 auto;
+      overflow: auto;
+    }
 
-  @include flexbox($k-sidebar-left-querie-width, 599px) { /* 1 */
+    .k-sidebar-item__header {
+      flex: 0 0 auto;
+    }
+  }
+
+  @include flexbox($k-sidebar-left-querie-width, $k-flexbox-vertical) {
     flex: 0 0 auto;
 
     &--flex {
-      display: flex;
-      flex-direction: column;
-      flex: 0 1 auto;
-      overflow: hidden;
-      min-height: 100px;
-
-      div {
-        flex: 1 1 auto;
-        overflow: auto;
+      &:only-child {
+        @include item--flex;
       }
+    }
+  }
 
-      .k-sidebar-item__header {
-        flex: 0 0 auto;
+  @include flexbox($k-sidebar-left-querie-width, 599px) {
+    &--flex {
+      &:nth-child(n) {
+        @include item--flex;
       }
     }
   }

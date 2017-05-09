@@ -21,12 +21,30 @@ Styleguide 3.6
   position: relative;
   background: $k-component-background;
 
+  /* Faking flexbox on older browsers by using table styling */
+
+  display: table;
+  width: 100%;
+  min-height: 100%;
+
+
+  /**
+   * When flexbox is in use
+   *
+   * 1. Reset width needed for table
+   * 2. Set overflow for breadcrumbs to properly work
+   */
+
   @include flexbox {
     display: flex;
     flex-direction: row;
     flex: 1 1 auto;
     overflow: auto;
+    height: auto;
   }
+
+
+  /* Hide overtflow when resizing the window */
 
   @include resizing {
     overflow: hidden;
