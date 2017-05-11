@@ -20,7 +20,7 @@ Styleguide 3.2
 
 .k-wrapper {
   position: relative;
-
+  min-height: 100%;
 
   /* When flexbox is in use */
 
@@ -29,6 +29,7 @@ Styleguide 3.2
     flex-direction: column;
     flex: 1 1 auto;
     overflow: hidden;
+    height: auto;
   }
 }
 

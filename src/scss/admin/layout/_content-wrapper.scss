@@ -33,6 +33,7 @@ Styleguide 3.3
 
   display: table;
   width: 100%;
+  min-height: 80%;
 
 
   /* When flexbox is in use */
@@ -42,5 +43,6 @@ Styleguide 3.3
     flex-direction: row;
     flex: 1 1 auto;
     border-bottom: none;
+    height: auto;
   }
 }

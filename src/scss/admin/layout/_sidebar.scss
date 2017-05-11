@@ -62,23 +62,6 @@ Styleguide 3.4
     flex-direction: column;
     flex: 0 0 auto;
   }
-
-
-  /**
-   * No flex, but rather overflowing sidebar
-   * Made for screens between 391px and 550px in height
-   * Make sure that categories in the sidebar are always accessible no matter how many menu items you've got
-   *
-   * 1. Should be the same as in `.k-sidebar-item--flex`
-   */
-
-  @media (min-width: $k-sidebar-left-querie-width) and (min-height: $k-flexbox-vertical) {
-    overflow: auto;
-  }
-
-  @media (min-width: $k-sidebar-left-querie-width) and (min-height: 599px) { /* 1 */
-    overflow: hidden;
-  }
 }
 
 .k-sidebar-left {

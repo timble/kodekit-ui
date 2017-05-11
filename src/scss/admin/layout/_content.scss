@@ -33,6 +33,7 @@ Styleguide 3.5
 
   display: table-cell;
   width: 100%;
+  min-height: 100%;
 
 
   /**
@@ -48,6 +49,7 @@ Styleguide 3.5
     flex-direction: column;
     width: auto; /* 1 */
     overflow: hidden; /* 2 */
+    height: auto;
   }
 }
 
