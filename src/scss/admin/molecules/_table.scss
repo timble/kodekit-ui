@@ -105,10 +105,18 @@ Styleguide 2.21
   }
 }
 
+
+/**
+ * Table
+ *
+ * 1. Should be as tall as possible for dropdown overflows. Pushes the pagination to the bottom
+ */
+
 .k-table {
   overflow: auto;
   backface-visibility: hidden;
   will-change: overflow;
+  flex: 1 1 auto; /* 1 */
 }
 
 
@@ -1000,3 +1008,4 @@ th {
 }
 
 @import "responsive-table";
+

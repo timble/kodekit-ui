@@ -43,6 +43,6 @@ Styleguide 3.3
     flex-direction: row;
     flex: 1 1 auto;
     border-bottom: none;
-    height: auto;
+    min-height: 0;
   }
 }

@@ -40,7 +40,7 @@ Styleguide 3.6
     flex-direction: row;
     flex: 1 1 auto;
     overflow: auto;
-    height: auto;
+    min-height: 0;
   }
 
 

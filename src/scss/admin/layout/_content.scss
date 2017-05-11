@@ -49,7 +49,7 @@ Styleguide 3.5
     flex-direction: column;
     width: auto; /* 1 */
     overflow: hidden; /* 2 */
-    height: auto;
+    min-height: 0;
   }
 }
 

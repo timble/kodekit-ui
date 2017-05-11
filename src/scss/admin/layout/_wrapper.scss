@@ -29,7 +29,7 @@ Styleguide 3.2
     flex-direction: column;
     flex: 1 1 auto;
     overflow: hidden;
-    height: auto;
+    min-height: 0;
   }
 }
 
