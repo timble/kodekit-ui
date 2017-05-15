@@ -570,6 +570,7 @@ Styleguide 2.9.4
 .k-input-group__button,
 .k-input-group .k-form-control {
   display: table-cell;
+  margin: 0;
 
   &:not(:first-child):not(:last-child) {
     border-radius: 0;

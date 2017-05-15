@@ -274,6 +274,10 @@ Styleguide 2.21
   [class*="k-icon"] {
     display: inline-block;
   }
+
+  a {
+    color: inherit;
+  }
 }
 
 @import "pagination";
