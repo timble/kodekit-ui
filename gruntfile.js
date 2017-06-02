@@ -21,7 +21,6 @@ module.exports = function(grunt) {
             'node_modules/select2/dist/js/select2.full.js',
             'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
             'node_modules/footable/js/footable.js',
-            'node_modules/floatthead/dist/jquery.floatThead.js',
             'node_modules/jqtree/tree.jquery.js',
             '<%= srcPath %>/js/custom-file-input.js',
             '<%= srcPath %>/js/bootstrap-dropdown.js',
@@ -33,7 +32,6 @@ module.exports = function(grunt) {
             '<%= srcPath %>/js/koowa.grid.js',
             '<%= srcPath %>/js/koowa.tree.js',
             '<%= srcPath %>/js/datepicker.js',
-            '<%= srcPath %>/js/koowa.datepicker.js',
             '<%= srcPath %>/js/overflowing.js',
             '<%= srcPath %>/js/tabbable.js',
             '<%= srcPath %>/js/off-canvas-menu.js',
@@ -98,6 +96,17 @@ module.exports = function(grunt) {
         // Concatenate files
         concat: {
             js: {
+                options: {
+                    // Footable needs to be provided with jQuery at all times
+                    // which conflicts with our call to jQuery.noConflict(true)
+                    process: function(src, filepath) {
+                        if (filepath.match('footable.js')) {
+                            return '(function($) { var jQuery = $;'+src+'})(jQuery);';
+                        }
+
+                        return src;
+                    },
+                },
                 files: {
                     '<%= distPath %>/js/build/jquery.js': '<%= jquery %>',
                     '<%= distPath %>/js/build/admin.js': '<%= admin %>'
@@ -115,8 +124,8 @@ module.exports = function(grunt) {
             build: {
                 files: {
                     '<%= distPath %>/js/min/modernizr.js': '<%= distPath %>/js/build/modernizr.js',
-                    '<%= distPath %>/js/min/jquery.js': '<%= jquery %>',
-                    '<%= distPath %>/js/min/admin.js': '<%= admin %>'
+                    '<%= distPath %>/js/min/jquery.js': '<%= distPath %>/js/build/jquery.js',
+                    '<%= distPath %>/js/min/admin.js': '<%= distPath %>/js/build/admin.js'
                 }
             }
         },

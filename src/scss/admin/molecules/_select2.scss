@@ -24,7 +24,7 @@ Styleguide 2.19
  */
 
 
-.koowa .select2.select2-container--bootstrap {
+.k-ui-namespace .select2.select2-container--bootstrap {
   width: 100% !important;
   max-width: 100% !important;
 }
@@ -874,4 +874,3 @@ $k-clear-selection-color: $k-dropdown-arrow-color !default;
 .form-inline .select2-container--bootstrap {
   display: inline-block;
 }
-

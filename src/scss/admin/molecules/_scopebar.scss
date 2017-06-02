@@ -472,6 +472,7 @@ Styleguide 2.18.3
   line-height: $k-scopebar-size;
   height: $k-scopebar-size;
   font-size: $k-scopebar-filter-font-size;
+  cursor: pointer;
 
   &:hover,
   &:focus {

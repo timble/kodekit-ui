@@ -4,7 +4,7 @@
 /*
 Wrapper
 
-- Use as <b>child</b> of the `.koowa-container` container only
+- Use as <b>child</b> of the `.k-ui-container` container only
 - Can be preceded by a `.k-menubar`
 - {unsureText}
 
@@ -20,7 +20,7 @@ Styleguide 3.2
 
 .k-wrapper {
   position: relative;
-
+  min-height: 100%;
 
   /* When flexbox is in use */
 
@@ -29,6 +29,7 @@ Styleguide 3.2
     flex-direction: column;
     flex: 1 1 auto;
     overflow: hidden;
+    min-height: 0;
   }
 }
 

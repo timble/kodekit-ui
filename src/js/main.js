@@ -1,25 +1,13 @@
 (function($) {
-    // Bootstrap tooltips emit a "hide" event on tooltip trigger element and MooTools runs hide() on it
-    // Make sure MooTools doesn't hide the tooltip trigger elements after hiding the tooltip box
-    if (typeof MooTools !== 'undefined') {
-        var mHide = Element.prototype.hide;
-        Element.implement({
-            hide: function() {
-                if ($(this).is('[data-k-tooltip]')) {
-                    return this;
-                }
-                mHide.apply(this, arguments);
-            }
-        });
-    }
 
     $(document).ready(function () {
 
         // Variables
-        var $fixedtable = $('.k-js-fixed-table-header'),
-            $footable = $('.k-js-responsive-table'),
+        var $footable = $('.k-js-responsive-table'),
             $sidebarToggle = $('.k-js-sidebar-toggle-item'),
-            $scopebar = $('.k-js-scopebar');
+            $scopebar = $('.k-js-scopebar'),
+            resizeTimer,
+            resizeClass = 'k-is-resizing';
 
         // Sidebar
         if ($('.k-js-title-bar, .k-js-toolbar').length && $('.k-js-wrapper').length && $('.k-js-content').length)
@@ -34,7 +22,7 @@
 
             function addOffCanvasButton(element, position) {
                 // Variables
-                var kContainer = '.koowa-container',
+                var kContainer = '.k-ui-container',
                     container = element.closest(kContainer),
                     titlebar = container.find('.k-js-title-bar'),
                     toolbar = container.find('.k-js-toolbar'),
@@ -132,26 +120,18 @@
                 tablet: 600,
                 desktop: 800
             }
-        }).bind('footable_resizing', function() {
-            $fixedtable.floatThead('destroy');
-        }).bind('footable_resized', function() {
-            fixedTable();
-            $fixedtable.floatThead('reflow');
         });
 
-        // Sticky table header and footer
-        function fixedTable() {
-            if ( $fixedtable.length ) {
-                $fixedtable.floatThead({
-                    scrollContainer: function($table){
-                        return $table.closest('.k-table');
-                    },
-                    position: 'absolute'
-                });
-            }
-        }
+        // Add class to body when resizing so we can add styling to the page
+        $(window).on('resize', function() {
+            $('body').addClass(resizeClass);
 
-        fixedTable();
+            // Remove the class when resize is done
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                $('body').removeClass(resizeClass);
+            }, 200);
+        });
 
         // Filter and search toggle buttons in the scopebar
         if ( $scopebar.length ) {
@@ -207,7 +187,7 @@
         });
 
         // Datepicker
-        $('.k-js-datepicker').datepicker();
+        $('.k-js-datepicker').kdatepicker();
 
         // Magnific
         $('.k-js-image-modal').magnificPopup({type:'image'});
@@ -219,22 +199,7 @@
             animation: true,
             placement: 'top',
             delay: { show: 200, hide: 50 },
-            container: '.koowa-container'
-        });
-
-        // Add a class during resizing event so we can hide overflowing stuff
-        var resizeTimer,
-            resizeClass = 'k-is-resizing';
-
-        $(window).on('resize', function() {
-            $('body').addClass(resizeClass);
-
-            // Remove the class when resize is done
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(function() {
-                $('body').removeClass(resizeClass);
-                $fixedtable.floatThead('reflow');
-            }, 250);
+            container: '.k-ui-container'
         });
 
         // Sidebar block toggle (e.g. quick filters)
@@ -250,7 +215,7 @@
 
         // Konami
         new Konami(function() {
-            $('html, .koowa-container').css({
+            $('html, .k-ui-container').css({
                 'font-family': 'Comic Sans MS',
                 'font-size': '20px',
                 'line-height': '30px'

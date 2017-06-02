@@ -40,7 +40,8 @@ Styleguide 6.2
 
 */
 
-.k-is-hidden.k-is-hidden.k-is-hidden {
+.k-is-hidden.k-is-hidden.k-is-hidden,
+.k-hidden.k-hidden.k-hidden {
   display: none;
 }
 
@@ -57,7 +58,7 @@ CSS only loading animation.
 .k-loader--large - Large
 
 markup:
-<span class="k-loader {$k-modifiers}">Loading...</span>
+<span class="k-loader {$modifiers}">Loading...</span>
 
 sg-wrapper:
 <div>
@@ -366,10 +367,9 @@ Styleguide 6.9
     z-index: 2;
     width: 100%;
     height: 100%;
-  }
-
-  .k-ratio-block__centered {
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -403,6 +403,14 @@ markup:
 
 .k-content-block--small {
   @include content-block(1em);
+}
+
+.k-content-block-top {
+  @include content-block-top;
+}
+
+.k-content-block-top--small {
+  @include content-block-top(1em);
 }
 
 

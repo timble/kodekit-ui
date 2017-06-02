@@ -1,6 +1,8 @@
 /* Table
    ========================================================================== */
 
+/* WARNING: Do not use transition on any element since this will hit scroll performance big on certain browsers! */
+
 /*
 Table
 
@@ -10,7 +12,7 @@ markup:
 <!-- Table -->
 <div class="k-table-container">
     <div class="k-table">
-        <table class="k-js-fixed-table-header k-js-responsive-table">
+        <table class="k-js-responsive-table">
         <thead>
             <tr>
                 <th width="1%" class="k-table-data--form"><input class="k-js-grid-checkall" type="checkbox" /></th>
@@ -95,7 +97,7 @@ Styleguide 2.21
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;
-    overflow: auto;
+    overflow: hidden;
   }
 
   @include resizing {
@@ -103,14 +105,18 @@ Styleguide 2.21
   }
 }
 
+
+/**
+ * Table
+ *
+ * 1. Should be as tall as possible for dropdown overflows. Pushes the pagination to the bottom
+ */
+
 .k-table {
   overflow: auto;
-
-  @include flexbox {
-    display: flex;
-    flex: 1 1 auto;
-    background: $k-table-cell-background-even;
-  }
+  backface-visibility: hidden;
+  will-change: overflow;
+  flex: 1 1 auto; /* 1 */
 }
 
 
@@ -140,6 +146,20 @@ Styleguide 2.21
 
 
   /**
+   * Sticky header
+   *
+   * 1. Set top to 0 because there's no default yet
+   * 2. Set z-index to 1 to make sure it covers the tbody
+   */
+
+  thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+
+  /**
    * Cells
    *
    * 1. Position checkbox
@@ -154,7 +174,6 @@ Styleguide 2.21
     vertical-align: middle;
     text-align: left;
     line-height: 1;
-    @include transition;
 
     input {
       display: inline-block; /* 1 */
@@ -196,7 +215,6 @@ Styleguide 2.21
       margin-right: -$k-table-cell-spacing-horizontal;
       line-height: $k-table-cell-size - ($k-table-cell-spacing-vertical * 2);
       text-decoration: none;
-      @include transition;
 
       &:focus,
       &:hover {
@@ -255,6 +273,10 @@ Styleguide 2.21
 
   [class*="k-icon"] {
     display: inline-block;
+  }
+
+  a {
+    color: inherit;
   }
 }
 
@@ -324,7 +346,6 @@ Styleguide 2.21.3
     display: inline-block;
     vertical-align: middle;
     text-decoration: none;
-    @include transition;
 
     &:hover,
     &:focus {
@@ -356,7 +377,7 @@ Different available table cell settings
 .k-table-data--multiline - All items inside this cell are `display: inline` with `vertical-align: baseline`
 
 markup:
-<td class="{$k-modifiers}">Content</td>
+<td class="{$modifiers}">Content</td>
 
 sg-wrapper:
 <div class="k-table-container">
@@ -375,7 +396,7 @@ Styleguide 2.21.4
 
 */
 
-.k-table {
+.k-table-container {
   .k-table-data--right {
     text-align: right;
 
@@ -417,6 +438,18 @@ Styleguide 2.21.4
     a, span, input, svg, small, img {
       display: inline;
       vertical-align: baseline;
+    }
+
+
+    /* Give anchors underlines to set them apart from default text */
+
+    a {
+      text-decoration: underline;
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
     }
   }
 
@@ -487,7 +520,7 @@ Table item states
 .k-table__item--state-published - Published
 
 markup:
-<span class="k-table__item--state {$k-modifiers}">State</span>
+<span class="k-table__item--state {$modifiers}">State</span>
 
 sg-wrapper:
 <div class="k-table-container">
@@ -510,7 +543,6 @@ Styleguide 2.21.5
 
 .k-table-container {
   .k-table__item--state {
-    @include transition;
 
 
     /* pointers for clickable elements */
@@ -805,7 +837,7 @@ default - Default - shows "no-drop" cursor
 .k-is-active - Active item - shows "move" cursor
 
 markup:
-<span class="k-positioner {$k-modifiers}" data-position="1"></span>
+<span class="k-positioner {$modifiers}" data-position="1"></span>
 
 sg-wrapper:
 <div class="k-table-container">
@@ -860,7 +892,6 @@ Styleguide 2.21.9
     vertical-align: bottom;
     color: #333;
     text-shadow: 0 0 3px white;
-    @include transition;
   }
 }
 
@@ -886,7 +917,7 @@ markup:
 <th>
     <a href="javascript:void(0)">
         Title
-        <span class="k-icon-{$k-modifiers}" aria-hidden="true">
+        <span class="k-icon-{$modifiers}" aria-hidden="true">
         <span class="k-visually-hidden">Sort column</span>
     </a>
 </th>
@@ -924,7 +955,6 @@ Styleguide 2.21.10
     content: " ";
     position: absolute;
     opacity: 0.33;
-    @include transition;
   }
 
   &:before {
@@ -983,77 +1013,3 @@ th {
 
 @import "responsive-table";
 
-/*
-Floating thead
-
-A floating thead so the head will stay on top when scrolling the tables
-- Add the `.k-js-foxed-table` class to the `<table>`
-
-markup:
-<table class="k-js-fixed-table-header">
-    <thead>
-    <tr>
-        <th>Heading</th>
-        <th>Heading</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>Content</td>
-        <td>Content</td>
-    </tr>
-    <tr>
-        <td>Content</td>
-        <td>Content</td>
-    </tr>
-    <tr>
-        <td>Content</td>
-        <td>Content</td>
-    </tr>
-    <tr>
-        <td>Content</td>
-        <td>Content</td>
-    </tr>
-    <tr>
-        <td>Content</td>
-        <td>Content</td>
-    </tr>
-    <tr>
-        <td>Content</td>
-        <td>Content</td>
-    </tr>
-    </tbody>
-</table>
-
-sg-wrapper:
-<div class="sg-flexbox" style="height: 175px;">
-    <div class="k-table-container">
-        <div class="k-table">
-            <sg-wrapper-content/>
-        </div>
-    </div>
-</div>
-
-Styleguide 2.21.12
-
-*/
-
-/**
- * This class is created by the floatThead plugin that's why it's not k-float-thead-wrapper
- *
- * 1. Overriding inline styling, we don't need a z-index of 1000+
- */
-
-.floatThead-wrapper {
-  z-index: 1 !important; /* 1 */
-
-  @include flexbox {
-    display: flex;
-    flex: 0 1 auto;
-    overflow: auto;
-  }
-
-  @include resizing {
-    overflow: hidden;
-  }
-}

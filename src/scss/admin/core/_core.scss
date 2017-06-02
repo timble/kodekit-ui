@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Outside of the koowa namespace
+   Outside of the k-ui-namespace namespace
    ========================================================================== */
 
 
@@ -23,7 +23,7 @@
 
 
 /* ==========================================================================
-   Koowa namespaced styling
+   k-ui-namespace namespaced styling
    ========================================================================== */
 
 /**
@@ -65,12 +65,11 @@
  * 2. Select2 bootstrap theme to match the bootstrap forms
  * 3. We need the dropdowns for the datepicker to work
  * 4. Modals are being generated outside of the koowa namespace
+ * 5. The datepicker popup is located outside of koowa namespace
  */
 
-
-
-@import "../../../../node_modules/select2/src/scss/core"; /* 1 */
+@import "select2/src/scss/core"; /* 1 */
 @import "../molecules/select2"; /* 2 */
 @import "../molecules/dropdowns"; /* 3 */
 @import "../molecules/modal"; /* 4 */
-@import "../molecules/datepicker"; /* 3 */
+@import "../molecules/datepicker"; /* 5 */

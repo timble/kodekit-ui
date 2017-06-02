@@ -231,7 +231,7 @@ Open iconic icons: https://useiconic.com/open/
 .k-icon-zoom-out - Zoom out
 
 markup:
-<span class="{$k-modifiers}" aria-hidden="true"></span>
+<span class="{$modifiers}" aria-hidden="true"></span>
 
 sg-wrapper:
 <div style="font-size: 16px;"><sg-wrapper-content/></div>
@@ -266,7 +266,7 @@ Extra icons that we added on top of open iconic
 .k-icon-open - Open
 
 markup:
-<span class="{$k-modifiers}" aria-hidden="true"></span>
+<span class="{$modifiers}" aria-hidden="true"></span>
 
 sg-wrapper:
 <div style="font-size: 16px;"><sg-wrapper-content/></div>
@@ -285,7 +285,7 @@ Give your icons more meaning by giving them a color
 .k-icon--error - Error color
 
 markup:
-<span class="k-icon-home {$k-modifiers}" aria-hidden="true"></span>
+<span class="k-icon-home {$modifiers}" aria-hidden="true"></span>
 
 sg-wrapper:
 <div style="font-size: 16px;"><sg-wrapper-content/></div>
@@ -321,7 +321,7 @@ Different sizes for icons
 .k-icon--size-huge - 64px
 
 markup:
-<span class="k-icon-document-default {$k-modifiers}" aria-hidden="true"></span>
+<span class="k-icon-document-default {$modifiers}" aria-hidden="true"></span>
 
 sg-wrapper:
 <div><sg-wrapper-content/></div>
@@ -368,39 +368,13 @@ Styleguide 2.12.3
 }
 
 
-/* Sizes for images that replace icons */
+/**
+ * Custom background image icons
+ *
+ * Make sure that custom icons get background-size cover so they fit their container nicely
+ */
 
-.k-image--size-tiny {
-  max-width: $k-icon-size-tiny;
-  max-height: $k-icon-size-tiny;
-}
-
-.k-image--size-small {
-  max-width: $k-icon-size-small;
-  max-height: $k-icon-size-small;
-}
-
-.k-image--size-default {
-  max-width: $k-icon-size;
-  max-height: $k-icon-size;
-}
-
-.k-image--size-medium {
-  max-width: $k-icon-size-medium;
-  max-height: $k-icon-size-medium;
-}
-
-.k-image--size-large {
-  max-width: $k-icon-size-large;
-  max-height: $k-icon-size-large;
-}
-
-.k-image--size-xlarge {
-  max-width: $k-icon-size-xlarge;
-  max-height: $k-icon-size-xlarge;
-}
-
-.k-image--size-huge {
-  max-width: $k-icon-size-huge;
-  max-height: $k-icon-size-huge;
+[class^="k-icon-document-"]:before,
+[class*=" k-icon-document-"]:before {
+  background-size: cover;
 }

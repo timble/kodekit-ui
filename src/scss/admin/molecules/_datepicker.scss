@@ -52,7 +52,7 @@ Styleguide 2.5
     top: 0;
     left: 0;
     z-index: $k-zindex-dropdown;
-    padding: 5px 0;
+    padding: 5px;
     margin: 2px 0 0;
     list-style: none;
     background-color: $k-dropdown-background;
@@ -71,6 +71,7 @@ Styleguide 2.5
       border-bottom-color: rgba(0, 0, 0, 0.2);
       position: absolute;
     }
+
     &:after {
       content: '';
       display: inline-block;
@@ -137,6 +138,18 @@ Styleguide 2.5
   table {
     margin: 0;
     user-select: none;
+    background: transparent;
+    border: none;
+  }
+
+  tr {
+    background: transparent;
+    border: none;
+
+    &:nth-child(n) {
+      background: transparent;
+      border: none;
+    }
   }
 
   td,
@@ -146,6 +159,13 @@ Styleguide 2.5
     height: 20px;
     border: none;
     border-radius: 4px;
+    background: transparent;
+    padding: 4px 8px;
+
+    &:nth-child(n) {
+      background: transparent;
+      border: none;
+    }
   }
 
 

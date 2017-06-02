@@ -9,7 +9,7 @@
 Complete list page
 
 markup:
-<div class="koowa-container koowa">
+<div class="k-ui-container k-ui-namespace">
     <sg-insert>2.14</sg-insert>
     <!-- Wrapper -->
     <div class="k-wrapper k-js-wrapper">
@@ -49,7 +49,7 @@ markup:
             </div><!-- k-content -->
         </div><!-- .k-content-wrapper -->
     </div><!-- .k-wrapper -->
-</div><!-- .koowa-container -->
+</div><!-- .k-ui-container -->
 
 Styleguide 4.1
 
@@ -64,7 +64,7 @@ List with title-bar
 - For full UI pages use a `.k-menubar` instead of a `.k-title-bar`
 
 markup:
-<div class="koowa-container koowa">
+<div class="k-ui-container k-ui-namespace">
     <!-- Wrapper -->
     <div class="k-wrapper k-js-wrapper">
         <sg-insert>2.23</sg-insert>
@@ -113,7 +113,7 @@ markup:
             </div>
         </div><!-- .k-content-wrapper -->
     </div><!-- .k-wrapper -->
-</div><!-- .koowa-container -->
+</div><!-- .k-ui-container -->
 
 Styleguide 4.2
 
@@ -127,7 +127,7 @@ Gallery view
 The default list view displayed in a gallery layout
 
 markup:
-<div class="koowa-container koowa">
+<div class="k-ui-container k-ui-namespace">
     <!-- Wrapper -->
     <div class="k-wrapper k-js-wrapper">
         <!-- Content wrapper -->
@@ -165,7 +165,7 @@ markup:
             </div><!-- k-content -->
         </div><!-- .k-content-wrapper -->
     </div><!-- .k-wrapper -->
-</div><!-- .koowa-container -->
+</div><!-- .k-ui-container -->
 
 Styleguide 4.3
 

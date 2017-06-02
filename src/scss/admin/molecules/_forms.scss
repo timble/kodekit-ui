@@ -37,7 +37,6 @@ Styleguide 2.9
   max-width: 100%; /* 1 */
   height: $k-input-height-base; /* 2 */
   padding: $k-spacing-base-vertical $k-spacing-base-horizontal;
-  margin: 0;
   font-size: $k-font-size;
   line-height: $k-line-height;
   color: $k-input-color;
@@ -314,12 +313,13 @@ Styleguide 2.9.1
   input[type="checkbox"] {
     border-radius: 0; /* 1 */
 
-    &:before {
-      content: " "; /* 2 */
-      width: $k-form-option-size - ($k-form-option-border-size * 8); /* 3 */
-      height: $k-form-option-size - ($k-form-option-border-size * 8); /* 3 */
-      margin: 3px; /* 4 */
-      background: $k-form-option-color;
+    @include icon-before(check, true) {
+      /* 2 */
+      width: $k-form-option-size - ($k-form-option-border-size * 2); /* 3 */
+      height: $k-form-option-size - ($k-form-option-border-size * 2); /* 3 */
+      line-height: $k-form-option-size - ($k-form-option-border-size * 2); /* 3 */
+      font-size: $k-form-option-size - ($k-form-option-border-size * 4); /* 4 */
+      color: $k-color-accent; /* 5 */
     }
   }
 }
@@ -359,9 +359,9 @@ Feedback states
 .k-has-error - Error
 
 markup:
-<div class="k-form-group {$k-modifiers}">
-    <label for="input-[2.9.2]-1-{$k-modifiers}">Default input</label>
-    <input class="k-form-control" type="text" id="input-[2.9.2]-1-{$k-modifiers}" />
+<div class="k-form-group {$modifiers}">
+    <label for="input-[2.9.2]-1-{$modifiers}">Default input</label>
+    <input class="k-form-control" type="text" id="input-[2.9.2]-1-{$modifiers}" />
 </div>
 
 Styleguide 2.9.2
@@ -418,7 +418,7 @@ default - Default
 .k-input-group--large - Large
 
 markup:
-<div class="k-input-group {$k-modifiers}">
+<div class="k-input-group {$modifiers}">
     <div class="k-input-group__addon">Addon</div>
     <input type="text" class="k-form-control" />
     <div class="k-input-group__button">
@@ -570,6 +570,7 @@ Styleguide 2.9.4
 .k-input-group__button,
 .k-input-group .k-form-control {
   display: table-cell;
+  margin: 0;
 
   &:not(:first-child):not(:last-child) {
     border-radius: 0;
@@ -797,9 +798,9 @@ default - Default
 .k-form-group--large - Large form groups
 
 markup:
-<div class="k-form-group {$k-modifiers}">
-    <label for="input-[2.9]-1-{$k-modifiers}">Label</label>
-    <input class="k-form-control" type="text" id="input-[2.9]-1-{$k-modifiers}" />
+<div class="k-form-group {$modifiers}">
+    <label for="input-[2.9]-1-{$modifiers}">Label</label>
+    <input class="k-form-control" type="text" id="input-[2.9]-1-{$modifiers}" />
 </div>
 
 Styleguide 2.9.5
@@ -951,10 +952,16 @@ Styleguide 2.9.7
 */
 
 .k-form-row-group {
+  display: table; /* To make sure we don't get empty pixels on the right */
+  width: 100%; /* To make sure we don't get empty pixels on the right */
   background: $k-color-primary-plus-6;
   border-radius: 5px;
   border: 1px solid $k-color-primary-min-2;
   margin-bottom: $k-spacing;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 
@@ -1009,6 +1016,12 @@ Styleguide 2.9.8
     &:last-child {
       border-bottom: none;
     }
+  }
+
+  .k-form-row__header {
+    width: 100%;
+    background: $k-color-primary-plus-4;
+    padding: 10px;
   }
 
   .k-form-row__item {
@@ -1080,6 +1093,10 @@ Styleguide 2.9.8
         border-radius: 5px 5px 0 0;
       }
     }
+
+    .k-form-row__header {
+      border-radius: 5px 5px 0 0;
+    }
   }
 
   &:last-child {
@@ -1087,6 +1104,10 @@ Styleguide 2.9.8
       a {
         border-radius: 0 0 5px 5px;
       }
+    }
+
+    .k-form-row__header {
+      border-radius: 0 0 5px 5px;
     }
   }
 }
