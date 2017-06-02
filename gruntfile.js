@@ -40,6 +40,55 @@ module.exports = function(grunt) {
             '<%= srcPath %>/js/kquery.unset.js'
         ],
 
+
+        // Compile sass files
+        sass: {
+            dist: {
+                files: {
+                    '<%= distPath %>/css/build/admin.css': '<%= srcPath %>/scss/admin-ui.scss'
+                }
+            },
+            options: {
+                includePaths: [
+                    'node_modules'
+                ],
+                outputStyle: 'expanded',
+                sourceMap: false
+            }
+        },
+
+
+        // Minify and clean CSS
+        cssmin: {
+            options: {
+                roundingPrecision: -1,
+                sourceMap: false
+            },
+            site: {
+                files: [{
+                    expand: true,
+                    flatten: true,
+                    src: ['<%= distPath %>/css/build/*.css', '!*.css'],
+                    dest: '<%= distPath %>/css/min/'
+                }]
+            }
+        },
+
+
+        // Autoprefixer
+        autoprefixer: {
+            options: {
+                browsers: ['> 5%', 'last 2 versions', 'ie 11']
+            },
+            files: {
+                expand: true,
+                flatten: true,
+                src: '<%= distPath %>/css/min/*.css',
+                dest: '<%= distPath %>/css/min/'
+            }
+        },
+
+
         // Iconfont
         webfont: {
             icons: {
@@ -142,6 +191,17 @@ module.exports = function(grunt) {
                 options: {
                     interrupt: true,
                     atBegin: false
+                }
+            },
+            sass: {
+                files: [
+                    '<%= srcPath %>/scss/*.scss',
+                    '<%= srcPath %>/scss/**/*.scss'
+                ],
+                tasks: ['sass', 'cssmin', 'autoprefixer'],
+                options: {
+                    interrupt: true,
+                    atBegin: true
                 }
             },
             javascript: {
