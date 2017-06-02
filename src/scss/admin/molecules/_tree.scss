@@ -31,6 +31,10 @@ Styleguide 2.26
   margin: $k-list-spacing 0;
   overflow: auto;
 
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   .jqtree-element {
     padding: 0 $k-spacing-tiny 0 $k-spacing;
     overflow: hidden;
@@ -69,6 +73,7 @@ Styleguide 2.26
   & > .jqtree-tree {
     margin: 0;
     padding: 0;
+    overflow: hidden;
 
     & > .jqtree_common {
       .jqtree-element {
