@@ -10261,16 +10261,16 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 .k-ui-namespace .k-table-container {
   /**
-   * Sticky header
-   *
-   * 1. Set top to 0 because there's no default yet
-   * 2. Set z-index to 1 to make sure it covers the tbody
-   */
-  /**
    * Cells
    *
    * 1. Position checkbox
    * 2. Remove default margin
+   */
+  /**
+   * Sticky header
+   *
+   * 1. Set top to 0 because there's no default yet
+   * 2. Set z-index to 1 to make sure it covers the tbody
    */
   /**
    * Head
@@ -10312,12 +10312,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   }
 }
 
-.k-ui-namespace .k-table-container th {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
-
 .k-ui-namespace .k-table-container th,
 .k-ui-namespace .k-table-container td {
   border: none;
@@ -10341,6 +10335,12 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 [dir="rtl"] .k-ui-namespace .k-table-container th,
 [dir="rtl"] .k-ui-namespace .k-table-container td {
   text-align: right;
+}
+
+.k-ui-namespace .k-table-container th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .k-ui-namespace .k-table-container th {

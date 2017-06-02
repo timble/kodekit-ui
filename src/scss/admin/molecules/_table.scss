@@ -148,20 +148,6 @@ Styleguide 2.21
 
 
   /**
-   * Sticky header
-   *
-   * 1. Set top to 0 because there's no default yet
-   * 2. Set z-index to 1 to make sure it covers the tbody
-   */
-
-  th {
-    position: sticky;
-    top: 0;
-    z-index: 1;
-  }
-
-
-  /**
    * Cells
    *
    * 1. Position checkbox
@@ -189,6 +175,20 @@ Styleguide 2.21
     td {
       text-align: right;
     }
+  }
+
+
+  /**
+   * Sticky header
+   *
+   * 1. Set top to 0 because there's no default yet
+   * 2. Set z-index to 1 to make sure it covers the tbody
+   */
+
+  th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
   }
 
 
