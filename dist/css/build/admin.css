@@ -10290,6 +10290,8 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-table-container table {
+  margin: 0;
+  padding: 0;
   width: 100%;
   text-align: left;
   border-collapse: separate;
@@ -10310,7 +10312,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   }
 }
 
-.k-ui-namespace .k-table-container thead {
+.k-ui-namespace .k-table-container th {
   position: sticky;
   top: 0;
   z-index: 1;

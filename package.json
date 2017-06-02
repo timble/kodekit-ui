@@ -6,7 +6,7 @@
     "type": "git",
     "url": "git+https://github.com/timble/kodekit-ui.git"
   },
-  "author": "",
+  "author": "Timble CVBA <info@timble.net> (https://www.timble.net)",
   "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/timble/kodekit-ui/issues"

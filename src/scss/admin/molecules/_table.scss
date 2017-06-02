@@ -128,6 +128,8 @@ Styleguide 2.21
 
 .k-table-container {
   table {
+    margin: 0;
+    padding: 0;
     width: 100%;
     text-align: left;
     border-collapse: separate;
@@ -152,7 +154,7 @@ Styleguide 2.21
    * 2. Set z-index to 1 to make sure it covers the tbody
    */
 
-  thead {
+  th {
     position: sticky;
     top: 0;
     z-index: 1;
