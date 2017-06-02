@@ -617,6 +617,7 @@ Styleguide 2.21.6
       white-space: nowrap;
       background: $k-table-header-background;
       border-bottom-color: $k-table-cell-border;
+      top: ($k-table-cell-size + $k-border-width);
     }
   }
 }

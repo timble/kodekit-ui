@@ -10721,6 +10721,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   white-space: nowrap;
   background: #fbfbfb;
   border-bottom-color: #ededed;
+  top: 40px;
 }
 
 .k-ui-namespace .k-table-container {
