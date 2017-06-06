@@ -36,6 +36,30 @@ img {
 }
 
 
-.k-image-16 {
-  @include allwidth(16px);
+.k-image--size-tiny {
+  @include allwidth($k-icon-size-tiny);
+}
+
+.k-image--size-small {
+  @include allwidth($k-icon-size-small);
+}
+
+.k-image--size-default {
+  @include allwidth($k-icon-size);
+}
+
+.k-image--size-medium {
+  @include allwidth($k-icon-size-medium);
+}
+
+.k-image--size-large {
+  @include allwidth($k-icon-size-large);
+}
+
+.k-image--size-xlarge {
+  @include allwidth($k-icon-size-xlarge);
+}
+
+.k-image--size-huge {
+  @include allwidth($k-icon-size-huge);
 }

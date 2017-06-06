@@ -58,6 +58,7 @@ $k-icon-path: '../../koowa/com_koowa/fonts' !default;
   @import "site/molecules/dropdown-toggle";
   @import "site/molecules/element-querie";
   @import "site/molecules/flag-object";
+  @import "site/molecules/forms"; // Or should we omit fields entirely? But then select2 looks different..
   @import "site/molecules/gallery";
   @import "site/molecules/inline-list";
   @import "site/molecules/label";

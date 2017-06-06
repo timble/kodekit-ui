@@ -1,13 +1,11 @@
 /**
  * Flag object
- *
- * Use display table for cross browser availability
  */
 
 .k-flag-object {
   position: relative;
-  display: table;
-  width: 100%;
+  display: flex;
+  align-items: center;
   max-width: 100%;
 }
 
@@ -17,18 +15,7 @@
  */
 
 .k-flag-object--inline {
-  width: auto;
-}
-
-
-/**
- * Flag object children
- */
-
-.k-flag-object__body,
-.k-flag-object__aside {
-  display: table-cell;
-  vertical-align: middle;
+  display: inline-flex;
 }
 
 
@@ -37,10 +24,7 @@
  */
 
 .k-flag-object--top {
-  .k-flag-object__body,
-  .k-flag-object__aside {
-    vertical-align: top;
-  }
+  align-items: flex-start;
 }
 
 
@@ -49,20 +33,16 @@
  */
 
 .k-flag-object--bottom {
-  .k-flag-object__body,
-  .k-flag-object__aside {
-    vertical-align: bottom;
-  }
+  align-items: flex-end;
 }
 
 
 /**
- * Aside
+ * Flag object children
  */
 
 .k-flag-object__aside {
-  white-space: nowrap;
-  width: 1%;
+  flex: 0 0 auto;
 
   [class*="k-icon"],
   [class*="k-icon"]:before,
@@ -71,25 +51,29 @@
   }
 }
 
+.k-flag-object__body {
+  flex: 1 1 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 
 /**
  * Horizontal spacing
  */
 
-.k-flag-object__aside + .k-flag-object__body {
-  padding-left: 0.5em;
-
-  @include rtl {
-    padding-left: 0;
-    padding-right: 0.5em;
-  }
-}
-
+.k-flag-object__aside + .k-flag-object__aside,
+.k-flag-object__aside + .k-flag-object__body,
 .k-flag-object__body + .k-flag-object__aside {
   padding-left: 0.5em;
+}
 
-  @include rtl {
+@include rtl {
+  .k-flag-object__aside + .k-flag-object__aside,
+  .k-flag-object__aside + .k-flag-object__body,
+  .k-flag-object__body + .k-flag-object__aside {
     padding-left: 0;
     padding-right: 0.5em;
   }
 }
+

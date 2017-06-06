@@ -37,3 +37,49 @@
 .k-subtitle + .k-manage {
   margin-top: -($section-spacing / 2);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.gallery {
+  overflow: hidden;
+}
+
+.gallery__items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin: -10px;
+}
+
+.gallery__item {
+  position: relative;
+  flex: 1 1 auto;
+  margin: 10px;
+  min-width: 220px;
+
+  &:before {
+    display: block;
+    content: " ";
+    padding-top: 75%;
+  }
+}
+
+.gallery__content {
+  @include coverall;
+}
