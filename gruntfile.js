@@ -45,7 +45,7 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 files: {
-                    '<%= distPath %>/css/build/admin.css': '<%= srcPath %>/scss/admin-ui.scss'
+                    '<%= distPath %>/css/admin.css': '<%= srcPath %>/scss/admin-ui.scss'
                 }
             },
             options: {
@@ -54,6 +54,20 @@ module.exports = function(grunt) {
                 ],
                 outputStyle: 'expanded',
                 sourceMap: false
+            }
+        },
+
+
+        // Autoprefixer
+        autoprefixer: {
+            options: {
+                browsers: ['> 5%', 'last 2 versions']
+            },
+            files: {
+                expand: true,
+                flatten: true,
+                src: '<%= distPath %>/css/*.css',
+                dest: '<%= distPath %>/css/'
             }
         },
 
@@ -67,24 +81,11 @@ module.exports = function(grunt) {
             site: {
                 files: [{
                     expand: true,
-                    flatten: true,
-                    src: ['<%= distPath %>/css/build/*.css', '!*.css'],
-                    dest: '<%= distPath %>/css/min/'
+                    cwd: '<%= distPath %>/css',
+                    src: ['*.css', '!*.min.css'],
+                    dest: '<%= distPath %>/css',
+                    ext: '.min.css'
                 }]
-            }
-        },
-
-
-        // Autoprefixer
-        autoprefixer: {
-            options: {
-                browsers: ['> 5%', 'last 2 versions', 'ie 11']
-            },
-            files: {
-                expand: true,
-                flatten: true,
-                src: '<%= distPath %>/css/min/*.css',
-                dest: '<%= distPath %>/css/min/'
             }
         },
 
@@ -308,7 +309,7 @@ module.exports = function(grunt) {
                     '<%= srcPath %>/scss/*.scss',
                     '<%= srcPath %>/scss/**/*.scss'
                 ],
-                tasks: ['sass', 'cssmin', 'autoprefixer'],
+                tasks: ['sass', 'autoprefixer', 'cssmin'],
                 options: {
                     interrupt: true,
                     atBegin: true
