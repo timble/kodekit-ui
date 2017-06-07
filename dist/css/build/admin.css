@@ -90,8 +90,8 @@ body.k-is-resizing {
    ========================================================================== */
 @font-face {
   font-family: "k-icons";
-  src: url("../../fonts/k-icons/k-icons.eot");
-  src: url("../../fonts/k-icons/k-icons.eot?#iefix") format("embedded-opentype"), url("../../fonts/k-icons/k-icons.woff") format("woff"), url("../../fonts/k-icons/k-icons.ttf") format("truetype"), url("../../fonts/k-icons/k-icons.svg#k-icons") format("svg");
+  src: url("../fonts/k-icons/k-icons.eot");
+  src: url("../fonts/k-icons/k-icons.eot?#iefix") format("embedded-opentype"), url("../fonts/k-icons/k-icons.woff") format("woff"), url("../fonts/k-icons/k-icons.ttf") format("truetype"), url("../fonts/k-icons/k-icons.svg#k-icons") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -104,7 +104,7 @@ body.k-is-resizing {
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
     font-family: "k-icons";
-    src: url("../../fonts/k-icons/k-icons.svg#k-icons") format("svg");
+    src: url("../fonts/k-icons/k-icons.svg#k-icons") format("svg");
   }
 }
 
