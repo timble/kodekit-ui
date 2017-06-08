@@ -26,13 +26,12 @@
     "jit-grunt": "0.10.0",
     "jqtree": "1.3.4",
     "jquery": "1.12.4",
+    "jquery-validation": "1.14.0",
     "magnific-popup": "1.1.0",
     "openiconic": "git+https://github.com/iconic/open-iconic.git#1.1.1",
     "select2": "4.0.3",
     "select2-bootstrap-theme": "0.1.0-beta.9",
     "time-grunt": "1.4.0"
   },
-  "dependencies": {
-    "jquery-validation": "1.14.0"
-  }
+  "dependencies": {}
 }
