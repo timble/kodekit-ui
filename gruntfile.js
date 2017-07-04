@@ -184,12 +184,6 @@ module.exports = function(grunt) {
                         '<%= srcPath %>/js/jquery.validate.patch.js',
                         '<%= srcPath %>/js/kquery.unset.js'
                     ],
-                    '<%= distPath %>/js/jquery.validate.min.js': [
-                        '<%= srcPath %>/js/kquery.set.js',
-                        'node_modules/jquery-validation/dist/jquery.validate.min.js',
-                        '<%= srcPath %>/js/jquery.validate.patch.js',
-                        '<%= srcPath %>/js/kquery.unset.js'
-                    ],
                     '<%= distPath %>/js/koowa.datepicker.js': [
                         '<%= srcPath %>/js/kquery.set.js',
                         '<%= srcPath %>/js/datepicker.js',
@@ -282,6 +276,12 @@ module.exports = function(grunt) {
                     ],
                     '<%= distPath %>/js/modernizr.min.js': [
                         '<%= distPath %>/js/modernizr.js'
+                    ],
+                    '<%= distPath %>/js/jquery.validate.min.js': [
+                        '<%= srcPath %>/js/kquery.set.js',
+                        'node_modules/jquery-validation/dist/jquery.validate.js',
+                        '<%= srcPath %>/js/jquery.validate.patch.js',
+                        '<%= srcPath %>/js/kquery.unset.js'
                     ],
                     '<%= distPath %>/js/koowa.min.js': '<%= distPath %>/js/koowa.js',
                     '<%= distPath %>/js/admin.min.js': '<%= distPath %>/js/admin.js'
