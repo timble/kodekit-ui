@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="nl" class="k-no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kodekit UI Demo page</title>
+    <link rel="stylesheet" href="../../dist/css/admin.min.css">
+    <script src="../../dist/js/modernizr.min.js"></script>
+    <script src="../../dist/js/jquery.min.js"></script>
+    <script src="../../dist/js/admin.min.js"></script>
+</head>
+<body>
+<script data-inline type="text/javascript">(function(){var el=document.documentElement;var cl="k-js-enabled";if(el.classList){el.classList.add(cl);}else{el.className+=" "+cl;}})()</script>
+
+<div class="k-ui-container k-ui-namespace">
+    <div class="k-wrapper k-js-wrapper">
+        <div class="k-title-bar k-js-title-bar">
+            <div class="k-title-bar__heading">Title</div>
+        </div>
+        <div class="k-content-wrapper">
+            <div class="k-sidebar-left k-js-sidebar-left">
+                <ul class="k-navigation">
+                    <li>
+                        <a href="javascript:void(0);">
+                            {content}
+                        </a>
+                    </li>
+                    <li class="k-is-active">
+                        <a href="javascript:void(0);">
+                            {content}
+                        </a>
+                    </li>
+                </ul>
+                <div class="k-sidebar-item">
+                    <div class="k-sidebar-item__header">
+                        Quick filters
+                    </div>
+                    <ul class="k-list">
+                        <li class="k-is-active">
+                            <a href="javascript:void(0);">
+                                <span class="k-icon-person" aria-hidden="true"></span>
+                                My documents
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">
+                                <span class="k-icon-star" aria-hidden="true"></span>
+                                Most popular
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="k-content k-js-content">
+                <div class="k-component-wrapper">
+                    <form class="k-component k-js-component k-js-grid">
+                        <div class="k-breadcrumb">
+                            <ul>
+                                <li class="k-breadcrumb__home">
+                                    <a class="k-breadcrumb__content" href="javascript:void(0);">
+                                        <span class="k-icon-home" aria-hidden="true"></span>
+                                        <span class="k-visually-hidden">Home</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="k-breadcrumb__content" href="javascript:void(0);">
+                                        Donec ullamcorper nulla non metus auctor fringilla.
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="k-breadcrumb__content" href="javascript:void(0);">
+                                        Risus Egestas Vulputate Fusce Ipsum.
+                                    </a>
+                                </li>
+                                <li class="k-breadcrumb__active">
+<span class="k-breadcrumb__content">
+Ligula Inceptos Commodo Sem Ornare.
+</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="k-scopebar k-js-scopebar">
+                            <div class="k-dynamic-content-holder">
+                                <div class="k-js-filters">
+                                    <div data-filter data-title="Status" data-count="0">
+                                        <select class="k-js-select2" name="enabled" data-placeholder="- Select -">
+                                            <option value="" class="level1">- Select -</option>
+                                            <option value="1" class="level1">Published</option>
+                                            <option value="0" class="level1">Unpublished</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="k-scopebar__item k-scopebar__item--filters">
+                                <div class="k-scopebar__filters-content">
+                                    <div class="k-scopebar__filters k-js-filter-container">
+                                        <div style="display: none;" class="k-scopebar__item--filter k-scopebar-dropdown k-js-filter-prototype k-js-dropdown">
+                                            <button type="button" class="k-scopebar-dropdown__button k-js-dropdown-button">
+                                                <span class="k-scopebar__item--filter__title k-js-dropdown-title"></span>
+                                                <span class="k-scopebar__item--filter__icon k-icon-chevron-bottom" aria-hidden="true"></span>
+                                                <div class="k-scopebar__item__label k-js-dropdown-label"></div>
+                                            </button>
+                                            <div class="k-scopebar-dropdown__body k-js-dropdown-body">
+                                                <div class="k-scopebar-dropdown__body__buttons">
+                                                    <button type="button" class="k-button k-button--default k-js-clear-filter">Clear</button>
+                                                    <button type="button" class="k-button k-button--primary k-js-apply-filter">Apply</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="k-scopebar__item k-scopebar__item--search">
+                                <div class="k-search k-search--has-both-buttons">
+                                    <label for="input-modal-1">Search</label>
+                                    <input type="search" class="k-search__field" placeholder="Search…" id="input-modal-1"/>
+                                    <button type="submit" class="k-search__submit">
+                                        <span class="k-icon-magnifying-glass" aria-hidden="true"></span>
+                                        <span class="k-visually-hidden">Search icon</span>
+                                    </button>
+                                    <button type="button" class="k-search__empty ">
+<span class="k-search__empty-area">
+<span class="k-icon-disabled" aria-hidden="true"></span>
+<span class="k-visually-hidden">Clear search</span>
+</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="k-table-container">
+                            <div class="k-table">
+                                <table class="k-js-fixed-table-header k-js-responsive-table">
+                                    <thead>
+                                    <tr>
+                                        <th width="1%" class="k-table-data--form"><input class="k-js-grid-checkall" type="checkbox"/></th>
+                                        <th width="1%" data-toggle="true" class="k-table-data--toggle"></th>
+                                        <th width="1%" class="k-table-data--icon"></th>
+                                        <th class="k-sort-desc"><a href="javascript:void(0);">Item title</a></th>
+                                        <th width="5%" data-hide="phone,tablet"><a href="javascript:void(0);">State</a></th>
+                                        <th width="15%" data-hide="phone"><a href="javascript:void(0);">Category</a></th>
+                                        <th width="5%" data-hide="phone,tablet,desktop"><a href="javascript:void(0);">Date</a></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
+                                        <td class="k-table-data--toggle"></td>
+                                        <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Item title</a>
+                                        </td>
+                                        <td><span class="k-table__item--state k-table__item--state-expired">State</span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Item title</a>
+                                        </td>
+                                        <td class="k-table-data--nowrap">01 January 1999</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
+                                        <td class="k-table-data--toggle"></td>
+                                        <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Curabitur blandit tempus porttitor.</a>
+                                            <small>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</small>
+                                        </td>
+                                        <td><span class="k-table__item--state k-table__item--state-expired">State</span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Item title</a>
+                                        </td>
+                                        <td class="k-table-data--nowrap">01 January 1999</td>
+                                    </tr>
+                                    <tr class="k-table__sub-header">
+                                        <th colspan="7">
+                                            Sub header
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
+                                        <td class="k-table-data--toggle"></td>
+                                        <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Curabitur blandit tempus porttitor.</a>
+                                            <small>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</small>
+                                        </td>
+                                        <td><span class="k-table__item--state k-table__item--state-expired">State</span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Item title</a>
+                                        </td>
+                                        <td class="k-table-data--nowrap">01 January 1999</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
+                                        <td class="k-table-data--toggle"></td>
+                                        <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Curabitur blandit tempus porttitor.</a>
+                                            <small>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</small>
+                                        </td>
+                                        <td><span class="k-table__item--state k-table__item--state-expired">State</span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Item title</a>
+                                        </td>
+                                        <td class="k-table-data--nowrap">01 January 1999</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
+                                        <td class="k-table-data--toggle"></td>
+                                        <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Curabitur blandit tempus porttitor.</a>
+                                            <small>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</small>
+                                        </td>
+                                        <td><span class="k-table__item--state k-table__item--state-expired">State</span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Item title</a>
+                                        </td>
+                                        <td class="k-table-data--nowrap">01 January 1999</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="k-table-pagination">
+                                <div class="k-pagination">
+                                    <div class="k-pagination__limit">
+                                        <select class="k-form-control">
+                                            <option value="5">5</option>
+                                            <option value="10" selected>10</option>
+                                            <option value="15">15</option>
+                                        </select>
+                                    </div>
+                                    <ul class="k-pagination__pages">
+                                        <li class="k-is-active">
+                                            <span>1</span>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">2</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">3</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">4</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">5</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">»</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="k-sidebar-right k-js-sidebar-right">
+                        <div class="k-sidebar-item">
+                            <div class="k-sidebar-item__header">
+                                Selected file info
+                            </div>
+                            <div class="k-sidebar-item__content">
+                                <div class="k-card">
+                                    <div class="k-card__body">
+                                        <div class="k-card__image">
+                                            <script data-pagespeed-no-defer>(function(){var g=this;function h(b,d){var a=b.split("."),c=g;a[0]in c||!c.execScript||c.execScript("var "+a[0]);for(var e;a.length&&(e=a.shift());)a.length||void 0===d?c[e]?c=c[e]:c=c[e]={}:c[e]=d};function l(b){var d=b.length;if(0<d){for(var a=Array(d),c=0;c<d;c++)a[c]=b[c];return a}return[]};function m(b){var d=window;if(d.addEventListener)d.addEventListener("load",b,!1);else if(d.attachEvent)d.attachEvent("onload",b);else{var a=d.onload;d.onload=function(){b.call(this);a&&a.call(this)}}};var n;function p(b,d,a,c,e){this.h=b;this.j=d;this.l=a;this.f=e;this.g={height:window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight,width:window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth};this.i=c;this.b={};this.a=[];this.c={}}function q(b,d){var a,c,e=d.getAttribute("data-pagespeed-url-hash");if(a=e&&!(e in b.c))if(0>=d.offsetWidth&&0>=d.offsetHeight)a=!1;else{c=d.getBoundingClientRect();var f=document.body;a=c.top+("pageYOffset"in window?window.pageYOffset:(document.documentElement||f.parentNode||f).scrollTop);c=c.left+("pageXOffset"in window?window.pageXOffset:(document.documentElement||f.parentNode||f).scrollLeft);f=a.toString()+","+c;b.b.hasOwnProperty(f)?a=!1:(b.b[f]=!0,a=a<=b.g.height&&c<=b.g.width)}a&&(b.a.push(e),b.c[e]=!0)}p.prototype.checkImageForCriticality=function(b){b.getBoundingClientRect&&q(this,b)};h("pagespeed.CriticalImages.checkImageForCriticality",function(b){n.checkImageForCriticality(b)});h("pagespeed.CriticalImages.checkCriticalImages",function(){r(n)});function r(b){b.b={};for(var d=["IMG","INPUT"],a=[],c=0;c<d.length;++c)a=a.concat(l(document.getElementsByTagName(d[c])));if(0!=a.length&&a[0].getBoundingClientRect){for(c=0;d=a[c];++c)q(b,d);a="oh="+b.l;b.f&&(a+="&n="+b.f);if(d=0!=b.a.length)for(a+="&ci="+encodeURIComponent(b.a[0]),c=1;c<b.a.length;++c){var e=","+encodeURIComponent(b.a[c]);131072>=a.length+e.length&&(a+=e)}b.i&&(e="&rd="+encodeURIComponent(JSON.stringify(t())),131072>=a.length+e.length&&(a+=e),d=!0);u=a;if(d){c=b.h;b=b.j;var f;if(window.XMLHttpRequest)f=new XMLHttpRequest;else if(window.ActiveXObject)try{f=new ActiveXObject("Msxml2.XMLHTTP")}catch(k){try{f=new ActiveXObject("Microsoft.XMLHTTP")}catch(v){}}f&&(f.open("POST",c+(-1==c.indexOf("?")?"?":"&")+"url="+encodeURIComponent(b)),f.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),f.send(a))}}}function t(){var b={},d=document.getElementsByTagName("IMG");if(0==d.length)return{};var a=d[0];if(!("naturalWidth"in a&&"naturalHeight"in a))return{};for(var c=0;a=d[c];++c){var e=a.getAttribute("data-pagespeed-url-hash");e&&(!(e in b)&&0<a.width&&0<a.height&&0<a.naturalWidth&&0<a.naturalHeight||e in b&&a.width>=b[e].o&&a.height>=b[e].m)&&(b[e]={rw:a.width,rh:a.height,ow:a.naturalWidth,oh:a.naturalHeight})}return b}var u="";h("pagespeed.CriticalImages.getBeaconData",function(){return u});h("pagespeed.CriticalImages.Run",function(b,d,a,c,e,f){var k=new p(b,d,a,e,f);n=k;c&&m(function(){window.setTimeout(function(){r(k)},0)})});})();pagespeed.CriticalImages.Run('/ngx_pagespeed_beacon','https://www.joomlatools.com/developer/ui/examples/modal/','Nyq0bpPaTa',true,false,'kToPN60PhOQ');</script><img src="{image source}" alt="{alternative text}" data-pagespeed-url-hash="3605498212" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                        </div>
+                                    </div>
+                                </div>
+                                <dl>
+                                    <dt>Name</dt>
+                                    <dd>attachments</dd>
+                                    <dt>Dimensions</dt>
+                                    <dd>908 x 655</dd>
+                                    <dt>Size</dt>
+                                    <dd>66.60 KB</dd>
+                                </dl>
+                                <form>
+                                    <p>
+                                        <input class="k-form-control" type="text"/>
+                                    </p>
+                                    <p>
+                                        <select class="k-form-control">
+                                            <option>Option</option>
+                                        </select>
+                                    </p>
+                                    <p>
+                                        <textarea class="k-form-control"></textarea>
+                                    </p>
+                                    <div class="form-group">
+                                        <button type="button" class="k-button k-button--primary">Insert file</button>
+                                        <a class="k-button k-button--default" href="javascript:void(0);">Cancel</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
