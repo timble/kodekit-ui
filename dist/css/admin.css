@@ -3277,23 +3277,11 @@ Styleguide 2.13
   /**
  * 1. Reset default <ul> styling
  */
-  /* Menubar
-   ========================================================================== */
-  /*
-Menubar
-
-- Use as <b>first child</b> of the `.k-ui-container` container only
-- Will always be followed by a `.k-wrapper` container
-- {unsureText}
-
-markup:
-<!-- Menubar -->
-<div class="k-menubar">
-    Menubar
-</div><!-- .k-menubar-->
-
-Styleguide 2.14
-*/
+  /* Menu */
+  /* Menu logo */
+  /* Menu nav */
+  /* Mobile settings */
+  /* Toggler */
   /* Modal
    ========================================================================== */
   /*
@@ -8507,23 +8495,279 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   margin-left: 0.75em;
 }
 
-.k-ui-namespace .k-menubar {
-  border-bottom: 1px solid #030303;
-  min-height: 39px;
-  background: #222222;
-  color: #fbfbfb;
-  padding: 10.5px;
-  line-height: 21px;
-  font-size: 18px;
-  /* When flexbox is in use */
+.k-ui-namespace .k-menu-container {
+  background: #2c3e50;
+  color: white;
 }
 
 @media (min-width: 300px) and (min-height: 391px) {
-  .k-flexbox .k-ui-namespace .k-menubar,
-  .k-flexboxlegacy .k-ui-namespace .k-menubar {
+  .k-flexbox .k-ui-namespace .k-menu-container,
+  .k-flexboxlegacy .k-ui-namespace .k-menu-container {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .k-ui-namespace .k-menu-container {
+    position: relative;
+    z-index: 11;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.k-ui-namespace .k-menu-container__logo {
+  height: 48px;
+}
+
+.k-ui-namespace .k-menu-container__logo a, .k-ui-namespace .k-menu-container__logo img {
+  display: inline-block;
+  vertical-align: middle;
+  width: auto;
+  color: inherit;
+}
+
+.k-ui-namespace .k-menu-container__logo a {
+  padding: 12px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.k-ui-namespace .k-menu-container__logo a:focus, .k-ui-namespace .k-menu-container__logo a:hover {
+  background: #1f2c39;
+}
+
+.k-ui-namespace .k-menu-container__logo img {
+  max-height: 24px;
+}
+
+.k-ui-namespace .k-menu-container__nav {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  bottom: 0;
+  width: 276px;
+  display: none;
+  background: #2c3e50;
+  overflow: auto;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.1);
+  /* On desktop */
+  /* First level */
+}
+
+@media screen and (min-width: 768px) {
+  .k-ui-namespace .k-menu-container__nav {
+    position: static;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    box-shadow: none;
+    height: 48px;
+    width: auto;
+    overflow: visible;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+  }
+}
+
+.k-ui-namespace .k-menu-container__nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .k-ui-namespace .k-menu-container__nav .k-menu-right {
+    float: right;
+  }
+  .k-ui-namespace .k-menu-container__nav .k-menu-right ul {
+    left: auto;
+    right: 1px;
+  }
+}
+
+.k-ui-namespace .k-menu-container__nav li {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  /* Second level */
+}
+
+@media screen and (min-width: 768px) {
+  .k-ui-namespace .k-menu-container__nav li {
+    float: left;
+  }
+}
+
+.k-ui-namespace .k-menu-container__nav li.divider {
+  height: 2px;
+  background: rgba(0, 0, 0, 0.1);
+  margin: 2px 0;
+}
+
+.k-ui-namespace .k-menu-container__nav li.is-disabled, .k-ui-namespace .k-menu-container__nav li.disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.k-ui-namespace .k-menu-container__nav li.is-disabled a, .k-ui-namespace .k-menu-container__nav li.disabled a {
+  pointer-events: none;
+}
+
+.k-ui-namespace .k-menu-container__nav li > a {
+  line-height: 40px;
+  position: relative;
+  z-index: 0;
+  display: block;
+  padding: 0 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  color: inherit;
+  text-shadow: none;
+  text-decoration: none;
+}
+
+.k-ui-namespace .k-menu-container__nav li > a.has-open-submenu {
+  z-index: 1;
+  background: #1f2c39;
+  text-decoration: none;
+}
+
+.k-ui-namespace .k-menu-container__nav li > a:focus, .k-ui-namespace .k-menu-container__nav li > a:hover {
+  text-decoration: none;
+  background: #1f2c39;
+}
+
+.k-ui-namespace .k-menu-container__nav li > a:not(:only-child):after {
+  display: inline-block;
+  content: " ";
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 2px solid transparent;
+  border-top: 4px solid;
+  margin-left: 8px;
+}
+
+@media screen and (min-width: 768px) {
+  .k-ui-namespace .k-menu-container__nav li > a {
+    height: 48px;
+    border-bottom: none;
+    line-height: 48px;
+    padding: 0 8px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .k-ui-namespace .k-menu-container__nav li > a {
+    padding: 0 12px;
+  }
+}
+
+.k-ui-namespace .k-menu-container__nav li ul {
+  display: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 4px 0;
+  background: #395067;
+}
+
+@media screen and (min-width: 768px) {
+  .k-ui-namespace .k-menu-container__nav li ul {
+    background: white;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.33);
+    position: absolute;
+    z-index: 0;
+    top: 100%;
+    left: 1px;
+    width: 180px;
+    border-bottom: none;
+    padding: 2px;
+  }
+}
+
+.k-ui-namespace .k-menu-container__nav li ul li {
+  float: none;
+  background: transparent;
+}
+
+.k-ui-namespace .k-menu-container__nav li ul a {
+  height: 32px;
+  line-height: 32px;
+  border-bottom: none;
+}
+
+.k-ui-namespace .k-menu-container__nav li ul a:focus, .k-ui-namespace .k-menu-container__nav li ul a:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (min-width: 768px) {
+  .k-ui-namespace .k-menu-container__nav li ul a {
+    color: #2c3e50;
+  }
+}
+
+.k-ui-namespace .k-menu-container__nav li .has-open-submenu + ul {
+  display: block;
+}
+
+.k-ui-namespace.k-is-opened-right {
+  overflow: visible;
+}
+
+.k-ui-namespace.k-is-opened-right .k-menu-container__nav {
+  display: block;
+}
+
+.k-ui-namespace.k-is-opened-right .k-wrapper > .k-off-canvas-overlay {
+  z-index: 10;
+}
+
+.k-ui-namespace .k-wrapper {
+  transition: -webkit-transform 200ms ease-in-out;
+  transition: transform 200ms ease-in-out;
+}
+
+.k-ui-namespace.k-show-right-menu .k-wrapper {
+  -webkit-transform: translateX(-276px);
+          transform: translateX(-276px);
+}
+
+@media screen and (min-width: 768px) {
+  .k-ui-namespace.k-show-right-menu .k-wrapper {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+.k-ui-namespace.k-show-right-menu .k-wrapper > .k-off-canvas-overlay {
+  opacity: 0.75;
+}
+
+.k-ui-namespace .menu-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white;
+  border: 1px solid white;
+  background: transparent;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin: 8px;
+}
+
+@media screen and (min-width: 768px) {
+  .k-ui-namespace .menu-toggle {
+    display: none;
   }
 }
 
@@ -11709,7 +11953,21 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   /* 2 */
   color: #222222;
   font-size: 21px;
+  background: #425d77;
+  border-bottom-color: #3a526a;
+  color: white;
+  border-bottom: none;
   /* When flexbox is in use */
+}
+
+.k-ui-namespace .k-title-bar .k-off-canvas-menu-toggle {
+  background: white;
+}
+
+.k-ui-namespace .k-title-bar .k-off-canvas-menu-toggle .k-toggle-button-bar1,
+.k-ui-namespace .k-title-bar .k-off-canvas-menu-toggle .k-toggle-button-bar2,
+.k-ui-namespace .k-title-bar .k-off-canvas-menu-toggle .k-toggle-button-bar3 {
+  background: #2c3e50;
 }
 
 @media (min-width: 300px) and (min-height: 391px) {

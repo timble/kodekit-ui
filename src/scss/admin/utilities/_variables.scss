@@ -262,6 +262,12 @@ $k-color-type-lighter:    #444444 !default;
 $k-color-type-light:      lighten($k-color-type, 50%) !default;
 
 
+// Base color
+
+$k-color-base: #2c3e50 !default;
+$k-color-base-type: white !default;
+
+
 // Accent color
 
 $k-color-accent:          #3071a9 !default;
@@ -284,6 +290,7 @@ $k-color-warning-type:    white !default;
 
 
 // Elements
+
 $k-color-button:          white !default;
 $k-color-forms:           white !default;
 $k-color-forms-disabled:  #ddd !default;
@@ -314,13 +321,12 @@ $k-koowa-background:  white !default;
 $k-koowa-padding:     0 !default;
 
 
-// Menubar
+// Menu
 // ==========================================================================
 
-$k-menubar-height:       $k-unit-size !default;
-$k-menubar-background:   $k-color-primary-min-7 !default;
-$k-menubar-border:       darkest($k-menubar-background) !default;;
-$k-menubar-color:        $k-color-primary-plus-5 !default;
+$k-menu-breakpoint: $k-charlie !default;
+$k-menu-background: $k-color-base !default;
+$k-menu-color: $k-color-base-type !default;
 
 
 // Content

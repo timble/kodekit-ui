@@ -112,6 +112,104 @@
             }
         }
 
+
+
+        // Initiate responsive top menu
+
+        // Menu itself
+        var $menu = $('#k-js-menu');
+
+        // See if it exists
+        if ($menu.length) {
+
+            // Variables
+            var $menuItem = $('#k-js-menu > ul > li > a'),
+                menuClass = 'has-open-menu',
+                submenuClass = 'has-open-submenu';
+
+            var toggle_button = '<button type="button" id="k-js-menu-toggle" class="menu-toggle" title="Menu toggle" aria-label="Menu toggle">Menu</button>';
+            var offcanvasoverlay = '<div class="k-off-canvas-overlay"></div>';
+
+            // Append toggle button and overlay
+            $menu.parent().append($(toggle_button));
+            $('.k-js-wrapper').append($(offcanvasoverlay));
+
+            // Off canvas
+            $menu.offCanvasMenu({
+                menuToggle: $('#k-js-menu-toggle'),
+                position: 'right',
+                container: $('.k-wrapper'),
+                expandedWidth: '276',
+                wrapper: $('.k-ui-container')
+            });
+
+            // Click a menu item
+            function clickMenuItem($element) {
+                $element.on('click', function(event) {
+                    event.preventDefault();
+                    if ( $menu.hasClass(menuClass) && $(this).hasClass(submenuClass) ) {
+                        closeMenu();
+                    } else {
+                        openMenuItem($(this));
+                    }
+                });
+            }
+
+            // Open a menu item
+            function openMenuItem($element) {
+                if ( $menu.hasClass(menuClass) && $(this).hasClass(submenuClass) ) {
+                    closeMenu();
+                } else {
+                    $('.' + submenuClass).removeClass(submenuClass);
+                    $element.addClass(submenuClass);
+                    $menu.addClass(menuClass);
+                }
+            }
+
+            // Hover a menu item
+            function hoverMenuItem() {
+                $menuItem.on('mouseover', function(event) {
+                    // Only on desktop
+                    if ( $('.k-menu-container').css('z-index') == 3 ) {
+                        event.preventDefault();
+                        if ( $menu.hasClass(menuClass) ) {
+                            openMenuItem($(this));
+                        }
+                    }
+                });
+            }
+
+            // Close all items
+            function closeMenu() {
+                $menu.removeClass(menuClass).find('.' + submenuClass).removeClass(submenuClass);
+            }
+
+            // Initiate
+            clickMenuItem($menuItem);
+            hoverMenuItem();
+
+            // On clicking next to the menu
+            $(document).mouseup(function(e) {
+                var $navigationList = $('.k-menu-container__nav > ul');
+
+                // if the target of the click isn't the container nor a descendant of the container
+                if (!$navigationList.is(e.target) && $navigationList.has(e.target).length === 0)
+                {
+                    closeMenu();
+                }
+            });
+
+            // On ESC key
+            $(document).keyup(function(e) {
+                if (e.keyCode === 27) {
+                    closeMenu();
+                }
+            });
+        };
+
+
+
+
         // Footable
         $footable.footable({
             toggleSelector: '.footable-toggle',
