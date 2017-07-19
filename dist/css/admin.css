@@ -4298,6 +4298,7 @@ Styleguide 2.22
  *
  * Hide tabbable panes to start, show them when `.k-is-active`
  */
+  /* NEW */
   /* Title bar
    ========================================================================== */
   /*
@@ -11690,11 +11691,67 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 .k-ui-namespace .k-tabs-content > .k-tab {
   display: none;
-  padding: 13px;
 }
 
 .k-ui-namespace .k-tabs-content > .k-is-active {
   display: block;
+}
+
+.k-ui-namespace .k-tabs-container {
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  /* When flexbox is in use */
+  /* When resizing */
+}
+
+.k-ui-namespace .k-tabs-container:before, .k-ui-namespace .k-tabs-container:after {
+  display: table;
+  content: " ";
+}
+
+.k-ui-namespace .k-tabs-container:after {
+  clear: both;
+}
+
+@media (min-width: 300px) and (min-height: 391px) {
+  .k-flexbox .k-ui-namespace .k-tabs-container,
+  .k-flexboxlegacy .k-ui-namespace .k-tabs-container {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+  }
+}
+
+.k-is-resizing .k-ui-namespace .k-tabs-container {
+  overflow: hidden;
+}
+
+.k-ui-namespace .k-tabs-container .k-tabs {
+  margin: 0;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background: white;
+}
+
+.k-ui-namespace .k-tabs-container .k-tabs-content:before, .k-ui-namespace .k-tabs-container .k-tabs-content:after {
+  display: table;
+  content: " ";
+}
+
+.k-ui-namespace .k-tabs-container .k-tabs-content:after {
+  clear: both;
+}
+
+.k-ui-namespace .k-tabs-container:not(:first-child) > .k-tabs {
+  border-top: 1px solid #ddd;
+}
+
+.k-ui-namespace .k-tabs > li.k-is-active > a {
+  background: #fbfbfb;
+  color: #222222;
 }
 
 .k-ui-namespace .k-title-bar {
