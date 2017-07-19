@@ -3277,6 +3277,27 @@ Styleguide 2.13
   /**
  * 1. Reset default <ul> styling
  */
+  /* ==========================================================================
+   Login screen
+   ========================================================================== */
+  /**
+ * Login container
+ *
+ * Container holding the login window
+ *
+ * 1. Setting up for centering the login window
+ */
+  /**
+ * Login window
+ *
+ * 1. Horizontal and vertical centering
+ */
+  /**
+ * Brand
+ */
+  /**
+ * Form
+ */
   /* Menubar
    ========================================================================== */
   /*
@@ -8505,6 +8526,100 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 [dir="rtl"] .k-ui-namespace .k-list [class^="k-icon"] {
   margin-right: auto;
   margin-left: 0.75em;
+}
+
+.k-ui-namespace .k-login-container {
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  /* 1 */
+  white-space: nowrap;
+  /* 1 */
+  padding: 20px;
+  /**
+   * Pseudo element for vertical centering
+   *
+   * 1. Adjusts for spacing
+   */
+  /* Use flexbox when available */
+}
+
+.k-ui-namespace .k-login-container:before {
+  content: ' ';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em;
+  /* 1 */
+}
+
+@media (min-width: 0) and (min-height: 0) {
+  .k-flexbox .k-ui-namespace .k-login-container,
+  .k-flexboxlegacy .k-ui-namespace .k-login-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    /* Hide the pseudo eleemnt when using flexbox */
+  }
+  .k-flexbox .k-ui-namespace .k-login-container:before,
+  .k-flexboxlegacy .k-ui-namespace .k-login-container:before {
+    display: none;
+  }
+}
+
+.k-ui-namespace .k-login {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  margin: auto;
+  display: inline-block;
+  /* 1 */
+  vertical-align: middle;
+  /* 1 */
+  /* Don't flex this window, it needs to be as big as it's children */
+}
+
+@media (min-width: 0) and (min-height: 0) {
+  .k-flexbox .k-ui-namespace .k-login,
+  .k-flexboxlegacy .k-ui-namespace .k-login {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+  }
+}
+
+.k-ui-namespace .k-login__brand {
+  display: block;
+  height: auto;
+  width: auto;
+  max-width: 100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.k-ui-namespace .k-login__brand img {
+  max-height: 100%;
+  vertical-align: middle;
+}
+
+.k-ui-namespace .k-login__content {
+  background: white;
+  color: #222222;
+  width: 100%;
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  white-space: normal;
 }
 
 .k-ui-namespace .k-menubar {

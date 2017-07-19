@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="nl" class="k-no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kodekit UI Demo page</title>
+    <link rel="stylesheet" href="../../dist/css/admin.min.css">
+    <script src="../../dist/js/modernizr.min.js"></script>
+    <script src="../../dist/js/jquery.min.js"></script>
+    <script src="../../dist/js/admin.min.js"></script>
+</head>
+<body>
+<script data-inline type="text/javascript">(function(){var el=document.documentElement;var cl="k-js-enabled";if(el.classList){el.classList.add(cl);}else{el.className+=" "+cl;}})()</script>
+
+<div class="k-ui-container k-ui-namespace">
+
+    <!-- Wrapper -->
+    <div class="k-wrapper k-js-wrapper">
+
+        <!-- Login container -->
+        <div class="k-login-container">
+
+            <!-- Login -->
+            <div class="k-login">
+
+                <div class="k-login__brand">Brand</div>
+
+                <div class="k-login__content">
+                    <form>
+
+                        <input type="hidden" name="option" value="com_users"/>
+                        <input type="hidden" name="task" value="session.login"/>
+                        <input type="hidden" name="return" value="<?php echo $return; ?>"/>
+                        <?php echo JHtml::_('form.token'); ?>
+
+                        <div class="k-form-group">
+                            <label for="username">Username</label>
+                            <input name="username" id="username" type="text" class="k-form-control" placeholder="Username" autofocus="true" />
+                        </div>
+                        <div class="k-form-group">
+                            <label for="password">Password</label>
+                            <input name="password" id="password" type="password" class="k-form-control" placeholder="Password" />
+                        </div>
+                        <div class="k-form-group">
+                            <button class="k-button k-button--primary k-button--block">Login</button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+
+        </div><!-- .k-login-container -->
+
+    </div><!-- .k-wrapper -->
+
+</div>
+
+</body>
+</html>
