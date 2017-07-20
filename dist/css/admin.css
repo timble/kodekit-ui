@@ -11657,6 +11657,9 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 .k-ui-namespace .k-tabs-scroller > .k-tabs {
   padding: 10px 10px 0;
   background: white;
+  white-space: nowrap;
+  display: inline-block;
+  min-width: 100%;
 }
 
 @media screen and (min-width: 768px) {
@@ -11679,9 +11682,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   list-style: none;
   border-bottom: 1px solid gainsboro;
   font-size: 0;
-  white-space: nowrap;
-  display: inline-block;
-  min-width: 100%;
   /**
    * 1. Make the list-items overlay the bottom border
    */

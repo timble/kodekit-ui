@@ -54,6 +54,9 @@
   > .k-tabs {
     padding: ($k-spacing / 2) ($k-spacing / 2) 0;
     background: $k-nav-tabs-active-link-hover-background;
+    white-space: nowrap;
+    display: inline-block;
+    min-width: 100%;
 
     @include breakpoint($k-charlie) {
       padding-left: $k-spacing;
@@ -81,9 +84,6 @@
   list-style: none;
   border-bottom: 1px solid $k-nav-tabs-border;
   font-size: 0;
-  white-space: nowrap;
-  display: inline-block;
-  min-width: 100%;
 
 
   /**
