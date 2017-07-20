@@ -17229,6 +17229,13 @@ var Konami = function (callback) {
                 scrollerWidth = tabsScroller.innerWidth(),
                 scrollLeft = tabsScroller.scrollLeft();
 
+            // Show / hide buttons
+            if (tabsWidth > scrollerWidth) {
+                tabsWrapper.addClass('k-has-overflow');
+            } else {
+                tabsWrapper.removeClass('k-has-overflow');
+            }
+
             // Prev
             if ((tabsWidth > scrollerWidth) && (scrollLeft > 0)) {
                 tabsWrapper.addClass('k-has-left-overflow');
@@ -17285,7 +17292,7 @@ var Konami = function (callback) {
 
             tabsScroller.animate({
                 scrollLeft: scroll
-            }, 400);
+            }, 200);
         }
 
         calculateTabsScroll();

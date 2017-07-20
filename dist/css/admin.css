@@ -11805,6 +11805,12 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   -webkit-backface-visibility: hidden;
 }
 
+.k-ui-namespace .k-tabs-scroller-prev span,
+.k-ui-namespace .k-tabs-scroller-next span {
+  transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+  -webkit-backface-visibility: hidden;
+}
+
 .k-ui-namespace .k-tabs-scroller-prev {
   left: 0;
   border-left: none;
@@ -11819,23 +11825,39 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
           transform: translateX(100%);
 }
 
-.k-ui-namespace .k-has-left-overflow {
+.k-ui-namespace .k-has-overflow {
   padding-left: 32px;
-}
-
-.k-ui-namespace .k-has-left-overflow .k-tabs-scroller-prev {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
-  opacity: 1;
-}
-
-.k-ui-namespace .k-has-right-overflow {
   padding-right: 32px;
 }
 
-.k-ui-namespace .k-has-right-overflow .k-tabs-scroller-next {
+.k-ui-namespace .k-has-overflow .k-tabs-scroller-prev,
+.k-ui-namespace .k-has-overflow .k-tabs-scroller-next {
   -webkit-transform: translateX(0);
           transform: translateX(0);
+  cursor: no-drop;
+  opacity: 1;
+}
+
+.k-ui-namespace .k-has-overflow .k-tabs-scroller-prev span,
+.k-ui-namespace .k-has-overflow .k-tabs-scroller-next span {
+  opacity: 0.33;
+}
+
+.k-ui-namespace .k-has-left-overflow .k-tabs-scroller-prev {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.k-ui-namespace .k-has-left-overflow .k-tabs-scroller-prev span {
+  opacity: 1;
+}
+
+.k-ui-namespace .k-has-right-overflow .k-tabs-scroller-next {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.k-ui-namespace .k-has-right-overflow .k-tabs-scroller-next span {
   opacity: 1;
 }
 

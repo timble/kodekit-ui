@@ -232,6 +232,10 @@ Styleguide 2.22
   background: white;
   border: 1px solid #ddd;
   @include transition;
+
+  span {
+    @include transition;
+  }
 }
 
 .k-tabs-scroller-prev {
@@ -246,20 +250,40 @@ Styleguide 2.22
   transform: translateX(100%);
 }
 
-.k-has-left-overflow {
+.k-has-overflow {
   padding-left: 32px;
+  padding-right: 32px;
 
-  .k-tabs-scroller-prev {
+  .k-tabs-scroller-prev,
+  .k-tabs-scroller-next {
     transform: translateX(0);
+    cursor: no-drop;
     opacity: 1;
+
+    span {
+      opacity: 0.33;
+    }
+  }
+}
+
+.k-has-left-overflow {
+  .k-tabs-scroller-prev {
+    opacity: 1;
+    cursor: pointer;
+
+    span {
+      opacity: 1;
+    }
   }
 }
 
 .k-has-right-overflow {
-  padding-right: 32px;
-
   .k-tabs-scroller-next {
-    transform: translateX(0);
     opacity: 1;
+    cursor: pointer;
+
+    span {
+      opacity: 1;
+    }
   }
 }
