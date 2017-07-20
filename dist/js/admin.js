@@ -17108,17 +17108,6 @@ var Konami = function (callback) {
             }
         });
 
-        // Add class to body when resizing so we can add styling to the page
-        $(window).on('resize', function() {
-            $('body').addClass(resizeClass);
-
-            // Remove the class when resize is done
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(function() {
-                $('body').removeClass(resizeClass);
-            }, 200);
-        });
-
         // Filter and search toggle buttons in the scopebar
         if ( $scopebar.length ) {
 
@@ -17218,6 +17207,118 @@ var Konami = function (callback) {
                 {"label":"Sub category 3","id":8,"parent":4}
             ]
         });
+
+
+
+
+
+        // Tabs scroller
+        var tabsScroller = $('.k-js-tabs-scroller'),
+            tabs = $('.k-js-tabs'),
+            tabsWrapper = $('.k-js-tabs-wrapper');
+
+        if ( tabsScroller.length ) {
+
+            // Append buttons
+            tabsWrapper.prepend('<button type="button" class="k-tabs-scroller-prev"><span class="k-icon-chevron-left"></span><span class="k-visually-hidden">Scroll left</span></button>');
+            tabsWrapper.append('<button type="button" class="k-tabs-scroller-next"><span class="k-icon-chevron-right"></span><span class="k-visually-hidden">Scroll right</span></button>');
+        }
+
+        function calculateTabsScroll() {
+            var tabsWidth = tabs.outerWidth(),
+                scrollerWidth = tabsScroller.innerWidth(),
+                scrollLeft = tabsScroller.scrollLeft();
+
+            // Prev
+            if ((tabsWidth > scrollerWidth) && (scrollLeft > 0)) {
+                tabsWrapper.addClass('k-has-left-overflow');
+            }
+
+            // Next
+            if ((tabsWidth > scrollerWidth)) {
+                tabsWrapper.addClass('k-has-right-overflow');
+            }
+
+            // Prev
+            if ((tabsWidth <= scrollerWidth) || (scrollLeft <= 0)) {
+                tabsWrapper.removeClass('k-has-left-overflow');
+            }
+
+            // Next
+            if ((tabsWidth <= scrollerWidth) || (scrollLeft >= (tabsWidth - scrollerWidth))) {
+                tabsWrapper.removeClass('k-has-right-overflow');
+            }
+        }
+
+        function tabsScrollClick() {
+            var tabsPrev = $('.k-tabs-scroller-prev'),
+                tabsNext = $('.k-tabs-scroller-next');
+
+            tabsPrev.on('click', function() {
+                calculateScroll('prev');
+            });
+
+            tabsNext.on('click', function() {
+                calculateScroll('next');
+            });
+        }
+
+        function calculateScroll(direction) {
+            var tabsWidth = tabs.outerWidth(),
+                scrollerWidth = tabsScroller.innerWidth(),
+                scrollLeft = tabsScroller.scrollLeft(),
+                scroll;
+
+            if ( direction == 'prev') {
+                scroll = scrollLeft - scrollerWidth;
+                if (scroll < 0 ) {
+                    scroll = 0;
+                }
+            }
+
+            if ( direction == 'next') {
+                scroll = scrollLeft + scrollerWidth;
+                if (scroll > (tabsWidth - scrollerWidth) ) {
+                    scroll = tabsWidth - scrollerWidth;
+                }
+            }
+
+            tabsScroller.animate({
+                scrollLeft: scroll
+            }, 400);
+        }
+
+        calculateTabsScroll();
+        tabsScrollClick();
+
+        tabsScroller.on('scroll', function() {
+            // Throttle
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                // Run tabs scroll function
+                calculateTabsScroll();
+            }, 200);
+        });
+
+        // On window resize
+        $(window).on('resize', function() {
+            // Add class to body when resizing so we can add styling to the page
+            $('body').addClass(resizeClass);
+
+            // Throttle
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+
+                // Remove the class when resize is done
+                $('body').removeClass(resizeClass);
+
+                // Run tabs scroll function
+                calculateTabsScroll();
+
+            }, 200);
+        });
+
+
     });
 
 })(kQuery);

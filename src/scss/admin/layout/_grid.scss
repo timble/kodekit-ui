@@ -133,5 +133,10 @@ Styleguide 3.7
 .k-container__full {
   clear: both;
   width: auto;
-  margin: 0 ($k-spacing / 2) $k-spacing;
+  margin: 0 0 $k-spacing;
+
+  @include breakpoint($k-charlie) {
+    margin-left: ($k-spacing / 2);
+    margin-right: ($k-spacing / 2);
+  }
 }

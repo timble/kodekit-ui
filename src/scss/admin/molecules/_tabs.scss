@@ -53,22 +53,16 @@ Styleguide 2.22
     overflow: hidden;
   }
 
-  .k-tabs {
-    padding: ($k-spacing / 2) $k-spacing 0;
-    background: $k-nav-tabs-active-link-hover-background;
-  }
-
-  .k-tabs-content {
-    @include clearfix;
-  }
-
-  &:not(:first-child) > .k-tabs {
+  &:not(:first-child) .k-tabs-scroller .k-tabs {
     border-top: 1px solid $k-nav-tabs-border;
   }
 
-  .k-tabs li.k-is-active a {
-    background: $k-component-background;
-    color: $k-color-type;
+  > .k-tabs-content {
+    @include clearfix;
+
+    > .k-tab {
+      padding: 0;
+    }
   }
 }
 
@@ -77,12 +71,40 @@ Styleguide 2.22
  * Tabs
  */
 
+.k-tabs-wrapper {
+  height: 48px;
+  overflow: hidden;
+}
+
+.k-tabs-scroller {
+  height: 80px;
+  overflow: auto;
+
+  > .k-tabs {
+    padding: ($k-spacing / 2) ($k-spacing / 2) 0;
+    background: $k-nav-tabs-active-link-hover-background;
+
+    @include breakpoint($k-charlie) {
+      padding-left: $k-spacing;
+      padding-right: $k-spacing;
+    }
+  }
+
+  > .k-tabs li.k-is-active a {
+    background: $k-component-background;
+    color: $k-color-type;
+  }
+}
+
 .k-tabs {
-  @include clearfix;
   margin: 0;
   padding: 0;
   list-style: none;
   border-bottom: 1px solid $k-nav-tabs-border;
+  font-size: 0;
+  white-space: nowrap;
+  display: inline-block;
+  min-width: 100%;
 
 
   /**
@@ -91,9 +113,9 @@ Styleguide 2.22
 
   li {
     position: relative;
-    display: block;
-    float: left;
+    display: inline-block;
     margin-bottom: -1px; /* 1 */
+    margin-right: 2px;
   }
 
 
@@ -141,11 +163,11 @@ Styleguide 2.22
     position: relative;
     display: block;
     padding: $k-nav-tabs-link-spacing;
-    margin-right: 2px;
     line-height: $k-line-height;
     border: 1px solid transparent;
     border-radius: $k-border-radius $k-border-radius 0 0;
     text-decoration: none;
+    font-size: $k-font-size;
 
     &:hover,
     &:focus {
@@ -170,6 +192,7 @@ Styleguide 2.22
   }
 }
 
+
 /**
  * Tabbable tabs
  *
@@ -177,12 +200,66 @@ Styleguide 2.22
  */
 
 .k-tabs-content {
-  & > .k-tab {
+  > .k-tab {
     display: none;
-    //padding: $k-spacing-small;
+    padding: $k-spacing-small;
   }
 
-  & > .k-is-active {
+  > .k-is-active {
     display: block;
+  }
+}
+
+
+
+
+
+.k-tabs-wrapper {
+  position: relative;
+  @include transition;
+}
+
+.k-tabs-scroller-prev,
+.k-tabs-scroller-next {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  bottom: 1px;
+  width: 32px;
+  overflow: hidden;
+  opacity: 0;
+  background: white;
+  border: 1px solid #ddd;
+  @include transition;
+}
+
+.k-tabs-scroller-prev {
+  left: 0;
+  border-left: none;
+  transform: translateX(-100%);
+}
+
+.k-tabs-scroller-next {
+  right: 0;
+  border-right: none;
+  transform: translateX(100%);
+}
+
+.k-has-left-overflow {
+  padding-left: 32px;
+
+  .k-tabs-scroller-prev {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.k-has-right-overflow {
+  padding-right: 32px;
+
+  .k-tabs-scroller-next {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
