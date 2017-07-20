@@ -11627,7 +11627,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   width: 100%;
   margin: 0 auto;
   padding: 0;
-  /* When flexbox is in use */
   /* When resizing */
 }
 
@@ -11638,15 +11637,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 .k-ui-namespace .k-tabs-container:after {
   clear: both;
-}
-
-@media (min-width: 300px) and (min-height: 391px) {
-  .k-flexbox .k-ui-namespace .k-tabs-container,
-  .k-flexboxlegacy .k-ui-namespace .k-tabs-container {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 auto;
-            flex: 0 0 auto;
-  }
 }
 
 .k-is-resizing .k-ui-namespace .k-tabs-container {
@@ -11825,39 +11815,39 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
           transform: translateX(100%);
 }
 
-.k-ui-namespace .k-has-overflow {
+.k-ui-namespace .k-has-tabs-overflow {
   padding-left: 32px;
   padding-right: 32px;
 }
 
-.k-ui-namespace .k-has-overflow .k-tabs-scroller-prev,
-.k-ui-namespace .k-has-overflow .k-tabs-scroller-next {
+.k-ui-namespace .k-has-tabs-overflow .k-tabs-scroller-prev,
+.k-ui-namespace .k-has-tabs-overflow .k-tabs-scroller-next {
   -webkit-transform: translateX(0);
           transform: translateX(0);
   cursor: no-drop;
   opacity: 1;
 }
 
-.k-ui-namespace .k-has-overflow .k-tabs-scroller-prev span,
-.k-ui-namespace .k-has-overflow .k-tabs-scroller-next span {
+.k-ui-namespace .k-has-tabs-overflow .k-tabs-scroller-prev span,
+.k-ui-namespace .k-has-tabs-overflow .k-tabs-scroller-next span {
   opacity: 0.33;
 }
 
-.k-ui-namespace .k-has-left-overflow .k-tabs-scroller-prev {
+.k-ui-namespace .k-has-tabs-left-overflow .k-tabs-scroller-prev {
   opacity: 1;
   cursor: pointer;
 }
 
-.k-ui-namespace .k-has-left-overflow .k-tabs-scroller-prev span {
+.k-ui-namespace .k-has-tabs-left-overflow .k-tabs-scroller-prev span {
   opacity: 1;
 }
 
-.k-ui-namespace .k-has-right-overflow .k-tabs-scroller-next {
+.k-ui-namespace .k-has-tabs-right-overflow .k-tabs-scroller-next {
   opacity: 1;
   cursor: pointer;
 }
 
-.k-ui-namespace .k-has-right-overflow .k-tabs-scroller-next span {
+.k-ui-namespace .k-has-tabs-right-overflow .k-tabs-scroller-next span {
   opacity: 1;
 }
 

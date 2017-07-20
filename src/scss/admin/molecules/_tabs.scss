@@ -43,11 +43,6 @@ Styleguide 2.22
   margin: 0 auto;
   padding: 0;
 
-  /* When flexbox is in use */
-  @include flexbox {
-    flex: 0 0 auto;
-  }
-
   /* When resizing */
   @include resizing {
     overflow: hidden;
@@ -250,7 +245,7 @@ Styleguide 2.22
   transform: translateX(100%);
 }
 
-.k-has-overflow {
+.k-has-tabs-overflow {
   padding-left: 32px;
   padding-right: 32px;
 
@@ -266,7 +261,7 @@ Styleguide 2.22
   }
 }
 
-.k-has-left-overflow {
+.k-has-tabs-left-overflow {
   .k-tabs-scroller-prev {
     opacity: 1;
     cursor: pointer;
@@ -277,7 +272,7 @@ Styleguide 2.22
   }
 }
 
-.k-has-right-overflow {
+.k-has-tabs-right-overflow {
   .k-tabs-scroller-next {
     opacity: 1;
     cursor: pointer;

@@ -17231,29 +17231,29 @@ var Konami = function (callback) {
 
             // Show / hide buttons
             if (tabsWidth > scrollerWidth) {
-                tabsWrapper.addClass('k-has-overflow');
+                tabsWrapper.addClass('k-has-tabs-overflow');
             } else {
-                tabsWrapper.removeClass('k-has-overflow');
+                tabsWrapper.removeClass('k-has-tabs-overflow');
             }
 
             // Prev
             if ((tabsWidth > scrollerWidth) && (scrollLeft > 0)) {
-                tabsWrapper.addClass('k-has-left-overflow');
+                tabsWrapper.addClass('k-has-tabs-left-overflow');
             }
 
             // Next
             if ((tabsWidth > scrollerWidth)) {
-                tabsWrapper.addClass('k-has-right-overflow');
+                tabsWrapper.addClass('k-has-tabs-right-overflow');
             }
 
             // Prev
             if ((tabsWidth <= scrollerWidth) || (scrollLeft <= 0)) {
-                tabsWrapper.removeClass('k-has-left-overflow');
+                tabsWrapper.removeClass('k-has-tabs-left-overflow');
             }
 
             // Next
             if ((tabsWidth <= scrollerWidth) || (scrollLeft >= (tabsWidth - scrollerWidth))) {
-                tabsWrapper.removeClass('k-has-right-overflow');
+                tabsWrapper.removeClass('k-has-tabs-right-overflow');
             }
         }
 
@@ -17292,7 +17292,7 @@ var Konami = function (callback) {
 
             tabsScroller.animate({
                 scrollLeft: scroll
-            }, 200);
+            }, 400);
         }
 
         calculateTabsScroll();
