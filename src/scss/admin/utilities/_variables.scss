@@ -321,7 +321,21 @@ $k-koowa-background:  white !default;
 $k-koowa-padding:     0 !default;
 
 
-// Menu
+// Login
+// ==========================================================================
+
+$k-login-container-spacing:     $k-spacing !default;
+$k-login-container-background:  $k-color-base !default;
+$k-login-container-color:       $k-color-base-type !default;
+$k-login-width:                 360px !default;
+$k-login-radius:                4px !default;
+$k-login-background:            white !default;
+$k-login-color:                 $k-color-type !default;
+$k-login-spacing:               $k-spacing !default;
+$k-login-shadow:                0 6px 0 -4px rgba(0,0,0,.3) !default;
+
+
+// Menubar
 // ==========================================================================
 
 $k-menu-breakpoint:   $k-charlie !default;
