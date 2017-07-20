@@ -35,28 +35,31 @@ Styleguide 2.23
   font-size: $k-font-size-huge;
 
 
-  // Do we like this better? START
-  background: lighten($k-color-base, 12%);
-  border-bottom-color: lighten($k-color-base, 8%);
-  color: $k-color-base-type;
-  border-bottom: none;
-
-  .k-off-canvas-menu-toggle {
-    background: $k-color-base-type;
-
-    .k-toggle-button-bar1,
-    .k-toggle-button-bar2,
-    .k-toggle-button-bar3 {
-      background: $k-color-base;
-    }
-  }
-  // Do we like this better? END
-
-
   /* When flexbox is in use */
 
   @include flexbox {
     flex: 0 0 auto;
+  }
+}
+
+
+/**
+ * Dark theme
+ */
+
+.k-title-bar--dark {
+  background: $k-title-bar--dark-background;
+  color: $k-title-bar--dark-color;
+  border-bottom: none;
+
+  .k-off-canvas-menu-toggle {
+    background: $k-title-bar--dark-color;
+
+    .k-toggle-button-bar1,
+    .k-toggle-button-bar2,
+    .k-toggle-button-bar3 {
+      background: $k-title-bar--dark-background;
+    }
   }
 }
 

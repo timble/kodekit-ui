@@ -4310,6 +4310,9 @@ Styleguide 2.23
  * 2. Setting a background so container will fall nicely over the sidebar
  */
   /**
+ * Dark theme
+ */
+  /**
  * Titlebar contents
  */
   /*
@@ -11953,21 +11956,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   /* 2 */
   color: #222222;
   font-size: 21px;
-  background: #425d77;
-  border-bottom-color: #3a526a;
-  color: white;
-  border-bottom: none;
   /* When flexbox is in use */
-}
-
-.k-ui-namespace .k-title-bar .k-off-canvas-menu-toggle {
-  background: white;
-}
-
-.k-ui-namespace .k-title-bar .k-off-canvas-menu-toggle .k-toggle-button-bar1,
-.k-ui-namespace .k-title-bar .k-off-canvas-menu-toggle .k-toggle-button-bar2,
-.k-ui-namespace .k-title-bar .k-off-canvas-menu-toggle .k-toggle-button-bar3 {
-  background: #2c3e50;
 }
 
 @media (min-width: 300px) and (min-height: 391px) {
@@ -11977,6 +11966,22 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
   }
+}
+
+.k-ui-namespace .k-title-bar--dark {
+  background: #425d77;
+  color: white;
+  border-bottom: none;
+}
+
+.k-ui-namespace .k-title-bar--dark .k-off-canvas-menu-toggle {
+  background: white;
+}
+
+.k-ui-namespace .k-title-bar--dark .k-off-canvas-menu-toggle .k-toggle-button-bar1,
+.k-ui-namespace .k-title-bar--dark .k-off-canvas-menu-toggle .k-toggle-button-bar2,
+.k-ui-namespace .k-title-bar--dark .k-off-canvas-menu-toggle .k-toggle-button-bar3 {
+  background: #425d77;
 }
 
 .k-ui-namespace .k-title-bar .k-off-canvas-menu-toggle-holder,

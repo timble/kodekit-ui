@@ -264,8 +264,8 @@ $k-color-type-light:      lighten($k-color-type, 50%) !default;
 
 // Base color
 
-$k-color-base: #2c3e50 !default;
-$k-color-base-type: white !default;
+$k-color-base:            #2c3e50 !default;
+$k-color-base-type:       white !default;
 
 
 // Accent color
@@ -324,9 +324,9 @@ $k-koowa-padding:     0 !default;
 // Menu
 // ==========================================================================
 
-$k-menu-breakpoint: $k-charlie !default;
-$k-menu-background: $k-color-base !default;
-$k-menu-color: $k-color-base-type !default;
+$k-menu-breakpoint:   $k-charlie !default;
+$k-menu-background:   $k-color-base !default;
+$k-menu-color:        $k-color-base-type !default;
 
 
 // Content
@@ -342,6 +342,9 @@ $k-content-border:       darkest($k-content-background) !default;
 $k-title-bar-background:        $k-color-primary-plus-3 !default;
 $k-title-bar-border:            darkest($k-title-bar-background) !default;
 $k-title-bar-color:             $k-color-type !default;
+
+$k-title-bar--dark-background:  lighten($k-menu-background, 12%);
+$k-title-bar--dark-color:       $k-menu-color;
 
 $k-title-bar-mobilebackground:  $k-color-primary !default;
 $k-title-bar-mobileborder:      darkest($k-title-bar-mobilebackground) !default;
