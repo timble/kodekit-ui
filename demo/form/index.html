@@ -14,6 +14,35 @@
 <script data-inline type="text/javascript">(function(){var el=document.documentElement;var cl="k-js-enabled";if(el.classList){el.classList.add(cl);}else{el.className+=" "+cl;}})()</script>
 
 <div class="k-ui-container k-ui-namespace">
+    <div class="k-menu-container">
+        <div class="k-menu-container__logo">
+            <a href="#">
+                Kodekit UI
+            </a>
+        </div>
+        <div class="k-menu-container__nav" id="k-js-menu">
+            <ul>
+                <li><a href="#">Menu item 1</a></li>
+                <li>
+                    <a href="#">Menu item 2</a>
+                    <ul>
+                        <li><a href="#">Sub item 1</a></li>
+                        <li><a href="#">Sub item 2</a></li>
+                        <li><a href="#">Sub item 3</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Menu item 3</a></li>
+            </ul>
+            <ul class="k-menu-right">
+                <li>
+                    <a href="#" title="View site" target="_blank">
+                        <span>View site</span>
+                        <span class="k-icon-external-link" aria-hidden="true"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
     <div class="k-wrapper k-js-wrapper">
         <div class="k-content-wrapper">
             <div class="k-content k-js-content">
@@ -92,45 +121,16 @@
                                                         <div class="k-file-input">
                                                             <input class="k-js-file-input" type="file" id="input-form-2" data-multiple-caption="{count} files selected" multiple />
                                                             <label for="input-form-2">
-<span class="k-file-input__button">
-<span class="k-icon-cloud-upload" aria-hidden="true"></span>
-Choose a file&hellip;
-</span>
+                                                                <span class="k-file-input__button">
+                                                                    <span class="k-icon-cloud-upload" aria-hidden="true"></span>
+                                                                    Choose a file&hellip;
+                                                                </span>
                                                                 <span class="k-file-input__files"></span>
                                                             </label>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </fieldset>
-
-
-                                            <div class="k-well">
-                                                <p>Intro content</p>
-                                                <ul class="k-tabs">
-                                                    <li class="k-is-active">
-                                                        <a href="#taba" data-k-toggle="tab">Tab 1</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#tabb" data-k-toggle="tab">Tab 2</a>
-                                                    </li>
-                                                    <li class="k-is-disabled">
-                                                        <a href="#tabc" data-k-toggle="tab">Tab 3 (disabled)</a>
-                                                    </li>
-                                                </ul>
-                                                <div class="k-tabs-content">
-                                                    <div id="taba" class="k-tab k-is-active">
-                                                        Content tab 1
-                                                    </div>
-                                                    <div id="tabb" class="k-tab">
-                                                        Content tab 2
-                                                    </div>
-                                                    <div id="tabc" class="k-tab">
-                                                        Content tab 3
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
                                         </div>
                                         <div class="k-container__sub">
                                             <fieldset class="k-form-block">
@@ -161,18 +161,17 @@ Choose a file&hellip;
                                                         <div class="k-input-group">
                                                             <input class="k-form-control" type="text"/>
                                                             <span class="k-input-group__button">
-<button type="button" class="k-button k-button--default k-js-datepicker">
-<span class="k-icon-calendar" aria-hidden="true"></span>
-<span class="k-visually-hidden">Calendar</span>
-</button>
-</span>
+                                                                <button type="button" class="k-button k-button--default k-js-datepicker">
+                                                                    <span class="k-icon-calendar" aria-hidden="true"></span>
+                                                                    <span class="k-visually-hidden">Calendar</span>
+                                                                </button>
+                                                            </span>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </fieldset>
                                         </div>
                                     </div>
-
                                 </div>
 
                                 <div id="tab2" class="k-tab">
@@ -201,7 +200,6 @@ Choose a file&hellip;
 
                             </div>
                         </div>
-
                     </form>
                 </div>
             </div>
