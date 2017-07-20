@@ -17191,10 +17191,7 @@ var Konami = function (callback) {
                     closeMenu();
                 }
             });
-        };
-
-
-
+        }
 
         // Footable
         $footable.footable({
