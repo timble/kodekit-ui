@@ -205,10 +205,7 @@
                     closeMenu();
                 }
             });
-        };
-
-
-
+        }
 
         // Footable
         $footable.footable({
