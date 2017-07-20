@@ -1,107 +1,158 @@
 /* Tabs
    ========================================================================== */
 
-/*
-Tabs
+/**
+ * Tabs container (not mandatory)
+ */
 
-markup:
-<ul class="k-tabs">
-    <li class="k-is-active">
-        <a href="#tab1" data-k-toggle="tab">Tab 1</a>
-    </li>
-    <li>
-        <a href="#tab2" data-k-toggle="tab">Tab 2</a>
-    </li>
-     <li class="k-is-disabled">
-        <a href="#tab3" data-k-toggle="tab">Tab 3 (disabled)</a>
-    </li>
-</ul>
-<div class="k-tabs-content">
-    <div id="tab1" class="k-tab k-is-active">
-        Content tab 1
-    </div>
-    <div id="tab2" class="k-tab">
-        Content tab 2
-    </div>
-    <div id="tab3" class="k-tab">
-        Content tab 3
-    </div>
-</div>
+.k-tabs-container {
+  @include clearfix;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
 
-Styleguide 2.22
+  /* When resizing */
+  @include resizing {
+    overflow: hidden;
+  }
 
-*/
+  &:not(:first-child) .k-tabs-scroller .k-tabs {
+    border-top: 1px solid $k-nav-tabs-border;
+  }
+
+  > .k-tabs-content {
+    @include clearfix;
+
+    > .k-tab {
+      padding: 0;
+    }
+  }
+}
+
+
+/**
+ * Tabs wrapper
+ */
+
+.k-tabs-wrapper {
+  position: relative;
+  height: 48px;
+  overflow: hidden;
+  @include transition;
+}
+
+
+/**
+ * Tabs scroller
+ */
+
+.k-tabs-scroller {
+  height: 80px;
+  overflow: auto;
+
+  > .k-tabs {
+    padding: ($k-spacing / 2) ($k-spacing / 2) 0;
+    background: $k-nav-tabs-active-link-hover-background;
+    white-space: nowrap;
+    display: inline-block;
+    min-width: 100%;
+
+    @include breakpoint($k-charlie) {
+      padding-left: $k-spacing;
+      padding-right: $k-spacing;
+    }
+  }
+
+  > .k-tabs li.k-is-active a {
+    background: $k-component-background;
+    color: $k-color-type;
+  }
+}
+
+
+/**
+ * Tabs wrapper
+ *
+ * 1. For proper offset calculation in JS
+ */
 
 .k-tabs {
-  @include clearfix;
-  margin-bottom: 0;
-  padding-left: 0;
+  position: relative; /* 1 */
+  margin: 0;
+  padding: 0;
   list-style: none;
   border-bottom: 1px solid $k-nav-tabs-border;
+  font-size: 0;
 
 
   /**
    * 1. Make the list-items overlay the bottom border
    */
 
-  & > li {
+  li {
+    position: relative;
+    display: inline-block;
+    margin-bottom: -1px; /* 1 */
+    margin-right: 2px;
+  }
+
+
+  /**
+   * Disabled state sets text to gray and nukes hover/tab effects
+   */
+
+  .k-is-disabled a {
+    color: $k-nav-tabs-disabled-link-color;
+    cursor: $k-cursor-disabled;
+    pointer-events: none;
+
+    &:hover,
+    &:focus {
+      color: inherit;
+      text-decoration: none;
+      background-color: transparent;
+      cursor: $k-cursor-disabled;
+    }
+  }
+
+
+  /**
+   * Active state, and its :hover to override normal :hover
+   */
+
+  .k-is-active a {
+    &,
+    &:hover,
+    &:focus {
+      color: $k-nav-tabs-active-link-hover-color;
+      background-color: $k-nav-tabs-active-link-hover-background;
+      border: 1px solid $k-nav-tabs-active-link-hover-border;
+      border-bottom-color: transparent;
+      cursor: default;
+    }
+  }
+
+
+  /**
+   * Links
+   */
+
+  a {
     position: relative;
     display: block;
-    float: left;
-    margin-bottom: -1px; /* 1 */
+    padding: $k-nav-tabs-link-spacing;
+    line-height: $k-line-height;
+    border: 1px solid transparent;
+    border-radius: $k-border-radius $k-border-radius 0 0;
+    text-decoration: none;
+    font-size: $k-font-size;
 
-    & > a {
-      position: relative;
-      display: block;
-      padding: $k-nav-tabs-link-spacing;
-      margin-right: 2px;
-      line-height: $k-line-height;
-      border: 1px solid transparent;
-      border-radius: $k-border-radius $k-border-radius 0 0;
+    &:hover,
+    &:focus {
       text-decoration: none;
-
-      &:hover,
-      &:focus {
-        text-decoration: none;
-        background-color: $k-nav-tabs-link-hover-background;
-        border-color: $k-nav-tabs-link-hover-border $k-nav-tabs-link-hover-border $k-nav-tabs-border;
-      }
-    }
-
-
-    /**
-     * Disabled state sets text to gray and nukes hover/tab effects
-     */
-
-    &.k-is-disabled > a {
-      color: $k-nav-tabs-disabled-link-color;
-      cursor: $k-cursor-disabled;
-      pointer-events: none;
-
-      &:hover,
-      &:focus {
-        color: inherit;
-        text-decoration: none;
-        background-color: transparent;
-        cursor: $k-cursor-disabled;
-      }
-    }
-
-
-    /**
-     * Active state, and its :hover to override normal :hover
-     */
-
-    &.k-is-active > a {
-      &,
-      &:hover,
-      &:focus {
-        color: $k-nav-tabs-active-link-hover-color;
-        background-color: $k-nav-tabs-active-link-hover-background;
-        border: 1px solid $k-nav-tabs-active-link-hover-border;
-        border-bottom-color: transparent;
-        cursor: default;
-      }
+      background-color: $k-nav-tabs-link-hover-background;
+      border-color: $k-nav-tabs-link-hover-border;
     }
   }
 
@@ -110,7 +161,7 @@ Styleguide 2.22
    * Open dropdowns
    */
 
-  .k-is-open > a {
+  .k-is-open a {
     &,
     &:hover,
     &:focus {
@@ -120,6 +171,7 @@ Styleguide 2.22
   }
 }
 
+
 /**
  * Tabbable tabs
  *
@@ -127,12 +179,86 @@ Styleguide 2.22
  */
 
 .k-tabs-content {
-  & > .k-tab {
+  > .k-tab {
     display: none;
     padding: $k-spacing-small;
   }
 
-  & > .k-is-active {
+  > .k-is-active {
     display: block;
+  }
+}
+
+
+/**
+ * Left and right buttons for scrollable tabs
+ */
+
+.k-tabs-scroller-prev,
+.k-tabs-scroller-next {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  bottom: 1px;
+  width: 32px;
+  overflow: hidden;
+  opacity: 0;
+  background: $k-nav-tabs-active-link-hover-background;
+  border: 1px solid $k-nav-tabs-border;
+  @include transition;
+
+  span {
+    @include transition;
+  }
+}
+
+.k-tabs-scroller-prev {
+  left: 0;
+  border-left: none;
+  transform: translateX(-100%);
+}
+
+.k-tabs-scroller-next {
+  right: 0;
+  border-right: none;
+  transform: translateX(100%);
+}
+
+.k-has-tabs-overflow {
+  padding-left: 32px;
+  padding-right: 32px;
+
+  .k-tabs-scroller-prev,
+  .k-tabs-scroller-next {
+    transform: translateX(0);
+    cursor: no-drop;
+    opacity: 1;
+
+    span {
+      opacity: 0.33;
+    }
+  }
+}
+
+.k-has-tabs-left-overflow {
+  .k-tabs-scroller-prev {
+    opacity: 1;
+    cursor: pointer;
+
+    span {
+      opacity: 1;
+    }
+  }
+}
+
+.k-has-tabs-right-overflow {
+  .k-tabs-scroller-next {
+    opacity: 1;
+    cursor: pointer;
+
+    span {
+      opacity: 1;
+    }
   }
 }

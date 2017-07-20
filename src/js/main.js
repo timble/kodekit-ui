@@ -220,17 +220,6 @@
             }
         });
 
-        // Add class to body when resizing so we can add styling to the page
-        $(window).on('resize', function() {
-            $('body').addClass(resizeClass);
-
-            // Remove the class when resize is done
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(function() {
-                $('body').removeClass(resizeClass);
-            }, 200);
-        });
-
         // Filter and search toggle buttons in the scopebar
         if ( $scopebar.length ) {
 
@@ -330,6 +319,173 @@
                 {"label":"Sub category 3","id":8,"parent":4}
             ]
         });
+
+        // Tabs scroller
+        var $tabsScroller = $('.k-js-tabs-scroller'),
+            tabsOverflowClass = 'k-has-tabs-overflow',
+            tabsOverflowLeftClass = 'k-has-tabs-left-overflow',
+            tabsOverflowRightClass = 'k-has-tabs-right-overflow',
+            tabsScrollAmount = 0.8,
+            tabsAnimationSpeed = 400;
+
+        // Only run if scroller exists
+        if ( $tabsScroller.length ) {
+
+            // Variables
+            var $tabs = $('.k-js-tabs'),
+                $tabsWrapper = $('.k-js-tabs-wrapper');
+
+            // Append buttons
+            $tabsWrapper.prepend('<button type="button" class="k-tabs-scroller-prev"><span class="k-icon-chevron-left"></span><span class="k-visually-hidden">Scroll left</span></button>');
+            $tabsWrapper.append('<button type="button" class="k-tabs-scroller-next"><span class="k-icon-chevron-right"></span><span class="k-visually-hidden">Scroll right</span></button>');
+
+            // Calculate wether there is a scrollable area and apply classes accordingly
+            function tabsCalculateScroll() {
+
+                // Variables
+                var tabsWidth = $tabs.outerWidth(),
+                    scrollerWidth = $tabsScroller.innerWidth(),
+                    scrollLeft = $tabsScroller.scrollLeft();
+
+                // Show / hide buttons
+                if (tabsWidth > scrollerWidth) {
+                    $tabsWrapper.addClass(tabsOverflowClass);
+                } else {
+                    $tabsWrapper.removeClass(tabsOverflowClass);
+                }
+
+                // "Activate" left button
+                if ((tabsWidth > scrollerWidth) && (scrollLeft > 0)) {
+                    $tabsWrapper.addClass(tabsOverflowLeftClass);
+                }
+
+                // "Activate" right button
+                if ((tabsWidth > scrollerWidth)) {
+                    $tabsWrapper.addClass(tabsOverflowRightClass);
+                }
+
+                // "Deactivate" left button
+                if ((tabsWidth <= scrollerWidth) || (scrollLeft <= 0)) {
+                    $tabsWrapper.removeClass(tabsOverflowLeftClass);
+                }
+
+                // "Deactivate" right button
+                if ((tabsWidth <= scrollerWidth) || (scrollLeft >= (tabsWidth - scrollerWidth))) {
+                    $tabsWrapper.removeClass(tabsOverflowRightClass);
+                }
+            }
+
+            // Clicking left and right buttons
+            function tabsScrollButtonClick() {
+
+                // Buttons
+                var $tabsPrev = $('.k-tabs-scroller-prev'),
+                    $tabsNext = $('.k-tabs-scroller-next');
+
+                // Prev
+                $tabsPrev.on('click', function() {
+                    calculateScroll('prev');
+                });
+
+                // Next
+                $tabsNext.on('click', function() {
+                    calculateScroll('next');
+                });
+            }
+
+            // Calculate the amount of scrolling to do
+            function calculateScroll(direction) {
+
+                // Variables
+                var tabsWidth = $tabs.outerWidth(),
+                    scrollerWidth = $tabsScroller.innerWidth(),
+                    scrollLeft = $tabsScroller.scrollLeft(),
+                    scroll;
+
+                // Left button (scroll to right)
+                if ( direction == 'prev') {
+                    scroll = scrollLeft - (scrollerWidth * tabsScrollAmount);
+                    if (scroll < 0 ) {
+                        scroll = 0;
+                    }
+                }
+
+                // Right button (scroll to left)
+                if ( direction == 'next') {
+                    scroll = scrollLeft + (scrollerWidth * tabsScrollAmount);
+                    if (scroll > (tabsWidth - scrollerWidth) ) {
+                        scroll = tabsWidth - scrollerWidth;
+                    }
+                }
+
+                // Animate the scroll
+                $tabsScroller.animate({
+                    scrollLeft: scroll
+                }, tabsAnimationSpeed);
+            }
+
+            // Run on document ready
+            tabsCalculateScroll();
+            tabsScrollButtonClick();
+
+            // Run on scrolling the tab container
+            $tabsScroller.on('scroll', function() {
+                // Throttle
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(function() {
+                    tabsCalculateScroll();
+                }, 200);
+            });
+
+            // When clicking tabs
+            $('[data-k-toggle]').on('click', function() {
+
+                // Only when inside scroller tabs
+                if ($(this).parent('li').parent('ul').parent().hasClass('k-js-tabs-scroller')) {
+                    var positionLeft = $(this).parent().position().left,
+                        positionRight = positionLeft + $(this).parent().outerWidth(),
+                        parentPaddingLeft = parseInt($tabs.css('padding-left'), 10),
+                        parentPaddingRight = parseInt($tabs.css('padding-right'), 10),
+                        scrollerOffset = $tabsScroller.scrollLeft(),
+                        scrollerWidth = $tabsScroller.innerWidth(),
+                        scroll;
+
+                    // When item falls of on the right side
+                    if ( positionRight > (scrollerOffset + scrollerWidth) ) {
+                        scroll = scrollerOffset + ((positionRight - (scrollerWidth + scrollerOffset)) + (parentPaddingRight * 2));
+                    }
+
+                    // When item falls of on the left side
+                    if ( positionLeft < scrollerOffset ) {
+                        scroll = scrollerOffset - ((scrollerOffset - positionLeft) + (parentPaddingLeft * 2));
+                    }
+
+                    // Animate the scroll
+                    $tabsScroller.animate({
+                        scrollLeft: scroll
+                    }, tabsAnimationSpeed);
+                }
+            });
+        }
+
+        // On window resize
+        $(window).on('resize', function() {
+            // Add class to body when resizing so we can add styling to the page
+            $('body').addClass(resizeClass);
+
+            // Throttle
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+
+                // Remove the class when resize is done
+                $('body').removeClass(resizeClass);
+
+                // Run tabs scroll function
+                tabsCalculateScroll();
+
+            }, 200);
+        });
+
     });
 
 })(kQuery);

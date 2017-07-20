@@ -614,12 +614,12 @@ $k-nav-tabs-link-hover-background:            $k-color-primary-plus-2 !default;
 $k-nav-tabs-disabled-link-color:              $k-color-primary-min-6 !default;
 $k-nav-tabs-disabled-link-hover-color:        $k-nav-tabs-disabled-link-color !default;
 
-$k-nav-tabs-border:                           $k-nav-tabs-link-hover-background !default;
-$k-nav-tabs-link-hover-border:                $k-nav-tabs-link-hover-background !default;
+$k-nav-tabs-border:                           $k-color-primary-min-1 !default;
+$k-nav-tabs-link-hover-border:                $k-color-primary-min-1 !default;
 
 $k-nav-tabs-active-link-hover-background:     white !default;
 $k-nav-tabs-active-link-hover-color:          $k-color-primary-min-7 !default;
-$k-nav-tabs-active-link-hover-border:         $k-color-primary-plus-1 !default;
+$k-nav-tabs-active-link-hover-border:         $k-color-primary-min-1 !default;
 
 
 // Buttons

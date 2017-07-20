@@ -29,86 +29,179 @@
                 </div>
                 <div class="k-component-wrapper">
                     <form class="k-component k-js-component">
+
                         <div class="k-container">
-                            <div class="k-container__full">
-                                <div class="k-heading">Example form</div>
-                            </div>
                             <div class="k-container__main">
-                                <fieldset>
-                                    <div class="k-form-group k-form-group--large">
-                                        <input class="k-form-control" type="text" placeholder="Title"/>
+                                <div class="k-form-group">
+                                    <div class="k-input-group k-input-group--large">
+                                        <label for="title" class="k-input-group__addon">Title</label>
+                                        <input id="title" class="k-form-control" />
                                     </div>
-                                    <div class="k-form-group">
-                                        <div class="k-input-group k-input-group--small">
-                                            <label for="input-form-1" class="k-input-group__addon">Alias</label>
-                                            <input id="input-form-1" type="text" class="k-form-control" placeholder="Placeholder"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="k-tabs-container">
+                            <div class="k-tabs-wrapper k-js-tabs-wrapper">
+                                <div class="k-tabs-scroller k-js-tabs-scroller">
+                                    <ul class="k-tabs k-js-tabs">
+                                        <li class="k-is-active">
+                                            <a href="#tab1" data-k-toggle="tab">Lorem ipsum</a>
+                                        </li>
+                                        <li>
+                                            <a href="#tab2" data-k-toggle="tab">Dolor sit amet</a>
+                                        </li>
+                                        <li>
+                                            <a href="#tab3" data-k-toggle="tab">Consectetuer</a>
+                                        </li>
+                                        <li>
+                                            <a href="#tab4" data-k-toggle="tab">Adipiscing elit</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="k-tabs-content">
+                                <div id="tab1" class="k-tab k-is-active">
+
+                                    <div class="k-container">
+                                        <div class="k-container__full">
+                                            <div class="k-heading">Example form</div>
                                         </div>
-                                    </div>
-                                    <div class="k-form-group">
-                                        <label>Category</label>
-                                        <select class="k-form-control k-js-select2">
-                                            <option value="1" selected>Example 1</option>
-                                            <option value="2">Example 2</option>
-                                            <option value="3">Example 3</option>
-                                        </select>
-                                    </div>
-                                    <div class="k-form-group">
-                                        <label>File</label>
-                                        <div class="k-file-input-container">
-                                            <div class="k-file-input">
-                                                <input class="k-js-file-input" type="file" id="input-form-2" data-multiple-caption="{count} files selected" multiple />
-                                                <label for="input-form-2">
+                                        <div class="k-container__main">
+                                            <fieldset>
+                                                <div class="k-form-group k-form-group--large">
+                                                    <input class="k-form-control" type="text" placeholder="Title"/>
+                                                </div>
+                                                <div class="k-form-group">
+                                                    <div class="k-input-group k-input-group--small">
+                                                        <label for="input-form-1" class="k-input-group__addon">Alias</label>
+                                                        <input id="input-form-1" type="text" class="k-form-control" placeholder="Placeholder"/>
+                                                    </div>
+                                                </div>
+                                                <div class="k-form-group">
+                                                    <label>Category</label>
+                                                    <select class="k-form-control k-js-select2">
+                                                        <option value="1" selected>Example 1</option>
+                                                        <option value="2">Example 2</option>
+                                                        <option value="3">Example 3</option>
+                                                    </select>
+                                                </div>
+                                                <div class="k-form-group">
+                                                    <label>File</label>
+                                                    <div class="k-file-input-container">
+                                                        <div class="k-file-input">
+                                                            <input class="k-js-file-input" type="file" id="input-form-2" data-multiple-caption="{count} files selected" multiple />
+                                                            <label for="input-form-2">
 <span class="k-file-input__button">
 <span class="k-icon-cloud-upload" aria-hidden="true"></span>
 Choose a file&hellip;
 </span>
-                                                    <span class="k-file-input__files"></span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </fieldset>
-                            </div>
-                            <div class="k-container__sub">
-                                <fieldset class="k-form-block">
-                                    <div class="k-form-block__header">
-                                        Publish
-                                    </div>
-                                    <div class="k-form-block__content">
-                                        <div class="k-form-group">
-                                            <div class="k-optionlist k-optionlist--boolean">
-                                                <div class="k-optionlist__content">
-                                                    <input type="radio" name="group-[2.17.1]-1-" id="input-form-3" value="1" checked="checked"/>
-                                                    <label for="input-form-3">True</label>
-                                                    <input type="radio" name="group-[2.17.1]-1-" id="input-form-4" value="0"/>
-                                                    <label for="input-form-4">False</label>
-                                                    <div class="k-optionlist__focus"></div>
+                                                                <span class="k-file-input__files"></span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+
+
+                                            <div class="k-well">
+                                                <p>Intro content</p>
+                                                <ul class="k-tabs">
+                                                    <li class="k-is-active">
+                                                        <a href="#taba" data-k-toggle="tab">Tab 1</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#tabb" data-k-toggle="tab">Tab 2</a>
+                                                    </li>
+                                                    <li class="k-is-disabled">
+                                                        <a href="#tabc" data-k-toggle="tab">Tab 3 (disabled)</a>
+                                                    </li>
+                                                </ul>
+                                                <div class="k-tabs-content">
+                                                    <div id="taba" class="k-tab k-is-active">
+                                                        Content tab 1
+                                                    </div>
+                                                    <div id="tabb" class="k-tab">
+                                                        Content tab 2
+                                                    </div>
+                                                    <div id="tabc" class="k-tab">
+                                                        Content tab 3
+                                                    </div>
                                                 </div>
                                             </div>
+
+
                                         </div>
-                                    </div>
-                                </fieldset>
-                                <fieldset class="k-form-block">
-                                    <div class="k-form-block__header">
-                                        Date
-                                    </div>
-                                    <div class="k-form-block__content">
-                                        <div class="k-form-group">
-                                            <label>Date</label>
-                                            <div class="k-input-group">
-                                                <input class="k-form-control" type="text"/>
-                                                <span class="k-input-group__button">
+                                        <div class="k-container__sub">
+                                            <fieldset class="k-form-block">
+                                                <div class="k-form-block__header">
+                                                    Publish
+                                                </div>
+                                                <div class="k-form-block__content">
+                                                    <div class="k-form-group">
+                                                        <div class="k-optionlist k-optionlist--boolean">
+                                                            <div class="k-optionlist__content">
+                                                                <input type="radio" name="group-[2.17.1]-1-" id="input-form-3" value="1" checked="checked"/>
+                                                                <label for="input-form-3">True</label>
+                                                                <input type="radio" name="group-[2.17.1]-1-" id="input-form-4" value="0"/>
+                                                                <label for="input-form-4">False</label>
+                                                                <div class="k-optionlist__focus"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="k-form-block">
+                                                <div class="k-form-block__header">
+                                                    Date
+                                                </div>
+                                                <div class="k-form-block__content">
+                                                    <div class="k-form-group">
+                                                        <label>Date</label>
+                                                        <div class="k-input-group">
+                                                            <input class="k-form-control" type="text"/>
+                                                            <span class="k-input-group__button">
 <button type="button" class="k-button k-button--default k-js-datepicker">
 <span class="k-icon-calendar" aria-hidden="true"></span>
 <span class="k-visually-hidden">Calendar</span>
 </button>
 </span>
-                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
                                         </div>
                                     </div>
-                                </fieldset>
+
+                                </div>
+
+                                <div id="tab2" class="k-tab">
+                                    <div class="k-container">
+                                        <div class="k-container__full">
+                                            <div class="k-heading">Second tab</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="tab3" class="k-tab">
+                                    <div class="k-container">
+                                        <div class="k-container__full">
+                                            <div class="k-heading">Third tab</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="tab4" class="k-tab">
+                                    <div class="k-container">
+                                        <div class="k-container__full">
+                                            <div class="k-heading">Fourth tab</div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
+
                     </form>
                 </div>
             </div>

@@ -4251,40 +4251,27 @@ Styleguide 2.21.11
 */
   /* Tabs
    ========================================================================== */
-  /*
-Tabs
-
-markup:
-<ul class="k-tabs">
-    <li class="k-is-active">
-        <a href="#tab1" data-k-toggle="tab">Tab 1</a>
-    </li>
-    <li>
-        <a href="#tab2" data-k-toggle="tab">Tab 2</a>
-    </li>
-     <li class="k-is-disabled">
-        <a href="#tab3" data-k-toggle="tab">Tab 3 (disabled)</a>
-    </li>
-</ul>
-<div class="k-tabs-content">
-    <div id="tab1" class="k-tab k-is-active">
-        Content tab 1
-    </div>
-    <div id="tab2" class="k-tab">
-        Content tab 2
-    </div>
-    <div id="tab3" class="k-tab">
-        Content tab 3
-    </div>
-</div>
-
-Styleguide 2.22
-
-*/
+  /**
+ * Tabs container (not mandatory)
+ */
+  /**
+ * Tabs wrapper
+ */
+  /**
+ * Tabs scroller
+ */
+  /**
+ * Tabs wrapper
+ *
+ * 1. For proper offset calculation in JS
+ */
   /**
  * Tabbable tabs
  *
  * Hide tabbable panes to start, show them when `.k-is-active`
+ */
+  /**
+ * Left and right buttons for scrollable tabs
  */
   /* Title bar
    ========================================================================== */
@@ -5380,7 +5367,14 @@ markup:
 .k-ui-namespace .k-container__full {
   clear: both;
   width: auto;
-  margin: 0 10px 20px;
+  margin: 0 0 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .k-ui-namespace .k-container__full {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
 
 .k-ui-namespace .k-flex-wrapper {
@@ -11856,81 +11850,149 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   display: none;
 }
 
+.k-ui-namespace .k-tabs-container {
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  /* When resizing */
+}
+
+.k-ui-namespace .k-tabs-container:before, .k-ui-namespace .k-tabs-container:after {
+  display: table;
+  content: " ";
+}
+
+.k-ui-namespace .k-tabs-container:after {
+  clear: both;
+}
+
+.k-is-resizing .k-ui-namespace .k-tabs-container {
+  overflow: hidden;
+}
+
+.k-ui-namespace .k-tabs-container:not(:first-child) .k-tabs-scroller .k-tabs {
+  border-top: 1px solid gainsboro;
+}
+
+.k-ui-namespace .k-tabs-container > .k-tabs-content:before, .k-ui-namespace .k-tabs-container > .k-tabs-content:after {
+  display: table;
+  content: " ";
+}
+
+.k-ui-namespace .k-tabs-container > .k-tabs-content:after {
+  clear: both;
+}
+
+.k-ui-namespace .k-tabs-container > .k-tabs-content > .k-tab {
+  padding: 0;
+}
+
+.k-ui-namespace .k-tabs-wrapper {
+  position: relative;
+  height: 48px;
+  overflow: hidden;
+  transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+  -webkit-backface-visibility: hidden;
+}
+
+.k-ui-namespace .k-tabs-scroller {
+  height: 80px;
+  overflow: auto;
+}
+
+.k-ui-namespace .k-tabs-scroller > .k-tabs {
+  padding: 10px 10px 0;
+  background: white;
+  white-space: nowrap;
+  display: inline-block;
+  min-width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .k-ui-namespace .k-tabs-scroller > .k-tabs {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.k-ui-namespace .k-tabs-scroller > .k-tabs li.k-is-active a {
+  background: #fbfbfb;
+  color: #222222;
+}
+
 .k-ui-namespace .k-tabs {
-  margin-bottom: 0;
-  padding-left: 0;
+  position: relative;
+  /* 1 */
+  margin: 0;
+  padding: 0;
   list-style: none;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid gainsboro;
+  font-size: 0;
   /**
    * 1. Make the list-items overlay the bottom border
+   */
+  /**
+   * Disabled state sets text to gray and nukes hover/tab effects
+   */
+  /**
+   * Active state, and its :hover to override normal :hover
+   */
+  /**
+   * Links
    */
   /**
    * Open dropdowns
    */
 }
 
-.k-ui-namespace .k-tabs:before, .k-ui-namespace .k-tabs:after {
-  display: table;
-  content: " ";
-}
-
-.k-ui-namespace .k-tabs:after {
-  clear: both;
-}
-
-.k-ui-namespace .k-tabs > li {
+.k-ui-namespace .k-tabs li {
   position: relative;
-  display: block;
-  float: left;
+  display: inline-block;
   margin-bottom: -1px;
   /* 1 */
-  /**
-     * Disabled state sets text to gray and nukes hover/tab effects
-     */
-  /**
-     * Active state, and its :hover to override normal :hover
-     */
-}
-
-.k-ui-namespace .k-tabs > li > a {
-  position: relative;
-  display: block;
-  padding: 7px 13px;
   margin-right: 2px;
-  line-height: 20px;
-  border: 1px solid transparent;
-  border-radius: 4px 4px 0 0;
-  text-decoration: none;
 }
 
-.k-ui-namespace .k-tabs > li > a:hover, .k-ui-namespace .k-tabs > li > a:focus {
-  text-decoration: none;
-  background-color: #eeeeee;
-  border-color: #eeeeee #eeeeee #eeeeee;
-}
-
-.k-ui-namespace .k-tabs > li.k-is-disabled > a {
+.k-ui-namespace .k-tabs .k-is-disabled a {
   color: #343434;
   cursor: not-allowed;
   pointer-events: none;
 }
 
-.k-ui-namespace .k-tabs > li.k-is-disabled > a:hover, .k-ui-namespace .k-tabs > li.k-is-disabled > a:focus {
+.k-ui-namespace .k-tabs .k-is-disabled a:hover, .k-ui-namespace .k-tabs .k-is-disabled a:focus {
   color: inherit;
   text-decoration: none;
   background-color: transparent;
   cursor: not-allowed;
 }
 
-.k-ui-namespace .k-tabs > li.k-is-active > a, .k-ui-namespace .k-tabs > li.k-is-active > a:hover, .k-ui-namespace .k-tabs > li.k-is-active > a:focus {
+.k-ui-namespace .k-tabs .k-is-active a, .k-ui-namespace .k-tabs .k-is-active a:hover, .k-ui-namespace .k-tabs .k-is-active a:focus {
   color: #222222;
   background-color: white;
-  border: 1px solid #e6e6e6;
+  border: 1px solid gainsboro;
   border-bottom-color: transparent;
   cursor: default;
 }
 
-.k-ui-namespace .k-tabs .k-is-open > a, .k-ui-namespace .k-tabs .k-is-open > a:hover, .k-ui-namespace .k-tabs .k-is-open > a:focus {
+.k-ui-namespace .k-tabs a {
+  position: relative;
+  display: block;
+  padding: 7px 13px;
+  line-height: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.k-ui-namespace .k-tabs a:hover, .k-ui-namespace .k-tabs a:focus {
+  text-decoration: none;
+  background-color: #eeeeee;
+  border-color: gainsboro;
+}
+
+.k-ui-namespace .k-tabs .k-is-open a, .k-ui-namespace .k-tabs .k-is-open a:hover, .k-ui-namespace .k-tabs .k-is-open a:focus {
   background-color: #eeeeee;
   border-color: #3071a9;
 }
@@ -11942,6 +12004,78 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 .k-ui-namespace .k-tabs-content > .k-is-active {
   display: block;
+}
+
+.k-ui-namespace .k-tabs-scroller-prev,
+.k-ui-namespace .k-tabs-scroller-next {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  bottom: 1px;
+  width: 32px;
+  overflow: hidden;
+  opacity: 0;
+  background: white;
+  border: 1px solid gainsboro;
+  transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+  -webkit-backface-visibility: hidden;
+}
+
+.k-ui-namespace .k-tabs-scroller-prev span,
+.k-ui-namespace .k-tabs-scroller-next span {
+  transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+  -webkit-backface-visibility: hidden;
+}
+
+.k-ui-namespace .k-tabs-scroller-prev {
+  left: 0;
+  border-left: none;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.k-ui-namespace .k-tabs-scroller-next {
+  right: 0;
+  border-right: none;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.k-ui-namespace .k-has-tabs-overflow {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.k-ui-namespace .k-has-tabs-overflow .k-tabs-scroller-prev,
+.k-ui-namespace .k-has-tabs-overflow .k-tabs-scroller-next {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  cursor: no-drop;
+  opacity: 1;
+}
+
+.k-ui-namespace .k-has-tabs-overflow .k-tabs-scroller-prev span,
+.k-ui-namespace .k-has-tabs-overflow .k-tabs-scroller-next span {
+  opacity: 0.33;
+}
+
+.k-ui-namespace .k-has-tabs-left-overflow .k-tabs-scroller-prev {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.k-ui-namespace .k-has-tabs-left-overflow .k-tabs-scroller-prev span {
+  opacity: 1;
+}
+
+.k-ui-namespace .k-has-tabs-right-overflow .k-tabs-scroller-next {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.k-ui-namespace .k-has-tabs-right-overflow .k-tabs-scroller-next span {
+  opacity: 1;
 }
 
 .k-ui-namespace .k-title-bar {
