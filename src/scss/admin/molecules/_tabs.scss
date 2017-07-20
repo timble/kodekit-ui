@@ -1,37 +1,6 @@
 /* Tabs
    ========================================================================== */
 
-/*
-Tabs
-
-markup:
-<ul class="k-tabs">
-    <li class="k-is-active">
-        <a href="#tab1" data-k-toggle="tab">Tab 1</a>
-    </li>
-    <li>
-        <a href="#tab2" data-k-toggle="tab">Tab 2</a>
-    </li>
-     <li class="k-is-disabled">
-        <a href="#tab3" data-k-toggle="tab">Tab 3 (disabled)</a>
-    </li>
-</ul>
-<div class="k-tabs-content">
-    <div id="tab1" class="k-tab k-is-active">
-        Content tab 1
-    </div>
-    <div id="tab2" class="k-tab">
-        Content tab 2
-    </div>
-    <div id="tab3" class="k-tab">
-        Content tab 3
-    </div>
-</div>
-
-Styleguide 2.22
-
-*/
-
 /**
  * Tabs container (not mandatory)
  */
@@ -63,13 +32,20 @@ Styleguide 2.22
 
 
 /**
- * Tabs
+ * Tabs wrapper
  */
 
 .k-tabs-wrapper {
+  position: relative;
   height: 48px;
   overflow: hidden;
+  @include transition;
 }
+
+
+/**
+ * Tabs scroller
+ */
 
 .k-tabs-scroller {
   height: 80px;
@@ -91,7 +67,15 @@ Styleguide 2.22
   }
 }
 
+
+/**
+ * Tabs wrapper
+ *
+ * 1. For proper offset calculation in JS
+ */
+
 .k-tabs {
+  position: relative; /* 1 */
   margin: 0;
   padding: 0;
   list-style: none;
@@ -206,13 +190,9 @@ Styleguide 2.22
 }
 
 
-
-
-
-.k-tabs-wrapper {
-  position: relative;
-  @include transition;
-}
+/**
+ * Left and right buttons for scrollable tabs
+ */
 
 .k-tabs-scroller-prev,
 .k-tabs-scroller-next {
@@ -224,8 +204,8 @@ Styleguide 2.22
   width: 32px;
   overflow: hidden;
   opacity: 0;
-  background: white;
-  border: 1px solid #ddd;
+  background: $k-nav-tabs-active-link-hover-background;
+  border: 1px solid $k-nav-tabs-border;
   @include transition;
 
   span {
