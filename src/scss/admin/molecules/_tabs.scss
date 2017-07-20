@@ -32,10 +32,55 @@ Styleguide 2.22
 
 */
 
+/**
+ * Tabs container (not mandatory)
+ */
+
+.k-tabs-container {
+  @include clearfix;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+
+  /* When flexbox is in use */
+  @include flexbox {
+    flex: 0 0 auto;
+  }
+
+  /* When resizing */
+  @include resizing {
+    overflow: hidden;
+  }
+
+  .k-tabs {
+    padding: ($k-spacing / 2) $k-spacing 0;
+    background: $k-nav-tabs-active-link-hover-background;
+  }
+
+  .k-tabs-content {
+    @include clearfix;
+  }
+
+  &:not(:first-child) > .k-tabs {
+    border-top: 1px solid $k-nav-tabs-border;
+  }
+
+  .k-tabs li.k-is-active a {
+    background: $k-component-background;
+    color: $k-color-type;
+  }
+}
+
+
+/**
+ * Tabs
+ */
+
 .k-tabs {
   @include clearfix;
-  margin-bottom: 0;
-  padding-left: 0;
+  margin: 0;
+  padding: 0;
   list-style: none;
   border-bottom: 1px solid $k-nav-tabs-border;
 
@@ -44,64 +89,69 @@ Styleguide 2.22
    * 1. Make the list-items overlay the bottom border
    */
 
-  & > li {
+  li {
     position: relative;
     display: block;
     float: left;
     margin-bottom: -1px; /* 1 */
+  }
 
-    & > a {
-      position: relative;
-      display: block;
-      padding: $k-nav-tabs-link-spacing;
-      margin-right: 2px;
-      line-height: $k-line-height;
-      border: 1px solid transparent;
-      border-radius: $k-border-radius $k-border-radius 0 0;
+
+  /**
+   * Disabled state sets text to gray and nukes hover/tab effects
+   */
+
+  .k-is-disabled a {
+    color: $k-nav-tabs-disabled-link-color;
+    cursor: $k-cursor-disabled;
+    pointer-events: none;
+
+    &:hover,
+    &:focus {
+      color: inherit;
       text-decoration: none;
-
-      &:hover,
-      &:focus {
-        text-decoration: none;
-        background-color: $k-nav-tabs-link-hover-background;
-        border-color: $k-nav-tabs-link-hover-border $k-nav-tabs-link-hover-border $k-nav-tabs-border;
-      }
-    }
-
-
-    /**
-     * Disabled state sets text to gray and nukes hover/tab effects
-     */
-
-    &.k-is-disabled > a {
-      color: $k-nav-tabs-disabled-link-color;
+      background-color: transparent;
       cursor: $k-cursor-disabled;
-      pointer-events: none;
-
-      &:hover,
-      &:focus {
-        color: inherit;
-        text-decoration: none;
-        background-color: transparent;
-        cursor: $k-cursor-disabled;
-      }
     }
+  }
 
 
-    /**
-     * Active state, and its :hover to override normal :hover
-     */
+  /**
+   * Active state, and its :hover to override normal :hover
+   */
 
-    &.k-is-active > a {
-      &,
-      &:hover,
-      &:focus {
-        color: $k-nav-tabs-active-link-hover-color;
-        background-color: $k-nav-tabs-active-link-hover-background;
-        border: 1px solid $k-nav-tabs-active-link-hover-border;
-        border-bottom-color: transparent;
-        cursor: default;
-      }
+  .k-is-active a {
+    &,
+    &:hover,
+    &:focus {
+      color: $k-nav-tabs-active-link-hover-color;
+      background-color: $k-nav-tabs-active-link-hover-background;
+      border: 1px solid $k-nav-tabs-active-link-hover-border;
+      border-bottom-color: transparent;
+      cursor: default;
+    }
+  }
+
+
+  /**
+   * Links
+   */
+
+  a {
+    position: relative;
+    display: block;
+    padding: $k-nav-tabs-link-spacing;
+    margin-right: 2px;
+    line-height: $k-line-height;
+    border: 1px solid transparent;
+    border-radius: $k-border-radius $k-border-radius 0 0;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      background-color: $k-nav-tabs-link-hover-background;
+      border-color: $k-nav-tabs-link-hover-border;
     }
   }
 
@@ -110,7 +160,7 @@ Styleguide 2.22
    * Open dropdowns
    */
 
-  .k-is-open > a {
+  .k-is-open a {
     &,
     &:hover,
     &:focus {
@@ -135,67 +185,4 @@ Styleguide 2.22
   & > .k-is-active {
     display: block;
   }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* NEW */
-.k-tabs-container {
-  @include clearfix;
-  overflow: hidden;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0;
-
-  /* When flexbox is in use */
-  @include flexbox {
-    flex: 0 0 auto;
-  }
-
-  /* When resizing */
-  @include resizing {
-    overflow: hidden;
-  }
-
-  .k-tabs {
-    margin: 0;
-    padding-top: ($k-spacing / 2);
-    padding-left: ($k-spacing);
-    padding-right: ($k-spacing);
-    background: white;
-  }
-
-  .k-tabs-content {
-    @include clearfix;
-  }
-
-  &:not(:first-child) > .k-tabs {
-    border-top: 1px solid #ddd;
-  }
-}
-
-.k-tabs > li.k-is-active > a {
-  background: $k-component-background;
-  color: $k-color-type;
 }

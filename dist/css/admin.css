@@ -4294,11 +4294,16 @@ Styleguide 2.22
 
 */
   /**
+ * Tabs container (not mandatory)
+ */
+  /**
+ * Tabs
+ */
+  /**
  * Tabbable tabs
  *
  * Hide tabbable panes to start, show them when `.k-is-active`
  */
-  /* NEW */
   /* Title bar
    ========================================================================== */
   /*
@@ -11610,93 +11615,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   display: none;
 }
 
-.k-ui-namespace .k-tabs {
-  margin-bottom: 0;
-  padding-left: 0;
-  list-style: none;
-  border-bottom: 1px solid #eeeeee;
-  /**
-   * 1. Make the list-items overlay the bottom border
-   */
-  /**
-   * Open dropdowns
-   */
-}
-
-.k-ui-namespace .k-tabs:before, .k-ui-namespace .k-tabs:after {
-  display: table;
-  content: " ";
-}
-
-.k-ui-namespace .k-tabs:after {
-  clear: both;
-}
-
-.k-ui-namespace .k-tabs > li {
-  position: relative;
-  display: block;
-  float: left;
-  margin-bottom: -1px;
-  /* 1 */
-  /**
-     * Disabled state sets text to gray and nukes hover/tab effects
-     */
-  /**
-     * Active state, and its :hover to override normal :hover
-     */
-}
-
-.k-ui-namespace .k-tabs > li > a {
-  position: relative;
-  display: block;
-  padding: 7px 13px;
-  margin-right: 2px;
-  line-height: 20px;
-  border: 1px solid transparent;
-  border-radius: 4px 4px 0 0;
-  text-decoration: none;
-}
-
-.k-ui-namespace .k-tabs > li > a:hover, .k-ui-namespace .k-tabs > li > a:focus {
-  text-decoration: none;
-  background-color: #eeeeee;
-  border-color: #eeeeee #eeeeee #eeeeee;
-}
-
-.k-ui-namespace .k-tabs > li.k-is-disabled > a {
-  color: #343434;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-.k-ui-namespace .k-tabs > li.k-is-disabled > a:hover, .k-ui-namespace .k-tabs > li.k-is-disabled > a:focus {
-  color: inherit;
-  text-decoration: none;
-  background-color: transparent;
-  cursor: not-allowed;
-}
-
-.k-ui-namespace .k-tabs > li.k-is-active > a, .k-ui-namespace .k-tabs > li.k-is-active > a:hover, .k-ui-namespace .k-tabs > li.k-is-active > a:focus {
-  color: #222222;
-  background-color: white;
-  border: 1px solid #e6e6e6;
-  border-bottom-color: transparent;
-  cursor: default;
-}
-
-.k-ui-namespace .k-tabs .k-is-open > a, .k-ui-namespace .k-tabs .k-is-open > a:hover, .k-ui-namespace .k-tabs .k-is-open > a:focus {
-  background-color: #eeeeee;
-  border-color: #3071a9;
-}
-
-.k-ui-namespace .k-tabs-content > .k-tab {
-  display: none;
-}
-
-.k-ui-namespace .k-tabs-content > .k-is-active {
-  display: block;
-}
-
 .k-ui-namespace .k-tabs-container {
   overflow: hidden;
   width: 100%;
@@ -11729,10 +11647,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-tabs-container .k-tabs {
-  margin: 0;
-  padding-top: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 10px 20px 0;
   background: white;
 }
 
@@ -11746,12 +11661,102 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-tabs-container:not(:first-child) > .k-tabs {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid gainsboro;
 }
 
-.k-ui-namespace .k-tabs > li.k-is-active > a {
+.k-ui-namespace .k-tabs-container .k-tabs li.k-is-active a {
   background: #fbfbfb;
   color: #222222;
+}
+
+.k-ui-namespace .k-tabs {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-bottom: 1px solid gainsboro;
+  /**
+   * 1. Make the list-items overlay the bottom border
+   */
+  /**
+   * Disabled state sets text to gray and nukes hover/tab effects
+   */
+  /**
+   * Active state, and its :hover to override normal :hover
+   */
+  /**
+   * Links
+   */
+  /**
+   * Open dropdowns
+   */
+}
+
+.k-ui-namespace .k-tabs:before, .k-ui-namespace .k-tabs:after {
+  display: table;
+  content: " ";
+}
+
+.k-ui-namespace .k-tabs:after {
+  clear: both;
+}
+
+.k-ui-namespace .k-tabs li {
+  position: relative;
+  display: block;
+  float: left;
+  margin-bottom: -1px;
+  /* 1 */
+}
+
+.k-ui-namespace .k-tabs .k-is-disabled a {
+  color: #343434;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.k-ui-namespace .k-tabs .k-is-disabled a:hover, .k-ui-namespace .k-tabs .k-is-disabled a:focus {
+  color: inherit;
+  text-decoration: none;
+  background-color: transparent;
+  cursor: not-allowed;
+}
+
+.k-ui-namespace .k-tabs .k-is-active a, .k-ui-namespace .k-tabs .k-is-active a:hover, .k-ui-namespace .k-tabs .k-is-active a:focus {
+  color: #222222;
+  background-color: white;
+  border: 1px solid gainsboro;
+  border-bottom-color: transparent;
+  cursor: default;
+}
+
+.k-ui-namespace .k-tabs a {
+  position: relative;
+  display: block;
+  padding: 7px 13px;
+  margin-right: 2px;
+  line-height: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
+  text-decoration: none;
+}
+
+.k-ui-namespace .k-tabs a:hover, .k-ui-namespace .k-tabs a:focus {
+  text-decoration: none;
+  background-color: #eeeeee;
+  border-color: gainsboro;
+}
+
+.k-ui-namespace .k-tabs .k-is-open a, .k-ui-namespace .k-tabs .k-is-open a:hover, .k-ui-namespace .k-tabs .k-is-open a:focus {
+  background-color: #eeeeee;
+  border-color: #3071a9;
+}
+
+.k-ui-namespace .k-tabs-content > .k-tab {
+  display: none;
+}
+
+.k-ui-namespace .k-tabs-content > .k-is-active {
+  display: block;
 }
 
 .k-ui-namespace .k-title-bar {
