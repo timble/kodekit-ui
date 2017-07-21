@@ -17407,9 +17407,13 @@ var Konami = function (callback) {
                 }, tabsAnimationSpeed);
             }
 
-            // Run on document ready
-            tabsCalculateScroll();
-            tabsScrollButtonClick();
+            // Run 500ms after document ready
+            // 1. To make sure tabs are loaded
+            // 2. To display users that tabs are scrollable
+            setTimeout(function() {
+                tabsCalculateScroll();
+                tabsScrollButtonClick();
+            }, 500);
 
             // Run on scrolling the tab container
             $tabsScroller.on('scroll', function() {
