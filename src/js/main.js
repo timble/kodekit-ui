@@ -439,7 +439,7 @@
             });
 
             // When clicking tabs
-            $('[data-k-toggle]').on('click', function() {
+            $tabs.on('click', 'li a', function() {
 
                 // Only when inside scroller tabs
                 if ($(this).parent('li').parent('ul').parent().hasClass('k-js-tabs-scroller')) {
@@ -490,3 +490,4 @@
     });
 
 })(kQuery);
+
