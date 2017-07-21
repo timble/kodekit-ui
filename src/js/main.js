@@ -326,30 +326,11 @@
                 }, tabsAnimationSpeed);
             }
 
-            // Run 500ms after document ready
-            // 1. To make sure tabs are loaded
-            // 2. To display users that tabs are scrollable
-            setTimeout(function() {
-                tabsCalculateScroll();
-                tabsScrollButtonClick();
-            }, 500);
-
-            // Run on scrolling the tab container
-            $tabsScroller.on('scroll', function() {
-                // Throttle
-                clearTimeout(resizeTimer);
-                resizeTimer = setTimeout(function() {
-                    tabsCalculateScroll();
-                }, 200);
-            });
-
-            // When clicking tabs
-            $tabs.on('click', 'li a', function() {
-
-                // Only when inside scroller tabs
-                if ($(this).parent('li').parent('ul').parent().hasClass('k-js-tabs-scroller')) {
-                    var positionLeft = $(this).parent().position().left,
-                        positionRight = positionLeft + $(this).parent().outerWidth(),
+            // Scroll active tab into screen
+            function scrollToTab(element) {
+                if (element.parent('li').parent('ul').parent().hasClass('k-js-tabs-scroller')) {
+                    var positionLeft = element.parent().position().left,
+                        positionRight = positionLeft + element.parent().outerWidth(),
                         parentPaddingLeft = parseInt($tabs.css('padding-left'), 10),
                         parentPaddingRight = parseInt($tabs.css('padding-right'), 10),
                         scrollerOffset = $tabsScroller.scrollLeft(),
@@ -371,6 +352,33 @@
                         scrollLeft: scroll
                     }, tabsAnimationSpeed);
                 }
+            }
+
+            // Run 500ms after document ready
+            // 1. To make sure tabs are loaded
+            // 2. To display users that tabs are scrollable
+            setTimeout(function() {
+                tabsCalculateScroll();
+                tabsScrollButtonClick();
+
+                // Scroll to active tab after buttons have loaded
+                setTimeout(function() {
+                    scrollToTab($tabsScroller.find('.k-is-active a'));
+                }, tabsAnimationSpeed);
+            }, 500);
+
+            // When clicking tabs
+            $tabs.on('click', 'li a', function() {
+                scrollToTab($(this));
+            });
+
+            // Run on scrolling the tab container
+            $tabsScroller.on('scroll', function() {
+                // Throttle
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(function() {
+                    tabsCalculateScroll();
+                }, 200);
             });
         }
 
