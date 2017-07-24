@@ -216,25 +216,25 @@ $k-darkest-percentage:    12% !default;
 // Helpers
 // ==========================================================================
 
-$k-cursor-disabled:       not-allowed !default;
+$k-cursor-disabled:           not-allowed !default;
 
-$k-zindex-dropdown:       1000 !default;
-$k-zindex-tooltip:        1070 !default;
+$k-zindex-dropdown:           1000 !default;
+$k-zindex-tooltip:            1070 !default;
 
-$k-transition-duration:   180ms !default;
-$k-transition-easing:     cubic-bezier(0.2, 0.57, 0.44, 0.83) !default;
-$k-transition:            all $k-transition-duration $k-transition-easing !default;
+$k-transition-duration:       180ms !default;
+$k-transition-easing:         cubic-bezier(0.2, 0.57, 0.44, 0.83) !default;
+$k-transition:                all $k-transition-duration $k-transition-easing !default;
 
-$k-icon-size-tiny:        10px !default;
-$k-icon-size-small:       13px !default;
-$k-icon-size:             16px !default;
-$k-icon-size-medium:      24px !default;
-$k-icon-size-large:       32px !default;
-$k-icon-size-xlarge:      48px !default;
-$k-icon-size-huge:        64px !default;
+$k-icon-size-tiny:            10px !default;
+$k-icon-size-small:           13px !default;
+$k-icon-size:                 16px !default;
+$k-icon-size-medium:          24px !default;
+$k-icon-size-large:           32px !default;
+$k-icon-size-xlarge:          48px !default;
+$k-icon-size-huge:            64px !default;
 
-$k-active-class:          '.k-is-active' !default;
-$k-disabled-class:        '.k-is-disabled' !default;
+$k-active-class:              '.k-is-active' !default;
+$k-disabled-class:            '.k-is-disabled' !default;
 
 $k-optionlist-class:          '.k-optionlist' !default;
 $k-optionlist-content-class:  '.k-optionlist__content' !default;

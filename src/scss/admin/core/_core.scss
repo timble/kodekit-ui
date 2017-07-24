@@ -68,7 +68,7 @@
  * 5. The datepicker popup is located outside of koowa namespace
  */
 
-@import "../../../../node_modules/select2/src/scss/core"; /* 1 */
+@import "node_modules/select2/src/scss/core"; /* 1 */
 @import "../molecules/select2"; /* 2 */
 @import "../molecules/dropdowns"; /* 3 */
 @import "../molecules/modal"; /* 4 */
