@@ -17325,6 +17325,8 @@ var Konami = function (callback) {
             // Calculate wether there is a scrollable area and apply classes accordingly
             function tabsCalculateScroll() {
 
+                if (!$tabsScroller.length) return;
+
                 // Variables
                 var tabsWidth = $tabs.outerWidth(),
                     scrollerWidth = $tabsScroller.innerWidth(),
