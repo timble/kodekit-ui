@@ -2226,14 +2226,6 @@ sg-wrapper:
 Styleguide 2.3.1
 
 */
-  /**
- * 1. For input.k-button
- * 2. Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
- */
-  /**
- * 1. Remove underline when button is an `<a>` element
- * 2. Future-proof disabling of clicks on elements
- */
   /* Alternate buttons */
   /* Link buttons */
   /* Block button */
@@ -6374,6 +6366,10 @@ markup:
   margin-left: 0;
 }
 
+.k-ui-namespace .k-button, .k-ui-namespace .k-button:hover, .k-ui-namespace .k-button:focus, .k-ui-namespace .k-button:active {
+  text-decoration: none;
+}
+
 .k-ui-namespace .k-button:focus, .k-ui-namespace .k-button.focus, .k-ui-namespace .k-button:active:focus, .k-ui-namespace .k-button:active.focus, .k-ui-namespace .k-button.k-is-active:focus, .k-ui-namespace .k-button.k-is-active.focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
@@ -6382,7 +6378,6 @@ markup:
 
 .k-ui-namespace .k-button:hover, .k-ui-namespace .k-button:focus {
   color: #222222;
-  text-decoration: none;
 }
 
 .k-ui-namespace .k-button:active, .k-ui-namespace .k-button.k-is-active {
@@ -6393,16 +6388,7 @@ markup:
 .k-ui-namespace .k-button[disabled], .k-ui-namespace .k-button.k-is-disabled {
   cursor: not-allowed;
   opacity: 0.65;
-}
-
-.k-ui-namespace .k-button, .k-ui-namespace .k-button:hover, .k-ui-namespace .k-button:focus, .k-ui-namespace .k-button:active {
-  text-decoration: none;
-  /* 1 */
-}
-
-.k-ui-namespace button.k-button.k-is-disabled {
   pointer-events: none;
-  /* 2 */
 }
 
 .k-ui-namespace .k-button--default {

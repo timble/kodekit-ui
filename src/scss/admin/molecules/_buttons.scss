@@ -49,85 +49,8 @@ Styleguide 2.3.1
 
 */
 
-/**
- * 1. For input.k-button
- * 2. Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
- */
-
 .k-button {
-  display: inline-block;
-  margin-bottom: 0; /* 1 */
-  font-weight: $k-regular;
-  text-align: center;
-  vertical-align: middle;
-  touch-action: manipulation;
-  cursor: pointer;
-  background-image: none; /* 2 */
-  border: 1px solid transparent;
-  white-space: nowrap;
-  box-shadow: none;
-  text-shadow: none;
-  user-select: none;
-  border-radius: $k-border-radius;
-  margin-right: $k-spacing-tiny;
-  line-height: $k-line-height;
-  padding: $k-spacing-base-vertical $k-spacing-base-horizontal;
-
-  &:last-child {
-    margin-right: 0;
-  }
-
-  @include rtl {
-    margin-right: 0;
-    margin-left: $k-spacing-tiny;
-
-    &:last-child {
-      margin-left: 0;
-    }
-  }
-
-  &,
-  &:active,
-  &.k-is-active {
-    &:focus,
-    &.focus {
-      @include tab-focus;
-    }
-  }
-
-  &:hover,
-  &:focus {
-    color: $k-btn-default-color;
-    text-decoration: none;
-  }
-
-  &:active,
-  &.k-is-active {
-    outline: 0;
-    background-image: none;
-  }
-
-  &[disabled],
-  &.k-is-disabled {
-    cursor: $k-cursor-disabled;
-    opacity: 0.65;
-  }
-}
-
-
-/**
- * 1. Remove underline when button is an `<a>` element
- * 2. Future-proof disabling of clicks on elements
- */
-
-.k-button {
-  &, &:hover, &:focus, &:active {
-    text-decoration: none; /* 1 */
-  }
-}
-
-button.k-button.k-is-disabled {
-  pointer-events: none; /* 2 */
+  @include button-default;
 }
 
 
@@ -161,43 +84,7 @@ button.k-button.k-is-disabled {
 /* Link buttons */
 
 .k-button--link {
-  color: $k-color-type;
-  font-weight: normal;
-  border-radius: 0;
-  padding-left: 0;
-  padding-right: 0;
-
-  &,
-  &:active,
-  &.k-is-active,
-  &[disabled],
-  &.k-is-disabled {
-    background-color: transparent;
-    box-shadow: none;
-  }
-
-  &,
-  &:hover,
-  &:focus,
-  &:active {
-    border-color: transparent;
-  }
-
-  &:hover,
-  &:focus {
-    color: $k-color-type;
-    text-decoration: underline;
-    background-color: transparent;
-  }
-
-  &[disabled],
-  &.k-is-disabled {
-    &:hover,
-    &:focus {
-      color: $k-btn-link-disabled-color;
-      text-decoration: none;
-    }
-  }
+  @include button-link;
 }
 
 
@@ -227,24 +114,15 @@ Styleguide 2.3.2
 */
 
 .k-button--tiny {
-  border-radius: $k-border-radius-small;
-  font-size: $k-font-size-tiny;
-  line-height: $k-line-height-tiny;
-  padding: $k-spacing-tiny-vertical $k-spacing-tiny-horizontal;
+  @include button-size($k-border-radius-small, $k-font-size-tiny, $k-line-height-tiny, $k-spacing-tiny-vertical $k-spacing-tiny-horizontal);
 }
 
 .k-button--small {
-  border-radius: $k-border-radius-small;
-  font-size: $k-font-size-small;
-  line-height: $k-line-height-small;
-  padding: $k-spacing-small-vertical $k-spacing-small-horizontal;
+  @include button-size($k-border-radius-small, $k-font-size-small, $k-line-height-small, $k-spacing-small-vertical $k-spacing-small-horizontal);
 }
 
 .k-button--large {
-  border-radius: $k-border-radius-large;
-  font-size: $k-font-size-large;
-  line-height: $k-line-height-large;
-  padding: $k-spacing-large-vertical $k-spacing-large-horizontal;
+  @include button-size($k-border-radius-large, $k-font-size-large, $k-line-height-large, $k-spacing-large-vertical $k-spacing-large-horizontal);
 }
 
 
