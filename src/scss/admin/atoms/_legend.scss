@@ -39,4 +39,8 @@ legend {
   line-height: $k-line-height-huge;
   font-weight: $k-regular;
   @include content-block;
+
+  &:first-child {
+    padding-top: 0;
+  }
 }

@@ -25,4 +25,14 @@ label {
   &:last-child {
     margin-bottom: 0;
   }
+
+  & + small {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 4px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }

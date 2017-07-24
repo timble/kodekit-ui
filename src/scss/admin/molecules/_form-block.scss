@@ -23,8 +23,9 @@ Styleguide 2.8
 */
 
 .k-form-block {
-  @include border(all, $k-form-block-border);
   background: $k-form-block-background;
+  @include border(all, $k-form-block-border);
+  @include content-block;
 }
 
 

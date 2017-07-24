@@ -5970,6 +5970,16 @@ markup:
   margin-bottom: 0;
 }
 
+.k-ui-namespace label + small {
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 4px;
+}
+
+.k-ui-namespace label + small:last-child {
+  margin-bottom: 0;
+}
+
 .k-ui-namespace legend {
   width: 100%;
   padding: 0;
@@ -5989,6 +5999,10 @@ markup:
 
 .k-ui-namespace legend:last-child {
   margin-bottom: 0;
+}
+
+.k-ui-namespace legend:first-child {
+  padding-top: 0;
 }
 
 .k-ui-namespace p {
@@ -7168,8 +7182,13 @@ fieldset[disabled] .k-ui-namespace .k-button--danger.has-focus {
 }
 
 .k-ui-namespace .k-form-block {
-  border: 1px solid #e0e0e0;
   background: white;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 1.5em;
+}
+
+.k-ui-namespace .k-form-block:last-child {
+  margin-bottom: 0;
 }
 
 .k-ui-namespace .k-form-block__header {
