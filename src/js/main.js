@@ -146,6 +146,7 @@
             // Click a menu item
             function clickMenuItem($element) {
                 $element.on('click', function(event) {
+                    if (!$(this).next('ul').length) return;
                     event.preventDefault();
                     if ( $menu.hasClass(menuClass) && $(this).hasClass(submenuClass) ) {
                         closeMenu();
