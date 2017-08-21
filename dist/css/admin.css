@@ -9632,13 +9632,13 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 .k-checked .k-ui-namespace {
   /* Block element to clear from other floating / inline-block elements */
-  /* "Inline" table to make element as wide as children */
 }
 
 .k-checked .k-ui-namespace .k-optionlist {
   display: block;
   max-width: 100%;
   overflow: auto;
+  /* "Inline" table to make element as wide as children */
 }
 
 .k-checked .k-ui-namespace .k-optionlist:before, .k-checked .k-ui-namespace .k-optionlist:after {
@@ -9650,7 +9650,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   clear: both;
 }
 
-.k-checked .k-ui-namespace .k-optionlist__content {
+.k-checked .k-ui-namespace .k-optionlist .k-optionlist__content {
   position: relative;
   display: table;
   margin: 0;
@@ -9660,35 +9660,35 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   background: white;
   /* Hiding the input but keeping accessible */
   /**
-     * Label styling
-     *
-     * 1. Display as table cell so the labels line up next to each other
-     * 2. Take one pixel off the radius to look smooth
-     * 3. Don't let the user select
-     */
+       * Label styling
+       *
+       * 1. Display as table cell so the labels line up next to each other
+       * 2. Take one pixel off the radius to look smooth
+       * 3. Don't let the user select
+       */
   /**
-     * Styling label when checked
-     *
-     * 1. Transparent background for label itself
-     * 2. Show psuedo element
-     */
+       * Styling label when checked
+       *
+       * 1. Transparent background for label itself
+       * 2. Show psuedo element
+       */
   /**
-     * Fake focus
-     *
-     * We need to create a separate element for the fake focus
-     * The children have position: relative so we can't just fill up the entire parent div
-     *
-     * 1. Position it on top of the parent element but behind the labels
-     * 2. Hide by default
-     * 3. Display on focus
-     * 4. Set border-radius same as parent
-     */
+       * Fake focus
+       *
+       * We need to create a separate element for the fake focus
+       * The children have position: relative so we can't just fill up the entire parent div
+       *
+       * 1. Position it on top of the parent element but behind the labels
+       * 2. Hide by default
+       * 3. Display on focus
+       * 4. Set border-radius same as parent
+       */
   /* Display on focus and active */
 }
 
 @media (min-width: 0) and (min-height: 0) {
-  .k-flexbox.k-checked .k-ui-namespace .k-optionlist__content,
-  .k-flexboxlegacy.k-checked .k-ui-namespace .k-optionlist__content {
+  .k-flexbox.k-checked .k-ui-namespace .k-optionlist .k-optionlist__content,
+  .k-flexboxlegacy.k-checked .k-ui-namespace .k-optionlist .k-optionlist__content {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -9698,7 +9698,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   }
 }
 
-.k-checked .k-ui-namespace .k-optionlist__content label {
+.k-checked .k-ui-namespace .k-optionlist .k-optionlist__content label {
   position: relative;
   z-index: 1;
   display: table-cell;
@@ -9722,27 +9722,27 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
   -webkit-backface-visibility: hidden;
   /**
-       * Fake background to be able to zoom in in from the center on select
-       *
-       * 1. Cover the entire parent
-       * 2. Low z-index so label content will stay on top
-       * 3. Hide the element by default
-       * 4. Same radius as parent
-       * 5. Scale to 0,0
-       */
+         * Fake background to be able to zoom in in from the center on select
+         *
+         * 1. Cover the entire parent
+         * 2. Low z-index so label content will stay on top
+         * 3. Hide the element by default
+         * 4. Same radius as parent
+         * 5. Scale to 0,0
+         */
   /* A little darker background on hovering (no need for focus since this is a `<label>`) */
 }
 
 @media (min-width: 0) and (min-height: 0) {
-  .k-flexbox.k-checked .k-ui-namespace .k-optionlist__content label,
-  .k-flexboxlegacy.k-checked .k-ui-namespace .k-optionlist__content label {
+  .k-flexbox.k-checked .k-ui-namespace .k-optionlist .k-optionlist__content label,
+  .k-flexboxlegacy.k-checked .k-ui-namespace .k-optionlist .k-optionlist__content label {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 auto;
             flex: 1 1 auto;
   }
 }
 
-.k-checked .k-ui-namespace .k-optionlist__content label:before {
+.k-checked .k-ui-namespace .k-optionlist .k-optionlist__content label:before {
   position: absolute;
   top: 0;
   right: 0;
@@ -9765,17 +9765,17 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   -webkit-backface-visibility: hidden;
 }
 
-.k-checked .k-ui-namespace .k-optionlist__content label:hover {
+.k-checked .k-ui-namespace .k-optionlist .k-optionlist__content label:hover {
   background: rgba(0, 0, 0, 0.15);
 }
 
-.k-checked .k-ui-namespace .k-optionlist__content input:checked + label, .k-checked .k-ui-namespace .k-optionlist__content input:checked + label:hover, .k-checked .k-ui-namespace .k-optionlist__content input:checked + label:focus {
+.k-checked .k-ui-namespace .k-optionlist .k-optionlist__content input:checked + label, .k-checked .k-ui-namespace .k-optionlist .k-optionlist__content input:checked + label:hover, .k-checked .k-ui-namespace .k-optionlist .k-optionlist__content input:checked + label:focus {
   background: transparent;
   /* 1 */
   color: white;
 }
 
-.k-checked .k-ui-namespace .k-optionlist__content input:checked + label:before {
+.k-checked .k-ui-namespace .k-optionlist .k-optionlist__content input:checked + label:before {
   -webkit-transform: scale(1, 1);
           transform: scale(1, 1);
   /* 2 */
@@ -9783,7 +9783,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   /* 2 */
 }
 
-.k-checked .k-ui-namespace .k-optionlist__content .k-optionlist__focus {
+.k-checked .k-ui-namespace .k-optionlist .k-optionlist__content .k-optionlist__focus {
   position: absolute;
   top: -1px;
   right: -1px;
@@ -9804,8 +9804,8 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(52, 152, 219, 0.6);
 }
 
-.k-checked .k-ui-namespace .k-optionlist__content input:active ~ .k-optionlist__focus,
-.k-checked .k-ui-namespace .k-optionlist__content input:focus ~ .k-optionlist__focus {
+.k-checked .k-ui-namespace .k-optionlist .k-optionlist__content input:active ~ .k-optionlist__focus,
+.k-checked .k-ui-namespace .k-optionlist .k-optionlist__content input:focus ~ .k-optionlist__focus {
   opacity: 1;
   /* 3 */
   visibility: visible;
@@ -12909,7 +12909,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   white-space: nowrap;
 }
 
-.k-ui-namespace .k-visually-hidden.k-visually-hidden.k-visually-hidden, .k-checked .k-ui-namespace .k-optionlist__content input[type=radio], .k-ui-namespace .k-scopebar__item--search label {
+.k-ui-namespace .k-visually-hidden.k-visually-hidden.k-visually-hidden, .k-checked .k-ui-namespace .k-optionlist .k-optionlist__content input[type=radio], .k-ui-namespace .k-scopebar__item--search label {
   position: absolute;
   overflow: hidden;
   clip: rect(0 0 0 0);
