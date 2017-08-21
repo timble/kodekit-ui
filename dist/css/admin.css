@@ -11971,10 +11971,13 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-tabs-container {
-  overflow: hidden;
+  overflow: visible;
   width: 100%;
   margin: 0 auto;
   padding: 0;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   /* When resizing */
 }
 
