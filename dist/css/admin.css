@@ -10241,6 +10241,16 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   }
 }
 
+.k-ui-namespace .k-scopebar__item-label--numberless {
+  top: 0;
+  right: 0;
+}
+
+[dir="rtl"] .k-ui-namespace .k-scopebar__item-label--numberless {
+  right: auto;
+  left: 0;
+}
+
 .k-ui-namespace .k-scopebar__item-label--numberless:after {
   display: block;
   content: " ";

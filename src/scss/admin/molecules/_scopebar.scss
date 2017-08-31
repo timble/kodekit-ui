@@ -420,6 +420,14 @@ Styleguide 2.18.3
   }
 
   &--numberless {
+    top: 0;
+    right: 0;
+
+    @include rtl {
+      right: auto;
+      left: 0;
+    }
+
     &:after {
       display: block;
       content: " ";
