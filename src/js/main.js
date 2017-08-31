@@ -171,9 +171,10 @@
             function hoverMenuItem() {
                 $menuItem.on('mouseover', function(event) {
                     // Only on desktop
-                    if ( $('.k-menu-container').css('z-index') == 3 ) {
+                    if ( $('.k-menu-container').css('z-index') >= 9 ) {
                         event.preventDefault();
                         if ( $menu.hasClass(menuClass) ) {
+                            $menu.find('.' + submenuClass).blur();
                             openMenuItem($(this));
                         }
                     }
