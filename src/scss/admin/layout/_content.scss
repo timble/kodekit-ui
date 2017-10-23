@@ -86,6 +86,10 @@ Styleguide 3.5
   .k-content {
     & > .k-off-canvas-overlay {
       opacity: $k-off-canvas-overlay-opacity;
+
+      @include breakpoint($k-sidebar-left-querie-width) {
+        opacity: 0;
+      }
     }
   }
 }
@@ -112,6 +116,10 @@ Styleguide 3.5
 
     & > .k-off-canvas-overlay {
       z-index: 9;
+
+      @include breakpoint($k-sidebar-left-querie-width) {
+        z-index: -1;
+      }
     }
   }
 }

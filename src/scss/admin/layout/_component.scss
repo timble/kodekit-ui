@@ -78,6 +78,10 @@ Styleguide 3.6
   .k-component {
     .k-off-canvas-overlay {
       opacity: $k-off-canvas-overlay-opacity; /* 1 */
+
+      @include breakpoint($k-sidebar-right-querie-width) {
+        opacity: 0;
+      }
     }
   }
 }
@@ -93,6 +97,10 @@ Styleguide 3.6
   .k-component {
     .k-off-canvas-overlay {
       z-index: 9; /* 1 */
+
+      @include breakpoint($k-sidebar-right-querie-width) {
+        z-index: -1;
+      }
     }
   }
 }

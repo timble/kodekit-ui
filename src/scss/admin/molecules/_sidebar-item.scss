@@ -35,6 +35,7 @@ Styleguide 2.20
     flex: 0 1 auto;
     overflow: hidden;
     min-height: 100px;
+    max-height: 100%;
 
     div {
       flex: 1 1 auto;
@@ -62,6 +63,15 @@ Styleguide 2.20
         @include item--flex;
       }
     }
+  }
+
+
+  /* On mobile */
+
+  &--flex {
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
   }
 
 
@@ -218,3 +228,4 @@ sg-wrapper:
 Styleguide 2.20.3
 
 */
+

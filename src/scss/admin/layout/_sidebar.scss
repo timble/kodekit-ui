@@ -195,6 +195,10 @@ Styleguide 3.4
   .k-sidebar-left {
     display: block;
     z-index: 1;
+
+    @include flexbox(0, 0) {
+      display: flex;
+    }
   }
 }
 
@@ -230,5 +234,9 @@ Styleguide 3.4
   .k-sidebar-right {
     display: block;
     z-index: 1;
+
+    @include flexbox(0, 0) {
+      display: flex;
+    }
   }
 }

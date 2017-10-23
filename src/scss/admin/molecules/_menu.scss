@@ -230,6 +230,10 @@
   .k-wrapper {
     > .k-off-canvas-overlay {
       z-index: 10;
+
+      @include breakpoint($k-sidebar-right-querie-width) {
+        z-index: -1;
+      }
     }
   }
 }
@@ -247,7 +251,11 @@
     }
 
     > .k-off-canvas-overlay {
-      opacity: 0.75;
+      opacity: $k-off-canvas-overlay-opacity;
+
+      @include breakpoint($k-sidebar-right-querie-width) {
+        opacity: 0;
+      }
     }
   }
 }
