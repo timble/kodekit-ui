@@ -6024,7 +6024,7 @@ markup:
    *
    * 1. Set z-index to 0 so the :after psuedo element will be on top
    * 2. Make room for the psuedo element separator
-   * 3. Make each item at least one breadcrumb size wide
+   * 3. Make each item at least one breadcrumb size wide + including padding for pseudo element
    * 4. Hide by default so we can show only a few on mobile / flexbox
    * 5. Hide overflowing content
    * 6. Proper spacing for non-flexbox use
@@ -6044,7 +6044,6 @@ markup:
    * One but last item
    *
    * Show this item on mobile to get a sense of where you are
-   * Only do this when flexbox is available
    *
    * 1. Set 'missing' content
    * 2. Reset to default content on wider screens
@@ -6077,7 +6076,7 @@ markup:
   /* 1 */
   padding-left: 20px;
   /* 2 */
-  min-width: 40px;
+  min-width: 60px;
   /* 3 */
   display: none;
   /* 4 */
@@ -6133,6 +6132,7 @@ markup:
 
 .k-ui-namespace .k-breadcrumb li:first-child {
   padding-left: 0;
+  min-width: 40px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-breadcrumb li:first-child {

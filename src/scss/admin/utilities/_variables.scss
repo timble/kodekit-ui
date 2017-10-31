@@ -432,21 +432,22 @@ $k-tree-toggle-size:        ceil($k-tree-size / 8) !default;
 // Breadcrumbs
 // ==========================================================================
 //
-// 1. On mobile we don't show all breadcrumb items
-// 2. The content of the divider
-// 3. The width of dividers between breadcrumb items
-// 4. Height of each breadcrumb item
-// 5. The width when showing all breadcrumbs instead of only first and last
+// 1. Height of each breadcrumb item
+// 2. The width when showing all breadcrumbs instead of only first and last
+// 3. On mobile we don't show all breadcrumb items
+// 4. The content of the divider
+// 5. The width of dividers between breadcrumb items
 
-$k-breadcrumb-missing-content:    "…" !default; // 4
-$k-breadcrumb-divider-content:    "»" !default; // 2
-$k-breadcrumb-divider-size:       round($k-unit-size / 2) !default; // 3
-$k-breadcrumb-size:               $k-unit-size !default; // 4
-$k-breadcrumb-query:              $k-charlie !default; // 5
+$k-breadcrumb-size:               $k-unit-size !default; // 1
+$k-breadcrumb-query:              $k-charlie !default; // 2
+$k-breadcrumb-missing-content:    "…" !default; // 3
+$k-breadcrumb-divider-content:    "»" !default; // 4
+$k-breadcrumb-divider-size:       round($k-breadcrumb-size / 2) !default; // 5
 
 $k-breadcrumb-background:         $k-color-primary-plus-4 !default;
 $k-breadcrumb-border:             darkest($k-breadcrumb-background) !default;
 $k-breadcrumb-color:              $k-color-type !default;
+$k-breadcrumb-active-weight:      $k-bold !default;
 
 $k-breadcrumb-hover-background:   darker($k-breadcrumb-background) !default;
 

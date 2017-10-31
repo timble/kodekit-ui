@@ -72,7 +72,7 @@ Styleguide 2.2
    *
    * 1. Set z-index to 0 so the :after psuedo element will be on top
    * 2. Make room for the psuedo element separator
-   * 3. Make each item at least one breadcrumb size wide
+   * 3. Make each item at least one breadcrumb size wide + including padding for pseudo element
    * 4. Hide by default so we can show only a few on mobile / flexbox
    * 5. Hide overflowing content
    * 6. Proper spacing for non-flexbox use
@@ -82,7 +82,7 @@ Styleguide 2.2
     position: relative; /* 1 */
     z-index: 0; /* 1 */
     padding-left: $k-breadcrumb-divider-size; /* 2 */
-    min-width: $k-breadcrumb-size; /* 3 */
+    min-width: $k-breadcrumb-size + $k-breadcrumb-divider-size; /* 3 */
     display: none; /* 4 */
     overflow: hidden; /* 5 */
     vertical-align: middle; /* 6 */
@@ -125,6 +125,7 @@ Styleguide 2.2
 
     &:first-child {
       padding-left: 0;
+      min-width: $k-breadcrumb-size;
 
       @include rtl {
         padding-right: 0;
@@ -191,7 +192,6 @@ Styleguide 2.2
    * One but last item
    *
    * Show this item on mobile to get a sense of where you are
-   * Only do this when flexbox is available
    *
    * 1. Set 'missing' content
    * 2. Reset to default content on wider screens
@@ -214,7 +214,7 @@ Styleguide 2.2
 
   .k-breadcrumb__active {
     .k-breadcrumb__content {
-      font-weight: $k-bold;
+      font-weight: $k-breadcrumb-active-weight;
     }
   }
 
