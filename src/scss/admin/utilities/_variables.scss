@@ -52,114 +52,20 @@ $k-webkit-font-smoothing:   antialiased !default;
 $k-firefox-font-smoothing:  grayscale !default;
 
 
-// Icons
-// ==========================================================================
-
-$k-icon-path: '../fonts' !default;
-$k-rtlicons:  'account-login',
-'account-logout',
-'action-redo',
-'action-undo',
-'align-left',
-'align-right',
-'arrow-circle-left',
-'arrow-circle-right',
-'arrow-left',
-'arrow-right',
-'arrow-thick-left',
-'arrow-thick-right',
-'bar-chart',
-'book',
-'browser',
-'brush',
-'bullhorn',
-'calculator',
-'calendar',
-'caret-left',
-'caret-right',
-'chevron-left',
-'chevron-right',
-'collapse-left',
-'collapse-right',
-'comment-square',
-'copywriting',
-'delete',
-'document',
-'double-quote-sans-left',
-'double-quote-sans-right',
-'double-quote-serif-left',
-'double-quote-serif-right',
-'expand-left',
-'expand-right',
-'external-link',
-'eyedropper',
-'file',
-'fire',
-'flag',
-'folder',
-'graph',
-'info',
-'italic',
-'justify-left',
-'justify-right',
-'key',
-'layers',
-'link-intact',
-'link-broken',
-'list-rich',
-'list',
-'magnifying-glass',
-'media-play',
-'media-skip-backward',
-'media-skip-forward',
-'media-step-backward',
-'media-step-forward',
-'paperclip',
-'pencil',
-'people',
-'pie-chart',
-'play-circle',
-'project',
-'question-mark',
-'reload',
-'share-boxed',
-'share',
-'signal',
-'sort-ascending',
-'sort-descending',
-'spreadsheet',
-'tag',
-'tags',
-'video',
-'volume-high',
-'volume-low',
-'volume-off',
-'wrench',
-'zoom-in',
-'zoom-out',
-'document-audio',
-'document-folder',
-'filter',
-'folder-closed',
-'folder-opened',
-'menu-closed',
-'menu-opened';
-
-
 // Spacing
 // ==========================================================================
 //
 // can either be used as a padding or a margin on elements
-// Rounding so we won't get half pixels
 
 $k-spacing-tiny:              4px !default;
 $k-spacing-small:             8px !default;
 $k-spacing-min:               12px !default;
 $k-spacing:                   16px !default;
+$k-spacing-medium:            $k-spacing !default;
 $k-spacing-large:             24px !default;
 $k-spacing-huge:              32px !default;
 
-$k-spacing-base-vertical:     4px !default;
+$k-spacing-base-vertical:     6px !default;
 $k-spacing-base-horizontal:   12px !default;
 
 $k-spacing-tiny-vertical:     2px !default;
@@ -172,8 +78,10 @@ $k-spacing-large-vertical:    8px !default;
 $k-spacing-large-horizontal:  16px !default;
 
 
-// Sizes
+// Unit
 // ==========================================================================
+//
+// Basic unit for elements heights to try and keep a nice vertical rhytm in 4px grid
 
 $k-unit-size:             40px !default;
 $k-border-radius:         4px !default;
@@ -181,10 +89,19 @@ $k-border-radius-large:   6px !default;
 $k-border-radius-small:   3px !default;
 
 
+// Elements
+// ==========================================================================
+
+$k-element-tiny-size:     20px !default;
+$k-element-small-size:    28px !default;
+$k-element-medium-size:   32px !default;
+$k-element-large-size:    40px !default;
+
+
 // Function variables
 // ==========================================================================
 //
-// These are used by our light, lighter, lightest, dark, darker and darkest funxtions
+// These are used by our light, lighter, lightest, dark, darker and darkest functions
 // This way we can change the amounts all in one.
 // Overwrite-able per function call
 
@@ -633,35 +550,60 @@ $k-nav-tabs-active-link-hover-border:         $k-color-primary-min-1 !default;
 // Buttons
 // ==========================================================================
 
-$k-btn-default-color:             $k-color-type !default;
-$k-btn-default-background:        $k-color-button !default;
-$k-btn-default-border:            $k-color-primary-min-2 !default;
+$k-button-font-weight:               $k-regular !default;
+$k-button-spacer:                    $k-spacing-tiny !default;
+$k-button-active-class:              $k-active-class !default;
+$k-button-disabled-class:            $k-disabled-class !default;
 
-$k-btn-primary-color:             $k-color-accent-type !default;
-$k-btn-primary-background:        $k-color-accent !default;
-$k-btn-primary-border:            darken($k-btn-primary-background, 5%) !default;
+$k-button-default-color:             $k-color-type !default;
+$k-button-default-background:        $k-color-button !default;
+$k-button-default-border:            $k-color-primary-min-2 !default;
 
-$k-btn-success-color:             $k-color-success-type !default;
-$k-btn-success-background:        $k-color-success !default
-$k-btn-success-border:            darken($k-btn-success-background, 5%) !default;
+$k-button-primary-color:             $k-color-accent-type !default;
+$k-button-primary-background:        $k-color-accent !default;
+$k-button-primary-border:            darken($k-button-primary-background, 5%) !default;
 
-$k-btn-info-color:                $k-color-neutral-type !default;
-$k-btn-info-background:           $k-color-neutral !default;
-$k-btn-info-border:               darken($k-btn-info-background, 5%) !default;
+$k-button-success-color:             $k-color-success-type !default;
+$k-button-success-background:        $k-color-success !default
+$k-button-success-border:            darken($k-button-success-background, 5%) !default;
 
-$k-btn-warning-color:             $k-color-warning-type !default;
-$k-btn-warning-background:        $k-color-warning !default;
-$k-btn-warning-border:            darken($k-btn-warning-background, 5%) !default;
+$k-button-info-color:                $k-color-neutral-type !default;
+$k-button-info-background:           $k-color-neutral !default;
+$k-button-info-border:               darken($k-button-info-background, 5%) !default;
 
-$k-btn-danger-color:              $k-color-error-type !default;
-$k-btn-danger-background:         $k-color-error !default;
-$k-btn-danger-border:             darken($k-btn-danger-background, 5%) !default;
+$k-button-warning-color:             $k-color-warning-type !default;
+$k-button-warning-background:        $k-color-warning !default;
+$k-button-warning-border:            darken($k-button-warning-background, 5%) !default;
 
-$k-btn-link-disabled-color:       $k-color-primary-min-6 !default;
+$k-button-danger-color:              $k-color-error-type !default;
+$k-button-danger-background:         $k-color-error !default;
+$k-button-danger-border:             darken($k-button-danger-background, 5%) !default;
 
-$k-btn-border-radius-base:        $k-border-radius !default;
-$k-btn-border-radius-large:       $k-border-radius-large !default;
-$k-btn-border-radius-small:       $k-border-radius-small !default;
+$k-button-link-disabled-color:       $k-color-primary-min-6 !default;
+
+$k-button-border-radius:             $k-border-radius !default;
+$k-button-font-size:                 $k-font-size !default;
+$k-button-line-height:               $k-line-height !default;
+$k-button-spacing-vertical:          $k-spacing-base-vertical !default;
+$k-button-spacing-horizontal:        $k-spacing-base-horizontal !default;
+
+$k-button-tiny-border-radius:        $k-border-radius-small !default;
+$k-button-tiny-font-size:            $k-font-size-tiny !default;
+$k-button-tiny-line-height:          $k-line-height-tiny !default;
+$k-button-tiny-spacing-vertical:     $k-spacing-tiny-vertical !default;
+$k-button-tiny-spacing-horizontal:   $k-spacing-tiny-horizontal !default;
+
+$k-button-small-border-radius:       $k-border-radius-small !default;
+$k-button-small-font-size:           $k-font-size-small !default;
+$k-button-small-line-height:         $k-line-height-small !default;
+$k-button-small-spacing-vertical:    $k-spacing-small-vertical !default;
+$k-button-small-spacing-horizontal:  $k-spacing-small-horizontal !default;
+
+$k-button-large-border-radius:       $k-border-radius-large !default;
+$k-button-large-font-size:           $k-font-size-large !default;
+$k-button-large-line-height:         $k-line-height-large !default;
+$k-button-large-spacing-vertical:    $k-spacing-large-vertical !default;
+$k-button-large-spacing-horizontal:  $k-spacing-large-horizontal !default;
 
 
 // Pagination
@@ -859,6 +801,100 @@ $k-loader-container-background:   white !default;
 $k-loader-container-opacity:      0.8 !default;
 
 
+// Icons
+// ==========================================================================
+
+$k-icon-path: '../fonts' !default;
+$k-rtlicons:  'account-login',
+'account-logout',
+'action-redo',
+'action-undo',
+'align-left',
+'align-right',
+'arrow-circle-left',
+'arrow-circle-right',
+'arrow-left',
+'arrow-right',
+'arrow-thick-left',
+'arrow-thick-right',
+'bar-chart',
+'book',
+'browser',
+'brush',
+'bullhorn',
+'calculator',
+'calendar',
+'caret-left',
+'caret-right',
+'chevron-left',
+'chevron-right',
+'collapse-left',
+'collapse-right',
+'comment-square',
+'copywriting',
+'delete',
+'document',
+'double-quote-sans-left',
+'double-quote-sans-right',
+'double-quote-serif-left',
+'double-quote-serif-right',
+'expand-left',
+'expand-right',
+'external-link',
+'eyedropper',
+'file',
+'fire',
+'flag',
+'folder',
+'graph',
+'info',
+'italic',
+'justify-left',
+'justify-right',
+'key',
+'layers',
+'link-intact',
+'link-broken',
+'list-rich',
+'list',
+'magnifying-glass',
+'media-play',
+'media-skip-backward',
+'media-skip-forward',
+'media-step-backward',
+'media-step-forward',
+'paperclip',
+'pencil',
+'people',
+'pie-chart',
+'play-circle',
+'project',
+'question-mark',
+'reload',
+'share-boxed',
+'share',
+'signal',
+'sort-ascending',
+'sort-descending',
+'spreadsheet',
+'tag',
+'tags',
+'video',
+'volume-high',
+'volume-low',
+'volume-off',
+'wrench',
+'zoom-in',
+'zoom-out',
+'document-audio',
+'document-folder',
+'filter',
+'folder-closed',
+'folder-opened',
+'menu-closed',
+'menu-opened';
+
+
 // Overrides for Select2-bootstrap theme
 // ==========================================================================
 
@@ -879,8 +915,8 @@ $k-padding-large-horizontal:  $k-spacing-large-horizontal !default;
 $k-dropdown-link-hover-bg:    $k-dropdown-link-hover-background !default;
 $k-dropdown-link-active-bg:   $k-dropdown-link-active-background !default;
 
-$k-btn-default-bg:            $k-btn-default-background !default;
-$k-btn-danger-bg:             $k-btn-danger-background !default;
+$k-button-default-bg:            $k-button-default-background !default;
+$k-button-danger-bg:             $k-button-danger-background !default;
 
 $k-state-warning-text:        $k-state-warning-color !default;
 $k-state-danger-text:         $k-state-danger-color !default;

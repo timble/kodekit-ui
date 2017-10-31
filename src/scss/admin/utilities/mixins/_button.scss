@@ -4,10 +4,10 @@
 // 1. For input.k-button
 // 2. Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
 
-@mixin button-default($activeClass: $k-active-class, $disabledClass: $k-disabled-class) {
+@mixin button-default($activeClass: $k-button-active-class, $disabledClass: $k-button-disabled-class) {
   display: inline-block;
   margin-bottom: 0; /* 1 */
-  font-weight: $k-regular;
+  font-weight: $k-button-font-weight;
   text-align: center;
   vertical-align: middle;
   touch-action: manipulation;
@@ -18,10 +18,11 @@
   box-shadow: none;
   text-shadow: none;
   user-select: none;
-  border-radius: $k-border-radius;
-  margin-right: $k-spacing-tiny;
-  line-height: 22px;
-  padding: $k-spacing-base-vertical $k-spacing-base-horizontal;
+  border-radius: $k-button-border-radius;
+  margin-right: $k-button-spacer;
+  font-size: $k-button-font-size;
+  line-height: $k-button-line-height;
+  padding: $k-button-spacing-vertical $k-button-spacing-horizontal;
 
   &:last-child {
     margin-right: 0;
@@ -29,7 +30,7 @@
 
   @include rtl {
     margin-right: 0;
-    margin-left: $k-spacing-tiny;
+    margin-left: $k-button-spacer;
 
     &:last-child {
       margin-left: 0;
@@ -51,7 +52,7 @@
 
   &:hover,
   &:focus {
-    color: $k-btn-default-color;
+    color: $k-button-default-color;
   }
 
   &:active,
@@ -72,7 +73,7 @@
 // Button link style
 // ==========================================================================
 
-@mixin button-link($activeClass: $k-active-class, $disabledClass: $k-disabled-class) {
+@mixin button-link($activeClass: $k-button-active-class, $disabledClass: $k-button-disabled-class) {
   color: $k-color-type;
   font-weight: normal;
   border-radius: 0;
@@ -106,7 +107,7 @@
   &#{$disabledClass} {
     &:hover,
     &:focus {
-      color: $k-btn-link-disabled-color;
+      color: $k-button-link-disabled-color;
       text-decoration: none;
     }
   }

@@ -256,7 +256,7 @@ Styleguide 2.5
     &.active.disabled:hover {
       color: #fff;
       text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-      background: $k-btn-primary-background;
+      background: $k-button-primary-background;
     }
 
     span {
@@ -286,7 +286,7 @@ Styleguide 2.5
       &.active.disabled:hover {
         color: #fff;
         text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-        background: $k-btn-primary-background;
+        background: $k-button-primary-background;
       }
 
       &.old,

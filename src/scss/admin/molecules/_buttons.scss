@@ -57,27 +57,27 @@ Styleguide 2.3.1
 /* Alternate buttons */
 
 .k-button--default {
-  @include button-variant($k-btn-default-color, $k-btn-default-background, $k-btn-default-border);
+  @include button-variant($k-button-default-color, $k-button-default-background, $k-button-default-border);
 }
 
 .k-button--primary {
-  @include button-variant($k-btn-primary-color, $k-btn-primary-background, $k-btn-primary-border);
+  @include button-variant($k-button-primary-color, $k-button-primary-background, $k-button-primary-border);
 }
 
 .k-button--success {
-  @include button-variant($k-btn-success-color, $k-btn-success-background, $k-btn-success-border);
+  @include button-variant($k-button-success-color, $k-button-success-background, $k-button-success-border);
 }
 
 .k-button--info {
-  @include button-variant($k-btn-info-color, $k-btn-info-background, $k-btn-info-border);
+  @include button-variant($k-button-info-color, $k-button-info-background, $k-button-info-border);
 }
 
 .k-button--warning {
-  @include button-variant($k-btn-warning-color, $k-btn-warning-background, $k-btn-warning-border);
+  @include button-variant($k-button-warning-color, $k-button-warning-background, $k-button-warning-border);
 }
 
 .k-button--danger {
-  @include button-variant($k-btn-danger-color, $k-btn-danger-background, $k-btn-danger-border);
+  @include button-variant($k-button-danger-color, $k-button-danger-background, $k-button-danger-border);
 }
 
 
@@ -114,22 +114,22 @@ Styleguide 2.3.2
 */
 
 .k-button--tiny {
-  @include button-size($k-border-radius-small, $k-font-size-tiny, $k-line-height-tiny, $k-spacing-tiny-vertical $k-spacing-tiny-horizontal);
+  @include button-size($k-button-tiny-border-radius, $k-button-tiny-font-size, $k-button-tiny-line-height, $k-button-tiny-spacing-vertical $k-button-tiny-spacing-horizontal);
 }
 
 .k-button--small {
-  @include button-size($k-border-radius-small, $k-font-size-small, $k-line-height-small, $k-spacing-small-vertical $k-spacing-small-horizontal);
+  @include button-size($k-button-small-border-radius, $k-button-small-font-size, $k-button-small-line-height, $k-button-small-spacing-vertical $k-button-small-spacing-horizontal);
 }
 
 .k-button--large {
-  @include button-size($k-border-radius-large, $k-font-size-large, $k-line-height-large, $k-spacing-large-vertical $k-spacing-large-horizontal);
+  @include button-size($k-button-large-border-radius, $k-button-large-font-size, $k-button-large-line-height, $k-button-large-spacing-vertical $k-button-large-spacing-horizontal);
 }
 
 
 /* Vertically space out multiple block buttons */
 
 .k-button--block + .k-button--block {
-  margin-top: 4px;
+  margin-top: $k-button-spacer;
 }
 
 
@@ -219,19 +219,19 @@ Styleguide 2.3.3
     @include border-right-radius(0);
 
     @include rtl {
-      @include border-right-radius($k-border-radius);
+      @include border-right-radius($k-button-border-radius);
       @include border-left-radius(0);
 
       &.k-button--tiny {
-        @include border-right-radius($k-border-radius-small);
+        @include border-right-radius($k-button-tiny-border-radius);
       }
 
       &.k-button--small {
-        @include border-right-radius($k-border-radius-small);
+        @include border-right-radius($k-button-small-border-radius);
       }
 
       &.k-button--large {
-        @include border-right-radius($k-border-radius-large);
+        @include border-right-radius($k-button-large-border-radius);
       }
     }
   }
@@ -240,19 +240,19 @@ Styleguide 2.3.3
     @include border-left-radius(0);
 
     @include rtl {
-      @include border-left-radius($k-border-radius);
+      @include border-left-radius($k-button-border-radius);
       @include border-right-radius(0);
 
       &.k-button--tiny {
-        @include border-left-radius($k-border-radius-small);
+        @include border-left-radius($k-button-tiny-border-radius);
       }
 
       &.k-button--small {
-        @include border-left-radius($k-border-radius-small);
+        @include border-left-radius($k-button-small-border-radius);
       }
 
       &.k-button--large {
-        @include border-left-radius($k-border-radius-large);
+        @include border-left-radius($k-button-large-border-radius);
       }
     }
   }

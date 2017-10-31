@@ -535,8 +535,8 @@ $k-clear-selection-color: $k-dropdown-arrow-color !default;
 
     .select2-selection__choice {
       color: $k-input-color;
-      background: $k-btn-default-bg;
-      border: 1px solid $k-btn-default-border;
+      background: $k-button-default-bg;
+      border: 1px solid $k-button-default-border;
       border-radius: 4px;
       cursor: default;
       float: left;

@@ -5823,7 +5823,7 @@ markup:
 .k-ui-namespace input[type="tel"],
 .k-ui-namespace input[type="color"],
 .k-ui-namespace .uneditable-input {
-  height: 28px;
+  height: 32px;
   /* 5 */
 }
 
@@ -6237,8 +6237,9 @@ markup:
           user-select: none;
   border-radius: 4px;
   margin-right: 4px;
-  line-height: 22px;
-  padding: 4px 12px;
+  font-size: 13px;
+  line-height: 20px;
+  padding: 6px 12px;
 }
 
 .k-ui-namespace .k-button:last-child {
@@ -7062,9 +7063,9 @@ fieldset[disabled] .k-ui-namespace .k-button--danger.has-focus {
   /* 1 */
   max-width: 100%;
   /* 1 */
-  height: 28px;
+  height: 32px;
   /* 2 */
-  padding: 4px 12px;
+  padding: 6px 12px;
   font-size: 13px;
   line-height: 20px;
   color: #222222;
@@ -7131,7 +7132,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   .k-ui-namespace input[type="time"].k-form-control,
   .k-ui-namespace input[type="datetime-local"].k-form-control,
   .k-ui-namespace input[type="month"].k-form-control {
-    line-height: 28px;
+    line-height: 32px;
   }
   .k-input-group--small .k-ui-namespace input[type="date"], .k-input-group--small
   .k-ui-namespace input[type="time"], .k-input-group--small
@@ -7455,7 +7456,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-input-group .k-input-group__button .k-button {
-  height: 28px;
+  height: 32px;
 }
 
 .k-ui-namespace .k-input-group--large > .k-form-control,
@@ -7559,8 +7560,8 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 .k-ui-namespace .k-input-group__addon {
   font-size: 13px;
   line-height: 20px;
-  height: 28px;
-  padding: 4px 12px;
+  height: 32px;
+  padding: 6px 12px;
   font-weight: normal;
   color: #222222;
   text-align: center;
@@ -9485,7 +9486,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   display: table-cell;
   /* 1 */
   margin: 0;
-  padding: 4px 10px;
+  padding: 6px 10px;
   line-height: 1.25em;
   text-align: center;
   color: #222222;
@@ -10797,7 +10798,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   position: relative;
   float: left;
   /* 2 */
-  padding: 4px 12px;
+  padding: 6px 12px;
   line-height: 20px;
   text-decoration: none;
   color: #3071a9;
@@ -10863,7 +10864,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-pagination select {
-  height: 30px;
+  height: 34px;
   width: auto;
   margin: 0;
   margin-right: 4px;
@@ -13636,7 +13637,7 @@ Styleguide 2.19
 }
 
 .select2-container--bootstrap .select2-selection--single {
-  padding: 4px 12px;
+  padding: 6px 12px;
 }
 
 .select2-container--bootstrap .select2-selection--single .select2-selection__rendered {
@@ -13644,7 +13645,7 @@ Styleguide 2.19
 }
 
 .select2-container--bootstrap .select2-selection--single .select2-selection__arrow {
-  height: 28px;
+  height: 32px;
 }
 
 .select2-container--bootstrap .select2-selection--multiple .select2-selection__rendered {
@@ -13658,7 +13659,7 @@ Styleguide 2.19
 }
 
 .select2-container--bootstrap .select2-search__field {
-  height: 28px;
+  height: 32px;
   margin: 0;
 }
 
@@ -13667,7 +13668,7 @@ Styleguide 2.19
 }
 
 .select2-container--bootstrap .select2-search--inline .select2-search__field {
-  height: 26px;
+  height: 30px;
   margin: 0;
   box-shadow: none;
   background: transparent;
@@ -13815,7 +13816,7 @@ Styleguide 2.19
 }
 
 .select2-container--bootstrap .select2-results__option .select2-results__option {
-  padding: 4px 12px;
+  padding: 6px 12px;
 }
 
 .select2-container--bootstrap .select2-results__option .select2-results__option .select2-results__group {
@@ -13850,7 +13851,7 @@ Styleguide 2.19
 .select2-container--bootstrap .select2-results__group {
   color: #343434;
   display: block;
-  padding: 4px 12px;
+  padding: 6px 12px;
   font-size: 11px;
   line-height: 20px;
   white-space: nowrap;
@@ -13938,9 +13939,9 @@ Styleguide 2.19
 }
 
 .select2-container--bootstrap .select2-selection--single {
-  height: 28px;
+  height: 32px;
   line-height: 20px;
-  padding: 4px 24px 4px 12px;
+  padding: 6px 24px 6px 12px;
   /**
      * Adjust the single Select2's dropdown arrow button appearance.
      */
@@ -13977,7 +13978,7 @@ Styleguide 2.19
 }
 
 .select2-container--bootstrap .select2-selection--multiple {
-  min-height: 28px;
+  min-height: 32px;
   /**
      * Make Multi Select2's choices match Bootstrap 3's default button styles.
      */
@@ -14015,14 +14016,14 @@ Styleguide 2.19
   border-radius: 4px;
   cursor: default;
   float: left;
-  margin: 3px 0 0 6px;
-  padding: 0 4px;
+  margin: 5px 0 0 6px;
+  padding: 0 6px;
 }
 
 .select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field {
   background: transparent;
   padding: 0 12px;
-  height: 26px;
+  height: 30px;
   line-height: 20px;
   margin-top: 0;
   min-width: 5em;
@@ -14033,7 +14034,7 @@ Styleguide 2.19
   cursor: pointer;
   display: inline-block;
   font-weight: bold;
-  margin-right: 2px;
+  margin-right: 3px;
 }
 
 .select2-container--bootstrap .select2-selection--multiple .select2-selection__choice__remove:hover {
@@ -14041,7 +14042,7 @@ Styleguide 2.19
 }
 
 .select2-container--bootstrap .select2-selection--multiple .select2-selection__clear {
-  margin-top: 4px;
+  margin-top: 6px;
 }
 
 .select2-container--bootstrap.input-sm, .select2-container--bootstrap.input-lg {
