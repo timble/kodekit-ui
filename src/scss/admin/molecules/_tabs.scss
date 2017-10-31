@@ -53,7 +53,7 @@
   overflow: auto;
 
   > .k-tabs {
-    padding: ($k-spacing / 2) ($k-spacing / 2) 0;
+    padding: ($k-spacing-large / 2) ($k-spacing / 2) 0;
     background: $k-nav-tabs-active-link-hover-background;
     white-space: nowrap;
     display: inline-block;

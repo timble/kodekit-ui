@@ -41,8 +41,8 @@ Styleguide 2.24
   @include border(bottom, $k-toolbar-border);
   background: $k-toolbar-background;
   min-height: $k-toolbar-height;
-  padding-bottom: 10px; /* 1 */
-  padding-right: 10px; /* 2 */
+  padding-bottom: 8px; /* 1 */
+  padding-right: 8px; /* 2 */
 
   @include rtl {
     padding-right: 0;
@@ -64,7 +64,7 @@ Styleguide 2.24
 
 .k-toolbar {
   .k-button {
-    margin: 10px 0 0 10px;
+    margin: 7px 0 0 8px;
 
 
     /**

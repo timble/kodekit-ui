@@ -48,19 +48,19 @@ $k-flexbox-vertical:    391px !default; // 2
 $k-font-family:             -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !default;
 
 $k-font-size:               13px !default;
-$k-line-height:             round($k-font-size * 1.5) !default;
+$k-line-height:             20px !default;
 
-$k-font-size-tiny:          round($k-font-size * 0.6) !default;
-$k-line-height-tiny:        round($k-font-size-tiny * 1.5) !default;
+$k-font-size-tiny:          8px !default;
+$k-line-height-tiny:        12px !default;
 
-$k-font-size-small:         round($k-font-size * 0.85) !default;
-$k-line-height-small:       round($k-font-size-small * 1.5) !default;
+$k-font-size-small:         11px !default;
+$k-line-height-small:       16px !default;
 
-$k-font-size-large:         round($k-font-size * 1.38) !default;
-$k-line-height-large:       round($k-font-size-large * 1.3) !default;
+$k-font-size-large:         17px !default;
+$k-line-height-large:       24px !default;
 
-$k-font-size-huge:          round($k-font-size * 1.62) !default;
-$k-line-height-huge:        round($k-font-size-huge * 1.2) !default;
+$k-font-size-huge:          21px !default;
+$k-line-height-huge:        28px !default;
 
 $k-bold:                    700 !default;
 $k-regular:                 400 !default;
@@ -169,29 +169,29 @@ $k-rtlicons:  'account-login',
 // can either be used as a padding or a margin on elements
 // Rounding so we won't get half pixels
 
-$k-spacing-tiny:              round($k-font-size / 2) !default;
-$k-spacing-small:             $k-font-size !default;
-$k-spacing:                   round($k-font-size * 1.5) !default;
-$k-spacing-large:             $k-font-size * 2 !default;
-$k-spacing-huge:              $k-font-size * 3 !default;
+$k-spacing-tiny:              4px !default;
+$k-spacing-small:             8px !default;
+$k-spacing:                   16px !default;
+$k-spacing-large:             24px !default;
+$k-spacing-huge:              32px !default;
 
-$k-spacing-base-vertical:     round($k-font-size * 0.4) !default;
-$k-spacing-base-horizontal:   round($k-font-size * 0.8) !default;
+$k-spacing-base-vertical:     4px !default;
+$k-spacing-base-horizontal:   12px !default;
 
-$k-spacing-tiny-vertical:     round($k-font-size-tiny * 0.4) !default;
-$k-spacing-tiny-horizontal:   round($k-font-size-tiny * 0.8) !default;
+$k-spacing-tiny-vertical:     2px !default;
+$k-spacing-tiny-horizontal:   4px !default;
 
-$k-spacing-small-vertical:    round($k-font-size-small * 0.4) !default;
-$k-spacing-small-horizontal:  round($k-font-size-small * 0.8) !default;
+$k-spacing-small-vertical:    4px !default;
+$k-spacing-small-horizontal:  8px !default;
 
-$k-spacing-large-vertical:    round($k-font-size-large * 0.4) !default;
-$k-spacing-large-horizontal:  round($k-font-size-large * 0.8) !default;
+$k-spacing-large-vertical:    8px !default;
+$k-spacing-large-horizontal:  16px !default;
 
 
 // Sizes
 // ==========================================================================
 
-$k-unit-size:             $k-spacing-huge !default;
+$k-unit-size:             40px !default;
 $k-border-radius:         4px !default;
 $k-border-radius-large:   6px !default;
 $k-border-radius-small:   3px !default;
@@ -337,7 +337,7 @@ $k-login-container-spacing:     $k-spacing !default;
 $k-login-container-background:  $k-color-base !default;
 $k-login-container-color:       $k-color-base-type !default;
 $k-login-width:                 360px !default;
-$k-login-radius:                4px !default;
+$k-login-radius:                $k-border-radius !default;
 $k-login-background:            white !default;
 $k-login-color:                 $k-color-type !default;
 $k-login-spacing:               $k-spacing !default;
@@ -389,12 +389,12 @@ $k-toolbar-color:       $k-color-type !default;
 // 1. Sidebar width on smaller screens
 // 2. Sidebar width when screen is "$k-desktop"
 
-$k-sidebar-left-width-small:    210px !default; // 1
-$k-sidebar-left-width:          270px !default; // 2
+$k-sidebar-left-width-small:    208px !default; // 1
+$k-sidebar-left-width:          272px !default; // 2
 $k-sidebar-left-querie-width:   $k-charlie !default; // 2
 
-$k-sidebar-right-width-small:   210px !default; // 1
-$k-sidebar-right-width:         270px !default; // 2
+$k-sidebar-right-width-small:   208px !default; // 1
+$k-sidebar-right-width:         272px !default; // 2
 $k-sidebar-right-querie-width:  $k-beta !default; // 2
 
 $k-sidebar-background:          $k-color-primary-plus-2 !default;
@@ -405,7 +405,7 @@ $k-sidebar-color:               $k-color-type !default;
 // Navigation
 // ==========================================================================
 
-$k-navigation-spacing:            $k-spacing-tiny !default;
+$k-navigation-spacing:            $k-spacing-small !default;
 $k-navigation-font-size:          $k-font-size-large !default;
 
 $k-navigation-background:         $k-color-primary-plus-1 !default;
@@ -518,7 +518,7 @@ $k-scopebar-buttons-hover-background:   darker($k-dropdown-buttons-background) !
 // 1. Height of the table cells
 // 2. Table cell padding
 
-$k-table-cell-size:                       $k-font-size * 3 !default; // 1
+$k-table-cell-size:                       $k-unit-size !default; // 1
 $k-table-cell-spacing-vertical:           $k-spacing-tiny !default; // 2
 $k-table-cell-spacing-horizontal:         $k-spacing-tiny !default; // 2
 
@@ -590,7 +590,7 @@ $k-form-block-content-spacing:    $k-spacing-small !default;
 
 $k-off-canvas-overlay-background:   black !default;
 $k-off-canvas-overlay-opacity:      0.75 !default;
-$k-toggle-button-size:              33px !default;
+$k-toggle-button-size:              32px !default;
 $k-toggle-button-background:        $k-color-accent !default;
 $k-toggle-button-color:             white !default;
 $k-toggle-button-radius:            3px !default;
@@ -630,7 +630,7 @@ $k-grid-width:      2560px !default;
 // Tabs
 // ==========================================================================
 
-$k-nav-tabs-link-spacing:                     $k-spacing-tiny $k-spacing-small !default;
+$k-nav-tabs-link-spacing:                     ($k-spacing-small - 1px) $k-spacing ($k-spacing-small - 2px) !default;
 
 $k-nav-tabs-link-hover-background:            $k-color-primary-plus-2 !default;
 
@@ -698,7 +698,7 @@ $k-pagination-active-border:      darker($k-color-accent) !default;
 // Tooltips
 // ==========================================================================
 
-$k-tooltip-max-width:     260px !default;
+$k-tooltip-max-width:     264px !default;
 $k-tooltip-color:         white !default;
 $k-tooltip-background:    black !default;
 $k-tooltip-opacity:       0.9 !default;
@@ -821,9 +821,9 @@ $k-input-color-placeholder:         $k-color-primary-min-3 !default;
 $k-input-group-addon-bg:            $k-color-primary-plus-2 !default;
 $k-input-group-addon-border-color:  $k-input-border !default;
 
-$k-input-height-base:               ($k-line-height + ($k-spacing-base-vertical * 2) + 2px) !default;
-$k-input-height-large:              ($k-line-height-large + ($k-spacing-large-vertical * 2) + 2px) !default;
-$k-input-height-small:              ($k-line-height-small + ($k-spacing-small-vertical * 2) + 2px) !default;
+$k-input-height-base:               ($k-line-height + ($k-spacing-base-vertical * 2)) !default;
+$k-input-height-large:              ($k-line-height-large + ($k-spacing-large-vertical * 2)) !default;
+$k-input-height-small:              ($k-line-height + ($k-spacing-small-vertical * 2)) !default;
 
 
 // Radio toggle
@@ -897,3 +897,4 @@ $k-btn-danger-bg:             $k-btn-danger-background !default;
 $k-state-warning-text:        $k-state-warning-color !default;
 $k-state-danger-text:         $k-state-danger-color !default;
 $k-state-success-text:        $k-state-success-color !default;
+

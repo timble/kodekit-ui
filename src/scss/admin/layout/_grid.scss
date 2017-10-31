@@ -33,7 +33,7 @@ Styleguide 3.7
   @include clearfix;
   overflow: hidden;
   width: 100%;
-  margin: 0 auto (-($k-spacing));
+  margin: 0 auto;
   padding: $k-spacing ($k-spacing / 2);
 
   /* When flexbox is in use */
@@ -134,6 +134,10 @@ Styleguide 3.7
   clear: both;
   width: auto;
   margin: 0 0 $k-spacing;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   @include breakpoint($k-charlie) {
     margin-left: ($k-spacing / 2);

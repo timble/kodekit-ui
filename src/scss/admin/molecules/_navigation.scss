@@ -34,7 +34,7 @@ Styleguide 2.16
 .k-navigation {
   @include reset($k-padding: false, $k-background: false); /* 1 */
   @include border(bottom, $k-navigation-border);
-  padding: ($k-navigation-spacing * 2) 0;
+  padding: ($k-navigation-spacing * 2) 0 (($k-navigation-spacing * 2) - 1px);
   background: $k-navigation-background;
 
 
@@ -49,7 +49,7 @@ Styleguide 2.16
 
   li {
     display: block;
-    line-height: $k-line-height;
+    line-height: 16px;
   }
 
 

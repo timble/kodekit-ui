@@ -871,7 +871,6 @@ Styleguide 2.18.6
     @include breakpoint($k-delta) {
       @include border(left, $k-scopebar-border);
       @include border(bottom, $k-scopebar-border);
-      height: $k-scopebar-size + 1px;
       margin-bottom: -1px;
 
       @include rtl {

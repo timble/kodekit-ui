@@ -540,7 +540,7 @@ Styleguide 2.9.4
     height: $k-input-height-small;
     padding: $k-spacing-small-vertical $k-spacing-small-horizontal;
     font-size: $k-font-size-small;
-    line-height: $k-line-height-small;
+    line-height: $k-line-height;
     border-radius: $k-border-radius-small;
 
     @include rtl {

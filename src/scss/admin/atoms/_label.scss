@@ -29,7 +29,7 @@ label {
   & + small {
     display: inline-block;
     vertical-align: middle;
-    margin-bottom: 4px;
+    margin-bottom: $k-spacing-tiny;
 
     &:last-child {
       margin-bottom: 0;
