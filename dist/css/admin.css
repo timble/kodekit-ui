@@ -6238,7 +6238,7 @@ markup:
   border-radius: 4px;
   margin-right: 4px;
   font-size: 13px;
-  line-height: 20px;
+  line-height: 18px;
   padding: 6px 12px;
 }
 
@@ -6635,20 +6635,20 @@ fieldset[disabled] .k-ui-namespace .k-button--danger.has-focus {
   border-radius: 3px;
   font-size: 8px;
   line-height: 12px;
-  padding: 2px 4px;
+  padding: 3px 4px;
 }
 
 .k-ui-namespace .k-button--small {
   border-radius: 3px;
   font-size: 11px;
   line-height: 16px;
-  padding: 4px 8px;
+  padding: 5px 8px;
 }
 
 .k-ui-namespace .k-button--large {
   border-radius: 6px;
   font-size: 17px;
-  line-height: 24px;
+  line-height: 22px;
   padding: 8px 16px;
 }
 

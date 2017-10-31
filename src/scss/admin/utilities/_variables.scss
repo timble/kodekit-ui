@@ -583,25 +583,25 @@ $k-button-link-disabled-color:       $k-color-primary-min-6 !default;
 
 $k-button-border-radius:             $k-border-radius !default;
 $k-button-font-size:                 $k-font-size !default;
-$k-button-line-height:               $k-line-height !default;
+$k-button-line-height:               $k-line-height - 2px !default;
 $k-button-spacing-vertical:          $k-spacing-base-vertical !default;
 $k-button-spacing-horizontal:        $k-spacing-base-horizontal !default;
 
 $k-button-tiny-border-radius:        $k-border-radius-small !default;
 $k-button-tiny-font-size:            $k-font-size-tiny !default;
 $k-button-tiny-line-height:          $k-line-height-tiny !default;
-$k-button-tiny-spacing-vertical:     $k-spacing-tiny-vertical !default;
+$k-button-tiny-spacing-vertical:     $k-spacing-tiny-vertical + 1px !default;
 $k-button-tiny-spacing-horizontal:   $k-spacing-tiny-horizontal !default;
 
 $k-button-small-border-radius:       $k-border-radius-small !default;
 $k-button-small-font-size:           $k-font-size-small !default;
 $k-button-small-line-height:         $k-line-height-small !default;
-$k-button-small-spacing-vertical:    $k-spacing-small-vertical !default;
+$k-button-small-spacing-vertical:    $k-spacing-small-vertical + 1px !default;
 $k-button-small-spacing-horizontal:  $k-spacing-small-horizontal !default;
 
 $k-button-large-border-radius:       $k-border-radius-large !default;
 $k-button-large-font-size:           $k-font-size-large !default;
-$k-button-large-line-height:         $k-line-height-large !default;
+$k-button-large-line-height:         $k-line-height-large - 2px !default;
 $k-button-large-spacing-vertical:    $k-spacing-large-vertical !default;
 $k-button-large-spacing-horizontal:  $k-spacing-large-horizontal !default;
 
