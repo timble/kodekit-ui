@@ -6795,7 +6795,7 @@ fieldset[disabled] .k-ui-namespace .k-button--danger.has-focus {
   border-bottom-right-radius: 3px;
 }
 
-.k-ui-namespace .k-card--rounded .k-card__image img,
+.k-ui-namespace .k-card--rounded .k-card__image,
 .k-ui-namespace .k-card--rounded .k-card__image--background,
 .k-ui-namespace .k-card--rounded .k-card__image--spaced-background,
 .k-ui-namespace .k-card--rounded .k-card__header,
@@ -6804,31 +6804,46 @@ fieldset[disabled] .k-ui-namespace .k-button--danger.has-focus {
   overflow: hidden;
 }
 
-.k-ui-namespace .k-card--rounded .k-card__image img:only-child,
+.k-ui-namespace .k-card--rounded .k-card__image:only-child, .k-ui-namespace .k-card--rounded .k-card__image:only-child img,
 .k-ui-namespace .k-card--rounded .k-card__image--background:only-child,
+.k-ui-namespace .k-card--rounded .k-card__image--background:only-child img,
 .k-ui-namespace .k-card--rounded .k-card__image--spaced-background:only-child,
+.k-ui-namespace .k-card--rounded .k-card__image--spaced-background:only-child img,
 .k-ui-namespace .k-card--rounded .k-card__header:only-child,
+.k-ui-namespace .k-card--rounded .k-card__header:only-child img,
 .k-ui-namespace .k-card--rounded .k-card__section:only-child,
-.k-ui-namespace .k-card--rounded .k-card__footer:only-child {
+.k-ui-namespace .k-card--rounded .k-card__section:only-child img,
+.k-ui-namespace .k-card--rounded .k-card__footer:only-child,
+.k-ui-namespace .k-card--rounded .k-card__footer:only-child img {
   border-radius: 3px;
 }
 
-.k-ui-namespace .k-card--rounded .k-card__image img:first-child,
+.k-ui-namespace .k-card--rounded .k-card__image:first-child, .k-ui-namespace .k-card--rounded .k-card__image:first-child img,
 .k-ui-namespace .k-card--rounded .k-card__image--background:first-child,
+.k-ui-namespace .k-card--rounded .k-card__image--background:first-child img,
 .k-ui-namespace .k-card--rounded .k-card__image--spaced-background:first-child,
+.k-ui-namespace .k-card--rounded .k-card__image--spaced-background:first-child img,
 .k-ui-namespace .k-card--rounded .k-card__header:first-child,
+.k-ui-namespace .k-card--rounded .k-card__header:first-child img,
 .k-ui-namespace .k-card--rounded .k-card__section:first-child,
-.k-ui-namespace .k-card--rounded .k-card__footer:first-child {
+.k-ui-namespace .k-card--rounded .k-card__section:first-child img,
+.k-ui-namespace .k-card--rounded .k-card__footer:first-child,
+.k-ui-namespace .k-card--rounded .k-card__footer:first-child img {
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }
 
-.k-ui-namespace .k-card--rounded .k-card__image img:last-child,
+.k-ui-namespace .k-card--rounded .k-card__image:last-child, .k-ui-namespace .k-card--rounded .k-card__image:last-child img,
 .k-ui-namespace .k-card--rounded .k-card__image--background:last-child,
+.k-ui-namespace .k-card--rounded .k-card__image--background:last-child img,
 .k-ui-namespace .k-card--rounded .k-card__image--spaced-background:last-child,
+.k-ui-namespace .k-card--rounded .k-card__image--spaced-background:last-child img,
 .k-ui-namespace .k-card--rounded .k-card__header:last-child,
+.k-ui-namespace .k-card--rounded .k-card__header:last-child img,
 .k-ui-namespace .k-card--rounded .k-card__section:last-child,
-.k-ui-namespace .k-card--rounded .k-card__footer:last-child {
+.k-ui-namespace .k-card--rounded .k-card__section:last-child img,
+.k-ui-namespace .k-card--rounded .k-card__footer:last-child,
+.k-ui-namespace .k-card--rounded .k-card__footer:last-child img {
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
 }
@@ -6874,6 +6889,10 @@ fieldset[disabled] .k-ui-namespace .k-button--danger.has-focus {
   -webkit-backface-visibility: hidden;
 }
 
+.k-ui-namespace .k-card__image img {
+  vertical-align: top;
+}
+
 .k-ui-namespace .k-card__image--background {
   background-position: center;
   /* 1 */
@@ -6902,10 +6921,11 @@ fieldset[disabled] .k-ui-namespace .k-button--danger.has-focus {
   position: relative;
   z-index: 1;
   display: block;
-  padding: 10px;
+  padding: 8px;
   font-weight: 700;
   background: #fbfbfb;
   border-bottom: 1px solid gainsboro;
+  padding-bottom: 7px;
   color: #222222;
   text-decoration: none;
   transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
@@ -6918,6 +6938,7 @@ fieldset[disabled] .k-ui-namespace .k-button--danger.has-focus {
 
 .k-ui-namespace .k-card__header:not(:first-child) {
   border-top: 1px solid gainsboro;
+  padding-top: 7px;
 }
 
 .k-ui-namespace .k-card__header:focus, .k-ui-namespace .k-card__header:hover {
@@ -6928,7 +6949,7 @@ fieldset[disabled] .k-ui-namespace .k-button--danger.has-focus {
   position: relative;
   z-index: 1;
   display: block;
-  padding: 10px;
+  padding: 8px;
   text-decoration: none;
   transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
   -webkit-backface-visibility: hidden;
@@ -6944,9 +6965,10 @@ fieldset[disabled] .k-ui-namespace .k-button--danger.has-focus {
   position: relative;
   z-index: 1;
   display: block;
-  padding: 10px;
+  padding: 8px;
   background: #fbfbfb;
   border-top: 1px solid gainsboro;
+  padding-top: 7px;
   color: #222222;
   text-decoration: none;
   transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
@@ -11635,6 +11657,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 .k-ui-namespace .k-tabs-container:not(:first-child) .k-tabs-scroller .k-tabs {
   border-top: 1px solid gainsboro;
+  padding-top: 11px;
 }
 
 .k-ui-namespace .k-tabs-container > .k-tabs-content:before, .k-ui-namespace .k-tabs-container > .k-tabs-content:after {
@@ -11740,7 +11763,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 .k-ui-namespace .k-tabs a {
   position: relative;
   display: block;
-  padding: 7px 16px 6px;
+  padding: 8px 16px 6px;
   line-height: 20px;
   border: 1px solid transparent;
   border-radius: 4px 4px 0 0;

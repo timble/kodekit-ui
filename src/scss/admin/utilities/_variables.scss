@@ -532,7 +532,7 @@ $k-grid-width:      2560px !default;
 // Tabs
 // ==========================================================================
 
-$k-nav-tabs-link-spacing:                     ($k-spacing-small - 1px) $k-spacing ($k-spacing-small - 2px) !default;
+$k-nav-tabs-link-spacing:                     $k-spacing-small $k-spacing ($k-spacing-small - 2px) !default;
 
 $k-nav-tabs-link-hover-background:            $k-color-primary-plus-2 !default;
 
@@ -647,6 +647,7 @@ $k-card-background:           $k-color-primary-plus-6 !default;
 $k-card-border:               $k-color-primary-min-1 !default;
 $k-card-color:                $k-color-type !default;
 $k-card-radius:               $k-border-radius !default;
+$k-card-spacing:              $k-spacing-small !default;
 $k-card-hover-border:         darkest($k-card-border) !default;
 
 $k-card-selected-background:  $k-color-accent !default;
@@ -656,12 +657,17 @@ $k-card-selected-color:       $k-color-accent-type !default;
 $k-card-header-background:    $k-color-primary-plus-5 !default;
 $k-card-header-border:        $k-color-primary-min-1 !default;
 $k-card-header-color:         $k-color-type !default;
+$k-card-header-spacing:       $k-card-spacing !default;
+$k-card-header-font-weight:   $k-bold !default;
 $k-card-header-hover-border:  darkest($k-card-header-border) !default;
 
 $k-card-footer-background:    $k-color-primary-plus-5 !default;
 $k-card-footer-border:        $k-color-primary-min-1 !default;
 $k-card-footer-color:         $k-color-type !default;
+$k-card-footer-spacing:       $k-card-spacing !default;
 $k-card-footer-hover-border:  darkest($k-card-footer-border) !default;
+
+$k-card-caption-font-weight:  $k-regular !default;
 
 
 // Feedback states

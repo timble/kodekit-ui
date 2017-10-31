@@ -227,7 +227,7 @@ Styleguide 2.4.9
     border-bottom-right-radius: $k-card-radius - 1px;
   }
 
-  .k-card__image img,
+  .k-card__image,
   .k-card__image--background,
   .k-card__image--spaced-background,
   .k-card__header,
@@ -236,15 +236,21 @@ Styleguide 2.4.9
     overflow: hidden;
 
     &:only-child {
-      border-radius: $k-card-radius - 1px;
+      &, img {
+        border-radius: $k-card-radius - 1px;
+      }
     }
     &:first-child {
-      border-top-left-radius: $k-card-radius - 1px;
-      border-top-right-radius: $k-card-radius - 1px;
+      &, img {
+        border-top-left-radius: $k-card-radius - 1px;
+        border-top-right-radius: $k-card-radius - 1px;
+      }
     }
     &:last-child {
-      border-bottom-left-radius: $k-card-radius - 1px;
-      border-bottom-right-radius: $k-card-radius - 1px;
+      &, img {
+        border-bottom-left-radius: $k-card-radius - 1px;
+        border-bottom-right-radius: $k-card-radius - 1px;
+      }
     }
   }
 
@@ -300,6 +306,10 @@ Styleguide 2.4.9
   display: block;
   overflow: hidden;
   @include transition;
+
+  img {
+    vertical-align: top;
+  }
 }
 
 .k-card__image--background {
@@ -322,10 +332,11 @@ Styleguide 2.4.9
   position: relative;
   z-index: 1;
   display: block;
-  padding: 10px;
-  font-weight: $k-bold;
+  padding: $k-card-header-spacing;
+  font-weight: $k-card-header-font-weight;
   background: $k-card-header-background;
   border-bottom: 1px solid $k-card-header-border;
+  padding-bottom: $k-card-header-spacing - 1px;
   color: $k-card-header-color;
   text-decoration: none;
   @include transition;
@@ -336,6 +347,7 @@ Styleguide 2.4.9
 
   &:not(:first-child) {
     border-top: 1px solid $k-card-header-border;
+    padding-top: $k-card-header-spacing - 1px;
   }
 
   &:focus,
@@ -355,7 +367,7 @@ Styleguide 2.4.9
   position: relative;
   z-index: 1;
   display: block;
-  padding: 10px;
+  padding: $k-card-spacing;
   text-decoration: none;
   @include transition;
 }
@@ -374,9 +386,10 @@ Styleguide 2.4.9
   position: relative;
   z-index: 1;
   display: block;
-  padding: 10px;
+  padding: $k-card-footer-spacing;
   background: $k-card-footer-background;
   border-top: 1px solid $k-card-footer-border;
+  padding-top: $k-card-footer-spacing - 1px;
   color: $k-card-footer-color;
   text-decoration: none;
   @include transition;
@@ -404,7 +417,7 @@ Styleguide 2.4.9
   display: block;
   width: 100%;
   padding: 1em 10px;
-  font-weight: $k-regular;
+  font-weight: $k-card-caption-font-weight;
   text-decoration: none;
   @include transition;
 }

@@ -20,6 +20,7 @@
 
   &:not(:first-child) .k-tabs-scroller .k-tabs {
     border-top: 1px solid $k-nav-tabs-border;
+    padding-top: (($k-spacing-large / 2) - 1px);
   }
 
   > .k-tabs-content {
