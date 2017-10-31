@@ -47,7 +47,7 @@ Styleguide 2.20
     }
   }
 
-  @include flexbox($k-sidebar-left-querie-width, $k-flexbox-vertical) {
+  @include breakpoint($k-sidebar-left-querie-width) {
     flex: 0 0 auto;
 
     &--flex {
@@ -57,7 +57,7 @@ Styleguide 2.20
     }
   }
 
-  @include flexbox($k-sidebar-left-querie-width, 599px) {
+  @include breakpoint($k-sidebar-left-querie-width) {
     &--flex {
       &:nth-child(n) {
         @include item--flex;
@@ -84,10 +84,7 @@ Styleguide 2.20
   &--overflow {
     overflow: auto; /* 1 */
     width: 100%;
-
-    @include flexbox($k-vertical: 550px) {
-      flex: 0 1 auto;
-    }
+    flex: 0 1 auto;
 
     @include resizing {
       overflow: hidden;

@@ -29,20 +29,11 @@ Styleguide 3.3
   @include border(bottom, $k-content-border);
 
 
-  /* Faking flexbox on older browsers by using table styling */
-
-  display: table;
-  width: 100%;
-  min-height: 80%;
-
-
   /* When flexbox is in use */
 
-  @include flexbox {
-    display: flex;
-    flex-direction: row;
-    flex: 1 1 auto;
-    border-bottom: none;
-    min-height: 0;
-  }
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 auto;
+  border-bottom: none;
+  min-height: 0;
 }

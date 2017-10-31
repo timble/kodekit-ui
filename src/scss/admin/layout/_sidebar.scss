@@ -29,6 +29,9 @@ Styleguide 3.4
   position: relative;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
 
 
   /* When resizing */
@@ -36,12 +39,6 @@ Styleguide 3.4
   @include resizing {
     overflow: hidden;
   }
-
-
-  /* Faking flexbox on older browsers by using table styling */
-
-  display: table-cell;
-  vertical-align: top;
 
 
   /* When JavaScript is enabled */
@@ -53,20 +50,9 @@ Styleguide 3.4
     height: 100%;
     display: none;
   }
-
-
-  /* When flexbox is in use */
-
-  @include flexbox {
-    display: flex;
-    flex-direction: column;
-    flex: 0 0 auto;
-  }
 }
 
 .k-sidebar-left {
-
-  /* Faking flexbox on older browsers by using table styling */
 
   @include breakpoint($k-sidebar-left-querie-width) {
     @include allwidth($k-sidebar-left-width-small);
@@ -90,7 +76,7 @@ Styleguide 3.4
 
     @include breakpoint($k-sidebar-left-querie-width) {
       position: relative;
-      display: table-cell;
+      display: flex;
       height: auto;
       @include allwidth($k-sidebar-left-width-small);
       z-index: 1;
@@ -103,20 +89,9 @@ Styleguide 3.4
       @include allwidth($k-sidebar-left-width);
     }
   }
-
-
-  /* Override js-enabled beta styling with flexbox */
-
-  @include flexbox {
-    @include breakpoint($k-sidebar-left-querie-width) {
-      display: flex;
-    }
-  }
 }
 
 .k-sidebar-right {
-
-  /* Faking flexbox on older browsers by using table styling */
 
   @include breakpoint($k-sidebar-right-querie-width) {
     @include allwidth($k-sidebar-right-width-small);
@@ -140,7 +115,7 @@ Styleguide 3.4
 
     @include breakpoint($k-sidebar-right-querie-width) {
       position: relative;
-      display: table-cell;
+      display: flex;
       height: auto;
       @include allwidth($k-sidebar-right-width-small);
       z-index: 1;
@@ -151,14 +126,6 @@ Styleguide 3.4
 
     @include breakpoint($k-delta) {
       @include allwidth($k-sidebar-right-width);
-    }
-  }
-
-  /* Override js-enabled beta styling with flexbox */
-
-  @include flexbox {
-    @include breakpoint($k-sidebar-left-querie-width) {
-      display: flex;
     }
   }
 }
@@ -193,12 +160,8 @@ Styleguide 3.4
 
 .k-is-opened-left {
   .k-sidebar-left {
-    display: block;
     z-index: 1;
-
-    @include flexbox(0, 0) {
-      display: flex;
-    }
+    display: flex;
   }
 }
 
@@ -232,11 +195,7 @@ Styleguide 3.4
 
 .k-is-opened-right {
   .k-sidebar-right {
-    display: block;
+    display: flex;
     z-index: 1;
-
-    @include flexbox(0, 0) {
-      display: flex;
-    }
   }
 }

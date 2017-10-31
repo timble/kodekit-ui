@@ -15,18 +15,14 @@
 
     #{$contentClass} {
       position: relative;
-      display: table;
       margin: 0;
       border: 1px solid $k-input-border;
       padding: 1px;
       border-radius: $k-input-border-radius;
       background: white;
-
-      @include flexbox(0,0,true) {
-        display: flex;
-        flex-wrap: wrap;
-        float: left;
-      }
+      display: flex;
+      flex-wrap: wrap;
+      float: left;
 
 
       /* Hiding the input but keeping accessible */
@@ -59,11 +55,8 @@
         user-select: none; /* 3 */
         word-wrap: break-word;
         overflow-wrap: break-word;
+        flex: 1 1 auto;
         @include transition;
-
-        @include flexbox(0,0,true) {
-          flex: 1 1 auto;
-        }
 
 
         /**

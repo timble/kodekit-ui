@@ -44,31 +44,23 @@ Styleguide 2.10
 */
 
 .k-gallery-container {
-  @include flexbox {
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 auto;
-    overflow: auto;
-  }
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  overflow: auto;
 }
 
 .k-gallery {
   padding: $k-grid-spacing / 2;
   overflow: auto;
-
-  @include flexbox {
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 auto;
-  }
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
 }
 
 .k-gallery__items {
   @include clearfix;
-
-  @include flexbox {
-    flex: 1 1 auto;
-  }
+  flex: 1 1 auto;
 }
 
 .k-gallery__item {

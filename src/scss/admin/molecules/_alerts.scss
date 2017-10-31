@@ -34,10 +34,7 @@ Styleguide 2.1
   min-height: 75px;
   max-height: 33%;
   overflow: auto;
-
-  @include flexbox {
-    flex: 0 1 auto;
-  }
+  flex: 0 1 auto;
 }
 
 

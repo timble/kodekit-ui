@@ -16,37 +16,9 @@
   text-align: center; /* 1 */
   white-space: nowrap; /* 1 */
   padding: $k-login-container-spacing;
-
-
-  /**
-   * Pseudo element for vertical centering
-   *
-   * 1. Adjusts for spacing
-   */
-
-  &:before {
-    content: ' ';
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-    margin-right: -0.25em; /* 1 */
-  }
-
-
-  /* Use flexbox when available */
-
-  @include flexbox(0, 0) {
-    display: flex;
-    flex: 1 1 auto;
-    align-items: center;
-
-
-    /* Hide the pseudo eleemnt when using flexbox */
-
-    &:before {
-      display: none;
-    }
-  }
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
 }
 
 
@@ -64,12 +36,7 @@
   margin: auto;
   display: inline-block; /* 1 */
   vertical-align: middle; /* 1 */
-
-
-  /* Don't flex this window, it needs to be as big as it's children */
-  @include flexbox(0, 0) {
-    flex: 0 0 auto;
-  }
+  flex: 0 0 auto;
 }
 
 

@@ -92,13 +92,10 @@ Styleguide 2.21
 
 .k-table-container {
   background: $k-table-background;
-
-  @include flexbox {
-    display: flex;
-    flex: 1 1 auto;
-    flex-direction: column;
-    overflow: hidden;
-  }
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  overflow: hidden;
 
   @include resizing {
     overflow: hidden;
@@ -136,13 +133,10 @@ Styleguide 2.21
     border-spacing: 0;
     font-size: inherit; /* 1 */
     min-width: 0 !important;
+    flex: 1 1 auto;
 
     @include rtl {
       text-align: right;
-    }
-
-    @include flexbox {
-      flex: 1 1 auto;
     }
   }
 

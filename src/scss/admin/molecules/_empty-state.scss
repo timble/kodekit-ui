@@ -39,13 +39,10 @@ Styleguide 2.7.1
   background: $k-empty-state-background;
   color: $k-empty-state-color;
   padding: $k-empty-state-spacing;
-
-  @include flexbox {
-    display: flex;
-    flex: 1 1 auto;
-    flex-direction: column;
-    justify-content: center;
-  }
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: center;
 
   p {
     @include content-block(1em);

@@ -3,11 +3,7 @@
 .k-menu-container {
   background: $k-menu-background;
   color: $k-menu-color;
-
-  // When flexbox is active
-  @include flexbox {
-    flex: 0 0 auto;
-  }
+  flex: 0 0 auto;
 
   @include breakpoint($k-menu-breakpoint) {
     position: relative;

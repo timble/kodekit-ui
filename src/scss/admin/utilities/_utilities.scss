@@ -441,15 +441,11 @@ markup:
 */
 
 .k-dont-flex.k-dont-flex.k-dont-flex {
-  @include flexbox {
-    flex: 0 0 auto;
-  }
+  flex: 0 0 auto;
 }
 
 .k-do-flex.k-do-flex.k-do-flex {
-  @include flexbox {
-    flex: 1 1 auto;
-  }
+  flex: 1 1 auto;
 }
 
 

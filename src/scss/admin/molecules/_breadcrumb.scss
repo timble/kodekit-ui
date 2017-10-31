@@ -47,13 +47,10 @@ Styleguide 2.2
   overflow: auto; /* 1 */
   background: $k-breadcrumb-background;
   color: $k-breadcrumb-color;
+  flex: 0 0 auto; /* 3 */
 
   @include resizing {
     overflow: hidden; /* 2 */
-  }
-
-  @include flexbox(0, 0) {
-    flex: 0 0 auto; /* 3 */
   }
 
 
@@ -66,10 +63,7 @@ Styleguide 2.2
 
   ul {
     @include reset; /* 1 */
-
-    @include flexbox(0, 0) {
-      display: flex; /* 2 */
-    }
+    display: flex; /* 2 */
   }
 
 
@@ -92,6 +86,7 @@ Styleguide 2.2
     display: none; /* 4 */
     overflow: hidden; /* 5 */
     vertical-align: middle; /* 6 */
+    flex: 0 1 auto;
 
     @include rtl {
       padding-left: 0;
@@ -99,16 +94,9 @@ Styleguide 2.2
     }
 
 
-    /* Flexing items to get overflow ellipsis */
+    /* Display on larger screens */
 
-    @include flexbox(0, 0) {
-      flex: 0 1 auto;
-    }
-
-
-    /* Display on larger screens but only when flexbox is available */
-
-    @include flexbox($k-breadcrumb-query, 0) {
+    @include breakpoint($k-breadcrumb-query) {
       display: inline-block;
     }
 
@@ -158,15 +146,10 @@ Styleguide 2.2
 
     &:hover {
       overflow: visible;
-
-      @include flexbox(0, 0) {
-        flex: 0 0 auto; /* 1 */
-      }
+      flex: 0 0 auto; /* 1 */
 
       &:not(.k-breadcrumb__home) ~ li {
-        @include flexbox(0, 0) {
-          flex: 0 1 auto; /* 2 */
-        }
+        flex: 0 1 auto; /* 2 */
       }
     }
   }
@@ -200,10 +183,7 @@ Styleguide 2.2
   .k-breadcrumb__home {
     display: inline-block; /* 1 */
     overflow: visible; /* 1 */
-
-    @include flexbox(0, 0) {
-      flex: 0 0 auto; /* 2 */
-    }
+    flex: 0 0 auto; /* 2 */
   }
 
 
@@ -218,15 +198,13 @@ Styleguide 2.2
    */
 
   li:nth-last-child(2) {
-    @include flexbox(0, 0) {
-      display: inline-block;
+    display: inline-block;
 
-      &:before {
-        content: $k-breadcrumb-missing-content; /* 1 */
+    &:before {
+      content: $k-breadcrumb-missing-content; /* 1 */
 
-        @include breakpoint($k-breadcrumb-query) {
-          content: $k-breadcrumb-divider-content; /* 2 */
-        }
+      @include breakpoint($k-breadcrumb-query) {
+        content: $k-breadcrumb-divider-content; /* 2 */
       }
     }
   }

@@ -63,23 +63,17 @@ body {
   margin: 0;
   /* 2 */
   /* Setup flexbox */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   /* When resizing */
-}
-
-@media (min-width: 300px) and (min-height: 391px) {
-  .k-flexbox body,
-  .k-flexboxlegacy body {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-  }
 }
 
 body.k-is-resizing {
@@ -5030,23 +5024,17 @@ markup:
   transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
   -webkit-backface-visibility: hidden;
   /* 3 */
-}
-
-@media (min-width: 300px) and (min-height: 391px) {
-  .k-flexbox .k-ui-namespace .k-component,
-  .k-flexboxlegacy .k-ui-namespace .k-component {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-    overflow: auto;
-  }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  overflow: auto;
 }
 
 .k-is-resizing .k-ui-namespace .k-component {
@@ -5110,35 +5098,25 @@ markup:
 .k-ui-namespace .k-component-wrapper {
   position: relative;
   background: #fbfbfb;
-  /* Faking flexbox on older browsers by using table styling */
-  display: table;
-  width: 100%;
-  min-height: 100%;
   /**
    * When flexbox is in use
    *
    * 1. Reset width needed for table
    * 2. Set overflow for breadcrumbs to properly work
    */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  overflow: auto;
+  min-height: 0;
   /* Hide overtflow when resizing the window */
-}
-
-@media (min-width: 300px) and (min-height: 391px) {
-  .k-flexbox .k-ui-namespace .k-component-wrapper,
-  .k-flexboxlegacy .k-ui-namespace .k-component-wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-    overflow: auto;
-    min-height: 0;
-  }
 }
 
 .k-is-resizing .k-ui-namespace .k-component-wrapper {
@@ -5156,37 +5134,27 @@ markup:
   transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
   -webkit-backface-visibility: hidden;
   /* 3 */
-  /* Faking flexbox on older browsers by using table styling */
-  display: table-cell;
-  width: 100%;
-  min-height: 100%;
   /**
    * When flexbox is in use
    *
    * 1. Reset width needed for table
    * 2. Set overflow for breadcrumbs to properly work
    */
-}
-
-@media (min-width: 300px) and (min-height: 391px) {
-  .k-flexbox .k-ui-namespace .k-content,
-  .k-flexboxlegacy .k-ui-namespace .k-content {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: auto;
-    /* 1 */
-    overflow: hidden;
-    /* 2 */
-    min-height: 0;
-  }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: auto;
+  /* 1 */
+  overflow: hidden;
+  /* 2 */
+  min-height: 0;
 }
 
 .k-ui-namespace .k-show-left-menu {
@@ -5268,29 +5236,19 @@ markup:
   margin: 0;
   overflow: hidden;
   border-bottom: 1px solid #e0e0e0;
-  /* Faking flexbox on older browsers by using table styling */
-  display: table;
-  width: 100%;
-  min-height: 80%;
   /* When flexbox is in use */
-}
-
-@media (min-width: 300px) and (min-height: 391px) {
-  .k-flexbox .k-ui-namespace .k-content-wrapper,
-  .k-flexboxlegacy .k-ui-namespace .k-content-wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-    border-bottom: none;
-    min-height: 0;
-  }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  border-bottom: none;
+  min-height: 0;
 }
 
 .k-ui-namespace .k-container {
@@ -5298,7 +5256,9 @@ markup:
   width: 100%;
   margin: 0 auto;
   padding: 16px 8px;
-  /* When flexbox is in use */
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
   /* When resizing */
 }
 
@@ -5311,15 +5271,6 @@ markup:
   clear: both;
 }
 
-@media (min-width: 300px) and (min-height: 391px) {
-  .k-flexbox .k-ui-namespace .k-container,
-  .k-flexboxlegacy .k-ui-namespace .k-container {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 auto;
-            flex: 0 0 auto;
-  }
-}
-
 .k-is-resizing .k-ui-namespace .k-container {
   overflow: hidden;
 }
@@ -5327,22 +5278,16 @@ markup:
 .k-ui-namespace .k-container--flex {
   margin: 0 auto;
   padding: 16px;
-}
-
-@media (min-width: 300px) and (min-height: 391px) {
-  .k-flexbox .k-ui-namespace .k-container--flex,
-  .k-flexboxlegacy .k-ui-namespace .k-container--flex {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-  }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 
 .k-ui-namespace .k-container__main {
@@ -5424,23 +5369,17 @@ markup:
   list-style: none;
   border: none;
   background: transparent;
-}
-
-@media (min-width: 300px) and (min-height: 391px) {
-  .k-flexbox .k-ui-namespace .k-flex-wrapper,
-  .k-flexboxlegacy .k-ui-namespace .k-flex-wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-    overflow: auto;
-  }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  overflow: auto;
 }
 
 .k-is-resizing .k-ui-namespace .k-flex-wrapper {
@@ -5455,17 +5394,25 @@ markup:
   border: none;
   /* 6 */
   width: 100%;
-  min-height: 100%;
   overflow: hidden;
   padding: 0;
   background: white;
   /* 3 */
   color: #222222;
   /* 3 */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-overflow-scrolling: touch;
-  /* When flexbox is enabled */
   /* RTL */
 }
 
@@ -5473,23 +5420,6 @@ markup:
   .k-ui-namespace.k-ui-container {
     max-width: none;
     /* 2 */
-  }
-}
-
-@media (min-width: 300px) and (min-height: 391px) {
-  .k-flexbox .k-ui-namespace.k-ui-container,
-  .k-flexboxlegacy .k-ui-namespace.k-ui-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    min-height: 0;
   }
 }
 
@@ -5502,12 +5432,18 @@ markup:
   position: relative;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
   /* When resizing */
-  /* Faking flexbox on older browsers by using table styling */
-  display: table-cell;
-  vertical-align: top;
   /* When JavaScript is enabled */
-  /* When flexbox is in use */
 }
 
 .k-is-resizing .k-ui-namespace .k-sidebar-left, .k-is-resizing
@@ -5524,30 +5460,9 @@ markup:
   display: none;
 }
 
-@media (min-width: 300px) and (min-height: 391px) {
-  .k-flexbox .k-ui-namespace .k-sidebar-left,
-  .k-flexboxlegacy .k-ui-namespace .k-sidebar-left, .k-flexbox
-  .k-ui-namespace .k-sidebar-right,
-  .k-flexboxlegacy
-  .k-ui-namespace .k-sidebar-right {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 auto;
-            flex: 0 0 auto;
-  }
-}
-
 .k-ui-namespace .k-sidebar-left {
-  /* Faking flexbox on older browsers by using table styling */
   /* Larger sidebar when space is available */
   /* When JavaScript is enabled */
-  /* Override js-enabled beta styling with flexbox */
 }
 
 @media screen and (min-width: 768px) {
@@ -5577,7 +5492,9 @@ markup:
 @media screen and (min-width: 768px) {
   .k-js-enabled .k-ui-namespace .k-sidebar-left {
     position: relative;
-    display: table-cell;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     height: auto;
     min-width: 208px;
     width: 208px;
@@ -5594,20 +5511,9 @@ markup:
   }
 }
 
-@media screen and (min-width: 300px) and (min-height: 391px) and (min-width: 768px) {
-  .k-flexbox .k-ui-namespace .k-sidebar-left,
-  .k-flexboxlegacy .k-ui-namespace .k-sidebar-left {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
 .k-ui-namespace .k-sidebar-right {
-  /* Faking flexbox on older browsers by using table styling */
   /* Larger sidebar when space is available */
   /* When JavaScript is enabled */
-  /* Override js-enabled beta styling with flexbox */
 }
 
 @media screen and (min-width: 600px) {
@@ -5637,7 +5543,9 @@ markup:
 @media screen and (min-width: 600px) {
   .k-js-enabled .k-ui-namespace .k-sidebar-right {
     position: relative;
-    display: table-cell;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     height: auto;
     min-width: 208px;
     width: 208px;
@@ -5651,15 +5559,6 @@ markup:
     min-width: 272px;
     width: 272px;
     max-width: 272px;
-  }
-}
-
-@media screen and (min-width: 300px) and (min-height: 391px) and (min-width: 768px) {
-  .k-flexbox .k-ui-namespace .k-sidebar-right,
-  .k-flexboxlegacy .k-ui-namespace .k-sidebar-right {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
   }
 }
 
@@ -5684,17 +5583,10 @@ markup:
 }
 
 .k-ui-namespace .k-is-opened-left .k-sidebar-left {
-  display: block;
   z-index: 1;
-}
-
-@media (min-width: 0) and (min-height: 0) {
-  .k-flexbox .k-ui-namespace .k-is-opened-left .k-sidebar-left,
-  .k-flexboxlegacy .k-ui-namespace .k-is-opened-left .k-sidebar-left {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .k-ui-namespace .k-sidebar-right {
@@ -5718,41 +5610,25 @@ markup:
 }
 
 .k-ui-namespace .k-is-opened-right .k-sidebar-right {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   z-index: 1;
-}
-
-@media (min-width: 0) and (min-height: 0) {
-  .k-flexbox .k-ui-namespace .k-is-opened-right .k-sidebar-right,
-  .k-flexboxlegacy .k-ui-namespace .k-is-opened-right .k-sidebar-right {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
 }
 
 .k-ui-namespace .k-wrapper {
   position: relative;
-  min-height: 100%;
-  /* When flexbox is in use */
-}
-
-@media (min-width: 300px) and (min-height: 391px) {
-  .k-flexbox .k-ui-namespace .k-wrapper,
-  .k-flexboxlegacy .k-ui-namespace .k-wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-    overflow: hidden;
-    min-height: 0;
-  }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  overflow: hidden;
 }
 
 .k-ui-namespace .k-is-opened-left,
@@ -6086,15 +5962,9 @@ markup:
   min-height: 75px;
   max-height: 33%;
   overflow: auto;
-}
-
-@media (min-width: 300px) and (min-height: 391px) {
-  .k-flexbox .k-ui-namespace .k-alert--overflow,
-  .k-flexboxlegacy .k-ui-namespace .k-alert--overflow {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 auto;
-            flex: 0 1 auto;
-  }
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
 }
 
 .k-ui-namespace .k-alert--success {
@@ -6139,6 +6009,10 @@ markup:
   /* 1 */
   background: #f3f3f3;
   color: #222222;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  /* 3 */
   /**
    * List
    *
@@ -6183,16 +6057,6 @@ markup:
   /* 2 */
 }
 
-@media (min-width: 0) and (min-height: 0) {
-  .k-flexbox .k-ui-namespace .k-breadcrumb,
-  .k-flexboxlegacy .k-ui-namespace .k-breadcrumb {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 auto;
-            flex: 0 0 auto;
-    /* 3 */
-  }
-}
-
 .k-ui-namespace .k-breadcrumb ul {
   margin: 0;
   padding: 0;
@@ -6200,16 +6064,10 @@ markup:
   border: none;
   background: transparent;
   /* 1 */
-}
-
-@media (min-width: 0) and (min-height: 0) {
-  .k-flexbox .k-ui-namespace .k-breadcrumb ul,
-  .k-flexboxlegacy .k-ui-namespace .k-breadcrumb ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    /* 2 */
-  }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* 2 */
 }
 
 .k-ui-namespace .k-breadcrumb li {
@@ -6227,8 +6085,10 @@ markup:
   /* 5 */
   vertical-align: middle;
   /* 6 */
-  /* Flexing items to get overflow ellipsis */
-  /* Display on larger screens but only when flexbox is available */
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+  /* Display on larger screens */
   /* List item separator */
   position: relative;
   /* No separator on first item */
@@ -6246,18 +6106,8 @@ markup:
   padding-right: 20px;
 }
 
-@media (min-width: 0) and (min-height: 0) {
-  .k-flexbox .k-ui-namespace .k-breadcrumb li,
-  .k-flexboxlegacy .k-ui-namespace .k-breadcrumb li {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 auto;
-            flex: 0 1 auto;
-  }
-}
-
-@media (min-width: 768px) and (min-height: 0) {
-  .k-flexbox .k-ui-namespace .k-breadcrumb li,
-  .k-flexboxlegacy .k-ui-namespace .k-breadcrumb li {
+@media screen and (min-width: 768px) {
+  .k-ui-namespace .k-breadcrumb li {
     display: inline-block;
   }
 }
@@ -6295,26 +6145,17 @@ markup:
 
 .k-ui-namespace .k-breadcrumb li:hover {
   overflow: visible;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  /* 1 */
 }
 
-@media (min-width: 0) and (min-height: 0) {
-  .k-flexbox .k-ui-namespace .k-breadcrumb li:hover,
-  .k-flexboxlegacy .k-ui-namespace .k-breadcrumb li:hover {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 auto;
-            flex: 0 0 auto;
-    /* 1 */
-  }
-}
-
-@media (min-width: 0) and (min-height: 0) {
-  .k-flexbox .k-ui-namespace .k-breadcrumb li:hover:not(.k-breadcrumb__home) ~ li,
-  .k-flexboxlegacy .k-ui-namespace .k-breadcrumb li:hover:not(.k-breadcrumb__home) ~ li {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 auto;
-            flex: 0 1 auto;
-    /* 2 */
-  }
+.k-ui-namespace .k-breadcrumb li:hover:not(.k-breadcrumb__home) ~ li {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+  /* 2 */
 }
 
 .k-ui-namespace .k-breadcrumb a {
@@ -6333,36 +6174,23 @@ markup:
   /* 1 */
   overflow: visible;
   /* 1 */
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  /* 2 */
 }
 
-@media (min-width: 0) and (min-height: 0) {
-  .k-flexbox .k-ui-namespace .k-breadcrumb .k-breadcrumb__active,
-  .k-flexboxlegacy .k-ui-namespace .k-breadcrumb .k-breadcrumb__active, .k-flexbox
-  .k-ui-namespace .k-breadcrumb .k-breadcrumb__home,
-  .k-flexboxlegacy
-  .k-ui-namespace .k-breadcrumb .k-breadcrumb__home {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 auto;
-            flex: 0 0 auto;
-    /* 2 */
-  }
+.k-ui-namespace .k-breadcrumb li:nth-last-child(2) {
+  display: inline-block;
 }
 
-@media (min-width: 0) and (min-height: 0) {
-  .k-flexbox .k-ui-namespace .k-breadcrumb li:nth-last-child(2),
-  .k-flexboxlegacy .k-ui-namespace .k-breadcrumb li:nth-last-child(2) {
-    display: inline-block;
-  }
-  .k-flexbox .k-ui-namespace .k-breadcrumb li:nth-last-child(2):before,
-  .k-flexboxlegacy .k-ui-namespace .k-breadcrumb li:nth-last-child(2):before {
-    content: "…";
-    /* 1 */
-  }
+.k-ui-namespace .k-breadcrumb li:nth-last-child(2):before {
+  content: "…";
+  /* 1 */
 }
 
-@media screen and (min-width: 0) and (min-height: 0) and (min-width: 768px) {
-  .k-flexbox .k-ui-namespace .k-breadcrumb li:nth-last-child(2):before,
-  .k-flexboxlegacy .k-ui-namespace .k-breadcrumb li:nth-last-child(2):before {
+@media screen and (min-width: 768px) {
+  .k-ui-namespace .k-breadcrumb li:nth-last-child(2):before {
     content: "»";
     /* 2 */
   }
@@ -7184,25 +7012,19 @@ fieldset[disabled] .k-ui-namespace .k-button--danger.has-focus {
   background: white;
   color: #222222;
   padding: 16px;
-}
-
-@media (min-width: 300px) and (min-height: 391px) {
-  .k-flexbox .k-ui-namespace .k-empty-state,
-  .k-flexboxlegacy .k-ui-namespace .k-empty-state {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .k-ui-namespace .k-empty-state p {
@@ -7602,22 +7424,14 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 .k-ui-namespace .k-input-group {
   position: relative;
   /* 1 */
-  display: table;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
   border-collapse: separate;
   /* 2 */
-  /* Flexbox input groups for better overflow styling */
   /* The form control */
   /* The button */
-}
-
-@media (min-width: 0) and (min-height: 0) {
-  .k-flexbox .k-ui-namespace .k-input-group,
-  .k-flexboxlegacy .k-ui-namespace .k-input-group {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
 }
 
 .k-ui-namespace .k-input-group .k-form-control {
@@ -7626,9 +7440,9 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   z-index: 2;
   /* 4 */
   float: left;
-  width: 100%;
+  width: auto;
+  min-width: 15%;
   margin-bottom: 0;
-  /* Flexbox input groups for better overflow styling */
 }
 
 [dir="rtl"] .k-ui-namespace .k-input-group .k-form-control {
@@ -7638,14 +7452,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 .k-ui-namespace .k-input-group .k-form-control:focus {
   z-index: 3;
   /* 5 */
-}
-
-@media (min-width: 0) and (min-height: 0) {
-  .k-flexbox .k-ui-namespace .k-input-group .k-form-control,
-  .k-flexboxlegacy .k-ui-namespace .k-input-group .k-form-control {
-    width: auto;
-    min-width: 15%;
-  }
 }
 
 .k-ui-namespace .k-input-group .k-input-group__button .k-button {
@@ -7717,31 +7523,17 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 .k-ui-namespace .k-input-group__addon,
 .k-ui-namespace .k-input-group__button,
 .k-ui-namespace .k-input-group .k-form-control {
-  display: table-cell;
+  display: block;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   margin: 0;
-  /* Flexbox input groups for better overflow styling */
 }
 
 .k-ui-namespace .k-input-group__addon:not(:first-child):not(:last-child),
 .k-ui-namespace .k-input-group__button:not(:first-child):not(:last-child),
 .k-ui-namespace .k-input-group .k-form-control:not(:first-child):not(:last-child) {
   border-radius: 0;
-}
-
-@media (min-width: 0) and (min-height: 0) {
-  .k-flexbox .k-ui-namespace .k-input-group__addon,
-  .k-flexboxlegacy .k-ui-namespace .k-input-group__addon, .k-flexbox
-  .k-ui-namespace .k-input-group__button,
-  .k-flexboxlegacy
-  .k-ui-namespace .k-input-group__button, .k-flexbox
-  .k-ui-namespace .k-input-group .k-form-control,
-  .k-flexboxlegacy
-  .k-ui-namespace .k-input-group .k-form-control {
-    display: block;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-  }
 }
 
 .k-ui-namespace .k-input-group .select2-container:not(:first-child):not(:last-child) .select2-selection--single {
@@ -7754,25 +7546,14 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 .k-ui-namespace .k-input-group__addon,
 .k-ui-namespace .k-input-group__button {
-  width: 1%;
   white-space: nowrap;
   vertical-align: middle;
   /* 1 */
-  /* Flexbox input groups for better overflow styling */
-}
-
-@media (min-width: 0) and (min-height: 0) {
-  .k-flexbox .k-ui-namespace .k-input-group__addon,
-  .k-flexboxlegacy .k-ui-namespace .k-input-group__addon, .k-flexbox
-  .k-ui-namespace .k-input-group__button,
-  .k-flexboxlegacy
-  .k-ui-namespace .k-input-group__button {
-    width: auto;
-    display: block;
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 auto;
-            flex: 0 0 auto;
-  }
+  width: auto;
+  display: block;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
 }
 
 .k-ui-namespace .k-input-group__addon {
@@ -8234,42 +8015,39 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   margin-bottom: 0;
 }
 
-@media (min-width: 300px) and (min-height: 391px) {
-  .k-flexbox .k-ui-namespace .k-gallery-container,
-  .k-flexboxlegacy .k-ui-namespace .k-gallery-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-    overflow: auto;
-  }
+.k-ui-namespace .k-gallery-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  overflow: auto;
 }
 
 .k-ui-namespace .k-gallery {
   padding: 8.5px;
   overflow: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 
-@media (min-width: 300px) and (min-height: 391px) {
-  .k-flexbox .k-ui-namespace .k-gallery,
-  .k-flexboxlegacy .k-ui-namespace .k-gallery {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-  }
+.k-ui-namespace .k-gallery__items {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 
 .k-ui-namespace .k-gallery__items:before, .k-ui-namespace .k-gallery__items:after {
@@ -8279,15 +8057,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 .k-ui-namespace .k-gallery__items:after {
   clear: both;
-}
-
-@media (min-width: 300px) and (min-height: 391px) {
-  .k-flexbox .k-ui-namespace .k-gallery__items,
-  .k-flexboxlegacy .k-ui-namespace .k-gallery__items {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-  }
 }
 
 .k-ui-namespace .k-gallery__item {
@@ -8567,15 +8336,9 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 .k-ui-namespace .k-menu-container {
   background: #2c3e50;
   color: white;
-}
-
-@media (min-width: 300px) and (min-height: 391px) {
-  .k-flexbox .k-ui-namespace .k-menu-container,
-  .k-flexboxlegacy .k-ui-namespace .k-menu-container {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 auto;
-            flex: 0 0 auto;
-  }
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
 }
 
 @media screen and (min-width: 768px) {
@@ -8860,41 +8623,15 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   white-space: nowrap;
   /* 1 */
   padding: 16px;
-  /**
-   * Pseudo element for vertical centering
-   *
-   * 1. Adjusts for spacing
-   */
-  /* Use flexbox when available */
-}
-
-.k-ui-namespace .k-login-container:before {
-  content: ' ';
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
-  margin-right: -0.25em;
-  /* 1 */
-}
-
-@media (min-width: 0) and (min-height: 0) {
-  .k-flexbox .k-ui-namespace .k-login-container,
-  .k-flexboxlegacy .k-ui-namespace .k-login-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    /* Hide the pseudo eleemnt when using flexbox */
-  }
-  .k-flexbox .k-ui-namespace .k-login-container:before,
-  .k-flexboxlegacy .k-ui-namespace .k-login-container:before {
-    display: none;
-  }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .k-ui-namespace .k-login {
@@ -8906,16 +8643,9 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   /* 1 */
   vertical-align: middle;
   /* 1 */
-  /* Don't flex this window, it needs to be as big as it's children */
-}
-
-@media (min-width: 0) and (min-height: 0) {
-  .k-flexbox .k-ui-namespace .k-login,
-  .k-flexboxlegacy .k-ui-namespace .k-login {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 auto;
-            flex: 0 0 auto;
-  }
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
 }
 
 .k-ui-namespace .k-login__brand {
@@ -9710,12 +9440,17 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 .k-checked .k-ui-namespace .k-optionlist .k-optionlist__content {
   position: relative;
-  display: table;
   margin: 0;
   border: 1px solid #cdcdcd;
   padding: 1px;
   border-radius: 4px;
   background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  float: left;
   /* Hiding the input but keeping accessible */
   /**
        * Label styling
@@ -9744,18 +9479,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   /* Display on focus and active */
 }
 
-@media (min-width: 0) and (min-height: 0) {
-  .k-flexbox.k-checked .k-ui-namespace .k-optionlist .k-optionlist__content,
-  .k-flexboxlegacy.k-checked .k-ui-namespace .k-optionlist .k-optionlist__content {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    float: left;
-  }
-}
-
 .k-checked .k-ui-namespace .k-optionlist .k-optionlist__content label {
   position: relative;
   z-index: 1;
@@ -9777,6 +9500,9 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   /* 3 */
   word-wrap: break-word;
   overflow-wrap: break-word;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
   -webkit-backface-visibility: hidden;
   /**
@@ -9789,15 +9515,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
          * 5. Scale to 0,0
          */
   /* A little darker background on hovering (no need for focus since this is a `<label>`) */
-}
-
-@media (min-width: 0) and (min-height: 0) {
-  .k-flexbox.k-checked .k-ui-namespace .k-optionlist .k-optionlist__content label,
-  .k-flexboxlegacy.k-checked .k-ui-namespace .k-optionlist .k-optionlist__content label {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-  }
 }
 
 .k-checked .k-ui-namespace .k-optionlist .k-optionlist__content label:before {
@@ -9870,11 +9587,8 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   /* 3 */
 }
 
-@media (min-width: 0) and (min-height: 0) {
-  .k-flexbox[dir="rtl"].k-checked .k-ui-namespace .k-optionlist__content,
-  .k-flexboxlegacy[dir="rtl"].k-checked .k-ui-namespace .k-optionlist__content {
-    float: right;
-  }
+[dir="rtl"].k-checked .k-ui-namespace .k-optionlist__content {
+  float: right;
 }
 
 .k-checked .k-ui-namespace .k-optionlist--boolean input[value="1"] + label:before {
@@ -9893,13 +9607,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 .k-checked .k-ui-namespace .k-optionlist--block .k-optionlist__content {
   width: 100%;
-}
-
-@media (min-width: 0) and (min-height: 0) {
-  .k-flexbox.k-checked .k-ui-namespace .k-optionlist--block .k-optionlist__content,
-  .k-flexboxlegacy.k-checked .k-ui-namespace .k-optionlist--block .k-optionlist__content {
-    float: none;
-  }
+  float: none;
 }
 
 .k-checked .k-ui-namespace .k-optionlist--block.k-optionlist--boolean label {
@@ -9929,8 +9637,15 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   min-width: 100%;
   box-shadow: inset 0 -1px 0 #d4d4d4;
   /* 1 */
-  /* Faking flexbox */
-  /* Flexbox */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: auto;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .k-ui-namespace .k-scopebar:before, .k-ui-namespace .k-scopebar:after {
@@ -9944,29 +9659,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 @media screen and (min-width: 1024px) {
   .k-ui-namespace .k-scopebar {
-    display: table;
-    width: 100%;
-  }
-}
-
-@media (min-width: 0) and (min-height: 0) {
-  .k-flexbox .k-ui-namespace .k-scopebar,
-  .k-flexboxlegacy .k-ui-namespace .k-scopebar {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: auto;
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 auto;
-            flex: 0 0 auto;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-}
-
-@media (min-width: 1024px) and (min-height: 0) {
-  .k-flexbox .k-ui-namespace .k-scopebar,
-  .k-flexboxlegacy .k-ui-namespace .k-scopebar {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
   }
@@ -9977,9 +9669,11 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   min-width: 0;
   /* 1 */
   box-shadow: 0 -1px 0 #d4d4d4;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  width: auto;
   /* Floating nicely */
-  /* Faking flexbox */
-  /* Flexbox */
 }
 
 .k-ui-namespace .k-scopebar__item:before, .k-ui-namespace .k-scopebar__item:after {
@@ -9997,44 +9691,11 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   }
 }
 
-@media screen and (min-width: 1024px) {
-  .k-ui-namespace .k-scopebar__item {
-    display: table-cell;
-    width: 100%;
-    float: none;
-  }
-}
-
-@media (min-width: 0) and (min-height: 0) {
-  .k-flexbox .k-ui-namespace .k-scopebar__item,
-  .k-flexboxlegacy .k-ui-namespace .k-scopebar__item {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-    width: auto;
-  }
-}
-
 .k-ui-namespace .k-scopebar__item--static {
-  /* Faking flexbox */
-  /* Flexbox */
-}
-
-@media screen and (min-width: 1024px) {
-  .k-ui-namespace .k-scopebar__item--static {
-    width: 1%;
-    white-space: nowrap;
-  }
-}
-
-@media (min-width: 0) and (min-height: 0) {
-  .k-flexbox .k-ui-namespace .k-scopebar__item--static,
-  .k-flexboxlegacy .k-ui-namespace .k-scopebar__item--static {
-    display: block;
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 auto;
-            flex: 0 0 auto;
-  }
+  display: block;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
 }
 
 .k-ui-namespace .k-scopebar__item--toggle-buttons {
@@ -10043,6 +9704,13 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   /* 2 */
   /* Hide on larger screens */
   /* Flexbox */
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -webkit-box-ordinal-group: 16;
+      -ms-flex-order: 15;
+          order: 15;
+  width: auto;
   /* RTL */
   /* Buttons */
 }
@@ -10074,23 +9742,8 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   }
 }
 
-@media (min-width: 0) and (min-height: 0) {
-  .k-flexbox .k-ui-namespace .k-scopebar__item--toggle-buttons,
-  .k-flexboxlegacy .k-ui-namespace .k-scopebar__item--toggle-buttons {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-    -webkit-box-ordinal-group: 16;
-        -ms-flex-order: 15;
-            order: 15;
-    width: auto;
-  }
-}
-
-@media (min-width: 600px) and (min-height: 0) {
-  .k-flexbox .k-ui-namespace .k-scopebar__item--toggle-buttons,
-  .k-flexboxlegacy .k-ui-namespace .k-scopebar__item--toggle-buttons {
-    width: auto;
+@media screen and (min-width: 600px) {
+  .k-ui-namespace .k-scopebar__item--toggle-buttons {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
@@ -10126,13 +9779,10 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   }
 }
 
-@media (min-width: 0) and (min-height: 0) {
-  .k-flexbox .k-ui-namespace .k-scopebar--breadcrumbs .k-scopebar__item--toggle-buttons,
-  .k-flexboxlegacy .k-ui-namespace .k-scopebar--breadcrumbs .k-scopebar__item--toggle-buttons {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 auto;
-            flex: 0 0 auto;
-  }
+.k-ui-namespace .k-scopebar--breadcrumbs .k-scopebar__item--toggle-buttons {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
 }
 
 .k-ui-namespace .k-scopebar__item--filters {
@@ -10142,12 +9792,18 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
    *
    * 1. Reset order
    */
+  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -webkit-box-ordinal-group: 11;
+      -ms-flex-order: 10;
+          order: 10;
 }
 
 .k-js-enabled .k-ui-namespace .k-scopebar__item--filters {
   display: none;
   /* Show on larger screens */
-  /* Faking flexbox */
 }
 
 @media screen and (min-width: 400px) {
@@ -10163,29 +9819,8 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   }
 }
 
-@media screen and (min-width: 1024px) {
-  .k-js-enabled .k-ui-namespace .k-scopebar__item--filters {
-    display: table-cell !important;
-    width: 100%;
-  }
-}
-
-@media (min-width: 0) and (min-height: 0) {
-  .k-flexbox .k-ui-namespace .k-scopebar__item--filters,
-  .k-flexboxlegacy .k-ui-namespace .k-scopebar__item--filters {
-    width: 100%;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-    -webkit-box-ordinal-group: 11;
-        -ms-flex-order: 10;
-            order: 10;
-  }
-}
-
-@media (min-width: 600px) and (min-height: 0) {
-  .k-flexbox .k-ui-namespace .k-scopebar__item--filters,
-  .k-flexboxlegacy .k-ui-namespace .k-scopebar__item--filters {
+@media screen and (min-width: 600px) {
+  .k-ui-namespace .k-scopebar__item--filters {
     width: auto;
     -webkit-box-ordinal-group: 1;
         -ms-flex-order: 0;
@@ -10194,9 +9829,8 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   }
 }
 
-@media (min-width: 1024px) and (min-height: 0) {
-  .k-flexbox .k-ui-namespace .k-scopebar__item--filters,
-  .k-flexboxlegacy .k-ui-namespace .k-scopebar__item--filters {
+@media screen and (min-width: 1024px) {
+  .k-ui-namespace .k-scopebar__item--filters {
     display: block !important;
   }
 }
@@ -10428,6 +10062,14 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
    *
    * 1. Reset order
    */
+  width: auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
+  display: block;
   /* Adjusted styling to display nicely inside the scopebar */
 }
 
@@ -10435,7 +10077,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   display: none;
   /* Show on larger screens */
   /* Show on larger screens */
-  /* Faking flexbox */
 }
 
 @media screen and (min-width: 400px) {
@@ -10450,31 +10091,8 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   }
 }
 
-@media screen and (min-width: 1024px) {
-  .k-js-enabled .k-ui-namespace .k-scopebar__item--breadcrumbs {
-    display: table-cell !important;
-    overflow: auto;
-    max-width: 0;
-  }
-}
-
-@media (min-width: 0) and (min-height: 0) {
-  .k-flexbox .k-ui-namespace .k-scopebar__item--breadcrumbs,
-  .k-flexboxlegacy .k-ui-namespace .k-scopebar__item--breadcrumbs {
-    width: auto;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-    -webkit-box-ordinal-group: 0;
-        -ms-flex-order: -1;
-            order: -1;
-    display: block;
-  }
-}
-
-@media (min-width: 600px) and (min-height: 0) {
-  .k-flexbox .k-ui-namespace .k-scopebar__item--breadcrumbs,
-  .k-flexboxlegacy .k-ui-namespace .k-scopebar__item--breadcrumbs {
+@media screen and (min-width: 600px) {
+  .k-ui-namespace .k-scopebar__item--breadcrumbs {
     width: auto;
     -webkit-box-ordinal-group: 1;
         -ms-flex-order: 0;
@@ -10483,9 +10101,8 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   }
 }
 
-@media (min-width: 1024px) and (min-height: 0) {
-  .k-flexbox .k-ui-namespace .k-scopebar__item--breadcrumbs,
-  .k-flexboxlegacy .k-ui-namespace .k-scopebar__item--breadcrumbs {
+@media screen and (min-width: 1024px) {
+  .k-ui-namespace .k-scopebar__item--breadcrumbs {
     display: -webkit-box !important;
     display: -ms-flexbox !important;
     display: flex !important;
@@ -10506,21 +10123,18 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   overflow: auto;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-@media (min-width: 0) and (min-height: 0) {
-  .k-flexbox .k-ui-namespace .k-scopebar__item--breadcrumbs .k-breadcrumb,
-  .k-flexboxlegacy .k-ui-namespace .k-scopebar__item--breadcrumbs .k-breadcrumb {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-  }
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 
 .k-ui-namespace .k-scopebar__item--buttons {
   /* Floating nicely */
-  /* Stop floating on larger screens for faking flexbox */
   /* Flexbox */
+  display: block;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
 }
 
 @media screen and (min-width: 400px) {
@@ -10532,16 +10146,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 @media screen and (min-width: 1024px) {
   .k-ui-namespace .k-scopebar__item--buttons {
     float: none;
-  }
-}
-
-@media (min-width: 0) and (min-height: 0) {
-  .k-flexbox .k-ui-namespace .k-scopebar__item--buttons,
-  .k-flexboxlegacy .k-ui-namespace .k-scopebar__item--buttons {
-    display: block;
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 auto;
-            flex: 0 0 auto;
   }
 }
 
@@ -10609,6 +10213,12 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   position: relative;
   /* Hide when JS is enabled */
   /* Flexbox */
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -webkit-box-ordinal-group: 21;
+      -ms-flex-order: 20;
+          order: 20;
   /**
    * 1. Reset order
    * 2. Set proper widths
@@ -10624,31 +10234,10 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 .k-js-enabled .k-ui-namespace .k-scopebar__item--search {
   display: none;
   width: 100%;
-  /* Show on larger screens and faking flexbox */
 }
 
 @media screen and (min-width: 1024px) {
-  .k-js-enabled .k-ui-namespace .k-scopebar__item--search {
-    display: table-cell !important;
-    float: none;
-  }
-}
-
-@media (min-width: 0) and (min-height: 0) {
-  .k-flexbox .k-ui-namespace .k-scopebar__item--search,
-  .k-flexboxlegacy .k-ui-namespace .k-scopebar__item--search {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-    -webkit-box-ordinal-group: 21;
-        -ms-flex-order: 20;
-            order: 20;
-  }
-}
-
-@media (min-width: 1024px) and (min-height: 0) {
-  .k-flexbox .k-ui-namespace .k-scopebar__item--search,
-  .k-flexboxlegacy .k-ui-namespace .k-scopebar__item--search {
+  .k-ui-namespace .k-scopebar__item--search {
     display: block !important;
     -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
@@ -10831,15 +10420,13 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   margin-top: 16px;
 }
 
-@media (min-width: 768px) and (min-height: 391px) {
-  .k-flexbox .k-ui-namespace .k-sidebar-item,
-  .k-flexboxlegacy .k-ui-namespace .k-sidebar-item {
+@media screen and (min-width: 768px) {
+  .k-ui-namespace .k-sidebar-item {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
   }
-  .k-flexbox .k-ui-namespace .k-sidebar-item--flex:only-child,
-  .k-flexboxlegacy .k-ui-namespace .k-sidebar-item--flex:only-child {
+  .k-ui-namespace .k-sidebar-item--flex:only-child {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -10854,24 +10441,21 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
     min-height: 100px;
     max-height: 100%;
   }
-  .k-flexbox .k-ui-namespace .k-sidebar-item--flex:only-child div,
-  .k-flexboxlegacy .k-ui-namespace .k-sidebar-item--flex:only-child div {
+  .k-ui-namespace .k-sidebar-item--flex:only-child div {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 auto;
             flex: 1 1 auto;
     overflow: auto;
   }
-  .k-flexbox .k-ui-namespace .k-sidebar-item--flex:only-child .k-sidebar-item__header,
-  .k-flexboxlegacy .k-ui-namespace .k-sidebar-item--flex:only-child .k-sidebar-item__header {
+  .k-ui-namespace .k-sidebar-item--flex:only-child .k-sidebar-item__header {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
   }
 }
 
-@media (min-width: 768px) and (min-height: 599px) {
-  .k-flexbox .k-ui-namespace .k-sidebar-item--flex:nth-child(n),
-  .k-flexboxlegacy .k-ui-namespace .k-sidebar-item--flex:nth-child(n) {
+@media screen and (min-width: 768px) {
+  .k-ui-namespace .k-sidebar-item--flex:nth-child(n) {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -10886,15 +10470,13 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
     min-height: 100px;
     max-height: 100%;
   }
-  .k-flexbox .k-ui-namespace .k-sidebar-item--flex:nth-child(n) div,
-  .k-flexboxlegacy .k-ui-namespace .k-sidebar-item--flex:nth-child(n) div {
+  .k-ui-namespace .k-sidebar-item--flex:nth-child(n) div {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 auto;
             flex: 1 1 auto;
     overflow: auto;
   }
-  .k-flexbox .k-ui-namespace .k-sidebar-item--flex:nth-child(n) .k-sidebar-item__header,
-  .k-flexboxlegacy .k-ui-namespace .k-sidebar-item--flex:nth-child(n) .k-sidebar-item__header {
+  .k-ui-namespace .k-sidebar-item--flex:nth-child(n) .k-sidebar-item__header {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
@@ -10916,15 +10498,9 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   overflow: auto;
   /* 1 */
   width: 100%;
-}
-
-@media (min-width: 300px) and (min-height: 550px) {
-  .k-flexbox .k-ui-namespace .k-sidebar-item--overflow,
-  .k-flexboxlegacy .k-ui-namespace .k-sidebar-item--overflow {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 auto;
-            flex: 0 1 auto;
-  }
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
 }
 
 .k-is-resizing .k-ui-namespace .k-sidebar-item--overflow {
@@ -10994,23 +10570,17 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 .k-ui-namespace .k-table-container {
   background: white;
-}
-
-@media (min-width: 300px) and (min-height: 391px) {
-  .k-flexbox .k-ui-namespace .k-table-container,
-  .k-flexboxlegacy .k-ui-namespace .k-table-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    overflow: hidden;
-  }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
 }
 
 .k-is-resizing .k-ui-namespace .k-table-container {
@@ -11068,19 +10638,13 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   font-size: inherit;
   /* 1 */
   min-width: 0 !important;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 
 [dir="rtl"] .k-ui-namespace .k-table-container table {
   text-align: right;
-}
-
-@media (min-width: 300px) and (min-height: 391px) {
-  .k-flexbox .k-ui-namespace .k-table-container table,
-  .k-flexboxlegacy .k-ui-namespace .k-table-container table {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-  }
 }
 
 .k-ui-namespace .k-table-container th,
@@ -11179,19 +10743,12 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 .k-ui-namespace .k-table-pagination {
   padding: 4px;
   background: #fbfbfb;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
   border-top: 1px solid gainsboro;
   box-shadow: 0 1px 0 gainsboro;
   /* 1 */
-  /* Flexbox */
-}
-
-@media (min-width: 300px) and (min-height: 391px) {
-  .k-flexbox .k-ui-namespace .k-table-pagination,
-  .k-flexboxlegacy .k-ui-namespace .k-table-pagination {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 auto;
-            flex: 0 0 auto;
-  }
 }
 
 .k-ui-namespace .k-pagination {
@@ -12294,16 +11851,9 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   /* 2 */
   color: #222222;
   font-size: 21px;
-  /* When flexbox is in use */
-}
-
-@media (min-width: 300px) and (min-height: 391px) {
-  .k-flexbox .k-ui-namespace .k-title-bar,
-  .k-flexboxlegacy .k-ui-namespace .k-title-bar {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 auto;
-            flex: 0 0 auto;
-  }
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
 }
 
 .k-ui-namespace .k-title-bar--dark {
@@ -12375,22 +11925,15 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   /* 1 */
   padding-right: 8px;
   /* 2 */
-  /* When flexbox is in use */
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
 }
 
 [dir="rtl"] .k-ui-namespace .k-toolbar {
   padding-right: 0;
   padding-left: 10px;
   /* 2 */
-}
-
-@media (min-width: 300px) and (min-height: 391px) {
-  .k-flexbox .k-ui-namespace .k-toolbar,
-  .k-flexboxlegacy .k-ui-namespace .k-toolbar {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 auto;
-            flex: 0 0 auto;
-  }
 }
 
 .k-ui-namespace .k-toolbar {
@@ -13158,22 +12701,16 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   position: relative;
 }
 
-@media (min-width: 300px) and (min-height: 391px) {
-  .k-flexbox .k-ui-namespace .k-dont-flex.k-dont-flex.k-dont-flex,
-  .k-flexboxlegacy .k-ui-namespace .k-dont-flex.k-dont-flex.k-dont-flex {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 auto;
-            flex: 0 0 auto;
-  }
+.k-ui-namespace .k-dont-flex.k-dont-flex.k-dont-flex {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
 }
 
-@media (min-width: 300px) and (min-height: 391px) {
-  .k-flexbox .k-ui-namespace .k-do-flex.k-do-flex.k-do-flex,
-  .k-flexboxlegacy .k-ui-namespace .k-do-flex.k-do-flex.k-do-flex {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-  }
+.k-ui-namespace .k-do-flex.k-do-flex.k-do-flex {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 
 .k-touchevents .k-ui-namespace .k-touchevents-hidden {

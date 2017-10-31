@@ -43,17 +43,11 @@ Styleguide 2.24
   min-height: $k-toolbar-height;
   padding-bottom: 8px; /* 1 */
   padding-right: 8px; /* 2 */
+  flex: 0 0 auto;
 
   @include rtl {
     padding-right: 0;
     padding-left: 10px; /* 2 */
-  }
-
-
-  /* When flexbox is in use */
-
-  @include flexbox {
-    flex: 0 0 auto;
   }
 }
 

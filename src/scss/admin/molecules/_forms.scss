@@ -441,16 +441,9 @@ Styleguide 2.9.4
 
 .k-input-group {
   position: relative; /* 1 */
-  display: table;
+  display: flex;
   width: 100%;
   border-collapse: separate; /* 2 */
-
-
-  /* Flexbox input groups for better overflow styling */
-
-  @include flexbox(0, 0) {
-    display: flex;
-  }
 
 
   /* The form control */
@@ -468,19 +461,12 @@ Styleguide 2.9.4
       float: right;
     }
 
-    width: 100%;
+    width: auto;
+    min-width: 15%;
     margin-bottom: 0;
 
     &:focus {
       z-index: 3; /* 5 */
-    }
-
-
-    /* Flexbox input groups for better overflow styling */
-
-    @include flexbox(0, 0) {
-      width: auto;
-      min-width: 15%;
     }
   }
 
@@ -569,19 +555,12 @@ Styleguide 2.9.4
 .k-input-group__addon,
 .k-input-group__button,
 .k-input-group .k-form-control {
-  display: table-cell;
+  display: block;
+  flex: 1 1 auto;
   margin: 0;
 
   &:not(:first-child):not(:last-child) {
     border-radius: 0;
-  }
-
-
-  /* Flexbox input groups for better overflow styling */
-
-  @include flexbox(0, 0) {
-    display: block;
-    flex: 1 1 auto;
   }
 }
 
@@ -607,18 +586,11 @@ Styleguide 2.9.4
 
 .k-input-group__addon,
 .k-input-group__button {
-  width: 1%;
   white-space: nowrap;
   vertical-align: middle; /* 1 */
-
-
-  /* Flexbox input groups for better overflow styling */
-
-  @include flexbox(0, 0) {
-    width: auto;
-    display: block;
-    flex: 0 0 auto;
-  }
+  width: auto;
+  display: block;
+  flex: 0 0 auto;
 }
 
 

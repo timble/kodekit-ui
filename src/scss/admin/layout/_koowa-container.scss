@@ -31,12 +31,15 @@ Styleguide 3.1
   margin: 0; /* 6 */
   border: none; /* 6 */
   width: 100%;
-  min-height: 100%;
   overflow: hidden;
   padding: $k-koowa-padding;
 
   background: $k-koowa-background; /* 3 */
   color: $k-color-type; /* 3 */
+
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
 
   -webkit-font-smoothing: $k-webkit-font-smoothing;
   -moz-osx-font-smoothing: $k-firefox-font-smoothing;
@@ -44,16 +47,6 @@ Styleguide 3.1
 
   @include breakpoint($k-minwidth) {
     max-width: none; /* 2 */
-  }
-
-
-  /* When flexbox is enabled */
-
-  @include flexbox {
-    display: flex;
-    flex: 1 1 auto;
-    flex-direction: column;
-    min-height: 0;
   }
 
 

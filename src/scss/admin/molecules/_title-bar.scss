@@ -33,13 +33,7 @@ Styleguide 2.23
   background: $k-title-bar-background; /* 2 */
   color: $k-title-bar-color;
   font-size: $k-font-size-huge;
-
-
-  /* When flexbox is in use */
-
-  @include flexbox {
-    flex: 0 0 auto;
-  }
+  flex: 0 0 auto;
 }
 
 

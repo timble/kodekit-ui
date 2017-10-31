@@ -47,17 +47,11 @@ Styleguide 2.21.1
 .k-table-pagination {
   padding: $k-table-pagination-spacing;
   background: $k-table-pagination-background;
+  flex: 0 0 auto;
   @include border(top, $k-table-pagination-border);
   @if $k-borders != false {
     box-shadow: 0 1px 0 $k-table-pagination-border; /* 1 */
   }
-
-  /* Flexbox */
-
-  @include flexbox {
-    flex: 0 0 auto;
-  }
-
 }
 
 .k-pagination {

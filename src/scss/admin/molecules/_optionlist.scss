@@ -33,9 +33,7 @@ Styleguide 2.17
 
 @include modernizr-rtl('.k-checked') {
   #{$k-optionlist-content-class} {
-    @include flexbox(0, 0, true) {
-      float: right;
-    }
+    float: right;
   }
 }
 
@@ -108,10 +106,7 @@ Styleguide 2.17.2
   #{$k-optionlist-block-class} {
     #{$k-optionlist-content-class} {
       width: 100%;
-
-      @include flexbox(0,0,true) {
-        float: none;
-      }
+      float: none;
     }
 
     &#{$k-optionlist-boolean-class} {

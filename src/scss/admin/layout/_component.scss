@@ -31,12 +31,10 @@ Styleguide 3.6
   padding: 0; /* 2 */
   @include transition(transform); /* 3 */
 
-  @include flexbox {
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 auto;
-    overflow: auto;
-  }
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  overflow: auto;
 
   @include resizing {
     overflow: hidden;
