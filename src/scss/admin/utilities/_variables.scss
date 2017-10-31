@@ -421,8 +421,8 @@ $k-scopebar-buttons-hover-background:   darker($k-dropdown-buttons-background) !
 // 2. Table cell padding
 
 $k-table-cell-size:                       $k-unit-size !default; // 1
-$k-table-cell-spacing-vertical:           $k-spacing-tiny !default; // 2
-$k-table-cell-spacing-horizontal:         $k-spacing-tiny !default; // 2
+$k-table-cell-spacing-vertical:           $k-spacing-base-vertical !default; // 2
+$k-table-cell-spacing-horizontal:         $k-spacing-small-horizontal !default; // 2
 
 $k-table-background:                      $k-color-primary-plus-6 !default;
 

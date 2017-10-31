@@ -10705,7 +10705,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 .k-ui-namespace .k-table-container th {
   border-bottom: 1px solid gainsboro;
   z-index: 1;
-  padding: 0 4px;
+  padding: 0 8px;
   /* 1 */
   white-space: nowrap;
   /* 2 */
@@ -10717,11 +10717,11 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 .k-ui-namespace .k-table-container th a {
   display: block;
   /* 3 */
-  padding: 4px 4px;
+  padding: 6px 8px;
   /* 4 */
-  margin-left: -4px;
-  margin-right: -4px;
-  line-height: 32px;
+  margin-left: -8px;
+  margin-right: -8px;
+  line-height: 28px;
   text-decoration: none;
 }
 
@@ -10737,7 +10737,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 .k-ui-namespace .k-table-container td {
   border-bottom: 1px solid #ededed;
-  padding: 4px 4px;
+  padding: 6px 8px;
   background: white;
 }
 
@@ -11002,8 +11002,8 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 .k-ui-namespace .k-table-container .footable.breakpoint .k-table-data--toggle {
   width: 1%;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .k-ui-namespace .k-table-container .k-table-data--form input {
@@ -11017,7 +11017,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-table-container th.k-table-data--icon a {
-  line-height: 32px;
+  line-height: 28px;
 }
 
 .k-ui-namespace .k-table-container .k-table-data--ellipsis {
@@ -11065,7 +11065,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-table-container .k-table__sub-header th {
-  padding: 0.7em 4px 0.5em;
+  padding: 0.7em 8px 0.5em;
   height: auto;
   font-size: 11px;
   line-height: 16px;
@@ -11106,273 +11106,273 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-table-container .k-table__item-level1 {
-  padding-left: 4px;
+  padding-left: 8px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-table-container .k-table__item-level1 {
   padding-left: 0;
-  padding-right: 4px;
+  padding-right: 8px;
 }
 
 .k-ui-namespace .k-table-container .k-table__item-level1:before {
-  left: -14px;
+  left: -10px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-table-container .k-table__item-level1:before {
   left: auto;
-  right: -14px;
+  right: -10px;
 }
 
 .k-ui-namespace .k-table-container .k-table__item-level2 {
-  padding-left: 28px;
+  padding-left: 32px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-table-container .k-table__item-level2 {
   padding-left: 0;
-  padding-right: 28px;
+  padding-right: 32px;
 }
 
 .k-ui-namespace .k-table-container .k-table__item-level2:before {
-  left: 10px;
+  left: 14px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-table-container .k-table__item-level2:before {
   left: auto;
-  right: 10px;
+  right: 14px;
 }
 
 .k-ui-namespace .k-table-container .k-table__item-level3 {
-  padding-left: 52px;
+  padding-left: 56px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-table-container .k-table__item-level3 {
   padding-left: 0;
-  padding-right: 52px;
+  padding-right: 56px;
 }
 
 .k-ui-namespace .k-table-container .k-table__item-level3:before {
-  left: 34px;
+  left: 38px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-table-container .k-table__item-level3:before {
   left: auto;
-  right: 34px;
+  right: 38px;
 }
 
 .k-ui-namespace .k-table-container .k-table__item-level4 {
-  padding-left: 76px;
+  padding-left: 80px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-table-container .k-table__item-level4 {
   padding-left: 0;
-  padding-right: 76px;
+  padding-right: 80px;
 }
 
 .k-ui-namespace .k-table-container .k-table__item-level4:before {
-  left: 58px;
+  left: 62px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-table-container .k-table__item-level4:before {
   left: auto;
-  right: 58px;
+  right: 62px;
 }
 
 .k-ui-namespace .k-table-container .k-table__item-level5 {
-  padding-left: 100px;
+  padding-left: 104px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-table-container .k-table__item-level5 {
   padding-left: 0;
-  padding-right: 100px;
+  padding-right: 104px;
 }
 
 .k-ui-namespace .k-table-container .k-table__item-level5:before {
-  left: 82px;
+  left: 86px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-table-container .k-table__item-level5:before {
   left: auto;
-  right: 82px;
+  right: 86px;
 }
 
 .k-ui-namespace .k-table-container .k-table__item-level6 {
-  padding-left: 124px;
+  padding-left: 128px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-table-container .k-table__item-level6 {
   padding-left: 0;
-  padding-right: 124px;
+  padding-right: 128px;
 }
 
 .k-ui-namespace .k-table-container .k-table__item-level6:before {
-  left: 106px;
+  left: 110px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-table-container .k-table__item-level6:before {
   left: auto;
-  right: 106px;
+  right: 110px;
 }
 
 .k-ui-namespace .k-table-container .k-table__item-level7 {
-  padding-left: 148px;
+  padding-left: 152px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-table-container .k-table__item-level7 {
   padding-left: 0;
-  padding-right: 148px;
+  padding-right: 152px;
 }
 
 .k-ui-namespace .k-table-container .k-table__item-level7:before {
-  left: 130px;
+  left: 134px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-table-container .k-table__item-level7:before {
   left: auto;
-  right: 130px;
+  right: 134px;
 }
 
 .k-ui-namespace .k-table-container .k-table__item-level8 {
-  padding-left: 172px;
+  padding-left: 176px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-table-container .k-table__item-level8 {
   padding-left: 0;
-  padding-right: 172px;
+  padding-right: 176px;
 }
 
 .k-ui-namespace .k-table-container .k-table__item-level8:before {
-  left: 154px;
+  left: 158px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-table-container .k-table__item-level8:before {
   left: auto;
-  right: 154px;
+  right: 158px;
 }
 
 .k-ui-namespace .k-table-container .k-table__item-level9 {
-  padding-left: 196px;
+  padding-left: 200px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-table-container .k-table__item-level9 {
   padding-left: 0;
-  padding-right: 196px;
+  padding-right: 200px;
 }
 
 .k-ui-namespace .k-table-container .k-table__item-level9:before {
-  left: 178px;
+  left: 182px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-table-container .k-table__item-level9:before {
   left: auto;
-  right: 178px;
+  right: 182px;
 }
 
 .k-ui-namespace .k-table-container .k-table__item-level10 {
-  padding-left: 220px;
+  padding-left: 224px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-table-container .k-table__item-level10 {
   padding-left: 0;
-  padding-right: 220px;
+  padding-right: 224px;
 }
 
 .k-ui-namespace .k-table-container .k-table__item-level10:before {
-  left: 202px;
+  left: 206px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-table-container .k-table__item-level10:before {
   left: auto;
-  right: 202px;
+  right: 206px;
 }
 
 .k-ui-namespace .k-table-container .k-table__item-level11 {
-  padding-left: 244px;
+  padding-left: 248px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-table-container .k-table__item-level11 {
   padding-left: 0;
-  padding-right: 244px;
+  padding-right: 248px;
 }
 
 .k-ui-namespace .k-table-container .k-table__item-level11:before {
-  left: 226px;
+  left: 230px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-table-container .k-table__item-level11:before {
   left: auto;
-  right: 226px;
+  right: 230px;
 }
 
 .k-ui-namespace .k-table-container .k-table__item-level12 {
-  padding-left: 268px;
+  padding-left: 272px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-table-container .k-table__item-level12 {
   padding-left: 0;
-  padding-right: 268px;
+  padding-right: 272px;
 }
 
 .k-ui-namespace .k-table-container .k-table__item-level12:before {
-  left: 250px;
+  left: 254px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-table-container .k-table__item-level12:before {
   left: auto;
-  right: 250px;
+  right: 254px;
 }
 
 .k-ui-namespace .k-table-container .k-table__item-level13 {
-  padding-left: 292px;
+  padding-left: 296px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-table-container .k-table__item-level13 {
   padding-left: 0;
-  padding-right: 292px;
+  padding-right: 296px;
 }
 
 .k-ui-namespace .k-table-container .k-table__item-level13:before {
-  left: 274px;
+  left: 278px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-table-container .k-table__item-level13:before {
   left: auto;
-  right: 274px;
+  right: 278px;
 }
 
 .k-ui-namespace .k-table-container .k-table__item-level14 {
-  padding-left: 316px;
+  padding-left: 320px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-table-container .k-table__item-level14 {
   padding-left: 0;
-  padding-right: 316px;
+  padding-right: 320px;
 }
 
 .k-ui-namespace .k-table-container .k-table__item-level14:before {
-  left: 298px;
+  left: 302px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-table-container .k-table__item-level14:before {
   left: auto;
-  right: 298px;
+  right: 302px;
 }
 
 .k-ui-namespace .k-table-container .k-table__item-level15 {
-  padding-left: 340px;
+  padding-left: 344px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-table-container .k-table__item-level15 {
   padding-left: 0;
-  padding-right: 340px;
+  padding-right: 344px;
 }
 
 .k-ui-namespace .k-table-container .k-table__item-level15:before {
-  left: 322px;
+  left: 326px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-table-container .k-table__item-level15:before {
   left: auto;
-  right: 322px;
+  right: 326px;
 }
 
 .k-ui-namespace .k-table-container .k-table__item-level1:before {
@@ -11597,7 +11597,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .footable.breakpoint .footable-row-detail-row {
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .k-ui-namespace .footable.breakpoint .footable-row-detail-row:before, .k-ui-namespace .footable.breakpoint .footable-row-detail-row:after {
@@ -11623,7 +11623,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   /* 1 */
   min-height: 30px;
   /* 2 */
-  padding: 4px 4px;
+  padding: 6px 8px;
   /* 3 */
 }
 
