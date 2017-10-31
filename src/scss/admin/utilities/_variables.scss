@@ -22,23 +22,6 @@ $k-minwidth:  $k-alpha !default; // 1
 $k-desktop:   $k-charlie !default; // 2
 
 
-// Flexbox
-// ==========================================================================
-//
-// 1. Wether or not to Use flexbox in layouts
-// 2. Separate $k-flexbox variables are being used
-//    - 300px so flexbox will at least be active on 320px wide screens
-//    - 391px so flexbox will at least be active on 400px tall screens
-//      - 25-09-2015 http://mydevice.io/devices/
-//        The only phones at the time to have flexbox in landscape mode are:
-//        - Samsung Galaxy Note (This is where the 391 number comes from)
-//        - Blackberry passport
-
-$k-flexbox:             true !default; // 1
-$k-flexbox-horizontal:  300px !default; // 2
-$k-flexbox-vertical:    391px !default; // 2
-
-
 // Typography
 // ==========================================================================
 //
@@ -171,6 +154,7 @@ $k-rtlicons:  'account-login',
 
 $k-spacing-tiny:              4px !default;
 $k-spacing-small:             8px !default;
+$k-spacing-min:               12px !default;
 $k-spacing:                   16px !default;
 $k-spacing-large:             24px !default;
 $k-spacing-huge:              32px !default;
@@ -760,9 +744,8 @@ $k-state-danger-border:       darkest($k-color-error) !default;
 // Alerts
 // ==========================================================================
 
-$k-alert-spacing:             $k-spacing-small !default;
+$k-alert-spacing:             $k-spacing-min !default;
 $k-alert-border-radius:       $k-border-radius !default;
-$k-alert-link-font-weight:    $k-bold !default;
 
 $k-alert-success-background:  $k-color-success !default;
 $k-alert-success-color:       $k-color-success-type !default;
@@ -770,11 +753,15 @@ $k-alert-success-color:       $k-color-success-type !default;
 $k-alert-info-background:     $k-color-neutral !default;
 $k-alert-info-color:          $k-color-neutral-type !default;
 
+
 $k-alert-warning-background:  $k-color-warning !default;
 $k-alert-warning-color:       $k-color-warning-type !default;
 
 $k-alert-danger-background:   $k-color-error !default;
 $k-alert-danger-color:        $k-color-error-type !default;
+
+$k-alert-overflow-minheight:  $k-unit-size * 2 !default;
+$k-alert-overflow-maxheight:  33% !default;
 
 
 // Dropdowns
@@ -897,4 +884,5 @@ $k-btn-danger-bg:             $k-btn-danger-background !default;
 $k-state-warning-text:        $k-state-warning-color !default;
 $k-state-danger-text:         $k-state-danger-color !default;
 $k-state-success-text:        $k-state-success-color !default;
+
 
