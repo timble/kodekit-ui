@@ -27,34 +27,15 @@ Styleguide 2.23
 .k-title-bar {
   @include border(bottom, $k-title-bar-border);
   position: relative; /* 1 */
-  z-index: 10; /* 1 */
-  display: table;
+  z-index: $k-title-bar-z-index; /* 1 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   background: $k-title-bar-background; /* 2 */
   color: $k-title-bar-color;
-  font-size: $k-font-size-huge;
+  font-size: $k-title-bar-font-size;
   flex: 0 0 auto;
-}
-
-
-/**
- * Dark theme
- */
-
-.k-title-bar--dark {
-  background: $k-title-bar--dark-background;
-  color: $k-title-bar--dark-color;
-  border-bottom: none;
-
-  .k-off-canvas-menu-toggle {
-    background: $k-title-bar--dark-color;
-
-    .k-toggle-button-bar1,
-    .k-toggle-button-bar2,
-    .k-toggle-button-bar3 {
-      background: $k-title-bar--dark-background;
-    }
-  }
 }
 
 
@@ -65,8 +46,7 @@ Styleguide 2.23
 .k-title-bar {
   .k-off-canvas-menu-toggle-holder,
   .k-title-bar__heading {
-    display: table-cell;
-    vertical-align: middle;
+    flex: 0 0 auto
   }
 
   .k-off-canvas-menu-toggle-holder {
@@ -74,8 +54,8 @@ Styleguide 2.23
   }
 
   .k-title-bar__heading {
-    width: 100%;
-    padding: $k-spacing-small;
+    flex: 1 1 auto;
+    padding: $k-title-bar-spacing;
     text-align: center;
 
     @include breakpoint($k-charlie) {
@@ -116,36 +96,3 @@ Styleguide 2.23.1
     display: none;
   }
 }
-
-
-// @TODO: Can this be removed?
-
-/*
-Inline title bar
-
-Title just for mobile views since the navigation is hidden
-- Use <b>never</b> together with a `.k-title-bar`
-- Use <b>only</b> as <b>child</b> of `.k-content`
-- Only visible on smaller screens
-- {unsureText}
-
-markup:
-<!-- Title when sidebar is invisible -->
-<div class="k-title-bar k-title-bar--mobile k-js-title-bar">
-  <div class="k-title-bar__heading">{Title}</div>
-</div><!-- .k-title-bar -->
-
-Styleguide 2.23.2
-
-*/
-
-.k-title-bar--inline {
-  background: transparent;
-  border: none;
-
-  .k-title-bar__heading {
-    padding: 0;
-  }
-}
-
-// @TODO: end

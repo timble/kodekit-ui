@@ -4304,9 +4304,6 @@ Styleguide 2.23
  * 2. Setting a background so container will fall nicely over the sidebar
  */
   /**
- * Dark theme
- */
-  /**
  * Titlebar contents
  */
   /*
@@ -4325,24 +4322,6 @@ markup:
 </div><!-- .k-title-bar -->
 
 Styleguide 2.23.1
-
-*/
-  /*
-Inline title bar
-
-Title just for mobile views since the navigation is hidden
-- Use <b>never</b> together with a `.k-title-bar`
-- Use <b>only</b> as <b>child</b> of `.k-content`
-- Only visible on smaller screens
-- {unsureText}
-
-markup:
-<!-- Title when sidebar is invisible -->
-<div class="k-title-bar k-title-bar--mobile k-js-title-bar">
-  <div class="k-title-bar__heading">{Title}</div>
-</div><!-- .k-title-bar -->
-
-Styleguide 2.23.2
 
 */
   /* Toolbar
@@ -11865,7 +11844,15 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   /* 1 */
   z-index: 10;
   /* 1 */
-  display: table;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   background: #f0f0f0;
   /* 2 */
@@ -11876,26 +11863,11 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
           flex: 0 0 auto;
 }
 
-.k-ui-namespace .k-title-bar--dark {
-  background: #425d77;
-  color: white;
-  border-bottom: none;
-}
-
-.k-ui-namespace .k-title-bar--dark .k-off-canvas-menu-toggle {
-  background: white;
-}
-
-.k-ui-namespace .k-title-bar--dark .k-off-canvas-menu-toggle .k-toggle-button-bar1,
-.k-ui-namespace .k-title-bar--dark .k-off-canvas-menu-toggle .k-toggle-button-bar2,
-.k-ui-namespace .k-title-bar--dark .k-off-canvas-menu-toggle .k-toggle-button-bar3 {
-  background: #425d77;
-}
-
 .k-ui-namespace .k-title-bar .k-off-canvas-menu-toggle-holder,
 .k-ui-namespace .k-title-bar .k-title-bar__heading {
-  display: table-cell;
-  vertical-align: middle;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
 }
 
 .k-ui-namespace .k-title-bar .k-off-canvas-menu-toggle-holder {
@@ -11903,7 +11875,9 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-title-bar .k-title-bar__heading {
-  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   padding: 8px;
   text-align: center;
 }
@@ -11926,15 +11900,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   .k-ui-namespace .k-title-bar--mobile {
     display: none;
   }
-}
-
-.k-ui-namespace .k-title-bar--inline {
-  background: transparent;
-  border: none;
-}
-
-.k-ui-namespace .k-title-bar--inline .k-title-bar__heading {
-  padding: 0;
 }
 
 .k-ui-namespace .k-toolbar {
