@@ -302,6 +302,7 @@ $k-sidebar-color:               $k-color-type !default;
 
 $k-navigation-spacing:            $k-spacing-small !default;
 $k-navigation-font-size:          $k-font-size-large !default;
+$k-navigation-line-height:        $k-line-height-small !default;
 
 $k-navigation-background:         $k-color-primary-plus-1 !default;
 $k-navigation-border:             darkest($k-navigation-background) !default;
@@ -315,6 +316,7 @@ $k-navigation-hover-color:        $k-color-type !default;
 $k-navigation-active-background:  $k-navigation-background !default;
 $k-navigation-active-border:      $k-color-accent !default;
 $k-navigation-active-color:       $k-color-accent !default;
+$k-navigation-active-font-weight: $k-bold !default;
 
 
 // List

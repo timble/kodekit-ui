@@ -9362,7 +9362,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 [dir="rtl"] .k-ui-namespace .k-navigation {
-  padding: 16px 0;
+  padding: 16px 0 15px;
 }
 
 .k-ui-namespace .k-navigation li {
@@ -9396,7 +9396,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-navigation a:hover, .k-ui-namespace .k-navigation a:focus {
-  background: white;
+  background: #f8f8f8;
   color: #222222;
   text-decoration: none;
   /* 2 */
