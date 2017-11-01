@@ -8275,10 +8275,10 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 .k-ui-namespace .k-icon-text-item {
   display: inline-block;
+  font-size: inherit !important;
   line-height: 20px;
   vertical-align: middle;
-  font-size: inherit !important;
-  margin-right: 5px;
+  margin-right: 4px;
 }
 
 .k-ui-namespace [class^="k-icon-document-"]:before,

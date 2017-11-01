@@ -295,15 +295,15 @@ Styleguide 2.12.2
 */
 
 .k-icon--accent {
-  color: $k-color-accent;
+  color: $k-icon-color-accent;
 }
 
 .k-icon--success {
-  color: $k-color-success;
+  color: $k-icon-color-success;
 }
 
 .k-icon--error {
-  color: $k-color-error;
+  color: $k-icon-color-error;
 }
 
 
@@ -361,10 +361,10 @@ Styleguide 2.12.3
 
 .k-icon-text-item {
   display: inline-block;
-  line-height: $k-line-height;
-  vertical-align: middle;
-  font-size: inherit!important;
-  margin-right: 5px;
+  font-size: $k-icon-text-font-size;
+  line-height: $k-icon-text-item-line-height;
+  vertical-align: $k-icon-text-item-align;
+  margin-right: $k-icon-text-item-spacing;
 }
 
 
