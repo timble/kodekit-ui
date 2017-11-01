@@ -416,7 +416,7 @@ Styleguide 2.4.9
 .k-card__caption {
   display: block;
   width: 100%;
-  padding: 1em 10px;
+  padding: $k-card-caption-spacing;
   font-weight: $k-card-caption-font-weight;
   text-decoration: none;
   @include transition;

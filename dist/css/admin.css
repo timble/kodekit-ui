@@ -6990,7 +6990,7 @@ fieldset[disabled] .k-ui-namespace .k-button--danger.has-focus {
 .k-ui-namespace .k-card__caption {
   display: block;
   width: 100%;
-  padding: 1em 10px;
+  padding: 12px 8px;
   font-weight: 400;
   text-decoration: none;
   transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
