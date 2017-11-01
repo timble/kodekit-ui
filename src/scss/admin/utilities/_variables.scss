@@ -226,13 +226,15 @@ $k-koowa-padding:     0 !default;
 // Login
 // ==========================================================================
 
-$k-login-container-spacing:     $k-spacing !default;
 $k-login-container-background:  $k-color-base !default;
 $k-login-container-color:       $k-color-base-type !default;
+$k-login-container-spacing:     $k-spacing !default;
+
 $k-login-width:                 360px !default;
 $k-login-radius:                $k-border-radius !default;
 $k-login-background:            white !default;
 $k-login-color:                 $k-color-type !default;
+$k-login-font-size:             $k-font-size-large !default;
 $k-login-spacing:               $k-spacing !default;
 $k-login-shadow:                0 6px 0 -4px rgba(0,0,0,.3) !default;
 
