@@ -14,15 +14,15 @@ Styleguide 2.27
 */
 
 .k-well {
-  padding: $k-spacing-small;
+  padding: $k-well-spacing;
   background-color: $k-well-background;
   border: 1px solid $k-well-border;
-  border-radius: $k-border-radius;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  @include content-block;
+  border-radius: $k-well-radius;
+  box-shadow: $k-well-box-shadow;
+  @include content-block();
 
   p {
-    @include content-block($k-spacing-small);
+    @include content-block($k-well-paragraph-spacing);
   }
 }
 
@@ -43,10 +43,10 @@ Styleguide 2.27.1
 */
 
 .k-well__content {
-  padding: $k-spacing-small;
-  background: white;
-  border: 1px solid $k-well-border;
-  border-radius: $k-border-radius;
+  padding: $k-well-content-spacing;
+  background: $k-well-content-background;
+  border: $k-well-content-border;
+  border-radius: $k-well-radius;
 }
 
 
@@ -66,9 +66,9 @@ Styleguide 2.27.2
 .k-well {
   .k-tabs-content {
     margin: 0;
-    background: white;
-    border: 1px solid #ddd;
+    background: $k-well-content-background;
+    border: $k-well-content-border;
     border-top: none;
-    border-radius: 0 0 $k-border-radius $k-border-radius;
+    border-radius: 0 0 $k-well-radius $k-well-radius;
   }
 }

@@ -12364,7 +12364,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-well {
-  padding: 8px;
+  padding: 12px;
   background-color: #f3f3f3;
   border: 1px solid #e1e1e1;
   border-radius: 4px;
@@ -12377,7 +12377,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-well p {
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .k-ui-namespace .k-well p:last-child {
@@ -12385,7 +12385,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-well__content {
-  padding: 8px;
+  padding: 12px;
   background: white;
   border: 1px solid #e1e1e1;
   border-radius: 4px;
@@ -12394,7 +12394,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 .k-ui-namespace .k-well .k-tabs-content {
   margin: 0;
   background: white;
-  border: 1px solid #ddd;
+  border: 1px solid #e1e1e1;
   border-top: none;
   border-radius: 0 0 4px 4px;
 }

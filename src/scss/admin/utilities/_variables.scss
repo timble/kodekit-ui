@@ -699,8 +699,17 @@ $k-tooltip-arrow-color:   $k-tooltip-background !default;
 // Wells
 // ==========================================================================
 
-$k-well-background:   $k-color-primary-plus-4 !default;
-$k-well-border:       darken($k-well-background, 7%) !default;
+$k-well-spacing:              $k-spacing-min !default;
+$k-well-background:           $k-color-primary-plus-4 !default;
+$k-well-border:               darken($k-well-background, 7%) !default;
+$k-well-radius:               $k-border-radius !default;
+$k-well-box-shadow:           inset 0 1px 1px rgba(0, 0, 0, 0.05) !default;
+
+$k-well-paragraph-spacing:    $k-well-spacing !default;
+
+$k-well-content-spacing:      $k-well-spacing !default;
+$k-well-content-background:   white !default;
+$k-well-content-border:       1px solid $k-well-border !default;
 
 
 // Cards
