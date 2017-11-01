@@ -448,8 +448,12 @@ $k-table-cell-accent-hover-background:    darken($k-color-accent,10%) !default;
 $k-table-row-positioner-size:             16px;
 $k-table-row-positioner-color:            $k-color-primary-min-2;
 
-$k-table-pagination-height:               ($k-line-height + ($k-spacing-base-vertical * 2) + 2px) !default;
-$k-table-pagination-spacing:              $k-spacing-tiny !default;
+
+// Table pagination
+// ==========================================================================
+
+$k-table-pagination-height:               ($k-line-height + ($k-spacing-base-vertical * 2)) !default;
+$k-table-pagination-spacing:              $k-spacing-small !default;
 $k-table-pagination-background:           $k-table-header-background !default;
 $k-table-pagination-border:               $k-table-header-border !default;
 
@@ -624,6 +628,9 @@ $k-heading-line-height:   $k-line-height-huge !default;
 $k-pagination-background:         $k-color-accent-type !default;
 $k-pagination-border:             $k-color-primary-min-1 !default;
 $k-pagination-color:              $k-color-accent !default;
+$k-pagination-radius:             $k-border-radius !default;
+$k-pagination-spacing:            ($k-spacing-base-vertical - 1px) $k-spacing-base-horizontal !default;
+$k-pagination-line-height:        ($k-spacing-base-vertical - 1px) $k-spacing-base-horizontal !default;
 
 $k-pagination-hover-background:   $k-color-primary-plus-2 !default;
 $k-pagination-hover-color:        darker($k-color-accent) !default;
@@ -632,6 +639,8 @@ $k-pagination-hover-border:       $k-color-primary-min-1 !default;
 $k-pagination-active-background:  $k-color-accent !default;
 $k-pagination-active-color:       $k-color-accent-type !default;
 $k-pagination-active-border:      darker($k-color-accent) !default;
+
+
 
 
 // Tooltips

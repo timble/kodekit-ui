@@ -45,7 +45,7 @@ Styleguide 2.21.1
  */
 
 .k-table-pagination {
-  padding: $k-table-pagination-spacing;
+  padding: $k-table-pagination-spacing $k-table-pagination-spacing ($k-table-pagination-spacing - 1px);
   background: $k-table-pagination-background;
   flex: 0 0 auto;
   @include border(top, $k-table-pagination-border);
@@ -55,18 +55,9 @@ Styleguide 2.21.1
 }
 
 .k-pagination {
-
-  /**
-   * Pagination contents
-   *
-   * 1. Align vertically
-   */
-
-  .k-pagination__limit,
-  .k-pagination__pages {
-    display: inline-block; /* 1 */
-    vertical-align: middle; /* 1 */
-  }
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
 
   /**
    * Pagination
@@ -76,9 +67,9 @@ Styleguide 2.21.1
    */
 
   .k-pagination__pages {
-    padding-left: 0;
+    padding: 0;
     margin: 0;
-    border-radius: $k-border-radius;
+    border-radius: $k-pagination-radius;
 
 
     /* Override for rtl ul-ol-li styling */
@@ -98,8 +89,8 @@ Styleguide 2.21.1
         display: block;
         position: relative;
         float: left; /* 2 */
-        padding: $k-spacing-base-vertical $k-spacing-base-horizontal;
-        line-height: $k-line-height;
+        padding: $k-pagination-spacing;
+        line-height: $k-pagination-line-height;
         text-decoration: none;
         color: $k-pagination-color;
         background-color: $k-pagination-background;
@@ -120,7 +111,7 @@ Styleguide 2.21.1
         & > a,
         & > span {
           margin-left: 0;
-          @include border-left-radius($k-border-radius);
+          @include border-left-radius($k-pagination-radius);
         }
 
         @include rtl {
@@ -128,7 +119,7 @@ Styleguide 2.21.1
           & > span {
             margin-right: 0;
             @include border-left-radius(0);
-            @include border-right-radius($k-border-radius);
+            @include border-right-radius($k-pagination-radius);
           }
         }
       }
@@ -136,11 +127,11 @@ Styleguide 2.21.1
       &:last-child {
         & > a,
         & > span {
-          @include border-right-radius($k-border-radius);
+          @include border-right-radius($k-pagination-radius);
 
           @include rtl {
             @include border-right-radius(0);
-            @include border-left-radius($k-border-radius);
+            @include border-left-radius($k-pagination-radius);
           }
         }
       }

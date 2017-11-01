@@ -10765,7 +10765,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-table-pagination {
-  padding: 4px;
+  padding: 8px 8px 7px;
   background: #fbfbfb;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
@@ -10776,11 +10776,14 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-pagination {
-  /**
-   * Pagination contents
-   *
-   * 1. Align vertically
-   */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-line-pack: center;
+      align-content: center;
   /**
    * Pagination
    *
@@ -10790,16 +10793,8 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   /* Limit */
 }
 
-.k-ui-namespace .k-pagination .k-pagination__limit,
 .k-ui-namespace .k-pagination .k-pagination__pages {
-  display: inline-block;
-  /* 1 */
-  vertical-align: middle;
-  /* 1 */
-}
-
-.k-ui-namespace .k-pagination .k-pagination__pages {
-  padding-left: 0;
+  padding: 0;
   margin: 0;
   border-radius: 4px;
   /* Override for rtl ul-ol-li styling */
@@ -10821,8 +10816,8 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   position: relative;
   float: left;
   /* 2 */
-  padding: 6px 12px;
-  line-height: 20px;
+  padding: 5px 12px;
+  line-height: 5px 12px;
   text-decoration: none;
   color: #3071a9;
   background-color: white;
@@ -10887,15 +10882,15 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-pagination select {
-  height: 34px;
+  height: 32px;
   width: auto;
   margin: 0;
-  margin-right: 4px;
+  margin-right: 8px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-pagination select {
   margin-right: auto;
-  margin-left: 4px;
+  margin-left: 8px;
 }
 
 .k-ui-namespace .k-table-container a {
