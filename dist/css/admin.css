@@ -11951,7 +11951,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 @media screen and (min-width: 0) and (max-width: 768px) {
-  .k-ui-namespace .k-toolbar .k-button {
+  .k-ui-namespace .k-toolbar .k-button:not(.k-toolbar-fullbutton) {
     overflow: hidden;
     width: 32px;
     height: 32px;
@@ -12055,7 +12055,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 .k-ui-namespace .k-tooltip__inner {
   max-width: 264px;
-  padding: 3px 8px;
+  padding: 4px 8px;
   color: white;
   text-align: center;
   background-color: black;

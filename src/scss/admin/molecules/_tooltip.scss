@@ -25,7 +25,7 @@ Styleguide 2.25
   position: absolute;
   z-index: $k-zindex-tooltip;
   display: block;
-  font-size: $k-font-size-small; /* 1 */
+  font-size: $k-tooltip-font-size; /* 1 */
   opacity: 0;
 
   &.in {
@@ -60,11 +60,11 @@ Styleguide 2.25
 
 .k-tooltip__inner {
   max-width: $k-tooltip-max-width;
-  padding: 3px 8px;
+  padding: $k-tooltip-spacing;
   color: $k-tooltip-color;
-  text-align: center;
+  text-align: $k-tooltip-align;
   background-color: $k-tooltip-background;
-  border-radius: $k-border-radius;
+  border-radius: $k-tooltip-radius;
 }
 
 
@@ -82,7 +82,7 @@ Styleguide 2.25
   &.top .k-tooltip__arrow {
     bottom: 0;
     left: 50%;
-    margin-left: -$k-tooltip-arrow-width;
+    margin-left: -($k-tooltip-arrow-width);
     border-width: $k-tooltip-arrow-width $k-tooltip-arrow-width 0;
     border-top-color: $k-tooltip-arrow-color;
   }
@@ -90,7 +90,7 @@ Styleguide 2.25
   &.top-left .k-tooltip__arrow {
     bottom: 0;
     right: $k-tooltip-arrow-width;
-    margin-bottom: -$k-tooltip-arrow-width;
+    margin-bottom: -($k-tooltip-arrow-width);
     border-width: $k-tooltip-arrow-width $k-tooltip-arrow-width 0;
     border-top-color: $k-tooltip-arrow-color;
   }
@@ -98,7 +98,7 @@ Styleguide 2.25
   &.top-right .k-tooltip__arrow {
     bottom: 0;
     left: $k-tooltip-arrow-width;
-    margin-bottom: -$k-tooltip-arrow-width;
+    margin-bottom: -($k-tooltip-arrow-width);
     border-width: $k-tooltip-arrow-width $k-tooltip-arrow-width 0;
     border-top-color: $k-tooltip-arrow-color;
   }
@@ -106,7 +106,7 @@ Styleguide 2.25
   &.right .k-tooltip__arrow {
     top: 50%;
     left: 0;
-    margin-top: -$k-tooltip-arrow-width;
+    margin-top: -($k-tooltip-arrow-width);
     border-width: $k-tooltip-arrow-width $k-tooltip-arrow-width $k-tooltip-arrow-width 0;
     border-right-color: $k-tooltip-arrow-color;
   }
@@ -114,7 +114,7 @@ Styleguide 2.25
   &.left .k-tooltip__arrow {
     top: 50%;
     right: 0;
-    margin-top: -$k-tooltip-arrow-width;
+    margin-top: -($k-tooltip-arrow-width);
     border-width: $k-tooltip-arrow-width 0 $k-tooltip-arrow-width $k-tooltip-arrow-width;
     border-left-color: $k-tooltip-arrow-color;
   }
@@ -130,7 +130,7 @@ Styleguide 2.25
   &.bottom-left .k-tooltip__arrow {
     top: 0;
     right: $k-tooltip-arrow-width;
-    margin-top: -$k-tooltip-arrow-width;
+    margin-top: -($k-tooltip-arrow-width);
     border-width: 0 $k-tooltip-arrow-width $k-tooltip-arrow-width;
     border-bottom-color: $k-tooltip-arrow-color;
   }
@@ -138,7 +138,7 @@ Styleguide 2.25
   &.bottom-right .k-tooltip__arrow {
     top: 0;
     left: $k-tooltip-arrow-width;
-    margin-top: -$k-tooltip-arrow-width;
+    margin-top: -($k-tooltip-arrow-width);
     border-width: 0 $k-tooltip-arrow-width $k-tooltip-arrow-width;
     border-bottom-color: $k-tooltip-arrow-color;
   }

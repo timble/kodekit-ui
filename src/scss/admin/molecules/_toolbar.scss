@@ -68,12 +68,14 @@ Styleguide 2.24
      * By default we just want them as buttons
      */
 
-    @include breakpoint(0, range, $k-charlie) {
-      overflow: hidden;
-      width: 32px;
-      height: 32px;
-      padding: 7px 6px;
-      text-align: center;
+    &:not(.k-toolbar-fullbutton) {
+      @include breakpoint(0, range, $k-charlie) {
+        overflow: hidden;
+        width: 32px;
+        height: 32px;
+        padding: 7px 6px;
+        text-align: center;
+      }
     }
   }
 
