@@ -11878,7 +11878,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
-  padding: 8px;
+  padding: 8px 8px 7px;
   text-align: center;
 }
 
@@ -11889,6 +11889,10 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   [dir="rtl"] .k-ui-namespace .k-title-bar .k-title-bar__heading {
     text-align: right;
   }
+}
+
+.k-ui-namespace .k-title-bar .k-off-canvas-menu-toggle {
+  margin: 8px 8px 7px;
 }
 
 .k-ui-namespace .k-title-bar--mobile {

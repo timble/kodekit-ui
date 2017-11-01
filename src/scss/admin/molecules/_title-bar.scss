@@ -55,7 +55,7 @@ Styleguide 2.23
 
   .k-title-bar__heading {
     flex: 1 1 auto;
-    padding: $k-title-bar-spacing;
+    padding: $k-title-bar-spacing $k-title-bar-spacing ($k-title-bar-spacing - 1px);
     text-align: center;
 
     @include breakpoint($k-charlie) {
@@ -65,6 +65,10 @@ Styleguide 2.23
         text-align: right;
       }
     }
+  }
+
+  .k-off-canvas-menu-toggle {
+    margin: $k-title-bar-spacing $k-title-bar-spacing ($k-title-bar-spacing - 1px);
   }
 }
 
