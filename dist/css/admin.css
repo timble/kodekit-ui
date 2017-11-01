@@ -7051,7 +7051,7 @@ fieldset[disabled] .k-ui-namespace .k-button--danger.has-focus {
 }
 
 .k-ui-namespace .k-empty-state p {
-  margin-bottom: 1em;
+  margin-bottom: 16px;
 }
 
 .k-ui-namespace .k-empty-state p:last-child {
@@ -15574,7 +15574,7 @@ Styleguide 2.5
 }
 
 .datepicker.datepicker-inline {
-  width: 220px;
+  width: 224px;
 }
 
 .datepicker.datepicker-rtl {
