@@ -541,6 +541,22 @@ $k-form-option-color:         $k-color-accent !default;
 $k-form-option-shadow:        inset 0 1px 2px rgba(0, 0, 0, 0.15) !default;
 
 
+// Styled file input
+// ==========================================================================
+
+$k-styled-file-input-fallback-font-size:    $k-font-size !default;
+$k-styled-file-input-fallback-line-height:  $k-line-height !default;
+$k-styled-file-input-font-weight:           $k-regular !default;
+$k-styled-file-input-cursor:                pointer !default;
+$k-styled-file-input-fallback-color:        $k-color-accent !default;
+$k-styled-file-input-background:            $k-color-accent !default;
+$k-styled-file-input-color:                 $k-color-accent-type !default;
+$k-styled-file-input-radius:                $k-border-radius-large !default;
+$k-styled-file-input-font-size:             $k-font-size-large !default;
+$k-styled-file-input-line-height:           $k-line-height-large !default;
+$k-styled-file-input-spacing:               $k-spacing-large-vertical $k-spacing-large-horizontal !default;
+
+
 // Empty state
 // ==========================================================================
 

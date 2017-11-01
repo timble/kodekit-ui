@@ -58,15 +58,15 @@ Styleguide 2.9.9
 
     + label {
       max-width: 100%;
-      font-size: $k-font-size;
-      line-height: $k-line-height;
-      font-weight: $k-regular;
+      font-size: $k-styled-file-input-fallback-font-size;
+      line-height: $k-styled-file-input-fallback-line-height;
+      font-weight: $k-styled-file-input-font-weight;
       text-overflow: ellipsis;
       white-space: nowrap;
-      cursor: pointer;
+      cursor: $k-styled-file-input-cursor;
       overflow: hidden;
       vertical-align: middle;
-      color: $k-color-accent;
+      color: $k-styled-file-input-fallback-color;
       padding: 0;
       text-align: center;
     }
@@ -96,7 +96,7 @@ Styleguide 2.9.9
       & + label {
         .k-file-input__button {
           &, &:hover, &:focus {
-            background-color: darken($k-color-accent, 10%);
+            background-color: darken($k-styled-file-input-background, 10%);
           }
         }
       }
@@ -108,14 +108,14 @@ Styleguide 2.9.9
 
   .k-file-input__button {
     display: block;
-    background-color: $k-color-accent;
-    color: $k-color-accent-type;
+    background-color: $k-styled-file-input-background;
+    color: $k-styled-file-input-color;
     pointer-events: none;
     vertical-align: middle;
-    font-weight: $k-regular;
+    font-weight: $k-styled-file-input-font-weight;
     text-align: center;
     touch-action: manipulation;
-    cursor: pointer;
+    cursor: $k-styled-file-input-cursor;
     background-image: none; /* 2 */
     border: 1px solid transparent;
     white-space: nowrap;
@@ -123,10 +123,10 @@ Styleguide 2.9.9
     text-shadow: none;
     user-select: none;
     margin-bottom: 0;
-    border-radius: $k-border-radius-large;
-    font-size: $k-font-size-large;
-    line-height: $k-line-height-large;
-    padding: $k-spacing-large-vertical $k-spacing-large-horizontal;
+    border-radius: $k-styled-file-input-radius;
+    font-size: $k-styled-file-input-font-size;
+    line-height: $k-styled-file-input-line-height;
+    padding: $k-styled-file-input-spacing;
   }
 
 
@@ -134,8 +134,8 @@ Styleguide 2.9.9
 
   .k-file-input__files {
     width: 100%;
-    height: $k-line-height;
-    line-height: $k-line-height;
+    height: $k-styled-file-input-fallback-line-height;
+    line-height: $k-styled-file-input-fallback-line-height;
     display: inline-block;
     text-overflow: ellipsis;
     white-space: nowrap;
