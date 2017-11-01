@@ -89,8 +89,8 @@ Styleguide 2.23.1
 */
 
 .k-title-bar--mobile {
-  @include border(bottom, $k-title-bar-mobileborder);
-  background: $k-title-bar-mobilebackground;
+  @include border(bottom, $k-title-bar-mobile-border);
+  background: $k-title-bar-mobile-background;
 
   @include breakpoint($k-charlie) {
     display: none;

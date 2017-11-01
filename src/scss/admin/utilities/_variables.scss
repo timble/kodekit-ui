@@ -257,15 +257,15 @@ $k-content-border:       darkest($k-content-background) !default;
 // Title-bar
 // ==========================================================================
 
-$k-title-bar-background:        $k-color-primary-plus-3 !default;
-$k-title-bar-border:            darkest($k-title-bar-background) !default;
-$k-title-bar-color:             $k-color-type !default;
-$k-title-bar-font-size:         $k-font-size-huge !default;
-$k-title-bar-z-index:           10 !default;
-$k-title-bar-spacing:           $k-spacing-small !default;
+$k-title-bar-background:          $k-color-primary-plus-3 !default;
+$k-title-bar-border:              darkest($k-title-bar-background) !default;
+$k-title-bar-color:               $k-color-type !default;
+$k-title-bar-font-size:           $k-font-size-huge !default;
+$k-title-bar-z-index:             10 !default;
+$k-title-bar-spacing:             $k-spacing-small !default;
 
-$k-title-bar-mobilebackground:  $k-color-primary !default;
-$k-title-bar-mobileborder:      darkest($k-title-bar-mobilebackground) !default;
+$k-title-bar-mobile-background:   $k-color-primary !default;
+$k-title-bar-mobile-border:       darkest($k-title-bar-mobile-background) !default;
 
 
 // Toolbar
