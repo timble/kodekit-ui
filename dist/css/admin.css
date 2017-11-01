@@ -7070,13 +7070,13 @@ fieldset[disabled] .k-ui-namespace .k-button--danger.has-focus {
 
 .k-ui-namespace .k-form-block__header {
   border-bottom: 1px solid #d4d4d4;
-  padding: 4px;
+  padding: 8px 8px 7px;
   background: #f3f3f3;
   font-weight: 700;
 }
 
 .k-ui-namespace .k-form-block__content {
-  padding: 8px;
+  padding: 7px 8px;
 }
 
 .k-ui-namespace .k-form-control {

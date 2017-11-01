@@ -475,11 +475,12 @@ $k-component-background: $k-color-primary-plus-5 !default;
 $k-form-block-background:         $k-color-primary-plus-6 !default;
 $k-form-block-border:             darkest($k-form-block-background) !default;
 
-$k-form-block-header-spacing:     $k-spacing-tiny !default;
+$k-form-block-header-spacing:     $k-spacing-small $k-spacing-small ($k-spacing-small - 1px) !default;
 $k-form-block-header-background:  $k-color-primary-plus-4 !default;
 $k-form-block-header-border:      darkest($k-form-block-header-background) !default;
+$k-form-block-header-font-weight: $k-bold !default;
 
-$k-form-block-content-spacing:    $k-spacing-small !default;
+$k-form-block-content-spacing:    ($k-spacing-small - 1px) $k-spacing-small !default;
 
 
 // Offcanvas container

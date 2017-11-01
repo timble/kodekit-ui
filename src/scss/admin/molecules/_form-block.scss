@@ -35,7 +35,7 @@ Styleguide 2.8
   @include border(bottom, $k-form-block-header-border);
   padding: $k-form-block-header-spacing;
   background: $k-form-block-header-background;
-  font-weight: $k-bold;
+  font-weight: $k-form-block-header-font-weight;
 }
 
 
