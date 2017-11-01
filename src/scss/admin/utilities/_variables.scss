@@ -297,6 +297,28 @@ $k-sidebar-border:              darkest($k-sidebar-background) !default;
 $k-sidebar-color:               $k-color-type !default;
 
 
+// Sidebar item
+// ==========================================================================
+
+$k-sidebar-item-spacing:                $k-spacing !default;
+$k-sidebar-item-flex-min-height:        96px !default;
+
+$k-sidebar-item-toggle-background:      white !default;
+$k-sidebar-item-toggle-border:          1px solid #ddd !default;
+$k-sidebar-item-toggle-size:            20px !default;
+$k-sidebar-item-toggle-radius:          $k-sidebar-item-toggle-size / 2 !default;
+$k-sidebar-item-toggle-font-size:       $k-font-size-tiny !default;
+$k-sidebar-item-toggle-line-height:     $k-sidebar-item-toggle-size - 2px !default;
+
+$k-sidebar-item-header-font-size:       $k-font-size-small !default;
+$k-sidebar-item-header-line-height:     $k-line-height-large !default;
+$k-sidebar-item-header-font-weight:     $k-bold !default;
+$k-sidebar-item-header-text-transform:  uppercase !default;
+
+$k-sidebar-item-small-spacing:          $k-spacing-small $k-sidebar-item-spacing !default;
+$k-sidebar-item-horizontal-spacing:     0 $k-sidebar-item-spacing !default;
+
+
 // Navigation
 // ==========================================================================
 

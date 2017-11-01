@@ -26,7 +26,7 @@ Styleguide 2.20
 
 .k-sidebar-item {
   & + & {
-    margin-top: $k-spacing;
+    margin-top: $k-sidebar-item-spacing;
   }
 
   @mixin item--flex {
@@ -34,7 +34,7 @@ Styleguide 2.20
     flex-direction: column;
     flex: 0 1 auto;
     overflow: hidden;
-    min-height: 100px;
+    min-height: $k-sidebar-item-flex-min-height;
     max-height: 100%;
 
     div {
@@ -100,7 +100,7 @@ Styleguide 2.20
  */
 
 .k-sidebar-item--toggle {
-  padding-bottom: $k-spacing-small;
+  padding-bottom: $k-sidebar-item-spacing;
 
   .k-sidebar-item__header {
     position: relative;
@@ -108,19 +108,19 @@ Styleguide 2.20
 
   .k-sidebar-item__toggle {
     position: absolute;
-    top: $k-spacing;
-    right: $k-spacing;
+    top: $k-sidebar-item-spacing;
+    right: $k-sidebar-item-spacing;
 
     @include icon-after(chevron-top, true) {
       display: block;
-      background: white;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      width: 20px;
-      line-height: 18px; /* 1 */
+      background: $k-sidebar-item-toggle-background;
+      border: $k-sidebar-item-toggle-border;
+      border-radius: $k-sidebar-item-toggle-radius;
+      width: $k-sidebar-item-toggle-size;
+      line-height: $k-sidebar-item-toggle-line-height; /* 1 */
       text-align: center;
       vertical-align: middle;
-      font-size: $k-font-size-tiny;
+      font-size: $k-sidebar-item-toggle-font-size;
       cursor: pointer;
       @include transition;
     }
@@ -131,7 +131,7 @@ Styleguide 2.20
 
     @include rtl {
       right: auto;
-      left: $k-spacing;
+      left: $k-sidebar-item-spacing;
     }
   }
 }
@@ -157,11 +157,11 @@ Styleguide 2.20.1
 */
 
 .k-sidebar-item__header {
-  padding: $k-spacing $k-spacing 0;
-  font-weight: $k-bold;
-  text-transform: uppercase;
-  font-size: $k-font-size-small;
-  line-height: 24px;
+  padding: $k-sidebar-item-spacing $k-sidebar-item-spacing 0;
+  font-weight: $k-sidebar-item-header-font-weight;
+  text-transform: $k-sidebar-item-header-text-transform;
+  font-size: $k-sidebar-item-header-font-size;
+  line-height: $k-sidebar-item-header-line-height;
 }
 
 
@@ -189,15 +189,15 @@ Styleguide 2.20.2
 */
 
 .k-sidebar-item__content {
-  padding: $k-spacing;
+  padding: $k-sidebar-item-spacing;
 }
 
 .k-sidebar-item__content--small {
-  padding: $k-spacing-small $k-spacing;
+  padding: $k-sidebar-item-small-spacing;
 }
 
 .k-sidebar-item__content--horizontal {
-  padding: 0 $k-spacing;
+  padding: $k-sidebar-item-horizontal-spacing;
 }
 
 
@@ -225,4 +225,3 @@ sg-wrapper:
 Styleguide 2.20.3
 
 */
-

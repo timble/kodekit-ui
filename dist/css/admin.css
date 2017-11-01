@@ -10462,7 +10462,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
         -ms-flex: 0 1 auto;
             flex: 0 1 auto;
     overflow: hidden;
-    min-height: 100px;
+    min-height: 96px;
     max-height: 100%;
   }
   .k-ui-namespace .k-sidebar-item--flex:only-child div {
@@ -10491,7 +10491,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
         -ms-flex: 0 1 auto;
             flex: 0 1 auto;
     overflow: hidden;
-    min-height: 100px;
+    min-height: 96px;
     max-height: 100%;
   }
   .k-ui-namespace .k-sidebar-item--flex:nth-child(n) div {
@@ -10532,7 +10532,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-sidebar-item--toggle {
-  padding-bottom: 8px;
+  padding-bottom: 16px;
 }
 
 .k-ui-namespace .k-sidebar-item--toggle .k-sidebar-item__header {
