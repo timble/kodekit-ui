@@ -34,11 +34,8 @@ Styleguide 2.13
   margin: $k-list-spacing 0;
 
   @include rtl {
-    margin: $k-list-spacing 0;
-
-
     /* Override for rtl ul-ol-li styling */
-
+    margin: $k-list-spacing 0;
     padding: 0;
   }
 
@@ -47,7 +44,7 @@ Styleguide 2.13
 
   li {
     display: block;
-    line-height: $k-line-height;
+    line-height: $k-list-item-line-height;
   }
 
 
@@ -60,11 +57,8 @@ Styleguide 2.13
 
   a {
     display: block; /* 1 */
-    padding-top: $k-list-spacing;
-    padding-bottom: $k-list-spacing;
-    padding-right: $k-spacing;
-    padding-left: $k-spacing;
-    color: $k-list-color;
+    padding: $k-list-link-spacing;
+    color: $k-list-link-color;
     text-decoration: none; /* 2 */
 
 
@@ -72,8 +66,8 @@ Styleguide 2.13
 
     &:hover,
     &:focus {
-      background: $k-list-hover-background;
-      color: $k-list-hover-color;
+      background: $k-list-link-hover-background;
+      color: $k-list-link-hover-color;
       text-decoration: none; /* 2 */
     }
   }
@@ -83,9 +77,9 @@ Styleguide 2.13
 
   .k-is-active {
     a {
-      font-weight: $k-bold;
-      background: $k-list-active-background;
-      color: $k-list-active-color;
+      font-weight: $k-list-link-active-font-weight;
+      background: $k-list-link-active-background;
+      color: $k-list-link-active-color;
 
       &:hover {
         background: transparent;
@@ -99,11 +93,11 @@ Styleguide 2.13
 
   [class^="k-icon"] {
     display: inline-block;
-    margin-right: 0.75em;
+    margin-right: $k-list-icon-spacing;
 
     @include rtl {
       margin-right: auto;
-      margin-left: 0.75em;
+      margin-left: $k-list-icon-spacing;
     }
   }
 }

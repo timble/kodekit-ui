@@ -318,16 +318,21 @@ $k-navigation-active-color:       $k-color-accent !default;
 // List
 // ==========================================================================
 
-$k-list-spacing:            $k-spacing-tiny !default;
+$k-list-spacing:                  $k-spacing-tiny !default;
 
-$k-list-background:         $k-sidebar-background !default;
-$k-list-color:              $k-sidebar-color !default;
+$k-list-item-line-height:         $k-line-height !default;
 
-$k-list-hover-background:   lighter($k-sidebar-background) !default;
-$k-list-hover-color:        $k-color-type !default;
+$k-list-link-spacing:             $k-spacing-small $k-spacing !default;
+$k-list-link-color:               $k-sidebar-color !default;
 
-$k-list-active-background:  $k-list-background !default;
-$k-list-active-color:       $k-color-type !default;
+$k-list-link-hover-background:    lighter($k-sidebar-background) !default;
+$k-list-link-hover-color:         $k-color-type !default;
+
+$k-list-link-active-background:   $k-sidebar-background !default;
+$k-list-link-active-color:        $k-color-type !default;
+$k-list-link-active-font-weight:  $k-bold !default;
+
+$k-list-icon-spacing:             $k-spacing-small !default;
 
 
 // Tree

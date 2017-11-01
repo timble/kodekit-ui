@@ -8305,8 +8305,8 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 [dir="rtl"] .k-ui-namespace .k-list {
-  margin: 4px 0;
   /* Override for rtl ul-ol-li styling */
+  margin: 4px 0;
   padding: 0;
 }
 
@@ -8318,10 +8318,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 .k-ui-namespace .k-list a {
   display: block;
   /* 1 */
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-right: 16px;
-  padding-left: 16px;
+  padding: 8px 16px;
   color: #222222;
   text-decoration: none;
   /* 2 */
@@ -8348,12 +8345,12 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 .k-ui-namespace .k-list [class^="k-icon"] {
   display: inline-block;
-  margin-right: 0.75em;
+  margin-right: 8px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-list [class^="k-icon"] {
   margin-right: auto;
-  margin-left: 0.75em;
+  margin-left: 8px;
 }
 
 .k-ui-namespace .k-menu-container {

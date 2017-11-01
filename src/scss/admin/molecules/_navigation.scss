@@ -80,8 +80,8 @@ Styleguide 2.16
 
     &:hover,
     &:focus {
-      background: $k-list-hover-background;
-      color: $k-list-hover-color;
+      background: $k-list-link-hover-background;
+      color: $k-list-link-hover-color;
       text-decoration: none; /* 2 */
     }
 
