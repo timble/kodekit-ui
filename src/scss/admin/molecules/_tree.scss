@@ -7,8 +7,8 @@ Tree
 markup:
 <div class="k-tree" id="k-jqtree"></div>
 <script type="text/javascript" defer>
-(function($k-) {
-    $k-(document).ready(function () {
+(function($) {
+    $(document).ready(function () {
         new Koowa.Tree('#k-jqtree', {
             "data": [
                 {"label":"Main category","id":4},
@@ -28,7 +28,7 @@ Styleguide 2.26
 
 .k-tree {
   @include clearfix;
-  margin: $k-list-spacing 0;
+  margin: $k-tree-spacing 0;
   overflow: auto;
 
   &:last-child {
@@ -36,15 +36,15 @@ Styleguide 2.26
   }
 
   .jqtree-element {
-    padding: 0 $k-spacing-tiny 0 $k-spacing;
+    padding: 0 $k-tree-element-spacing-end 0 $k-tree-element-spacing-start;
 
     @include rtl {
-      padding: 0 $k-spacing 0 $k-spacing-tiny;
+      padding: 0 $k-tree-element-spacing-start 0 $k-tree-element-spacing-end;
     }
 
     &:hover,
     &:focus {
-      background: $k-jqtree-hover-background;
+      background: $k-tree-element-hover-background;
     }
   }
 
@@ -57,7 +57,7 @@ Styleguide 2.26
         padding-left: 0;
 
         @include rtl {
-          padding-left: $k-spacing-tiny;
+          padding-left: $k-tree-element-spacing-end;
           padding-right: 0;
         }
       }
@@ -66,13 +66,13 @@ Styleguide 2.26
 
   .jqtree-selected {
     & > .jqtree-element {
-      background: $k-color-accent;
-      color: $k-color-accent-type;
+      background: $k-tree-selected-background;
+      color: $k-tree-selected-color;
     }
 
     &:hover {
       & > .jqtree-element {
-        background: dark($k-color-accent);
+        background: dark($k-tree-selected-background);
       }
     }
   }
@@ -83,11 +83,11 @@ Styleguide 2.26
     & > .jqtree-tree {
       & > .jqtree-folder {
         .jqtree-element {
-          padding-left: 15px;
+          padding-left: $k-tree-element-spacing-start;
 
           @include rtl {
-            padding-left: $k-spacing-tiny;
-            padding-right: 15px;
+            padding-left: $k-tree-element-spacing-end;
+            padding-right: $k-tree-element-spacing-start;
           }
         }
       }
@@ -160,7 +160,7 @@ Styleguide 2.26
 
 .jqtree-icon {
   &:before {
-    line-height: 26px;
+    line-height: $k-tree-size;
   }
 }
 
@@ -170,7 +170,7 @@ Styleguide 2.26
       @include psuedo(after) {
         width: 6px;
         height: 6px;
-        border-left: 1px solid #aaa;
+        border-left: 1px solid;
         border-bottom: 1px solid #aaa;
         top: 50%;
         margin-top: -3px;
@@ -219,15 +219,15 @@ Styleguide 2.26
 
 .jqtree-selected {
   & > .jqtree-element {
-    font-weight: $k-bold;
+    font-weight: $k-tree-selected-font-weight;
   }
 
   & > .jqtree_common > .jqtree-toggler {
     &:hover {
-      color: $k-color-accent-type;
+      color: $k-tree-selected-color;
 
       &:before {
-        border-top-color: $k-color-accent-type;
+        border-top-color: $k-tree-selected-color;
       }
     }
   }

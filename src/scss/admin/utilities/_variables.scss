@@ -364,9 +364,15 @@ $k-list-icon-spacing:             $k-spacing-small !default;
 // Tree
 // ==========================================================================
 
-$k-jqtree-hover-background: lighter($k-sidebar-background) !default;
-$k-tree-size:               $k-font-size * 2 !default;
-$k-tree-toggle-size:        ceil($k-tree-size / 8) !default;
+$k-tree-spacing:                    $k-list-spacing !default;
+$k-tree-size:                       $k-element-small-size !default;
+$k-tree-element-spacing-start:      $k-spacing !default;
+$k-tree-element-spacing-end:        $k-spacing-tiny !default;
+$k-tree-element-hover-background:   lighter($k-sidebar-background) !default;
+$k-tree-selected-background:        $k-color-accent !default;
+$k-tree-selected-color:             $k-color-accent-type !default;
+$k-tree-selected-font-weight:       $k-bold !default;
+$k-tree-toggle-size:                ceil($k-tree-size / 8) !default;
 
 
 // Breadcrumbs
