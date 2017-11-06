@@ -271,11 +271,12 @@ $k-title-bar-mobile-border:       darkest($k-title-bar-mobile-background) !defau
 // Toolbar
 // ==========================================================================
 
-$k-toolbar-spacing:     round($k-font-size * 0.7) !default;
-$k-toolbar-height:      $k-unit-size !default;
-$k-toolbar-background:  $k-color-primary-plus-3 !default;
-$k-toolbar-border:      darkest($k-toolbar-background) !default;
-$k-toolbar-color:       $k-color-type !default;
+$k-toolbar-spacing:         $k-spacing-small !default;
+$k-toolbar-height:          $k-unit-size !default;
+$k-toolbar-button-height:   $k-unit-size - $k-toolbar-spacing !default;
+$k-toolbar-background:      $k-color-primary-plus-3 !default;
+$k-toolbar-border:          darkest($k-toolbar-background) !default;
+$k-toolbar-color:           $k-color-type !default;
 
 
 // Sidebar

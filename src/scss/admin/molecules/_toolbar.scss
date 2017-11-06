@@ -41,13 +41,13 @@ Styleguide 2.24
   @include border(bottom, $k-toolbar-border);
   background: $k-toolbar-background;
   min-height: $k-toolbar-height;
-  padding-bottom: 8px; /* 1 */
-  padding-right: 8px; /* 2 */
+  padding-bottom: $k-toolbar-spacing; /* 1 */
+  padding-right: $k-toolbar-spacing; /* 2 */
   flex: 0 0 auto;
 
   @include rtl {
     padding-right: 0;
-    padding-left: 10px; /* 2 */
+    padding-left: $k-toolbar-spacing; /* 2 */
   }
 }
 
@@ -58,7 +58,10 @@ Styleguide 2.24
 
 .k-toolbar {
   .k-button {
-    margin: 7px 0 0 8px;
+    margin: ($k-toolbar-spacing - 1px) 0 0 $k-toolbar-spacing;
+    padding: $k-toolbar-spacing - 1px;
+    min-width: $k-toolbar-button-height;
+    line-height: $k-toolbar-button-height - ($k-toolbar-spacing * 2);
 
 
     /**
@@ -71,9 +74,8 @@ Styleguide 2.24
     &:not(.k-toolbar-fullbutton) {
       @include breakpoint(0, range, $k-charlie) {
         overflow: hidden;
-        width: 32px;
-        height: 32px;
-        padding: 7px 6px;
+        width: $k-toolbar-button-height;
+        height: $k-toolbar-button-height;
         text-align: center;
       }
     }
@@ -81,7 +83,8 @@ Styleguide 2.24
 
   @include rtl {
     .k-button {
-      margin: 10px 10px 0 0;
+      margin-left: 0;
+      margin-right: $k-toolbar-spacing;
     }
   }
 
@@ -94,13 +97,13 @@ Styleguide 2.24
    */
 
   .k-autosave-indicator {
-    margin: 10px 0 0 10px;
+    margin: $k-toolbar-spacing 0 0 $k-toolbar-spacing;
     display: inline-block;
     vertical-align: middle;
-    padding: 5px;
+    padding: $k-toolbar-spacing / 2;
 
     @include rtl {
-      margin: 10px 10px 0 0;
+      margin: $k-toolbar-spacing $k-toolbar-spacing 0 0;
     }
   }
 
@@ -115,7 +118,7 @@ Styleguide 2.24
   [class^="k-icon"] {
     @include breakpoint(0, range, $k-charlie) {
       display: block;
-      margin: 0 0 10px;
+      margin: 0 0 $k-toolbar-spacing;
       width: $k-font-size-large;
       height: $k-font-size-large;
       font-size: $k-font-size-large;
