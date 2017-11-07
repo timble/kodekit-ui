@@ -142,6 +142,10 @@ $k-optionlist-focus-class:    '.k-optionlist__focus' !default;
 $k-optionlist-boolean-class:  '.k-optionlist--boolean' !default;
 $k-optionlist-block-class:    '.k-optionlist--block' !default;
 
+$k-opacity-off:               0.33 !default;
+$k-opacity-hover:             0.66 !default;
+$k-opacity-on:                1 !default;
+
 
 // Colors
 // ==========================================================================
@@ -510,6 +514,13 @@ $k-table-item-level-spacer:               24px !default;
 $k-table-item-level-icon-size:            $k-icon-size !default;
 $k-table-item-level-icon-spacing:         $k-spacing-tiny !default;
 
+$k-table-sorting-spacing:                 0.66em !default;
+$k-table-sorting-width:                   6px !default;
+$k-table-sorting-height:                  3px !default;
+$k-table-sorting-opacity-off:             $k-opacity-off !default;
+$k-table-sorting-opacity-hover:           $k-opacity-hover !default;
+$k-table-sorting-opacity-on:              $k-opacity-on !default;
+
 
 // Table pagination
 // ==========================================================================
@@ -528,6 +539,10 @@ $k-footable-toggle-color:         $k-color-type-light !default;
 $k-footable-toggle-color-active:  $k-table-cell-accent-color !default;
 $k-footable-toggle-border-size:   1px !default;
 $k-footable-toggle-icon-size:     10px !default;
+$k-footable-toggle-line-height:   1.3em !default;
+$k-footable-detail-weight:        $k-bold !default;
+$k-footable-detail-spacing:       $k-table-cell-spacing-vertical $k-table-cell-spacing-horizontal !default;
+$k-footable-detail-min-height:    round($k-unit-size * 0.75) !default;
 
 
 // Component layout
@@ -645,8 +660,8 @@ $k-tabs-active-link-hover-color:          $k-color-primary-min-7 !default;
 $k-tabs-active-link-hover-border:         $k-color-primary-min-1 !default;
 
 $k-tabs-overflow-button-width:            32px !default;
-$k-tabs-overflow-button-opacity-off:      0.33 !default;
-$k-tabs-overflow-button-opacity-on:       1 !default;
+$k-tabs-overflow-button-opacity-off:      $k-opacity-off !default;
+$k-tabs-overflow-button-opacity-on:       $k-opacity-on !default;
 $k-tabs-overflow-button-border:           1px solid $k-tabs-border !default;
 
 $k-tabs-scroller-height:                  $k-tabs-wrapper-height * 1.5 !default;

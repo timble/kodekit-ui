@@ -942,8 +942,8 @@ Styleguide 2.21.10
 .k-sort-descending {
   position: relative;
   display: inline-block;
-  width: 6px;
-  height: 3px;
+  width: $k-table-sorting-width;
+  height: $k-table-sorting-height;
   background: transparent;
 
   &:before,
@@ -951,7 +951,7 @@ Styleguide 2.21.10
     display: block;
     content: " ";
     position: absolute;
-    opacity: 0.33;
+    opacity: $k-table-sorting-opacity-off;
   }
 
   &:before {
@@ -967,20 +967,20 @@ Styleguide 2.21.10
 
 .k-sort-ascending {
   &:before {
-    opacity: 1;
+    opacity: $k-table-sorting-opacity-on;
   }
 }
 
 .k-sort-descending {
   &:after {
-    opacity: 1;
+    opacity: $k-table-sorting-opacity-on;
   }
 }
 
 th {
   .k-sort-ascending,
   .k-sort-descending {
-    margin-left: 0.66em;
+    margin-left: $k-table-sorting-spacing;
     vertical-align: middle;
   }
 
@@ -988,7 +988,7 @@ th {
     .k-sort-ascending,
     .k-sort-descending {
       margin-left: 0;
-      margin-right: 0.66em;
+      margin-right: $k-table-sorting-spacing;
     }
   }
 
@@ -996,13 +996,13 @@ th {
   a:hover {
     .k-sort-ascending {
       &:after {
-        opacity: 0.66;
+        opacity: $k-table-sorting-opacity-hover;
       }
     }
 
     .k-sort-descending {
       &:before {
-        opacity: 0.66;
+        opacity: $k-table-sorting-opacity-hover;
       }
     }
   }

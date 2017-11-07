@@ -77,7 +77,7 @@ Styleguide 2.21.11
       margin: ((($k-footable-toggle-size - $k-footable-toggle-icon-size) / 2) - $k-footable-toggle-border-size);
       color: $k-footable-toggle-color;
       font-size: $k-footable-toggle-icon-size;
-      line-height: 1.3em;
+      line-height: $k-footable-toggle-line-height;
       transform: rotate(-90deg);
       @include transition;
     }
@@ -116,7 +116,7 @@ Styleguide 2.21.11
   }
 
   .footable-row-detail-name {
-    font-weight: $k-bold;
+    font-weight: $k-footable-detail-weight;
   }
 
 
@@ -129,8 +129,8 @@ Styleguide 2.21.11
   .footable-row-detail-name,
   .footable-row-detail-value {
     position: relative; /* 1 */
-    min-height: round($k-unit-size * 0.75); /* 2 */
-    padding: $k-table-cell-spacing-vertical $k-table-cell-spacing-horizontal; /* 3 */
+    min-height: $k-footable-detail-min-height; /* 2 */
+    padding: $k-footable-detail-spacing; /* 3 */
   }
 
 
