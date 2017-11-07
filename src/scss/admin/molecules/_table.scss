@@ -153,8 +153,8 @@ Styleguide 2.21
     border: none;
     position: relative;
     height: $k-table-cell-size;
-    vertical-align: middle;
-    text-align: left;
+    vertical-align: $k-table-cell-vertical-align;
+    text-align: $k-table-cell-align;
     line-height: 1;
 
     input {
@@ -167,7 +167,7 @@ Styleguide 2.21
   @include rtl {
     th,
     td {
-      text-align: right;
+      text-align: $k-table-cell-align-rtl;
     }
   }
 
@@ -202,13 +202,13 @@ Styleguide 2.21
     padding: 0 $k-table-cell-spacing-horizontal; /* 1 */
     white-space: nowrap; /* 2 */
     background: $k-table-header-background;
-    font-weight: $k-regular;
+    font-weight: $k-table-header-font-weight;
 
     a {
       display: block; /* 3 */
       padding: $k-table-cell-spacing-vertical $k-table-cell-spacing-horizontal; /* 4 */
-      margin-left: -$k-table-cell-spacing-horizontal;
-      margin-right: -$k-table-cell-spacing-horizontal;
+      margin-left: -($k-table-cell-spacing-horizontal);
+      margin-right: -($k-table-cell-spacing-horizontal);
       line-height: $k-table-cell-size - ($k-table-cell-spacing-vertical * 2);
       text-decoration: none;
 
@@ -222,7 +222,7 @@ Styleguide 2.21
     /* Size icons accordingly */
 
     [class*="k-icon"] {
-      font-size: $k-icon-size;
+      font-size: $k-table-cell-icon-size;
       line-height: 1;
       vertical-align: middle;
     }
@@ -351,8 +351,8 @@ Styleguide 2.21.3
 
   small {
     display: block;
-    font-size: $k-font-size-small;
-    line-height: $k-line-height-small;
+    font-size: $k-table-cell-small-font-size;
+    line-height: $k-table-cell-small-line-height;
   }
 }
 
@@ -426,7 +426,7 @@ Styleguide 2.21.4
     }
 
     [class*="k-icon"] {
-      font-size: $k-icon-size;
+      font-size: $k-table-cell-icon-size;
     }
   }
 
@@ -554,19 +554,19 @@ Styleguide 2.21.5
     }
 
     &-pending {
-      color: $k-color-warning;
+      color: $k-table-item-state-pending;
     }
 
     &-expired {
-      color: $k-color-neutral;
+      color: $k-table-item-state-expired;
     }
 
     &-unpublished {
-      color: $k-color-error;
+      color: $k-table-item-state-unpublished;
     }
 
     &-published {
-      color: $k-color-success;
+      color: $k-table-item-state-published;
     }
   }
 }
@@ -601,16 +601,16 @@ Styleguide 2.21.6
 .k-table-container {
   .k-table__sub-header {
     th {
-      padding: 0.7em $k-table-cell-spacing-horizontal 0.5em;
+      padding: $k-table-sub-header-spacing;
       height: auto;
-      font-size: $k-font-size-small;
-      line-height: $k-line-height-small;
-      font-weight: $k-bold;
+      font-size: $k-table-sub-header-font-size;
+      line-height: $k-table-sub-header-line-height;
+      font-weight: $k-table-sub-header-weight;
       vertical-align: middle;
       text-transform: uppercase;
       white-space: nowrap;
-      background: $k-table-header-background;
-      border-bottom-color: $k-table-cell-border;
+      background: $k-table-sub-header-background;
+      border-bottom-color: $k-table-sub-header-border;
       top: ($k-table-cell-size + $k-border-width);
     }
   }
@@ -669,17 +669,17 @@ Styleguide 2.21.7
     &:before {
       content: " ";
       display: block;
-      width: 6px;
-      height: 6px;
-      border-left: 1px solid #bbb;
-      border-bottom: 1px solid #bbb;
+      width: $k-table-item-level-size;
+      height: $k-table-item-level-size;
+      border-left: $k-table-item-level-border;
+      border-bottom: $k-table-item-level-border;
       position: absolute;
       top: 50%;
-      margin-top: -.25em;
+      margin-top: -($k-table-item-level-size / 2);
 
       @include rtl {
         border-left: none;
-        border-right: 1px solid #bbb;
+        border-right: $k-table-item-level-border;
       }
     }
   }
@@ -689,19 +689,19 @@ Styleguide 2.21.7
 
   @for $k-i from 1 through 15 {
     .k-table__item-level#{$k-i} {
-      padding-left: 24px * ($k-i - 1) + $k-table-cell-spacing-horizontal;
+      padding-left: $k-table-item-level-spacer * ($k-i - 1) + $k-table-cell-spacing-horizontal;
 
       @include rtl {
         padding-left: 0;
-        padding-right: 24px * ($k-i - 1) + $k-table-cell-spacing-horizontal;
+        padding-right: $k-table-item-level-spacer * ($k-i - 1) + $k-table-cell-spacing-horizontal;
       }
 
       &:before {
-        left: (24px * ($k-i - 1)) - (18px - $k-table-cell-spacing-horizontal);
+        left: ($k-table-item-level-spacer * ($k-i - 1)) - (18px - $k-table-cell-spacing-horizontal);
 
         @include rtl {
           left: auto;
-          right: (24px * ($k-i - 1)) - (18px - $k-table-cell-spacing-horizontal);
+          right: ($k-table-item-level-spacer * ($k-i - 1)) - (18px - $k-table-cell-spacing-horizontal);
         }
       }
     }
@@ -719,11 +719,11 @@ Styleguide 2.21.7
 
   .k-table__item-level__icon-item {
     position: relative;
-    padding-left: $k-icon-size + $k-spacing-tiny;
+    padding-left: $k-table-item-level-icon-size + $k-table-item-level-icon-spacing;
 
     @include rtl {
       padding-left: 0;
-      padding-right: $k-icon-size + $k-spacing-tiny;
+      padding-right: $k-table-item-level-icon-size + $k-table-item-level-icon-spacing;
     }
 
     [class*="k-icon"],
@@ -742,13 +742,13 @@ Styleguide 2.21.7
 
     [class*="k-icon"] {
       top: 50%;
-      font-size: $k-icon-size;
-      margin-top: -(round($k-icon-size / 2));
+      font-size: $k-table-item-level-icon-size;
+      margin-top: -(round($k-table-item-level-icon-size / 2));
     }
 
     [class*="k-image"] {
-      height: $k-icon-size;
-      line-height: $k-icon-size;
+      height: $k-table-item-level-icon-size;
+      line-height: $k-table-item-level-icon-size;
       vertical-align: middle;
     }
   }
@@ -1009,4 +1009,3 @@ th {
 }
 
 @import "responsive-table";
-

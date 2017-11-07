@@ -87,6 +87,13 @@ $k-unit-size:             40px !default;
 $k-border-radius:         4px !default;
 $k-border-radius-large:   6px !default;
 $k-border-radius-small:   3px !default;
+$k-icon-size-tiny:        10px !default;
+$k-icon-size-small:       13px !default;
+$k-icon-size:             16px !default;
+$k-icon-size-medium:      24px !default;
+$k-icon-size-large:       32px !default;
+$k-icon-size-xlarge:      48px !default;
+$k-icon-size-huge:        64px !default;
 
 
 // Elements
@@ -453,6 +460,10 @@ $k-scopebar-buttons-hover-background:   darker($k-dropdown-buttons-background) !
 $k-table-cell-size:                       $k-unit-size !default; // 1
 $k-table-cell-spacing-vertical:           $k-spacing-base-vertical !default; // 2
 $k-table-cell-spacing-horizontal:         $k-spacing-small-horizontal !default; // 2
+$k-table-cell-align:                      left !default; // 2
+$k-table-cell-align-rtl:                  right !default; // 2
+$k-table-cell-vertical-align:             middle !default; // 2
+$k-table-cell-icon-size:                  $k-icon-size !default;
 
 $k-table-background:                      $k-color-primary-plus-6 !default;
 
@@ -460,6 +471,7 @@ $k-table-header-background:               $k-color-primary-plus-5 !default;
 $k-table-header-border:                   darkest($k-table-header-background) !default;
 $k-table-header-color:                    $k-color-type !default;
 $k-table-header-hover-background:         $k-color-primary-plus-4 !default;
+$k-table-header-font-weight:              $k-regular !default;
 
 $k-table-cell-background-even:            $k-color-primary-plus-6 !default;
 $k-table-cell-background-odd:             $k-color-primary-plus-6 !default;
@@ -474,8 +486,29 @@ $k-table-cell-accent-color:               $k-color-accent-type !default;
 
 $k-table-cell-accent-hover-background:    darken($k-color-accent,10%) !default;
 
-$k-table-row-positioner-size:             16px;
-$k-table-row-positioner-color:            $k-color-primary-min-2;
+$k-table-cell-small-font-size:            $k-font-size-small !default;
+$k-table-cell-small-line-height:          $k-line-height-small !default;
+
+$k-table-row-positioner-size:             16px !default;
+$k-table-row-positioner-color:            $k-color-primary-min-2 !default;
+
+$k-table-item-state-pending:              $k-color-warning !default;
+$k-table-item-state-expired:              $k-color-neutral !default;
+$k-table-item-state-unpublished:          $k-color-error !default;
+$k-table-item-state-published:            $k-color-success !default;
+
+$k-table-sub-header-spacing:              0.7em $k-table-cell-spacing-horizontal 0.5em !default;
+$k-table-sub-header-font-size:            $k-font-size-small !default;
+$k-table-sub-header-line-height:          $k-line-height-small !default;
+$k-table-sub-header-weight:               $k-bold !default;
+$k-table-sub-header-background:           $k-table-header-background !default;
+$k-table-sub-header-border:               $k-table-cell-border !default;
+
+$k-table-item-level-size:                 6px !default;
+$k-table-item-level-border:               1px solid #bbb !default;
+$k-table-item-level-spacer:               24px !default;
+$k-table-item-level-icon-size:            $k-icon-size !default;
+$k-table-item-level-icon-spacing:         $k-spacing-tiny !default;
 
 
 // Table pagination
@@ -917,14 +950,6 @@ $k-icon-path:                   '../fonts' !default;
 $k-icon-color-accent:           $k-color-accent !default;
 $k-icon-color-success:          $k-color-success !default;
 $k-icon-color-error:            $k-color-error !default;
-
-$k-icon-size-tiny:              10px !default;
-$k-icon-size-small:             13px !default;
-$k-icon-size:                   16px !default;
-$k-icon-size-medium:            24px !default;
-$k-icon-size-large:             32px !default;
-$k-icon-size-xlarge:            48px !default;
-$k-icon-size-huge:              64px !default;
 
 $k-icon-text-font-size:         inherit!important !default;
 $k-icon-text-item-line-height:  $k-line-height !default;

@@ -11072,7 +11072,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   border-bottom: 1px solid #bbb;
   position: absolute;
   top: 50%;
-  margin-top: -.25em;
+  margin-top: -3px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-table-container .k-table__item-level:before {
