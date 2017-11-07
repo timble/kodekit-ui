@@ -19,8 +19,8 @@
   }
 
   &:not(:first-child) .k-tabs-scroller .k-tabs {
-    border-top: 1px solid $k-nav-tabs-border;
-    padding-top: (($k-spacing-large / 2) - 1px);
+    border-top: 1px solid $k-tabs-border;
+    padding-top: $k-tabs-spacing;
   }
 
   > .k-tabs-content {
@@ -39,7 +39,7 @@
 
 .k-tabs-wrapper {
   position: relative;
-  height: 48px;
+  height: $k-tabs-wrapper-height;
   overflow: hidden;
   @include transition;
 }
@@ -50,25 +50,25 @@
  */
 
 .k-tabs-scroller {
-  height: 80px;
+  height: $k-tabs-scroller-height;
   overflow: auto;
 
   > .k-tabs {
-    padding: ($k-spacing-large / 2) ($k-spacing / 2) 0;
-    background: $k-nav-tabs-active-link-hover-background;
+    padding: $k-tabs-scroller-spacing;
+    background: $k-tabs-active-link-hover-background;
     white-space: nowrap;
     display: inline-block;
     min-width: 100%;
 
     @include breakpoint($k-charlie) {
-      padding-left: $k-spacing;
-      padding-right: $k-spacing;
+      padding-left: $k-tabs-scroller-spacing-charlie;
+      padding-right: $k-tabs-scroller-spacing-charlie;
     }
   }
 
   > .k-tabs li.k-is-active a {
-    background: $k-component-background;
-    color: $k-color-type;
+    background: $k-tabs-scroller-item-active-background;
+    color: $k-tabs-scroller-item-active-color;
   }
 }
 
@@ -84,7 +84,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  border-bottom: 1px solid $k-nav-tabs-border;
+  border-bottom: $k-tabs-border-width solid $k-tabs-border;
   font-size: 0;
 
 
@@ -95,8 +95,21 @@
   li {
     position: relative;
     display: inline-block;
-    margin-bottom: -1px; /* 1 */
-    margin-right: 2px;
+    margin-bottom: -($k-tabs-border-width); /* 1 */
+    margin-right: $k-tabs-item-spacing;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include rtl() {
+      margin-right: auto;
+      margin-left: $k-tabs-item-spacing;
+
+      &:last-child {
+        margin-left: 0;
+      }
+    }
   }
 
 
@@ -105,8 +118,8 @@
    */
 
   .k-is-disabled a {
-    color: $k-nav-tabs-disabled-link-color;
-    cursor: $k-cursor-disabled;
+    color: $k-tabs-disabled-link-color;
+    cursor: $k-tabs-item-disabled-cursor;
     pointer-events: none;
 
     &:hover,
@@ -114,7 +127,7 @@
       color: inherit;
       text-decoration: none;
       background-color: transparent;
-      cursor: $k-cursor-disabled;
+      cursor: $k-tabs-item-disabled-cursor;
     }
   }
 
@@ -127,9 +140,9 @@
     &,
     &:hover,
     &:focus {
-      color: $k-nav-tabs-active-link-hover-color;
-      background-color: $k-nav-tabs-active-link-hover-background;
-      border: 1px solid $k-nav-tabs-active-link-hover-border;
+      color: $k-tabs-active-link-hover-color;
+      background-color: $k-tabs-active-link-hover-background;
+      border: 1px solid $k-tabs-active-link-hover-border;
       border-bottom-color: transparent;
       cursor: default;
     }
@@ -143,32 +156,18 @@
   a {
     position: relative;
     display: block;
-    padding: $k-nav-tabs-link-spacing;
-    line-height: $k-line-height;
-    border: 1px solid transparent;
-    border-radius: $k-border-radius $k-border-radius 0 0;
+    padding: $k-tabs-link-spacing;
+    line-height: $k-tabs-item-line-height;
+    border: $k-tabs-item-border;
+    border-radius: $k-tabs-item-border-radius;
     text-decoration: none;
-    font-size: $k-font-size;
+    font-size: $k-tabs-item-font-size;
 
     &:hover,
     &:focus {
       text-decoration: none;
-      background-color: $k-nav-tabs-link-hover-background;
-      border-color: $k-nav-tabs-link-hover-border;
-    }
-  }
-
-
-  /**
-   * Open dropdowns
-   */
-
-  .k-is-open a {
-    &,
-    &:hover,
-    &:focus {
-      background-color: $k-nav-tabs-link-hover-background;
-      border-color: $k-color-accent;
+      background-color: $k-tabs-link-hover-background;
+      border-color: $k-tabs-link-hover-border;
     }
   }
 }
@@ -202,12 +201,12 @@
   padding: 0;
   position: absolute;
   top: 0;
-  bottom: 1px;
-  width: 32px;
+  bottom: 0;
+  width: $k-tabs-overflow-button-width;
   overflow: hidden;
   opacity: 0;
-  background: $k-nav-tabs-active-link-hover-background;
-  border: 1px solid $k-nav-tabs-border;
+  background: $k-tabs-active-link-hover-background;
+  border: $k-tabs-overflow-button-border;
   @include transition;
 
   span {
@@ -228,8 +227,8 @@
 }
 
 .k-has-tabs-overflow {
-  padding-left: 32px;
-  padding-right: 32px;
+  padding-left: $k-tabs-overflow-button-width;
+  padding-right: $k-tabs-overflow-button-width;
 
   .k-tabs-scroller-prev,
   .k-tabs-scroller-next {
@@ -238,7 +237,7 @@
     opacity: 1;
 
     span {
-      opacity: 0.33;
+      opacity: $k-tabs-overflow-button-opacity-off;
     }
   }
 }
@@ -249,7 +248,7 @@
     cursor: pointer;
 
     span {
-      opacity: 1;
+      opacity: $k-tabs-overflow-button-opacity-on;
     }
   }
 }
@@ -260,7 +259,7 @@
     cursor: pointer;
 
     span {
-      opacity: 1;
+      opacity: $k-tabs-overflow-button-opacity-on;
     }
   }
 }

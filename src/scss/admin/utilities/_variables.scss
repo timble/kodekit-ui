@@ -586,19 +586,41 @@ $k-grid-width:      2560px !default;
 // Tabs
 // ==========================================================================
 
-$k-nav-tabs-link-spacing:                     $k-spacing-small $k-spacing ($k-spacing-small - 2px) !default;
+$k-tabs-link-spacing:                     $k-spacing-small $k-spacing ($k-spacing-small - 2px) !default;
 
-$k-nav-tabs-link-hover-background:            $k-color-primary-plus-2 !default;
+$k-tabs-wrapper-height:                   $k-spacing-large * 2 !default;
 
-$k-nav-tabs-disabled-link-color:              $k-color-primary-min-6 !default;
-$k-nav-tabs-disabled-link-hover-color:        $k-nav-tabs-disabled-link-color !default;
+$k-tabs-link-hover-background:            $k-color-primary-plus-2 !default;
 
-$k-nav-tabs-border:                           $k-color-primary-min-1 !default;
-$k-nav-tabs-link-hover-border:                $k-color-primary-min-1 !default;
+$k-tabs-disabled-link-color:              $k-color-primary-min-6 !default;
+$k-tabs-disabled-link-hover-color:        $k-tabs-disabled-link-color !default;
 
-$k-nav-tabs-active-link-hover-background:     white !default;
-$k-nav-tabs-active-link-hover-color:          $k-color-primary-min-7 !default;
-$k-nav-tabs-active-link-hover-border:         $k-color-primary-min-1 !default;
+$k-tabs-border-width:                     1px !default;
+$k-tabs-border:                           $k-color-primary-min-1 !default;
+$k-tabs-spacing:                          (($k-spacing-large / 2) - 1px) !default;
+$k-tabs-link-hover-border:                $k-color-primary-min-1 !default;
+
+$k-tabs-item-spacing:                     2px !default;
+$k-tabs-item-border:                      1px solid transparent !default;
+$k-tabs-item-font-size:                   $k-font-size !default;
+$k-tabs-item-line-height:                 $k-line-height !default;
+$k-tabs-item-border-radius:               $k-border-radius $k-border-radius 0 0 !default;
+$k-tabs-item-disabled-cursor:             $k-cursor-disabled !default;
+
+$k-tabs-active-link-hover-background:     white !default;
+$k-tabs-active-link-hover-color:          $k-color-primary-min-7 !default;
+$k-tabs-active-link-hover-border:         $k-color-primary-min-1 !default;
+
+$k-tabs-overflow-button-width:            32px !default;
+$k-tabs-overflow-button-opacity-off:      0.33 !default;
+$k-tabs-overflow-button-opacity-on:       1 !default;
+$k-tabs-overflow-button-border:           1px solid $k-tabs-border !default;
+
+$k-tabs-scroller-height:                  $k-tabs-wrapper-height * 1.5 !default;
+$k-tabs-scroller-spacing:                 ($k-spacing-large / 2) ($k-spacing / 2) 0 !default;
+$k-tabs-scroller-spacing-charlie:         $k-spacing !default;
+$k-tabs-scroller-item-active-background:  $k-component-background !default;
+$k-tabs-scroller-item-active-color:       $k-color-type !default;
 
 
 // Buttons

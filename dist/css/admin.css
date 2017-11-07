@@ -4396,8 +4396,8 @@ Tree
 markup:
 <div class="k-tree" id="k-jqtree"></div>
 <script type="text/javascript" defer>
-(function($k-) {
-    $k-(document).ready(function () {
+(function($) {
+    $(document).ready(function () {
         new Koowa.Tree('#k-jqtree', {
             "data": [
                 {"label":"Main category","id":4},
@@ -11657,7 +11657,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-tabs-scroller {
-  height: 80px;
+  height: 72px;
   overflow: auto;
 }
 
@@ -11701,9 +11701,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   /**
    * Links
    */
-  /**
-   * Open dropdowns
-   */
 }
 
 .k-ui-namespace .k-tabs li {
@@ -11712,6 +11709,19 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   margin-bottom: -1px;
   /* 1 */
   margin-right: 2px;
+}
+
+.k-ui-namespace .k-tabs li:last-child {
+  margin-right: 0;
+}
+
+[dir="rtl"] .k-ui-namespace .k-tabs li {
+  margin-right: auto;
+  margin-left: 2px;
+}
+
+[dir="rtl"] .k-ui-namespace .k-tabs li:last-child {
+  margin-left: 0;
 }
 
 .k-ui-namespace .k-tabs .k-is-disabled a {
@@ -11752,11 +11762,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   border-color: gainsboro;
 }
 
-.k-ui-namespace .k-tabs .k-is-open a, .k-ui-namespace .k-tabs .k-is-open a:hover, .k-ui-namespace .k-tabs .k-is-open a:focus {
-  background-color: #eeeeee;
-  border-color: #3071a9;
-}
-
 .k-ui-namespace .k-tabs-content > .k-tab {
   display: none;
   padding: 8px;
@@ -11772,7 +11777,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   padding: 0;
   position: absolute;
   top: 0;
-  bottom: 1px;
+  bottom: 0;
   width: 32px;
   overflow: hidden;
   opacity: 0;
@@ -11921,7 +11926,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 [dir="rtl"] .k-ui-namespace .k-toolbar {
   padding-right: 0;
-  padding-left: 10px;
+  padding-left: 8px;
   /* 2 */
 }
 
@@ -11942,6 +11947,9 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 .k-ui-namespace .k-toolbar .k-button {
   margin: 7px 0 0 8px;
+  padding: 7px;
+  min-width: 32px;
+  line-height: 16px;
   /**
      * Make buttons square
      *
@@ -11955,24 +11963,24 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
     overflow: hidden;
     width: 32px;
     height: 32px;
-    padding: 7px 6px;
     text-align: center;
   }
 }
 
 [dir="rtl"] .k-ui-namespace .k-toolbar .k-button {
-  margin: 10px 10px 0 0;
+  margin-left: 0;
+  margin-right: 8px;
 }
 
 .k-ui-namespace .k-toolbar .k-autosave-indicator {
-  margin: 10px 0 0 10px;
+  margin: 8px 0 0 8px;
   display: inline-block;
   vertical-align: middle;
-  padding: 5px;
+  padding: 4px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-toolbar .k-autosave-indicator {
-  margin: 10px 10px 0 0;
+  margin: 8px 8px 0 0;
 }
 
 .k-ui-namespace .k-toolbar [class^="k-icon"] {
@@ -11983,7 +11991,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 @media screen and (min-width: 0) and (max-width: 768px) {
   .k-ui-namespace .k-toolbar [class^="k-icon"] {
     display: block;
-    margin: 0 0 10px;
+    margin: 0 0 8px;
     width: 17px;
     height: 17px;
     font-size: 17px;
@@ -12188,12 +12196,12 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-sidebar-item .k-tree > .jqtree-tree > .jqtree-folder .jqtree-element {
-  padding-left: 15px;
+  padding-left: 16px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-sidebar-item .k-tree > .jqtree-tree > .jqtree-folder .jqtree-element {
   padding-left: 4px;
-  padding-right: 15px;
+  padding-right: 16px;
 }
 
 .k-ui-namespace .jqtree-tree {
@@ -12259,7 +12267,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 .k-ui-namespace .jqtree-element .jqtree-toggler {
   height: 0;
-  padding-top: 26px;
+  padding-top: 28px;
   overflow: hidden;
   color: inherit;
 }
@@ -12270,20 +12278,20 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 .k-ui-namespace .jqtree-title {
   display: inline-block;
   font-size: 13px;
-  line-height: 26px;
-  height: 26px;
+  line-height: 28px;
+  height: 28px;
   vertical-align: middle;
 }
 
 .k-ui-namespace .jqtree-whitespace,
 .k-ui-namespace .jqtree-toggler,
 .k-ui-namespace .jqtree-icon {
-  width: 26px;
+  width: 28px;
   text-align: center;
 }
 
 .k-ui-namespace .jqtree-icon:before {
-  line-height: 26px;
+  line-height: 28px;
 }
 
 .k-ui-namespace .k-tree li li .jqtree-whitespace + .jqtree_common:not(.jqtree-toggler) {
@@ -12296,18 +12304,18 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   content: " ";
   width: 6px;
   height: 6px;
-  border-left: 1px solid #aaa;
+  border-left: 1px solid;
   border-bottom: 1px solid #aaa;
   top: 50%;
   margin-top: -3px;
-  left: -16px;
+  left: -17px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-tree li li .jqtree-whitespace + .jqtree_common:not(.jqtree-toggler):after {
   border-left: none;
   border-right: 1px solid #aaa;
   left: auto;
-  right: -16px;
+  right: -17px;
 }
 
 .k-ui-namespace .jqtree-toggler {
