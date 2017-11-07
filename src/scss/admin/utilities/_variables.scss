@@ -534,15 +534,15 @@ $k-table-pagination-border:               $k-table-header-border !default;
 // Footable
 // ==========================================================================
 
-$k-footable-toggle-size:          20px !default;
-$k-footable-toggle-color:         $k-color-type-light !default;
-$k-footable-toggle-color-active:  $k-table-cell-accent-color !default;
-$k-footable-toggle-border-size:   1px !default;
-$k-footable-toggle-icon-size:     10px !default;
-$k-footable-toggle-line-height:   1.3em !default;
-$k-footable-detail-weight:        $k-bold !default;
-$k-footable-detail-spacing:       $k-table-cell-spacing-vertical $k-table-cell-spacing-horizontal !default;
-$k-footable-detail-min-height:    round($k-unit-size * 0.75) !default;
+$k-table-responsive-toggle-size:          20px !default;
+$k-table-responsive-toggle-color:         $k-color-type-light !default;
+$k-table-responsive-toggle-color-active:  $k-table-cell-accent-color !default;
+$k-table-responsive-toggle-border-size:   1px !default;
+$k-table-responsive-toggle-icon-size:     10px !default;
+$k-table-responsive-toggle-line-height:   1.3em !default;
+$k-table-responsive-detail-weight:        $k-bold !default;
+$k-table-responsive-detail-spacing:       $k-table-cell-spacing-vertical $k-table-cell-spacing-horizontal !default;
+$k-table-responsive-detail-min-height:    round($k-unit-size * 0.75) !default;
 
 
 // Component layout

@@ -62,22 +62,22 @@ Styleguide 2.21.11
   .footable-toggle {
     content: " ";
     display: inline-block;
-    width: $k-footable-toggle-size;
-    height: $k-footable-toggle-size;
-    line-height: ($k-footable-toggle-size - ($k-footable-toggle-border-size * 2));
-    border: $k-footable-toggle-border-size solid $k-footable-toggle-color;
+    width: $k-table-responsive-toggle-size;
+    height: $k-table-responsive-toggle-size;
+    line-height: ($k-table-responsive-toggle-size - ($k-table-responsive-toggle-border-size * 2));
+    border: $k-table-responsive-toggle-border-size solid $k-table-responsive-toggle-color;
     border-radius: 50%;
     text-align: center;
     vertical-align: middle;
 
     @include icon-after(chevron-bottom, true) {
       display: inline-block;
-      width: $k-footable-toggle-icon-size;
-      height: $k-footable-toggle-icon-size;
-      margin: ((($k-footable-toggle-size - $k-footable-toggle-icon-size) / 2) - $k-footable-toggle-border-size);
-      color: $k-footable-toggle-color;
-      font-size: $k-footable-toggle-icon-size;
-      line-height: $k-footable-toggle-line-height;
+      width: $k-table-responsive-toggle-icon-size;
+      height: $k-table-responsive-toggle-icon-size;
+      margin: ((($k-table-responsive-toggle-size - $k-table-responsive-toggle-icon-size) / 2) - $k-table-responsive-toggle-border-size);
+      color: $k-table-responsive-toggle-color;
+      font-size: $k-table-responsive-toggle-icon-size;
+      line-height: $k-table-responsive-toggle-line-height;
       transform: rotate(-90deg);
       @include transition;
     }
@@ -85,10 +85,10 @@ Styleguide 2.21.11
 
   tr.k-is-selected {
     .footable-toggle {
-      border-color: $k-footable-toggle-color-active;
+      border-color: $k-table-responsive-toggle-color-active;
 
       &:after {
-        color: $k-footable-toggle-color-active;
+        color: $k-table-responsive-toggle-color-active;
       }
     }
   }
@@ -116,7 +116,7 @@ Styleguide 2.21.11
   }
 
   .footable-row-detail-name {
-    font-weight: $k-footable-detail-weight;
+    font-weight: $k-table-responsive-detail-weight;
   }
 
 
@@ -129,8 +129,8 @@ Styleguide 2.21.11
   .footable-row-detail-name,
   .footable-row-detail-value {
     position: relative; /* 1 */
-    min-height: $k-footable-detail-min-height; /* 2 */
-    padding: $k-footable-detail-spacing; /* 3 */
+    min-height: $k-table-responsive-detail-min-height; /* 2 */
+    padding: $k-table-responsive-detail-spacing; /* 3 */
   }
 
 
