@@ -16,10 +16,10 @@
     #{$contentClass} {
       position: relative;
       margin: 0;
-      border: 1px solid $k-input-border;
-      padding: 1px;
-      border-radius: $k-input-border-radius;
-      background: white;
+      border: $k-optionlist-border;
+      padding: $k-optionlist-spacing;
+      border-radius: $k-optionlist-radius;
+      background: $k-optionlist-background;
       display: flex;
       flex-wrap: wrap;
       float: left;
@@ -45,12 +45,12 @@
         z-index: 1;
         display: table-cell; /* 1 */
         margin: 0;
-        padding: floor(($k-input-height-base - $k-font-size - 6px) / 2) 10px;
-        line-height: 1.25em;
+        padding: $k-optionlist-label-spacing;
+        line-height: $k-optionlist-label-line-height;
         text-align: center;
-        color: $k-input-color;
-        font-weight: normal;
-        border-radius: $k-input-border-radius - 1px; /* 2 */
+        color: $k-optionlist-label-color;
+        font-weight: $k-optionlist-label-weight;
+        border-radius: $k-optionlist-label-radius; /* 2 */
         cursor: pointer;
         user-select: none; /* 3 */
         word-wrap: break-word;
@@ -75,9 +75,9 @@
           display: block;
           content: " ";
           opacity: 0; /* 3 */
-          border-radius: $k-input-border-radius - 1px; /* 4 */
+          border-radius: $k-optionlist-label-radius; /* 4 */
           transform: scale(0,0); /* 5 */
-          background: $k-color-neutral;
+          background: $k-optionlist-label-background;
           @include transition;
         }
 
@@ -100,12 +100,12 @@
       input:checked + label {
         &, &:hover, &:focus {
           background: transparent; /* 1 */
-          color: $k-color-neutral-type;
+          color: $k-optionlist-label-focus-color;
         }
 
         &:before {
           transform: scale(1,1); /* 2 */
-          opacity: 1;; /* 2 */
+          opacity: 1; /* 2 */
         }
       }
 
@@ -129,9 +129,9 @@
         display: block;
         opacity: 0; /* 2 */
         visibility: hidden; /* 2 */
-        border-radius: $k-input-border-radius; /* 4 */
-        border: 1px solid $k-input-border-focus;
-        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($k-input-border-focus, 0.6);
+        border-radius: $k-optionlist-radius; /* 4 */
+        border: $k-optionlist-label-focus-border;
+        box-shadow: $k-optionlist-label-focus-box-shadow;
       }
 
 

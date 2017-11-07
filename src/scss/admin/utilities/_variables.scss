@@ -912,6 +912,32 @@ $k-input-height-large:              ($k-line-height-large + ($k-spacing-large-ve
 $k-input-height-small:              ($k-line-height + ($k-spacing-small-vertical * 2)) !default;
 
 
+// Optionlist
+// ==========================================================================
+
+$k-optionlist-border:                   1px solid $k-input-border !default;
+$k-optionlist-radius:                   $k-input-border-radius !default;
+$k-optionlist-background:               $k-input-background !default;
+$k-optionlist-spacing:                  1px !default;
+
+$k-optionlist-label-spacing:            floor(($k-input-height-base - $k-font-size - 6px) / 2) 10px !default;
+$k-optionlist-label-line-height:        1.25em !default;
+$k-optionlist-label-background:         $k-color-neutral !default;
+$k-optionlist-label-color:              $k-input-color !default;
+$k-optionlist-label-weight:             $k-regular !default;
+$k-optionlist-label-radius:             $k-input-border-radius - 1px !default;
+
+$k-optionlist-label-focus-color:        $k-color-neutral-type - 1px !default;
+$k-optionlist-label-focus-border:       1px solid $k-input-border-focus !default;
+$k-optionlist-label-focus-box-shadow:   inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($k-input-border-focus, 0.6) !default;
+
+$k-optionlist-0-color:                  $k-color-error !default;
+$k-optionlist-1-color:                  $k-color-success !default;
+
+$k-optionlist-disabled-cursor:          $k-cursor-disabled !default;
+$k-optionlist-disabled-active-color:    $k-color-error !default;
+
+
 // Radio toggle
 // ==========================================================================
 //
