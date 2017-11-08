@@ -1,22 +1,22 @@
-/* Menu */
+/* Top container */
 
-.k-menu-container {
-  background: $k-menu-background;
-  color: $k-menu-color;
+.k-top-container {
+  background: $k-top-container-background;
+  color: $k-top-container-color;
   flex: 0 0 auto;
 
-  @include breakpoint($k-menu-breakpoint) {
+  @include breakpoint($k-top-container-breakpoint) {
     position: relative;
-    z-index: 11;
+    z-index: $k-top-container-z-index;
     display: flex;
   }
 }
 
 
-/* Menu logo */
+/* Top logo */
 
-.k-menu-container__logo {
-  height: 48px;
+.k-top-container__logo {
+  height: $k-top-container-size;
 
   a, img {
     display: inline-block;
@@ -26,46 +26,46 @@
   }
 
   a {
-    padding: 12px;
+    padding: $k-top-container-spacing;
     text-decoration: none;
-    font-size: 16px;
+    font-size: $k-top-container-font-size;
     font-weight: $k-bold;
-    line-height: 24px;
+    line-height: $k-top-container-line-height;
 
     &:focus,
     &:hover {
-      background: darker($k-menu-background);
+      background: darker($k-top-container-background);
     }
   }
 
   img {
-    max-height: 24px;
+    max-height: $k-top-container-size - ($k-top-container-spacing * 2);
   }
 }
 
 
 /* Menu nav */
 
-.k-menu-container__nav {
+.k-top-container__navigation {
   position: absolute;
-  top: 48px;
+  top: $k-top-container-size;
   right: 0;
   bottom: 0;
-  width: 276px;
+  width: $k-top-container-width;
   display: none;
-  background: $k-menu-background;
+  background: $k-top-container-background;
   overflow: auto;
-  box-shadow: inset 5px 5px 5px rgba(black, 0.1);
+  box-shadow: $k-top-container-box-shadow;
 
 
   /* On desktop */
 
-  @include breakpoint($k-menu-breakpoint) {
+  @include breakpoint($k-top-container-breakpoint) {
     position: static;
     display: flex;
     justify-content: space-between;
     box-shadow: none;
-    height: 48px;
+    height: $k-top-container-size;
     width: auto;
     overflow: visible;
     flex: 1 1 auto;
@@ -81,13 +81,14 @@
     flex: 0 0 auto;
   }
 
-  .k-menu-right {
-    @include breakpoint($k-menu-breakpoint) {
+  .k-navigation-right {
+    @include breakpoint($k-top-container-breakpoint) {
       float: right;
+    }
 
-      ul {
-        left: auto;
-        right: 1px;
+    @include rtl {
+      @include breakpoint($k-top-container-breakpoint) {
+        float: left
       }
     }
   }
@@ -97,14 +98,14 @@
     margin: 0;
     padding: 0;
 
-    @include breakpoint($k-menu-breakpoint) {
+    @include breakpoint($k-top-container-breakpoint) {
       float: left;
     }
 
-    &.divider {
-      height: 2px;
-      background: rgba(black, 0.1);
-      margin: 2px 0;
+    @include rtl {
+      @include breakpoint($k-top-container-breakpoint) {
+        float: right
+      }
     }
 
     &.is-disabled,
@@ -118,26 +119,26 @@
     }
 
     > a {
-      line-height: 40px;
+      line-height: $k-top-container-navigation-item-line-height;
       position: relative;
       z-index: 0;
       display: block;
-      padding: 0 16px;
-      border-bottom: 1px solid rgba(white, 0.25);
+      padding: $k-top-container-navigation-item-spacing;
+      border-bottom: $k-top-container-navigation-item-border;
       color: inherit;
       text-shadow: none;
       text-decoration: none;
 
       &.has-open-submenu {
         z-index: 1;
-        background: darker($k-menu-background);
+        background: darker($k-top-container-background);
         text-decoration: none;
       }
 
       &:focus,
       &:hover {
         text-decoration: none;
-        background: darker($k-menu-background);
+        background: darker($k-top-container-background);
       }
 
       // Basic fallback for parent items
@@ -153,15 +154,15 @@
         }
       }
 
-      @include breakpoint($k-menu-breakpoint) {
-        height: 48px;
+      @include breakpoint($k-top-container-breakpoint) {
+        height: $k-top-container-size;
         border-bottom: none;
-        line-height: 48px;
-        padding: 0 8px;
+        line-height: $k-top-container-size;
+        padding: $k-top-container-navigation-item-spacing-breakpoint;
       }
 
       @include breakpoint($k-delta) {
-        padding: 0 12px;
+        padding: $k-top-container-navigation-item-spacing-delta;
       }
     }
 
@@ -172,9 +173,9 @@
       display: none;
       border-bottom: 1px solid rgba(white, 0.25);
       padding: 4px 0;
-      background: lighter($k-menu-background);
+      background: lighter($k-top-container-background);
 
-      @include breakpoint($k-menu-breakpoint) {
+      @include breakpoint($k-top-container-breakpoint) {
         background: white;
         box-shadow: 2px 4px 6px rgba(black, 0.2), 0 0 0 1px rgba(black, .33);
         position: absolute;
@@ -201,8 +202,8 @@
           background: rgba(black, 0.1);
         }
 
-        @include breakpoint($k-menu-breakpoint) {
-          color: $k-menu-background;
+        @include breakpoint($k-top-container-breakpoint) {
+          color: $k-top-container-background;
         }
       }
     }
@@ -219,7 +220,7 @@
 &.k-is-opened-right {
   overflow: visible;
 
-  .k-menu-container__nav {
+  .k-top-container__navigation {
     display: block;
   }
 
@@ -242,7 +243,7 @@
   .k-wrapper {
     transform: translateX(-276px);
 
-    @include breakpoint($k-menu-breakpoint) {
+    @include breakpoint($k-top-container-breakpoint) {
       transform: translateX(0);
     }
 
@@ -270,8 +271,7 @@
   padding: 5px 10px;
   margin: 8px;
 
-  @include breakpoint($k-menu-breakpoint) {
+  @include breakpoint($k-top-container-breakpoint) {
     display: none;
   }
 }
-

@@ -103,6 +103,7 @@ $k-element-tiny-size:     20px !default;
 $k-element-small-size:    28px !default;
 $k-element-medium-size:   32px !default;
 $k-element-large-size:    40px !default;
+$k-element-huge-size:     48px !default;
 
 
 // Function variables
@@ -250,12 +251,25 @@ $k-login-spacing:               $k-spacing !default;
 $k-login-shadow:                0 6px 0 -4px rgba(0,0,0,.3) !default;
 
 
-// Menubar
+// Topbar
 // ==========================================================================
 
-$k-menu-breakpoint:   $k-charlie !default;
-$k-menu-background:   $k-color-base !default;
-$k-menu-color:        $k-color-base-type !default;
+$k-top-container-z-index:                             11 !default;
+$k-top-container-size:                                $k-element-huge-size !default;
+$k-top-container-width:                               276px !default;
+$k-top-container-box-shadow:                          inset 5px 5px 5px rgba(black, 0.1) !default;
+$k-top-container-breakpoint:                          $k-charlie !default;
+$k-top-container-background:                          $k-color-base !default;
+$k-top-container-color:                               $k-color-base-type !default;
+$k-top-container-font-size:                           $k-font-size-large !default;
+$k-top-container-line-height:                         $k-line-height-large !default;
+$k-top-container-spacing:                             $k-spacing-min !default;
+
+$k-top-container-navigation-item-line-height:         $k-element-large-size !default;
+$k-top-container-navigation-item-border:              1px solid rgba(white, 0.15) !default;
+$k-top-container-navigation-item-spacing:             0 $k-spacing !default;
+$k-top-container-navigation-item-spacing-breakpoint:  0 $k-spacing-min !default;
+$k-top-container-navigation-item-spacing-delta:       0 $k-spacing-min !default;
 
 
 // Content
@@ -439,6 +453,8 @@ $k-scopebar-filter-label-size:              round($k-font-size * 1.2) !default;
 $k-scopebar-filter-label-background:        $k-color-error !default;
 $k-scopebar-filter-label-color:             $k-color-error-type !default;
 $k-scopebar-filter-label-font-size:         $k-font-size-small !default;
+
+$k-scopebar-buttons-spacing:                $k-spacing-tiny !default;
 
 
 // Dropdowns
@@ -1084,7 +1100,7 @@ $k-rtlicons:  'account-login',
 'folder-closed',
 'folder-opened',
 'menu-closed',
-'menu-opened';
+'menu-opened' !default;
 
 
 // Overrides for Select2-bootstrap theme
@@ -1113,5 +1129,3 @@ $k-button-danger-bg:             $k-button-danger-background !default;
 $k-state-warning-text:        $k-state-warning-color !default;
 $k-state-danger-text:         $k-state-danger-color !default;
 $k-state-success-text:        $k-state-success-color !default;
-
-

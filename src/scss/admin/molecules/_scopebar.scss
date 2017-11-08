@@ -109,30 +109,12 @@ Styleguide 2.18.2
  * Toggle buttons
  *
  * 1. Clearing for floating buttons
- * 2. Move first button away form edge
+ * 2. Move first button away from edge
  */
 
 .k-scopebar__item--toggle-buttons {
   @include clearfix; /* 1 */
-  padding-left: 4px; /* 2 */
-
-  @include breakpoint($k-alpha) {
-    float: left;
-  }
-
-  @include breakpoint($k-beta) {
-    float: right;
-  }
-
-
-  /* Hide on larger screens */
-
-  @include breakpoint($k-delta) {
-    display: none;
-  }
-
-
-  /* Flexbox */
+  padding-left: $k-scopebar-buttons-spacing; /* 2 */
   flex: 1 1 auto;
   order: 15;
   width: auto;
@@ -141,12 +123,17 @@ Styleguide 2.18.2
     flex: 0 0 auto;
   }
 
+  /* Hide on larger screens */
+
+  @include breakpoint($k-delta) {
+    display: none;
+  }
 
   /* RTL */
 
   @include rtl {
     padding-left: 0;
-    padding-right: 4px;
+    padding-right: $k-scopebar-buttons-spacing;
   }
 
 
@@ -222,6 +209,9 @@ Styleguide 2.18.3
 */
 
 .k-scopebar__item--filters {
+  width: 100%;
+  flex: 1 1 auto;
+  order: 10;
 
 
   /* Hide when JS is enabled */
@@ -238,20 +228,14 @@ Styleguide 2.18.3
 
     @include breakpoint($k-beta) {
       width: auto;
-      display: block !important;
+      display: block;
     }
   }
 
 
   /**
-   * Flexbox
-   *
    * 1. Reset order
    */
-
-  width: 100%;
-  flex: 1 1 auto;
-  order: 10;
 
   @include breakpoint($k-beta) {
     width: auto;
@@ -259,7 +243,7 @@ Styleguide 2.18.3
   }
 
   @include breakpoint($k-delta) {
-    display: block !important;
+    display: block;
   }
 }
 
@@ -418,8 +402,8 @@ Styleguide 2.18.3
   background: transparent;
   margin: 0;
   padding: 0 6px;
-  line-height: $k-scopebar-size;
-  height: $k-scopebar-size;
+  line-height: $k-scopebar-size - 1px;
+  height: $k-scopebar-size - 1px;
   font-size: $k-scopebar-filter-font-size;
   cursor: pointer;
 
@@ -604,7 +588,7 @@ Styleguide 2.18.5
   display: block;
   float: left;
   height: round($k-scopebar-size * 0.8);
-  margin: round($k-scopebar-size * 0.1);
+  margin: round($k-scopebar-size * 0.1) round($k-scopebar-size * 0.1) (round($k-scopebar-size * 0.1) - 1px) round($k-scopebar-size * 0.1);
   margin-left: 0;
   padding-left: round((($k-scopebar-size * 0.8) - (2px + 16px)) / 2);
   padding-right: round((($k-scopebar-size * 0.8) - (2px + 16px)) / 2);

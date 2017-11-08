@@ -3263,11 +3263,6 @@ Styleguide 2.13
   /**
  * 1. Reset default <ul> styling
  */
-  /* Menu */
-  /* Menu logo */
-  /* Menu nav */
-  /* Mobile settings */
-  /* Toggler */
   /* ==========================================================================
    Login screen
    ========================================================================== */
@@ -3561,7 +3556,7 @@ Styleguide 2.18.2
  * Toggle buttons
  *
  * 1. Clearing for floating buttons
- * 2. Move first button away form edge
+ * 2. Move first button away from edge
  */
   /*
 Scopebar Filters
@@ -4388,6 +4383,11 @@ Styleguide 2.25
  * Wrapper for the tooltip content
  */
   /* Arrows */
+  /* Top container */
+  /* Top logo */
+  /* Menu nav */
+  /* Mobile settings */
+  /* Toggler */
   /* Tree
    ========================================================================== */
   /*
@@ -8332,288 +8332,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   margin-left: 8px;
 }
 
-.k-ui-namespace .k-menu-container {
-  background: #2c3e50;
-  color: white;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
-}
-
-@media screen and (min-width: 768px) {
-  .k-ui-namespace .k-menu-container {
-    position: relative;
-    z-index: 11;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
-.k-ui-namespace .k-menu-container__logo {
-  height: 48px;
-}
-
-.k-ui-namespace .k-menu-container__logo a, .k-ui-namespace .k-menu-container__logo img {
-  display: inline-block;
-  vertical-align: middle;
-  width: auto;
-  color: inherit;
-}
-
-.k-ui-namespace .k-menu-container__logo a {
-  padding: 12px;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 24px;
-}
-
-.k-ui-namespace .k-menu-container__logo a:focus, .k-ui-namespace .k-menu-container__logo a:hover {
-  background: #1f2c39;
-}
-
-.k-ui-namespace .k-menu-container__logo img {
-  max-height: 24px;
-}
-
-.k-ui-namespace .k-menu-container__nav {
-  position: absolute;
-  top: 48px;
-  right: 0;
-  bottom: 0;
-  width: 276px;
-  display: none;
-  background: #2c3e50;
-  overflow: auto;
-  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.1);
-  /* On desktop */
-  /* First level */
-}
-
-@media screen and (min-width: 768px) {
-  .k-ui-namespace .k-menu-container__nav {
-    position: static;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    box-shadow: none;
-    height: 48px;
-    width: auto;
-    overflow: visible;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-  }
-}
-
-.k-ui-namespace .k-menu-container__nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
-}
-
-@media screen and (min-width: 768px) {
-  .k-ui-namespace .k-menu-container__nav .k-menu-right {
-    float: right;
-  }
-  .k-ui-namespace .k-menu-container__nav .k-menu-right ul {
-    left: auto;
-    right: 1px;
-  }
-}
-
-.k-ui-namespace .k-menu-container__nav li {
-  position: relative;
-  margin: 0;
-  padding: 0;
-  /* Second level */
-}
-
-@media screen and (min-width: 768px) {
-  .k-ui-namespace .k-menu-container__nav li {
-    float: left;
-  }
-}
-
-.k-ui-namespace .k-menu-container__nav li.divider {
-  height: 2px;
-  background: rgba(0, 0, 0, 0.1);
-  margin: 2px 0;
-}
-
-.k-ui-namespace .k-menu-container__nav li.is-disabled, .k-ui-namespace .k-menu-container__nav li.disabled {
-  opacity: 0.65;
-  cursor: not-allowed;
-}
-
-.k-ui-namespace .k-menu-container__nav li.is-disabled a, .k-ui-namespace .k-menu-container__nav li.disabled a {
-  pointer-events: none;
-}
-
-.k-ui-namespace .k-menu-container__nav li > a {
-  line-height: 40px;
-  position: relative;
-  z-index: 0;
-  display: block;
-  padding: 0 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-  color: inherit;
-  text-shadow: none;
-  text-decoration: none;
-}
-
-.k-ui-namespace .k-menu-container__nav li > a.has-open-submenu {
-  z-index: 1;
-  background: #1f2c39;
-  text-decoration: none;
-}
-
-.k-ui-namespace .k-menu-container__nav li > a:focus, .k-ui-namespace .k-menu-container__nav li > a:hover {
-  text-decoration: none;
-  background: #1f2c39;
-}
-
-.k-ui-namespace .k-menu-container__nav li > a:not(:only-child):after {
-  display: inline-block;
-  content: " ";
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-bottom: 2px solid transparent;
-  border-top: 4px solid;
-  margin-left: 8px;
-}
-
-@media screen and (min-width: 768px) {
-  .k-ui-namespace .k-menu-container__nav li > a {
-    height: 48px;
-    border-bottom: none;
-    line-height: 48px;
-    padding: 0 8px;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .k-ui-namespace .k-menu-container__nav li > a {
-    padding: 0 12px;
-  }
-}
-
-.k-ui-namespace .k-menu-container__nav li ul {
-  display: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-  padding: 4px 0;
-  background: #395067;
-}
-
-@media screen and (min-width: 768px) {
-  .k-ui-namespace .k-menu-container__nav li ul {
-    background: white;
-    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.33);
-    position: absolute;
-    z-index: 0;
-    top: 100%;
-    left: 1px;
-    width: 180px;
-    border-bottom: none;
-    padding: 2px;
-  }
-}
-
-.k-ui-namespace .k-menu-container__nav li ul li {
-  float: none;
-  background: transparent;
-}
-
-.k-ui-namespace .k-menu-container__nav li ul a {
-  height: 32px;
-  line-height: 32px;
-  border-bottom: none;
-}
-
-.k-ui-namespace .k-menu-container__nav li ul a:focus, .k-ui-namespace .k-menu-container__nav li ul a:hover {
-  background: rgba(0, 0, 0, 0.1);
-}
-
-@media screen and (min-width: 768px) {
-  .k-ui-namespace .k-menu-container__nav li ul a {
-    color: #2c3e50;
-  }
-}
-
-.k-ui-namespace .k-menu-container__nav li .has-open-submenu + ul {
-  display: block;
-}
-
-.k-ui-namespace.k-is-opened-right {
-  overflow: visible;
-}
-
-.k-ui-namespace.k-is-opened-right .k-menu-container__nav {
-  display: block;
-}
-
-.k-ui-namespace.k-is-opened-right .k-wrapper > .k-off-canvas-overlay {
-  z-index: 10;
-}
-
-@media screen and (min-width: 600px) {
-  .k-ui-namespace.k-is-opened-right .k-wrapper > .k-off-canvas-overlay {
-    z-index: -1;
-  }
-}
-
-.k-ui-namespace .k-wrapper {
-  transition: -webkit-transform 200ms ease-in-out;
-  transition: transform 200ms ease-in-out;
-}
-
-.k-ui-namespace.k-show-right-menu .k-wrapper {
-  -webkit-transform: translateX(-276px);
-          transform: translateX(-276px);
-}
-
-@media screen and (min-width: 768px) {
-  .k-ui-namespace.k-show-right-menu .k-wrapper {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-}
-
-.k-ui-namespace.k-show-right-menu .k-wrapper > .k-off-canvas-overlay {
-  opacity: 0.75;
-}
-
-@media screen and (min-width: 600px) {
-  .k-ui-namespace.k-show-right-menu .k-wrapper > .k-off-canvas-overlay {
-    opacity: 0;
-  }
-}
-
-.k-ui-namespace .menu-toggle {
-  position: absolute;
-  top: 0;
-  right: 0;
-  color: white;
-  border: 1px solid white;
-  background: transparent;
-  border-radius: 4px;
-  padding: 5px 10px;
-  margin: 8px;
-}
-
-@media screen and (min-width: 768px) {
-  .k-ui-namespace .menu-toggle {
-    display: none;
-  }
-}
-
 .k-ui-namespace .k-login-container {
   background: #2c3e50;
   color: white;
@@ -9492,7 +9210,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   line-height: 1.25em;
   text-align: center;
   color: #222222;
-  font-weight: normal;
+  font-weight: 400;
   border-radius: 3px;
   /* 2 */
   cursor: pointer;
@@ -9550,7 +9268,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 .k-checked .k-ui-namespace .k-optionlist .k-optionlist__content input:checked + label, .k-checked .k-ui-namespace .k-optionlist .k-optionlist__content input:checked + label:hover, .k-checked .k-ui-namespace .k-optionlist .k-optionlist__content input:checked + label:focus {
   background: transparent;
   /* 1 */
-  color: white;
+  color: #fefefe;
 }
 
 .k-checked .k-ui-namespace .k-optionlist .k-optionlist__content input:checked + label:before {
@@ -9705,8 +9423,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   /* 1 */
   padding-left: 4px;
   /* 2 */
-  /* Hide on larger screens */
-  /* Flexbox */
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
@@ -9714,6 +9430,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
       -ms-flex-order: 15;
           order: 15;
   width: auto;
+  /* Hide on larger screens */
   /* RTL */
   /* Buttons */
 }
@@ -9727,29 +9444,17 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   clear: both;
 }
 
-@media screen and (min-width: 400px) {
-  .k-ui-namespace .k-scopebar__item--toggle-buttons {
-    float: left;
-  }
-}
-
 @media screen and (min-width: 600px) {
   .k-ui-namespace .k-scopebar__item--toggle-buttons {
-    float: right;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .k-ui-namespace .k-scopebar__item--toggle-buttons {
     display: none;
-  }
-}
-
-@media screen and (min-width: 600px) {
-  .k-ui-namespace .k-scopebar__item--toggle-buttons {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 auto;
-            flex: 0 0 auto;
   }
 }
 
@@ -9789,12 +9494,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-scopebar__item--filters {
-  /* Hide when JS is enabled */
-  /**
-   * Flexbox
-   *
-   * 1. Reset order
-   */
   width: 100%;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
@@ -9802,6 +9501,10 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   -webkit-box-ordinal-group: 11;
       -ms-flex-order: 10;
           order: 10;
+  /* Hide when JS is enabled */
+  /**
+   * 1. Reset order
+   */
 }
 
 .k-js-enabled .k-ui-namespace .k-scopebar__item--filters {
@@ -9818,7 +9521,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 @media screen and (min-width: 600px) {
   .k-js-enabled .k-ui-namespace .k-scopebar__item--filters {
     width: auto;
-    display: block !important;
+    display: block;
   }
 }
 
@@ -9834,7 +9537,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 @media screen and (min-width: 1024px) {
   .k-ui-namespace .k-scopebar__item--filters {
-    display: block !important;
+    display: block;
   }
 }
 
@@ -9993,8 +9696,8 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   background: transparent;
   margin: 0;
   padding: 0 6px;
-  line-height: 40px;
-  height: 40px;
+  line-height: 39px;
+  height: 39px;
   font-size: 13px;
   cursor: pointer;
 }
@@ -10162,7 +9865,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   display: block;
   float: left;
   height: 32px;
-  margin: 4px;
+  margin: 4px 4px 3px 4px;
   margin-left: 0;
   padding-left: 7px;
   padding-right: 7px;
@@ -11783,6 +11486,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   opacity: 0;
   background: white;
   border: 1px solid gainsboro;
+  border-radius: 0;
   transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
   -webkit-backface-visibility: hidden;
 }
@@ -12140,6 +11844,290 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   margin-top: -5px;
   border-width: 0 5px 5px;
   border-bottom-color: black;
+}
+
+.k-ui-namespace .k-top-container {
+  background: #2c3e50;
+  color: white;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .k-ui-namespace .k-top-container {
+    position: relative;
+    z-index: 11;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.k-ui-namespace .k-top-container__logo {
+  height: 48px;
+}
+
+.k-ui-namespace .k-top-container__logo a, .k-ui-namespace .k-top-container__logo img {
+  display: inline-block;
+  vertical-align: middle;
+  width: auto;
+  color: inherit;
+}
+
+.k-ui-namespace .k-top-container__logo a {
+  padding: 12px;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.k-ui-namespace .k-top-container__logo a:focus, .k-ui-namespace .k-top-container__logo a:hover {
+  background: #1f2c39;
+}
+
+.k-ui-namespace .k-top-container__logo img {
+  max-height: 24px;
+}
+
+.k-ui-namespace .k-top-container__navigation {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  bottom: 0;
+  width: 276px;
+  display: none;
+  background: #2c3e50;
+  overflow: auto;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.1);
+  /* On desktop */
+  /* First level */
+}
+
+@media screen and (min-width: 768px) {
+  .k-ui-namespace .k-top-container__navigation {
+    position: static;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    box-shadow: none;
+    height: 48px;
+    width: auto;
+    overflow: visible;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+  }
+}
+
+.k-ui-namespace .k-top-container__navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .k-ui-namespace .k-top-container__navigation .k-navigation-right {
+    float: right;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  [dir="rtl"] .k-ui-namespace .k-top-container__navigation .k-navigation-right {
+    float: left;
+  }
+}
+
+.k-ui-namespace .k-top-container__navigation li {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  /* Second level */
+}
+
+@media screen and (min-width: 768px) {
+  .k-ui-namespace .k-top-container__navigation li {
+    float: left;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  [dir="rtl"] .k-ui-namespace .k-top-container__navigation li {
+    float: right;
+  }
+}
+
+.k-ui-namespace .k-top-container__navigation li.is-disabled, .k-ui-namespace .k-top-container__navigation li.disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.k-ui-namespace .k-top-container__navigation li.is-disabled a, .k-ui-namespace .k-top-container__navigation li.disabled a {
+  pointer-events: none;
+}
+
+.k-ui-namespace .k-top-container__navigation li > a {
+  line-height: 40px;
+  position: relative;
+  z-index: 0;
+  display: block;
+  padding: 0 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  color: inherit;
+  text-shadow: none;
+  text-decoration: none;
+}
+
+.k-ui-namespace .k-top-container__navigation li > a.has-open-submenu {
+  z-index: 1;
+  background: #1f2c39;
+  text-decoration: none;
+}
+
+.k-ui-namespace .k-top-container__navigation li > a:focus, .k-ui-namespace .k-top-container__navigation li > a:hover {
+  text-decoration: none;
+  background: #1f2c39;
+}
+
+.k-ui-namespace .k-top-container__navigation li > a:not(:only-child):after {
+  display: inline-block;
+  content: " ";
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 2px solid transparent;
+  border-top: 4px solid;
+  margin-left: 8px;
+}
+
+@media screen and (min-width: 768px) {
+  .k-ui-namespace .k-top-container__navigation li > a {
+    height: 48px;
+    border-bottom: none;
+    line-height: 48px;
+    padding: 0 12px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .k-ui-namespace .k-top-container__navigation li > a {
+    padding: 0 12px;
+  }
+}
+
+.k-ui-namespace .k-top-container__navigation li ul {
+  display: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 4px 0;
+  background: #395067;
+}
+
+@media screen and (min-width: 768px) {
+  .k-ui-namespace .k-top-container__navigation li ul {
+    background: white;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.33);
+    position: absolute;
+    z-index: 0;
+    top: 100%;
+    left: 1px;
+    width: 180px;
+    border-bottom: none;
+    padding: 2px;
+  }
+}
+
+.k-ui-namespace .k-top-container__navigation li ul li {
+  float: none;
+  background: transparent;
+}
+
+.k-ui-namespace .k-top-container__navigation li ul a {
+  height: 32px;
+  line-height: 32px;
+  border-bottom: none;
+}
+
+.k-ui-namespace .k-top-container__navigation li ul a:focus, .k-ui-namespace .k-top-container__navigation li ul a:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (min-width: 768px) {
+  .k-ui-namespace .k-top-container__navigation li ul a {
+    color: #2c3e50;
+  }
+}
+
+.k-ui-namespace .k-top-container__navigation li .has-open-submenu + ul {
+  display: block;
+}
+
+.k-ui-namespace.k-is-opened-right {
+  overflow: visible;
+}
+
+.k-ui-namespace.k-is-opened-right .k-top-container__navigation {
+  display: block;
+}
+
+.k-ui-namespace.k-is-opened-right .k-wrapper > .k-off-canvas-overlay {
+  z-index: 10;
+}
+
+@media screen and (min-width: 600px) {
+  .k-ui-namespace.k-is-opened-right .k-wrapper > .k-off-canvas-overlay {
+    z-index: -1;
+  }
+}
+
+.k-ui-namespace .k-wrapper {
+  transition: -webkit-transform 200ms ease-in-out;
+  transition: transform 200ms ease-in-out;
+}
+
+.k-ui-namespace.k-show-right-menu .k-wrapper {
+  -webkit-transform: translateX(-276px);
+          transform: translateX(-276px);
+}
+
+@media screen and (min-width: 768px) {
+  .k-ui-namespace.k-show-right-menu .k-wrapper {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+.k-ui-namespace.k-show-right-menu .k-wrapper > .k-off-canvas-overlay {
+  opacity: 0.75;
+}
+
+@media screen and (min-width: 600px) {
+  .k-ui-namespace.k-show-right-menu .k-wrapper > .k-off-canvas-overlay {
+    opacity: 0;
+  }
+}
+
+.k-ui-namespace .menu-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white;
+  border: 1px solid white;
+  background: transparent;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin: 8px;
+}
+
+@media screen and (min-width: 768px) {
+  .k-ui-namespace .menu-toggle {
+    display: none;
+  }
 }
 
 .k-ui-namespace .k-tree {

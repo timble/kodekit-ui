@@ -17103,17 +17103,18 @@ var Konami = function (callback) {
         // Initiate responsive top menu
 
         // Menu itself
-        var $menu = $('#k-js-menu');
+        var $menu = $('.k-js-top-navigation');
 
         // See if it exists
         if ($menu.length) {
 
             // Variables
-            var $menuItem = $('#k-js-menu > ul > li > a'),
+            var $menuItem = $('.k-js-top-navigation > ul > li > a'),
                 menuClass = 'has-open-menu',
-                submenuClass = 'has-open-submenu';
+                submenuClass = 'has-open-submenu',
+                menuContent = $menu.attr('data-toggle-button-content') || 'Menu';
 
-            var toggle_button = '<button type="button" id="k-js-menu-toggle" class="menu-toggle" title="Menu toggle" aria-label="Menu toggle">Menu</button>';
+            var toggle_button = '<button type="button" id="k-js-menu-toggle" class="menu-toggle" title="Menu toggle" aria-label="Menu toggle">'+menuContent+'</button>';
             var offcanvasoverlay = '<div class="k-off-canvas-overlay"></div>';
 
             // Append toggle button and overlay
@@ -17130,6 +17131,7 @@ var Konami = function (callback) {
             });
 
             // Click a menu item
+            // @TODO: Only for certain classes
             function clickMenuItem($element) {
                 $element.on('click', function(event) {
                     if (!$(this).next('ul').length) return;
@@ -17157,7 +17159,7 @@ var Konami = function (callback) {
             function hoverMenuItem() {
                 $menuItem.on('mouseover', function(event) {
                     // Only on desktop
-                    if ( $('.k-menu-container').css('z-index') >= 9 ) {
+                    if ( $('.k-top-container').css('z-index') >= 11) {
                         event.preventDefault();
                         if ( $menu.hasClass(menuClass) ) {
                             $menu.find('.' + submenuClass).blur();
@@ -17178,7 +17180,7 @@ var Konami = function (callback) {
 
             // On clicking next to the menu
             $(document).mouseup(function(e) {
-                var $navigationList = $('.k-menu-container__nav > ul');
+                var $navigationList = $('.k-js-top-navigation > ul');
 
                 // if the target of the click isn't the container nor a descendant of the container
                 if (!$navigationList.is(e.target) && $navigationList.has(e.target).length === 0)

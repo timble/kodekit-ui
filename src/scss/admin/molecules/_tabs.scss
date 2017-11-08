@@ -207,6 +207,7 @@
   opacity: 0;
   background: $k-tabs-active-link-hover-background;
   border: $k-tabs-overflow-button-border;
+  border-radius: 0;
   @include transition;
 
   span {
