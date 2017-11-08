@@ -1,8 +1,8 @@
-// Graphical psuedo element
-// Set element to position relative and add a psuedo element with position absolute and a "content"
+// Graphical pseudo element
+// Set element to position relative and add a pseudo element with position absolute and a "content"
 
-@mixin psuedo(
-  $k-psuedo: after,
+@mixin pseudo(
+  $k-pseudo: after,
   $k-parentposition: true,
   $k-display: true,
   $k-position: true,
@@ -12,7 +12,7 @@
     position: relative;
   }
 
-  &:#{$k-psuedo} {
+  &:#{$k-pseudo} {
 
     @if $k-display == true {
       display: block;

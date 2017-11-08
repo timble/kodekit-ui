@@ -2610,9 +2610,9 @@ Styleguide 2.9.1
  * Checkbox
  *
  * 1. Remove rounded corners by default
- * 2. Display a check icon in the psuedo before element
+ * 2. Display a check icon in the pseudo before element
  * 3. Height of the box minus the border size
- * 4. Height of the psuedo element minus a 1px padding/margin to move icon
+ * 4. Height of the pseudo element minus a 1px padding/margin to move icon
       away from the side of the box
  * 5. Set the color of the check icon
  */
@@ -2620,7 +2620,7 @@ Styleguide 2.9.1
  * Radio
  *
  * 1. Making the radio box round
- * 2. Adding content to display the psuedo element
+ * 2. Adding content to display the pseudo element
  * 3. Small inner circle, scaling with the box itself
  * 4. positioning the inner circle
  * 5. Making inner circle actually round
@@ -4672,7 +4672,7 @@ markup:
   /*
 "Cover all" link
 
-Use a psuedo element inside the `<a>` to vover the entire parent.
+Use a pseudo element inside the `<a>` to vover the entire parent.
 - This way we don't have to make a the parent element a link.
 - Downside: You can't select the text anymore, but this could also be used to your advantage
 
@@ -4683,7 +4683,7 @@ markup:
   /*
 "On-top" links
 
-Use inside the same parent as the above "coverall" link to place this link on top of the psuedo element
+Use inside the same parent as the above "coverall" link to place this link on top of the pseudo element
 
 markup:
 <div class="k-link-ontop">...</div>
@@ -6001,8 +6001,8 @@ markup:
   /**
    * Styling list items
    *
-   * 1. Set z-index to 0 so the :after psuedo element will be on top
-   * 2. Make room for the psuedo element separator
+   * 1. Set z-index to 0 so the :after pseudo element will be on top
+   * 2. Make room for the pseudo element separator
    * 3. Make each item at least one breadcrumb size wide + including padding for pseudo element
    * 4. Hide by default so we can show only a few on mobile / flexbox
    * 5. Hide overflowing content
@@ -7158,7 +7158,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   /**
      * 1. Resetting the default styling used by browsers. Don't do this for -moz-
      *    because the checkbox and radio box will look very ugly
-     * 2. Positioning relative to position psuedo before element nicely
+     * 2. Positioning relative to position pseudo before element nicely
      * 5. Indicate that element is clickable
      */
   -webkit-appearance: none;
@@ -7182,10 +7182,10 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   /* Hover to indicate element is clickable */
   /* Set disabled border color a bit lighter so it won't appear to be larger */
   /**
-     * 1. Position psuedo element absolute to have full control
+     * 1. Position pseudo element absolute to have full control
      * 2. Position top-left, margin, width and height will take care of centering
-     * 3. Initially hide the psuedo element
-     * 4. Show the psuedo element when item is checked
+     * 3. Initially hide the pseudo element
+     * 4. Show the pseudo element when item is checked
      */
 }
 
@@ -9081,7 +9081,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   /**
      * Faux border
      *
-     * Adding a border to the left, using "after" psuedo since "before" is used for the icon
+     * Adding a border to the left, using "after" pseudo since "before" is used for the icon
      */
   position: relative;
   /* Hover & focus states */
@@ -9184,7 +9184,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
        * Styling label when checked
        *
        * 1. Transparent background for label itself
-       * 2. Show psuedo element
+       * 2. Show pseudo element
        */
   /**
        * Fake focus

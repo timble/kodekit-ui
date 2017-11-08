@@ -3,18 +3,18 @@
 // Default ratio is 16:9
 // Probably needs a coverall @mixin as a child
 
-@mixin ratio-block($k-ratio: 16 to 9) {
+@mixin ratio-block($ratio: 16 to 9) {
 
   // Variables
-  $k-width: nth($k-ratio, 1);
-  $k-height: nth($k-ratio, 3);
-  $k-percent: (($k-height / $k-width) * 100%);
+  $width: nth($ratio, 1);
+  $height: nth($ratio, 3);
+  $percent: (($height / $width) * 100%);
 
   position: relative;
 
   &:before {
     display: block;
     content: " ";
-    padding-top: $k-percent;
+    padding-top: $percent;
   }
 }

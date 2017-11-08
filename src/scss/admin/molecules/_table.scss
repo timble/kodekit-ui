@@ -870,7 +870,7 @@ Styleguide 2.21.9
     cursor: move;
   }
 
-  @include psuedo(before) {
+  @include pseudo(before) {
     width: $k-table-row-positioner-size;
     height: round(($k-table-row-positioner-size / 2) + 2px);
     border-top: 1px solid $k-table-row-positioner-color;

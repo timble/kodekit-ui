@@ -180,7 +180,7 @@ Styleguide 2.9.1
     /**
      * 1. Resetting the default styling used by browsers. Don't do this for -moz-
      *    because the checkbox and radio box will look very ugly
-     * 2. Positioning relative to position psuedo before element nicely
+     * 2. Positioning relative to position pseudo before element nicely
      * 5. Indicate that element is clickable
      */
 
@@ -215,10 +215,10 @@ Styleguide 2.9.1
 
 
     /**
-     * 1. Position psuedo element absolute to have full control
+     * 1. Position pseudo element absolute to have full control
      * 2. Position top-left, margin, width and height will take care of centering
-     * 3. Initially hide the psuedo element
-     * 4. Show the psuedo element when item is checked
+     * 3. Initially hide the pseudo element
+     * 4. Show the pseudo element when item is checked
      */
 
     &:before {
@@ -302,9 +302,9 @@ Styleguide 2.9.1
  * Checkbox
  *
  * 1. Remove rounded corners by default
- * 2. Display a check icon in the psuedo before element
+ * 2. Display a check icon in the pseudo before element
  * 3. Height of the box minus the border size
- * 4. Height of the psuedo element minus a 1px padding/margin to move icon
+ * 4. Height of the pseudo element minus a 1px padding/margin to move icon
       away from the side of the box
  * 5. Set the color of the check icon
  */
@@ -329,7 +329,7 @@ Styleguide 2.9.1
  * Radio
  *
  * 1. Making the radio box round
- * 2. Adding content to display the psuedo element
+ * 2. Adding content to display the pseudo element
  * 3. Small inner circle, scaling with the box itself
  * 4. positioning the inner circle
  * 5. Making inner circle actually round

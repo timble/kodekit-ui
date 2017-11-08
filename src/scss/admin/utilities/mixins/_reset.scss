@@ -3,29 +3,29 @@
 // Mostly useful for <ul> etc. where default element shave multiple styling rules
 
 @mixin reset(
-  $k-margin: true,
-  $k-padding: true,
-  $k-list-style: true,
-  $k-border: true,
-  $k-background: true) {
+  $margin: true,
+  $padding: true,
+  $list-style: true,
+  $border: true,
+  $background: true) {
 
-  @if $k-margin == true {
+  @if $margin == true {
     margin: 0;
   }
 
-  @if $k-padding == true {
+  @if $padding == true {
     padding: 0;
   }
 
-  @if $k-list-style == true {
+  @if $list-style == true {
     list-style: none;
   }
 
-  @if $k-border == true {
+  @if $border == true {
     border: none;
   }
 
-  @if $k-background == true {
+  @if $background == true {
     background: transparent;
   }
 }

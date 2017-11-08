@@ -498,7 +498,7 @@ markup:
 /*
 "Cover all" link
 
-Use a psuedo element inside the `<a>` to vover the entire parent.
+Use a pseudo element inside the `<a>` to vover the entire parent.
 - This way we don't have to make a the parent element a link.
 - Downside: You can't select the text anymore, but this could also be used to your advantage
 
@@ -508,7 +508,7 @@ markup:
 */
 
 .k-link-coverall {
-  @include psuedo(after, false) {
+  @include pseudo(after, false) {
     @include coverall;
   }
 }
@@ -517,7 +517,7 @@ markup:
 /*
 "On-top" links
 
-Use inside the same parent as the above "coverall" link to place this link on top of the psuedo element
+Use inside the same parent as the above "coverall" link to place this link on top of the pseudo element
 
 markup:
 <div class="k-link-ontop">...</div>

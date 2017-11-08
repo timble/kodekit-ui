@@ -30,7 +30,7 @@ Styleguide 2.13
  */
 
 .k-list {
-  @include reset($k-margin: false); /* 1 */
+  @include reset($margin: false); /* 1 */
   margin: $k-list-spacing 0;
 
   @include rtl {

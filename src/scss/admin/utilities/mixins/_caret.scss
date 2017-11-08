@@ -2,66 +2,66 @@
 // CSS only carets using borders
 
 @mixin caret(
-  $k-direction: right,
-  $k-size: 4px,
-  $k-color: false) {
+  $direction: right,
+  $size: 4px,
+  $color: false) {
 
   // Top and bottom carets
 
-  @if $k-direction == top or $k-direction == bottom {
-    border-left: $k-size solid transparent;
-    border-right: $k-size solid transparent;
+  @if $direction == top or $direction == bottom {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
   }
 
 
   // Left and right carets
 
-  @if $k-direction == left or $k-direction == right {
-    border-top: $k-size solid transparent;
-    border-bottom: $k-size solid transparent;
+  @if $direction == left or $direction == right {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
   }
 
 
   // Top
 
-  @if $k-direction == top {
-    border-bottom: $k-size solid;
+  @if $direction == top {
+    border-bottom: $size solid;
 
-    @if $k-color {
-      border-bottom-color: $k-color;
+    @if $color {
+      border-bottom-color: $color;
     }
   }
 
 
   // Right
 
-  @if $k-direction == right {
-    border-left: $k-size solid;
+  @if $direction == right {
+    border-left: $size solid;
 
-    @if $k-color {
-      border-left-color: $k-color;
+    @if $color {
+      border-left-color: $color;
     }
   }
 
 
   // Bottom
 
-  @if $k-direction == bottom {
-    border-top: $k-size solid;
+  @if $direction == bottom {
+    border-top: $size solid;
 
-    @if $k-color {
-      border-top-color: $k-color;
+    @if $color {
+      border-top-color: $color;
     }
   }
 
 
   // Left
 
-  @if $k-direction == left {
-    border-right: $k-size solid;
+  @if $direction == left {
+    border-right: $size solid;
 
-    @if $k-color {
-      border-right-color: $k-color;
+    @if $color {
+      border-right-color: $color;
     }
   }
 }

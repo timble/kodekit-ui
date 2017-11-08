@@ -36,7 +36,7 @@ Styleguide 2.9.9
      */
 
     @include modernizr('.k-eventlistener') {
-      @include coverall($k-left: false);
+      @include coverall($left: false);
       margin: 0;
       padding: 0;
       cursor: pointer;

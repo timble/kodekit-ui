@@ -32,7 +32,7 @@ Styleguide 2.16
  */
 
 .k-navigation {
-  @include reset($k-padding: false, $k-background: false); /* 1 */
+  @include reset($padding: false, $background: false); /* 1 */
   @include border(bottom, $k-navigation-border);
   padding: ($k-navigation-spacing * 2) 0 (($k-navigation-spacing * 2) - 1px);
   background: $k-navigation-background;
@@ -89,10 +89,10 @@ Styleguide 2.16
     /**
      * Faux border
      *
-     * Adding a border to the left, using "after" psuedo since "before" is used for the icon
+     * Adding a border to the left, using "after" pseudo since "before" is used for the icon
      */
 
-    @include psuedo(after) {
+    @include pseudo(after) {
       left: 0;
       top: 0;
       width: $k-navigation-border-width;

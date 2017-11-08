@@ -70,8 +70,8 @@ Styleguide 2.2
   /**
    * Styling list items
    *
-   * 1. Set z-index to 0 so the :after psuedo element will be on top
-   * 2. Make room for the psuedo element separator
+   * 1. Set z-index to 0 so the :after pseudo element will be on top
+   * 2. Make room for the pseudo element separator
    * 3. Make each item at least one breadcrumb size wide + including padding for pseudo element
    * 4. Hide by default so we can show only a few on mobile / flexbox
    * 5. Hide overflowing content
@@ -103,7 +103,7 @@ Styleguide 2.2
 
     /* List item separator */
 
-    @include psuedo(before, $k-content: false) {
+    @include pseudo(before, $k-content: false) {
       top: 0;
       bottom: 0;
       left: 0;

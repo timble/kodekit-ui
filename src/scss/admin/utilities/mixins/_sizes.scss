@@ -1,18 +1,18 @@
 // Width mixin
 // Set all CSS width values to 'X'
 
-@mixin allwidth($k-width) {
-  min-width: $k-width;
-  width: $k-width;
-  max-width: $k-width;
+@mixin allwidth($width) {
+  min-width: $width;
+  width: $width;
+  max-width: $width;
 }
 
 
 // Height mixin
 // Set all CSS height values to 'X'
 
-@mixin allheight($k-height) {
-  min-height: $k-height;
-  height: $k-height;
-  max-height: $k-height;
+@mixin allheight($height) {
+  min-height: $height;
+  height: $height;
+  max-height: $height;
 }

@@ -4,7 +4,7 @@
 // 1. For input.k-button
 // 2. Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
 
-@mixin button-default($activeClass: $k-button-active-class, $disabledClass: $k-button-disabled-class) {
+@mixin button-default($active-class: $k-button-active-class, $disabled-class: $k-button-disabled-class) {
   display: inline-block;
   margin-bottom: 0; /* 1 */
   font-weight: $k-button-font-weight;
@@ -43,7 +43,7 @@
 
   &,
   &:active,
-  &#{$activeClass} {
+  &#{$active-class} {
     &:focus,
     &.focus {
       @include tab-focus;
@@ -56,13 +56,13 @@
   }
 
   &:active,
-  &#{$activeClass} {
+  &#{$active-class} {
     outline: 0;
     background-image: none;
   }
 
   &[disabled],
-  &#{$disabledClass} {
+  &#{$disabled-class} {
     cursor: $k-cursor-disabled;
     opacity: 0.65;
     pointer-events: none;
@@ -73,7 +73,7 @@
 // Button link style
 // ==========================================================================
 
-@mixin button-link($activeClass: $k-button-active-class, $disabledClass: $k-button-disabled-class) {
+@mixin button-link($active-class: $k-button-active-class, $disabled-class: $k-button-disabled-class) {
   color: $k-color-type;
   font-weight: normal;
   border-radius: 0;
@@ -82,9 +82,9 @@
 
   &,
   &:active,
-  &#{$activeClass},
+  &#{$active-class},
   &[disabled],
-  &#{$disabledClass} {
+  &#{$disabled-class} {
     background-color: transparent;
     box-shadow: none;
   }
@@ -104,7 +104,7 @@
   }
 
   &[disabled],
-  &#{$disabledClass} {
+  &#{$disabled-class} {
     &:hover,
     &:focus {
       color: $k-button-link-disabled-color;

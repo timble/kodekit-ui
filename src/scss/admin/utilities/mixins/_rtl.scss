@@ -114,9 +114,9 @@
   }
 }
 
-@mixin modernizr-rtl($k-classes) {
+@mixin modernizr-rtl($classes) {
   @at-root {
-    [dir="rtl"]#{$k-classes} #{&} {
+    [dir="rtl"]#{$classes} #{&} {
       @content
     }
   }
