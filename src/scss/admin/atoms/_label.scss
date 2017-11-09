@@ -20,7 +20,7 @@ label {
   vertical-align: middle;
   max-width: 100%; /* 1 */
   margin-bottom: $k-spacing-tiny;
-  font-weight: $k-bold;
+  font-weight: $k-font-weight-bold;
 
   &:last-child {
     margin-bottom: 0;

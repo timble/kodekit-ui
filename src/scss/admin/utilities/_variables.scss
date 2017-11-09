@@ -45,8 +45,8 @@ $k-line-height-large:       24px !default;
 $k-font-size-huge:          21px !default;
 $k-line-height-huge:        28px !default;
 
-$k-bold:                    700 !default;
-$k-regular:                 400 !default;
+$k-font-weight-bold:        700 !default;
+$k-font-weight-normal:      400 !default;
 
 $k-webkit-font-smoothing:   antialiased !default;
 $k-firefox-font-smoothing:  grayscale !default;
@@ -340,7 +340,7 @@ $k-sidebar-item-toggle-line-height:     $k-sidebar-item-toggle-size - 2px !defau
 
 $k-sidebar-item-header-font-size:       $k-font-size-small !default;
 $k-sidebar-item-header-line-height:     $k-line-height-large !default;
-$k-sidebar-item-header-font-weight:     $k-bold !default;
+$k-sidebar-item-header-font-weight:     $k-font-weight-bold !default;
 $k-sidebar-item-header-text-transform:  uppercase !default;
 
 $k-sidebar-item-small-spacing:          $k-spacing-small $k-sidebar-item-spacing !default;
@@ -366,7 +366,7 @@ $k-navigation-hover-color:        $k-color-type !default;
 $k-navigation-active-background:  $k-navigation-background !default;
 $k-navigation-active-border:      $k-color-accent !default;
 $k-navigation-active-color:       $k-color-accent !default;
-$k-navigation-active-font-weight: $k-bold !default;
+$k-navigation-active-font-weight: $k-font-weight-bold !default;
 
 
 // List
@@ -384,7 +384,7 @@ $k-list-link-hover-color:         $k-color-type !default;
 
 $k-list-link-active-background:   $k-sidebar-background !default;
 $k-list-link-active-color:        $k-color-type !default;
-$k-list-link-active-font-weight:  $k-bold !default;
+$k-list-link-active-font-weight:  $k-font-weight-bold !default;
 
 $k-list-icon-spacing:             $k-spacing-small !default;
 
@@ -399,7 +399,7 @@ $k-tree-element-spacing-end:        $k-spacing-tiny !default;
 $k-tree-element-hover-background:   lighter($k-sidebar-background) !default;
 $k-tree-selected-background:        $k-color-accent !default;
 $k-tree-selected-color:             $k-color-accent-type !default;
-$k-tree-selected-font-weight:       $k-bold !default;
+$k-tree-selected-font-weight:       $k-font-weight-bold !default;
 $k-tree-toggle-size:                ceil($k-tree-size / 8) !default;
 
 
@@ -421,7 +421,7 @@ $k-breadcrumb-divider-size:       round($k-breadcrumb-size / 2) !default; // 5
 $k-breadcrumb-background:         $k-color-primary-plus-4 !default;
 $k-breadcrumb-border:             darkest($k-breadcrumb-background) !default;
 $k-breadcrumb-color:              $k-color-type !default;
-$k-breadcrumb-active-weight:      $k-bold !default;
+$k-breadcrumb-active-weight:      $k-font-weight-bold !default;
 
 $k-breadcrumb-hover-background:   darker($k-breadcrumb-background) !default;
 
@@ -493,7 +493,7 @@ $k-table-header-background:               $k-color-primary-plus-5 !default;
 $k-table-header-border:                   darkest($k-table-header-background) !default;
 $k-table-header-color:                    $k-color-type !default;
 $k-table-header-hover-background:         $k-color-primary-plus-4 !default;
-$k-table-header-font-weight:              $k-regular !default;
+$k-table-header-font-weight:              $k-font-weight-normal !default;
 
 $k-table-cell-background-even:            $k-color-primary-plus-6 !default;
 $k-table-cell-background-odd:             $k-color-primary-plus-6 !default;
@@ -522,7 +522,7 @@ $k-table-item-state-published:            $k-color-success !default;
 $k-table-sub-header-spacing:              0.7em $k-table-cell-spacing-horizontal 0.5em !default;
 $k-table-sub-header-font-size:            $k-font-size-small !default;
 $k-table-sub-header-line-height:          $k-line-height-small !default;
-$k-table-sub-header-weight:               $k-bold !default;
+$k-table-sub-header-weight:               $k-font-weight-bold !default;
 $k-table-sub-header-background:           $k-table-header-background !default;
 $k-table-sub-header-border:               $k-table-cell-border !default;
 
@@ -558,7 +558,7 @@ $k-table-responsive-toggle-color-active:  $k-table-cell-accent-color !default;
 $k-table-responsive-toggle-border-size:   1px !default;
 $k-table-responsive-toggle-icon-size:     10px !default;
 $k-table-responsive-toggle-line-height:   1.3em !default;
-$k-table-responsive-detail-weight:        $k-bold !default;
+$k-table-responsive-detail-weight:        $k-font-weight-bold !default;
 $k-table-responsive-detail-spacing:       $k-table-cell-spacing-vertical $k-table-cell-spacing-horizontal !default;
 $k-table-responsive-detail-min-height:    round($k-unit-size * 0.75) !default;
 
@@ -578,7 +578,7 @@ $k-form-block-border:             darkest($k-form-block-background) !default;
 $k-form-block-header-spacing:     $k-spacing-small $k-spacing-small ($k-spacing-small - 1px) !default;
 $k-form-block-header-background:  $k-color-primary-plus-4 !default;
 $k-form-block-header-border:      darkest($k-form-block-header-background) !default;
-$k-form-block-header-font-weight: $k-bold !default;
+$k-form-block-header-font-weight: $k-font-weight-bold !default;
 
 $k-form-block-content-spacing:    ($k-spacing-small - 1px) $k-spacing-small !default;
 
@@ -619,7 +619,7 @@ $k-form-option-shadow:        inset 0 1px 2px rgba(0, 0, 0, 0.15) !default;
 
 $k-styled-file-input-fallback-font-size:    $k-font-size !default;
 $k-styled-file-input-fallback-line-height:  $k-line-height !default;
-$k-styled-file-input-font-weight:           $k-regular !default;
+$k-styled-file-input-font-weight:           $k-font-weight-normal !default;
 $k-styled-file-input-cursor:                pointer !default;
 $k-styled-file-input-fallback-color:        $k-color-accent !default;
 $k-styled-file-input-background:            $k-color-accent !default;
@@ -692,7 +692,7 @@ $k-tabs-scroller-item-active-color:       $k-color-type !default;
 // Buttons
 // ==========================================================================
 
-$k-button-font-weight:               $k-regular !default;
+$k-button-font-weight:               $k-font-weight-normal !default;
 $k-button-spacer:                    $k-spacing-tiny !default;
 $k-button-active-class:              $k-active-class !default;
 $k-button-disabled-class:            $k-disabled-class !default;
@@ -825,7 +825,7 @@ $k-card-header-background:    $k-color-primary-plus-5 !default;
 $k-card-header-border:        $k-color-primary-min-1 !default;
 $k-card-header-color:         $k-color-type !default;
 $k-card-header-spacing:       $k-card-spacing !default;
-$k-card-header-font-weight:   $k-bold !default;
+$k-card-header-font-weight:   $k-font-weight-bold !default;
 $k-card-header-hover-border:  darkest($k-card-header-border) !default;
 
 $k-card-footer-background:    $k-color-primary-plus-5 !default;
@@ -834,7 +834,7 @@ $k-card-footer-color:         $k-color-type !default;
 $k-card-footer-spacing:       $k-card-spacing !default;
 $k-card-footer-hover-border:  darkest($k-card-footer-border) !default;
 
-$k-card-caption-font-weight:  $k-regular !default;
+$k-card-caption-font-weight:  $k-font-weight-normal !default;
 $k-card-caption-spacing:      $k-spacing-min $k-spacing-small !default;
 
 
@@ -942,7 +942,7 @@ $k-optionlist-label-spacing:            floor(($k-input-height-base - $k-font-si
 $k-optionlist-label-line-height:        1.25em !default;
 $k-optionlist-label-background:         $k-color-neutral !default;
 $k-optionlist-label-color:              $k-input-color !default;
-$k-optionlist-label-weight:             $k-regular !default;
+$k-optionlist-label-weight:             $k-font-weight-normal !default;
 $k-optionlist-label-radius:             $k-input-border-radius - 1px !default;
 
 $k-optionlist-label-focus-color:        $k-color-neutral-type - 1px !default;

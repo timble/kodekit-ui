@@ -37,7 +37,7 @@ legend {
   padding-bottom: $k-spacing-tiny;
   font-size: $k-font-size-huge;
   line-height: $k-line-height-huge;
-  font-weight: $k-regular;
+  font-weight: $k-font-weight-normal;
   @include content-block;
 
   &:first-child {

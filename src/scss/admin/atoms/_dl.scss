@@ -28,7 +28,7 @@ dl {
 
 dt {
   @include reset;
-  font-weight: $k-bold;
+  font-weight: $k-font-weight-bold;
   float: left;
   clear: left;
   margin-right: $k-spacing-tiny;
