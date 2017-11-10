@@ -17114,7 +17114,7 @@ var Konami = function (callback) {
                 submenuClass = 'has-open-submenu',
                 menuContent = $menu.attr('data-toggle-button-content') || 'Menu';
 
-            var toggle_button = '<button type="button" id="k-js-menu-toggle" class="menu-toggle" title="Menu toggle" aria-label="Menu toggle">'+menuContent+'</button>';
+            var toggle_button = '<button type="button" id="k-js-top-navigation-toggle" class="top-navigation-toggle" title="Menu toggle" aria-label="Menu toggle">'+menuContent+'</button>';
             var offcanvasoverlay = '<div class="k-off-canvas-overlay"></div>';
 
             // Append toggle button and overlay
@@ -17123,7 +17123,7 @@ var Konami = function (callback) {
 
             // Off canvas
             $menu.offCanvasMenu({
-                menuToggle: $('#k-js-menu-toggle'),
+                menuToggle: $('#k-js-top-navigation-toggle'),
                 position: 'right',
                 container: $('.k-wrapper'),
                 expandedWidth: '276',

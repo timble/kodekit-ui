@@ -1,46 +1,49 @@
-/* Legend
-   ========================================================================== */
+@if ($k-atoms == true and $k-atom-legend != false) or $k-atom-legend == true {
 
-/*
-Legend
+  /* Legend
+     ========================================================================== */
 
-- Legends have a bottom margin to separate them from each other
-- The last-child doesn't have this bottom margin so parent containers can have four-sided paddings
+  /*
+  Legend
 
-markup:
-<legend>...</legend>
+  - Legends have a bottom margin to separate them from each other
+  - The last-child doesn't have this bottom margin so parent containers can have four-sided paddings
 
-sg-wrapper:
-<fieldset>
-    <sg-wrapper-content/>
-</fieldset>
+  markup:
+  <legend>...</legend>
 
-Styleguide 1.6
+  sg-wrapper:
+  <fieldset>
+      <sg-wrapper-content/>
+  </fieldset>
 
-*/
+  Styleguide 1.6
 
-/**
- * 1. No margin top for the first legend
- * 2. No margin bottom for the last legend
- */
+  */
 
-legend {
-  width: 100%;
-  padding: 0;
-  color: $k-color-type;
-  border: 0;
-  display: block;
-  margin: 0;
-  border: none;
-  border-bottom: 1px solid darker($k-component-background);
-  padding-top: $k-spacing;
-  padding-bottom: $k-spacing-tiny;
-  font-size: $k-font-size-huge;
-  line-height: $k-line-height-huge;
-  font-weight: $k-font-weight-normal;
-  @include content-block;
+  /**
+   * 1. No margin top for the first legend
+   * 2. No margin bottom for the last legend
+   */
 
-  &:first-child {
-    padding-top: 0;
+  legend {
+    width: 100%;
+    padding: 0;
+    color: $k-color-type;
+    border: 0;
+    display: block;
+    margin: 0;
+    border: none;
+    border-bottom: 1px solid darker($k-component-background);
+    padding-top: $k-spacing;
+    padding-bottom: $k-spacing-tiny;
+    font-size: $k-font-size-huge;
+    line-height: $k-line-height-huge;
+    font-weight: $k-font-weight-normal;
+    @include content-block;
+
+    &:first-child {
+      padding-top: 0;
+    }
   }
 }

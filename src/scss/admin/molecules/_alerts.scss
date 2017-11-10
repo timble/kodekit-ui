@@ -1,57 +1,58 @@
-/* Alerts
-   ========================================================================== */
+@if ($k-molecules == true and $k-molecule-alert != false) or $k-molecule-alert == true {
 
-/*
-Alerts
+  /* Alerts
+     ========================================================================== */
 
-.k-alert--success - Success style
-.k-alert--info - Info style
-.k-alert--warning - Warning style
-.k-alert--danger - Danger style
+  /*
+  Alerts
 
-markup:
-<div class="k-alert {$modifiers}">
-    This is an alert
-</div>
+  .k-alert--success - Success style
+  .k-alert--info - Info style
+  .k-alert--warning - Warning style
+  .k-alert--danger - Danger style
 
-Styleguide 2.1
+  markup:
+  <div class="k-alert {$modifiers}">
+      This is an alert
+  </div>
 
-*/
+  Styleguide 2.1
 
-.k-alert {
-  padding: $k-alert-spacing;
-  @include content-block;
+  */
 
-  a {
-    color: inherit;
+  .k-alert {
+    padding: $k-alert-spacing;
+    @include content-block;
+
+    a {
+      color: inherit;
+    }
   }
-}
 
+  /* Overflowing alert with 33% max-height */
 
-/* Overflowing alert with 33% max-height */
+  .k-alert--overflow {
+    min-height: $k-alert-overflow-minheight;
+    max-height: $k-alert-overflow-maxheight;
+    overflow: auto;
+    flex: 0 1 auto;
+  }
 
-.k-alert--overflow {
-  min-height: $k-alert-overflow-minheight;
-  max-height: $k-alert-overflow-maxheight;
-  overflow: auto;
-  flex: 0 1 auto;
-}
+  /* Alternate styles */
 
+  .k-alert--success {
+    @include alert-variant($k-alert-success-background, $k-alert-success-color);
+  }
 
-/* Alternate styles */
+  .k-alert--info {
+    @include alert-variant($k-alert-info-background, $k-alert-info-color);
+  }
 
-.k-alert--success {
-  @include alert-variant($k-alert-success-background, $k-alert-success-color);
-}
+  .k-alert--warning {
+    @include alert-variant($k-alert-warning-background, $k-alert-warning-color);
+  }
 
-.k-alert--info {
-  @include alert-variant($k-alert-info-background, $k-alert-info-color);
-}
-
-.k-alert--warning {
-  @include alert-variant($k-alert-warning-background, $k-alert-warning-color);
-}
-
-.k-alert--danger {
-  @include alert-variant($k-alert-danger-background, $k-alert-danger-color);
+  .k-alert--danger {
+    @include alert-variant($k-alert-danger-background, $k-alert-danger-color);
+  }
 }

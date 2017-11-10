@@ -1,227 +1,225 @@
-/* Sidebar item
-   ========================================================================== */
+@if ($k-molecules == true and $k-molecule-sidebar-item != false) or $k-molecule-sidebar-item == true {
 
-/*
-Sidebar item
+  /* Sidebar item
+     ========================================================================== */
 
-- Adds bottom spacing when multiple sidebar items are being used
-- Adds flexbox styling
-- Hidden on small screens
-- Add `.k-sidebar-item--flex` to the sidebar items that need to <b>grow</b> with the layout
-- Use <b>only</b> inside a `.k-sidebar`
-- {unsureText}
+  /*
+  Sidebar item
 
-default - Default
-.k-sidebar-item--flex - Flexing container that will grow (and not shrink)
-.k-sidebar-item--toggle.k-js-sidebar-toggle-item - Adds a toggle button on certain screen sizes
+  - Adds bottom spacing when multiple sidebar items are being used
+  - Adds flexbox styling
+  - Hidden on small screens
+  - Add `.k-sidebar-item--flex` to the sidebar items that need to <b>grow</b> with the layout
+  - Use <b>only</b> inside a `.k-sidebar`
+  - {unsureText}
 
-markup:
-<div class="k-sidebar-item {$modifiers}">
-    ...
-</div><!-- .k-sidebar-item -->
+  default - Default
+  .k-sidebar-item--flex - Flexing container that will grow (and not shrink)
+  .k-sidebar-item--toggle.k-js-sidebar-toggle-item - Adds a toggle button on certain screen sizes
 
-Styleguide 2.20
+  markup:
+  <div class="k-sidebar-item {$modifiers}">
+      ...
+  </div><!-- .k-sidebar-item -->
 
-*/
+  Styleguide 2.20
 
-.k-sidebar-item {
-  & + & {
-    margin-top: $k-sidebar-item-spacing;
-  }
+  */
 
-  @mixin item--flex {
-    display: flex;
-    flex-direction: column;
-    flex: 0 1 auto;
-    overflow: hidden;
-    min-height: $k-sidebar-item-flex-min-height;
-    max-height: 100%;
-
-    div {
-      flex: 1 1 auto;
-      overflow: auto;
+  .k-sidebar-item {
+    & + & {
+      margin-top: $k-sidebar-item-spacing;
     }
 
-    .k-sidebar-item__header {
+    @mixin item--flex {
+      display: flex;
+      flex-direction: column;
+      flex: 0 1 auto;
+      overflow: hidden;
+      min-height: $k-sidebar-item-flex-min-height;
+      max-height: 100%;
+
+      div {
+        flex: 1 1 auto;
+        overflow: auto;
+      }
+
+      .k-sidebar-item__header {
+        flex: 0 0 auto;
+      }
+    }
+
+    @include breakpoint($k-sidebar-left-querie-width) {
       flex: 0 0 auto;
-    }
-  }
 
-  @include breakpoint($k-sidebar-left-querie-width) {
-    flex: 0 0 auto;
+      &--flex {
+        &:only-child {
+          @include item--flex;
+        }
+      }
+    }
+
+    @include breakpoint($k-sidebar-left-querie-width) {
+      &--flex {
+        &:nth-child(n) {
+          @include item--flex;
+        }
+      }
+    }
+
+    /* On mobile */
 
     &--flex {
-      &:only-child {
-        @include item--flex;
+      display: flex;
+      flex-direction: column;
+      max-height: 100%;
+    }
+
+    /**
+     * Overflowing items
+     *
+     * 1. Set container to overflow it's items
+     */
+
+    &--overflow {
+      overflow: auto; /* 1 */
+      width: 100%;
+      flex: 0 1 auto;
+
+      @include resizing {
+        overflow: hidden;
       }
     }
   }
-
-  @include breakpoint($k-sidebar-left-querie-width) {
-    &--flex {
-      &:nth-child(n) {
-        @include item--flex;
-      }
-    }
-  }
-
-
-  /* On mobile */
-
-  &--flex {
-    display: flex;
-    flex-direction: column;
-    max-height: 100%;
-  }
-
 
   /**
-   * Overflowing items
+   * Toggle item
    *
-   * 1. Set container to overflow it's items
+   * 1. Same as width but minus 2px border width
    */
 
-  &--overflow {
-    overflow: auto; /* 1 */
-    width: 100%;
-    flex: 0 1 auto;
+  .k-sidebar-item--toggle {
+    padding-bottom: $k-sidebar-item-spacing;
 
-    @include resizing {
-      overflow: hidden;
+    .k-sidebar-item__header {
+      position: relative;
+    }
+
+    .k-sidebar-item__toggle {
+      position: absolute;
+      top: $k-sidebar-item-spacing;
+      right: $k-sidebar-item-spacing;
+
+      @include icon-after(chevron-top, true) {
+        display: block;
+        background: $k-sidebar-item-toggle-background;
+        border: $k-sidebar-item-toggle-border;
+        border-radius: $k-sidebar-item-toggle-radius;
+        width: $k-sidebar-item-toggle-size;
+        line-height: $k-sidebar-item-toggle-line-height; /* 1 */
+        text-align: center;
+        vertical-align: middle;
+        font-size: $k-sidebar-item-toggle-font-size;
+        cursor: pointer;
+        @include transition;
+      }
+
+      &.k-is-active:after {
+        transform: rotate(180deg);
+      }
+
+      @include rtl {
+        right: auto;
+        left: $k-sidebar-item-spacing;
+      }
     }
   }
-}
 
+  /*
+  Sidebar item header
 
-/**
- * Toggle item
- *
- * 1. Same as width but minus 2px border width
- */
+  - Use <b>only</b> inside a `.k-sidebar-item`
 
-.k-sidebar-item--toggle {
-  padding-bottom: $k-sidebar-item-spacing;
+  markup:
+  <div class="k-sidebar-item__header">
+      {Title}
+  </div><!-- .k-sidebar-item__header -->
+
+  sg-wrapper:
+  <div class="k-sidebar-item">
+      <sg-wrapper-content/>
+  </div><!-- .k-sidebar-item -->
+
+  Styleguide 2.20.1
+
+  */
 
   .k-sidebar-item__header {
-    position: relative;
+    padding: $k-sidebar-item-spacing $k-sidebar-item-spacing 0;
+    font-weight: $k-sidebar-item-header-font-weight;
+    text-transform: $k-sidebar-item-header-text-transform;
+    font-size: $k-sidebar-item-header-font-size;
+    line-height: $k-sidebar-item-header-line-height;
   }
 
-  .k-sidebar-item__toggle {
-    position: absolute;
-    top: $k-sidebar-item-spacing;
-    right: $k-sidebar-item-spacing;
+  /*
+  Sidebar item content
 
-    @include icon-after(chevron-top, true) {
-      display: block;
-      background: $k-sidebar-item-toggle-background;
-      border: $k-sidebar-item-toggle-border;
-      border-radius: $k-sidebar-item-toggle-radius;
-      width: $k-sidebar-item-toggle-size;
-      line-height: $k-sidebar-item-toggle-line-height; /* 1 */
-      text-align: center;
-      vertical-align: middle;
-      font-size: $k-sidebar-item-toggle-font-size;
-      cursor: pointer;
-      @include transition;
-    }
+  - Adds spacing
+  - Use <b>only</b> inside a `.k-sidebar-item`
 
-    &.k-is-active:after {
-      transform: rotate(180deg);
-    }
+  default - Default
+  .k-sidebar-item__content--small - Smaller padding
 
-    @include rtl {
-      right: auto;
-      left: $k-sidebar-item-spacing;
-    }
+  markup:
+  <div class="k-sidebar-item__content {$modifiers}">
+      <sg-wrapper-content/>
+  </div><!-- .k-sidebar-item__content -->
+
+  sg-wrapper:
+  <div class="k-sidebar-item">
+      <sg-wrapper-content/>
+  </div><!-- .k-sidebar-item -->
+
+  Styleguide 2.20.2
+
+  */
+
+  .k-sidebar-item__content {
+    padding: $k-sidebar-item-spacing;
   }
+
+  .k-sidebar-item__content--small {
+    padding: $k-sidebar-item-small-spacing;
+  }
+
+  .k-sidebar-item__content--horizontal {
+    padding: $k-sidebar-item-horizontal-spacing;
+  }
+
+  /*
+  Complete sidebar item
+
+  A complete sidebar item may look like this
+  - Hidden on small screens
+
+  markup:
+  <div class="k-sidebar-item">
+      <div class="k-sidebar-item__header">
+          Title
+      </div><!-- .k-sidebar-item__header -->
+      <div class="k-sidebar-item__content">
+          Content
+      </div><!-- .k-sidebar-item__content -->
+  </div><!-- .k-sidebar-item -->
+
+  sg-wrapper:
+  <div class="k-sidebar-left">
+      <sg-wrapper-content/>
+  </div><!-- .k-sidebar -->
+
+  Styleguide 2.20.3
+
+  */
+
 }
-
-
-/*
-Sidebar item header
-
-- Use <b>only</b> inside a `.k-sidebar-item`
-
-markup:
-<div class="k-sidebar-item__header">
-    {Title}
-</div><!-- .k-sidebar-item__header -->
-
-sg-wrapper:
-<div class="k-sidebar-item">
-    <sg-wrapper-content/>
-</div><!-- .k-sidebar-item -->
-
-Styleguide 2.20.1
-
-*/
-
-.k-sidebar-item__header {
-  padding: $k-sidebar-item-spacing $k-sidebar-item-spacing 0;
-  font-weight: $k-sidebar-item-header-font-weight;
-  text-transform: $k-sidebar-item-header-text-transform;
-  font-size: $k-sidebar-item-header-font-size;
-  line-height: $k-sidebar-item-header-line-height;
-}
-
-
-/*
-Sidebar item content
-
-- Adds spacing
-- Use <b>only</b> inside a `.k-sidebar-item`
-
-default - Default
-.k-sidebar-item__content--small - Smaller padding
-
-markup:
-<div class="k-sidebar-item__content {$modifiers}">
-    <sg-wrapper-content/>
-</div><!-- .k-sidebar-item__content -->
-
-sg-wrapper:
-<div class="k-sidebar-item">
-    <sg-wrapper-content/>
-</div><!-- .k-sidebar-item -->
-
-Styleguide 2.20.2
-
-*/
-
-.k-sidebar-item__content {
-  padding: $k-sidebar-item-spacing;
-}
-
-.k-sidebar-item__content--small {
-  padding: $k-sidebar-item-small-spacing;
-}
-
-.k-sidebar-item__content--horizontal {
-  padding: $k-sidebar-item-horizontal-spacing;
-}
-
-
-/*
-Complete sidebar item
-
-A complete sidebar item may look like this
-- Hidden on small screens
-
-markup:
-<div class="k-sidebar-item">
-    <div class="k-sidebar-item__header">
-        Title
-    </div><!-- .k-sidebar-item__header -->
-    <div class="k-sidebar-item__content">
-        Content
-    </div><!-- .k-sidebar-item__content -->
-</div><!-- .k-sidebar-item -->
-
-sg-wrapper:
-<div class="k-sidebar-left">
-    <sg-wrapper-content/>
-</div><!-- .k-sidebar -->
-
-Styleguide 2.20.3
-
-*/

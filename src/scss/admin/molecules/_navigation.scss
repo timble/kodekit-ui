@@ -1,140 +1,136 @@
-/* Navigation
-   ========================================================================== */
+@if ($k-molecules == true and $k-molecule-navigation != false) or $k-molecule-navigation == true {
 
-/*
-Navigation
+  /* Navigation
+     ========================================================================== */
 
-Sidebar navigation styling
+  /*
+  Navigation
 
-.k-is-active - Active item
+  Sidebar navigation styling
 
-markup:
-<!-- Navigation -->
-<ul class="k-navigation">
-    <li>
-        <a href="javascript:void(0)">
-            {content}
-        </a>
-    </li>
-    <li class="{$modifiers}">
-        <a href="javascript:void(0)">
-            {content}
-        </a>
-    </li>
-</ul>
+  .k-is-active - Active item
 
-Styleguide 2.16
+  markup:
+  <!-- Navigation -->
+  <ul class="k-navigation">
+      <li>
+          <a href="javascript:void(0)">
+              {content}
+          </a>
+      </li>
+      <li class="{$modifiers}">
+          <a href="javascript:void(0)">
+              {content}
+          </a>
+      </li>
+  </ul>
 
-*/
+  Styleguide 2.16
 
-/**
- * 1. Reset default <ul> styling
- */
-
-.k-navigation {
-  @include reset($padding: false, $background: false); /* 1 */
-  @include border(bottom, $k-navigation-border);
-  padding: ($k-navigation-spacing * 2) 0 (($k-navigation-spacing * 2) - 1px);
-  background: $k-navigation-background;
-
-
-  /* Override for rtl ul-ol-li styling */
-
-  @include rtl {
-    padding: ($k-navigation-spacing * 2) 0 (($k-navigation-spacing * 2) - 1px);
-  }
-
-
-  /* Items */
-
-  li {
-    display: block;
-    line-height: $k-navigation-line-height;
-  }
-
+  */
 
   /**
-   * Links
-   *
-   * 1. Make item fully clickable
-   * 2. removing underlines
+   * 1. Reset default <ul> styling
    */
 
-  a {
-    display: block; /* 1 */
-    padding-top: $k-navigation-spacing;
-    padding-bottom: $k-navigation-spacing;
-    padding-right: round($k-navigation-spacing * 2);
-    padding-left: round($k-navigation-spacing * 3);
-    font-size: $k-navigation-font-size;
-    color: $k-navigation-color;
-    text-decoration: none; // 2
+  .k-navigation {
+    @include reset($padding: false, $background: false); /* 1 */
+    @include border(bottom, $k-navigation-border);
+    padding: ($k-navigation-spacing * 2) 0 (($k-navigation-spacing * 2) - 1px);
+    background: $k-navigation-background;
+
+    /* Override for rtl ul-ol-li styling */
 
     @include rtl {
-      padding-right: round($k-navigation-spacing * 3);
-      padding-left: round($k-navigation-spacing * 2);
+      padding: ($k-navigation-spacing * 2) 0 (($k-navigation-spacing * 2) - 1px);
     }
 
+    /* Items */
 
-    /* Hover & focus state */
-
-    &:hover,
-    &:focus {
-      background: $k-navigation-hover-background;
-      color: $k-navigation-hover-color;
-      text-decoration: none; /* 2 */
+    li {
+      display: block;
+      line-height: $k-navigation-line-height;
     }
-
 
     /**
-     * Faux border
+     * Links
      *
-     * Adding a border to the left, using "after" pseudo since "before" is used for the icon
+     * 1. Make item fully clickable
+     * 2. removing underlines
      */
 
-    @include pseudo(after) {
-      left: 0;
-      top: 0;
-      width: $k-navigation-border-width;
-      height: 100%;
+    a {
+      display: block; /* 1 */
+      padding-top: $k-navigation-spacing;
+      padding-bottom: $k-navigation-spacing;
+      padding-right: round($k-navigation-spacing * 2);
+      padding-left: round($k-navigation-spacing * 3);
+      font-size: $k-navigation-font-size;
+      color: $k-navigation-color;
+      text-decoration: none; // 2
 
       @include rtl {
-        left: auto;
-        right: 0;
+        padding-right: round($k-navigation-spacing * 3);
+        padding-left: round($k-navigation-spacing * 2);
+      }
+
+      /* Hover & focus state */
+
+      &:hover,
+      &:focus {
+        background: $k-navigation-hover-background;
+        color: $k-navigation-hover-color;
+        text-decoration: none; /* 2 */
+      }
+
+      /**
+       * Faux border
+       *
+       * Adding a border to the left, using "after" pseudo since "before" is used for the icon
+       */
+
+      @include pseudo(after) {
+        left: 0;
+        top: 0;
+        width: $k-navigation-border-width;
+        height: 100%;
+
+        @include rtl {
+          left: auto;
+          right: 0;
+        }
+      }
+
+      /* Hover & focus states */
+
+      &:hover,
+      &:focus {
+        background: $k-navigation-hover-background;
+
+        &:after {
+          background: $k-navigation-hover-border;
+        }
       }
     }
 
+    /* Active link */
 
-    /* Hover & focus states */
+    .k-is-active {
+      a {
+        background: $k-navigation-active-background;
+        color: $k-navigation-active-color;
+        font-weight: $k-navigation-active-font-weight;
 
-    &:hover,
-    &:focus {
-      background: $k-navigation-hover-background;
+        &:after {
+          top: 12%;
+          height: 76%;
+          background: $k-navigation-active-border;
+        }
 
-      &:after {
-        background: $k-navigation-hover-border;
-      }
-    }
-  }
-
-
-  /* Active link */
-
-  .k-is-active {
-    a {
-      background: $k-navigation-active-background;
-      color: $k-navigation-active-color;
-      font-weight: $k-navigation-active-font-weight;
-
-      &:after {
-        top: 12%;
-        height: 76%;
-        background: $k-navigation-active-border;
-      }
-
-      &:hover {
-        background: transparent;
-        cursor: default;
+        &:hover {
+          background: transparent;
+          cursor: default;
+        }
       }
     }
   }

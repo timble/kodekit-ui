@@ -1,74 +1,75 @@
-/* Wells
-   ========================================================================== */
+@if ($k-molecules == true and $k-molecule-wells != false) or $k-molecule-wells == true {
 
-/*
-Wells
+  /* Wells
+     ========================================================================== */
 
-markup:
-<div class="k-well">
-    Content
-</div>
+  /*
+  Wells
 
-Styleguide 2.27
+  markup:
+  <div class="k-well">
+      Content
+  </div>
 
-*/
+  Styleguide 2.27
 
-.k-well {
-  padding: $k-well-spacing;
-  background-color: $k-well-background;
-  border: 1px solid $k-well-border;
-  border-radius: $k-well-radius;
-  box-shadow: $k-well-box-shadow;
-  @include content-block();
+  */
 
-  p {
-    @include content-block($k-well-paragraph-spacing);
+  .k-well {
+    padding: $k-well-spacing;
+    background-color: $k-well-background;
+    border: 1px solid $k-well-border;
+    border-radius: $k-well-radius;
+    box-shadow: $k-well-box-shadow;
+    @include content-block();
+
+    p {
+      @include content-block($k-well-paragraph-spacing);
+    }
   }
-}
 
+  /*
+  Wells content
 
-/*
-Wells content
+  markup:
+  <div class="k-well">
+      <p>Intro content</p>
+      <div class="k-well__content">
+          Content
+      </div>
+  </div>
 
-markup:
-<div class="k-well">
-    <p>Intro content</p>
-    <div class="k-well__content">
-        Content
-    </div>
-</div>
+  Styleguide 2.27.1
 
-Styleguide 2.27.1
+  */
 
-*/
-
-.k-well__content {
-  padding: $k-well-content-spacing;
-  background: $k-well-content-background;
-  border: $k-well-content-border;
-  border-radius: $k-well-radius;
-}
-
-
-/*
-Wells tabs
-
-markup:
-<div class="k-well">
-    <p>Intro content</p>
-    <sg-insert>2.22</sg-insert>
-</div>
-
-Styleguide 2.27.2
-
-*/
-
-.k-well {
-  .k-tabs-content {
-    margin: 0;
+  .k-well__content {
+    padding: $k-well-content-spacing;
     background: $k-well-content-background;
     border: $k-well-content-border;
-    border-top: none;
-    border-radius: 0 0 $k-well-radius $k-well-radius;
+    border-radius: $k-well-radius;
+  }
+
+  /*
+  Wells tabs
+
+  markup:
+  <div class="k-well">
+      <p>Intro content</p>
+      <sg-insert>2.22</sg-insert>
+  </div>
+
+  Styleguide 2.27.2
+
+  */
+
+  .k-well {
+    .k-tabs-content {
+      margin: 0;
+      background: $k-well-content-background;
+      border: $k-well-content-border;
+      border-top: none;
+      border-radius: 0 0 $k-well-radius $k-well-radius;
+    }
   }
 }

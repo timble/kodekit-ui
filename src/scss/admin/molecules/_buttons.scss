@@ -1,258 +1,252 @@
-/* Buttons
-   ========================================================================== */
+@if ($k-molecules == true and $k-molecule-buttons != false) or $k-molecule-buttons == true {
 
-/*
-Buttons
+  /* Buttons
+     ========================================================================== */
 
-.k-button--default - Default style
-.k-button--primary - Primary color styling
-.k-button--success - Success color styling
-.k-button--info - Info color styling
-.k-button--warning - Warning color styling
-.k-button--danger - Danger color styling
-.k-button--link - Link styling (while keeping height)
-.k-button--block - Full width button
+  /*
+  Buttons
 
-markup:
-<button type="button" class="k-button {$modifiers}">
-    Button text
-</button>
+  .k-button--default - Default style
+  .k-button--primary - Primary color styling
+  .k-button--success - Success color styling
+  .k-button--info - Info color styling
+  .k-button--warning - Warning color styling
+  .k-button--danger - Danger color styling
+  .k-button--link - Link styling (while keeping height)
+  .k-button--block - Full width button
 
-sg-wrapper:
-<div>
-    <sg-wrapper-content/>
-</div>
+  markup:
+  <button type="button" class="k-button {$modifiers}">
+      Button text
+  </button>
 
-Styleguide 2.3
+  sg-wrapper:
+  <div>
+      <sg-wrapper-content/>
+  </div>
 
-*/
+  Styleguide 2.3
 
-/*
-Button states
+  */
 
-Different button states
+  /*
+  Button states
 
-.k-is-active - Active buttons
-.k-is-disabled - Disabled buttons
+  Different button states
 
-markup:
-<button type="button" class="k-button k-button--default {$modifiers}">
-    Button text
-</button>
+  .k-is-active - Active buttons
+  .k-is-disabled - Disabled buttons
 
-sg-wrapper:
-<div>
-    <sg-wrapper-content/>
-</div>
+  markup:
+  <button type="button" class="k-button k-button--default {$modifiers}">
+      Button text
+  </button>
 
-Styleguide 2.3.1
+  sg-wrapper:
+  <div>
+      <sg-wrapper-content/>
+  </div>
 
-*/
+  Styleguide 2.3.1
 
-.k-button {
-  @include button-default;
-}
+  */
 
+  .k-button {
+    @include button-default;
+  }
 
-/* Alternate buttons */
+  /* Alternate buttons */
 
-.k-button--default {
-  @include button-variant($k-button-default-color, $k-button-default-background, $k-button-default-border);
-}
+  .k-button--default {
+    @include button-variant($k-button-default-color, $k-button-default-background, $k-button-default-border);
+  }
 
-.k-button--primary {
-  @include button-variant($k-button-primary-color, $k-button-primary-background, $k-button-primary-border);
-}
+  .k-button--primary {
+    @include button-variant($k-button-primary-color, $k-button-primary-background, $k-button-primary-border);
+  }
 
-.k-button--success {
-  @include button-variant($k-button-success-color, $k-button-success-background, $k-button-success-border);
-}
+  .k-button--success {
+    @include button-variant($k-button-success-color, $k-button-success-background, $k-button-success-border);
+  }
 
-.k-button--info {
-  @include button-variant($k-button-info-color, $k-button-info-background, $k-button-info-border);
-}
+  .k-button--info {
+    @include button-variant($k-button-info-color, $k-button-info-background, $k-button-info-border);
+  }
 
-.k-button--warning {
-  @include button-variant($k-button-warning-color, $k-button-warning-background, $k-button-warning-border);
-}
+  .k-button--warning {
+    @include button-variant($k-button-warning-color, $k-button-warning-background, $k-button-warning-border);
+  }
 
-.k-button--danger {
-  @include button-variant($k-button-danger-color, $k-button-danger-background, $k-button-danger-border);
-}
+  .k-button--danger {
+    @include button-variant($k-button-danger-color, $k-button-danger-background, $k-button-danger-border);
+  }
 
+  /* Link buttons */
 
-/* Link buttons */
+  .k-button--link {
+    @include button-link;
+  }
 
-.k-button--link {
-  @include button-link;
-}
+  /* Block button */
 
-
-/* Block button */
-
-.k-button--block {
-  display: block;
-  width: 100%;
-}
-
-
-/*
-Button sizes
-
-default - Default
-.k-button--tiny - Tiny
-.k-button--small - Small
-.k-button--large - Large
-
-markup:
-<button type="button" class="k-button k-button--default {$modifiers}">
-    Button text
-</button>
-
-Styleguide 2.3.2
-
-*/
-
-.k-button--tiny {
-  @include button-size($k-button-tiny-border-radius, $k-button-tiny-font-size, $k-button-tiny-line-height, $k-button-tiny-spacing-vertical $k-button-tiny-spacing-horizontal);
-}
-
-.k-button--small {
-  @include button-size($k-button-small-border-radius, $k-button-small-font-size, $k-button-small-line-height, $k-button-small-spacing-vertical $k-button-small-spacing-horizontal);
-}
-
-.k-button--large {
-  @include button-size($k-button-large-border-radius, $k-button-large-font-size, $k-button-large-line-height, $k-button-large-spacing-vertical $k-button-large-spacing-horizontal);
-}
-
-
-/* Vertically space out multiple block buttons */
-
-.k-button--block + .k-button--block {
-  margin-top: $k-button-spacer;
-}
-
-
-/* Specificity overrides */
-
-input[type="submit"],
-input[type="reset"],
-input[type="button"] {
-  &.k-button--block {
+  .k-button--block {
+    display: block;
     width: 100%;
   }
-}
 
+  /*
+  Button sizes
 
-/*
-Button groups
+  default - Default
+  .k-button--tiny - Tiny
+  .k-button--small - Small
+  .k-button--large - Large
 
-markup:
-<div class="k-button-group">
-    <sg-insert>2.3.1-1</sg-insert>
-    <sg-insert>2.3-1</sg-insert>
-    <sg-insert>2.3-1</sg-insert>
-</div>
+  markup:
+  <button type="button" class="k-button k-button--default {$modifiers}">
+      Button text
+  </button>
 
-Styleguide 2.3.3
+  Styleguide 2.3.2
 
-*/
+  */
 
-.k-button-group {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
+  .k-button--tiny {
+    @include button-size($k-button-tiny-border-radius, $k-button-tiny-font-size, $k-button-tiny-line-height, $k-button-tiny-spacing-vertical $k-button-tiny-spacing-horizontal);
+  }
 
-  & > .k-button {
+  .k-button--small {
+    @include button-size($k-button-small-border-radius, $k-button-small-font-size, $k-button-small-line-height, $k-button-small-spacing-vertical $k-button-small-spacing-horizontal);
+  }
+
+  .k-button--large {
+    @include button-size($k-button-large-border-radius, $k-button-large-font-size, $k-button-large-line-height, $k-button-large-spacing-vertical $k-button-large-spacing-horizontal);
+  }
+
+  /* Vertically space out multiple block buttons */
+
+  .k-button--block + .k-button--block {
+    margin-top: $k-button-spacer;
+  }
+
+  /* Specificity overrides */
+
+  input[type="submit"],
+  input[type="reset"],
+  input[type="button"] {
+    &.k-button--block {
+      width: 100%;
+    }
+  }
+
+  /*
+  Button groups
+
+  markup:
+  <div class="k-button-group">
+      <sg-insert>2.3.1-1</sg-insert>
+      <sg-insert>2.3-1</sg-insert>
+      <sg-insert>2.3-1</sg-insert>
+  </div>
+
+  Styleguide 2.3.3
+
+  */
+
+  .k-button-group {
     position: relative;
-    float: left;
-    margin: 0;
+    display: inline-block;
+    vertical-align: middle;
 
-    @include rtl {
-      float: right;
+    & > .k-button {
+      position: relative;
+      float: left;
+      margin: 0;
+
+      @include rtl {
+        float: right;
+      }
+
+      /* Bring the "active" button to the front */
+
+      &:hover,
+      &:focus,
+      &:active,
+      &.k-is-active {
+        z-index: 2;
+      }
     }
 
+    /* Prevent double borders when buttons are next to each other */
 
-    /* Bring the "active" button to the front */
-
-    &:hover,
-    &:focus,
-    &:active,
-    &.k-is-active {
-      z-index: 2;
-    }
-  }
-
-
-  /* Prevent double borders when buttons are next to each other */
-
-  .k-button + .k-button,
-  .k-button + .k-button-group,
-  .k-button-group + .k-button,
-  .k-button-group + .k-button-group {
-    margin-left: -1px;
-
-    &:first-child {
-      margin-left: 0;
-    }
-  }
-
-  @include rtl {
     .k-button + .k-button,
     .k-button + .k-button-group,
     .k-button-group + .k-button,
     .k-button-group + .k-button-group {
-      margin-left: 0;
-      margin-right: -1px;
+      margin-left: -1px;
 
       &:first-child {
-        margin-right: 0;
+        margin-left: 0;
       }
     }
-  }
-
-  & > .k-button:not(:first-child):not(:last-child) {
-    border-radius: 0;
-  }
-
-  & > .k-button:first-child:not(:last-child) {
-    @include border-right-radius(0);
 
     @include rtl {
-      @include border-right-radius($k-button-border-radius);
-      @include border-left-radius(0);
+      .k-button + .k-button,
+      .k-button + .k-button-group,
+      .k-button-group + .k-button,
+      .k-button-group + .k-button-group {
+        margin-left: 0;
+        margin-right: -1px;
 
-      &.k-button--tiny {
-        @include border-right-radius($k-button-tiny-border-radius);
-      }
-
-      &.k-button--small {
-        @include border-right-radius($k-button-small-border-radius);
-      }
-
-      &.k-button--large {
-        @include border-right-radius($k-button-large-border-radius);
+        &:first-child {
+          margin-right: 0;
+        }
       }
     }
-  }
 
-  & > .k-button:last-child:not(:first-child) {
-    @include border-left-radius(0);
+    & > .k-button:not(:first-child):not(:last-child) {
+      border-radius: 0;
+    }
 
-    @include rtl {
-      @include border-left-radius($k-button-border-radius);
+    & > .k-button:first-child:not(:last-child) {
       @include border-right-radius(0);
 
-      &.k-button--tiny {
-        @include border-left-radius($k-button-tiny-border-radius);
-      }
+      @include rtl {
+        @include border-right-radius($k-button-border-radius);
+        @include border-left-radius(0);
 
-      &.k-button--small {
-        @include border-left-radius($k-button-small-border-radius);
-      }
+        &.k-button--tiny {
+          @include border-right-radius($k-button-tiny-border-radius);
+        }
 
-      &.k-button--large {
-        @include border-left-radius($k-button-large-border-radius);
+        &.k-button--small {
+          @include border-right-radius($k-button-small-border-radius);
+        }
+
+        &.k-button--large {
+          @include border-right-radius($k-button-large-border-radius);
+        }
+      }
+    }
+
+    & > .k-button:last-child:not(:first-child) {
+      @include border-left-radius(0);
+
+      @include rtl {
+        @include border-left-radius($k-button-border-radius);
+        @include border-right-radius(0);
+
+        &.k-button--tiny {
+          @include border-left-radius($k-button-tiny-border-radius);
+        }
+
+        &.k-button--small {
+          @include border-left-radius($k-button-small-border-radius);
+        }
+
+        &.k-button--large {
+          @include border-left-radius($k-button-large-border-radius);
+        }
       }
     }
   }

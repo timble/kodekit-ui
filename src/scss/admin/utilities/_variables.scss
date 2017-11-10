@@ -1,3 +1,69 @@
+// Building the UI
+//
+// By default everything is enabled
+// Disable entire groups by setting `$k-molecules: false` for example
+// Disable individual molecules by setting `$k-molecule-alert: false' for example
+// Enable individual molecules by setting `$k-molecules: false` and `$k-molecule-alert: true' for example
+
+$k-layout:                      true !default;
+$k-layout-component:            inherit !default;
+$k-layout-component-wrapper:    inherit !default;
+$k-layout-content:              inherit !default;
+$k-layout-content-wrapper:      inherit !default;
+$k-layout-flex-wrapper:         inherit !default;
+$k-layout-grid:                 inherit !default;
+$k-layout-koowa-container:      inherit !default;
+$k-layout-sidebar:              inherit !default;
+$k-layout-wrapper:              inherit !default;
+
+$k-atoms:                       true !default;
+$k-atom-a:                      inherit !default;
+$k-atom-body:                   inherit !default;
+$k-atom-dl:                     inherit !default;
+$k-atom-fieldset:               inherit !default;
+$k-atom-html:                   inherit !default;
+$k-atom-img:                    inherit !default;
+$k-atom-input:                  inherit !default;
+$k-atom-label:                  inherit !default;
+$k-atom-legend:                 inherit !default;
+$k-atom-p:                      inherit !default;
+$k-atom-ul-ol-li:               inherit !default;
+
+$k-molecules:                   true !default;
+$k-molecule-alert:              inherit !default;
+$k-molecule-breadcrumb:         inherit !default;
+$k-molecule-buttons:            inherit !default;
+$k-molecule-card:               inherit !default;
+$k-molecule-datepicker:         inherit !default;
+$k-molecule-dropdowns:          inherit !default;
+$k-molecule-empty-state:        inherit !default;
+$k-molecule-form-block:         inherit !default;
+$k-molecule-forms:              inherit !default;
+$k-molecule-gallery:            inherit !default;
+$k-molecule-heading:            inherit !default;
+$k-molecule-icons:              inherit !default;
+$k-molecule-list:               inherit !default;
+$k-molecule-login:              inherit !default;
+$k-molecule-modal:              inherit !default;
+$k-molecule-navigation:         inherit !default;
+$k-molecule-optionlist:         inherit !default;
+$k-molecule-pagination:         inherit !default;
+$k-molecule-responsive-table:   inherit !default;
+$k-molecule-scopebar:           inherit !default;
+$k-molecule-select2:            inherit !default;
+$k-molecule-sidebar-item:       inherit !default;
+$k-molecule-styled-file-input:  inherit !default;
+$k-molecule-table:              inherit !default;
+$k-molecule-tabs:               inherit !default;
+$k-molecule-title-bar:          inherit !default;
+$k-molecule-toolbar:            inherit !default;
+$k-molecule-tooltip:            inherit !default;
+$k-molecule-top:                inherit !default;
+$k-molecule-tree:               inherit !default;
+$k-molecule-wells:              inherit !default;
+
+
+
 // Breakpoints
 // ==========================================================================
 //

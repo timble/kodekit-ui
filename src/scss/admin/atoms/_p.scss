@@ -1,24 +1,27 @@
-/* Paragraph
-   ========================================================================== */
+@if ($k-atoms == true and $k-atom-p != false) or $k-atom-p == true {
 
-/*
-Paragraph
+  /* Paragraph
+     ========================================================================== */
 
-- Paragraphs have a bottom margin to separate them from each other
-- The last-child doesn't have this bottom margin so parent containers can have four-sided paddings
+  /*
+  Paragraph
 
-markup:
-<p>...</p>
+  - Paragraphs have a bottom margin to separate them from each other
+  - The last-child doesn't have this bottom margin so parent containers can have four-sided paddings
 
-Styleguide 1.7
+  markup:
+  <p>...</p>
 
-*/
+  Styleguide 1.7
 
-/**
- * 1. Remove default top-margin
- */
+  */
 
-p {
-  margin-top: 0; /* 1 */
-  @include content-block;
+  /**
+   * 1. Remove default top-margin
+   */
+
+  p {
+    margin-top: 0; /* 1 */
+    @include content-block;
+  }
 }

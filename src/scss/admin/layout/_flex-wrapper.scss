@@ -1,30 +1,33 @@
-/* Flex wrapper
-   ========================================================================== */
+@if ($k-layout == true and $k-layout-flex-wrapper != false) or $k-layout-flex-wrapper == true {
 
-/*
-Flex wrapper
+  /* Flex wrapper
+     ========================================================================== */
 
-A flex wrapper that can be used on elements that need flexbox
-- Only use this class on containers that only contain one child
-- This is a shrink and grow container
+  /*
+  Flex wrapper
 
-markup:
-<div class="k-flex-wrapper">
-    ...
-</div><!-- .k-flex-wrapper -->
+  A flex wrapper that can be used on elements that need flexbox
+  - Only use this class on containers that only contain one child
+  - This is a shrink and grow container
 
-Styleguide 3.8
+  markup:
+  <div class="k-flex-wrapper">
+      ...
+  </div><!-- .k-flex-wrapper -->
 
-*/
+  Styleguide 3.8
 
-.k-flex-wrapper {
-  @include reset;
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 auto;
-  overflow: auto;
+  */
 
-  @include resizing {
-    overflow: hidden;
+  .k-flex-wrapper {
+    @include reset;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    overflow: auto;
+
+    @include resizing {
+      overflow: hidden;
+    }
   }
 }

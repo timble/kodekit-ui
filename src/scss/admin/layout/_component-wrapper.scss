@@ -1,44 +1,45 @@
-/* Component wrapper
-   ========================================================================== */
+@if ($k-layout == true and $k-layout-component-wrapper != false) or $k-layout-component-wrapper == true {
 
-/*
-Component wrapper
+  /* Component wrapper
+     ========================================================================== */
 
-- Use as <b>child</b> of the `.k-content` container only
-- Can be preceded by a `.k-title-bar.k-title-bar--mobile` or a `.k-toolbar`
-- {unsureText}
+  /*
+  Component wrapper
 
-markup:
-<div class="k-component-wrapper">
-    ...
-</div><!-- .k-component-wrapper -->
+  - Use as <b>child</b> of the `.k-content` container only
+  - Can be preceded by a `.k-title-bar.k-title-bar--mobile` or a `.k-toolbar`
+  - {unsureText}
 
-Styleguide 3.6
+  markup:
+  <div class="k-component-wrapper">
+      ...
+  </div><!-- .k-component-wrapper -->
 
-*/
+  Styleguide 3.6
 
-.k-component-wrapper {
-  position: relative;
-  background: $k-component-background;
+  */
 
+  .k-component-wrapper {
+    position: relative;
+    background: $k-component-background;
 
-  /**
-   * When flexbox is in use
-   *
-   * 1. Reset width needed for table
-   * 2. Set overflow for breadcrumbs to properly work
-   */
+    /**
+     * When flexbox is in use
+     *
+     * 1. Reset width needed for table
+     * 2. Set overflow for breadcrumbs to properly work
+     */
 
-  display: flex;
-  flex-direction: row;
-  flex: 1 1 auto;
-  overflow: auto;
-  min-height: 0;
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+    overflow: auto;
+    min-height: 0;
 
+    /* Hide overtflow when resizing the window */
 
-  /* Hide overtflow when resizing the window */
-
-  @include resizing {
-    overflow: hidden;
+    @include resizing {
+      overflow: hidden;
+    }
   }
 }

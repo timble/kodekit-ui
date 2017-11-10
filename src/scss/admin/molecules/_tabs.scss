@@ -1,266 +1,260 @@
-/* Tabs
-   ========================================================================== */
+@if ($k-molecules == true and $k-molecule-tabs != false) or $k-molecule-tabs == true {
 
-/**
- * Tabs container (not mandatory)
- */
-
-.k-tabs-container {
-  @include clearfix;
-  overflow: visible;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0;
-  flex: 1 1 auto;
-
-  /* When resizing */
-  @include resizing {
-    overflow: hidden;
-  }
-
-  &:not(:first-child) .k-tabs-scroller .k-tabs {
-    border-top: 1px solid $k-tabs-border;
-    padding-top: $k-tabs-spacing;
-  }
-
-  > .k-tabs-content {
-    @include clearfix;
-
-    > .k-tab {
-      padding: 0;
-    }
-  }
-}
-
-
-/**
- * Tabs wrapper
- */
-
-.k-tabs-wrapper {
-  position: relative;
-  height: $k-tabs-wrapper-height;
-  overflow: hidden;
-  @include transition;
-}
-
-
-/**
- * Tabs scroller
- */
-
-.k-tabs-scroller {
-  height: $k-tabs-scroller-height;
-  overflow: auto;
-
-  > .k-tabs {
-    padding: $k-tabs-scroller-spacing;
-    background: $k-tabs-active-link-hover-background;
-    white-space: nowrap;
-    display: inline-block;
-    min-width: 100%;
-
-    @include breakpoint($k-charlie) {
-      padding-left: $k-tabs-scroller-spacing-charlie;
-      padding-right: $k-tabs-scroller-spacing-charlie;
-    }
-  }
-
-  > .k-tabs li.k-is-active a {
-    background: $k-tabs-scroller-item-active-background;
-    color: $k-tabs-scroller-item-active-color;
-  }
-}
-
-
-/**
- * Tabs wrapper
- *
- * 1. For proper offset calculation in JS
- */
-
-.k-tabs {
-  position: relative; /* 1 */
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  border-bottom: $k-tabs-border-width solid $k-tabs-border;
-  font-size: 0;
-
+  /* Tabs
+     ========================================================================== */
 
   /**
-   * 1. Make the list-items overlay the bottom border
+   * Tabs container (not mandatory)
    */
 
-  li {
-    position: relative;
-    display: inline-block;
-    margin-bottom: -($k-tabs-border-width); /* 1 */
-    margin-right: $k-tabs-item-spacing;
+  .k-tabs-container {
+    @include clearfix;
+    overflow: visible;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    flex: 1 1 auto;
 
-    &:last-child {
-      margin-right: 0;
+    /* When resizing */
+    @include resizing {
+      overflow: hidden;
     }
 
-    @include rtl() {
-      margin-right: auto;
-      margin-left: $k-tabs-item-spacing;
+    &:not(:first-child) .k-tabs-scroller .k-tabs {
+      border-top: 1px solid $k-tabs-border;
+      padding-top: $k-tabs-spacing;
+    }
 
-      &:last-child {
-        margin-left: 0;
+    > .k-tabs-content {
+      @include clearfix;
+
+      > .k-tab {
+        padding: 0;
       }
     }
   }
 
-
   /**
-   * Disabled state sets text to gray and nukes hover/tab effects
+   * Tabs wrapper
    */
 
-  .k-is-disabled a {
-    color: $k-tabs-disabled-link-color;
-    cursor: $k-tabs-item-disabled-cursor;
-    pointer-events: none;
-
-    &:hover,
-    &:focus {
-      color: inherit;
-      text-decoration: none;
-      background-color: transparent;
-      cursor: $k-tabs-item-disabled-cursor;
-    }
-  }
-
-
-  /**
-   * Active state, and its :hover to override normal :hover
-   */
-
-  .k-is-active a {
-    &,
-    &:hover,
-    &:focus {
-      color: $k-tabs-active-link-hover-color;
-      background-color: $k-tabs-active-link-hover-background;
-      border: 1px solid $k-tabs-active-link-hover-border;
-      border-bottom-color: transparent;
-      cursor: default;
-    }
-  }
-
-
-  /**
-   * Links
-   */
-
-  a {
+  .k-tabs-wrapper {
     position: relative;
-    display: block;
-    padding: $k-tabs-link-spacing;
-    line-height: $k-tabs-item-line-height;
-    border: $k-tabs-item-border;
-    border-radius: $k-tabs-item-border-radius;
-    text-decoration: none;
-    font-size: $k-tabs-item-font-size;
-
-    &:hover,
-    &:focus {
-      text-decoration: none;
-      background-color: $k-tabs-link-hover-background;
-      border-color: $k-tabs-link-hover-border;
-    }
-  }
-}
-
-
-/**
- * Tabbable tabs
- *
- * Hide tabbable panes to start, show them when `.k-is-active`
- */
-
-.k-tabs-content {
-  > .k-tab {
-    display: none;
-    padding: $k-spacing-small;
-  }
-
-  > .k-is-active {
-    display: block;
-  }
-}
-
-
-/**
- * Left and right buttons for scrollable tabs
- */
-
-.k-tabs-scroller-prev,
-.k-tabs-scroller-next {
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: $k-tabs-overflow-button-width;
-  overflow: hidden;
-  opacity: 0;
-  background: $k-tabs-active-link-hover-background;
-  border: $k-tabs-overflow-button-border;
-  border-radius: 0;
-  @include transition;
-
-  span {
+    height: $k-tabs-wrapper-height;
+    overflow: hidden;
     @include transition;
   }
-}
 
-.k-tabs-scroller-prev {
-  left: 0;
-  border-left: none;
-  transform: translateX(-100%);
-}
+  /**
+   * Tabs scroller
+   */
 
-.k-tabs-scroller-next {
-  right: 0;
-  border-right: none;
-  transform: translateX(100%);
-}
+  .k-tabs-scroller {
+    height: $k-tabs-scroller-height;
+    overflow: auto;
 
-.k-has-tabs-overflow {
-  padding-left: $k-tabs-overflow-button-width;
-  padding-right: $k-tabs-overflow-button-width;
+    > .k-tabs {
+      padding: $k-tabs-scroller-spacing;
+      background: $k-tabs-active-link-hover-background;
+      white-space: nowrap;
+      display: inline-block;
+      min-width: 100%;
+
+      @include breakpoint($k-charlie) {
+        padding-left: $k-tabs-scroller-spacing-charlie;
+        padding-right: $k-tabs-scroller-spacing-charlie;
+      }
+    }
+
+    > .k-tabs li.k-is-active a {
+      background: $k-tabs-scroller-item-active-background;
+      color: $k-tabs-scroller-item-active-color;
+    }
+  }
+
+  /**
+   * Tabs wrapper
+   *
+   * 1. For proper offset calculation in JS
+   */
+
+  .k-tabs {
+    position: relative; /* 1 */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-bottom: $k-tabs-border-width solid $k-tabs-border;
+    font-size: 0;
+
+    /**
+     * 1. Make the list-items overlay the bottom border
+     */
+
+    li {
+      position: relative;
+      display: inline-block;
+      margin-bottom: -($k-tabs-border-width); /* 1 */
+      margin-right: $k-tabs-item-spacing;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      @include rtl() {
+        margin-right: auto;
+        margin-left: $k-tabs-item-spacing;
+
+        &:last-child {
+          margin-left: 0;
+        }
+      }
+    }
+
+    /**
+     * Disabled state sets text to gray and nukes hover/tab effects
+     */
+
+    .k-is-disabled a {
+      color: $k-tabs-disabled-link-color;
+      cursor: $k-tabs-item-disabled-cursor;
+      pointer-events: none;
+
+      &:hover,
+      &:focus {
+        color: inherit;
+        text-decoration: none;
+        background-color: transparent;
+        cursor: $k-tabs-item-disabled-cursor;
+      }
+    }
+
+    /**
+     * Active state, and its :hover to override normal :hover
+     */
+
+    .k-is-active a {
+      &,
+      &:hover,
+      &:focus {
+        color: $k-tabs-active-link-hover-color;
+        background-color: $k-tabs-active-link-hover-background;
+        border: 1px solid $k-tabs-active-link-hover-border;
+        border-bottom-color: transparent;
+        cursor: default;
+      }
+    }
+
+    /**
+     * Links
+     */
+
+    a {
+      position: relative;
+      display: block;
+      padding: $k-tabs-link-spacing;
+      line-height: $k-tabs-item-line-height;
+      border: $k-tabs-item-border;
+      border-radius: $k-tabs-item-border-radius;
+      text-decoration: none;
+      font-size: $k-tabs-item-font-size;
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        background-color: $k-tabs-link-hover-background;
+        border-color: $k-tabs-link-hover-border;
+      }
+    }
+  }
+
+  /**
+   * Tabbable tabs
+   *
+   * Hide tabbable panes to start, show them when `.k-is-active`
+   */
+
+  .k-tabs-content {
+    > .k-tab {
+      display: none;
+      padding: $k-spacing-small;
+    }
+
+    > .k-is-active {
+      display: block;
+    }
+  }
+
+  /**
+   * Left and right buttons for scrollable tabs
+   */
 
   .k-tabs-scroller-prev,
   .k-tabs-scroller-next {
-    transform: translateX(0);
-    cursor: no-drop;
-    opacity: 1;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: $k-tabs-overflow-button-width;
+    overflow: hidden;
+    opacity: 0;
+    background: $k-tabs-active-link-hover-background;
+    border: $k-tabs-overflow-button-border;
+    border-radius: 0;
+    @include transition;
 
     span {
-      opacity: $k-tabs-overflow-button-opacity-off;
+      @include transition;
     }
   }
-}
 
-.k-has-tabs-left-overflow {
   .k-tabs-scroller-prev {
-    opacity: 1;
-    cursor: pointer;
+    left: 0;
+    border-left: none;
+    transform: translateX(-100%);
+  }
 
-    span {
-      opacity: $k-tabs-overflow-button-opacity-on;
+  .k-tabs-scroller-next {
+    right: 0;
+    border-right: none;
+    transform: translateX(100%);
+  }
+
+  .k-has-tabs-overflow {
+    padding-left: $k-tabs-overflow-button-width;
+    padding-right: $k-tabs-overflow-button-width;
+
+    .k-tabs-scroller-prev,
+    .k-tabs-scroller-next {
+      transform: translateX(0);
+      cursor: no-drop;
+      opacity: 1;
+
+      span {
+        opacity: $k-tabs-overflow-button-opacity-off;
+      }
     }
   }
-}
 
-.k-has-tabs-right-overflow {
-  .k-tabs-scroller-next {
-    opacity: 1;
-    cursor: pointer;
+  .k-has-tabs-left-overflow {
+    .k-tabs-scroller-prev {
+      opacity: 1;
+      cursor: pointer;
 
-    span {
-      opacity: $k-tabs-overflow-button-opacity-on;
+      span {
+        opacity: $k-tabs-overflow-button-opacity-on;
+      }
+    }
+  }
+
+  .k-has-tabs-right-overflow {
+    .k-tabs-scroller-next {
+      opacity: 1;
+      cursor: pointer;
+
+      span {
+        opacity: $k-tabs-overflow-button-opacity-on;
+      }
     }
   }
 }

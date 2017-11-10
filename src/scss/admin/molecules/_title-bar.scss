@@ -1,102 +1,103 @@
-/* Title bar
-   ========================================================================== */
+@if ($k-molecules == true and $k-molecule-title-bar != false) or $k-molecule-title-bar == true {
 
-/*
-Title bar
+  /* Title bar
+     ========================================================================== */
 
-- A titlebar that can be displayed above the `content-wrapper` when there's no toolbar
-- Very useful inside modal views
-- Always have at least a `k-titlebar` or a `k-toolbar` when there's a `k-sidebar` in your page!
-- Use as <b>first child</b> of the `.k-wrapper` only
-- {unsureText}
+  /*
+  Title bar
 
-markup:
-<div class="k-title-bar k-js-title-bar">
-    <div class="k-title-bar__heading">Title</div>
-</div><!-- .k-title-bar -->
+  - A titlebar that can be displayed above the `content-wrapper` when there's no toolbar
+  - Very useful inside modal views
+  - Always have at least a `k-titlebar` or a `k-toolbar` when there's a `k-sidebar` in your page!
+  - Use as <b>first child</b> of the `.k-wrapper` only
+  - {unsureText}
 
-Styleguide 2.23
+  markup:
+  <div class="k-title-bar k-js-title-bar">
+      <div class="k-title-bar__heading">Title</div>
+  </div><!-- .k-title-bar -->
 
-*/
+  Styleguide 2.23
 
-/**
- * 1. Set the z-index higher than the menus
- * 2. Setting a background so container will fall nicely over the sidebar
- */
+  */
 
-.k-title-bar {
-  @include border(bottom, $k-title-bar-border);
-  position: relative; /* 1 */
-  z-index: $k-title-bar-z-index; /* 1 */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  background: $k-title-bar-background; /* 2 */
-  color: $k-title-bar-color;
-  font-size: $k-title-bar-font-size;
-  flex: 0 0 auto;
-}
+  /**
+   * 1. Set the z-index higher than the menus
+   * 2. Setting a background so container will fall nicely over the sidebar
+   */
 
-
-/**
- * Titlebar contents
- */
-
-.k-title-bar {
-  .k-off-canvas-menu-toggle-holder,
-  .k-title-bar__heading {
-    flex: 0 0 auto
+  .k-title-bar {
+    @include border(bottom, $k-title-bar-border);
+    position: relative; /* 1 */
+    z-index: $k-title-bar-z-index; /* 1 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: $k-title-bar-background; /* 2 */
+    color: $k-title-bar-color;
+    font-size: $k-title-bar-font-size;
+    flex: 0 0 auto;
   }
 
-  .k-off-canvas-menu-toggle-holder {
-    white-space: nowrap;
-  }
+  /**
+   * Titlebar contents
+   */
 
-  .k-title-bar__heading {
-    flex: 1 1 auto;
-    padding: $k-title-bar-spacing $k-title-bar-spacing ($k-title-bar-spacing - 1px);
-    text-align: center;
+  .k-title-bar {
+    .k-off-canvas-menu-toggle-holder,
+    .k-title-bar__heading {
+      flex: 0 0 auto
+    }
 
-    @include breakpoint($k-charlie) {
-      text-align: left;
+    .k-off-canvas-menu-toggle-holder {
+      white-space: nowrap;
+    }
 
-      @include rtl {
-        text-align: right;
+    .k-title-bar__heading {
+      flex: 1 1 auto;
+      padding: $k-title-bar-spacing $k-title-bar-spacing ($k-title-bar-spacing - 1px);
+      text-align: center;
+
+      @include breakpoint($k-charlie) {
+        text-align: left;
+
+        @include rtl {
+          text-align: right;
+        }
       }
+    }
+
+    .k-off-canvas-menu-toggle {
+      margin: $k-title-bar-spacing $k-title-bar-spacing ($k-title-bar-spacing - 1px);
     }
   }
 
-  .k-off-canvas-menu-toggle {
-    margin: $k-title-bar-spacing $k-title-bar-spacing ($k-title-bar-spacing - 1px);
-  }
-}
+  /*
+  Mobile title
 
+  Title just for mobile views since the navigation is hidden
+  - Use <b>never</b> together with a `.k-title-bar`
+  - Use <b>only</b> as <b>child</b> of `.k-wrapper`
+  - Only visible on smaller screens
+  - {unsureText}
 
-/*
-Mobile title
+  markup:
+  <!-- Title when sidebar is invisible -->
+  <div class="k-title-bar k-title-bar--mobile k-js-title-bar">
+    <div class="k-title-bar__heading">{Title}</div>
+  </div><!-- .k-title-bar -->
 
-Title just for mobile views since the navigation is hidden
-- Use <b>never</b> together with a `.k-title-bar`
-- Use <b>only</b> as <b>child</b> of `.k-wrapper`
-- Only visible on smaller screens
-- {unsureText}
+  Styleguide 2.23.1
 
-markup:
-<!-- Title when sidebar is invisible -->
-<div class="k-title-bar k-title-bar--mobile k-js-title-bar">
-  <div class="k-title-bar__heading">{Title}</div>
-</div><!-- .k-title-bar -->
+  */
 
-Styleguide 2.23.1
+  .k-title-bar--mobile {
+    @include border(bottom, $k-title-bar-mobile-border);
+    background: $k-title-bar-mobile-background;
 
-*/
-
-.k-title-bar--mobile {
-  @include border(bottom, $k-title-bar-mobile-border);
-  background: $k-title-bar-mobile-background;
-
-  @include breakpoint($k-charlie) {
-    display: none;
+    @include breakpoint($k-charlie) {
+      display: none;
+    }
   }
 }

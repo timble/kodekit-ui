@@ -1,139 +1,136 @@
-/* Grid
-   ========================================================================== */
+@if ($k-layout == true and $k-layout-grid != false) or $k-layout-grid == true {
 
-/*
-Grid
+  /* Grid
+     ========================================================================== */
 
-Fluid grid system
-- Has `full`, `main` and `sub` containers
-- Main and sub float next to each other
-- Main should always come first since the info is more important
-- {unsureText}
+  /*
+  Grid
 
-markup:
-<div class="k-container">
-    <div class="k-container__full">
-        ...
-    </div>
-    <div class="k-container__main">
-        ...
-    </div>
-    <div class="k-container__sub">
-        ...
-    </div>
-</div><!-- .k-container -->
+  Fluid grid system
+  - Has `full`, `main` and `sub` containers
+  - Main and sub float next to each other
+  - Main should always come first since the info is more important
+  - {unsureText}
 
-Styleguide 3.7
+  markup:
+  <div class="k-container">
+      <div class="k-container__full">
+          ...
+      </div>
+      <div class="k-container__main">
+          ...
+      </div>
+      <div class="k-container__sub">
+          ...
+      </div>
+  </div><!-- .k-container -->
 
-*/
+  Styleguide 3.7
 
-/* Container */
+  */
 
-.k-container {
-  @include clearfix;
-  overflow: hidden;
-  width: 100%;
-  margin: 0 auto;
-  padding: $k-spacing ($k-spacing / 2);
-  flex: 0 0 auto;
+  /* Container */
 
-  /* When resizing */
-  @include resizing {
+  .k-container {
+    @include clearfix;
     overflow: hidden;
-  }
-}
+    width: 100%;
+    margin: 0 auto;
+    padding: $k-spacing ($k-spacing / 2);
+    flex: 0 0 auto;
 
-
-/* Flex container */
-
-.k-container--flex {
-  margin: 0 auto;
-  padding: $k-spacing;
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 auto;
-}
-
-
-/* --------------------------------------------------------------------------
-   Grid children
-   -------------------------------------------------------------------------- */
-
-/* Main container */
-
-.k-container__main {
-  margin-bottom: $k-spacing;
-
-  @include breakpoint($k-charlie) {
-    float: left;
-    margin: 0 ($k-spacing / 2) $k-spacing;
-    width: calc(100% * 8/12 - #{$k-spacing});
-
-    @include rtl {
-      float: right;
+    /* When resizing */
+    @include resizing {
+      overflow: hidden;
     }
   }
-}
 
+  /* Flex container */
 
-/* When a sidebar is active next to it */
-
-.k-sidebar + .k-content .k-container__main {
-  @include breakpoint($k-charlie) {
-    width: 100%;
+  .k-container--flex {
+    margin: 0 auto;
+    padding: $k-spacing;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
   }
 
-  @include breakpoint($k-delta) {
-    width: calc(100% * 8/12 - #{$k-spacing});
-    margin-bottom: 0;
-  }
-}
+  /* --------------------------------------------------------------------------
+     Grid children
+     -------------------------------------------------------------------------- */
 
+  /* Main container */
 
-/* Sub container */
+  .k-container__main {
+    margin-bottom: $k-spacing;
 
-.k-container__sub {
-  margin-bottom: $k-spacing;
+    @include breakpoint($k-charlie) {
+      float: left;
+      margin: 0 ($k-spacing / 2) $k-spacing;
+      width: calc(100% * 8 / 12 - #{$k-spacing});
 
-  @include breakpoint($k-charlie) {
-    float: left;
-    margin: 0 ($k-spacing / 2) $k-spacing;
-    width: calc(100% * 4/12 - #{$k-spacing});
-
-    @include rtl {
-      float: right;
+      @include rtl {
+        float: right;
+      }
     }
   }
-}
 
+  /* When a sidebar is active next to it */
 
-/* When a sidebar is active next to it */
+  .k-sidebar + .k-content .k-container__main {
+    @include breakpoint($k-charlie) {
+      width: 100%;
+    }
 
-.k-sidebar + .k-content .k-container__sub {
-  @include breakpoint($k-charlie) {
-    width: 100%;
+    @include breakpoint($k-delta) {
+      width: calc(100% * 8 / 12 - #{$k-spacing});
+      margin-bottom: 0;
+    }
   }
 
-  @include breakpoint($k-delta) {
-    width: calc(100% * 4/12 - #{$k-spacing});
-    margin-bottom: 0;
-  }
-}
+  /* Sub container */
 
+  .k-container__sub {
+    margin-bottom: $k-spacing;
 
-/* Full container */
+    @include breakpoint($k-charlie) {
+      float: left;
+      margin: 0 ($k-spacing / 2) $k-spacing;
+      width: calc(100% * 4 / 12 - #{$k-spacing});
 
-.k-container__full {
-  clear: both;
-  width: auto;
-  margin: 0 0 $k-spacing;
-
-  &:last-child {
-    margin-bottom: 0;
+      @include rtl {
+        float: right;
+      }
+    }
   }
 
-  @include breakpoint($k-charlie) {
-    margin-left: ($k-spacing / 2);
-    margin-right: ($k-spacing / 2);
+  /* When a sidebar is active next to it */
+
+  .k-sidebar + .k-content .k-container__sub {
+    @include breakpoint($k-charlie) {
+      width: 100%;
+    }
+
+    @include breakpoint($k-delta) {
+      width: calc(100% * 4 / 12 - #{$k-spacing});
+      margin-bottom: 0;
+    }
+  }
+
+  /* Full container */
+
+  .k-container__full {
+    clear: both;
+    width: auto;
+    margin: 0 0 $k-spacing;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include breakpoint($k-charlie) {
+      margin-left: ($k-spacing / 2);
+      margin-right: ($k-spacing / 2);
+    }
   }
 }

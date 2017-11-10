@@ -1,462 +1,458 @@
-/* Card
-   ========================================================================== */
+@if ($k-molecules == true and $k-molecule-card != false) or $k-molecule-card == true {
 
-/*
-Card
+  /* Card
+     ========================================================================== */
 
-default - Default
-.k-card--rounded - Rounded
-.k-card--center - Center content
+  /*
+  Card
 
-markup:
-<div class="k-card {$modifiers}">
-    <div class="k-card__body">
-        <div class="k-card__image">
-            <img src="{image source}" alt="{alternative text}">
-        </div>
-        <div class="k-card__header">
-            Card title
-        </div>
-        <div class="k-card__section">
-            Nullam id dolor id nibh ultricies vehicula ut id elit.
-        </div>
-        <div class="k-card__footer">
-            <a class="k-button k-button--primary" href="javascript:void(0);">Link</a>
-        </div>
-    </div>
-</div><!-- .k-card -->
+  default - Default
+  .k-card--rounded - Rounded
+  .k-card--center - Center content
 
-sg-wrapper:
-<div style="width: 280px;">
-    <sg-wrapper-content/>
-</div>
+  markup:
+  <div class="k-card {$modifiers}">
+      <div class="k-card__body">
+          <div class="k-card__image">
+              <img src="{image source}" alt="{alternative text}">
+          </div>
+          <div class="k-card__header">
+              Card title
+          </div>
+          <div class="k-card__section">
+              Nullam id dolor id nibh ultricies vehicula ut id elit.
+          </div>
+          <div class="k-card__footer">
+              <a class="k-button k-button--primary" href="javascript:void(0);">Link</a>
+          </div>
+      </div>
+  </div><!-- .k-card -->
 
-Styleguide 2.4
+  sg-wrapper:
+  <div style="width: 280px;">
+      <sg-wrapper-content/>
+  </div>
 
-*/
+  Styleguide 2.4
 
-/*
-Card: image only
+  */
 
-markup:
-<div class="k-card">
-    <div class="k-card__body">
-        <div class="k-card__image">
-            <img src="{image source}" alt="{alternative text}">
-        </div>
-    </div>
-</div><!-- .k-card -->
+  /*
+  Card: image only
 
-Styleguide 2.4.1
+  markup:
+  <div class="k-card">
+      <div class="k-card__body">
+          <div class="k-card__image">
+              <img src="{image source}" alt="{alternative text}">
+          </div>
+      </div>
+  </div><!-- .k-card -->
 
-*/
+  Styleguide 2.4.1
 
-/*
-Card: icon only
+  */
 
-markup:
-<div class="k-card k-card--center">
-    <div class="k-card__body">
-        <div class="k-card__section">
-          <span class="k-icon-document-document k-icon--accent k-icon--size-huge" aria-hidden="true"></span>
-        </div>
-    </div>
-</div><!-- .k-card -->
+  /*
+  Card: icon only
 
-Styleguide 2.4.2
+  markup:
+  <div class="k-card k-card--center">
+      <div class="k-card__body">
+          <div class="k-card__section">
+            <span class="k-icon-document-document k-icon--accent k-icon--size-huge" aria-hidden="true"></span>
+          </div>
+      </div>
+  </div><!-- .k-card -->
 
-*/
+  Styleguide 2.4.2
 
-/*
-Card header
+  */
 
-markup:
-<div class="k-card">
-    <div class="k-card__body">
-        <div class="k-card__header">
-            Title
-        </div>
-    </div>
-</div>
+  /*
+  Card header
 
-Styleguide 2.4.3
+  markup:
+  <div class="k-card">
+      <div class="k-card__body">
+          <div class="k-card__header">
+              Title
+          </div>
+      </div>
+  </div>
 
-*/
+  Styleguide 2.4.3
 
-/*
-Card section
+  */
 
-default - Default
-.k-card__section--small-spacing - Small spacing
+  /*
+  Card section
 
-markup:
-<div class="k-card">
-    <div class="k-card__body">
-        <div class="k-card__section {$modifiers}">
-            Section
-        </div>
-    </div>
-</div>
+  default - Default
+  .k-card__section--small-spacing - Small spacing
 
-Styleguide 2.4.4
+  markup:
+  <div class="k-card">
+      <div class="k-card__body">
+          <div class="k-card__section {$modifiers}">
+              Section
+          </div>
+      </div>
+  </div>
 
-*/
+  Styleguide 2.4.4
 
-/*
-Card footer
+  */
 
-markup:
-<div class="k-card">
-    <div class="k-card__body">
-        <div class="k-card__footer">
-            Footer
-        </div>
-    </div>
-</div>
+  /*
+  Card footer
 
-Styleguide 2.4.5
+  markup:
+  <div class="k-card">
+      <div class="k-card__body">
+          <div class="k-card__footer">
+              Footer
+          </div>
+      </div>
+  </div>
 
-*/
+  Styleguide 2.4.5
 
-/*
-Card caption
+  */
 
-default - Default
-.k-card__caption--overflow - Overflowing caption
+  /*
+  Card caption
 
-markup:
-<div class="k-card">
-    <div class="k-card__body">
-        <div class="k-card__section">
-            Section
-        </div>
-    </div>
-    <div class="k-card__caption {$modifiers}">
-        Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-    </div>
-</div>
+  default - Default
+  .k-card__caption--overflow - Overflowing caption
 
-Styleguide 2.4.6
+  markup:
+  <div class="k-card">
+      <div class="k-card__body">
+          <div class="k-card__section">
+              Section
+          </div>
+      </div>
+      <div class="k-card__caption {$modifiers}">
+          Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+      </div>
+  </div>
 
-*/
+  Styleguide 2.4.6
 
-/*
-Linked and labeled card
+  */
 
-markup:
-<div class="k-card">
-    <a class="k-card__body" href="javascript:void(0)">
-        <div class="k-card__header">
-            Title
-        </div>
-        <div class="k-card__section">
-            Section
-        </div>
-    </a>
-    <label class="k-card__caption">
-        <input type="checkbox"> Label
-    </label>
-</div>
+  /*
+  Linked and labeled card
 
-Styleguide 2.4.7
+  markup:
+  <div class="k-card">
+      <a class="k-card__body" href="javascript:void(0)">
+          <div class="k-card__header">
+              Title
+          </div>
+          <div class="k-card__section">
+              Section
+          </div>
+      </a>
+      <label class="k-card__caption">
+          <input type="checkbox"> Label
+      </label>
+  </div>
 
-*/
+  Styleguide 2.4.7
 
-/*
-Selected card
+  */
 
-markup:
-<div class="k-card k-is-selected">
-    <div class="k-card__body">
-        <div class="k-card__header">
-            Title
-        </div>
-        <div class="k-card__section">
-            Section
-        </div>
-    </div>
-    <label class="k-card__caption">
-        <input type="checkbox" checked> Label
-    </label>
-</div>
+  /*
+  Selected card
 
-Styleguide 2.4.8
+  markup:
+  <div class="k-card k-is-selected">
+      <div class="k-card__body">
+          <div class="k-card__header">
+              Title
+          </div>
+          <div class="k-card__section">
+              Section
+          </div>
+      </div>
+      <label class="k-card__caption">
+          <input type="checkbox" checked> Label
+      </label>
+  </div>
 
-*/
+  Styleguide 2.4.8
 
-/*
-Card background
+  */
 
-markup:
-<div class="k-card">
-    <div class="k-card__body">
-        <div class="k-card__image k-card__image--background" style="background-image: url(joomlatools/images/placeholder-16-9.png);"></div>
-        <div class="k-card__section">
-            <p>Section</p>
-            <p>Section</p>
-            <p>Section</p>
-            <p>Section</p>
-        </div>
-    </div>
-</div>
+  /*
+  Card background
 
-Styleguide 2.4.9
+  markup:
+  <div class="k-card">
+      <div class="k-card__body">
+          <div class="k-card__image k-card__image--background" style="background-image: url(joomlatools/images/placeholder-16-9.png);"></div>
+          <div class="k-card__section">
+              <p>Section</p>
+              <p>Section</p>
+              <p>Section</p>
+              <p>Section</p>
+          </div>
+      </div>
+  </div>
 
-*/
+  Styleguide 2.4.9
 
-.k-card {
-  position: relative;
-  display: block;
-  width: 100%;
-  @include content-block;
-}
+  */
 
-.k-card--center {
+  .k-card {
+    position: relative;
+    display: block;
+    width: 100%;
+    @include content-block;
+  }
+
+  .k-card--center {
+    .k-card__body {
+      text-align: center;
+    }
+  }
+
+  .k-card--rounded {
+    .k-card__body {
+      border-radius: $k-card-radius;
+    }
+
+    .k-card__caption {
+      border-bottom-left-radius: $k-card-radius - 1px;
+      border-bottom-right-radius: $k-card-radius - 1px;
+    }
+
+    .k-card__image,
+    .k-card__image--background,
+    .k-card__image--spaced-background,
+    .k-card__header,
+    .k-card__section,
+    .k-card__footer {
+      overflow: hidden;
+
+      &:only-child {
+        &, img {
+          border-radius: $k-card-radius - 1px;
+        }
+      }
+      &:first-child {
+        &, img {
+          border-top-left-radius: $k-card-radius - 1px;
+          border-top-right-radius: $k-card-radius - 1px;
+        }
+      }
+      &:last-child {
+        &, img {
+          border-bottom-left-radius: $k-card-radius - 1px;
+          border-bottom-right-radius: $k-card-radius - 1px;
+        }
+      }
+    }
+
+    .k-card__image--background {
+      border-radius: $k-card-radius - 1px;
+    }
+
+    .k-card__image--spaced-background {
+      border-radius: $k-card-radius - 2px;
+    }
+  }
+
+  /**
+   * Card body
+   */
+
   .k-card__body {
-    text-align: center;
-  }
-}
+    position: relative;
+    display: block;
+    backface-visibility: hidden;
+    background: $k-card-background;
+    border: 1px solid $k-card-border;
+    color: $k-card-color;
+    text-decoration: none;
+    @include transition;
 
-.k-card--rounded {
-  .k-card__body {
-    border-radius: $k-card-radius;
+    &:focus,
+    &:hover {
+      border-color: $k-card-hover-border;
+
+      .k-card__header {
+        border-color: $k-card-header-hover-border;
+      }
+
+      .k-card__footer {
+        border-color: $k-card-footer-hover-border;
+      }
+    }
   }
 
-  .k-card__caption {
-    border-bottom-left-radius: $k-card-radius - 1px;
-    border-bottom-right-radius: $k-card-radius - 1px;
-  }
+  /**
+   * Card image
+   *
+   * 1. For when background image is used
+   * 2. Cover complete card minus border
+   * 3. Cover complete card minus border and 1pixel spacing
+   */
 
-  .k-card__image,
-  .k-card__image--background,
-  .k-card__image--spaced-background,
-  .k-card__header,
-  .k-card__section,
-  .k-card__footer {
+  .k-card__image {
+    z-index: 0;
+    display: block;
     overflow: hidden;
+    @include transition;
 
-    &:only-child {
-      &, img {
-        border-radius: $k-card-radius - 1px;
-      }
-    }
-    &:first-child {
-      &, img {
-        border-top-left-radius: $k-card-radius - 1px;
-        border-top-right-radius: $k-card-radius - 1px;
-      }
-    }
-    &:last-child {
-      &, img {
-        border-bottom-left-radius: $k-card-radius - 1px;
-        border-bottom-right-radius: $k-card-radius - 1px;
-      }
+    img {
+      vertical-align: top;
     }
   }
 
   .k-card__image--background {
-    border-radius: $k-card-radius - 1px;
+    background-position: center; /* 1 */
+    background-repeat: no-repeat; /* 1 */
+    background-size: cover; /* 1 */
+    @include coverall(0, 1px, 1px, 1px, 1px); /* 2 */
   }
 
   .k-card__image--spaced-background {
-    border-radius: $k-card-radius - 2px;
+    @include coverall(0, 2px, 2px, 2px, 2px); /* 3 */
   }
-}
 
+  /**
+   * Card title
+   */
 
-/**
- * Card body
- */
+  .k-card__header {
+    position: relative;
+    z-index: 1;
+    display: block;
+    padding: $k-card-header-spacing;
+    font-weight: $k-card-header-font-weight;
+    background: $k-card-header-background;
+    border-bottom: 1px solid $k-card-header-border;
+    padding-bottom: $k-card-header-spacing - 1px;
+    color: $k-card-header-color;
+    text-decoration: none;
+    @include transition;
 
-.k-card__body {
-  position: relative;
-  display: block;
-  backface-visibility: hidden;
-  background: $k-card-background;
-  border: 1px solid $k-card-border;
-  color: $k-card-color;
-  text-decoration: none;
-  @include transition;
-
-  &:focus,
-  &:hover {
-    border-color: $k-card-hover-border;
-
-    .k-card__header {
-      border-color: $k-card-header-hover-border;
+    &:last-child {
+      border-bottom: none;
     }
 
-    .k-card__footer {
+    &:not(:first-child) {
+      border-top: 1px solid $k-card-header-border;
+      padding-top: $k-card-header-spacing - 1px;
+    }
+
+    &:focus,
+    &:hover {
+      border-color: $k-card-header-hover-border;
+    }
+  }
+
+  /**
+   * Card section
+   *
+   * 1. Use margin instead of padding to keep border-radius on rounded cards
+   */
+
+  .k-card__section {
+    position: relative;
+    z-index: 1;
+    display: block;
+    padding: $k-card-spacing;
+    text-decoration: none;
+    @include transition;
+  }
+
+  .k-card__section--small-spacing {
+    padding: 0;
+    margin: 1px; /* 1 */
+  }
+
+  /**
+   * Card footer
+   */
+
+  .k-card__footer {
+    position: relative;
+    z-index: 1;
+    display: block;
+    padding: $k-card-footer-spacing;
+    background: $k-card-footer-background;
+    border-top: 1px solid $k-card-footer-border;
+    padding-top: $k-card-footer-spacing - 1px;
+    color: $k-card-footer-color;
+    text-decoration: none;
+    @include transition;
+
+    &:first-child {
+      border-top: none;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $k-card-footer-border;
+    }
+
+    &:focus,
+    &:hover {
       border-color: $k-card-footer-hover-border;
     }
   }
-}
 
+  /**
+   * Card caption
+   */
 
-/**
- * Card image
- *
- * 1. For when background image is used
- * 2. Cover complete card minus border
- * 3. Cover complete card minus border and 1pixel spacing
- */
-
-.k-card__image {
-  z-index: 0;
-  display: block;
-  overflow: hidden;
-  @include transition;
-
-  img {
-    vertical-align: top;
-  }
-}
-
-.k-card__image--background {
-  background-position: center; /* 1 */
-  background-repeat: no-repeat; /* 1 */
-  background-size: cover; /* 1 */
-  @include coverall(0,1px,1px,1px,1px); /* 2 */
-}
-
-.k-card__image--spaced-background {
-  @include coverall(0,2px,2px,2px,2px); /* 3 */
-}
-
-
-/**
- * Card title
- */
-
-.k-card__header {
-  position: relative;
-  z-index: 1;
-  display: block;
-  padding: $k-card-header-spacing;
-  font-weight: $k-card-header-font-weight;
-  background: $k-card-header-background;
-  border-bottom: 1px solid $k-card-header-border;
-  padding-bottom: $k-card-header-spacing - 1px;
-  color: $k-card-header-color;
-  text-decoration: none;
-  @include transition;
-
-  &:last-child {
-    border-bottom: none;
+  .k-card__caption {
+    display: block;
+    width: 100%;
+    padding: $k-card-caption-spacing;
+    font-weight: $k-card-caption-font-weight;
+    text-decoration: none;
+    @include transition;
   }
 
-  &:not(:first-child) {
-    border-top: 1px solid $k-card-header-border;
-    padding-top: $k-card-header-spacing - 1px;
+  .k-card__caption--overflow {
+    height: 3em;
+    line-height: 1em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
-  &:focus,
-  &:hover {
-    border-color: $k-card-header-hover-border;
-  }
-}
+  /**
+   * Selected card
+   */
 
+  .k-card.k-is-selected {
+    .k-card__body {
+      border-color: $k-card-selected-border;
 
-/**
- * Card section
- *
- * 1. Use margin instead of padding to keep border-radius on rounded cards
- */
+      &:not(:last-child) {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
 
-.k-card__section {
-  position: relative;
-  z-index: 1;
-  display: block;
-  padding: $k-card-spacing;
-  text-decoration: none;
-  @include transition;
-}
-
-.k-card__section--small-spacing {
-  padding: 0;
-  margin: 1px; /* 1 */
-}
-
-
-/**
- * Card footer
- */
-
-.k-card__footer {
-  position: relative;
-  z-index: 1;
-  display: block;
-  padding: $k-card-footer-spacing;
-  background: $k-card-footer-background;
-  border-top: 1px solid $k-card-footer-border;
-  padding-top: $k-card-footer-spacing - 1px;
-  color: $k-card-footer-color;
-  text-decoration: none;
-  @include transition;
-
-  &:first-child {
-    border-top: none;
-  }
-
-  &:not(:last-child) {
-    border-bottom: 1px solid $k-card-footer-border;
-  }
-
-  &:focus,
-  &:hover {
-    border-color: $k-card-footer-hover-border;
-  }
-}
-
-
-/**
- * Card caption
- */
-
-.k-card__caption {
-  display: block;
-  width: 100%;
-  padding: $k-card-caption-spacing;
-  font-weight: $k-card-caption-font-weight;
-  text-decoration: none;
-  @include transition;
-}
-
-.k-card__caption--overflow {
-  height: 3em;
-  line-height: 1em;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-
-/**
- * Selected card
- */
-
-.k-card.k-is-selected {
-  .k-card__body {
-    border-color: $k-card-selected-border;
-
-    &:not(:last-child) {
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-    }
-
-    &:only-child {
-      .k-card__header {
-        background: $k-card-selected-background;
-        color: $k-card-selected-color;
+      &:only-child {
+        .k-card__header {
+          background: $k-card-selected-background;
+          color: $k-card-selected-color;
+        }
       }
     }
-  }
 
-  .k-card__header,
-  .k-card__footer,
-  .k-card__caption {
-    border-color: $k-card-selected-border;
-    background: $k-card-selected-background;
-    color: $k-card-selected-color;
+    .k-card__header,
+    .k-card__footer,
+    .k-card__caption {
+      border-color: $k-card-selected-border;
+      background: $k-card-selected-background;
+      color: $k-card-selected-color;
+    }
   }
 }

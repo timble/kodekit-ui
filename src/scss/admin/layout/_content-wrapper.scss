@@ -1,39 +1,41 @@
-/* Content wrapper
-   ========================================================================== */
+@if ($k-layout == true and $k-layout-content-wrapper != false) or $k-layout-content-wrapper == true {
 
-/*
-Content wrapper
+  /* Content wrapper
+     ========================================================================== */
 
-- Use as <b>child</b> of the `.k-wrapper` container only
-- {unsureText}
+  /*
+  Content wrapper
 
-markup:
-<div class="k-content-wrapper">
-    ...
-</div><!-- .k-content-wrapper -->
+  - Use as <b>child</b> of the `.k-wrapper` container only
+  - {unsureText}
 
-Styleguide 3.3
+  markup:
+  <div class="k-content-wrapper">
+      ...
+  </div><!-- .k-content-wrapper -->
 
-*/
+  Styleguide 3.3
 
-/**
- * 1. Needed to position sidebar properly when off-canvas
- * 2. Clearing toolbar floats when flexbox is not in use
- */
+  */
 
-.k-content-wrapper {
-  position: relative; /* 1 */
-  clear: both; /* 2 */
-  margin: 0;
-  overflow: hidden;
-  @include border(bottom, $k-content-border);
+  /**
+   * 1. Needed to position sidebar properly when off-canvas
+   * 2. Clearing toolbar floats when flexbox is not in use
+   */
 
+  .k-content-wrapper {
+    position: relative; /* 1 */
+    clear: both; /* 2 */
+    margin: 0;
+    overflow: hidden;
+    @include border(bottom, $k-content-border);
 
-  /* When flexbox is in use */
+    /* When flexbox is in use */
 
-  display: flex;
-  flex-direction: row;
-  flex: 1 1 auto;
-  border-bottom: none;
-  min-height: 0;
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+    border-bottom: none;
+    min-height: 0;
+  }
 }

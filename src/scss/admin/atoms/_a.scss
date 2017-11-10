@@ -1,26 +1,30 @@
-/* Anchor
-   ========================================================================== */
+@if ($k-atoms == true and $k-atom-a != false) or $k-atom-a == true {
 
-/*
-Anchor
+  /* Anchor
+     ========================================================================== */
 
-markup:
-<a href="javascript:void(0)">Anchor text</a>
+  /*
+  Anchor
 
-sg-wrapper:
-<p>
-    <sg-wrapper-content/>
-</p>
+  markup:
+  <a href="javascript:void(0)">Anchor text</a>
 
-Styleguide 1.1
+  sg-wrapper:
+  <p>
+      <sg-wrapper-content/>
+  </p>
 
-*/
+  Styleguide 1.1
 
-a {
-  color: $k-link-color;
+  */
 
-  &:focus,
-  &:hover {
+  a {
     color: $k-link-color;
+
+    &:focus,
+    &:hover {
+      color: $k-link-color;
+    }
   }
 }
+

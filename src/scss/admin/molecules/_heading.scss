@@ -1,21 +1,24 @@
-/* Heading
-   ========================================================================== */
+@if ($k-molecules == true and $k-molecule-heading != false) or $k-molecule-heading == true {
 
-/*
-Heading
+  /* Heading
+     ========================================================================== */
 
-markup:
-<!-- Heading -->
-<div class="k-heading">
-    Heading
-</div><!--.k-heading-->
+  /*
+  Heading
 
-Styleguide 2.11
+  markup:
+  <!-- Heading -->
+  <div class="k-heading">
+      Heading
+  </div><!--.k-heading-->
 
-*/
+  Styleguide 2.11
 
-.k-heading {
-  font-size: $k-heading-font-size;
-  line-height: $k-heading-line-height;
-  @include content-block();
+  */
+
+  .k-heading {
+    font-size: $k-heading-font-size;
+    line-height: $k-heading-line-height;
+    @include content-block();
+  }
 }

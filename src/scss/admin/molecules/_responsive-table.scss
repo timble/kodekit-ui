@@ -1,144 +1,144 @@
-/*
-Responsive table
+@if ($k-molecules == true and $k-molecule-responsive-table != false) or $k-molecule-responsive-table == true {
 
-- Add the `.k-js-responsive-table` class to the `<table>`
-- Use [data-hide="phone/tablet/desktop"] on `<th>` to hide cell on different screen sizes
-- Set [data-toggle="true"] and add a `.k-table-data--toggle` class to an empty cell
+  /*
+  Responsive table
 
-markup:
-<div class="k-table-container">
-    <div class="k-table">
-        <table class="k-js-responsive-table">
-        <thead>
-            <tr>
-                <th width="1%" data-hide="phone">
-                    <sg-insert>2.12-161</sg-insert>
-                    <span class="k-visually-hidden">Move icon</sg-insert>
-                </th>
-                <th width="1%" class="k-table-data--form">
-                    <input type="checkbox" />
-                </th>
-                <th data-toggle="true" class="k-table-data--toggle"></th>
-                <th>
-                    Title
-                </th>
-                <th data-hide="phone,tablet">
-                    Category
-                </th>
-                <th data-hide="phone,tablet,desktop">
-                    Downloads
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <sg-insert>2.21.9</sg-insert>
-                </td>
-                <td class="k-table-data--form">
-                    <input type="checkbox" />
-                </td>
-                <td class="k-table-data--toggle"></td>
-                <td class="k-table-data--ellipsis">
-                    <a href="javascript:void(0)">Title</a>
-                </td>
-                <td>
-                    Category
-                </td>
-                <td>
-                    12
-                </td>
-            </tr>
-        </tbody>
-        </table>
-    </div>
-</div>
+  - Add the `.k-js-responsive-table` class to the `<table>`
+  - Use [data-hide="phone/tablet/desktop"] on `<th>` to hide cell on different screen sizes
+  - Set [data-toggle="true"] and add a `.k-table-data--toggle` class to an empty cell
 
-Styleguide 2.21.11
+  markup:
+  <div class="k-table-container">
+      <div class="k-table">
+          <table class="k-js-responsive-table">
+          <thead>
+              <tr>
+                  <th width="1%" data-hide="phone">
+                      <sg-insert>2.12-161</sg-insert>
+                      <span class="k-visually-hidden">Move icon</sg-insert>
+                  </th>
+                  <th width="1%" class="k-table-data--form">
+                      <input type="checkbox" />
+                  </th>
+                  <th data-toggle="true" class="k-table-data--toggle"></th>
+                  <th>
+                      Title
+                  </th>
+                  <th data-hide="phone,tablet">
+                      Category
+                  </th>
+                  <th data-hide="phone,tablet,desktop">
+                      Downloads
+                  </th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>
+                      <sg-insert>2.21.9</sg-insert>
+                  </td>
+                  <td class="k-table-data--form">
+                      <input type="checkbox" />
+                  </td>
+                  <td class="k-table-data--toggle"></td>
+                  <td class="k-table-data--ellipsis">
+                      <a href="javascript:void(0)">Title</a>
+                  </td>
+                  <td>
+                      Category
+                  </td>
+                  <td>
+                      12
+                  </td>
+              </tr>
+          </tbody>
+          </table>
+      </div>
+  </div>
 
-*/
+  Styleguide 2.21.11
 
-.footable.breakpoint {
-  .footable-toggle {
-    content: " ";
-    display: inline-block;
-    width: $k-table-responsive-toggle-size;
-    height: $k-table-responsive-toggle-size;
-    line-height: ($k-table-responsive-toggle-size - ($k-table-responsive-toggle-border-size * 2));
-    border: $k-table-responsive-toggle-border-size solid $k-table-responsive-toggle-color;
-    border-radius: 50%;
-    text-align: center;
-    vertical-align: middle;
+  */
 
-    @include icon-after(chevron-bottom, true) {
+  .footable.breakpoint {
+    .footable-toggle {
+      content: " ";
       display: inline-block;
-      width: $k-table-responsive-toggle-icon-size;
-      height: $k-table-responsive-toggle-icon-size;
-      margin: ((($k-table-responsive-toggle-size - $k-table-responsive-toggle-icon-size) / 2) - $k-table-responsive-toggle-border-size);
-      color: $k-table-responsive-toggle-color;
-      font-size: $k-table-responsive-toggle-icon-size;
-      line-height: $k-table-responsive-toggle-line-height;
-      transform: rotate(-90deg);
-      @include transition;
-    }
-  }
+      width: $k-table-responsive-toggle-size;
+      height: $k-table-responsive-toggle-size;
+      line-height: ($k-table-responsive-toggle-size - ($k-table-responsive-toggle-border-size * 2));
+      border: $k-table-responsive-toggle-border-size solid $k-table-responsive-toggle-color;
+      border-radius: 50%;
+      text-align: center;
+      vertical-align: middle;
 
-  tr.k-is-selected {
-    .footable-toggle {
-      border-color: $k-table-responsive-toggle-color-active;
-
-      &:after {
-        color: $k-table-responsive-toggle-color-active;
+      @include icon-after(chevron-bottom, true) {
+        display: inline-block;
+        width: $k-table-responsive-toggle-icon-size;
+        height: $k-table-responsive-toggle-icon-size;
+        margin: ((($k-table-responsive-toggle-size - $k-table-responsive-toggle-icon-size) / 2) - $k-table-responsive-toggle-border-size);
+        color: $k-table-responsive-toggle-color;
+        font-size: $k-table-responsive-toggle-icon-size;
+        line-height: $k-table-responsive-toggle-line-height;
+        transform: rotate(-90deg);
+        @include transition;
       }
     }
-  }
 
+    tr.k-is-selected {
+      .footable-toggle {
+        border-color: $k-table-responsive-toggle-color-active;
 
-  /**
-   * Reset padding, and re-set them on individual divs
-   */
-
-  .footable-row-detail-cell {
-    padding: 0;
-  }
-
-  tr.footable-detail-show {
-    .footable-toggle {
-      &:after {
-        transform: rotate(0deg);
+        &:after {
+          color: $k-table-responsive-toggle-color-active;
+        }
       }
     }
-  }
 
-  .footable-row-detail-row {
-    @include clearfix;
-    @include content-block($k-table-cell-spacing-vertical);
-  }
+    /**
+     * Reset padding, and re-set them on individual divs
+     */
 
-  .footable-row-detail-name {
-    font-weight: $k-table-responsive-detail-weight;
-  }
+    .footable-row-detail-cell {
+      padding: 0;
+    }
 
+    tr.footable-detail-show {
+      .footable-toggle {
+        &:after {
+          transform: rotate(0deg);
+        }
+      }
+    }
 
-  /**
-   * 1. Just like table cells
-   * 2. Almost as tall as the main table rows
-   * 3. Same spacing as on table cells
-   */
+    .footable-row-detail-row {
+      @include clearfix;
+      @include content-block($k-table-cell-spacing-vertical);
+    }
 
-  .footable-row-detail-name,
-  .footable-row-detail-value {
-    position: relative; /* 1 */
-    min-height: $k-table-responsive-detail-min-height; /* 2 */
-    padding: $k-table-responsive-detail-spacing; /* 3 */
-  }
+    .footable-row-detail-name {
+      font-weight: $k-table-responsive-detail-weight;
+    }
 
+    /**
+     * 1. Just like table cells
+     * 2. Almost as tall as the main table rows
+     * 3. Same spacing as on table cells
+     */
 
-  /* Hide toggle button for sub headings */
+    .footable-row-detail-name,
+    .footable-row-detail-value {
+      position: relative; /* 1 */
+      min-height: $k-table-responsive-detail-min-height; /* 2 */
+      padding: $k-table-responsive-detail-spacing; /* 3 */
+    }
 
-  th {
-    .footable-toggle {
-      display: none;
+    /* Hide toggle button for sub headings */
+
+    th {
+      .footable-toggle {
+        display: none;
+      }
     }
   }
 }

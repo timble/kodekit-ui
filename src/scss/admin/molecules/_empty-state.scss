@@ -1,50 +1,53 @@
-/* Empty state
-   ========================================================================== */
+@if ($k-molecules == true and $k-molecule-empty-state != false) or $k-molecule-empty-state == true {
 
-/*
-Empty state
+  /* Empty state
+     ========================================================================== */
 
-When there are no items to display
+  /*
+  Empty state
 
-markup:
-<div class="k-empty-state">
-    <p>No items found.</p>
-    <p>Maybe select another category or different filters?</p>
-</div>
+  When there are no items to display
 
-Styleguide 2.7
+  markup:
+  <div class="k-empty-state">
+      <p>No items found.</p>
+      <p>Maybe select another category or different filters?</p>
+  </div>
 
-*/
+  Styleguide 2.7
 
-/*
-Onboarding
+  */
 
-Display the main action button below the empty state heading
+  /*
+  Onboarding
 
-markup:
-<div class="k-empty-state">
-    <p>It seems like you don't have any items yet.</p>
-    <p><a href="javascript:void(0)" class="k-button k-button--success k-button--large">Add your first item</a></p>
-</div>
+  Display the main action button below the empty state heading
 
-Styleguide 2.7.1
+  markup:
+  <div class="k-empty-state">
+      <p>It seems like you don't have any items yet.</p>
+      <p><a href="javascript:void(0)" class="k-button k-button--success k-button--large">Add your first item</a></p>
+  </div>
 
-*/
+  Styleguide 2.7.1
 
-.k-empty-state {
-  margin: 0;
-  font-size: $k-empty-state-font-size;
-  line-height: $k-empty-state-line-height;
-  text-align: $k-empty-state-align;
-  background: $k-empty-state-background;
-  color: $k-empty-state-color;
-  padding: $k-empty-state-spacing;
-  display: flex;
-  flex: 1 1 auto;
-  flex-direction: column;
-  justify-content: center;
+  */
 
-  p {
-    @include content-block();
+  .k-empty-state {
+    margin: 0;
+    font-size: $k-empty-state-font-size;
+    line-height: $k-empty-state-line-height;
+    text-align: $k-empty-state-align;
+    background: $k-empty-state-background;
+    color: $k-empty-state-color;
+    padding: $k-empty-state-spacing;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    justify-content: center;
+
+    p {
+      @include content-block();
+    }
   }
 }

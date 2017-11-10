@@ -1,38 +1,41 @@
-/* Label
-   ========================================================================== */
+@if ($k-atoms == true and $k-atom-label != false) or $k-atom-label == true {
 
-/*
-Label
+  /* Label
+     ========================================================================== */
 
-markup:
-<label>Label</label>
+  /*
+  Label
 
-Styleguide 1.5
+  markup:
+  <label>Label</label>
 
-*/
+  Styleguide 1.5
 
-/**
- * 1. Force IE8 to wrap long content
- */
+  */
 
-label {
-  display: inline-block;
-  vertical-align: middle;
-  max-width: 100%; /* 1 */
-  margin-bottom: $k-spacing-tiny;
-  font-weight: $k-font-weight-bold;
+  /**
+   * 1. Force IE8 to wrap long content
+   */
 
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  & + small {
+  label {
     display: inline-block;
     vertical-align: middle;
+    max-width: 100%; /* 1 */
     margin-bottom: $k-spacing-tiny;
+    font-weight: $k-font-weight-bold;
 
     &:last-child {
       margin-bottom: 0;
+    }
+
+    & + small {
+      display: inline-block;
+      vertical-align: middle;
+      margin-bottom: $k-spacing-tiny;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }
