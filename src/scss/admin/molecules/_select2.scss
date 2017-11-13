@@ -102,7 +102,7 @@ $k-clear-selection-color: $k-dropdown-arrow-color !default;
     /* Set proper line-height so text is vertically centered */
 
     .select2-selection--single {
-      padding: $k-spacing-base-vertical $k-spacing-base-horizontal;
+      padding: $k-base-vertical-spacing $k-base-horizontal-spacing;
 
       .select2-selection__rendered {
         line-height: $k-line-height;
@@ -244,7 +244,7 @@ $k-clear-selection-color: $k-dropdown-arrow-color !default;
 
       &[aria-disabled=true] {
         color: $k-dropdown-link-disabled-color;
-        cursor: $k-cursor-disabled;
+        cursor: $k-disabled-cursor;
       }
 
       /**
@@ -303,7 +303,7 @@ $k-clear-selection-color: $k-dropdown-arrow-color !default;
       color: $k-dropdown-header-color;
       display: block;
       padding: $k-padding-base-vertical $k-padding-base-horizontal;
-      font-size: $k-font-size-small;
+      font-size: $k-small-font-size;
       line-height: $k-line-height-base;
       white-space: nowrap;
     }
@@ -378,7 +378,7 @@ $k-clear-selection-color: $k-dropdown-arrow-color !default;
 
       .select2-selection,
       .select2-search__field {
-        cursor: $k-cursor-disabled;
+        cursor: $k-disabled-cursor;
       }
 
       .select2-selection,
@@ -563,10 +563,10 @@ $k-clear-selection-color: $k-dropdown-arrow-color !default;
     .input-group-sm &,
     .form-group-sm & {
       .select2-selection--single {
-        border-radius: $k-border-radius-small;
-        font-size: $k-font-size-small;
+        border-radius: $k-small-border-radius;
+        font-size: $k-small-font-size;
         height: $k-input-height-small;
-        line-height: $k-line-height-small;
+        line-height: $k-small-line-height;
         padding: $k-padding-small-vertical $k-padding-small-horizontal + $k-caret-width-base*3 $k-padding-small-vertical $k-padding-small-horizontal;
 
         /* 2 */
@@ -579,17 +579,17 @@ $k-clear-selection-color: $k-dropdown-arrow-color !default;
         min-height: $k-input-height-small;
 
         .select2-selection__choice {
-          font-size: $k-font-size-small;
-          line-height: $k-line-height-small;
+          font-size: $k-small-font-size;
+          line-height: $k-small-line-height;
           margin: ($k-padding-small-vertical - 1) 0 0 $k-padding-small-horizontal/2;
           padding: 0 $k-padding-small-vertical;
         }
 
         .select2-search--inline .select2-search__field {
           padding: 0 $k-padding-small-horizontal;
-          font-size: $k-font-size-small;
+          font-size: $k-small-font-size;
           height: $k-input-height-small - 2;
-          line-height: $k-line-height-small;
+          line-height: $k-small-line-height;
         }
 
         .select2-selection__clear {
@@ -602,10 +602,10 @@ $k-clear-selection-color: $k-dropdown-arrow-color !default;
     .input-group-lg &,
     .form-group-lg & {
       .select2-selection--single {
-        border-radius: $k-border-radius-large;
-        font-size: $k-font-size-large;
+        border-radius: $k-large-border-radius;
+        font-size: $k-large-font-size;
         height: $k-input-height-large;
-        line-height: $k-line-height-large;
+        line-height: $k-large-line-height;
         padding: $k-padding-large-vertical $k-padding-large-horizontal + $k-caret-width-large*3 $k-padding-large-vertical $k-padding-large-horizontal;
 
         /* 1 */
@@ -625,8 +625,8 @@ $k-clear-selection-color: $k-dropdown-arrow-color !default;
         min-height: $k-input-height-large;
 
         .select2-selection__choice {
-          font-size: $k-font-size-large;
-          line-height: $k-line-height-large;
+          font-size: $k-large-font-size;
+          line-height: $k-large-line-height;
           border-radius: 4px;
           margin: ($k-padding-large-vertical - 1) 0 0 $k-padding-large-horizontal/2;
           padding: 0 $k-padding-large-vertical;
@@ -634,9 +634,9 @@ $k-clear-selection-color: $k-dropdown-arrow-color !default;
 
         .select2-search--inline .select2-search__field {
           padding: 0 $k-padding-large-horizontal;
-          font-size: $k-font-size-large;
+          font-size: $k-large-font-size;
           height: $k-input-height-large - 2;
-          line-height: $k-line-height-large;
+          line-height: $k-large-line-height;
         }
 
         .select2-selection__clear {

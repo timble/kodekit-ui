@@ -11,8 +11,8 @@
     display: inline-block;
     vertical-align: middle;
     max-width: 100%; /* 1 */
-    margin-bottom: $k-spacing-tiny;
-    font-weight: $k-font-weight-bold;
+    margin-bottom: $k-tiny-spacing;
+    font-weight: $k-bold-font-weight;
 
     &:last-child {
       margin-bottom: 0;
@@ -21,7 +21,7 @@
     & + small {
       display: inline-block;
       vertical-align: middle;
-      margin-bottom: $k-spacing-tiny;
+      margin-bottom: $k-tiny-spacing;
 
       &:last-child {
         margin-bottom: 0;

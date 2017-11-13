@@ -10,16 +10,16 @@
 
   dt {
     @include reset;
-    font-weight: $k-font-weight-bold;
+    font-weight: $k-bold-font-weight;
     float: left;
     clear: left;
-    margin-right: $k-spacing-tiny;
+    margin-right: $k-tiny-spacing;
   }
 
   dd {
     @include reset;
     display: block;
-    @include content-block($k-spacing-tiny);
+    @include content-block($k-tiny-spacing);
     max-width: 100%;
 
     &.k-ellipsis {

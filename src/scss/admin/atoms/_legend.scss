@@ -18,10 +18,10 @@
     border: none;
     border-bottom: 1px solid darker($k-component-background);
     padding-top: $k-spacing;
-    padding-bottom: $k-spacing-tiny;
-    font-size: $k-font-size-huge;
-    line-height: $k-line-height-huge;
-    font-weight: $k-font-weight-normal;
+    padding-bottom: $k-tiny-spacing;
+    font-size: $k-huge-font-size;
+    line-height: $k-huge-line-height;
+    font-weight: $k-normal-font-weight;
     @include content-block;
 
     &:first-child {

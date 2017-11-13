@@ -18,7 +18,7 @@
     width: 100%; /* 1 */
     max-width: 100%; /* 1 */
     height: $k-input-height-base; /* 2 */
-    padding: $k-spacing-base-vertical $k-spacing-base-horizontal;
+    padding: $k-base-vertical-spacing $k-base-horizontal-spacing;
     font-size: $k-font-size;
     line-height: $k-line-height;
     color: $k-input-color;
@@ -66,7 +66,7 @@
 
     &[disabled],
     fieldset[disabled] & {
-      cursor: $k-cursor-disabled;
+      cursor: $k-disabled-cursor;
     }
   }
 
@@ -382,18 +382,18 @@
     & > .k-input-group__addon,
     & > .k-input-group__button > .k-button {
       height: $k-input-height-large;
-      padding: $k-spacing-large-vertical $k-spacing-large-horizontal;
-      font-size: $k-font-size-large;
-      line-height: $k-line-height-large;
-      border-radius: $k-border-radius-large;
+      padding: $k-large-vertical-spacing $k-large-horizontal-spacing;
+      font-size: $k-large-font-size;
+      line-height: $k-large-line-height;
+      border-radius: $k-large-border-radius;
 
       @include rtl {
-        border-radius: $k-border-radius-large;
+        border-radius: $k-large-border-radius;
       }
     }
 
     & > .select2-container--bootstrap .select2-selection--single .select2-selection--rendered {
-      line-height: $k-line-height-large;
+      line-height: $k-large-line-height;
     }
 
     select.k-form-control {
@@ -417,18 +417,18 @@
     & > .k-input-group__addon,
     & > .k-input-group__button > .k-button {
       height: $k-input-height-small;
-      padding: $k-spacing-small-vertical $k-spacing-small-horizontal;
-      font-size: $k-font-size-small;
+      padding: $k-extrasmall-vertical-spacing $k-extrasmall-horizontal-spacing;
+      font-size: $k-small-font-size;
       line-height: $k-line-height;
-      border-radius: $k-border-radius-small;
+      border-radius: $k-small-border-radius;
 
       @include rtl {
-        border-radius: $k-border-radius-small;
+        border-radius: $k-small-border-radius;
       }
     }
 
     & > .select2-container--bootstrap .select2-selection--single .select2-selection--rendered {
-      line-height: $k-line-height-small;
+      line-height: $k-small-line-height;
     }
 
     select.k-form-control {
@@ -490,7 +490,7 @@
     font-size: $k-font-size;
     line-height: $k-line-height;
     height: $k-input-height-base;
-    padding: $k-spacing-base-vertical $k-spacing-base-horizontal;
+    padding: $k-base-vertical-spacing $k-base-horizontal-spacing;
     font-weight: normal;
     color: $k-input-color;
     text-align: center;
@@ -672,11 +672,11 @@
 
   .k-form-group--small {
     .k-form-control {
-      font-size: $k-font-size-small;
+      font-size: $k-small-font-size;
       height: $k-input-height-small;
-      padding: $k-spacing-small-vertical $k-spacing-small-horizontal;
-      line-height: $k-line-height-small;
-      border-radius: $k-border-radius-small;
+      padding: $k-extrasmall-vertical-spacing $k-extrasmall-horizontal-spacing;
+      line-height: $k-small-line-height;
+      border-radius: $k-small-border-radius;
     }
 
     select.k-form-control {
@@ -692,11 +692,11 @@
 
   .k-form-group--large {
     .k-form-control {
-      font-size: $k-font-size-large;
+      font-size: $k-large-font-size;
       height: $k-input-height-large;
-      padding: $k-spacing-large-vertical $k-spacing-large-horizontal;
-      line-height: $k-line-height-large;
-      border-radius: $k-border-radius-large;
+      padding: $k-large-vertical-spacing $k-large-horizontal-spacing;
+      line-height: $k-large-line-height;
+      border-radius: $k-large-border-radius;
     }
 
     select.k-form-control {

@@ -87,10 +87,10 @@
       @include breakpoint(0, range, $k-charlie) {
         display: block;
         margin: 0 0 $k-toolbar-spacing;
-        width: $k-font-size-large;
-        height: $k-font-size-large;
-        font-size: $k-font-size-large;
-        line-height: $k-font-size-large;
+        width: $k-large-font-size;
+        height: $k-large-font-size;
+        font-size: $k-large-font-size;
+        line-height: $k-large-font-size;
       }
 
       display: inline-block;

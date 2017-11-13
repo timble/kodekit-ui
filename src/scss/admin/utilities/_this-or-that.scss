@@ -8,12 +8,12 @@
 
   .k-this-or-that {
     display: inline-block;
-    margin-right: $k-spacing-tiny;
+    margin-right: $k-tiny-spacing;
     vertical-align: middle;
 
     @include rtl {
       margin-right: 0;
-      margin-left: $k-spacing-tiny;
+      margin-left: $k-tiny-spacing;
     }
   }
 }

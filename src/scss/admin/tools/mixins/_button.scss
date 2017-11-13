@@ -63,7 +63,7 @@
 
   &[disabled],
   &#{$disabled-class} {
-    cursor: $k-cursor-disabled;
+    cursor: $k-disabled-cursor;
     opacity: 0.65;
     pointer-events: none;
   }

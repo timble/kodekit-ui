@@ -204,8 +204,8 @@
     width: 40px;
     height: 40px;
     top: -40px;
-    font-size: $k-font-size-huge;
-    line-height: $k-line-height-huge;
+    font-size: $k-huge-font-size;
+    line-height: $k-huge-line-height;
     right: -14px;
 
     @include rtl {
@@ -667,8 +667,8 @@
 
   .k-inline-modal__title {
     margin: 0 0 $k-spacing 0;
-    font-weight: $k-font-weight-normal;
-    font-size: $k-font-size-large;
-    line-height: $k-line-height-large;
+    font-weight: $k-normal-font-weight;
+    font-size: $k-large-font-size;
+    line-height: $k-large-line-height;
   }
 }

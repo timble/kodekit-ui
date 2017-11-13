@@ -224,7 +224,7 @@
     line-height: $k-scopebar-filter-label-size;
     text-align: center;
     vertical-align: middle;
-    font-weight: $k-font-weight-bold;
+    font-weight: $k-bold-font-weight;
     box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
     pointer-events: none;
 
@@ -589,7 +589,7 @@
       width: 100%;
       height: $k-scopebar-size;
       border-radius: 0;
-      padding: $k-spacing-tiny;
+      padding: $k-tiny-spacing;
       padding-right: $k-scopebar-size;
       background: $k-scopebar-search-background;
       color: $k-scopebar-search-color;
