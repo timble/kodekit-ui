@@ -5,13 +5,28 @@
 // Disable individual molecules by setting `$k-molecule-alert: false' for example
 // Enable individual molecules by setting `$k-molecules: false` and `$k-molecule-alert: true' for example
 
+$k-generated:                   true !default;
+$k-generated-icons:             inherit !default;
+
 $k-utilities:                   true !default;
-$k-utilities-box-sizing:        inherit !default;
+$k-utilities-colors:            inherit !default;
 $k-utilities-animations:        inherit !default;
-$k-utilities-hamburger:         inherit !default;
-$k-utilities-icons:             inherit !default;
-$k-utilities-normalize:         inherit !default;
-$k-utilities-utilities:         inherit !default;
+$k-utilities-content-block:     inherit !default;
+$k-utilities-coverall:          inherit !default;
+$k-utilities-dynamic-holder:    inherit !default;
+$k-utilities-ellipsis:          inherit !default;
+$k-utilities-flexing:           inherit !default;
+$k-utilities-hidden:            inherit !default;
+$k-utilities-loader:            inherit !default;
+$k-utilities-no-margin:         inherit !default;
+$k-utilities-no-transition:     inherit !default;
+$k-utilities-no-wrap:           inherit !default;
+$k-utilities-position-relative: inherit !default;
+$k-utilities-ratio-content:     inherit !default;
+$k-utilities-this-or-that:      inherit !default;
+$k-utilities-touchevents:       inherit !default;
+$k-utilities-visually-hidden:   inherit !default;
+$k-utilities-visually-shown:    inherit !default;
 
 $k-layout:                      true !default;
 $k-layout-component:            inherit !default;
@@ -27,6 +42,7 @@ $k-layout-wrapper:              inherit !default;
 $k-atoms:                       true !default;
 $k-atom-a:                      inherit !default;
 $k-atom-body:                   inherit !default;
+$k-atom-box-sizing:             inherit !default;
 $k-atom-dl:                     inherit !default;
 $k-atom-fieldset:               inherit !default;
 $k-atom-html:                   inherit !default;
@@ -48,6 +64,7 @@ $k-molecule-empty-state:        inherit !default;
 $k-molecule-form-block:         inherit !default;
 $k-molecule-forms:              inherit !default;
 $k-molecule-gallery:            inherit !default;
+$k-molecule-hamburger:          inherit !default;
 $k-molecule-heading:            inherit !default;
 $k-molecule-icons:              inherit !default;
 $k-molecule-list:               inherit !default;
@@ -70,9 +87,9 @@ $k-molecule-top:                inherit !default;
 $k-molecule-tree:               inherit !default;
 $k-molecule-wells:              inherit !default;
 
-$k-vendor:                      true !default;
+$k-vendors:                     true !default;
 $k-vendor-select2:              inherit !default;
-
+$k-vendor-normalize:            inherit !default;
 
 
 // Breakpoints

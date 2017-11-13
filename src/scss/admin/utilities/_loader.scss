@@ -1,0 +1,103 @@
+@if ($k-utilities == true and $k-utilities-loader != false) or $k-utilities-loader == true {
+
+  /**
+   * Loader container
+   *
+   * Cover it's entire parent (the parent with an `absolute` or `relative` position)
+   * - Add `k-hidden` class to the element when items are done loading
+   */
+
+  .k-loader-container {
+    @include coverall;
+    z-index: 5;
+    background: rgba($k-loader-container-background, $k-loader-container-opacity);
+    display: flex;
+    align-items: center;
+
+    .k-loader {
+      @include modernizr('.k-cssanimations.k-boxshadow') {
+        left: 0;
+      }
+    }
+  }
+
+
+  /**
+   * Loader
+   * CSS only loading animation.
+   * Falls back to `Loading...` on non capable browsers
+   * Add `k-hidden` class to the element when items are done loading
+   */
+
+  .k-loader {
+    @include modernizr('.k-cssanimations.k-boxshadow') {
+      display: inline-block;
+      color: $k-loader-color;
+      font-size: $k-loader-size-small;
+      margin: 0 auto 2em;
+      position: relative;
+      text-indent: -9999em;
+      vertical-align: middle;
+
+      &,
+      &:before,
+      &:after {
+        border-radius: 50%;
+        width: 1em;
+        height: 1em;
+        animation-fill-mode: both;
+        animation: k-loader $k-loader-duration infinite ease-in-out;
+      }
+
+      & {
+        left: 1.25em;
+      }
+
+      &:before {
+        left: -1.25em;
+        animation-delay: -($k-loader-duration / 8);
+      }
+
+      &:after {
+        left: 1.25em;
+        animation-delay: ($k-loader-duration / 8);
+      }
+
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+      }
+
+      /* Sizes */
+
+      &.k-loader--small {
+        font-size: $k-loader-size-small;
+      }
+
+      &.k-loader--medium {
+        font-size: $k-loader-size-medium;
+      }
+
+      &.k-loader--large {
+        font-size: $k-loader-size-large;
+      }
+    }
+
+    @keyframes k-loader {
+      0%,
+      80%,
+      100% {
+        box-shadow: 0 1em 0 -0.5em;
+      }
+      40% {
+        box-shadow: 0 1em 0 0;
+      }
+    }
+
+    @include rtl {
+      @include flip-item;
+    }
+  }
+}

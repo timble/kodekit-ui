@@ -5,7 +5,7 @@
   @import "single";
   @import "multiple";
 
-  @if ($k-vendor == true and $k-vendor-select2 != false) or $k-vendor-select2 == true {
+  @if ($k-vendors == true and $k-vendor-select2 != false) or $k-vendor-select2 == true {
     .select2-search--dropdown {
       .select2-search__field {
         border: 1px solid $border-color;

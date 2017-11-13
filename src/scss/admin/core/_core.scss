@@ -18,7 +18,7 @@
  * To change this file, change the src/icons/template.css file
  */
 
-@import "../utilities/k-icons";
+@import "../generated/k-icons";
 
 
 
@@ -33,8 +33,10 @@
 
 .k-ui-namespace {
 
-  @import "../utilities/boxsizing";
-  @import "../utilities/normalize";
+  /* Base */
+
+  @import "../atoms/boxsizing";
+  @import "../vendor/normalize";
 
 
   /* Layout */
@@ -77,6 +79,7 @@
   @import "../molecules/form-block";
   @import "../molecules/forms";
   @import "../molecules/gallery";
+  @import "../molecules/hamburger";
   @import "../molecules/heading";
   @import "../molecules/icons";
   @import "../molecules/list";
@@ -106,9 +109,8 @@
    * Loading last so we have the biggest chance of 'winning' specificity wars without using !important
    */
 
-  @import "../utilities/utilities";
+  @import "../utilities/this-or-that";
   @import "../utilities/component-animations";
-  @import "../utilities/hamburger";
 
 }
 
@@ -133,3 +135,4 @@
 @import "../molecules/dropdowns"; /* 3 */
 @import "../molecules/modal"; /* 4 */
 @import "../molecules/datepicker"; /* 5 */
+

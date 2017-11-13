@@ -1,4 +1,4 @@
-@if ($k-vendor == true and $k-vendor-select2 != false) or $k-vendor-select2 == true {
+@if ($k-vendors == true and $k-vendor-select2 != false) or $k-vendor-select2 == true {
 
   .select2-selection--single {
     background-color: #fff;

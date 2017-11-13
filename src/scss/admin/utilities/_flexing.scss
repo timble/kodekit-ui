@@ -1,0 +1,16 @@
+@if ($k-utilities == true and $k-utilities-flexing != false) or $k-utilities-flexing == true {
+
+  /**
+   * Flexing boxes
+   *
+   * DO or don't flexing children. USeful inside flexing containers on elemtns that have no pre-defined styling for flexbox
+   */
+
+  .k-dont-flex.k-dont-flex.k-dont-flex {
+    flex: 0 0 auto;
+  }
+
+  .k-do-flex.k-do-flex.k-do-flex {
+    flex: 1 1 auto;
+  }
+}

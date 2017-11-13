@@ -1553,6 +1553,7 @@ body.k-is-resizing {
  * For example when using Kodekit UI inside of another framework or CMS like Joomla! or WordPress
  */
 .k-ui-namespace {
+  /* Base */
   /**
    * Box sizing
    *
@@ -2060,6 +2061,28 @@ body.k-is-resizing {
   /* Gallery
      ========================================================================== */
   /* Make sure that the files are separated from the folders */
+  /* Hamburger
+     ========================================================================== */
+  /**
+   * Animated hamburger button
+   *
+   * 1. Hide when JS is disabled, we don't need a toggle when there's no JS
+   * 2. Show when JS is enabled
+   * 3. Hide when the sidebar is visible
+   */
+  /* Button styling */
+  /**
+   * Left button
+   *
+   * We don't need RTLstyling here since we're calculating the icons to be in the middle
+   */
+  /* Transform hamburger into a cross when the sidebar is opened */
+  /**
+   * Right button
+   *
+   * We don't need RTLstyling here since we're calculating the icons to be in the middle
+   */
+  /* Transform "i" into a cross when the sidebar is opened */
   /* Heading
      ========================================================================== */
   /* Icons
@@ -2320,97 +2343,6 @@ body.k-is-resizing {
    * Loading last so we have the biggest chance of 'winning' specificity wars without using !important
    */
   /**
-   * Adding class three times so we win over most other classes without using
-   * !important. Most selectors are max three long e.g.:
-   * `.some.longer[css=selector]` will still lose from `.selector.selector.selector`
-   * since we load this file last
-   */
-  /**
-   * Dynamic content holder
-   * Add `<script>` and other hidden content (like modals) inside this div so the elements won't be in the way for flexbox
-   */
-  /**
-   * Hidden
-   * Hide content in a non-accessible way. Content is hidden for everybody including screenreaders
-   */
-  /**
-   * Loader
-   * CSS only loading animation.
-   * Falls back to `Loading...` on non capable browsers
-   * Add `k-hidden` class to the element when items are done loading
-   */
-  /**
-   * Loader container
-   *
-   * Cover it's entire parent (the parent with an `absolute` or `relative` position)
-   * - Add `k-hidden` class to the element when items are done loading
-   */
-  /**
-   * No margin
-   * Remove all margins from an element
-   */
-  /**
-   * No transition
-   *
-   * Disable all transitions
-   */
-  /**
-   * No wrap
-   *
-   * Nowrap element
-    */
-  /**
-   * Visually hidden
-   *
-   * Hide the content in an accessible way. Content is hidden for viewers but not for screenreaders
-   */
-  /**
-   * Visually shown
-   *
-   * Show content that have the visually-hidden class
-   * Use as @extend for items that are already extending `.k-visually-hidden`
-   * Try not to use `.k-visually-hidden` and `.k-visually-shown` classes together if possible.
-   */
-  /**
-   * Ratio content
-   */
-  /**
-   * Colors
-   */
-  /**
-   * Content block
-   *
-   * Element with a bottom margin except when item itself is a last-child
-   */
-  /**
-   * Relative positioned element
-   *
-   * Could be useful to add to parnet sof absolutely positioned items
-   */
-  /**
-   * Flexing boxes
-   *
-   * DO or don't flexing children. USeful inside flexing containers on elemtns that have no pre-defined styling for flexbox
-   */
-  /**
-   * Hide elements for touch enabled devices
-   */
-  /**
-   * Text overflow
-   */
-  /**
-   * "Cover all" link
-   *
-   * Use a pseudo element inside the `<a>` to vover the entire parent.
-   * - This way we don't have to make a the parent element a link.
-   * - Downside: You can't select the text anymore, but this could also be used to your advantage
-   */
-  /**
-   * "On-top" links
-   *
-   * Use inside the same parent as the above "coverall" link to place this link on top of the pseudo element
-   */
-  /**
    * This or that
    *
    * Line items up next to each other
@@ -2423,28 +2355,6 @@ body.k-is-resizing {
    * We don't use the `.opacity()` mixin here since it causes a bug with text
    * fields in IE7-8. Source: https://github.com/twbs/bootstrap/pull/3552.
    */
-  /* Hamburger
-     ========================================================================== */
-  /**
-   * Animated hamburger button
-   *
-   * 1. Hide when JS is disabled, we don't need a toggle when there's no JS
-   * 2. Show when JS is enabled
-   * 3. Hide when the sidebar is visible
-   */
-  /* Button styling */
-  /**
-   * Left button
-   *
-   * We don't need RTLstyling here since we're calculating the icons to be in the middle
-   */
-  /* Transform hamburger into a cross when the sidebar is opened */
-  /**
-   * Right button
-   *
-   * We don't need RTLstyling here since we're calculating the icons to be in the middle
-   */
-  /* Transform "i" into a cross when the sidebar is opened */
 }
 
 .k-ui-namespace, .k-ui-namespace *, .k-ui-namespace *:before, .k-ui-namespace *:after {
@@ -6373,6 +6283,162 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 [dir="rtl"] .k-ui-namespace .k-gallery__item--folder + .k-gallery__item--file {
   clear: right;
+}
+
+.k-ui-namespace .k-off-canvas-menu-toggle {
+  position: relative;
+  z-index: 10;
+  float: left;
+  display: none;
+  /* 1 */
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  border-radius: 3px;
+  margin: 10px;
+  background: #3071a9;
+  color: white;
+  /* Set proper margins */
+}
+
+[dir="rtl"] .k-ui-namespace .k-off-canvas-menu-toggle {
+  left: auto;
+  float: right;
+}
+
+.k-js-enabled .k-ui-namespace .k-off-canvas-menu-toggle {
+  display: block;
+  /* 2 */
+}
+
+@media screen and (min-width: 768px) {
+  .k-js-enabled .k-ui-namespace .k-off-canvas-menu-toggle--left {
+    display: none;
+    /* 3 */
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .k-js-enabled .k-ui-namespace .k-off-canvas-menu-toggle--right {
+    display: none;
+    /* 3 */
+  }
+}
+
+.k-ui-namespace .k-off-canvas-menu-toggle.k-off-canvas-menu-toggle--left {
+  margin-right: 0;
+}
+
+[dir="rtl"] .k-ui-namespace .k-off-canvas-menu-toggle.k-off-canvas-menu-toggle--left {
+  margin-right: 10px;
+  margin-left: 0;
+}
+
+.k-ui-namespace .k-off-canvas-menu-toggle.k-off-canvas-menu-toggle--right {
+  margin-left: 0;
+}
+
+[dir="rtl"] .k-ui-namespace .k-off-canvas-menu-toggle.k-off-canvas-menu-toggle--right {
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+.k-ui-namespace .k-off-canvas-menu-toggle--left .k-toggle-button-bar1,
+.k-ui-namespace .k-off-canvas-menu-toggle--left .k-toggle-button-bar2,
+.k-ui-namespace .k-off-canvas-menu-toggle--left .k-toggle-button-bar3,
+.k-ui-namespace .k-off-canvas-menu-toggle--right .k-toggle-button-bar1,
+.k-ui-namespace .k-off-canvas-menu-toggle--right .k-toggle-button-bar2,
+.k-ui-namespace .k-off-canvas-menu-toggle--right .k-toggle-button-bar3 {
+  position: absolute;
+  display: block;
+  background: white;
+  vertical-align: middle;
+  border-radius: 3px;
+  transition: 0.3s 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+  -webkit-backface-visibility: hidden;
+}
+
+.k-ui-namespace .k-off-canvas-menu-toggle--left .k-toggle-button-bar1,
+.k-ui-namespace .k-off-canvas-menu-toggle--left .k-toggle-button-bar2,
+.k-ui-namespace .k-off-canvas-menu-toggle--left .k-toggle-button-bar3 {
+  left: 9px;
+  width: 15px;
+  height: 3px;
+}
+
+.k-ui-namespace .k-off-canvas-menu-toggle--left .k-toggle-button-bar1 {
+  top: 9px;
+}
+
+.k-ui-namespace .k-off-canvas-menu-toggle--left .k-toggle-button-bar2 {
+  top: 15px;
+}
+
+.k-ui-namespace .k-off-canvas-menu-toggle--left .k-toggle-button-bar3 {
+  top: 21px;
+}
+
+.k-ui-namespace .k-show-left-menu .k-off-canvas-menu-toggle--left .k-toggle-button-bar1 {
+  top: 15px;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+.k-ui-namespace .k-show-left-menu .k-off-canvas-menu-toggle--left .k-toggle-button-bar2 {
+  opacity: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.k-ui-namespace .k-show-left-menu .k-off-canvas-menu-toggle--left .k-toggle-button-bar3 {
+  top: 15px;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+
+.k-ui-namespace .k-off-canvas-menu-toggle--right .k-toggle-button-bar1,
+.k-ui-namespace .k-off-canvas-menu-toggle--right .k-toggle-button-bar2,
+.k-ui-namespace .k-off-canvas-menu-toggle--right .k-toggle-button-bar3 {
+  left: 13px;
+}
+
+.k-ui-namespace .k-off-canvas-menu-toggle--right .k-toggle-button-bar1 {
+  width: 5px;
+  height: 5px;
+  top: 8px;
+}
+
+.k-ui-namespace .k-off-canvas-menu-toggle--right .k-toggle-button-bar2,
+.k-ui-namespace .k-off-canvas-menu-toggle--right .k-toggle-button-bar3 {
+  width: 5px;
+  height: 10px;
+  top: 14px;
+}
+
+.k-ui-namespace .k-show-right-menu .k-off-canvas-menu-toggle--right .k-toggle-button-bar1 {
+  opacity: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.k-ui-namespace .k-show-right-menu .k-off-canvas-menu-toggle--right .k-toggle-button-bar2 {
+  top: 9px;
+  left: 14px;
+  height: 15px;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+  opacity: 1;
+  width: 3px;
+}
+
+.k-ui-namespace .k-show-right-menu .k-off-canvas-menu-toggle--right .k-toggle-button-bar3 {
+  top: 9px;
+  left: 14px;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+  height: 15px;
+  width: 3px;
 }
 
 .k-ui-namespace .k-heading {
@@ -11413,346 +11479,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   border-radius: 0 0 4px 4px;
 }
 
-.k-ui-namespace .k-dynamic-content-holder.k-dynamic-content-holder.k-dynamic-content-holder {
-  display: none;
-}
-
-.k-ui-namespace .k-hidden.k-hidden.k-hidden,
-.k-ui-namespace .k-is-hidden.k-is-hidden.k-is-hidden {
-  display: none;
-}
-
-.k-cssanimations.k-boxshadow .k-ui-namespace .k-loader {
-  display: inline-block;
-  color: #3071a9;
-  font-size: 5px;
-  margin: 0 auto 2em;
-  position: relative;
-  text-indent: -9999em;
-  vertical-align: middle;
-  /* Sizes */
-}
-
-.k-cssanimations.k-boxshadow .k-ui-namespace .k-loader, .k-cssanimations.k-boxshadow .k-ui-namespace .k-loader:before, .k-cssanimations.k-boxshadow .k-ui-namespace .k-loader:after {
-  border-radius: 50%;
-  width: 1em;
-  height: 1em;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-  -webkit-animation: k-loader 1.61s infinite ease-in-out;
-          animation: k-loader 1.61s infinite ease-in-out;
-}
-
-.k-cssanimations.k-boxshadow .k-ui-namespace .k-loader {
-  left: 1.25em;
-}
-
-.k-cssanimations.k-boxshadow .k-ui-namespace .k-loader:before {
-  left: -1.25em;
-  -webkit-animation-delay: -0.20125s;
-          animation-delay: -0.20125s;
-}
-
-.k-cssanimations.k-boxshadow .k-ui-namespace .k-loader:after {
-  left: 1.25em;
-  -webkit-animation-delay: 0.20125s;
-          animation-delay: 0.20125s;
-}
-
-.k-cssanimations.k-boxshadow .k-ui-namespace .k-loader:before, .k-cssanimations.k-boxshadow .k-ui-namespace .k-loader:after {
-  content: '';
-  position: absolute;
-  top: 0;
-}
-
-.k-cssanimations.k-boxshadow .k-ui-namespace .k-loader.k-loader--small {
-  font-size: 5px;
-}
-
-.k-cssanimations.k-boxshadow .k-ui-namespace .k-loader.k-loader--medium {
-  font-size: 10px;
-}
-
-.k-cssanimations.k-boxshadow .k-ui-namespace .k-loader.k-loader--large {
-  font-size: 20px;
-}
-
-@-webkit-keyframes k-loader {
-  0%,
-  80%,
-  100% {
-    box-shadow: 0 1em 0 -0.5em;
-  }
-  40% {
-    box-shadow: 0 1em 0 0;
-  }
-}
-
-@keyframes k-loader {
-  0%,
-  80%,
-  100% {
-    box-shadow: 0 1em 0 -0.5em;
-  }
-  40% {
-    box-shadow: 0 1em 0 0;
-  }
-}
-
-[dir="rtl"] .k-ui-namespace .k-loader {
-  -webkit-transform: scaleX(-1);
-          transform: scaleX(-1);
-}
-
-.k-ui-namespace .k-loader-container {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 5;
-  background: rgba(255, 255, 255, 0.8);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.k-cssanimations.k-boxshadow .k-ui-namespace .k-loader-container .k-loader {
-  left: 0;
-}
-
-.k-ui-namespace .k-no-margin.k-no-margin.k-no-margin {
-  margin: 0;
-}
-
-.k-ui-namespace .k-no-transition.k-no-transition.k-no-transition {
-  transition: none;
-}
-
-.k-ui-namespace .k-no-wrap.k-no-wrap.k-no-wrap {
-  white-space: nowrap;
-}
-
-.k-ui-namespace .k-visually-hidden.k-visually-hidden.k-visually-hidden {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  width: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-}
-
-.k-ui-namespace .k-visually-shown.k-visually-shown.k-visually-shown {
-  position: static;
-  overflow: visible;
-  clip: auto;
-  height: auto;
-  width: auto;
-  margin: 0;
-}
-
-.k-ui-namespace .k-ratio-block {
-  position: relative;
-  width: 100%;
-}
-
-.k-ui-namespace .k-ratio-block--16-to-9 {
-  position: relative;
-}
-
-.k-ui-namespace .k-ratio-block--16-to-9:before {
-  display: block;
-  content: " ";
-  padding-top: 56.25%;
-}
-
-.k-ui-namespace .k-ratio-block--4-to-3 {
-  position: relative;
-}
-
-.k-ui-namespace .k-ratio-block--4-to-3:before {
-  display: block;
-  content: " ";
-  padding-top: 75%;
-}
-
-.k-ui-namespace .k-ratio-block--3-to-2 {
-  position: relative;
-}
-
-.k-ui-namespace .k-ratio-block--3-to-2:before {
-  display: block;
-  content: " ";
-  padding-top: 66.6666666667%;
-}
-
-.k-ui-namespace .k-ratio-block--2-to-3 {
-  position: relative;
-}
-
-.k-ui-namespace .k-ratio-block--2-to-3:before {
-  display: block;
-  content: " ";
-  padding-top: 150%;
-}
-
-.k-ui-namespace .k-ratio-block--2-to-1 {
-  position: relative;
-}
-
-.k-ui-namespace .k-ratio-block--2-to-1:before {
-  display: block;
-  content: " ";
-  padding-top: 50%;
-}
-
-.k-ui-namespace .k-ratio-block--1-to-2 {
-  position: relative;
-}
-
-.k-ui-namespace .k-ratio-block--1-to-2:before {
-  display: block;
-  content: " ";
-  padding-top: 200%;
-}
-
-.k-ui-namespace .k-ratio-block--1-to-1 {
-  position: relative;
-}
-
-.k-ui-namespace .k-ratio-block--1-to-1:before {
-  display: block;
-  content: " ";
-  padding-top: 100%;
-}
-
-.k-ui-namespace .k-ratio-block.k-is-loaded .k-loader.k-loader {
-  opacity: 0;
-}
-
-.k-ui-namespace .k-ratio-block .k-loader.k-loader {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 1;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-.k-ui-namespace .k-ratio-block .k-ratio-block__body {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.k-ui-namespace .k-color-error {
-  color: #c0392b;
-}
-
-.k-ui-namespace .k-content-block {
-  margin-bottom: 16px;
-}
-
-.k-ui-namespace .k-content-block:last-child {
-  margin-bottom: 0;
-}
-
-.k-ui-namespace .k-content-block--small {
-  margin-bottom: 1em;
-}
-
-.k-ui-namespace .k-content-block--small:last-child {
-  margin-bottom: 0;
-}
-
-.k-ui-namespace .k-content-block-top {
-  margin-top: 16px;
-}
-
-.k-ui-namespace .k-content-block-top:first-child {
-  margin-top: 0;
-}
-
-.k-ui-namespace .k-content-block-top--small {
-  margin-top: 1em;
-}
-
-.k-ui-namespace .k-content-block-top--small:first-child {
-  margin-top: 0;
-}
-
-.k-ui-namespace .k-position-relative {
-  position: relative;
-}
-
-.k-ui-namespace .k-dont-flex.k-dont-flex.k-dont-flex {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
-}
-
-.k-ui-namespace .k-do-flex.k-do-flex.k-do-flex {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-}
-
-.k-touchevents .k-ui-namespace .k-touchevents-hidden {
-  display: none !important;
-}
-
-.k-ui-namespace .k-ellipsis {
-  max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.k-ui-namespace .k-ellipsis a, .k-ui-namespace .k-ellipsis span, .k-ui-namespace .k-ellipsis input, .k-ui-namespace .k-ellipsis svg, .k-ui-namespace .k-ellipsis div, .k-ui-namespace .k-ellipsis small {
-  display: inline-block;
-  vertical-align: middle;
-  max-width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.k-ui-namespace .k-link-coverall:after {
-  display: block;
-  position: absolute;
-  content: " ";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-.k-ui-namespace .k-coverall-ontop,
-.k-ui-namespace .k-link-ontop {
-  position: relative;
-  z-index: 1;
-}
-
 .k-ui-namespace .k-this-or-that {
   display: inline-block;
   margin-right: 4px;
@@ -11796,162 +11522,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   overflow: hidden;
   transition: opacity 0.5s cubic-bezier(0.2, 0.57, 0.44, 0.83);
   -webkit-backface-visibility: hidden;
-}
-
-.k-ui-namespace .k-off-canvas-menu-toggle {
-  position: relative;
-  z-index: 10;
-  float: left;
-  display: none;
-  /* 1 */
-  width: 32px;
-  height: 32px;
-  padding: 0;
-  border: none;
-  border-radius: 3px;
-  margin: 10px;
-  background: #3071a9;
-  color: white;
-  /* Set proper margins */
-}
-
-[dir="rtl"] .k-ui-namespace .k-off-canvas-menu-toggle {
-  left: auto;
-  float: right;
-}
-
-.k-js-enabled .k-ui-namespace .k-off-canvas-menu-toggle {
-  display: block;
-  /* 2 */
-}
-
-@media screen and (min-width: 768px) {
-  .k-js-enabled .k-ui-namespace .k-off-canvas-menu-toggle--left {
-    display: none;
-    /* 3 */
-  }
-}
-
-@media screen and (min-width: 600px) {
-  .k-js-enabled .k-ui-namespace .k-off-canvas-menu-toggle--right {
-    display: none;
-    /* 3 */
-  }
-}
-
-.k-ui-namespace .k-off-canvas-menu-toggle.k-off-canvas-menu-toggle--left {
-  margin-right: 0;
-}
-
-[dir="rtl"] .k-ui-namespace .k-off-canvas-menu-toggle.k-off-canvas-menu-toggle--left {
-  margin-right: 10px;
-  margin-left: 0;
-}
-
-.k-ui-namespace .k-off-canvas-menu-toggle.k-off-canvas-menu-toggle--right {
-  margin-left: 0;
-}
-
-[dir="rtl"] .k-ui-namespace .k-off-canvas-menu-toggle.k-off-canvas-menu-toggle--right {
-  margin-left: 10px;
-  margin-right: 0;
-}
-
-.k-ui-namespace .k-off-canvas-menu-toggle--left .k-toggle-button-bar1,
-.k-ui-namespace .k-off-canvas-menu-toggle--left .k-toggle-button-bar2,
-.k-ui-namespace .k-off-canvas-menu-toggle--left .k-toggle-button-bar3,
-.k-ui-namespace .k-off-canvas-menu-toggle--right .k-toggle-button-bar1,
-.k-ui-namespace .k-off-canvas-menu-toggle--right .k-toggle-button-bar2,
-.k-ui-namespace .k-off-canvas-menu-toggle--right .k-toggle-button-bar3 {
-  position: absolute;
-  display: block;
-  background: white;
-  vertical-align: middle;
-  border-radius: 3px;
-  transition: 0.3s 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-  -webkit-backface-visibility: hidden;
-}
-
-.k-ui-namespace .k-off-canvas-menu-toggle--left .k-toggle-button-bar1,
-.k-ui-namespace .k-off-canvas-menu-toggle--left .k-toggle-button-bar2,
-.k-ui-namespace .k-off-canvas-menu-toggle--left .k-toggle-button-bar3 {
-  left: 9px;
-  width: 15px;
-  height: 3px;
-}
-
-.k-ui-namespace .k-off-canvas-menu-toggle--left .k-toggle-button-bar1 {
-  top: 9px;
-}
-
-.k-ui-namespace .k-off-canvas-menu-toggle--left .k-toggle-button-bar2 {
-  top: 15px;
-}
-
-.k-ui-namespace .k-off-canvas-menu-toggle--left .k-toggle-button-bar3 {
-  top: 21px;
-}
-
-.k-ui-namespace .k-show-left-menu .k-off-canvas-menu-toggle--left .k-toggle-button-bar1 {
-  top: 15px;
-  -webkit-transform: rotate(135deg);
-          transform: rotate(135deg);
-}
-
-.k-ui-namespace .k-show-left-menu .k-off-canvas-menu-toggle--left .k-toggle-button-bar2 {
-  opacity: 0;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-}
-
-.k-ui-namespace .k-show-left-menu .k-off-canvas-menu-toggle--left .k-toggle-button-bar3 {
-  top: 15px;
-  -webkit-transform: rotate(-135deg);
-          transform: rotate(-135deg);
-}
-
-.k-ui-namespace .k-off-canvas-menu-toggle--right .k-toggle-button-bar1,
-.k-ui-namespace .k-off-canvas-menu-toggle--right .k-toggle-button-bar2,
-.k-ui-namespace .k-off-canvas-menu-toggle--right .k-toggle-button-bar3 {
-  left: 13px;
-}
-
-.k-ui-namespace .k-off-canvas-menu-toggle--right .k-toggle-button-bar1 {
-  width: 5px;
-  height: 5px;
-  top: 8px;
-}
-
-.k-ui-namespace .k-off-canvas-menu-toggle--right .k-toggle-button-bar2,
-.k-ui-namespace .k-off-canvas-menu-toggle--right .k-toggle-button-bar3 {
-  width: 5px;
-  height: 10px;
-  top: 14px;
-}
-
-.k-ui-namespace .k-show-right-menu .k-off-canvas-menu-toggle--right .k-toggle-button-bar1 {
-  opacity: 0;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-}
-
-.k-ui-namespace .k-show-right-menu .k-off-canvas-menu-toggle--right .k-toggle-button-bar2 {
-  top: 9px;
-  left: 14px;
-  height: 15px;
-  -webkit-transform: rotate(135deg);
-          transform: rotate(135deg);
-  opacity: 1;
-  width: 3px;
-}
-
-.k-ui-namespace .k-show-right-menu .k-off-canvas-menu-toggle--right .k-toggle-button-bar3 {
-  top: 9px;
-  left: 14px;
-  -webkit-transform: rotate(-135deg);
-          transform: rotate(-135deg);
-  height: 15px;
-  width: 3px;
 }
 
 /* 3rd party

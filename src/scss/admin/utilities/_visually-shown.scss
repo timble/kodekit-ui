@@ -1,0 +1,19 @@
+@if ($k-utilities == true and $k-utilities-visually-shown != false) or $k-utilities-visually-shown == true {
+
+  /**
+   * Visually shown
+   *
+   * Show content that have the visually-hidden class
+   * Use as @extend for items that are already extending `.k-visually-hidden`
+   * Try not to use `.k-visually-hidden` and `.k-visually-shown` classes together if possible.
+   */
+
+  .k-visually-shown.k-visually-shown.k-visually-shown {
+    position: static;
+    overflow: visible;
+    clip: auto;
+    height: auto;
+    width: auto;
+    margin: 0;
+  }
+}

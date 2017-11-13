@@ -1,0 +1,12 @@
+@if ($k-utilities == true and $k-utilities-touchevents != false) or $k-utilities-touchevents == true {
+
+  /**
+   * Hide elements for touch enabled devices
+   */
+
+  .k-touchevents-hidden {
+    @include modernizr('.k-touchevents') {
+      display: none !important;
+    }
+  }
+}

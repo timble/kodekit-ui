@@ -1,0 +1,11 @@
+@if ($k-utilities == true and $k-utilities-no-margin != false) or $k-utilities-no-margin == true {
+
+  /**
+   * No margin
+   * Remove all margins from an element
+   */
+
+  .k-no-margin.k-no-margin.k-no-margin {
+    margin: 0;
+  }
+}

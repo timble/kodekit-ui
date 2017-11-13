@@ -1,0 +1,12 @@
+@if ($k-utilities == true and $k-utilities-position-relative != false) or $k-utilities-position-relative == true {
+
+  /**
+   * Relative positioned element
+   *
+   * Could be useful to add to parnet sof absolutely positioned items
+   */
+
+  .k-position-relative {
+    position: relative;
+  }
+}

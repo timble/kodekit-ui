@@ -1,0 +1,28 @@
+@if ($k-utilities == true and $k-utilities-coverall != false) or $k-utilities-coverall == true {
+
+  /**
+   * "Cover all" link
+   *
+   * Use a pseudo element inside the `<a>` to vover the entire parent.
+   * - This way we don't have to make a the parent element a link.
+   * - Downside: You can't select the text anymore, but this could also be used to your advantage
+   */
+
+  .k-link-coverall {
+    @include pseudo(after, false) {
+      @include coverall;
+    }
+  }
+
+  /**
+   * "On-top" links
+   *
+   * Use inside the same parent as the above "coverall" link to place this link on top of the pseudo element
+   */
+
+  .k-coverall-ontop,
+  .k-link-ontop {
+    position: relative;
+    z-index: 1;
+  }
+}

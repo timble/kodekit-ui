@@ -1,0 +1,24 @@
+@if ($k-utilities == true and $k-utilities-content-block != false) or $k-utilities-content-block == true {
+
+  /**
+   * Content block
+   *
+   * Element with a bottom margin except when item itself is a last-child
+   */
+
+  .k-content-block {
+    @include content-block;
+  }
+
+  .k-content-block--small {
+    @include content-block(1em);
+  }
+
+  .k-content-block-top {
+    @include content-block-top;
+  }
+
+  .k-content-block-top--small {
+    @include content-block-top(1em);
+  }
+}

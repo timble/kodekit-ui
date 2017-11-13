@@ -1,0 +1,12 @@
+@if ($k-utilities == true and $k-utilities-no-wrap != false) or $k-utilities-no-wrap == true {
+
+  /**
+   * No wrap
+   *
+   * Nowrap element
+    */
+
+  .k-no-wrap.k-no-wrap.k-no-wrap {
+    white-space: nowrap;
+  }
+}

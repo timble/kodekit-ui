@@ -1,0 +1,19 @@
+@if ($k-utilities == true and $k-utilities-visually-hidden != false) or $k-utilities-visually-hidden == true {
+
+  /**
+   * Visually hidden
+   *
+   * Hide the content in an accessible way. Content is hidden for viewers but not for screenreaders
+   */
+
+  .k-visually-hidden.k-visually-hidden.k-visually-hidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+  }
+}

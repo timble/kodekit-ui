@@ -2,7 +2,7 @@
   @import "single";
   @import "multiple";
 
-  @if ($k-vendor == true and $k-vendor-select2 != false) or $k-vendor-select2 == true {
+  @if ($k-vendors == true and $k-vendor-select2 != false) or $k-vendor-select2 == true {
     &.select2-container--open.select2-container--above {
       .select2-selection--single, .select2-selection--multiple {
         border-top-left-radius: 0;
