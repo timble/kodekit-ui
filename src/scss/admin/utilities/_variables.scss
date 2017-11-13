@@ -5,6 +5,14 @@
 // Disable individual molecules by setting `$k-molecule-alert: false' for example
 // Enable individual molecules by setting `$k-molecules: false` and `$k-molecule-alert: true' for example
 
+$k-utilities:                   true !default;
+$k-utilities-box-sizing:        inherit !default;
+$k-utilities-animations:        inherit !default;
+$k-utilities-hamburger:         inherit !default;
+$k-utilities-icons:             inherit !default;
+$k-utilities-normalize:         inherit !default;
+$k-utilities-utilities:         inherit !default;
+
 $k-layout:                      true !default;
 $k-layout-component:            inherit !default;
 $k-layout-component-wrapper:    inherit !default;
@@ -61,6 +69,9 @@ $k-molecule-tooltip:            inherit !default;
 $k-molecule-top:                inherit !default;
 $k-molecule-tree:               inherit !default;
 $k-molecule-wells:              inherit !default;
+
+$k-vendor:                      true !default;
+$k-vendor-select2:              inherit !default;
 
 
 

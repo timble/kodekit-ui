@@ -1,36 +1,38 @@
-/* Custom icon font
-   ========================================================================== */
+@if ($k-utilities == true and $k-utilities-icons != false) or $k-utilities-icons == true {
 
-// The placeholders in this file are being replaced with real values by grunt-webfont
+  /* Custom icon font
+     ========================================================================== */
 
-
-// @font-face
-
-@font-face {
-  font-family: "k-icons";
-  src:    url("#{$k-icon-path}/k-icons/k-icons.eot");
-  src:    url("#{$k-icon-path}/k-icons/k-icons.eot?#iefix") format("embedded-opentype"),
-  url("#{$k-icon-path}/k-icons/k-icons.woff") format("woff"),
-  url("#{$k-icon-path}/k-icons/k-icons.ttf") format("truetype"),
-  url("#{$k-icon-path}/k-icons/k-icons.svg#k-icons") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
+  // The placeholders in this file are being replaced with real values by grunt-webfont
 
 
-/**
- * Use SVG
- *
- * Always use SVG on touch / mobile
- */
+  // @font-face
 
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
     font-family: "k-icons";
-    src: url("#{$k-icon-path}/k-icons/k-icons.svg#k-icons") format("svg");
+    src:    url("#{$icon-path}/k-icons/k-icons.eot");
+    src:    url("#{$icon-path}/k-icons/k-icons.eot?#iefix") format("embedded-opentype"),
+    url("#{$icon-path}/k-icons/k-icons.woff") format("woff"),
+    url("#{$icon-path}/k-icons/k-icons.ttf") format("truetype"),
+    url("#{$icon-path}/k-icons/k-icons.svg#k-icons") format("svg");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+
+  /**
+   * Use SVG
+   *
+   * Always use SVG on touch / mobile
+   */
+
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    @font-face {
+      font-family: "k-icons";
+      src: url("#{$icon-path}/k-icons/k-icons.svg#k-icons") format("svg");
+    }
   }
 }
-
 
 // Placeholder
 // To be used in mixins
@@ -63,7 +65,7 @@
 // Sass icon map
 // All the available icons
 
-$k-icons: (
+$icons: (
   account-login: "\f114",
   account-logout: "\f115",
   action-redo: "\f116",
@@ -309,48 +311,27 @@ $k-icons: (
 
 
 // Test if the list conatins a certain value
-@function contains($k-list, $k-var) {
-  @return (null != index($k-list, $k-var));
+@function contains($list, $var) {
+  @return (null != index($list, $var));
 }
 
-/**
- * Icon classes
- *
- * Creating a class name for each individual icon to be used in markup like:
- * <span class="k-icon-circle"></span>
- */
-
-@each $k-name, $k-icon in $k-icons {
-  .k-icon-#{$k-name} {
-    @extend %icon;
-    &:before {
-      content: "#{$k-icon}";
-
-      @if contains($k-rtlicons, $k-name) {
-        @include rtl {
-          @include flip-item;
-        }
-      }
-    }
-  }
-}
 
 
 // 'Icon before' mixin
 // For adding icons to elements using CSS pseudo-elements
 
-@mixin icon-before($k-icon: false, $k-styles: false) {
+@mixin icon-before($icon: false, $styles: false) {
   &:before {
-    @if $k-icon {
-      content: "#{map-get($k-icons, $k-icon)}";
+    @if $icon {
+      content: "#{map-get($icons, $icon)}";
 
-      @if contains($k-rtlicons, $k-icon) {
+      @if contains($rtlicons, $icon) {
         @include rtl {
           @include flip-item;
         }
       }
     }
-    @if $k-styles {
+    @if $styles {
       @extend %icon;
     }
     @content;
@@ -361,20 +342,44 @@ $k-icons: (
 // 'Icon after' mixin
 // For adding icons to elements using CSS pseudo-elements
 
-@mixin icon-after($k-icon: false, $k-styles: false) {
+@mixin icon-after($icon: false, $styles: false) {
   &:after {
-    @if $k-icon {
-      content: "#{map-get($k-icons, $k-icon)}";
+    @if $icon {
+      content: "#{map-get($icons, $icon)}";
 
-      @if contains($k-rtlicons, $k-icon) {
+      @if contains($rtlicons, $icon) {
         @include rtl {
           @include flip-item;
         }
       }
     }
-    @if $k-styles {
+    @if $styles {
       @extend %icon;
     }
     @content;
+  }
+}
+
+@if ($k-utilities == true and $k-utilities-icons != false) or $k-utilities-icons == true {
+  /**
+   * Icon classes
+   *
+   * Creating a class name for each individual icon to be used in markup like:
+   * <span class="k-icon-circle"></span>
+   */
+
+  @each $name, $icon in $icons {
+    .k-icon-#{$name} {
+      @extend %icon;
+      &:before {
+        content: "#{$icon}";
+
+        @if contains($rtlicons, $name) {
+          @include rtl {
+            @include flip-item;
+          }
+        }
+      }
+    }
   }
 }

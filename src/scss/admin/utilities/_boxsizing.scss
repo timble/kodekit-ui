@@ -1,10 +1,13 @@
-/**
- * Box sizing
- *
- * Border box everything:
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- */
+@if ($k-utilities == true and $k-utilities-box-sizing != false) or $k-utilities-box-sizing == true {
 
-&, *, *:before, *:after {
-  box-sizing: border-box;
+  /**
+   * Box sizing
+   *
+   * Border box everything:
+   * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+   */
+
+  &, *, *:before, *:after {
+    box-sizing: border-box;
+  }
 }

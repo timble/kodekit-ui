@@ -98,7 +98,7 @@ module.exports = function(grunt) {
                     '<%= srcPath %>/icons/*.svg'
                 ],
                 dest: '<%= distPath %>/fonts/k-icons',
-                destCss: '<%= srcPath %>/scss/utilities',
+                destCss: '<%= srcPath %>/scss/admin/utilities',
                 options: {
                     codepointsFile: '<%= srcPath %>/fonts/k-icons-codepoints',
                     font: 'k-icons',

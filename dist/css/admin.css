@@ -1554,159 +1554,159 @@ body.k-is-resizing {
  */
 .k-ui-namespace {
   /**
- * Box sizing
- *
- * Border box everything:
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- */
+   * Box sizing
+   *
+   * Border box everything:
+   * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+   */
   /* normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
   /**
- * 1. Prevent adjustments of font size after orientation changes in IE and iOS.
- */
+   * 1. Prevent adjustments of font size after orientation changes in IE and iOS.
+   */
   /**
- * Remove the margin in all browsers (opinionated).
- */
+   * Remove the margin in all browsers (opinionated).
+   */
   /* HTML5 display definitions
-   ========================================================================== */
+     ========================================================================== */
   /**
- * Add the correct display in IE 9-.
- * 1. Add the correct display in Edge, IE, and Firefox.
- * 2. Add the correct display in IE.
- */
+   * Add the correct display in IE 9-.
+   * 1. Add the correct display in Edge, IE, and Firefox.
+   * 2. Add the correct display in IE.
+   */
   /**
- * Add the correct display in IE 9-.
- */
+   * Add the correct display in IE 9-.
+   */
   /**
- * Add the correct display in iOS 4-7.
- */
+   * Add the correct display in iOS 4-7.
+   */
   /**
- * Add the correct vertical alignment in Chrome, Firefox, and Opera.
- */
+   * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+   */
   /**
- * Add the correct display in IE 10-.
- * 1. Add the correct display in IE.
- */
+   * Add the correct display in IE 10-.
+   * 1. Add the correct display in IE.
+   */
   /* Links
-   ========================================================================== */
+     ========================================================================== */
   /**
- * 1. Remove the gray background on active links in IE 10.
- * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
- */
+   * 1. Remove the gray background on active links in IE 10.
+   * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+   */
   /**
- * Remove the outline on focused links when they are also active or hovered
- * in all browsers (opinionated).
- */
+   * Remove the outline on focused links when they are also active or hovered
+   * in all browsers (opinionated).
+   */
   /* Text-level semantics
-   ========================================================================== */
+     ========================================================================== */
   /**
- * 1. Remove the bottom border in Firefox 39-.
- * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
- */
+   * 1. Remove the bottom border in Firefox 39-.
+   * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+   */
   /**
- * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
- */
+   * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+   */
   /**
- * Add the correct font weight in Chrome, Edge, and Safari.
- */
+   * Add the correct font weight in Chrome, Edge, and Safari.
+   */
   /**
- * Add the correct font style in Android 4.3-.
- */
+   * Add the correct font style in Android 4.3-.
+   */
   /**
- * Correct the font size and margin on `h1` elements within `section` and
- * `article` contexts in Chrome, Firefox, and Safari.
- */
+   * Correct the font size and margin on `h1` elements within `section` and
+   * `article` contexts in Chrome, Firefox, and Safari.
+   */
   /**
- * Add the correct background and color in IE 9-.
- */
+   * Add the correct background and color in IE 9-.
+   */
   /**
- * Add the correct font size in all browsers.
- */
+   * Add the correct font size in all browsers.
+   */
   /**
- * Prevent `sub` and `sup` elements from affecting the line height in
- * all browsers.
- */
+   * Prevent `sub` and `sup` elements from affecting the line height in
+   * all browsers.
+   */
   /* Embedded content
-   ========================================================================== */
+     ========================================================================== */
   /**
- * Remove the border on images inside links in IE 10-.
- */
+   * Remove the border on images inside links in IE 10-.
+   */
   /**
- * Hide the overflow in IE.
- */
+   * Hide the overflow in IE.
+   */
   /* Grouping content
-   ========================================================================== */
+     ========================================================================== */
   /**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
   /**
- * Add the correct margin in IE 8.
- */
+   * Add the correct margin in IE 8.
+   */
   /**
- * 1. Add the correct box sizing in Firefox.
- * 2. Show the overflow in Edge and IE.
- */
+   * 1. Add the correct box sizing in Firefox.
+   * 2. Show the overflow in Edge and IE.
+   */
   /* Forms
-   ========================================================================== */
+     ========================================================================== */
   /**
- * 1. Change font properties to `inherit` in all browsers (opinionated).
- * 2. Remove the margin in Firefox and Safari.
- */
+   * 1. Change font properties to `inherit` in all browsers (opinionated).
+   * 2. Remove the margin in Firefox and Safari.
+   */
   /**
- * Restore the font weight unset by the previous rule.
- */
+   * Restore the font weight unset by the previous rule.
+   */
   /**
- * Show the overflow in IE.
- * 1. Show the overflow in Edge.
- */
+   * Show the overflow in IE.
+   * 1. Show the overflow in Edge.
+   */
   /**
- * Remove the inheritance of text transform in Edge, Firefox, and IE.
- * 1. Remove the inheritance of text transform in Firefox.
- */
+   * Remove the inheritance of text transform in Edge, Firefox, and IE.
+   * 1. Remove the inheritance of text transform in Firefox.
+   */
   /**
- * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
- *    controls in Android 4.
- * 2. Correct the inability to style clickable types in iOS and Safari.
- */
+   * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+   *    controls in Android 4.
+   * 2. Correct the inability to style clickable types in iOS and Safari.
+   */
   /**
- * Remove the inner border and padding in Firefox.
- */
+   * Remove the inner border and padding in Firefox.
+   */
   /**
- * Restore the focus styles unset by the previous rule.
- */
+   * Restore the focus styles unset by the previous rule.
+   */
   /**
- * Change the border, margin, and padding in all browsers (opinionated).
- */
+   * Change the border, margin, and padding in all browsers (opinionated).
+   */
   /**
- * 1. Correct the text wrapping in Edge and IE.
- * 2. Correct the color inheritance from `fieldset` elements in IE.
- * 3. Remove the padding so developers are not caught out when they zero out
- *    `fieldset` elements in all browsers.
- */
+   * 1. Correct the text wrapping in Edge and IE.
+   * 2. Correct the color inheritance from `fieldset` elements in IE.
+   * 3. Remove the padding so developers are not caught out when they zero out
+   *    `fieldset` elements in all browsers.
+   */
   /**
- * Remove the default vertical scrollbar in IE.
- */
+   * Remove the default vertical scrollbar in IE.
+   */
   /**
- * 1. Add the correct box sizing in IE 10-.
- * 2. Remove the padding in IE 10-.
- */
+   * 1. Add the correct box sizing in IE 10-.
+   * 2. Remove the padding in IE 10-.
+   */
   /**
- * Correct the cursor style of increment and decrement buttons in Chrome.
- */
+   * Correct the cursor style of increment and decrement buttons in Chrome.
+   */
   /**
- * 1. Correct the odd appearance in Chrome and Safari.
- * 2. Correct the outline style in Safari.
- */
+   * 1. Correct the odd appearance in Chrome and Safari.
+   * 2. Correct the outline style in Safari.
+   */
   /**
- * Remove the inner padding and cancel buttons in Chrome and Safari on OS X.
- */
+   * Remove the inner padding and cancel buttons in Chrome and Safari on OS X.
+   */
   /**
- * Correct the text style of placeholders in Chrome, Edge, and Safari.
- */
+   * Correct the text style of placeholders in Chrome, Edge, and Safari.
+   */
   /**
- * 1. Correct the inability to style clickable types in iOS and Safari.
- * 2. Change font properties to `inherit` in Safari.
- */
+   * 1. Correct the inability to style clickable types in iOS and Safari.
+   * 2. Change font properties to `inherit` in Safari.
+   */
   /* Layout */
   /* Component
      ========================================================================== */
@@ -4755,274 +4755,274 @@ body.k-is-resizing {
    * Loading last so we have the biggest chance of 'winning' specificity wars without using !important
    */
   /**
- * Adding class three times so we win over most other classes without using
- * !important. Most selectors are max three long e.g.:
- * `.some.longer[css=selector]` will still lose from `.selector.selector.selector`
- * since we load this file last
- */
+   * Adding class three times so we win over most other classes without using
+   * !important. Most selectors are max three long e.g.:
+   * `.some.longer[css=selector]` will still lose from `.selector.selector.selector`
+   * since we load this file last
+   */
   /*
-Dynamic content holder
+  Dynamic content holder
 
-Add `<script>` and other hidden content (like modals) inside this div so the elements won't be in the way for flexbox
+  Add `<script>` and other hidden content (like modals) inside this div so the elements won't be in the way for flexbox
 
-markup:
-<div class="k-dynamic-content-holder">...</div>
+  markup:
+  <div class="k-dynamic-content-holder">...</div>
 
-Styleguide 6.1
+  Styleguide 6.1
 
-*/
+  */
   /*
-Hidden
+  Hidden
 
-Hide content in a non-accessible way. Content is hidden for everybody including screenreaders
+  Hide content in a non-accessible way. Content is hidden for everybody including screenreaders
 
-markup:
-<div class="k-hidden">...</div>
+  markup:
+  <div class="k-hidden">...</div>
 
-Styleguide 6.2
+  Styleguide 6.2
 
-*/
+  */
   /*
-Loader
+  Loader
 
-CSS only loading animation.
-- Falls back to `Loading...` on non capable browsers
-- Add `k-hidden` class to the element when items are done loading
+  CSS only loading animation.
+  - Falls back to `Loading...` on non capable browsers
+  - Add `k-hidden` class to the element when items are done loading
 
-.k-loader--small - Small
-.k-loader--medium - Medium
-.k-loader--large - Large
+  .k-loader--small - Small
+  .k-loader--medium - Medium
+  .k-loader--large - Large
 
-markup:
-<span class="k-loader {$modifiers}">Loading...</span>
+  markup:
+  <span class="k-loader {$modifiers}">Loading...</span>
 
-sg-wrapper:
-<div>
-    <sg-wrapper-content/>
-</div>
+  sg-wrapper:
+  <div>
+      <sg-wrapper-content/>
+  </div>
 
-Styleguide 6.3
+  Styleguide 6.3
 
-*/
+  */
   /*
-Loader container
+  Loader container
 
-Cover it's entire parent (the parent with an `absolute` or `relative` position)
-- Add `k-hidden` class to the element when items are done loading
+  Cover it's entire parent (the parent with an `absolute` or `relative` position)
+  - Add `k-hidden` class to the element when items are done loading
 
-markup:
-<div class="k-loader-container">
-    <span class="k-loader k-loader--large">Loading...</span>
-</div>
+  markup:
+  <div class="k-loader-container">
+      <span class="k-loader k-loader--large">Loading...</span>
+  </div>
 
-sg-wrapper:
-<div style="position:relative;">
-    <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui.</p>
-    <p>Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec ullamcorper nulla non metus auctor fringilla. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    <sg-wrapper-content/>
-</div>
+  sg-wrapper:
+  <div style="position:relative;">
+      <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui.</p>
+      <p>Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+      <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec ullamcorper nulla non metus auctor fringilla. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <sg-wrapper-content/>
+  </div>
 
-Styleguide 6.3.1
+  Styleguide 6.3.1
 
-*/
+  */
   /*
-No margin
+  No margin
 
-Remove all margins from an element
+  Remove all margins from an element
 
-markup:
-<div class="k-no-margin">...</div>
+  markup:
+  <div class="k-no-margin">...</div>
 
-Styleguide 6.4
+  Styleguide 6.4
 
-*/
+  */
   /*
-No transition
+  No transition
 
-Disable all transitions
+  Disable all transitions
 
-markup:
-<div class="k-no-transition">...</div>
+  markup:
+  <div class="k-no-transition">...</div>
 
-Styleguide 6.5
+  Styleguide 6.5
 
-*/
+  */
   /*
-No wrap
+  No wrap
 
-Nowrap element
+  Nowrap element
 
-markup:
-<div class="k-no-wrap">...</div>
+  markup:
+  <div class="k-no-wrap">...</div>
 
-Styleguide 6.6
+  Styleguide 6.6
 
-*/
+  */
   /*
-Visually hidden
+  Visually hidden
 
-Hide the content in an accessible way. Content is hidden for viewers but not for screenreaders
+  Hide the content in an accessible way. Content is hidden for viewers but not for screenreaders
 
-markup:
-<div class="k-visually-hidden">...</div>
+  markup:
+  <div class="k-visually-hidden">...</div>
 
-Styleguide 6.7
+  Styleguide 6.7
 
-*/
+  */
   /*
-Visually shown
+  Visually shown
 
-Show content that have the visually-hidden class
-- Use as @extend for items that are already extending `.k-visually-hidden`
-- Try not to use `.k-visually-hidden` and `.k-visually-shown` classes together if possible.
+  Show content that have the visually-hidden class
+  - Use as @extend for items that are already extending `.k-visually-hidden`
+  - Try not to use `.k-visually-hidden` and `.k-visually-shown` classes together if possible.
 
-markup:
-<div class="k-visually-shown">...</div>
+  markup:
+  <div class="k-visually-shown">...</div>
 
-Styleguide 6.8
+  Styleguide 6.8
 
-*/
+  */
   /*
-Ratio content
+  Ratio content
 
-markup:
-<div class="k-ratio-block k-ratio-block--16-to-9">
-    <div class="k-loader"></div>
-    <img class="k-ratio-block__body" src="{image source}" alt="{alternative text}" />
-</div>
-<div class="k-ratio-block k-ratio-block--16-to-9">
-    <div class="k-ratio-block__body">
-        <div class="k-ratio-block__centered">
-            ...
-        </div>
-    </div>
-</div>
-<div class="k-ratio-block k-ratio-block--16-to-9">
-    <div class="k-ratio-block__body">
-        <div class="k-ratio-block__centered">
-            <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper.</p>
-        </div>
-    </div>
-</div>
+  markup:
+  <div class="k-ratio-block k-ratio-block--16-to-9">
+      <div class="k-loader"></div>
+      <img class="k-ratio-block__body" src="{image source}" alt="{alternative text}" />
+  </div>
+  <div class="k-ratio-block k-ratio-block--16-to-9">
+      <div class="k-ratio-block__body">
+          <div class="k-ratio-block__centered">
+              ...
+          </div>
+      </div>
+  </div>
+  <div class="k-ratio-block k-ratio-block--16-to-9">
+      <div class="k-ratio-block__body">
+          <div class="k-ratio-block__centered">
+              <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper.</p>
+          </div>
+      </div>
+  </div>
 
-sg-wrapper:
-<div style="width: 280px">
-    <sg-wrapper-content/>
-</div>
+  sg-wrapper:
+  <div style="width: 280px">
+      <sg-wrapper-content/>
+  </div>
 
-Styleguide 6.9
+  Styleguide 6.9
 
-*/
+  */
   /*
-Colors
+  Colors
 
-markup:
-<div class="k-color-error">...</div>
+  markup:
+  <div class="k-color-error">...</div>
 
-*/
+  */
   /*
-Content block
+  Content block
 
-Element with a bottom margin except when item itself is a last-child
+  Element with a bottom margin except when item itself is a last-child
 
-markup:
-<div class="k-content-block">...</div>
+  markup:
+  <div class="k-content-block">...</div>
 
-*/
+  */
   /*
-Relative positioned element
+  Relative positioned element
 
-Could be useful to add to parnet sof absolutely positioned items
+  Could be useful to add to parnet sof absolutely positioned items
 
-markup:
-<div class="k-no-transition">...</div>
+  markup:
+  <div class="k-no-transition">...</div>
 
-*/
+  */
   /*
-Flexing boxes
+  Flexing boxes
 
-DO or don't flexing children. USeful inside flexing containers on elemtns that have no pre-defined styling for flexbox
+  DO or don't flexing children. USeful inside flexing containers on elemtns that have no pre-defined styling for flexbox
 
-markup:
-<div class="k-dont-flex">...</div>
-<div class="k-do-flex">...</div>
+  markup:
+  <div class="k-dont-flex">...</div>
+  <div class="k-do-flex">...</div>
 
-*/
+  */
   /*
-Hide elements for touch enabled devices
+  Hide elements for touch enabled devices
 
-markup:
-<div class="k-no-transition">...</div>
+  markup:
+  <div class="k-no-transition">...</div>
 
-*/
+  */
   /*
-Text overflow
+  Text overflow
 
-markup:
-<div class="k-ellipsis">
-  <div class="k-ellipsis__item"></div>
-</div>
+  markup:
+  <div class="k-ellipsis">
+    <div class="k-ellipsis__item"></div>
+  </div>
 
-*/
+  */
   /*
-"Cover all" link
+  "Cover all" link
 
-Use a pseudo element inside the `<a>` to vover the entire parent.
-- This way we don't have to make a the parent element a link.
-- Downside: You can't select the text anymore, but this could also be used to your advantage
+  Use a pseudo element inside the `<a>` to vover the entire parent.
+  - This way we don't have to make a the parent element a link.
+  - Downside: You can't select the text anymore, but this could also be used to your advantage
 
-markup:
-<div class="k-link-coverall">...</div>
+  markup:
+  <div class="k-link-coverall">...</div>
 
-*/
+  */
   /*
-"On-top" links
+  "On-top" links
 
-Use inside the same parent as the above "coverall" link to place this link on top of the pseudo element
+  Use inside the same parent as the above "coverall" link to place this link on top of the pseudo element
 
-markup:
-<div class="k-link-ontop">...</div>
+  markup:
+  <div class="k-link-ontop">...</div>
 
-*/
+  */
   /*
-This or that
+  This or that
 
-Line items up next to each other
+  Line items up next to each other
 
-markup:
-<div class="k-this-or-that">...</div>
+  markup:
+  <div class="k-this-or-that">...</div>
 
-*/
+  */
   /**
- * Component animations
- *
- * Mainly used for tooltips right now
- *
- * We don't use the `.opacity()` mixin here since it causes a bug with text
- * fields in IE7-8. Source: https://github.com/twbs/bootstrap/pull/3552.
- */
+   * Component animations
+   *
+   * Mainly used for tooltips right now
+   *
+   * We don't use the `.opacity()` mixin here since it causes a bug with text
+   * fields in IE7-8. Source: https://github.com/twbs/bootstrap/pull/3552.
+   */
   /* Hamburger
-   ========================================================================== */
+     ========================================================================== */
   /**
- * Animated hamburger button
- *
- * 1. Hide when JS is disabled, we don't need a toggle when there's no JS
- * 2. Show when JS is enabled
- * 3. Hide when the sidebar is visible
- */
+   * Animated hamburger button
+   *
+   * 1. Hide when JS is disabled, we don't need a toggle when there's no JS
+   * 2. Show when JS is enabled
+   * 3. Hide when the sidebar is visible
+   */
   /* Button styling */
   /**
- * Left button
- *
- * We don't need RTLstyling here since we're calculating the icons to be in the middle
- */
+   * Left button
+   *
+   * We don't need RTLstyling here since we're calculating the icons to be in the middle
+   */
   /* Transform hamburger into a cross when the sidebar is opened */
   /**
- * Right button
- *
- * We don't need RTLstyling here since we're calculating the icons to be in the middle
- */
+   * Right button
+   *
+   * We don't need RTLstyling here since we're calculating the icons to be in the middle
+   */
   /* Transform "i" into a cross when the sidebar is opened */
 }
 
