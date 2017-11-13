@@ -88,7 +88,7 @@ body.k-is-resizing {
  * To change this file, change the src/icons/template.css file
  */
 /* Custom icon font
-   ========================================================================== */
+     ========================================================================== */
 @font-face {
   font-family: "k-icons";
   src: url("../fonts/k-icons/k-icons.eot");
@@ -98,10 +98,10 @@ body.k-is-resizing {
 }
 
 /**
- * Use SVG
- *
- * Always use SVG on touch / mobile
- */
+   * Use SVG
+   *
+   * Always use SVG on touch / mobile
+   */
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
     font-family: "k-icons";
@@ -132,11 +132,11 @@ body.k-is-resizing {
 }
 
 /**
- * Icon classes
- *
- * Creating a class name for each individual icon to be used in markup like:
- * <span class="k-icon-circle"></span>
- */
+   * Icon classes
+   *
+   * Creating a class name for each individual icon to be used in markup like:
+   * <span class="k-icon-circle"></span>
+   */
 .k-icon-account-login:before {
   content: "";
 }
@@ -3969,7 +3969,7 @@ body.k-is-resizing {
   Styleguide 2.18.6
 
   */
-  /*! Select2 Bootstrap Theme v0.1.0-beta.4 | MIT License | github.com/select2/select2-bootstrap-theme */
+  /* Select2 Bootstrap Theme v0.1.0-beta.4 | MIT License | github.com/select2/select2-bootstrap-theme */
   /* Select2
      ========================================================================== */
   /*
@@ -9952,6 +9952,17 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   /* Display on focus and active */
 }
 
+.k-checked .k-ui-namespace .k-optionlist .k-optionlist__content input[type=radio] {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
 .k-checked .k-ui-namespace .k-optionlist .k-optionlist__content label {
   position: relative;
   z-index: 1;
@@ -10976,6 +10987,17 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 [dir="rtl"] .k-ui-namespace .k-scopebar__item--search .k-search--has-both-buttons .k-search__field {
   padding-left: 20px;
   padding-right: 26px;
+}
+
+.k-ui-namespace .k-scopebar__item--search label {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
 }
 
 .k-ui-namespace .k-scopebar__item--search .k-search__field {
@@ -14093,7 +14115,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   white-space: nowrap;
 }
 
-.k-ui-namespace .k-visually-hidden.k-visually-hidden.k-visually-hidden, .k-checked .k-ui-namespace .k-optionlist .k-optionlist__content input[type=radio], .k-ui-namespace .k-scopebar__item--search label {
+.k-ui-namespace .k-visually-hidden.k-visually-hidden.k-visually-hidden {
   position: absolute;
   overflow: hidden;
   clip: rect(0 0 0 0);
@@ -15158,7 +15180,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 /* 1 */
-/*! Select2 Bootstrap Theme v0.1.0-beta.4 | MIT License | github.com/select2/select2-bootstrap-theme */
+/* Select2 Bootstrap Theme v0.1.0-beta.4 | MIT License | github.com/select2/select2-bootstrap-theme */
 /* Select2
      ========================================================================== */
 /*

@@ -10,11 +10,11 @@
 
   @font-face {
     font-family: "k-icons";
-    src:    url("#{$icon-path}/k-icons/k-icons.eot");
-    src:    url("#{$icon-path}/k-icons/k-icons.eot?#iefix") format("embedded-opentype"),
-    url("#{$icon-path}/k-icons/k-icons.woff") format("woff"),
-    url("#{$icon-path}/k-icons/k-icons.ttf") format("truetype"),
-    url("#{$icon-path}/k-icons/k-icons.svg#k-icons") format("svg");
+    src:    url("#{$k-icon-path}/k-icons/k-icons.eot");
+    src:    url("#{$k-icon-path}/k-icons/k-icons.eot?#iefix") format("embedded-opentype"),
+    url("#{$k-icon-path}/k-icons/k-icons.woff") format("woff"),
+    url("#{$k-icon-path}/k-icons/k-icons.ttf") format("truetype"),
+    url("#{$k-icon-path}/k-icons/k-icons.svg#k-icons") format("svg");
     font-weight: normal;
     font-style: normal;
   }
@@ -29,7 +29,7 @@
   @media screen and (-webkit-min-device-pixel-ratio: 0) {
     @font-face {
       font-family: "k-icons";
-      src: url("#{$icon-path}/k-icons/k-icons.svg#k-icons") format("svg");
+      src: url("#{$k-icon-path}/k-icons/k-icons.svg#k-icons") format("svg");
     }
   }
 }
@@ -310,7 +310,7 @@ $icons: (
   open: "\f113",);
 
 
-// Test if the list conatins a certain value
+// Test if the list contains a certain value
 @function contains($list, $var) {
   @return (null != index($list, $var));
 }
@@ -325,7 +325,7 @@ $icons: (
     @if $icon {
       content: "#{map-get($icons, $icon)}";
 
-      @if contains($rtlicons, $icon) {
+      @if contains($k-rtlicons, $icon) {
         @include rtl {
           @include flip-item;
         }
@@ -347,7 +347,7 @@ $icons: (
     @if $icon {
       content: "#{map-get($icons, $icon)}";
 
-      @if contains($rtlicons, $icon) {
+      @if contains($k-rtlicons, $icon) {
         @include rtl {
           @include flip-item;
         }
@@ -374,7 +374,7 @@ $icons: (
       &:before {
         content: "#{$icon}";
 
-        @if contains($rtlicons, $name) {
+        @if contains($k-rtlicons, $name) {
           @include rtl {
             @include flip-item;
           }
