@@ -1710,21 +1710,6 @@ body.k-is-resizing {
   /* Layout */
   /* Component
      ========================================================================== */
-  /*
-  Component
-
-  - Use as <b>child</b> of the `.k-component-wrapper` container only
-  - Can have a `.k-sidebar-right` as next sibling
-  - {unsureText}
-
-  markup:
-  <div class="k-component">
-      ...
-  </div><!-- .k-component -->
-
-  Styleguide 3.6
-
-  */
   /**
    * 1. Needed for the off-canvas-overlay
    * 2. Reset for when item is a form
@@ -1743,37 +1728,8 @@ body.k-is-resizing {
    */
   /* Component wrapper
      ========================================================================== */
-  /*
-  Component wrapper
-
-  - Use as <b>child</b> of the `.k-content` container only
-  - Can be preceded by a `.k-title-bar.k-title-bar--mobile` or a `.k-toolbar`
-  - {unsureText}
-
-  markup:
-  <div class="k-component-wrapper">
-      ...
-  </div><!-- .k-component-wrapper -->
-
-  Styleguide 3.6
-
-  */
   /* Content
      ========================================================================== */
-  /*
-  Content
-
-  - Use as <b>child</b> of the `.k-content-wrapper` container only
-  - {unsureText}
-
-  markup:
-  <div class="k-content k-js-content">
-      ...
-  </div><!-- .k-content -->
-
-  Styleguide 3.5
-
-  */
   /**
    * 1. Set the z-index higher than the menus
    * 2. Setting a background so container will fall nicely over the sidebar
@@ -1787,68 +1743,14 @@ body.k-is-resizing {
    */
   /* Content wrapper
      ========================================================================== */
-  /*
-  Content wrapper
-
-  - Use as <b>child</b> of the `.k-wrapper` container only
-  - {unsureText}
-
-  markup:
-  <div class="k-content-wrapper">
-      ...
-  </div><!-- .k-content-wrapper -->
-
-  Styleguide 3.3
-
-  */
   /**
    * 1. Needed to position sidebar properly when off-canvas
    * 2. Clearing toolbar floats when flexbox is not in use
    */
   /* Flex wrapper
      ========================================================================== */
-  /*
-  Flex wrapper
-
-  A flex wrapper that can be used on elements that need flexbox
-  - Only use this class on containers that only contain one child
-  - This is a shrink and grow container
-
-  markup:
-  <div class="k-flex-wrapper">
-      ...
-  </div><!-- .k-flex-wrapper -->
-
-  Styleguide 3.8
-
-  */
   /* Grid
      ========================================================================== */
-  /*
-  Grid
-
-  Fluid grid system
-  - Has `full`, `main` and `sub` containers
-  - Main and sub float next to each other
-  - Main should always come first since the info is more important
-  - {unsureText}
-
-  markup:
-  <div class="k-container">
-      <div class="k-container__full">
-          ...
-      </div>
-      <div class="k-container__main">
-          ...
-      </div>
-      <div class="k-container__sub">
-          ...
-      </div>
-  </div><!-- .k-container -->
-
-  Styleguide 3.7
-
-  */
   /* Container */
   /* Flex container */
   /* --------------------------------------------------------------------------
@@ -1861,22 +1763,6 @@ body.k-is-resizing {
   /* Full container */
   /* Koowa UI container
      ========================================================================== */
-  /*
-  Koowa UI container
-
-  This is the most outer container of each page.
-  - A `.k-ui-container` may only live once on the page and should be handled as an `id`
-  - Need to namespace something outside this container? Use the `.k-ui-namespace` class
-  - The `k-ui-namespace` class should always be added to the `k-ui-container` element for namespacing purposes
-
-  markup:
-  <div class="k-ui-container k-ui-namespace">
-      ...
-  </div><!-- .k-ui-container -->
-
-  Styleguide 3.1
-
-  */
   /**
    * 1. By using a max-width we essentially set a min-width when the contents are
    *    to large for the k-ui-container container. The reason we don't use min-width is
@@ -1886,26 +1772,6 @@ body.k-is-resizing {
    */
   /* Sidebar
      ========================================================================== */
-  /*
-  Sidebar
-
-  Left and right sidebars
-  - Use `.k-sidebar-left` as <b>first child</b> of the `.k-content-wrapper` container only
-  - Use `.k-sidebar-right` as <b>last child</b> of the `.k-content-wrapper` container only
-  - Make sure you <b>Always</b> have a `.k-content` container when a sidebar is used
-  - {unsureText}
-
-  .k-sidebar-left.k-js-sidebar-left - Left sidebar
-  .k-sidebar-right.k-js-sidebar-right - Right sidebar
-
-  markup:
-  <div class="{$modifiers}">
-      ...
-  </div><!-- .{$modifiers} -->
-
-  Styleguide 3.4
-
-  */
   /* The left and right sidebar */
   /* Left sidebar specific styling */
   /* When left sidebar is toggled */
@@ -1913,21 +1779,6 @@ body.k-is-resizing {
   /* When right sidebar is toggled */
   /* Wrapper
      ========================================================================== */
-  /*
-  Wrapper
-
-  - Use as <b>child</b> of the `.k-ui-container` container only
-  - Can be preceded by a `.k-menubar`
-  - {unsureText}
-
-  markup:
-  <div class="k-wrapper k-js-wrapper">
-      ...
-  </div><!-- .k-wrapper -->
-
-  Styleguide 3.2
-
-  */
   /**
    * Wrapper when toggled
    *
@@ -1946,20 +1797,6 @@ body.k-is-resizing {
   /* Atoms */
   /* Anchor
      ========================================================================== */
-  /*
-  Anchor
-
-  markup:
-  <a href="javascript:void(0)">Anchor text</a>
-
-  sg-wrapper:
-  <p>
-      <sg-wrapper-content/>
-  </p>
-
-  Styleguide 1.1
-
-  */
   /* Body
      ========================================================================== */
   /**
@@ -1969,39 +1806,8 @@ body.k-is-resizing {
    */
   /* Definition list
      ========================================================================== */
-  /*
-  Definition list
-
-  - definition lists have a bottom margin to separate them from each other
-  - The last-child doesn't have this bottom margin so parent containers can have four-sided paddings
-
-  markup:
-  <dl>
-      <dt>Name</dt>
-      <dd>attachments</dd>
-      <dt>Dimensions</dt>
-      <dd>908 x 655</dd>
-      <dt>Size</dt>
-      <dd>66.60 KB</dd>
-  </dl>
-
-  Styleguide 1.2
-
-  */
   /* Fieldset
      ========================================================================== */
-  /*
-  Fieldset
-
-  - Fieldsets have a bottom margin to separate them from each other
-  - The last-child doesn't have this bottom margin so parent containers can have four-sided paddings
-
-  markup:
-  <fieldset>...</fieldset>
-
-  Styleguide 1.3
-
-  */
   /**
    * 1. Chrome and Firefox set a `min-width: min-content;` on fieldsets,
    *    so we reset that to ensure it behaves more like a standard block element.
@@ -2017,23 +1823,6 @@ body.k-is-resizing {
    */
   /* Image
      ========================================================================== */
-  /*
-  Image
-
-  - Images have a max-width to fit nicely into responsive layout
-  - When image is the only child in a parent, `vertical-align: middle` is applied to eliminate line-height bug
-
-  markup:
-  <img src="{image source}" alt="{alternative text}">
-
-  sg-wrapper:
-  <p>
-      <sg-wrapper-content/>
-  </p>
-
-  Styleguide 1.4
-
-  */
   /**
    * 1. Responsive images
    * 2. Eliminating line-height bug when used alone in container
@@ -2054,136 +1843,29 @@ body.k-is-resizing {
    */
   /* Label
      ========================================================================== */
-  /*
-  Label
-
-  markup:
-  <label>Label</label>
-
-  Styleguide 1.5
-
-  */
   /**
    * 1. Force IE8 to wrap long content
    */
   /* Legend
      ========================================================================== */
-  /*
-  Legend
-
-  - Legends have a bottom margin to separate them from each other
-  - The last-child doesn't have this bottom margin so parent containers can have four-sided paddings
-
-  markup:
-  <legend>...</legend>
-
-  sg-wrapper:
-  <fieldset>
-      <sg-wrapper-content/>
-  </fieldset>
-
-  Styleguide 1.6
-
-  */
   /**
    * 1. No margin top for the first legend
    * 2. No margin bottom for the last legend
    */
   /* Paragraph
      ========================================================================== */
-  /*
-  Paragraph
-
-  - Paragraphs have a bottom margin to separate them from each other
-  - The last-child doesn't have this bottom margin so parent containers can have four-sided paddings
-
-  markup:
-  <p>...</p>
-
-  Styleguide 1.7
-
-  */
   /**
    * 1. Remove default top-margin
    */
   /* Lists
      ========================================================================== */
-  /*
-  Lists
-
-  - Lists have a bottom margin to separate them from each other
-  - The last-child doesn't have this bottom margin so parent containers can have four-sided paddings
-
-  markup:
-  <ul>
-      <li>List item</li>
-      <li>List item</li>
-  </ul>
-  <ol>
-      <li>List item</li>
-      <li>List item</li>
-  </ol>
-
-  Styleguide 1.8
-
-  */
   /* Molecules */
   /* Alerts
      ========================================================================== */
-  /*
-  Alerts
-
-  .k-alert--success - Success style
-  .k-alert--info - Info style
-  .k-alert--warning - Warning style
-  .k-alert--danger - Danger style
-
-  markup:
-  <div class="k-alert {$modifiers}">
-      This is an alert
-  </div>
-
-  Styleguide 2.1
-
-  */
   /* Overflowing alert with 33% max-height */
   /* Alternate styles */
   /* Breadcrumbs
      ========================================================================== */
-  /*
-  Breadcrumbs
-
-  markup:
-  <!-- Breadcrumbs -->
-  <div class="k-breadcrumb">
-      <ul>
-          <li class="k-breadcrumb__home">
-              <a class="k-breadcrumb__content" href="javascript:void(0)">
-                  <sg-insert>2.12-121</sg-insert>
-                  <span class="k-visually-hidden">Home</span>
-              </a>
-          </li>
-          <li>
-              <a class="k-breadcrumb__content" href="javascript:void(0)">
-                  Donec ullamcorper nulla non metus auctor fringilla.
-              </a>
-          </li>
-          <li>
-              <a class="k-breadcrumb__content" href="javascript:void(0)">
-                  Risus Egestas Vulputate Fusce Ipsum.
-              </a>
-          </li>
-          <li class="k-breadcrumb__active">
-              <span class="k-breadcrumb__content">
-                  Ligula Inceptos Commodo Sem Ornare.
-              </span>
-          </li>
-      </ul>
-  </div><!-- .k-breadcrumb -->
-
-  Styleguide 2.2
-
-  */
   /**
    * 1. Scroll when items don't fit parent anymore
    * 2. Hide scroll when resizing to avoid weird jumps on OSX
@@ -2192,281 +1874,16 @@ body.k-is-resizing {
   /* Single breadcrumb items */
   /* Buttons
      ========================================================================== */
-  /*
-  Buttons
-
-  .k-button--default - Default style
-  .k-button--primary - Primary color styling
-  .k-button--success - Success color styling
-  .k-button--info - Info color styling
-  .k-button--warning - Warning color styling
-  .k-button--danger - Danger color styling
-  .k-button--link - Link styling (while keeping height)
-  .k-button--block - Full width button
-
-  markup:
-  <button type="button" class="k-button {$modifiers}">
-      Button text
-  </button>
-
-  sg-wrapper:
-  <div>
-      <sg-wrapper-content/>
-  </div>
-
-  Styleguide 2.3
-
-  */
-  /*
-  Button states
-
-  Different button states
-
-  .k-is-active - Active buttons
-  .k-is-disabled - Disabled buttons
-
-  markup:
-  <button type="button" class="k-button k-button--default {$modifiers}">
-      Button text
-  </button>
-
-  sg-wrapper:
-  <div>
-      <sg-wrapper-content/>
-  </div>
-
-  Styleguide 2.3.1
-
-  */
+  /* Button states */
   /* Alternate buttons */
   /* Link buttons */
   /* Block button */
-  /*
-  Button sizes
-
-  default - Default
-  .k-button--tiny - Tiny
-  .k-button--small - Small
-  .k-button--large - Large
-
-  markup:
-  <button type="button" class="k-button k-button--default {$modifiers}">
-      Button text
-  </button>
-
-  Styleguide 2.3.2
-
-  */
+  /* Button sizes */
   /* Vertically space out multiple block buttons */
   /* Specificity overrides */
-  /*
-  Button groups
-
-  markup:
-  <div class="k-button-group">
-      <sg-insert>2.3.1-1</sg-insert>
-      <sg-insert>2.3-1</sg-insert>
-      <sg-insert>2.3-1</sg-insert>
-  </div>
-
-  Styleguide 2.3.3
-
-  */
+  /* Button groups */
   /* Card
      ========================================================================== */
-  /*
-  Card
-
-  default - Default
-  .k-card--rounded - Rounded
-  .k-card--center - Center content
-
-  markup:
-  <div class="k-card {$modifiers}">
-      <div class="k-card__body">
-          <div class="k-card__image">
-              <img src="{image source}" alt="{alternative text}">
-          </div>
-          <div class="k-card__header">
-              Card title
-          </div>
-          <div class="k-card__section">
-              Nullam id dolor id nibh ultricies vehicula ut id elit.
-          </div>
-          <div class="k-card__footer">
-              <a class="k-button k-button--primary" href="javascript:void(0);">Link</a>
-          </div>
-      </div>
-  </div><!-- .k-card -->
-
-  sg-wrapper:
-  <div style="width: 280px;">
-      <sg-wrapper-content/>
-  </div>
-
-  Styleguide 2.4
-
-  */
-  /*
-  Card: image only
-
-  markup:
-  <div class="k-card">
-      <div class="k-card__body">
-          <div class="k-card__image">
-              <img src="{image source}" alt="{alternative text}">
-          </div>
-      </div>
-  </div><!-- .k-card -->
-
-  Styleguide 2.4.1
-
-  */
-  /*
-  Card: icon only
-
-  markup:
-  <div class="k-card k-card--center">
-      <div class="k-card__body">
-          <div class="k-card__section">
-            <span class="k-icon-document-document k-icon--accent k-icon--size-huge" aria-hidden="true"></span>
-          </div>
-      </div>
-  </div><!-- .k-card -->
-
-  Styleguide 2.4.2
-
-  */
-  /*
-  Card header
-
-  markup:
-  <div class="k-card">
-      <div class="k-card__body">
-          <div class="k-card__header">
-              Title
-          </div>
-      </div>
-  </div>
-
-  Styleguide 2.4.3
-
-  */
-  /*
-  Card section
-
-  default - Default
-  .k-card__section--small-spacing - Small spacing
-
-  markup:
-  <div class="k-card">
-      <div class="k-card__body">
-          <div class="k-card__section {$modifiers}">
-              Section
-          </div>
-      </div>
-  </div>
-
-  Styleguide 2.4.4
-
-  */
-  /*
-  Card footer
-
-  markup:
-  <div class="k-card">
-      <div class="k-card__body">
-          <div class="k-card__footer">
-              Footer
-          </div>
-      </div>
-  </div>
-
-  Styleguide 2.4.5
-
-  */
-  /*
-  Card caption
-
-  default - Default
-  .k-card__caption--overflow - Overflowing caption
-
-  markup:
-  <div class="k-card">
-      <div class="k-card__body">
-          <div class="k-card__section">
-              Section
-          </div>
-      </div>
-      <div class="k-card__caption {$modifiers}">
-          Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-      </div>
-  </div>
-
-  Styleguide 2.4.6
-
-  */
-  /*
-  Linked and labeled card
-
-  markup:
-  <div class="k-card">
-      <a class="k-card__body" href="javascript:void(0)">
-          <div class="k-card__header">
-              Title
-          </div>
-          <div class="k-card__section">
-              Section
-          </div>
-      </a>
-      <label class="k-card__caption">
-          <input type="checkbox"> Label
-      </label>
-  </div>
-
-  Styleguide 2.4.7
-
-  */
-  /*
-  Selected card
-
-  markup:
-  <div class="k-card k-is-selected">
-      <div class="k-card__body">
-          <div class="k-card__header">
-              Title
-          </div>
-          <div class="k-card__section">
-              Section
-          </div>
-      </div>
-      <label class="k-card__caption">
-          <input type="checkbox" checked> Label
-      </label>
-  </div>
-
-  Styleguide 2.4.8
-
-  */
-  /*
-  Card background
-
-  markup:
-  <div class="k-card">
-      <div class="k-card__body">
-          <div class="k-card__image k-card__image--background" style="background-image: url(joomlatools/images/placeholder-16-9.png);"></div>
-          <div class="k-card__section">
-              <p>Section</p>
-              <p>Section</p>
-              <p>Section</p>
-              <p>Section</p>
-          </div>
-      </div>
-  </div>
-
-  Styleguide 2.4.9
-
-  */
   /**
    * Card body
    */
@@ -2496,112 +1913,8 @@ body.k-is-resizing {
    */
   /* Datepicker
      ========================================================================== */
-  /**
-   * Datepicker for Bootstrap
-   *
-   * Copyright 2012 Stefan Petre
-   * Improvements by Andrew Rowls
-   * Licensed under the Apache License v2.0
-   * http://www.apache.org/licenses/LICENSE-2.0
-   *
-   */
-  /*
-  Datepicker
-
-  markup:
-  <div class="k-form-group">
-      <label>Date</label>
-      <div class="k-input-group">
-          <input class="k-form-control" type="text" />
-          <span class="k-input-group__button">
-              <button type="button" class="k-button k-button--default k-js-datepicker">
-                  <sg-insert>2.12-44</sg-insert>
-                  <span class="k-visually-hidden">Calendar</span>
-              </button>
-          </span>
-      </div>
-  </div>
-
-  Styleguide 2.5
-
-  */
   /* Dropdowns
      ========================================================================== */
-  /*
-  Dropdown
-
-  markup:
-  <div class="k-dropdown">
-      <a class="k-dropdown__toggle" data-k-toggle="dropdown" href="javascript:void(0)">
-          Dropdown trigger
-          <span class="k-caret" aria-hidden="true"></span>
-      </a>
-      <ul class="k-dropdown__menu" role="menu">
-          <li><a href="javascript:void(0)">Dropdown item 1</a></li>
-          <li><a href="javascript:void(0)">Dropdown item 2</a></li>
-          <li><a href="javascript:void(0)">Dropdown item 3</a></li>
-      </ul>
-  </div>
-
-  sg-wrapper:
-  <div style="height: 150px;">
-      <sg-wrapper-content/>
-  </div>
-
-  Styleguide 2.6
-
-  */
-  /*
-  Dropup
-
-  Drop it up when dropdown item is located at the bottom of a view
-
-  markup:
-  <div class="k-dropdown k-dropdown--dropup">
-      <a class="k-dropdown__toggle" data-k-toggle="dropdown" href="javascript:void(0)">
-          Dropup trigger
-          <span class="k-caret" aria-hidden="true"></span>
-      </a>
-      <ul class="k-dropdown__menu" role="menu">
-          <li><a href="javascript:void(0)">Dropdown item 1</a></li>
-          <li><a href="javascript:void(0)">Dropdown item 2</a></li>
-          <li><a href="javascript:void(0)">Dropdown item 3</a></li>
-      </ul>
-  </div>
-
-  sg-wrapper:
-  <div style="height: 150px;">
-      <div style="width: 10px;height: 130px;"></div>
-      <sg-wrapper-content/>
-  </div>
-
-  Styleguide 2.6.1
-
-  */
-  /*
-  Dropdown divider
-
-  Add a divider between dropdown items
-
-  markup:
-  <li class="k-dropdown__divider"></li>
-
-  sg-wrapper:
-  <div class="k-dropdown k-is-open">
-      <a class="k-dropdown__toggle" data-k-toggle="dropdown" href="javascript:void(0)">
-          Dropdown trigger
-          <span class="k-caret" aria-hidden="true"></span>
-      </a>
-      <ul class="k-dropdown__menu" role="menu">
-          <li><a href="javascript:void(0)">Item above divider</a></li>
-          <sg-wrapper-content/>
-          <li><a href="javascript:void(0)">Item below divider</a></li>
-      </ul>
-  </div>
-
-  Styleguide 2.6.2
-
-  */
   /* Dropdown arrow/caret */
   /* The dropdown wrapper (div) */
   /* The dropdown toggle */
@@ -2628,155 +1941,15 @@ body.k-is-resizing {
    *
    * Allow for dropdowns to go bottom up (aka, dropup-menu)
    */
-  /*
-  Dropdown grid
-
-  Display a list of icons or images in a grid
-
-  markup:
-  <div class="k-dropdown">
-      <a class="k-dropdown__toggle" data-k-toggle="dropdown" href="javascript:void(0)">
-          Dropdown trigger
-          <span class="k-caret" aria-hidden="true"></span>
-      </a>
-      <ul class="k-dropdown__menu k-dropdown__menu--grid">
-          <li>
-              <a href="javascript:void(0)">
-                  <sg-insert>2.12.1-3</sg-insert>
-                  <span class="k-visually-hidden">Archive icon</span>
-              </a>
-          </li>
-          <li>
-              <a href="javascript:void(0)">
-                  <sg-insert>2.12.1-4</sg-insert>
-                  <span class="k-visually-hidden">Audio icon</span>
-              </a>
-          </li>
-          <li>
-              <a href="javascript:void(0)">
-                  <sg-insert>2.12.1-5</sg-insert>
-                  <span class="k-visually-hidden">Default icon</span>
-              </a>
-          </li>
-          <li>
-              <a href="javascript:void(0)">
-                  <sg-insert>2.12.1-6</sg-insert>
-                  <span class="k-visually-hidden">Document icon</span>
-              </a>
-          </li>
-          <li>
-              <a href="javascript:void(0)">
-                  <sg-insert>2.12.1-8</sg-insert>
-                  <span class="k-visually-hidden">Image icon</span>
-              </a>
-          </li>
-          <li>
-              <a href="javascript:void(0)">
-                  <sg-insert>2.12.1-9</sg-insert>
-                  <span class="k-visually-hidden">PDF icon</span>
-              </a>
-          </li>
-          <li>
-              <a href="javascript:void(0)">
-                  <sg-insert>2.12.1-10</sg-insert>
-                  <span class="k-visually-hidden">Spreadsheet icon</span>
-              </a>
-          </li>
-          <li>
-              <a href="javascript:void(0)">
-                  <sg-insert>2.12.1-11</sg-insert>
-                  <span class="k-visually-hidden">Video icon</span>
-              </a>
-          </li>
-          <li class="k-dropdown__block-item">
-              <a href="javascript:void(0)">Block level item</a>
-          </li>
-      </ul>
-  </div>
-
-  sg-wrapper:
-  <div style="height: 200px;">
-      <sg-wrapper-content/>
-  </div>
-
-  Styleguide 2.6.3
-
-  */
+  /* Dropdown grid */
   /* Empty state
      ========================================================================== */
-  /*
-  Empty state
-
-  When there are no items to display
-
-  markup:
-  <div class="k-empty-state">
-      <p>No items found.</p>
-      <p>Maybe select another category or different filters?</p>
-  </div>
-
-  Styleguide 2.7
-
-  */
-  /*
-  Onboarding
-
-  Display the main action button below the empty state heading
-
-  markup:
-  <div class="k-empty-state">
-      <p>It seems like you don't have any items yet.</p>
-      <p><a href="javascript:void(0)" class="k-button k-button--success k-button--large">Add your first item</a></p>
-  </div>
-
-  Styleguide 2.7.1
-
-  */
   /* Form block
      ========================================================================== */
-  /*
-  Form block
-
-  To be used in sidebar of forms
-  - Data in these boxes should be non-required (e.g. not *) form elements
-
-  markup:
-  <!-- Form block -->
-  <fieldset class="k-form-block">
-      <div class="k-form-block__header">
-          Header
-      </div>
-      <div class="k-form-block__content">
-          Form elements
-      </div>
-  </fieldset><!-- .k-form-block -->
-
-  Styleguide 2.8
-
-  */
   /* The header */
   /* The content */
   /* Forms
      ========================================================================== */
-  /*
-  Forms
-
-  markup:
-  <p>
-      <input class="k-form-control" type="text" />
-  </p>
-  <p>
-      <select class="k-form-control">
-          <option>Option</option>
-      </select>
-  </p>
-  <p>
-      <textarea class="k-form-control"></textarea>
-  </p>
-
-  Styleguide 2.9
-
-  */
   /**
    * 1. Set width and max-width to 100% to override custom template styling
    * 1. Make inputs at least the height of their button counterpart (base line-height + padding + border)
@@ -2805,31 +1978,7 @@ body.k-is-resizing {
    *
    * Note that as of 8.3, iOS doesn't support `datetime` or `week`.
    */
-  /*
-  Checkbox & Radio inputs
-
-  CSS only styled checkboxes and radio boxes
-
-  markup:
-  <div class="k-form-group">
-      <input type="checkbox" id="input-[2.9.1]-1" />
-      <label for="input-[2.9.1]-1">Label 1</label>
-  </div>
-  <div class="k-form-group">
-      <input type="radio" id="input-[2.9.1]-2" />
-      <label for="input-[2.9.1]-2">Label 2</label>
-  </div>
-  <!-- Or -->
-  <div class="k-form-group">
-      <label><input type="checkbox" id="input-[2.9.1]-3" /> Label 1</label>
-  </div>
-  <div class="k-form-group">
-      <label><input type="radio" id="input-[2.9.1]-3" /> Label 2</label>
-  </div>
-
-  Styleguide 2.9.1
-
-  */
+  /* Checkbox & Radio inputs */
   /* Shared styling between radio boxes and checkboxes */
   /* RTL */
   /**
@@ -2851,33 +2000,8 @@ body.k-is-resizing {
    * 4. positioning the inner circle
    * 5. Making inner circle actually round
    */
-  /*
-  Feedback states
-
-  .k-has-success - Success
-  .k-has-warning - Warning
-  .k-has-error - Error
-
-  markup:
-  <div class="k-form-group {$modifiers}">
-      <label for="input-[2.9.2]-1-{$modifiers}">Default input</label>
-      <input class="k-form-control" type="text" id="input-[2.9.2]-1-{$modifiers}" />
-  </div>
-
-  Styleguide 2.9.2
-
-  */
-  /*
-  Static form label
-
-  Styled like a `<label>`
-
-  markup:
-  <p class="k-static-form-label">Static form control</p>
-
-  Styleguide 2.9.3
-
-  */
+  /* Feedback states */
+  /* Static form label */
   /**
    * Static form control text
    *
@@ -2887,25 +2011,7 @@ body.k-is-resizing {
    * 1. Size it appropriately next to real form controls
    * 2. Remove default margin from `p`
    */
-  /*
-  Input group
-
-  default - Default
-  .k-input-group--small - Small
-  .k-input-group--large - Large
-
-  markup:
-  <div class="k-input-group {$modifiers}">
-      <div class="k-input-group__addon">Addon</div>
-      <input type="text" class="k-form-control" />
-      <div class="k-input-group__button">
-          <button type="button" class="k-button k-button--default">Button</button>
-      </div>
-  </div>
-
-  Styleguide 2.9.4
-
-  */
+  /* Input group */
   /**
    * 1. For dropdowns
    * 2. Prevent input groups from inheriting border styles from table cells when placed within a table
@@ -2933,22 +2039,7 @@ body.k-is-resizing {
    * 3. Bring the "active" button to the front
    * 4. Negative margin to only have a 1px border between the two
    */
-  /*
-  Form groups
-
-  default - Default
-  .k-form-group--small - Small form groups
-  .k-form-group--large - Large form groups
-
-  markup:
-  <div class="k-form-group {$modifiers}">
-      <label for="input-[2.9]-1-{$modifiers}">Label</label>
-      <input class="k-form-control" type="text" id="input-[2.9]-1-{$modifiers}" />
-  </div>
-
-  Styleguide 2.9.5
-
-  */
+  /* Form groups */
   /**
    * Designed to help with the organization and spacing of vertical forms. For
    * horizontal forms, use the predefined grid classes.
@@ -2962,478 +2053,19 @@ body.k-is-resizing {
    * The `.k-form-group-* k-form-control` variations are sadly duplicated to avoid the
    * issue documented in https://github.com/twbs/bootstrap/issues/15074.
    */
-  /*
-  Inline form group
-
-  markup:
-  <div class="k-inline-form-group">
-      <label for="input-[2.9.6.1]-1">Label</label>
-      <input class="k-form-control" type="text" id="input-[2.9.6.1]-1" />
-  </div><!-- .k-inline-form-group -->
-
-  sg-wrapper:
-  <div class="k-form-group">
-      <sg-wrapper-content/>
-      <sg-wrapper-content/>
-      <sg-wrapper-content/>
-  </div><!-- .k-form-group -->
-
-  Styleguide 2.9.6
-
-  */
-  /*
-  Inline form group with buttons
-
-  markup:
-  <div class="k-inline-form-group">
-      <p class="k-static-form-label">Label 1</p>
-      <div class="k-button-group">
-          <button type="button" class="k-button k-button--default k-button--tiny">
-              <sg-insert>2.12-171</sg-insert>
-              <span class="k-visually-hidden">Plus icon</span>
-          </button>
-          <button type="button" class="k-button k-button--default k-button--tiny">
-              <sg-insert>2.12-158</sg-insert>
-              <span class="k-visually-hidden">Minus icon</span>
-          </button>
-      </div>
-  </div><!-- .k-inline-form-group -->
-
-  Styleguide 2.9.6.1
-
-  */
-  /*
-  Form row group
-
-  markup:
-  <div class="k-form-row-group">
-      <sg-insert>2.9.8</sg-insert>
-      <sg-insert>2.9.8</sg-insert>
-      <sg-insert>2.9.8</sg-insert>
-  </div>
-
-  Styleguide 2.9.7
-
-  */
-  /*
-  Form row
-
-  markup:
-  <form class="k-form-row">
-      <div class="k-form-row__item k-form-row__item--button">
-          <button class="k-button k-button--default k-button--small">
-              <span class="k-icon-minus k-icon--error" aria-hidden="true"></span>
-              <span class="k-visually-hidden">Remove</span>
-          </button>
-      </div>
-      <div class="k-form-row__item k-form-row__item--label">
-          <label for="input-[2.9.8]-1">File name:</label>
-      </div>
-      <div class="k-form-row__item k-form-row__item--input">
-          <input class="k-form-control" type="text" value="{value}" disabled="" id="input-[2.9.8]-1" />
-      </div>
-      <div class="k-form-row__item k-form-row__item--label">
-          <label for="input-[2.9.8]-2">Title:</label>
-      </div>
-      <div class="k-form-row__item k-form-row__item--input">
-          <input class="k-form-control" type="text" name="title" value="{value}" id="input-[2.9.8]-2" />
-      </div>
-  </form>
-
-  Styleguide 2.9.8
-
-  */
-  /* Form field info
-
-  Additional info to add to the bottom of form fields
-
-  markup:
-  <p class="k-form-info">
-      Addition info to add to the above field
-  </p>
-
-  sg-wrapper:
-  <div class="k-form-group">
-      <label for="input-[2.9.10]">Label</label>
-      <input class="k-form-control" type="text" id="input-[2.9.10]" />
-      <sg-wrapper-content/>
-  </div>
-
-  Styleguide 2.9.10
-
-  */
+  /* Inline form group */
+  /* Form row group */
+  /* Form row */
+  /* Form field info */
   /* Gallery
      ========================================================================== */
-  /*
-  Gallery
-
-  A complete gallery container
-
-  markup:
-  <!-- Grid -->
-  <div class="k-gallery-container">
-      <div class="k-gallery">
-          <div class="k-gallery__items">
-              <div class="k-gallery__item k-gallery__item--folder">
-                  <sg-insert>2.4.4</sg-insert>
-              </div>
-              <div class="k-gallery__item k-gallery__item--folder">
-                  <sg-insert>2.4.4</sg-insert>
-              </div>
-              <div class="k-gallery__item k-gallery__item--folder">
-                  <sg-insert>2.4.4</sg-insert>
-              </div>
-              <div class="k-gallery__item k-gallery__item--file">
-                  <sg-insert>2.4.3</sg-insert>
-              </div>
-              <div class="k-gallery__item k-gallery__item--file">
-                  <sg-insert>2.4.3</sg-insert>
-              </div>
-              <div class="k-gallery__item k-gallery__item--file">
-                  <sg-insert>2.4.3</sg-insert>
-              </div>
-              <div class="k-gallery__item k-gallery__item--file">
-                  <sg-insert>2.4.3</sg-insert>
-              </div>
-              <div class="k-gallery__item k-gallery__item--file">
-                  <sg-insert>2.4.3</sg-insert>
-              </div>
-          </div>
-      </div>
-  </div>
-
-  Styleguide 2.10
-
-  */
   /* Make sure that the files are separated from the folders */
   /* Heading
      ========================================================================== */
-  /*
-  Heading
-
-  markup:
-  <!-- Heading -->
-  <div class="k-heading">
-      Heading
-  </div><!--.k-heading-->
-
-  Styleguide 2.11
-
-  */
   /* Icons
      ========================================================================== */
-  /*
-  Icons
-
-  Open iconic icons: https://useiconic.com/open/
-
-  .k-icon-account-login - Account login
-  .k-icon-account-logout - Account logout
-  .k-icon-action-redo - Action redo
-  .k-icon-action-undo - Action undo
-  .k-icon-align-center - Align center
-  .k-icon-align-left - Align left
-  .k-icon-align-right - Align right
-  .k-icon-aperture - Aperture
-  .k-icon-arrow-bottom - Arrow bottom
-  .k-icon-arrow-circle-bottom - Arrow circle bottom
-  .k-icon-arrow-circle-left - Arrow circle left
-  .k-icon-arrow-circle-right - Arrow circle right
-  .k-icon-arrow-circle-top - Arrow circle top
-  .k-icon-arrow-left - Arrow left
-  .k-icon-arrow-right - Arrow right
-  .k-icon-arrow-thick-bottom - Arrow thick bottom
-  .k-icon-arrow-thick-left - Arrow thick left
-  .k-icon-arrow-thick-right - Arrow think right
-  .k-icon-arrow-thick-top - Arrow thick top
-  .k-icon-arrow-top - Arrow top
-  .k-icon-audio-spectrum - Audio spectrum
-  .k-icon-audio - Audio
-  .k-icon-badge - Badge
-  .k-icon-ban - Ban
-  .k-icon-bar-chart - Bar chart
-  .k-icon-basket - Basket
-  .k-icon-battery-empty - Battery empty
-  .k-icon-battery-full - Battery full
-  .k-icon-beaker - Beaker
-  .k-icon-bell - Bell
-  .k-icon-bluetooth - Bluetooth
-  .k-icon-bold - Bold
-  .k-icon-bolt - Bolt
-  .k-icon-book - Book
-  .k-icon-bookmark - Bookmark
-  .k-icon-box - Box
-  .k-icon-briefcase - Briefcase
-  .k-icon-british-pound - British pound
-  .k-icon-browser - Browser
-  .k-icon-brush - Brush
-  .k-icon-bug - Bug
-  .k-icon-bullhorn - Bullhorn
-  .k-icon-calculator - Calculator
-  .k-icon-calendar - Calendar
-  .k-icon-camera-slr - Camera SLR
-  .k-icon-caret-bottom - Caret bottom
-  .k-icon-caret-left - Caret left
-  .k-icon-caret-right - Caret right
-  .k-icon-caret-top - Caret top
-  .k-icon-cart - Cart
-  .k-icon-chat - Chat
-  .k-icon-check - Check
-  .k-icon-chevron-bottom - Chevron bottom
-  .k-icon-chevron-left - Chevron left
-  .k-icon-chevron-right - Chevron right
-  .k-icon-chevron-top - Chevron top
-  .k-icon-circle-check - Circle check
-  .k-icon-circle-x - Circle X
-  .k-icon-clipboard - Clipboard
-  .k-icon-clock - Clock
-  .k-icon-cloud-download - Cloud download
-  .k-icon-cloud-upload - Cloud upload
-  .k-icon-cloud - Cloud
-  .k-icon-cloudy - Cloudy
-  .k-icon-code - Code
-  .k-icon-cog - Cog
-  .k-icon-collapse-down - Collapse down
-  .k-icon-collapse-left - Collapse left
-  .k-icon-collapse-right - Collapse right
-  .k-icon-collapse-up - Collapse up
-  .k-icon-command - Command
-  .k-icon-comment-square - Comment square
-  .k-icon-compass - Compass
-  .k-icon-contrast - Contrast
-  .k-icon-copywriting - Copywriting
-  .k-icon-credit-card - Credit card
-  .k-icon-crop - Crop
-  .k-icon-dashboard - Dashboard
-  .k-icon-data-transfer-download - Data transfer download
-  .k-icon-data-transfer-upload - Data transfer upload
-  .k-icon-delete - Delete
-  .k-icon-dial - Dial
-  .k-icon-document - Document
-  .k-icon-dollar - Dollar
-  .k-icon-double-quote-sans-left - Double quote sans left
-  .k-icon-double-quote-sans-right - Double quote sans right
-  .k-icon-double-quote-serif-left - Double quote serif left
-  .k-icon-double-quote-serif-right - Double quote serif right
-  .k-icon-droplet - Droplet
-  .k-icon-eject - Eject
-  .k-icon-elevator - Elevator
-  .k-icon-ellipses - Ellipsis
-  .k-icon-envelope-closed - Envelope closed
-  .k-icon-envelope-open - Envelope open
-  .k-icon-euro - Euro
-  .k-icon-excerpt - Excerpt
-  .k-icon-expand-down - Expand down
-  .k-icon-expand-left - Expand left
-  .k-icon-expand-right - Expand right
-  .k-icon-expand-up - Expand up
-  .k-icon-external-link - External link
-  .k-icon-eye - Eye
-  .k-icon-eyedropper - Eyedropper
-  .k-icon-file - File
-  .k-icon-fire - Fire
-  .k-icon-flag - Flag
-  .k-icon-flash - Flash
-  .k-icon-folder - folder
-  .k-icon-fork - Fork
-  .k-icon-fullscreen-enter - Fullscreen enter
-  .k-icon-fullscreen-exit - Fullscreen exit
-  .k-icon-globe - Globe
-  .k-icon-graph - Graph
-  .k-icon-grid-four-up - Grid four up
-  .k-icon-grid-three-up - Grid three up
-  .k-icon-grid-two-up - Grid two up
-  .k-icon-hard-drive - Hard drive
-  .k-icon-header - Header
-  .k-icon-headphones - Headphones
-  .k-icon-heart - Heart
-  .k-icon-home - Home
-  .k-icon-image - Image
-  .k-icon-inbox - Inbox
-  .k-icon-infinity - Infinity
-  .k-icon-info - Info
-  .k-icon-italic - Italic
-  .k-icon-justify-center - Justify center
-  .k-icon-justify-left - Justify left
-  .k-icon-justify-right - Justify right
-  .k-icon-key - Key
-  .k-icon-laptop - Laptop
-  .k-icon-layers - Layers
-  .k-icon-lightbulb - lightbulb
-  .k-icon-link-broken - Link broken
-  .k-icon-link-intact - Link intact
-  .k-icon-list-rich - List rich
-  .k-icon-list - List
-  .k-icon-location - Location
-  .k-icon-lock-locked - Lock locked
-  .k-icon-lock-unlocked - Lock unlocked
-  .k-icon-loop-circular - Circular
-  .k-icon-loop-square - Square
-  .k-icon-loop - Loop
-  .k-icon-magnifying-glass - Magnifying glass
-  .k-icon-map-marker - Map marker
-  .k-icon-map - Map
-  .k-icon-media-pause - Media pause
-  .k-icon-media-play - Media play
-  .k-icon-media-record - Media record
-  .k-icon-media-skip-backward - Media skip backward
-  .k-icon-media-skip-forward - Media skip forward
-  .k-icon-media-step-backward - Media step backward
-  .k-icon-media-step-forward - Media step forward
-  .k-icon-media-stop - Media stop
-  .k-icon-medical-cross - Medical cross
-  .k-icon-menu - Menu
-  .k-icon-microphone - Microphone
-  .k-icon-minus - Minus
-  .k-icon-monitor - Monitor
-  .k-icon-moon - Moon
-  .k-icon-move - Move
-  .k-icon-musical-note - Musical note
-  .k-icon-paperclip - Paperclip
-  .k-icon-pencil - Pencil
-  .k-icon-people - People
-  .k-icon-person - Person
-  .k-icon-phone - Phone
-  .k-icon-pie-chart - Pie chart
-  .k-icon-pin - Pin
-  .k-icon-play-circle - Play circle
-  .k-icon-plus - Plus
-  .k-icon-power-standby - power standby
-  .k-icon-print - Print
-  .k-icon-project - Project
-  .k-icon-pulse - Pulse
-  .k-icon-puzzle-piece - Puzzle piece
-  .k-icon-question-mark - Question mark
-  .k-icon-rain - Rain
-  .k-icon-random - Random
-  .k-icon-reload - Reload
-  .k-icon-resize-both - Resize both
-  .k-icon-resize-height - Resize height
-  .k-icon-resize-width - Resize width
-  .k-icon-rss-alt - RSS alt
-  .k-icon-rss - RSS
-  .k-icon-script - Script
-  .k-icon-share-boxed - Share boxed
-  .k-icon-share - Share
-  .k-icon-shield - Shield
-  .k-icon-signal - Signal
-  .k-icon-signpost - Signpost
-  .k-icon-sort-ascending - Sort ascending
-  .k-icon-sort-descending - Sort descending
-  .k-icon-spreadsheet - Spreadsheet
-  .k-icon-star - Star
-  .k-icon-sun - Sun
-  .k-icon-tablet - Tablet
-  .k-icon-tag - Tag
-  .k-icon-tags - Tags
-  .k-icon-target - Target
-  .k-icon-task - Task
-  .k-icon-terminal - Terminal
-  .k-icon-text - Text
-  .k-icon-thumb-down - Thumb down
-  .k-icon-thumb-up - Thumb up
-  .k-icon-timer - Timer
-  .k-icon-transfer - Transfer
-  .k-icon-trash - Trash
-  .k-icon-underline - Underline
-  .k-icon-vertical-align-bottom - Vertical align bottom
-  .k-icon-vertical-align-center - Vertical align center
-  .k-icon-vertical-align-top - Vertical align top
-  .k-icon-video - Video
-  .k-icon-volume-high - Volume high
-  .k-icon-volume-low - Volume low
-  .k-icon-volume-off - Volume off
-  .k-icon-warning - Warning
-  .k-icon-wifi - Wifi
-  .k-icon-wrench - Wrench
-  .k-icon-x - X
-  .k-icon-yen - Yen
-  .k-icon-zoom-in - Zoom in
-  .k-icon-zoom-out - Zoom out
-
-  markup:
-  <span class="{$modifiers}" aria-hidden="true"></span>
-
-  sg-wrapper:
-  <div style="font-size: 16px;"><sg-wrapper-content/></div>
-
-  Styleguide 2.12
-
-  */
-  /**
-  Extra icons
-
-  Extra icons that we added on top of open iconic
-
-  .k-icon-close - Close
-  .k-icon-disabled - Disabled
-  .k-icon-document-archive - Archive
-  .k-icon-document-audio - Audio
-  .k-icon-document-default - Default
-  .k-icon-document-document - Document
-  .k-icon-document-folder - Folder
-  .k-icon-document-image - Image
-  .k-icon-document-pdf - PDF
-  .k-icon-document-spreadsheet - Spreadsheet
-  .k-icon-document-video - Video
-  .k-icon-documents - Documents
-  .k-icon-enabled - Enabled
-  .k-icon-filter - Filter
-  .k-icon-folder-closed - Folder closed
-  .k-icon-folder-opened - Folder opened
-  .k-icon-menu-closed - Menu closed
-  .k-icon-menu-opened - Menu opened
-  .k-icon-open - Open
-
-  markup:
-  <span class="{$modifiers}" aria-hidden="true"></span>
-
-  sg-wrapper:
-  <div style="font-size: 16px;"><sg-wrapper-content/></div>
-
-  Styleguide 2.12.1
-
-  */
-  /*
-  Icon colors
-
-  Give your icons more meaning by giving them a color
-
-  .k-icon--accent - Accent color
-  .k-icon--success - Success color
-  .k-icon--error - Error color
-
-  markup:
-  <span class="k-icon-home {$modifiers}" aria-hidden="true"></span>
-
-  sg-wrapper:
-  <div style="font-size: 16px;"><sg-wrapper-content/></div>
-
-  Styleguide 2.12.2
-
-  */
-  /*
-  Icon sizes
-
-  Different sizes for icons
-
-  .k-icon--size-tiny - 10px
-  .k-icon--size-small - 13px
-  .k-icon--size-default - 16px
-  .k-icon--size-medium - 24px
-  .k-icon--size-large - 32px
-  .k-icon--size-xlarge - 48px
-  .k-icon--size-huge - 64px
-
-  markup:
-  <span class="k-icon-document-default {$modifiers}" aria-hidden="true"></span>
-
-  sg-wrapper:
-  <div><sg-wrapper-content/></div>
-
-  Styleguide 2.12.3
-
-  */
+  /* Icon colors */
+  /* Icon sizes */
   /**
    * Custom background image icons
    *
@@ -3441,29 +2073,6 @@ body.k-is-resizing {
    */
   /* List
      ========================================================================== */
-  /*
-  List
-
-  markup:
-  <!-- List -->
-  <ul class="k-list">
-      <li class="k-is-active">
-          <a href="javascript:void(0)">
-              <sg-insert>2.12-166</sg-insert>
-              My documents
-          </a>
-      </li>
-      <li>
-          <a href="javascript:void(0)">
-              <sg-insert>2.12-195</sg-insert>
-              Most popular
-          </a>
-      </li>
-  </ul>
-
-  Styleguide 2.13
-
-  */
   /**
    * 1. Reset default <ul> styling
    */
@@ -3490,92 +2099,6 @@ body.k-is-resizing {
    */
   /* Modal
      ========================================================================== */
-  /*
-  Modals
-
-  Modals using magnific popup (http://dimsemenov.com/plugins/magnific-popup/)
-  - Default modals are inline modals
-  - Add an element to open the button
-  - Add an element to be opened as a modal
-
-  markup:
-  <a class="k-js-inline-modal" data-mfp-src="#example-inline-modal" href="mobile-friendly-page.html">
-      Open modal
-  </a>
-  <div id="example-inline-modal" class="mfp-hide">
-      <div class="k-inline-modal">
-          <p>Modal content</p>
-      </div>
-  </div>
-
-  sg-wrapper:
-  <div>
-      <sg-wrapper-content/>
-  </div>
-
-  Styleguide 2.15
-
-  */
-  /*
-  Modal title
-
-  markup:
-  <a class="k-js-inline-modal" data-mfp-src="#example-inline-modal2" href="mobile-friendly-page.html">
-      Open modal
-  </a>
-  <div id="example-inline-modal2" class="mfp-hide">
-      <div class="k-inline-modal">
-          <div class="k-inline-modal__title">Title</div>
-          <p>Content</p>
-      </div>
-  </div>
-
-  Styleguide 2.15.1
-
-  */
-  /*
-  Small modal
-
-  markup:
-  <a class="k-js-inline-modal" data-mfp-src="#example-inline-modal3" href="mobile-friendly-page.html">
-      Open modal
-  </a>
-  <div id="example-inline-modal3" class="mfp-hide k-small-inline-modal-holder">
-      <div class="k-inline-modal">
-          <div class="k-inline-modal__title">Title</div>
-          <p>I'm a small modal</p>
-      </div>
-  </div>
-
-  Styleguide 2.15.2
-
-  */
-  /*
-  Iframe modal
-
-  markup:
-  <a class="k-js-iframe-modal" href="http://ui.joomlatools.com/#/section/4.2/fullscreen">
-      Open modal
-  </a>
-
-  Styleguide 2.15.3
-
-  */
-  /*
-  Image modals
-
-  Image modals do not need an item to be shown in a modal but use the `<a href="">` attribute instead
-
-  markup:
-  <a class="k-js-image-modal" href="joomlatools/images/placeholder-16-9.png">
-      Open modal
-  </a>
-
-  sg-wrapper:
-
-  Styleguide 2.15.4
-
-  */
   /* Main image in popup */
   /* The shadow behind the image */
   /**
@@ -3583,271 +2106,24 @@ body.k-is-resizing {
    */
   /* Navigation
      ========================================================================== */
-  /*
-  Navigation
-
-  Sidebar navigation styling
-
-  .k-is-active - Active item
-
-  markup:
-  <!-- Navigation -->
-  <ul class="k-navigation">
-      <li>
-          <a href="javascript:void(0)">
-              {content}
-          </a>
-      </li>
-      <li class="{$modifiers}">
-          <a href="javascript:void(0)">
-              {content}
-          </a>
-      </li>
-  </ul>
-
-  Styleguide 2.16
-
-  */
   /**
    * 1. Reset default <ul> styling
    */
   /* Option list
      ========================================================================== */
-  /*
-  Option list
-
-  - Use when more than two options
-
-  markup:
-  <div class="k-optionlist">
-      <div class="k-optionlist__content">
-          <input type="radio" name="group-[2.17]-1" id="input-[2.17]-1" value="0" checked="checked" />
-          <label for="input-[2.17]-1">Option 1</label>
-          <input type="radio" name="group-[2.17]-1" id="input-[2.17]-2" value="1" />
-          <label for="input-[2.17]-2">Crasjustoodio, dapibus ac facilisis in, egestas eget quam.</label>
-          <input type="radio" name="group-[2.17]-1" id="input-[2.17]-3" value="2" />
-          <label for="input-[2.17]-3">Option 3</label>
-          <div class="k-optionlist__focus"></div>
-      </div>
-  </div>
-
-  Styleguide 2.17
-
-  */
   /**
    * Check if :checked is supported using modernizr
    */
-  /*
-  Boolean list
-
-  A boolean list should only be used for `true / false`, `0 / 1`, `yes / no` questions
-  - The input with `value="0"` will get the error background color
-  - The input with `value="1"` will get the success background color
-
-  markup:
-  <div class="k-optionlist k-optionlist--boolean">
-      <div class="k-optionlist__content">
-          <input type="radio" name="group-[2.17.1]-1-{$modifiers}" id="input-[2.17.1]-1-{$modifiers}" value="1" checked="checked" />
-          <label for="input-[2.17.1]-1-{$modifiers}">True</label>
-          <input type="radio" name="group-[2.17.1]-1-{$modifiers}" id="input-[2.17.1]-2-{$modifiers}" value="0" />
-          <label for="input-[2.17.1]-2-{$modifiers}">False</label>
-          <div class="k-optionlist__focus"></div>
-      </div>
-  </div>
-
-  Styleguide 2.17.1
-
-  */
   /**
    * Check if :checked is supported using modernizr
    */
-  /*
-  Block list
-
-  markup:
-  <div class="k-optionlist k-optionlist--block">
-      <div class="k-optionlist__content">
-          <input type="radio" name="group-[2.17.2]-1-{$modifiers}" id="input-[2.17.2]-1-{$modifiers}" value="1" checked="checked" />
-          <label for="input-[2.17.2]-1-{$modifiers}">True</label>
-          <input type="radio" name="group-[2.17.2]-1-{$modifiers}" id="input-[2.17.2]-2-{$modifiers}" value="0" />
-          <label for="input-[2.17.2]-2-{$modifiers}">False</label>
-          <div class="k-optionlist__focus"></div>
-      </div>
-  </div>
-
-  Styleguide 2.17.2
-
-  */
-  /*
-  Disabled items
-
-  markup:
-  <div class="k-optionlist k-optionlist--block">
-      <div class="k-optionlist__content">
-          <input type="radio" name="group-[2.17.3]-1-{$modifiers}" id="input-[2.17.3]-1-{$modifiers}" value="1" checked="checked" />
-          <label for="input-[2.17.3]-1-{$modifiers}">True</label>
-          <input type="radio" name="group-[2.17.3]-1-{$modifiers}" id="input-[2.17.3]-2-{$modifiers}" value="0" />
-          <label for="input-[2.17.3]-2-{$modifiers}">False</label>
-          <input type="radio" name="group-[2.17.3]-1-{$modifiers}" id="input-[2.17.3]-3-{$modifiers}" value="0" disabled="disabled" />
-          <label for="input-[2.17.3]-3-{$modifiers}">False</label>
-          <div class="k-optionlist__focus"></div>
-      </div>
-  </div>
-
-  Styleguide 2.17.3
-
-  */
-  /*
-  Table pagination
-
-  - Put right below `.k-table` container and inside `.k-table-container` container
-
-  markup:
-  <div class="k-table-pagination">
-      <div class="k-pagination">
-          <div class="k-pagination__limit">
-              <select class="k-form-control">
-                  <option value="5">5</option>
-                  <option value="10" selected>10</option>
-                  <option value="15">15</option>
-              </select>
-          </div>
-          <ul class="k-pagination__pages">
-              <li class="k-is-active">
-                  <span>1</span>
-              </li>
-              <li>
-                  <a href="javascript:void(0)">2</a>
-              </li>
-              <li>
-                  <a href="javascript:void(0)">3</a>
-              </li>
-              <li>
-                  <a href="javascript:void(0)">4</a>
-              </li>
-              <li>
-                  <a href="javascript:void(0)">5</a>
-              </li>
-              <li>
-                  <a href="javascript:void(0)">»</a>
-              </li>
-          </ul>
-      </div>
-  </div>
-
-  Styleguide 2.21.1
-
-  */
+  /* Table pagination */
   /**
    * 1. Faking a bottom border, this shadow will disappear when pagination is positioned to bottom
    */
-  /*
-  Responsive table
-
-  - Add the `.k-js-responsive-table` class to the `<table>`
-  - Use [data-hide="phone/tablet/desktop"] on `<th>` to hide cell on different screen sizes
-  - Set [data-toggle="true"] and add a `.k-table-data--toggle` class to an empty cell
-
-  markup:
-  <div class="k-table-container">
-      <div class="k-table">
-          <table class="k-js-responsive-table">
-          <thead>
-              <tr>
-                  <th width="1%" data-hide="phone">
-                      <sg-insert>2.12-161</sg-insert>
-                      <span class="k-visually-hidden">Move icon</sg-insert>
-                  </th>
-                  <th width="1%" class="k-table-data--form">
-                      <input type="checkbox" />
-                  </th>
-                  <th data-toggle="true" class="k-table-data--toggle"></th>
-                  <th>
-                      Title
-                  </th>
-                  <th data-hide="phone,tablet">
-                      Category
-                  </th>
-                  <th data-hide="phone,tablet,desktop">
-                      Downloads
-                  </th>
-              </tr>
-          </thead>
-          <tbody>
-              <tr>
-                  <td>
-                      <sg-insert>2.21.9</sg-insert>
-                  </td>
-                  <td class="k-table-data--form">
-                      <input type="checkbox" />
-                  </td>
-                  <td class="k-table-data--toggle"></td>
-                  <td class="k-table-data--ellipsis">
-                      <a href="javascript:void(0)">Title</a>
-                  </td>
-                  <td>
-                      Category
-                  </td>
-                  <td>
-                      12
-                  </td>
-              </tr>
-          </tbody>
-          </table>
-      </div>
-  </div>
-
-  Styleguide 2.21.11
-
-  */
+  /* Responsive table */
   /* Scopebar
      ========================================================================== */
-  /*
-  Scopebar
-
-  The default scopebar is displayed with filters and a search field
-
-  markup:
-  <!-- Scopebar -->
-  <div class="k-scopebar k-js-scopebar">
-      <sg-insert>2.18.3</sg-insert>
-      <sg-insert>2.18.6</sg-insert>
-  </div><!-- .k-scopebar -->
-
-  Styleguide 2.18
-
-  */
-  /*
-  Scopebar - breadcrumbs
-
-  When you don't need any filters, but do need breadcrumbs, it's possible to combine the two like so:
-
-  markup:
-  <!-- Scopebar -->
-  <div class="k-scopebar k-js-scopebar k-scopebar--breadcrumbs">
-      <sg-insert>2.18.4</sg-insert>
-      <sg-insert>2.18.6</sg-insert>
-  </div><!-- .k-scopebar -->
-
-  Styleguide 2.18.1
-
-  */
-  /*
-  Scopebar - adding buttons
-
-  Need some extra buttons? For example to switch a list layout to a grid layout? Place them like so:
-
-  markup:
-  <!-- Scopebar -->
-  <div class="k-scopebar k-js-scopebar">
-      <sg-insert>2.18.3</sg-insert>
-      <sg-insert>2.18.5</sg-insert>
-      <sg-insert>2.18.6</sg-insert>
-  </div><!-- .k-scopebar -->
-
-  Styleguide 2.18.2
-
-  */
   /**
    * 1. Faking a border for when items are not stretching
    */
@@ -3865,47 +2141,7 @@ body.k-is-resizing {
    * 1. Clearing for floating buttons
    * 2. Move first button away from edge
    */
-  /*
-  Scopebar Filters
-
-  - Hidden on small screens
-
-  markup:
-  <!-- Filters -->
-  <div class="k-dynamic-content-holder">
-      <div class="k-js-filters">
-          <div data-filter data-title="Status" data-count="0">
-              <select class="k-js-select2" name="enabled" data-placeholder="- Select -">
-                  <option value="" class="level1">- Select -</option>
-                  <option value="1" class="level1">Published</option>
-                  <option value="0" class="level1">Unpublished</option>
-              </select>
-          </div>
-      </div>
-  </div>
-  <div class="k-scopebar__item k-scopebar__item--filters">
-      <div class="k-scopebar__filters-content">
-          <div class="k-scopebar__filters k-js-filter-container">
-              <div style="display: none;" class="k-scopebar__item--filter k-scopebar-dropdown k-js-filter-prototype k-js-dropdown">
-                  <button type="button" class="k-scopebar-dropdown__button k-js-dropdown-button">
-                      <span class="k-scopebar__item--filter__title k-js-dropdown-title"></span>
-                      <span class="k-scopebar__item--filter__icon k-icon-chevron-bottom" aria-hidden="true"></span>
-                      <div class="k-scopebar__item__label k-js-dropdown-label"></div>
-                  </button>
-                  <div class="k-scopebar-dropdown__body k-js-dropdown-body">
-                      <div class="k-scopebar-dropdown__body__buttons">
-                          <button type="button" class="k-button k-button--default k-js-clear-filter">Clear</button>
-                          <button type="button" class="k-button k-button--primary k-js-apply-filter">Apply</button>
-                      </div>
-                  </div>
-              </div>
-          </div><!-- .k-scopebar__filters -->
-      </div><!-- .k-scopebar__filters-content -->
-  </div><!-- .k-scopebar__item -->
-
-  Styleguide 2.18.3
-
-  */
+  /* Scopebar Filters */
   /**
    * 1. Clearfix so we can float individual filters
    * 2. For positioning dropdowns on smaller screens
@@ -3913,80 +2149,12 @@ body.k-is-resizing {
   /* Individual filter */
   /* Filter title and icon */
   /* Scopebar label showing how many active filters you have below a filter button */
-  /*
-  Scopebar breadcrumbs
-
-  When space is tight and you don't need filters you could add the breadcrumbs bar to the scopebar
-  - Never add breadcrumbs and filter in the scopebar together
-  - Hidden on small screens
-
-  markup:
-  <div class="k-scopebar__item k-scopebar__item--breadcrumbs">
-      <sg-insert>2.2</sg-insert>
-  </div>
-
-  Styleguide 2.18.4
-
-  */
-  /*
-  Scopebar buttons
-
-  markup:
-  <div class="k-scopebar__item k-scopebar__item--buttons">
-      <button class="k-scopebar__button">
-          <sg-insert>2.12-115</sg-insert>
-          <span class="k-visually-hidden">Grid icon</span>
-      </button>
-  </div>
-
-  Styleguide 2.18.5
-
-  */
-  /*
-  Scopebar search
-
-  - Hidden on small screens
-
-  markup:
-  <!-- Search -->
-  <div class="k-scopebar__item k-scopebar__item--search">
-      <div class="k-search k-search--has-both-buttons">
-          <label for="input-[2.18.6]-1">Search</label>
-          <input type="search" class="k-search__field" placeholder="Search…" id="input-[2.18.6]-1" />
-          <button type="submit" class="k-search__submit">
-              <sg-insert>2.12-144</sg-insert>
-              <span class="k-visually-hidden">Search icon</span>
-          </button>
-          <button type="button" class="k-search__empty ">
-              <span class="k-search__empty-area">
-                  <sg-insert>2.12.1-2</sg-insert>
-                  <span class="k-visually-hidden">Clear search</span>
-              </span>
-          </button>
-      </div>
-  </div>
-
-  Styleguide 2.18.6
-
-  */
+  /* Scopebar breadcrumbs */
+  /* Scopebar buttons */
+  /* Scopebar search */
   /* Select2 Bootstrap Theme v0.1.0-beta.4 | MIT License | github.com/select2/select2-bootstrap-theme */
   /* Select2
      ========================================================================== */
-  /*
-  Select2
-
-  - Just add the class `k-js-select2` to any `<select>` element to transform it into a select2 element
-
-  markup:
-  <select class="k-form-control k-js-select2">
-      <option value="1" selected>Example 1</option>
-      <option value="2">Example 2</option>
-      <option value="3">Example 3</option>
-  </select>
-
-  Styleguide 2.19
-
-  */
   /**
    * 100% wide by default instead of just 220px making it responsive
    * Important because width is being added by JS as inline styling
@@ -4043,206 +2211,17 @@ body.k-is-resizing {
   */
   /* Sidebar item
      ========================================================================== */
-  /*
-  Sidebar item
-
-  - Adds bottom spacing when multiple sidebar items are being used
-  - Adds flexbox styling
-  - Hidden on small screens
-  - Add `.k-sidebar-item--flex` to the sidebar items that need to <b>grow</b> with the layout
-  - Use <b>only</b> inside a `.k-sidebar`
-  - {unsureText}
-
-  default - Default
-  .k-sidebar-item--flex - Flexing container that will grow (and not shrink)
-  .k-sidebar-item--toggle.k-js-sidebar-toggle-item - Adds a toggle button on certain screen sizes
-
-  markup:
-  <div class="k-sidebar-item {$modifiers}">
-      ...
-  </div><!-- .k-sidebar-item -->
-
-  Styleguide 2.20
-
-  */
   /**
    * Toggle item
    *
    * 1. Same as width but minus 2px border width
    */
-  /*
-  Sidebar item header
-
-  - Use <b>only</b> inside a `.k-sidebar-item`
-
-  markup:
-  <div class="k-sidebar-item__header">
-      {Title}
-  </div><!-- .k-sidebar-item__header -->
-
-  sg-wrapper:
-  <div class="k-sidebar-item">
-      <sg-wrapper-content/>
-  </div><!-- .k-sidebar-item -->
-
-  Styleguide 2.20.1
-
-  */
-  /*
-  Sidebar item content
-
-  - Adds spacing
-  - Use <b>only</b> inside a `.k-sidebar-item`
-
-  default - Default
-  .k-sidebar-item__content--small - Smaller padding
-
-  markup:
-  <div class="k-sidebar-item__content {$modifiers}">
-      <sg-wrapper-content/>
-  </div><!-- .k-sidebar-item__content -->
-
-  sg-wrapper:
-  <div class="k-sidebar-item">
-      <sg-wrapper-content/>
-  </div><!-- .k-sidebar-item -->
-
-  Styleguide 2.20.2
-
-  */
-  /*
-  Complete sidebar item
-
-  A complete sidebar item may look like this
-  - Hidden on small screens
-
-  markup:
-  <div class="k-sidebar-item">
-      <div class="k-sidebar-item__header">
-          Title
-      </div><!-- .k-sidebar-item__header -->
-      <div class="k-sidebar-item__content">
-          Content
-      </div><!-- .k-sidebar-item__content -->
-  </div><!-- .k-sidebar-item -->
-
-  sg-wrapper:
-  <div class="k-sidebar-left">
-      <sg-wrapper-content/>
-  </div><!-- .k-sidebar -->
-
-  Styleguide 2.20.3
-
-  */
-  /*
-  Styled file input
-
-  markup:
-  <div class="k-file-input-container">
-      <div class="k-file-input">
-          <input class="k-js-file-input" type="file" id="input-[5.1]-2" data-multiple-caption="{count} files selected" multiple />
-          <label for="input-[5.1]-2">
-              <span class="k-file-input__button">
-                  <sg-insert>2.12-62</sg-insert>
-                  Choose a file&hellip;
-              </span>
-              <span class="k-file-input__files"></span>
-          </label>
-      </div>
-  </div>
-
-  Styleguide 2.9.9
-
-  */
+  /* Sidebar item header */
+  /* Sidebar item content */
+  /* Styled file input */
   /* Table
      ========================================================================== */
   /* WARNING: Do not use transition on any element since this will hit scroll performance big on certain browsers! */
-  /*
-  Table
-
-  A complete table
-
-  markup:
-  <!-- Table -->
-  <div class="k-table-container">
-      <div class="k-table">
-          <table class="k-js-responsive-table">
-          <thead>
-              <tr>
-                  <th width="1%" class="k-table-data--form"><input class="k-js-grid-checkall" type="checkbox" /></th>
-                  <th width="1%" data-toggle="true" class="k-table-data--toggle"></th>
-                  <th width="1%" class="k-table-data--icon"></th>
-                  <th class="k-sort-desc"><a href="javascript:void(0)">Item title</a></th>
-                  <th width="5%" data-hide="phone,tablet"><a href="javascript:void(0)">State</a></th>
-                  <th width="15%" data-hide="phone"><a href="javascript:void(0)">Category</a></th>
-                  <th width="5%" data-hide="phone,tablet,desktop"><a href="javascript:void(0)">Date</a></th>
-              </tr>
-          </thead>
-          <tbody>
-              <tr>
-                  <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox" /></td>
-                  <td class="k-table-data--toggle"></td>
-                  <td class="k-table-data--icon"><sg-insert>2.12.1-5</sg-insert></td>
-                  <sg-insert>2.21.2</sg-insert>
-                  <td><sg-insert>2.21.5-2</sg-insert></td>
-                  <sg-insert>2.21.2</sg-insert>
-                  <td class="k-table-data--nowrap">01 January 1999</td>
-              </tr>
-              <tr>
-                  <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox" /></td>
-                  <td class="k-table-data--toggle"></td>
-                  <td class="k-table-data--icon"><sg-insert>2.12.1-5</sg-insert></td>
-                  <sg-insert>2.21.3</sg-insert>
-                  <td><sg-insert>2.21.5-2</sg-insert></td>
-                  <sg-insert>2.21.2</sg-insert>
-                  <td class="k-table-data--nowrap">01 January 1999</td>
-              </tr>
-              <tr class="k-table__sub-header">
-                  <th colspan="7">
-                      Sub header
-                  </th>
-              </tr>
-              <tr>
-                  <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox" /></td>
-                  <td class="k-table-data--toggle"></td>
-                  <td class="k-table-data--icon"><sg-insert>2.12.1-5</sg-insert></td>
-                  <sg-insert>2.21.3</sg-insert>
-                  <td><sg-insert>2.21.5-2</sg-insert></td>
-                  <sg-insert>2.21.2</sg-insert>
-                  <td class="k-table-data--nowrap">01 January 1999</td>
-              </tr>
-              <tr>
-                  <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox" /></td>
-                  <td class="k-table-data--toggle"></td>
-                  <td class="k-table-data--icon"><sg-insert>2.12.1-5</sg-insert></td>
-                  <sg-insert>2.21.3</sg-insert>
-                  <td><sg-insert>2.21.5-2</sg-insert></td>
-                  <sg-insert>2.21.2</sg-insert>
-                  <td class="k-table-data--nowrap">01 January 1999</td>
-              </tr>
-              <tr>
-                  <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox" /></td>
-                  <td class="k-table-data--toggle"></td>
-                  <td class="k-table-data--icon"><sg-insert>2.12.1-5</sg-insert></td>
-                  <sg-insert>2.21.3</sg-insert>
-                  <td><sg-insert>2.21.5-2</sg-insert></td>
-                  <sg-insert>2.21.2</sg-insert>
-                  <td class="k-table-data--nowrap">01 January 1999</td>
-              </tr>
-          </tbody>
-          </table>
-      </div>
-      <sg-insert>2.21.1</sg-insert>
-  </div>
-
-  sg-wrapper:
-  <div class="k-component">
-      <sg-wrapper-content/>
-  </div>
-
-  Styleguide 2.21
-
-  */
   /**
    * Table
    *
@@ -4254,193 +2233,12 @@ body.k-is-resizing {
    * 1. override browser default
    */
   /**
- * Table elements
- */
-  /*
-  Item title
-
-  markup:
-  <td class="k-table-data--ellipsis">
-    <a href="javascript:void(0)">Item title</a>
-  </td>
-
-  sg-wrapper:
-  <div class="k-table-container">
-      <div class="k-table">
-          <table>
-          <tbody>
-              <tr>
-                  <sg-wrapper-content/>
-              </tr>
-          </tbody>
-          </table>
-      </div>
-  </div>
-
-
-  Styleguide 2.21.2
-
-  */
-  /*
-  Item subtitle
-
-  - Use the `small` element for subtitle
-
-  markup:
-  <td class="k-table-data--ellipsis">
-      <a href="javascript:void(0)">Curabitur blandit tempus porttitor.</a>
-      <small>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</small>
-  </td>
-
-  sg-wrapper:
-  <div class="k-table-container">
-      <div class="k-table">
-          <table>
-          <tbody>
-              <tr>
-                  <sg-wrapper-content/>
-              </tr>
-          </tbody>
-          </table>
-      </div>
-  </div>
-
-  Styleguide 2.21.3
-
-  */
-  /*
-  Table cell settings
-
-  Different available table cell settings
-
-  .k-table-data--right - Right aligned text
-  .k-table-data--center - Center aligned text
-  .k-table-data--nowrap - Content will not be wrapped (useful for dates, file sizes etc.)
-  .k-table-data--wrap - Wrap long content (useful for urls etc.)
-  .k-table-data--icon - Cells that only contain an icon
-  .k-table-data--form - Cells that only contain a form element like a radio input or checkbox
-  .k-table-data--toggle - Empty cell that will hold the responsive toggle button
-  .k-table-data--ellipsis - Break content at the end of the cell and add text ellipsis
-  .k-table-data--multiline - All items inside this cell are `display: inline` with `vertical-align: baseline`
-
-  markup:
-  <td class="{$modifiers}">Content</td>
-
-  sg-wrapper:
-  <div class="k-table-container">
-      <div class="k-table">
-          <table>
-          <tbody>
-              <tr>
-                  <sg-wrapper-content/>
-              </tr>
-          </tbody>
-          </table>
-      </div>
-  </div>
-
-  Styleguide 2.21.4
-
-  */
-  /*
-  Table item states
-
-  .k-table__item--state-pending - Pending
-  .k-table__item--state-expired - Expired
-  .k-table__item--state-unpublished - Unpublished
-  .k-table__item--state-published - Published
-
-  markup:
-  <span class="k-table__item--state {$modifiers}">State</span>
-
-  sg-wrapper:
-  <div class="k-table-container">
-      <div class="k-table">
-          <table>
-          <tbody>
-              <tr>
-                  <td>
-                      <sg-wrapper-content/>
-                  </td>
-              </tr>
-          </tbody>
-          </table>
-      </div>
-  </div>
-
-  Styleguide 2.21.5
-
-  */
-  /*
-  Table sub header
-
-  Add sub headers in between rows
-
-  markup:
-  <tr class="k-table__sub-header">
-      <th colspan="[amount of cells]">
-          Sub header
-      </th>
-  </tr>
-
-  sg-wrapper:
-  <div class="k-table-container">
-      <div class="k-table">
-          <table>
-          <tbody>
-              <sg-wrapper-content/>
-          </tbody>
-          </table>
-      </div>
-  </div>
-
-  Styleguide 2.21.6
-
-  */
-  /*
-  Table levels
-
-  A table displaying multiple levels
-
-  markup:
-  <div class="k-table-container">
-      <div class="k-table">
-          <table>
-          <thead>
-              <tr>
-                  <th width="1%"><input type="checkbox" /></th>
-                  <th>Heading</th>
-              </tr>
-          </thead>
-          <tbody>
-              <tr>
-                  <td><input type="checkbox" /></td>
-                  <td class="k-table__item-level k-table__item-level1">Level 1</td>
-              </tr>
-              <tr>
-                  <td><input type="checkbox" /></td>
-                  <td class="k-table__item-level k-table__item-level2">Level 2</td>
-              </tr>
-              <tr>
-                  <td><input type="checkbox" /></td>
-                  <td class="k-table__item-level k-table__item-level3">Level 3</td>
-              </tr>
-              <tr>
-                  <td><input type="checkbox" /></td>
-                  <td class="k-table__item-level k-table__item-level1">Level 1</td>
-              </tr>
-              <tr>
-                  <td><input type="checkbox" /></td>
-                  <td class="k-table__item-level k-table__item-level1">Level 1</td>
-              </tr>
-          </tbody>
-          </table>
-      </div>
-  </div>
-
-  Styleguide 2.21.7
-
-  */
+   * Table elements
+   */
+  /* Table cell settings */
+  /* Table item states */
+  /* Table sub header */
+  /* Table levels */
   /**
    * Selected
    *
@@ -4448,105 +2246,8 @@ body.k-is-resizing {
    *
    * 1. Coloring Links and extra elements that don't color automatically with their parent
    */
-  /*
-  Selected rows
-
-  When rows are selected they are highlighted
-
-  markup:
-  <tr class="k-is-selected">
-      <td>Item</td>
-      <td>Item</td>
-      <td>Item</td>
-  </tr>
-
-  sg-wrapper:
-  <div class="k-table-container">
-      <div class="k-table">
-          <table>
-          <tbody>
-              <tr>
-                  <td>Item</td>
-                  <td>Item</td>
-                  <td>Item</td>
-              </tr>
-              <sg-wrapper-content/>
-              <tr>
-                  <td>Item</td>
-                  <td>Item</td>
-                  <td>Item</td>
-              </tr>
-          </tbody>
-          </table>
-      </div>
-  </div>
-
-  Styleguide 2.21.8
-
-  */
-  /*
-  Positioner
-
-  For drag and drop sorting
-  - Add [data-position] to display a position on the positioner
-
-  default - Default - shows "no-drop" cursor
-  .k-is-active - Active item - shows "move" cursor
-
-  markup:
-  <span class="k-positioner {$modifiers}" data-position="1"></span>
-
-  sg-wrapper:
-  <div class="k-table-container">
-      <div class="k-table">
-          <table>
-          <tbody>
-              <tr>
-                  <td>
-                      <sg-wrapper-content/>
-                  </td>
-              </tr>
-          </tbody>
-          </table>
-      </div>
-  </div>
-
-  Styleguide 2.21.9
-
-  */
-  /*
-  Table heading sorting
-
-  sort-ascending - Ascending
-  sort-descending - Descending
-
-  markup:
-  <th>
-      <a href="javascript:void(0)">
-          Title
-          <span class="k-icon-{$modifiers}" aria-hidden="true">
-          <span class="k-visually-hidden">Sort column</span>
-      </a>
-  </th>
-
-  sg-wrapper:
-  <div class="k-table-container">
-      <div class="k-table">
-          <table>
-          <thead>
-              <tr>
-                  <th>Title</th>
-                  <sg-wrapper-content/>
-                  <th>Title</th>
-              </tr>
-          </thead>
-          </table>
-      </div>
-  </div>
-
-  Styleguide 2.21.10
-
-  */
+  /* Positioner */
+  /* Table heading sorting */
   /* Tabs
      ========================================================================== */
   /**
@@ -4573,23 +2274,6 @@ body.k-is-resizing {
    */
   /* Title bar
      ========================================================================== */
-  /*
-  Title bar
-
-  - A titlebar that can be displayed above the `content-wrapper` when there's no toolbar
-  - Very useful inside modal views
-  - Always have at least a `k-titlebar` or a `k-toolbar` when there's a `k-sidebar` in your page!
-  - Use as <b>first child</b> of the `.k-wrapper` only
-  - {unsureText}
-
-  markup:
-  <div class="k-title-bar k-js-title-bar">
-      <div class="k-title-bar__heading">Title</div>
-  </div><!-- .k-title-bar -->
-
-  Styleguide 2.23
-
-  */
   /**
    * 1. Set the z-index higher than the menus
    * 2. Setting a background so container will fall nicely over the sidebar
@@ -4597,55 +2281,9 @@ body.k-is-resizing {
   /**
    * Titlebar contents
    */
-  /*
-  Mobile title
-
-  Title just for mobile views since the navigation is hidden
-  - Use <b>never</b> together with a `.k-title-bar`
-  - Use <b>only</b> as <b>child</b> of `.k-wrapper`
-  - Only visible on smaller screens
-  - {unsureText}
-
-  markup:
-  <!-- Title when sidebar is invisible -->
-  <div class="k-title-bar k-title-bar--mobile k-js-title-bar">
-    <div class="k-title-bar__heading">{Title}</div>
-  </div><!-- .k-title-bar -->
-
-  Styleguide 2.23.1
-
-  */
+  /* Mobile title */
   /* Toolbar
      ========================================================================== */
-  /*
-  Toolbar
-
-  - <span class="sg-alert"><strong>Important:</strong> Always add an icon in front of the text since icons are used as only content on mobile</span>
-
-  Markup:
-  <!-- Toolbar -->
-  <div class="k-toolbar k-js-toolbar">
-      <button type="button" class="k-button k-button--success">
-          <sg-insert>2.12-171</sg-insert>
-          Primary action
-      </button>
-      <button type="button" class="k-button k-button--default">
-          <sg-insert>2.12-164</sg-insert>
-          Other action
-      </button>
-      <button type="button" class="k-button k-button--default" disabled>
-          <sg-insert>2.12-113</sg-insert>
-          Disabled action
-      </button>
-      <button type="button" class="k-button k-button--default" disabled>
-          <sg-insert>2.12-52</sg-insert>
-          Disabled action
-      </button>
-  </div><!-- .k-toolbar -->
-
-  Styleguide 2.24
-
-  */
   /**
    * 1. Buttons have margin-top and margin-left to separate them from each other
    *    Setting a bottom padding to separate buttons from bottom of toolbar
@@ -4657,20 +2295,6 @@ body.k-is-resizing {
   /* Text on the toolbar buttons */
   /* Tooltip
      ========================================================================== */
-  /*
-  Tooltips
-
-  markup:
-  <a href="javascript:void(0)" class="k-js-tooltip" data-toggle="tooltip" data-original-title="Tooltip">Tooltip on top</a>
-
-  sg-wrapper:
-  <p style="margin: 30px 0;">
-      <sg-wrapper-content/>
-  </p>
-
-  Styleguide 2.25
-
-  */
   /**
    * 1. Our parent element can be arbitrary since tooltips are by default inserted as a sibling of their target element.
    *    So reset our font and text properties to avoid inheriting weird values.
@@ -4686,69 +2310,10 @@ body.k-is-resizing {
   /* Toggler */
   /* Tree
      ========================================================================== */
-  /*
-  Tree
-
-  markup:
-  <div class="k-tree" id="k-jqtree"></div>
-  <script type="text/javascript" defer>
-  (function($) {
-      $(document).ready(function () {
-          new Koowa.Tree('#k-jqtree', {
-              "data": [
-                  {"label":"Main category","id":4},
-                  {"label":"Sub category 1","id":5,"parent":4},
-                  {"label":"Sub category 2","id":6,"parent":4},
-                  {"label":"Deeper category","id":7,"parent":6},
-                  {"label":"Sub category 3","id":8,"parent":4}
-              ]
-          });
-      });
-  });
-  </script>
-
-  Styleguide 2.26
-
-  */
   /* Wells
      ========================================================================== */
-  /*
-  Wells
-
-  markup:
-  <div class="k-well">
-      Content
-  </div>
-
-  Styleguide 2.27
-
-  */
-  /*
-  Wells content
-
-  markup:
-  <div class="k-well">
-      <p>Intro content</p>
-      <div class="k-well__content">
-          Content
-      </div>
-  </div>
-
-  Styleguide 2.27.1
-
-  */
-  /*
-  Wells tabs
-
-  markup:
-  <div class="k-well">
-      <p>Intro content</p>
-      <sg-insert>2.22</sg-insert>
-  </div>
-
-  Styleguide 2.27.2
-
-  */
+  /* Wells content */
+  /* Wells tabs */
   /**
    * Utilities
    *
@@ -4760,240 +2325,96 @@ body.k-is-resizing {
    * `.some.longer[css=selector]` will still lose from `.selector.selector.selector`
    * since we load this file last
    */
-  /*
-  Dynamic content holder
-
-  Add `<script>` and other hidden content (like modals) inside this div so the elements won't be in the way for flexbox
-
-  markup:
-  <div class="k-dynamic-content-holder">...</div>
-
-  Styleguide 6.1
-
-  */
-  /*
-  Hidden
-
-  Hide content in a non-accessible way. Content is hidden for everybody including screenreaders
-
-  markup:
-  <div class="k-hidden">...</div>
-
-  Styleguide 6.2
-
-  */
-  /*
-  Loader
-
-  CSS only loading animation.
-  - Falls back to `Loading...` on non capable browsers
-  - Add `k-hidden` class to the element when items are done loading
-
-  .k-loader--small - Small
-  .k-loader--medium - Medium
-  .k-loader--large - Large
-
-  markup:
-  <span class="k-loader {$modifiers}">Loading...</span>
-
-  sg-wrapper:
-  <div>
-      <sg-wrapper-content/>
-  </div>
-
-  Styleguide 6.3
-
-  */
-  /*
-  Loader container
-
-  Cover it's entire parent (the parent with an `absolute` or `relative` position)
-  - Add `k-hidden` class to the element when items are done loading
-
-  markup:
-  <div class="k-loader-container">
-      <span class="k-loader k-loader--large">Loading...</span>
-  </div>
-
-  sg-wrapper:
-  <div style="position:relative;">
-      <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui.</p>
-      <p>Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-      <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec ullamcorper nulla non metus auctor fringilla. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      <sg-wrapper-content/>
-  </div>
-
-  Styleguide 6.3.1
-
-  */
-  /*
-  No margin
-
-  Remove all margins from an element
-
-  markup:
-  <div class="k-no-margin">...</div>
-
-  Styleguide 6.4
-
-  */
-  /*
-  No transition
-
-  Disable all transitions
-
-  markup:
-  <div class="k-no-transition">...</div>
-
-  Styleguide 6.5
-
-  */
-  /*
-  No wrap
-
-  Nowrap element
-
-  markup:
-  <div class="k-no-wrap">...</div>
-
-  Styleguide 6.6
-
-  */
-  /*
-  Visually hidden
-
-  Hide the content in an accessible way. Content is hidden for viewers but not for screenreaders
-
-  markup:
-  <div class="k-visually-hidden">...</div>
-
-  Styleguide 6.7
-
-  */
-  /*
-  Visually shown
-
-  Show content that have the visually-hidden class
-  - Use as @extend for items that are already extending `.k-visually-hidden`
-  - Try not to use `.k-visually-hidden` and `.k-visually-shown` classes together if possible.
-
-  markup:
-  <div class="k-visually-shown">...</div>
-
-  Styleguide 6.8
-
-  */
-  /*
-  Ratio content
-
-  markup:
-  <div class="k-ratio-block k-ratio-block--16-to-9">
-      <div class="k-loader"></div>
-      <img class="k-ratio-block__body" src="{image source}" alt="{alternative text}" />
-  </div>
-  <div class="k-ratio-block k-ratio-block--16-to-9">
-      <div class="k-ratio-block__body">
-          <div class="k-ratio-block__centered">
-              ...
-          </div>
-      </div>
-  </div>
-  <div class="k-ratio-block k-ratio-block--16-to-9">
-      <div class="k-ratio-block__body">
-          <div class="k-ratio-block__centered">
-              <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper.</p>
-          </div>
-      </div>
-  </div>
-
-  sg-wrapper:
-  <div style="width: 280px">
-      <sg-wrapper-content/>
-  </div>
-
-  Styleguide 6.9
-
-  */
-  /*
-  Colors
-
-  markup:
-  <div class="k-color-error">...</div>
-
-  */
-  /*
-  Content block
-
-  Element with a bottom margin except when item itself is a last-child
-
-  markup:
-  <div class="k-content-block">...</div>
-
-  */
-  /*
-  Relative positioned element
-
-  Could be useful to add to parnet sof absolutely positioned items
-
-  markup:
-  <div class="k-no-transition">...</div>
-
-  */
-  /*
-  Flexing boxes
-
-  DO or don't flexing children. USeful inside flexing containers on elemtns that have no pre-defined styling for flexbox
-
-  markup:
-  <div class="k-dont-flex">...</div>
-  <div class="k-do-flex">...</div>
-
-  */
-  /*
-  Hide elements for touch enabled devices
-
-  markup:
-  <div class="k-no-transition">...</div>
-
-  */
-  /*
-  Text overflow
-
-  markup:
-  <div class="k-ellipsis">
-    <div class="k-ellipsis__item"></div>
-  </div>
-
-  */
-  /*
-  "Cover all" link
-
-  Use a pseudo element inside the `<a>` to vover the entire parent.
-  - This way we don't have to make a the parent element a link.
-  - Downside: You can't select the text anymore, but this could also be used to your advantage
-
-  markup:
-  <div class="k-link-coverall">...</div>
-
-  */
-  /*
-  "On-top" links
-
-  Use inside the same parent as the above "coverall" link to place this link on top of the pseudo element
-
-  markup:
-  <div class="k-link-ontop">...</div>
-
-  */
-  /*
-  This or that
-
-  Line items up next to each other
-
-  markup:
-  <div class="k-this-or-that">...</div>
-
-  */
+  /**
+   * Dynamic content holder
+   * Add `<script>` and other hidden content (like modals) inside this div so the elements won't be in the way for flexbox
+   */
+  /**
+   * Hidden
+   * Hide content in a non-accessible way. Content is hidden for everybody including screenreaders
+   */
+  /**
+   * Loader
+   * CSS only loading animation.
+   * Falls back to `Loading...` on non capable browsers
+   * Add `k-hidden` class to the element when items are done loading
+   */
+  /**
+   * Loader container
+   *
+   * Cover it's entire parent (the parent with an `absolute` or `relative` position)
+   * - Add `k-hidden` class to the element when items are done loading
+   */
+  /**
+   * No margin
+   * Remove all margins from an element
+   */
+  /**
+   * No transition
+   *
+   * Disable all transitions
+   */
+  /**
+   * No wrap
+   *
+   * Nowrap element
+    */
+  /**
+   * Visually hidden
+   *
+   * Hide the content in an accessible way. Content is hidden for viewers but not for screenreaders
+   */
+  /**
+   * Visually shown
+   *
+   * Show content that have the visually-hidden class
+   * Use as @extend for items that are already extending `.k-visually-hidden`
+   * Try not to use `.k-visually-hidden` and `.k-visually-shown` classes together if possible.
+   */
+  /**
+   * Ratio content
+   */
+  /**
+   * Colors
+   */
+  /**
+   * Content block
+   *
+   * Element with a bottom margin except when item itself is a last-child
+   */
+  /**
+   * Relative positioned element
+   *
+   * Could be useful to add to parnet sof absolutely positioned items
+   */
+  /**
+   * Flexing boxes
+   *
+   * DO or don't flexing children. USeful inside flexing containers on elemtns that have no pre-defined styling for flexbox
+   */
+  /**
+   * Hide elements for touch enabled devices
+   */
+  /**
+   * Text overflow
+   */
+  /**
+   * "Cover all" link
+   *
+   * Use a pseudo element inside the `<a>` to vover the entire parent.
+   * - This way we don't have to make a the parent element a link.
+   * - Downside: You can't select the text anymore, but this could also be used to your advantage
+   */
+  /**
+   * "On-top" links
+   *
+   * Use inside the same parent as the above "coverall" link to place this link on top of the pseudo element
+   */
+  /**
+   * This or that
+   *
+   * Line items up next to each other
+   */
   /**
    * Component animations
    *
@@ -15183,21 +12604,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 /* Select2 Bootstrap Theme v0.1.0-beta.4 | MIT License | github.com/select2/select2-bootstrap-theme */
 /* Select2
      ========================================================================== */
-/*
-  Select2
-
-  - Just add the class `k-js-select2` to any `<select>` element to transform it into a select2 element
-
-  markup:
-  <select class="k-form-control k-js-select2">
-      <option value="1" selected>Example 1</option>
-      <option value="2">Example 2</option>
-      <option value="3">Example 3</option>
-  </select>
-
-  Styleguide 2.19
-
-  */
 /**
    * 100% wide by default instead of just 220px making it responsive
    * Important because width is being added by JS as inline styling
@@ -15959,81 +13365,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 /* 2 */
 /* Dropdowns
      ========================================================================== */
-/*
-  Dropdown
-
-  markup:
-  <div class="k-dropdown">
-      <a class="k-dropdown__toggle" data-k-toggle="dropdown" href="javascript:void(0)">
-          Dropdown trigger
-          <span class="k-caret" aria-hidden="true"></span>
-      </a>
-      <ul class="k-dropdown__menu" role="menu">
-          <li><a href="javascript:void(0)">Dropdown item 1</a></li>
-          <li><a href="javascript:void(0)">Dropdown item 2</a></li>
-          <li><a href="javascript:void(0)">Dropdown item 3</a></li>
-      </ul>
-  </div>
-
-  sg-wrapper:
-  <div style="height: 150px;">
-      <sg-wrapper-content/>
-  </div>
-
-  Styleguide 2.6
-
-  */
-/*
-  Dropup
-
-  Drop it up when dropdown item is located at the bottom of a view
-
-  markup:
-  <div class="k-dropdown k-dropdown--dropup">
-      <a class="k-dropdown__toggle" data-k-toggle="dropdown" href="javascript:void(0)">
-          Dropup trigger
-          <span class="k-caret" aria-hidden="true"></span>
-      </a>
-      <ul class="k-dropdown__menu" role="menu">
-          <li><a href="javascript:void(0)">Dropdown item 1</a></li>
-          <li><a href="javascript:void(0)">Dropdown item 2</a></li>
-          <li><a href="javascript:void(0)">Dropdown item 3</a></li>
-      </ul>
-  </div>
-
-  sg-wrapper:
-  <div style="height: 150px;">
-      <div style="width: 10px;height: 130px;"></div>
-      <sg-wrapper-content/>
-  </div>
-
-  Styleguide 2.6.1
-
-  */
-/*
-  Dropdown divider
-
-  Add a divider between dropdown items
-
-  markup:
-  <li class="k-dropdown__divider"></li>
-
-  sg-wrapper:
-  <div class="k-dropdown k-is-open">
-      <a class="k-dropdown__toggle" data-k-toggle="dropdown" href="javascript:void(0)">
-          Dropdown trigger
-          <span class="k-caret" aria-hidden="true"></span>
-      </a>
-      <ul class="k-dropdown__menu" role="menu">
-          <li><a href="javascript:void(0)">Item above divider</a></li>
-          <sg-wrapper-content/>
-          <li><a href="javascript:void(0)">Item below divider</a></li>
-      </ul>
-  </div>
-
-  Styleguide 2.6.2
-
-  */
 /* Dropdown arrow/caret */
 .k-caret {
   display: inline-block;
@@ -16210,80 +13541,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   margin-bottom: 2px;
 }
 
-/*
-  Dropdown grid
-
-  Display a list of icons or images in a grid
-
-  markup:
-  <div class="k-dropdown">
-      <a class="k-dropdown__toggle" data-k-toggle="dropdown" href="javascript:void(0)">
-          Dropdown trigger
-          <span class="k-caret" aria-hidden="true"></span>
-      </a>
-      <ul class="k-dropdown__menu k-dropdown__menu--grid">
-          <li>
-              <a href="javascript:void(0)">
-                  <sg-insert>2.12.1-3</sg-insert>
-                  <span class="k-visually-hidden">Archive icon</span>
-              </a>
-          </li>
-          <li>
-              <a href="javascript:void(0)">
-                  <sg-insert>2.12.1-4</sg-insert>
-                  <span class="k-visually-hidden">Audio icon</span>
-              </a>
-          </li>
-          <li>
-              <a href="javascript:void(0)">
-                  <sg-insert>2.12.1-5</sg-insert>
-                  <span class="k-visually-hidden">Default icon</span>
-              </a>
-          </li>
-          <li>
-              <a href="javascript:void(0)">
-                  <sg-insert>2.12.1-6</sg-insert>
-                  <span class="k-visually-hidden">Document icon</span>
-              </a>
-          </li>
-          <li>
-              <a href="javascript:void(0)">
-                  <sg-insert>2.12.1-8</sg-insert>
-                  <span class="k-visually-hidden">Image icon</span>
-              </a>
-          </li>
-          <li>
-              <a href="javascript:void(0)">
-                  <sg-insert>2.12.1-9</sg-insert>
-                  <span class="k-visually-hidden">PDF icon</span>
-              </a>
-          </li>
-          <li>
-              <a href="javascript:void(0)">
-                  <sg-insert>2.12.1-10</sg-insert>
-                  <span class="k-visually-hidden">Spreadsheet icon</span>
-              </a>
-          </li>
-          <li>
-              <a href="javascript:void(0)">
-                  <sg-insert>2.12.1-11</sg-insert>
-                  <span class="k-visually-hidden">Video icon</span>
-              </a>
-          </li>
-          <li class="k-dropdown__block-item">
-              <a href="javascript:void(0)">Block level item</a>
-          </li>
-      </ul>
-  </div>
-
-  sg-wrapper:
-  <div style="height: 200px;">
-      <sg-wrapper-content/>
-  </div>
-
-  Styleguide 2.6.3
-
-  */
+/* Dropdown grid */
 .k-dropdown__menu--grid {
   width: 212px;
   /* override above default settings */
@@ -16359,92 +13617,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 /* 3 */
 /* Modal
      ========================================================================== */
-/*
-  Modals
-
-  Modals using magnific popup (http://dimsemenov.com/plugins/magnific-popup/)
-  - Default modals are inline modals
-  - Add an element to open the button
-  - Add an element to be opened as a modal
-
-  markup:
-  <a class="k-js-inline-modal" data-mfp-src="#example-inline-modal" href="mobile-friendly-page.html">
-      Open modal
-  </a>
-  <div id="example-inline-modal" class="mfp-hide">
-      <div class="k-inline-modal">
-          <p>Modal content</p>
-      </div>
-  </div>
-
-  sg-wrapper:
-  <div>
-      <sg-wrapper-content/>
-  </div>
-
-  Styleguide 2.15
-
-  */
-/*
-  Modal title
-
-  markup:
-  <a class="k-js-inline-modal" data-mfp-src="#example-inline-modal2" href="mobile-friendly-page.html">
-      Open modal
-  </a>
-  <div id="example-inline-modal2" class="mfp-hide">
-      <div class="k-inline-modal">
-          <div class="k-inline-modal__title">Title</div>
-          <p>Content</p>
-      </div>
-  </div>
-
-  Styleguide 2.15.1
-
-  */
-/*
-  Small modal
-
-  markup:
-  <a class="k-js-inline-modal" data-mfp-src="#example-inline-modal3" href="mobile-friendly-page.html">
-      Open modal
-  </a>
-  <div id="example-inline-modal3" class="mfp-hide k-small-inline-modal-holder">
-      <div class="k-inline-modal">
-          <div class="k-inline-modal__title">Title</div>
-          <p>I'm a small modal</p>
-      </div>
-  </div>
-
-  Styleguide 2.15.2
-
-  */
-/*
-  Iframe modal
-
-  markup:
-  <a class="k-js-iframe-modal" href="http://ui.joomlatools.com/#/section/4.2/fullscreen">
-      Open modal
-  </a>
-
-  Styleguide 2.15.3
-
-  */
-/*
-  Image modals
-
-  Image modals do not need an item to be shown in a modal but use the `<a href="">` attribute instead
-
-  markup:
-  <a class="k-js-image-modal" href="joomlatools/images/placeholder-16-9.png">
-      Open modal
-  </a>
-
-  sg-wrapper:
-
-  Styleguide 2.15.4
-
-  */
 .mfp-bg {
   top: 0;
   left: 0;
@@ -17093,35 +14265,6 @@ img.mfp-img {
 /* 4 */
 /* Datepicker
      ========================================================================== */
-/**
-   * Datepicker for Bootstrap
-   *
-   * Copyright 2012 Stefan Petre
-   * Improvements by Andrew Rowls
-   * Licensed under the Apache License v2.0
-   * http://www.apache.org/licenses/LICENSE-2.0
-   *
-   */
-/*
-  Datepicker
-
-  markup:
-  <div class="k-form-group">
-      <label>Date</label>
-      <div class="k-input-group">
-          <input class="k-form-control" type="text" />
-          <span class="k-input-group__button">
-              <button type="button" class="k-button k-button--default k-js-datepicker">
-                  <sg-insert>2.12-44</sg-insert>
-                  <span class="k-visually-hidden">Calendar</span>
-              </button>
-          </span>
-      </div>
-  </div>
-
-  Styleguide 2.5
-
-  */
 .datepicker {
   direction: ltr;
   /**

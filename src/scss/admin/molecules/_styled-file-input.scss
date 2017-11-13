@@ -1,25 +1,6 @@
 @if ($k-molecules == true and $k-molecule-styled-file-input != false) or $k-molecule-styled-file-input == true {
 
-  /*
-  Styled file input
-
-  markup:
-  <div class="k-file-input-container">
-      <div class="k-file-input">
-          <input class="k-js-file-input" type="file" id="input-[5.1]-2" data-multiple-caption="{count} files selected" multiple />
-          <label for="input-[5.1]-2">
-              <span class="k-file-input__button">
-                  <sg-insert>2.12-62</sg-insert>
-                  Choose a file&hellip;
-              </span>
-              <span class="k-file-input__files"></span>
-          </label>
-      </div>
-  </div>
-
-  Styleguide 2.9.9
-
-  */
+  /* Styled file input */
 
   .k-file-input {
     position: relative;

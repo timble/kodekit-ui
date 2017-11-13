@@ -3,23 +3,6 @@
   /* Koowa UI container
      ========================================================================== */
 
-  /*
-  Koowa UI container
-
-  This is the most outer container of each page.
-  - A `.k-ui-container` may only live once on the page and should be handled as an `id`
-  - Need to namespace something outside this container? Use the `.k-ui-namespace` class
-  - The `k-ui-namespace` class should always be added to the `k-ui-container` element for namespacing purposes
-
-  markup:
-  <div class="k-ui-container k-ui-namespace">
-      ...
-  </div><!-- .k-ui-container -->
-
-  Styleguide 3.1
-
-  */
-
   /**
    * 1. By using a max-width we essentially set a min-width when the contents are
    *    to large for the k-ui-container container. The reason we don't use min-width is

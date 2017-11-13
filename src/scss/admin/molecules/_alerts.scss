@@ -3,23 +3,6 @@
   /* Alerts
      ========================================================================== */
 
-  /*
-  Alerts
-
-  .k-alert--success - Success style
-  .k-alert--info - Info style
-  .k-alert--warning - Warning style
-  .k-alert--danger - Danger style
-
-  markup:
-  <div class="k-alert {$modifiers}">
-      This is an alert
-  </div>
-
-  Styleguide 2.1
-
-  */
-
   .k-alert {
     padding: $k-alert-spacing;
     @include content-block;

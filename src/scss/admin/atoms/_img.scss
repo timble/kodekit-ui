@@ -3,24 +3,6 @@
   /* Image
      ========================================================================== */
 
-  /*
-  Image
-
-  - Images have a max-width to fit nicely into responsive layout
-  - When image is the only child in a parent, `vertical-align: middle` is applied to eliminate line-height bug
-
-  markup:
-  <img src="{image source}" alt="{alternative text}">
-
-  sg-wrapper:
-  <p>
-      <sg-wrapper-content/>
-  </p>
-
-  Styleguide 1.4
-
-  */
-
   /**
    * 1. Responsive images
    * 2. Eliminating line-height bug when used alone in container

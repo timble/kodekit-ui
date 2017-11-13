@@ -3,24 +3,6 @@
   /* Title bar
      ========================================================================== */
 
-  /*
-  Title bar
-
-  - A titlebar that can be displayed above the `content-wrapper` when there's no toolbar
-  - Very useful inside modal views
-  - Always have at least a `k-titlebar` or a `k-toolbar` when there's a `k-sidebar` in your page!
-  - Use as <b>first child</b> of the `.k-wrapper` only
-  - {unsureText}
-
-  markup:
-  <div class="k-title-bar k-js-title-bar">
-      <div class="k-title-bar__heading">Title</div>
-  </div><!-- .k-title-bar -->
-
-  Styleguide 2.23
-
-  */
-
   /**
    * 1. Set the z-index higher than the menus
    * 2. Setting a background so container will fall nicely over the sidebar
@@ -73,24 +55,7 @@
     }
   }
 
-  /*
-  Mobile title
-
-  Title just for mobile views since the navigation is hidden
-  - Use <b>never</b> together with a `.k-title-bar`
-  - Use <b>only</b> as <b>child</b> of `.k-wrapper`
-  - Only visible on smaller screens
-  - {unsureText}
-
-  markup:
-  <!-- Title when sidebar is invisible -->
-  <div class="k-title-bar k-title-bar--mobile k-js-title-bar">
-    <div class="k-title-bar__heading">{Title}</div>
-  </div><!-- .k-title-bar -->
-
-  Styleguide 2.23.1
-
-  */
+  /* Mobile title */
 
   .k-title-bar--mobile {
     @include border(bottom, $k-title-bar-mobile-border);

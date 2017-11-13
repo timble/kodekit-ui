@@ -3,53 +3,7 @@
   /* Buttons
      ========================================================================== */
 
-  /*
-  Buttons
-
-  .k-button--default - Default style
-  .k-button--primary - Primary color styling
-  .k-button--success - Success color styling
-  .k-button--info - Info color styling
-  .k-button--warning - Warning color styling
-  .k-button--danger - Danger color styling
-  .k-button--link - Link styling (while keeping height)
-  .k-button--block - Full width button
-
-  markup:
-  <button type="button" class="k-button {$modifiers}">
-      Button text
-  </button>
-
-  sg-wrapper:
-  <div>
-      <sg-wrapper-content/>
-  </div>
-
-  Styleguide 2.3
-
-  */
-
-  /*
-  Button states
-
-  Different button states
-
-  .k-is-active - Active buttons
-  .k-is-disabled - Disabled buttons
-
-  markup:
-  <button type="button" class="k-button k-button--default {$modifiers}">
-      Button text
-  </button>
-
-  sg-wrapper:
-  <div>
-      <sg-wrapper-content/>
-  </div>
-
-  Styleguide 2.3.1
-
-  */
+  /* Button states */
 
   .k-button {
     @include button-default;
@@ -94,22 +48,7 @@
     width: 100%;
   }
 
-  /*
-  Button sizes
-
-  default - Default
-  .k-button--tiny - Tiny
-  .k-button--small - Small
-  .k-button--large - Large
-
-  markup:
-  <button type="button" class="k-button k-button--default {$modifiers}">
-      Button text
-  </button>
-
-  Styleguide 2.3.2
-
-  */
+  /* Button sizes */
 
   .k-button--tiny {
     @include button-size($k-button-tiny-border-radius, $k-button-tiny-font-size, $k-button-tiny-line-height, $k-button-tiny-spacing-vertical $k-button-tiny-spacing-horizontal);
@@ -139,19 +78,7 @@
     }
   }
 
-  /*
-  Button groups
-
-  markup:
-  <div class="k-button-group">
-      <sg-insert>2.3.1-1</sg-insert>
-      <sg-insert>2.3-1</sg-insert>
-      <sg-insert>2.3-1</sg-insert>
-  </div>
-
-  Styleguide 2.3.3
-
-  */
+  /* Button groups */
 
   .k-button-group {
     position: relative;

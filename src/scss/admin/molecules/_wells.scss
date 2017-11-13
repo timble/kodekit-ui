@@ -3,18 +3,6 @@
   /* Wells
      ========================================================================== */
 
-  /*
-  Wells
-
-  markup:
-  <div class="k-well">
-      Content
-  </div>
-
-  Styleguide 2.27
-
-  */
-
   .k-well {
     padding: $k-well-spacing;
     background-color: $k-well-background;
@@ -28,20 +16,7 @@
     }
   }
 
-  /*
-  Wells content
-
-  markup:
-  <div class="k-well">
-      <p>Intro content</p>
-      <div class="k-well__content">
-          Content
-      </div>
-  </div>
-
-  Styleguide 2.27.1
-
-  */
+  /* Wells content */
 
   .k-well__content {
     padding: $k-well-content-spacing;
@@ -50,18 +25,7 @@
     border-radius: $k-well-radius;
   }
 
-  /*
-  Wells tabs
-
-  markup:
-  <div class="k-well">
-      <p>Intro content</p>
-      <sg-insert>2.22</sg-insert>
-  </div>
-
-  Styleguide 2.27.2
-
-  */
+  /* Wells tabs */
 
   .k-well {
     .k-tabs-content {

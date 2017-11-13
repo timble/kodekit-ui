@@ -5,93 +5,6 @@
 
   /* WARNING: Do not use transition on any element since this will hit scroll performance big on certain browsers! */
 
-  /*
-  Table
-
-  A complete table
-
-  markup:
-  <!-- Table -->
-  <div class="k-table-container">
-      <div class="k-table">
-          <table class="k-js-responsive-table">
-          <thead>
-              <tr>
-                  <th width="1%" class="k-table-data--form"><input class="k-js-grid-checkall" type="checkbox" /></th>
-                  <th width="1%" data-toggle="true" class="k-table-data--toggle"></th>
-                  <th width="1%" class="k-table-data--icon"></th>
-                  <th class="k-sort-desc"><a href="javascript:void(0)">Item title</a></th>
-                  <th width="5%" data-hide="phone,tablet"><a href="javascript:void(0)">State</a></th>
-                  <th width="15%" data-hide="phone"><a href="javascript:void(0)">Category</a></th>
-                  <th width="5%" data-hide="phone,tablet,desktop"><a href="javascript:void(0)">Date</a></th>
-              </tr>
-          </thead>
-          <tbody>
-              <tr>
-                  <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox" /></td>
-                  <td class="k-table-data--toggle"></td>
-                  <td class="k-table-data--icon"><sg-insert>2.12.1-5</sg-insert></td>
-                  <sg-insert>2.21.2</sg-insert>
-                  <td><sg-insert>2.21.5-2</sg-insert></td>
-                  <sg-insert>2.21.2</sg-insert>
-                  <td class="k-table-data--nowrap">01 January 1999</td>
-              </tr>
-              <tr>
-                  <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox" /></td>
-                  <td class="k-table-data--toggle"></td>
-                  <td class="k-table-data--icon"><sg-insert>2.12.1-5</sg-insert></td>
-                  <sg-insert>2.21.3</sg-insert>
-                  <td><sg-insert>2.21.5-2</sg-insert></td>
-                  <sg-insert>2.21.2</sg-insert>
-                  <td class="k-table-data--nowrap">01 January 1999</td>
-              </tr>
-              <tr class="k-table__sub-header">
-                  <th colspan="7">
-                      Sub header
-                  </th>
-              </tr>
-              <tr>
-                  <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox" /></td>
-                  <td class="k-table-data--toggle"></td>
-                  <td class="k-table-data--icon"><sg-insert>2.12.1-5</sg-insert></td>
-                  <sg-insert>2.21.3</sg-insert>
-                  <td><sg-insert>2.21.5-2</sg-insert></td>
-                  <sg-insert>2.21.2</sg-insert>
-                  <td class="k-table-data--nowrap">01 January 1999</td>
-              </tr>
-              <tr>
-                  <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox" /></td>
-                  <td class="k-table-data--toggle"></td>
-                  <td class="k-table-data--icon"><sg-insert>2.12.1-5</sg-insert></td>
-                  <sg-insert>2.21.3</sg-insert>
-                  <td><sg-insert>2.21.5-2</sg-insert></td>
-                  <sg-insert>2.21.2</sg-insert>
-                  <td class="k-table-data--nowrap">01 January 1999</td>
-              </tr>
-              <tr>
-                  <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox" /></td>
-                  <td class="k-table-data--toggle"></td>
-                  <td class="k-table-data--icon"><sg-insert>2.12.1-5</sg-insert></td>
-                  <sg-insert>2.21.3</sg-insert>
-                  <td><sg-insert>2.21.5-2</sg-insert></td>
-                  <sg-insert>2.21.2</sg-insert>
-                  <td class="k-table-data--nowrap">01 January 1999</td>
-              </tr>
-          </tbody>
-          </table>
-      </div>
-      <sg-insert>2.21.1</sg-insert>
-  </div>
-
-  sg-wrapper:
-  <div class="k-component">
-      <sg-wrapper-content/>
-  </div>
-
-  Styleguide 2.21
-
-  */
-
   .k-table-container {
     background: $k-table-background;
     display: flex;
@@ -271,62 +184,8 @@
 
 
   /**
- * Table elements
- */
-
-  /*
-  Item title
-
-  markup:
-  <td class="k-table-data--ellipsis">
-    <a href="javascript:void(0)">Item title</a>
-  </td>
-
-  sg-wrapper:
-  <div class="k-table-container">
-      <div class="k-table">
-          <table>
-          <tbody>
-              <tr>
-                  <sg-wrapper-content/>
-              </tr>
-          </tbody>
-          </table>
-      </div>
-  </div>
-
-
-  Styleguide 2.21.2
-
-  */
-
-  /*
-  Item subtitle
-
-  - Use the `small` element for subtitle
-
-  markup:
-  <td class="k-table-data--ellipsis">
-      <a href="javascript:void(0)">Curabitur blandit tempus porttitor.</a>
-      <small>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</small>
-  </td>
-
-  sg-wrapper:
-  <div class="k-table-container">
-      <div class="k-table">
-          <table>
-          <tbody>
-              <tr>
-                  <sg-wrapper-content/>
-              </tr>
-          </tbody>
-          </table>
-      </div>
-  </div>
-
-  Styleguide 2.21.3
-
-  */
+   * Table elements
+   */
 
   .k-table-container {
     a {
@@ -347,40 +206,7 @@
     }
   }
 
-  /*
-  Table cell settings
-
-  Different available table cell settings
-
-  .k-table-data--right - Right aligned text
-  .k-table-data--center - Center aligned text
-  .k-table-data--nowrap - Content will not be wrapped (useful for dates, file sizes etc.)
-  .k-table-data--wrap - Wrap long content (useful for urls etc.)
-  .k-table-data--icon - Cells that only contain an icon
-  .k-table-data--form - Cells that only contain a form element like a radio input or checkbox
-  .k-table-data--toggle - Empty cell that will hold the responsive toggle button
-  .k-table-data--ellipsis - Break content at the end of the cell and add text ellipsis
-  .k-table-data--multiline - All items inside this cell are `display: inline` with `vertical-align: baseline`
-
-  markup:
-  <td class="{$modifiers}">Content</td>
-
-  sg-wrapper:
-  <div class="k-table-container">
-      <div class="k-table">
-          <table>
-          <tbody>
-              <tr>
-                  <sg-wrapper-content/>
-              </tr>
-          </tbody>
-          </table>
-      </div>
-  </div>
-
-  Styleguide 2.21.4
-
-  */
+  /* Table cell settings */
 
   .k-table-container {
     .k-table-data--right {
@@ -495,35 +321,7 @@
     }
   }
 
-  /*
-  Table item states
-
-  .k-table__item--state-pending - Pending
-  .k-table__item--state-expired - Expired
-  .k-table__item--state-unpublished - Unpublished
-  .k-table__item--state-published - Published
-
-  markup:
-  <span class="k-table__item--state {$modifiers}">State</span>
-
-  sg-wrapper:
-  <div class="k-table-container">
-      <div class="k-table">
-          <table>
-          <tbody>
-              <tr>
-                  <td>
-                      <sg-wrapper-content/>
-                  </td>
-              </tr>
-          </tbody>
-          </table>
-      </div>
-  </div>
-
-  Styleguide 2.21.5
-
-  */
+  /* Table item states */
 
   .k-table-container {
     .k-table__item--state {
@@ -558,32 +356,7 @@
     }
   }
 
-  /*
-  Table sub header
-
-  Add sub headers in between rows
-
-  markup:
-  <tr class="k-table__sub-header">
-      <th colspan="[amount of cells]">
-          Sub header
-      </th>
-  </tr>
-
-  sg-wrapper:
-  <div class="k-table-container">
-      <div class="k-table">
-          <table>
-          <tbody>
-              <sg-wrapper-content/>
-          </tbody>
-          </table>
-      </div>
-  </div>
-
-  Styleguide 2.21.6
-
-  */
+  /* Table sub header */
 
   .k-table-container {
     .k-table__sub-header {
@@ -603,50 +376,7 @@
     }
   }
 
-  /*
-  Table levels
-
-  A table displaying multiple levels
-
-  markup:
-  <div class="k-table-container">
-      <div class="k-table">
-          <table>
-          <thead>
-              <tr>
-                  <th width="1%"><input type="checkbox" /></th>
-                  <th>Heading</th>
-              </tr>
-          </thead>
-          <tbody>
-              <tr>
-                  <td><input type="checkbox" /></td>
-                  <td class="k-table__item-level k-table__item-level1">Level 1</td>
-              </tr>
-              <tr>
-                  <td><input type="checkbox" /></td>
-                  <td class="k-table__item-level k-table__item-level2">Level 2</td>
-              </tr>
-              <tr>
-                  <td><input type="checkbox" /></td>
-                  <td class="k-table__item-level k-table__item-level3">Level 3</td>
-              </tr>
-              <tr>
-                  <td><input type="checkbox" /></td>
-                  <td class="k-table__item-level k-table__item-level1">Level 1</td>
-              </tr>
-              <tr>
-                  <td><input type="checkbox" /></td>
-                  <td class="k-table__item-level k-table__item-level1">Level 1</td>
-              </tr>
-          </tbody>
-          </table>
-      </div>
-  </div>
-
-  Styleguide 2.21.7
-
-  */
+  /* Table levels */
 
   .k-table-container {
     .k-table__item-level {
@@ -745,43 +475,6 @@
    * 1. Coloring Links and extra elements that don't color automatically with their parent
    */
 
-  /*
-  Selected rows
-
-  When rows are selected they are highlighted
-
-  markup:
-  <tr class="k-is-selected">
-      <td>Item</td>
-      <td>Item</td>
-      <td>Item</td>
-  </tr>
-
-  sg-wrapper:
-  <div class="k-table-container">
-      <div class="k-table">
-          <table>
-          <tbody>
-              <tr>
-                  <td>Item</td>
-                  <td>Item</td>
-                  <td>Item</td>
-              </tr>
-              <sg-wrapper-content/>
-              <tr>
-                  <td>Item</td>
-                  <td>Item</td>
-                  <td>Item</td>
-              </tr>
-          </tbody>
-          </table>
-      </div>
-  </div>
-
-  Styleguide 2.21.8
-
-  */
-
   .k-table-container {
     tr.k-is-selected {
       td {
@@ -804,36 +497,7 @@
     }
   }
 
-  /*
-  Positioner
-
-  For drag and drop sorting
-  - Add [data-position] to display a position on the positioner
-
-  default - Default - shows "no-drop" cursor
-  .k-is-active - Active item - shows "move" cursor
-
-  markup:
-  <span class="k-positioner {$modifiers}" data-position="1"></span>
-
-  sg-wrapper:
-  <div class="k-table-container">
-      <div class="k-table">
-          <table>
-          <tbody>
-              <tr>
-                  <td>
-                      <sg-wrapper-content/>
-                  </td>
-              </tr>
-          </tbody>
-          </table>
-      </div>
-  </div>
-
-  Styleguide 2.21.9
-
-  */
+  /* Positioner */
 
   .k-positioner {
     display: inline-block;
@@ -883,39 +547,7 @@
     }
   }
 
-  /*
-  Table heading sorting
-
-  sort-ascending - Ascending
-  sort-descending - Descending
-
-  markup:
-  <th>
-      <a href="javascript:void(0)">
-          Title
-          <span class="k-icon-{$modifiers}" aria-hidden="true">
-          <span class="k-visually-hidden">Sort column</span>
-      </a>
-  </th>
-
-  sg-wrapper:
-  <div class="k-table-container">
-      <div class="k-table">
-          <table>
-          <thead>
-              <tr>
-                  <th>Title</th>
-                  <sg-wrapper-content/>
-                  <th>Title</th>
-              </tr>
-          </thead>
-          </table>
-      </div>
-  </div>
-
-  Styleguide 2.21.10
-
-  */
+  /* Table heading sorting */
 
   .k-sort-ascending,
   .k-sort-descending {

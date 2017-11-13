@@ -1,11 +1,5 @@
 @if ($k-utilities == true and $k-utilities-utilities != false) or $k-utilities-utilities == true {
 
-  // Utilities
-  //
-  // Utilities
-  //
-  // Styleguide 6.0
-
   /**
    * Adding class three times so we win over most other classes without using
    * !important. Most selectors are max three long e.g.:
@@ -13,61 +7,31 @@
    * since we load this file last
    */
 
-  /*
-  Dynamic content holder
-
-  Add `<script>` and other hidden content (like modals) inside this div so the elements won't be in the way for flexbox
-
-  markup:
-  <div class="k-dynamic-content-holder">...</div>
-
-  Styleguide 6.1
-
-  */
+  /**
+   * Dynamic content holder
+   * Add `<script>` and other hidden content (like modals) inside this div so the elements won't be in the way for flexbox
+   */
 
   .k-dynamic-content-holder.k-dynamic-content-holder.k-dynamic-content-holder {
     display: none;
   }
 
-  /*
-  Hidden
-
-  Hide content in a non-accessible way. Content is hidden for everybody including screenreaders
-
-  markup:
-  <div class="k-hidden">...</div>
-
-  Styleguide 6.2
-
-  */
+  /**
+   * Hidden
+   * Hide content in a non-accessible way. Content is hidden for everybody including screenreaders
+   */
 
   .k-hidden.k-hidden.k-hidden,
   .k-is-hidden.k-is-hidden.k-is-hidden {
     display: none;
   }
 
-  /*
-  Loader
-
-  CSS only loading animation.
-  - Falls back to `Loading...` on non capable browsers
-  - Add `k-hidden` class to the element when items are done loading
-
-  .k-loader--small - Small
-  .k-loader--medium - Medium
-  .k-loader--large - Large
-
-  markup:
-  <span class="k-loader {$modifiers}">Loading...</span>
-
-  sg-wrapper:
-  <div>
-      <sg-wrapper-content/>
-  </div>
-
-  Styleguide 6.3
-
-  */
+  /**
+   * Loader
+   * CSS only loading animation.
+   * Falls back to `Loading...` on non capable browsers
+   * Add `k-hidden` class to the element when items are done loading
+   */
 
   .k-loader {
     @include modernizr('.k-cssanimations.k-boxshadow') {
@@ -141,28 +105,12 @@
     }
   }
 
-  /*
-  Loader container
-
-  Cover it's entire parent (the parent with an `absolute` or `relative` position)
-  - Add `k-hidden` class to the element when items are done loading
-
-  markup:
-  <div class="k-loader-container">
-      <span class="k-loader k-loader--large">Loading...</span>
-  </div>
-
-  sg-wrapper:
-  <div style="position:relative;">
-      <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui.</p>
-      <p>Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-      <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec ullamcorper nulla non metus auctor fringilla. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      <sg-wrapper-content/>
-  </div>
-
-  Styleguide 6.3.1
-
-  */
+  /**
+   * Loader container
+   *
+   * Cover it's entire parent (the parent with an `absolute` or `relative` position)
+   * - Add `k-hidden` class to the element when items are done loading
+   */
 
   .k-loader-container {
     @include coverall;
@@ -178,65 +126,40 @@
     }
   }
 
-  /*
-  No margin
-
-  Remove all margins from an element
-
-  markup:
-  <div class="k-no-margin">...</div>
-
-  Styleguide 6.4
-
-  */
+  /**
+   * No margin
+   * Remove all margins from an element
+   */
 
   .k-no-margin.k-no-margin.k-no-margin {
     margin: 0;
   }
 
-  /*
-  No transition
-
-  Disable all transitions
-
-  markup:
-  <div class="k-no-transition">...</div>
-
-  Styleguide 6.5
-
-  */
+  /**
+   * No transition
+   *
+   * Disable all transitions
+   */
 
   .k-no-transition.k-no-transition.k-no-transition {
     transition: none;
   }
 
-  /*
-  No wrap
-
-  Nowrap element
-
-  markup:
-  <div class="k-no-wrap">...</div>
-
-  Styleguide 6.6
-
-  */
+  /**
+   * No wrap
+   *
+   * Nowrap element
+    */
 
   .k-no-wrap.k-no-wrap.k-no-wrap {
     white-space: nowrap;
   }
 
-  /*
-  Visually hidden
-
-  Hide the content in an accessible way. Content is hidden for viewers but not for screenreaders
-
-  markup:
-  <div class="k-visually-hidden">...</div>
-
-  Styleguide 6.7
-
-  */
+  /**
+   * Visually hidden
+   *
+   * Hide the content in an accessible way. Content is hidden for viewers but not for screenreaders
+   */
 
   .k-visually-hidden.k-visually-hidden.k-visually-hidden {
     position: absolute;
@@ -249,19 +172,13 @@
     border: 0;
   }
 
-  /*
-  Visually shown
-
-  Show content that have the visually-hidden class
-  - Use as @extend for items that are already extending `.k-visually-hidden`
-  - Try not to use `.k-visually-hidden` and `.k-visually-shown` classes together if possible.
-
-  markup:
-  <div class="k-visually-shown">...</div>
-
-  Styleguide 6.8
-
-  */
+  /**
+   * Visually shown
+   *
+   * Show content that have the visually-hidden class
+   * Use as @extend for items that are already extending `.k-visually-hidden`
+   * Try not to use `.k-visually-hidden` and `.k-visually-shown` classes together if possible.
+   */
 
   .k-visually-shown.k-visually-shown.k-visually-shown {
     position: static;
@@ -272,37 +189,9 @@
     margin: 0;
   }
 
-  /*
-  Ratio content
-
-  markup:
-  <div class="k-ratio-block k-ratio-block--16-to-9">
-      <div class="k-loader"></div>
-      <img class="k-ratio-block__body" src="{image source}" alt="{alternative text}" />
-  </div>
-  <div class="k-ratio-block k-ratio-block--16-to-9">
-      <div class="k-ratio-block__body">
-          <div class="k-ratio-block__centered">
-              ...
-          </div>
-      </div>
-  </div>
-  <div class="k-ratio-block k-ratio-block--16-to-9">
-      <div class="k-ratio-block__body">
-          <div class="k-ratio-block__centered">
-              <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper.</p>
-          </div>
-      </div>
-  </div>
-
-  sg-wrapper:
-  <div style="width: 280px">
-      <sg-wrapper-content/>
-  </div>
-
-  Styleguide 6.9
-
-  */
+  /**
+   * Ratio content
+   */
 
   .k-ratio-block {
     position: relative;
@@ -361,27 +250,19 @@
     }
   }
 
-  /*
-  Colors
-
-  markup:
-  <div class="k-color-error">...</div>
-
-  */
+  /**
+   * Colors
+   */
 
   .k-color-error {
     color: $k-color-error;
   }
 
-  /*
-  Content block
-
-  Element with a bottom margin except when item itself is a last-child
-
-  markup:
-  <div class="k-content-block">...</div>
-
-  */
+  /**
+   * Content block
+   *
+   * Element with a bottom margin except when item itself is a last-child
+   */
 
   .k-content-block {
     @include content-block;
@@ -399,30 +280,21 @@
     @include content-block-top(1em);
   }
 
-  /*
-  Relative positioned element
-
-  Could be useful to add to parnet sof absolutely positioned items
-
-  markup:
-  <div class="k-no-transition">...</div>
-
-  */
+  /**
+   * Relative positioned element
+   *
+   * Could be useful to add to parnet sof absolutely positioned items
+   */
 
   .k-position-relative {
     position: relative;
   }
 
-  /*
-  Flexing boxes
-
-  DO or don't flexing children. USeful inside flexing containers on elemtns that have no pre-defined styling for flexbox
-
-  markup:
-  <div class="k-dont-flex">...</div>
-  <div class="k-do-flex">...</div>
-
-  */
+  /**
+   * Flexing boxes
+   *
+   * DO or don't flexing children. USeful inside flexing containers on elemtns that have no pre-defined styling for flexbox
+   */
 
   .k-dont-flex.k-dont-flex.k-dont-flex {
     flex: 0 0 auto;
@@ -432,13 +304,9 @@
     flex: 1 1 auto;
   }
 
-  /*
-  Hide elements for touch enabled devices
-
-  markup:
-  <div class="k-no-transition">...</div>
-
-  */
+  /**
+   * Hide elements for touch enabled devices
+   */
 
   .k-touchevents-hidden {
     @include modernizr('.k-touchevents') {
@@ -446,15 +314,9 @@
     }
   }
 
-  /*
-  Text overflow
-
-  markup:
-  <div class="k-ellipsis">
-    <div class="k-ellipsis__item"></div>
-  </div>
-
-  */
+  /**
+   * Text overflow
+   */
 
   .k-ellipsis {
     max-width: 100%;
@@ -476,17 +338,13 @@
     // Item to be ellipsed
   }
 
-  /*
-  "Cover all" link
-
-  Use a pseudo element inside the `<a>` to vover the entire parent.
-  - This way we don't have to make a the parent element a link.
-  - Downside: You can't select the text anymore, but this could also be used to your advantage
-
-  markup:
-  <div class="k-link-coverall">...</div>
-
-  */
+  /**
+   * "Cover all" link
+   *
+   * Use a pseudo element inside the `<a>` to vover the entire parent.
+   * - This way we don't have to make a the parent element a link.
+   * - Downside: You can't select the text anymore, but this could also be used to your advantage
+   */
 
   .k-link-coverall {
     @include pseudo(after, false) {
@@ -494,15 +352,11 @@
     }
   }
 
-  /*
-  "On-top" links
-
-  Use inside the same parent as the above "coverall" link to place this link on top of the pseudo element
-
-  markup:
-  <div class="k-link-ontop">...</div>
-
-  */
+  /**
+   * "On-top" links
+   *
+   * Use inside the same parent as the above "coverall" link to place this link on top of the pseudo element
+   */
 
   .k-coverall-ontop,
   .k-link-ontop {
@@ -510,15 +364,11 @@
     z-index: 1;
   }
 
-  /*
-  This or that
-
-  Line items up next to each other
-
-  markup:
-  <div class="k-this-or-that">...</div>
-
-  */
+  /**
+   * This or that
+   *
+   * Line items up next to each other
+   */
 
   .k-this-or-that {
     display: inline-block;

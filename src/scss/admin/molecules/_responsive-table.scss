@@ -1,64 +1,6 @@
 @if ($k-molecules == true and $k-molecule-responsive-table != false) or $k-molecule-responsive-table == true {
 
-  /*
-  Responsive table
-
-  - Add the `.k-js-responsive-table` class to the `<table>`
-  - Use [data-hide="phone/tablet/desktop"] on `<th>` to hide cell on different screen sizes
-  - Set [data-toggle="true"] and add a `.k-table-data--toggle` class to an empty cell
-
-  markup:
-  <div class="k-table-container">
-      <div class="k-table">
-          <table class="k-js-responsive-table">
-          <thead>
-              <tr>
-                  <th width="1%" data-hide="phone">
-                      <sg-insert>2.12-161</sg-insert>
-                      <span class="k-visually-hidden">Move icon</sg-insert>
-                  </th>
-                  <th width="1%" class="k-table-data--form">
-                      <input type="checkbox" />
-                  </th>
-                  <th data-toggle="true" class="k-table-data--toggle"></th>
-                  <th>
-                      Title
-                  </th>
-                  <th data-hide="phone,tablet">
-                      Category
-                  </th>
-                  <th data-hide="phone,tablet,desktop">
-                      Downloads
-                  </th>
-              </tr>
-          </thead>
-          <tbody>
-              <tr>
-                  <td>
-                      <sg-insert>2.21.9</sg-insert>
-                  </td>
-                  <td class="k-table-data--form">
-                      <input type="checkbox" />
-                  </td>
-                  <td class="k-table-data--toggle"></td>
-                  <td class="k-table-data--ellipsis">
-                      <a href="javascript:void(0)">Title</a>
-                  </td>
-                  <td>
-                      Category
-                  </td>
-                  <td>
-                      12
-                  </td>
-              </tr>
-          </tbody>
-          </table>
-      </div>
-  </div>
-
-  Styleguide 2.21.11
-
-  */
+  /* Responsive table */
 
   .footable.breakpoint {
     .footable-toggle {

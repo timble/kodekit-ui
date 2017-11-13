@@ -3,31 +3,6 @@
   /* Tree
      ========================================================================== */
 
-  /*
-  Tree
-
-  markup:
-  <div class="k-tree" id="k-jqtree"></div>
-  <script type="text/javascript" defer>
-  (function($) {
-      $(document).ready(function () {
-          new Koowa.Tree('#k-jqtree', {
-              "data": [
-                  {"label":"Main category","id":4},
-                  {"label":"Sub category 1","id":5,"parent":4},
-                  {"label":"Sub category 2","id":6,"parent":4},
-                  {"label":"Deeper category","id":7,"parent":6},
-                  {"label":"Sub category 3","id":8,"parent":4}
-              ]
-          });
-      });
-  });
-  </script>
-
-  Styleguide 2.26
-
-  */
-
   .k-tree {
     @include clearfix;
     margin: $k-tree-spacing 0;

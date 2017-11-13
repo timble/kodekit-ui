@@ -3,27 +3,6 @@
   /* Form block
      ========================================================================== */
 
-  /*
-  Form block
-
-  To be used in sidebar of forms
-  - Data in these boxes should be non-required (e.g. not *) form elements
-
-  markup:
-  <!-- Form block -->
-  <fieldset class="k-form-block">
-      <div class="k-form-block__header">
-          Header
-      </div>
-      <div class="k-form-block__content">
-          Form elements
-      </div>
-  </fieldset><!-- .k-form-block -->
-
-  Styleguide 2.8
-
-  */
-
   .k-form-block {
     background: $k-form-block-background;
     @include border(all, $k-form-block-border);

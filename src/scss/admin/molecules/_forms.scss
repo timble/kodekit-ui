@@ -3,26 +3,6 @@
   /* Forms
      ========================================================================== */
 
-  /*
-  Forms
-
-  markup:
-  <p>
-      <input class="k-form-control" type="text" />
-  </p>
-  <p>
-      <select class="k-form-control">
-          <option>Option</option>
-      </select>
-  </p>
-  <p>
-      <textarea class="k-form-control"></textarea>
-  </p>
-
-  Styleguide 2.9
-
-  */
-
   /**
    * 1. Set width and max-width to 100% to override custom template styling
    * 1. Make inputs at least the height of their button counterpart (base line-height + padding + border)
@@ -139,31 +119,7 @@
     }
   }
 
-  /*
-  Checkbox & Radio inputs
-
-  CSS only styled checkboxes and radio boxes
-
-  markup:
-  <div class="k-form-group">
-      <input type="checkbox" id="input-[2.9.1]-1" />
-      <label for="input-[2.9.1]-1">Label 1</label>
-  </div>
-  <div class="k-form-group">
-      <input type="radio" id="input-[2.9.1]-2" />
-      <label for="input-[2.9.1]-2">Label 2</label>
-  </div>
-  <!-- Or -->
-  <div class="k-form-group">
-      <label><input type="checkbox" id="input-[2.9.1]-3" /> Label 1</label>
-  </div>
-  <div class="k-form-group">
-      <label><input type="radio" id="input-[2.9.1]-3" /> Label 2</label>
-  </div>
-
-  Styleguide 2.9.1
-
-  */
+  /* Checkbox & Radio inputs */
 
   /* Shared styling between radio boxes and checkboxes */
 
@@ -336,22 +292,7 @@
     }
   }
 
-  /*
-  Feedback states
-
-  .k-has-success - Success
-  .k-has-warning - Warning
-  .k-has-error - Error
-
-  markup:
-  <div class="k-form-group {$modifiers}">
-      <label for="input-[2.9.2]-1-{$modifiers}">Default input</label>
-      <input class="k-form-control" type="text" id="input-[2.9.2]-1-{$modifiers}" />
-  </div>
-
-  Styleguide 2.9.2
-
-  */
+  /* Feedback states */
 
   .k-has-success {
     @include form-control-validation($k-state-success-color, $k-state-success-color, $k-state-success-background);
@@ -363,17 +304,7 @@
     @include form-control-validation($k-state-danger-color, $k-state-danger-color, $k-state-danger-background);
   }
 
-  /*
-  Static form label
-
-  Styled like a `<label>`
-
-  markup:
-  <p class="k-static-form-label">Static form control</p>
-
-  Styleguide 2.9.3
-
-  */
+  /* Static form label */
 
   /**
    * Static form control text
@@ -393,25 +324,7 @@
     @include content-block(5px);
   }
 
-  /*
-  Input group
-
-  default - Default
-  .k-input-group--small - Small
-  .k-input-group--large - Large
-
-  markup:
-  <div class="k-input-group {$modifiers}">
-      <div class="k-input-group__addon">Addon</div>
-      <input type="text" class="k-form-control" />
-      <div class="k-input-group__button">
-          <button type="button" class="k-button k-button--default">Button</button>
-      </div>
-  </div>
-
-  Styleguide 2.9.4
-
-  */
+  /* Input group */
 
   /**
    * 1. For dropdowns
@@ -735,22 +648,7 @@
     }
   }
 
-  /*
-  Form groups
-
-  default - Default
-  .k-form-group--small - Small form groups
-  .k-form-group--large - Large form groups
-
-  markup:
-  <div class="k-form-group {$modifiers}">
-      <label for="input-[2.9]-1-{$modifiers}">Label</label>
-      <input class="k-form-control" type="text" id="input-[2.9]-1-{$modifiers}" />
-  </div>
-
-  Styleguide 2.9.5
-
-  */
+  /* Form groups */
 
   /**
    * Designed to help with the organization and spacing of vertical forms. For
@@ -812,47 +710,7 @@
     }
   }
 
-  /*
-  Inline form group
-
-  markup:
-  <div class="k-inline-form-group">
-      <label for="input-[2.9.6.1]-1">Label</label>
-      <input class="k-form-control" type="text" id="input-[2.9.6.1]-1" />
-  </div><!-- .k-inline-form-group -->
-
-  sg-wrapper:
-  <div class="k-form-group">
-      <sg-wrapper-content/>
-      <sg-wrapper-content/>
-      <sg-wrapper-content/>
-  </div><!-- .k-form-group -->
-
-  Styleguide 2.9.6
-
-  */
-
-  /*
-  Inline form group with buttons
-
-  markup:
-  <div class="k-inline-form-group">
-      <p class="k-static-form-label">Label 1</p>
-      <div class="k-button-group">
-          <button type="button" class="k-button k-button--default k-button--tiny">
-              <sg-insert>2.12-171</sg-insert>
-              <span class="k-visually-hidden">Plus icon</span>
-          </button>
-          <button type="button" class="k-button k-button--default k-button--tiny">
-              <sg-insert>2.12-158</sg-insert>
-              <span class="k-visually-hidden">Minus icon</span>
-          </button>
-      </div>
-  </div><!-- .k-inline-form-group -->
-
-  Styleguide 2.9.6.1
-
-  */
+  /* Inline form group */
 
   .k-inline-form-group {
     display: inline-block;
@@ -878,19 +736,7 @@
     }
   }
 
-  /*
-  Form row group
-
-  markup:
-  <div class="k-form-row-group">
-      <sg-insert>2.9.8</sg-insert>
-      <sg-insert>2.9.8</sg-insert>
-      <sg-insert>2.9.8</sg-insert>
-  </div>
-
-  Styleguide 2.9.7
-
-  */
+  /* Form row group */
 
   .k-form-row-group {
     display: table; /* To make sure we don't get empty pixels on the right */
@@ -905,34 +751,7 @@
     }
   }
 
-  /*
-  Form row
-
-  markup:
-  <form class="k-form-row">
-      <div class="k-form-row__item k-form-row__item--button">
-          <button class="k-button k-button--default k-button--small">
-              <span class="k-icon-minus k-icon--error" aria-hidden="true"></span>
-              <span class="k-visually-hidden">Remove</span>
-          </button>
-      </div>
-      <div class="k-form-row__item k-form-row__item--label">
-          <label for="input-[2.9.8]-1">File name:</label>
-      </div>
-      <div class="k-form-row__item k-form-row__item--input">
-          <input class="k-form-control" type="text" value="{value}" disabled="" id="input-[2.9.8]-1" />
-      </div>
-      <div class="k-form-row__item k-form-row__item--label">
-          <label for="input-[2.9.8]-2">Title:</label>
-      </div>
-      <div class="k-form-row__item k-form-row__item--input">
-          <input class="k-form-control" type="text" name="title" value="{value}" id="input-[2.9.8]-2" />
-      </div>
-  </form>
-
-  Styleguide 2.9.8
-
-  */
+  /* Form row */
 
   .k-form-row {
     margin: 0;
@@ -1052,25 +871,7 @@
   }
 
 
-  /* Form field info
-
-  Additional info to add to the bottom of form fields
-
-  markup:
-  <p class="k-form-info">
-      Addition info to add to the above field
-  </p>
-
-  sg-wrapper:
-  <div class="k-form-group">
-      <label for="input-[2.9.10]">Label</label>
-      <input class="k-form-control" type="text" id="input-[2.9.10]" />
-      <sg-wrapper-content/>
-  </div>
-
-  Styleguide 2.9.10
-
-  */
+  /* Form field info */
 
   .k-form-info {
     margin-top: 0.75em;

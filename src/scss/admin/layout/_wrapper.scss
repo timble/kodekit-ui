@@ -3,22 +3,6 @@
   /* Wrapper
      ========================================================================== */
 
-  /*
-  Wrapper
-
-  - Use as <b>child</b> of the `.k-ui-container` container only
-  - Can be preceded by a `.k-menubar`
-  - {unsureText}
-
-  markup:
-  <div class="k-wrapper k-js-wrapper">
-      ...
-  </div><!-- .k-wrapper -->
-
-  Styleguide 3.2
-
-  */
-
   .k-wrapper {
     position: relative;
     display: flex;

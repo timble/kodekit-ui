@@ -1,46 +1,6 @@
 @if ($k-molecules == true and $k-molecule-pagination != false) or $k-molecule-pagination == true {
 
-  /*
-  Table pagination
-
-  - Put right below `.k-table` container and inside `.k-table-container` container
-
-  markup:
-  <div class="k-table-pagination">
-      <div class="k-pagination">
-          <div class="k-pagination__limit">
-              <select class="k-form-control">
-                  <option value="5">5</option>
-                  <option value="10" selected>10</option>
-                  <option value="15">15</option>
-              </select>
-          </div>
-          <ul class="k-pagination__pages">
-              <li class="k-is-active">
-                  <span>1</span>
-              </li>
-              <li>
-                  <a href="javascript:void(0)">2</a>
-              </li>
-              <li>
-                  <a href="javascript:void(0)">3</a>
-              </li>
-              <li>
-                  <a href="javascript:void(0)">4</a>
-              </li>
-              <li>
-                  <a href="javascript:void(0)">5</a>
-              </li>
-              <li>
-                  <a href="javascript:void(0)">»</a>
-              </li>
-          </ul>
-      </div>
-  </div>
-
-  Styleguide 2.21.1
-
-  */
+  /* Table pagination */
 
   /**
    * 1. Faking a bottom border, this shadow will disappear when pagination is positioned to bottom

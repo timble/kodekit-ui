@@ -3,21 +3,6 @@
   /* Tooltip
      ========================================================================== */
 
-  /*
-  Tooltips
-
-  markup:
-  <a href="javascript:void(0)" class="k-js-tooltip" data-toggle="tooltip" data-original-title="Tooltip">Tooltip on top</a>
-
-  sg-wrapper:
-  <p style="margin: 30px 0;">
-      <sg-wrapper-content/>
-  </p>
-
-  Styleguide 2.25
-
-  */
-
   /**
    * 1. Our parent element can be arbitrary since tooltips are by default inserted as a sibling of their target element.
    *    So reset our font and text properties to avoid inheriting weird values.

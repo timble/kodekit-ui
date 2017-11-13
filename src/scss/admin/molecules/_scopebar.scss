@@ -3,55 +3,6 @@
   /* Scopebar
      ========================================================================== */
 
-  /*
-  Scopebar
-
-  The default scopebar is displayed with filters and a search field
-
-  markup:
-  <!-- Scopebar -->
-  <div class="k-scopebar k-js-scopebar">
-      <sg-insert>2.18.3</sg-insert>
-      <sg-insert>2.18.6</sg-insert>
-  </div><!-- .k-scopebar -->
-
-  Styleguide 2.18
-
-  */
-
-  /*
-  Scopebar - breadcrumbs
-
-  When you don't need any filters, but do need breadcrumbs, it's possible to combine the two like so:
-
-  markup:
-  <!-- Scopebar -->
-  <div class="k-scopebar k-js-scopebar k-scopebar--breadcrumbs">
-      <sg-insert>2.18.4</sg-insert>
-      <sg-insert>2.18.6</sg-insert>
-  </div><!-- .k-scopebar -->
-
-  Styleguide 2.18.1
-
-  */
-
-  /*
-  Scopebar - adding buttons
-
-  Need some extra buttons? For example to switch a list layout to a grid layout? Place them like so:
-
-  markup:
-  <!-- Scopebar -->
-  <div class="k-scopebar k-js-scopebar">
-      <sg-insert>2.18.3</sg-insert>
-      <sg-insert>2.18.5</sg-insert>
-      <sg-insert>2.18.6</sg-insert>
-  </div><!-- .k-scopebar -->
-
-  Styleguide 2.18.2
-
-  */
-
   /**
    * 1. Faking a border for when items are not stretching
    */
@@ -161,47 +112,7 @@
     }
   }
 
-  /*
-  Scopebar Filters
-
-  - Hidden on small screens
-
-  markup:
-  <!-- Filters -->
-  <div class="k-dynamic-content-holder">
-      <div class="k-js-filters">
-          <div data-filter data-title="Status" data-count="0">
-              <select class="k-js-select2" name="enabled" data-placeholder="- Select -">
-                  <option value="" class="level1">- Select -</option>
-                  <option value="1" class="level1">Published</option>
-                  <option value="0" class="level1">Unpublished</option>
-              </select>
-          </div>
-      </div>
-  </div>
-  <div class="k-scopebar__item k-scopebar__item--filters">
-      <div class="k-scopebar__filters-content">
-          <div class="k-scopebar__filters k-js-filter-container">
-              <div style="display: none;" class="k-scopebar__item--filter k-scopebar-dropdown k-js-filter-prototype k-js-dropdown">
-                  <button type="button" class="k-scopebar-dropdown__button k-js-dropdown-button">
-                      <span class="k-scopebar__item--filter__title k-js-dropdown-title"></span>
-                      <span class="k-scopebar__item--filter__icon k-icon-chevron-bottom" aria-hidden="true"></span>
-                      <div class="k-scopebar__item__label k-js-dropdown-label"></div>
-                  </button>
-                  <div class="k-scopebar-dropdown__body k-js-dropdown-body">
-                      <div class="k-scopebar-dropdown__body__buttons">
-                          <button type="button" class="k-button k-button--default k-js-clear-filter">Clear</button>
-                          <button type="button" class="k-button k-button--primary k-js-apply-filter">Apply</button>
-                      </div>
-                  </div>
-              </div>
-          </div><!-- .k-scopebar__filters -->
-      </div><!-- .k-scopebar__filters-content -->
-  </div><!-- .k-scopebar__item -->
-
-  Styleguide 2.18.3
-
-  */
+  /* Scopebar Filters */
 
   .k-scopebar__item--filters {
     width: 100%;
@@ -453,21 +364,7 @@
     }
   }
 
-  /*
-  Scopebar breadcrumbs
-
-  When space is tight and you don't need filters you could add the breadcrumbs bar to the scopebar
-  - Never add breadcrumbs and filter in the scopebar together
-  - Hidden on small screens
-
-  markup:
-  <div class="k-scopebar__item k-scopebar__item--breadcrumbs">
-      <sg-insert>2.2</sg-insert>
-  </div>
-
-  Styleguide 2.18.4
-
-  */
+  /* Scopebar breadcrumbs */
 
   .k-scopebar__item--breadcrumbs {
 
@@ -527,20 +424,7 @@
     }
   }
 
-  /*
-  Scopebar buttons
-
-  markup:
-  <div class="k-scopebar__item k-scopebar__item--buttons">
-      <button class="k-scopebar__button">
-          <sg-insert>2.12-115</sg-insert>
-          <span class="k-visually-hidden">Grid icon</span>
-      </button>
-  </div>
-
-  Styleguide 2.18.5
-
-  */
+  /* Scopebar buttons */
 
   .k-scopebar__item--buttons {
 
@@ -614,33 +498,7 @@
     }
   }
 
-  /*
-  Scopebar search
-
-  - Hidden on small screens
-
-  markup:
-  <!-- Search -->
-  <div class="k-scopebar__item k-scopebar__item--search">
-      <div class="k-search k-search--has-both-buttons">
-          <label for="input-[2.18.6]-1">Search</label>
-          <input type="search" class="k-search__field" placeholder="Search…" id="input-[2.18.6]-1" />
-          <button type="submit" class="k-search__submit">
-              <sg-insert>2.12-144</sg-insert>
-              <span class="k-visually-hidden">Search icon</span>
-          </button>
-          <button type="button" class="k-search__empty ">
-              <span class="k-search__empty-area">
-                  <sg-insert>2.12.1-2</sg-insert>
-                  <span class="k-visually-hidden">Clear search</span>
-              </span>
-          </button>
-      </div>
-  </div>
-
-  Styleguide 2.18.6
-
-  */
+  /* Scopebar search */
 
   .k-scopebar__item--search {
     position: relative;

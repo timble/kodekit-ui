@@ -3,37 +3,6 @@
   /* Datepicker
      ========================================================================== */
 
-  /**
-   * Datepicker for Bootstrap
-   *
-   * Copyright 2012 Stefan Petre
-   * Improvements by Andrew Rowls
-   * Licensed under the Apache License v2.0
-   * http://www.apache.org/licenses/LICENSE-2.0
-   *
-   */
-
-  /*
-  Datepicker
-
-  markup:
-  <div class="k-form-group">
-      <label>Date</label>
-      <div class="k-input-group">
-          <input class="k-form-control" type="text" />
-          <span class="k-input-group__button">
-              <button type="button" class="k-button k-button--default k-js-datepicker">
-                  <sg-insert>2.12-44</sg-insert>
-                  <span class="k-visually-hidden">Calendar</span>
-              </button>
-          </span>
-      </div>
-  </div>
-
-  Styleguide 2.5
-
-  */
-
   .datepicker {
     direction: ltr;
 

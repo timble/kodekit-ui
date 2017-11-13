@@ -3,36 +3,6 @@
   /* Toolbar
      ========================================================================== */
 
-  /*
-  Toolbar
-
-  - <span class="sg-alert"><strong>Important:</strong> Always add an icon in front of the text since icons are used as only content on mobile</span>
-
-  Markup:
-  <!-- Toolbar -->
-  <div class="k-toolbar k-js-toolbar">
-      <button type="button" class="k-button k-button--success">
-          <sg-insert>2.12-171</sg-insert>
-          Primary action
-      </button>
-      <button type="button" class="k-button k-button--default">
-          <sg-insert>2.12-164</sg-insert>
-          Other action
-      </button>
-      <button type="button" class="k-button k-button--default" disabled>
-          <sg-insert>2.12-113</sg-insert>
-          Disabled action
-      </button>
-      <button type="button" class="k-button k-button--default" disabled>
-          <sg-insert>2.12-52</sg-insert>
-          Disabled action
-      </button>
-  </div><!-- .k-toolbar -->
-
-  Styleguide 2.24
-
-  */
-
   /**
    * 1. Buttons have margin-top and margin-left to separate them from each other
    *    Setting a bottom padding to separate buttons from bottom of toolbar
