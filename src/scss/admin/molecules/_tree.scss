@@ -53,12 +53,12 @@ Styleguide 2.26
     padding: 0;
 
     & > .jqtree_common {
-      .jqtree-element {
-        padding-left: 0;
+      & > .jqtree-element {
+        padding-left: 15px;
 
         @include rtl {
           padding-left: $k-spacing-tiny;
-          padding-right: 0;
+          padding-right: 15px;
         }
       }
     }
