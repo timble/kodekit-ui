@@ -230,8 +230,14 @@ $k-transition-duration:       180ms !default;
 $k-transition-easing:         cubic-bezier(0.2, 0.57, 0.44, 0.83) !default;
 $k-transition:                all $k-transition-duration $k-transition-easing !default;
 
+$k-resizing-class:            '.k-is-resizing' !default;
 $k-active-class:              '.k-is-active' !default;
 $k-disabled-class:            '.k-is-disabled' !default;
+$k-selected-class:            '.k-is-selected' !default;
+$k-open-class:                '.k-is-open' !default;
+$k-visible-class:             '.k-is-visible' !default;
+$k-focus-class:               '.k-has-focus' !default;
+$k-drop-focus-class:          '.k-has-drop-focus' !default;
 
 $k-optionlist-class:          '.k-optionlist' !default;
 $k-optionlist-content-class:  '.k-optionlist__content' !default;
@@ -361,11 +367,13 @@ $k-top-container-font-size:                           $k-large-font-size !defaul
 $k-top-container-line-height:                         $k-large-line-height !default;
 $k-top-container-spacing:                             $k-small-spacing !default;
 
+$k-top-container-navigation-item-disabled-class:      $k-disabled-class !default;
 $k-top-container-navigation-item-line-height:         $k-element-large-size !default;
 $k-top-container-navigation-item-border:              1px solid rgba(white, 0.15) !default;
 $k-top-container-navigation-item-spacing:             0 $k-spacing !default;
 $k-top-container-navigation-item-breakpoint-spacing:  0 $k-small-spacing !default;
 $k-top-container-navigation-item-delta-spacing:       0 $k-small-spacing !default;
+$k-top-container-navigation-item-open-submenu-class:  '.has-open-submenu' !default;
 
 
 // Content
@@ -425,6 +433,7 @@ $k-sidebar-color:               $k-type-color !default;
 $k-sidebar-item-spacing:                $k-spacing !default;
 $k-sidebar-item-flex-min-height:        96px !default;
 
+$k-sidebar-item-toggle-active-class:    $k-active-class !default;
 $k-sidebar-item-toggle-background:      white !default;
 $k-sidebar-item-toggle-border:          1px solid #ddd !default;
 $k-sidebar-item-toggle-size:            20px !default;
@@ -457,6 +466,7 @@ $k-navigation-hover-background:   lighter($k-navigation-background) !default;
 $k-navigation-hover-border:       $k-accent-color !default;
 $k-navigation-hover-color:        $k-type-color !default;
 
+$k-navigation-active-class:       $k-active-class !default;
 $k-navigation-active-background:  $k-navigation-background !default;
 $k-navigation-active-border:      $k-accent-color !default;
 $k-navigation-active-color:       $k-accent-color !default;
@@ -475,6 +485,7 @@ $k-list-link-color:               $k-sidebar-color !default;
 $k-list-link-hover-background:    lighter($k-sidebar-background) !default;
 $k-list-link-hover-color:         $k-type-color !default;
 
+$k-list-link-active-class:        $k-active-class !default;
 $k-list-link-active-background:   $k-sidebar-background !default;
 $k-list-link-active-color:        $k-type-color !default;
 $k-list-link-active-font-weight:  $k-bold-font-weight !default;
@@ -541,6 +552,7 @@ $k-scopebar-filter-font-size:               $k-font-size !default;
 
 $k-scopebar-search-delta-size:              $k-font-size * 17 !default;
 $k-scopebar-search-echo-size:               $k-font-size * 22 !default;
+$k-scopebar-search-visible-class:           $k-visible-class !default;
 
 $k-scopebar-submit-button-spacing:          $k-font-size * 2 !default;
 $k-scopebar-submit-button-size:             $k-font-size !default;
@@ -554,7 +566,10 @@ $k-scopebar-filter-label-color:             $k-error-type-color !default;
 $k-scopebar-filter-label-font-size:         $k-small-font-size !default;
 
 $k-scopebar-button-spacing:                 $k-tiny-spacing !default;
+$k-scopebar-button-active-class:            $k-active-class !default;
 $k-scopebar-button-hover-background:        darker($k-primary-plus-6-color) !default;
+
+$k-scopebar-dropdown-active-class:          $k-active-class !default;
 
 
 // Dropdowns
@@ -598,14 +613,16 @@ $k-table-cell-color:                      $k-type-color !default;
 $k-table-cell-even-hover-background:      $k-primary-plus-5-color !default;
 $k-table-cell-odd-hover-background:       $k-primary-plus-5-color !default;
 
-$k-table-cell-accent-background:          $k-accent-color !default;
-$k-table-cell-accent-color:               $k-accent-type-color !default;
+$k-table-cell-selected-background:        $k-accent-color !default;
+$k-table-cell-selected-color:             $k-accent-type-color !default;
 
 $k-table-cell-accent-hover-background:    darken($k-accent-color,10%) !default;
 
 $k-table-cell-small-font-size:            $k-small-font-size !default;
 $k-table-cell-small-line-height:          $k-small-line-height !default;
 
+$k-table-row-selected-class:              $k-selected-class !default;
+$k-table-row-positioner-selected-class:   $k-selected-class !default;
 $k-table-row-positioner-size:             16px !default;
 $k-table-row-positioner-color:            $k-primary-min-2-color !default;
 
@@ -649,7 +666,7 @@ $k-table-pagination-border:               $k-table-header-border !default;
 
 $k-table-responsive-toggle-size:          20px !default;
 $k-table-responsive-toggle-color:         $k-type-light-color !default;
-$k-table-responsive-toggle-active-color:  $k-table-cell-accent-color !default;
+$k-table-responsive-toggle-active-color:  $k-table-cell-selected-color !default;
 $k-table-responsive-toggle-border-width:  1px !default;
 $k-table-responsive-toggle-border:        $k-table-responsive-toggle-border-width solid $k-table-responsive-toggle-color !default;
 $k-table-responsive-toggle-icon-size:     10px !default;
@@ -657,6 +674,7 @@ $k-table-responsive-toggle-line-height:   1.3em !default;
 $k-table-responsive-detail-font-weight:   $k-bold-font-weight !default;
 $k-table-responsive-detail-spacing:       $k-table-cell-vertical-spacing $k-table-cell-horizontal-spacing !default;
 $k-table-responsive-detail-min-height:    round($k-unit-size * 0.75) !default;
+$k-table-responsive-selected-class:       $k-selected-class !default;
 
 
 // Component layout
@@ -727,6 +745,9 @@ $k-styled-file-input-font-size:             $k-large-font-size !default;
 $k-styled-file-input-line-height:           $k-large-line-height !default;
 $k-styled-file-input-spacing:               $k-large-vertical-spacing $k-large-horizontal-spacing !default;
 
+$k-styled-file-focus-class:                 $k-focus-class !default;
+$k-styled-file-drop-focus-class:            $k-drop-focus-class !default;
+
 
 // Empty state
 // ==========================================================================
@@ -770,9 +791,11 @@ $k-tabs-link-spacing:                     $k-extrasmall-spacing $k-spacing ($k-e
 $k-tabs-link-hover-background:            $k-primary-plus-2-color !default;
 $k-tabs-link-hover-border:                $k-primary-min-1-color !default;
 
+$k-tabs-link-disabled-class:              $k-disabled-class !default;
 $k-tabs-link-disabled-color:              $k-primary-min-6-color !default;
 $k-tabs-link-disabled-hover-color:        $k-tabs-link-disabled-color !default;
 
+$k-tabs-link-active-class:                $k-active-class !default;
 $k-tabs-link-active-hover-background:     white !default;
 $k-tabs-link-active-hover-color:          $k-primary-min-7-color !default;
 $k-tabs-link-active-hover-border:         $k-primary-min-1-color !default;
@@ -789,6 +812,7 @@ $k-tabs-scroller-charlie-spacing:         $k-spacing !default;
 $k-tabs-scroller-item-active-background:  $k-component-background !default;
 $k-tabs-scroller-item-active-color:       $k-type-color !default;
 
+$k-tabs-content-tab-active-class:         $k-active-class !default
 $k-tabs-content-tab-spacing:              $k-extrasmall-spacing !default
 
 
@@ -828,6 +852,8 @@ $k-button-warning-border:            darken($k-button-warning-background, 5%) !d
 $k-button-danger-color:              $k-error-type-color !default;
 $k-button-danger-background:         $k-error-color !default;
 $k-button-danger-border:             darken($k-button-danger-background, 5%) !default;
+
+$k-button-active-class:              $k-active-class !default;
 
 $k-button-link-disabled-color:       $k-primary-min-6-color !default;
 
@@ -871,6 +897,7 @@ $k-pagination-hover-background:   $k-primary-plus-2-color !default;
 $k-pagination-hover-color:        darker($k-accent-color) !default;
 $k-pagination-hover-border:       $k-primary-min-1-color !default;
 
+$k-pagination-active-class:       $k-active-class !default;
 $k-pagination-active-background:  $k-accent-color !default;
 $k-pagination-active-color:       $k-accent-type-color !default;
 $k-pagination-active-border:      darker($k-accent-color) !default;
@@ -917,6 +944,7 @@ $k-card-border-radius:        $k-border-radius !default;
 $k-card-spacing:              $k-extrasmall-spacing !default;
 $k-card-hover-border:         darkest($k-card-border) !default;
 
+$k-card-selected-class:       $k-selected-class !default;
 $k-card-selected-background:  $k-accent-color !default;
 $k-card-selected-border:      $k-accent-color !default;
 $k-card-selected-color:       $k-accent-type-color !default;
@@ -986,6 +1014,10 @@ $k-alert-overflow-max-height:   33% !default;
 $k-dropdown-background:             white !default;
 $k-dropdown-border:                 $k-primary-min-2-color !default;
 $k-dropdown-fallback-border:        $k-primary-min-2-color !default;
+$k-dropdown-open-class:             $k-open-class !default;
+
+$k-dropdown-item-active-class:      $k-active-class !default;
+$k-dropdown-item-disabled-class:    $k-disabled-class !default;
 
 $k-dropdown-divider-background:     $k-primary-plus-1-color !default;
 

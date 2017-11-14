@@ -227,7 +227,7 @@
    * Selected card
    */
 
-  .k-card.k-is-selected {
+  .k-card#{$k-card-selected-class} {
     .k-card__body {
       border-color: $k-card-selected-border;
 

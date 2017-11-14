@@ -288,7 +288,7 @@
       }
     }
 
-    &.k-is-active {
+    &#{$k-scopebar-dropdown-active-class} {
       .k-scopebar-dropdown__button {
         background: $k-scopebar-button-hover-background;
       }
@@ -472,7 +472,7 @@
       background: lighter($k-scopebar-background);
     }
 
-    &.k-is-active {
+    &#{$k-scopebar-button-active-class} {
       border-color: $k-scopebar-border;
       background: lighter($k-scopebar-background);
     }
@@ -666,7 +666,7 @@
         left: (($k-scopebar-empty-button-spacing - round($k-scopebar-size / 2)) / 2);
       }
 
-      &.k-is-visible {
+      &#{$k-scopebar-search-visible-class} {
         display: inline-block;
       }
     }

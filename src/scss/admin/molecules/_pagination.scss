@@ -108,8 +108,8 @@
         }
       }
 
-      & > .k-is-active > a,
-      & > .k-is-active > span {
+      & > #{$k-pagination-active-class} > a,
+      & > #{$k-pagination-active-class} > span {
         &,
         &:hover,
         &:focus {

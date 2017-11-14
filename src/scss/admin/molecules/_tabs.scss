@@ -114,7 +114,7 @@
      * Disabled state sets text to gray and nukes hover/tab effects
      */
 
-    .k-is-disabled a {
+    #{$k-tabs-link-disabled-class} a {
       color: $k-tabs-link-disabled-color;
       cursor: $k-tabs-link-disabled-cursor;
       pointer-events: none;
@@ -132,7 +132,7 @@
      * Active state, and its :hover to override normal :hover
      */
 
-    .k-is-active a {
+    #{$k-tabs-link-active-class} a {
       &,
       &:hover,
       &:focus {
@@ -179,7 +179,7 @@
       padding: $k-tabs-content-tab-spacing;
     }
 
-    > .k-is-active {
+    > #{$k-tabs-content-tab-active-class} {
       display: block;
     }
   }

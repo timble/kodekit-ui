@@ -55,7 +55,7 @@
       /* Focus state */
 
       &:focus,
-      &.has-focus {
+      &#{$k-styled-file-focus-class} {
         outline: none;
 
         & + label {
@@ -67,8 +67,8 @@
       /* Hover / focus state */
 
       &:focus,
-      &.has-focus,
-      &.has-drop-focus,
+      &#{$k-styled-file-focus-class},
+      &#{$k-styled-file-drop-focus-class},
       &:hover {
         cursor: pointer;
 

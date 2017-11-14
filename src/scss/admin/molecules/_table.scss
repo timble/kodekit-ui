@@ -476,13 +476,13 @@
    */
 
   .k-table-container {
-    tr.k-is-selected {
+    tr#{$k-table-row-selected-class} {
       td {
-        background: $k-table-cell-accent-background;
-        color: $k-table-cell-accent-color;
+        background: $k-table-cell-selected-background;
+        color: $k-table-cell-selected-color;
 
         a, i, span {
-          color: $k-table-cell-accent-color;
+          color: $k-table-cell-selected-color;
         }
       }
 
@@ -510,7 +510,7 @@
     border-bottom: 1px solid $k-table-row-positioner-color;
     cursor: no-drop;
 
-    &.k-is-active {
+    &#{$k-table-row-positioner-selected-class} {
       cursor: move;
     }
 
@@ -537,7 +537,7 @@
   }
 
   .k-table-container {
-    tr.k-is-selected {
+    tr#{$k-table-row-selected-class} {
       .k-positioner {
         &:after {
           color: white;

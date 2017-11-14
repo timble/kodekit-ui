@@ -3,7 +3,7 @@
 // Special styling fro when window is resizing
 
 @mixin resizing {
-  @at-root .k-is-resizing & {
+  @at-root #{$k-resizing-class} & {
     @content;
   }
 }

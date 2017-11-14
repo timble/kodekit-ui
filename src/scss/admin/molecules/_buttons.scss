@@ -3,8 +3,6 @@
   /* Buttons
      ========================================================================== */
 
-  /* Button states */
-
   .k-button {
     @include button-default;
   }
@@ -99,7 +97,7 @@
       &:hover,
       &:focus,
       &:active,
-      &.k-is-active {
+      &#{$k-button-active-class} {
         z-index: 2;
       }
     }

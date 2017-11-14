@@ -101,7 +101,7 @@
         @include transition;
       }
 
-      &.k-is-active:after {
+      &#{$k-sidebar-item-toggle-active-class}:after {
         transform: rotate(180deg);
       }
 

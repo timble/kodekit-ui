@@ -27,7 +27,7 @@
       }
     }
 
-    tr.k-is-selected {
+    tr#{$k-table-responsive-selected-class} {
       .footable-toggle {
         border-color: $k-table-responsive-toggle-active-color;
 

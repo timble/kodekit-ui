@@ -89,7 +89,7 @@
 
     /* Active link */
 
-    .k-is-active {
+    #{$k-navigation-active-class} {
       a {
         background: $k-navigation-active-background;
         color: $k-navigation-active-color;

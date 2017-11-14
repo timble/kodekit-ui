@@ -23,7 +23,7 @@
 
     /* When resizing */
 
-    &.k-is-resizing {
+    &#{$k-resizing-class} {
       overflow: hidden; /* 3 */
     }
   }

@@ -1875,7 +1875,6 @@ body.k-is-resizing {
   /* Single breadcrumb items */
   /* Buttons
      ========================================================================== */
-  /* Button states */
   /* Alternate buttons */
   /* Link buttons */
   /* Block button */
@@ -9602,20 +9601,20 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   text-align: center;
 }
 
-.k-ui-namespace .k-file-input input:focus, .k-ui-namespace .k-file-input input.has-focus {
+.k-ui-namespace .k-file-input input:focus, .k-ui-namespace .k-file-input input.k-has-focus {
   outline: none;
 }
 
-.k-ui-namespace .k-file-input input:focus + label, .k-ui-namespace .k-file-input input.has-focus + label {
+.k-ui-namespace .k-file-input input:focus + label, .k-ui-namespace .k-file-input input.k-has-focus + label {
   outline: 1px dotted #000;
   outline: -webkit-focus-ring-color auto 5px;
 }
 
-.k-ui-namespace .k-file-input input:focus, .k-ui-namespace .k-file-input input.has-focus, .k-ui-namespace .k-file-input input.has-drop-focus, .k-ui-namespace .k-file-input input:hover {
+.k-ui-namespace .k-file-input input:focus, .k-ui-namespace .k-file-input input.k-has-focus, .k-ui-namespace .k-file-input input.k-has-drop-focus, .k-ui-namespace .k-file-input input:hover {
   cursor: pointer;
 }
 
-.k-ui-namespace .k-file-input input:focus + label .k-file-input__button, .k-ui-namespace .k-file-input input:focus + label .k-file-input__button:hover, .k-ui-namespace .k-file-input input:focus + label .k-file-input__button:focus, .k-ui-namespace .k-file-input input.has-focus + label .k-file-input__button, .k-ui-namespace .k-file-input input.has-focus + label .k-file-input__button:hover, .k-ui-namespace .k-file-input input.has-focus + label .k-file-input__button:focus, .k-ui-namespace .k-file-input input.has-drop-focus + label .k-file-input__button, .k-ui-namespace .k-file-input input.has-drop-focus + label .k-file-input__button:hover, .k-ui-namespace .k-file-input input.has-drop-focus + label .k-file-input__button:focus, .k-ui-namespace .k-file-input input:hover + label .k-file-input__button, .k-ui-namespace .k-file-input input:hover + label .k-file-input__button:hover, .k-ui-namespace .k-file-input input:hover + label .k-file-input__button:focus {
+.k-ui-namespace .k-file-input input:focus + label .k-file-input__button, .k-ui-namespace .k-file-input input:focus + label .k-file-input__button:hover, .k-ui-namespace .k-file-input input:focus + label .k-file-input__button:focus, .k-ui-namespace .k-file-input input.k-has-focus + label .k-file-input__button, .k-ui-namespace .k-file-input input.k-has-focus + label .k-file-input__button:hover, .k-ui-namespace .k-file-input input.k-has-focus + label .k-file-input__button:focus, .k-ui-namespace .k-file-input input.k-has-drop-focus + label .k-file-input__button, .k-ui-namespace .k-file-input input.k-has-drop-focus + label .k-file-input__button:hover, .k-ui-namespace .k-file-input input.k-has-drop-focus + label .k-file-input__button:focus, .k-ui-namespace .k-file-input input:hover + label .k-file-input__button, .k-ui-namespace .k-file-input input:hover + label .k-file-input__button:hover, .k-ui-namespace .k-file-input input:hover + label .k-file-input__button:focus {
   background-color: #255681;
 }
 
@@ -10381,7 +10380,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   position: relative;
 }
 
-.k-ui-namespace .k-positioner.k-is-active {
+.k-ui-namespace .k-positioner.k-is-selected {
   cursor: move;
 }
 
@@ -11133,12 +11132,12 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   }
 }
 
-.k-ui-namespace .k-top-container__navigation li.is-disabled, .k-ui-namespace .k-top-container__navigation li.disabled {
+.k-ui-namespace .k-top-container__navigation li.k-is-disabled {
   opacity: 0.65;
   cursor: not-allowed;
 }
 
-.k-ui-namespace .k-top-container__navigation li.is-disabled a, .k-ui-namespace .k-top-container__navigation li.disabled a {
+.k-ui-namespace .k-top-container__navigation li.k-is-disabled a {
   pointer-events: none;
 }
 

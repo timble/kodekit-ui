@@ -106,8 +106,7 @@
         }
       }
 
-      &.is-disabled,
-      &.disabled {
+      &#{$k-top-container-navigation-item-disabled-class} {
         opacity: 0.65;
         cursor: not-allowed;
 
@@ -127,7 +126,7 @@
         text-shadow: none;
         text-decoration: none;
 
-        &.has-open-submenu {
+        &#{$k-top-container-navigation-item-open-submenu-class} {
           z-index: 1;
           background: darker($k-top-container-background);
           text-decoration: none;
@@ -205,7 +204,7 @@
         }
       }
 
-      .has-open-submenu + ul {
+      #{$k-top-container-navigation-item-open-submenu-class} + ul {
         display: block;
       }
     }

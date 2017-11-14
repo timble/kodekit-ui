@@ -49,7 +49,7 @@
 
     /* Active link */
 
-    .k-is-active {
+    #{$k-list-link-active-class} {
       a {
         font-weight: $k-list-link-active-font-weight;
         background: $k-list-link-active-background;

@@ -113,7 +113,7 @@
 
   /* Active state */
 
-  .k-dropdown__menu .k-is-active a {
+  .k-dropdown__menu #{$k-dropdown-item-active-class} a {
     &,
     &:hover,
     &:focus {
@@ -130,7 +130,7 @@
    * Gray out text and ensure the hover/focus state remains gray
    */
 
-  .k-dropdown__menu .k-is-disabled a {
+  .k-dropdown__menu #{$k-dropdown-item-disabled-class} a {
     &,
     &:hover,
     &:focus {
@@ -154,7 +154,7 @@
 
   /* Open state for the dropdown */
 
-  .k-dropdown.k-is-open {
+  .k-dropdown#{$k-dropdown-open-class} {
 
     /* Show the menu */
 
