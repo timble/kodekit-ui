@@ -1,4 +1,4 @@
-@if ($k-utilities == true and $k-utilities-coverall != false) or $k-utilities-coverall == true {
+@if ($k-utilities == true and $k-utility-coverall != false) or $k-utility-coverall == true {
 
   /**
    * "Cover all" link

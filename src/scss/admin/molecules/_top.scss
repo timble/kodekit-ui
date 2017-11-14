@@ -156,11 +156,11 @@
           height: $k-top-container-size;
           border-bottom: none;
           line-height: $k-top-container-size;
-          padding: $k-top-container-navigation-item-spacing-breakpoint;
+          padding: $k-top-container-navigation-item-breakpoint-spacing;
         }
 
         @include breakpoint($k-delta) {
-          padding: $k-top-container-navigation-item-spacing-delta;
+          padding: $k-top-container-navigation-item-delta-spacing;
         }
       }
 

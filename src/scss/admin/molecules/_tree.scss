@@ -13,10 +13,10 @@
     }
 
     .jqtree-element {
-      padding: 0 $k-tree-element-spacing-end 0 $k-tree-element-spacing-start;
+      padding: 0 $k-tree-element-end-spacing 0 $k-tree-element-start-spacing;
 
       @include rtl {
-        padding: 0 $k-tree-element-spacing-start 0 $k-tree-element-spacing-end;
+        padding: 0 $k-tree-element-start-spacing 0 $k-tree-element-end-spacing;
       }
 
       &:hover,
@@ -34,7 +34,7 @@
           padding-left: 0;
 
           @include rtl {
-            padding-left: $k-tree-element-spacing-end;
+            padding-left: $k-tree-element-end-spacing;
             padding-right: 0;
           }
         }
@@ -60,11 +60,11 @@
       & > .jqtree-tree {
         & > .jqtree-folder {
           .jqtree-element {
-            padding-left: $k-tree-element-spacing-start;
+            padding-left: $k-tree-element-start-spacing;
 
             @include rtl {
-              padding-left: $k-tree-element-spacing-end;
-              padding-right: $k-tree-element-spacing-start;
+              padding-left: $k-tree-element-end-spacing;
+              padding-right: $k-tree-element-start-spacing;
             }
           }
         }

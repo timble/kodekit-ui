@@ -79,7 +79,7 @@
     @include rtl {
       th,
       td {
-        text-align: $k-table-cell-align-rtl;
+        text-align: $k-table-cell-rtl-align;
       }
     }
 
@@ -109,17 +109,17 @@
     th {
       @include border(bottom, $k-table-header-border);
       z-index: 1;
-      padding: 0 $k-table-cell-spacing-horizontal; /* 1 */
+      padding: 0 $k-table-cell-horizontal-spacing; /* 1 */
       white-space: nowrap; /* 2 */
       background: $k-table-header-background;
       font-weight: $k-table-header-font-weight;
 
       a {
         display: block; /* 3 */
-        padding: $k-table-cell-spacing-vertical $k-table-cell-spacing-horizontal; /* 4 */
-        margin-left: -($k-table-cell-spacing-horizontal);
-        margin-right: -($k-table-cell-spacing-horizontal);
-        line-height: $k-table-cell-size - ($k-table-cell-spacing-vertical * 2);
+        padding: $k-table-cell-vertical-spacing $k-table-cell-horizontal-spacing; /* 4 */
+        margin-left: -($k-table-cell-horizontal-spacing);
+        margin-right: -($k-table-cell-horizontal-spacing);
+        line-height: $k-table-cell-size - ($k-table-cell-vertical-spacing * 2);
         text-decoration: none;
 
         &:focus,
@@ -145,8 +145,8 @@
 
     td {
       @include border(bottom, $k-table-cell-border);
-      padding: $k-table-cell-spacing-vertical $k-table-cell-spacing-horizontal;
-      background: $k-table-cell-background-even;
+      padding: $k-table-cell-vertical-spacing $k-table-cell-horizontal-spacing;
+      background: $k-table-cell-even-background;
     }
 
     tr:last-child {
@@ -157,7 +157,7 @@
 
     tr:nth-child(odd) {
       td {
-        background: $k-table-cell-background-odd;
+        background: $k-table-cell-odd-background;
       }
     }
 
@@ -168,7 +168,7 @@
       &:focus,
       &:hover {
         td {
-          background: $k-table-cell-hover-background-even;
+          background: $k-table-cell-even-hover-background;
         }
       }
     }
@@ -284,8 +284,8 @@
     .footable.breakpoint {
       .k-table-data--toggle {
         width: 1%;
-        padding-left: $k-table-cell-spacing-horizontal;
-        padding-right: $k-table-cell-spacing-horizontal;
+        padding-left: $k-table-cell-horizontal-spacing;
+        padding-right: $k-table-cell-horizontal-spacing;
       }
     }
 
@@ -303,7 +303,7 @@
 
     th.k-table-data--icon {
       a {
-        line-height: $k-table-cell-size - ($k-table-cell-spacing-vertical * 2);
+        line-height: $k-table-cell-size - ($k-table-cell-vertical-spacing * 2);
       }
     }
 
@@ -339,19 +339,19 @@
       }
 
       &-pending {
-        color: $k-table-item-state-pending;
+        color: $k-table-item-pending-color;
       }
 
       &-expired {
-        color: $k-table-item-state-expired;
+        color: $k-table-item-expired-color;
       }
 
       &-unpublished {
-        color: $k-table-item-state-unpublished;
+        color: $k-table-item-unpublished-color;
       }
 
       &-published {
-        color: $k-table-item-state-published;
+        color: $k-table-item-published-color;
       }
     }
   }
@@ -365,7 +365,7 @@
         height: auto;
         font-size: $k-table-sub-header-font-size;
         line-height: $k-table-sub-header-line-height;
-        font-weight: $k-table-sub-header-weight;
+        font-weight: $k-table-sub-header-font-weight;
         vertical-align: middle;
         text-transform: uppercase;
         white-space: nowrap;
@@ -404,19 +404,19 @@
 
     @for $k-i from 1 through 15 {
       .k-table__item-level#{$k-i} {
-        padding-left: $k-table-item-level-spacer * ($k-i - 1) + $k-table-cell-spacing-horizontal;
+        padding-left: $k-table-item-level-spacer * ($k-i - 1) + $k-table-cell-horizontal-spacing;
 
         @include rtl {
           padding-left: 0;
-          padding-right: $k-table-item-level-spacer * ($k-i - 1) + $k-table-cell-spacing-horizontal;
+          padding-right: $k-table-item-level-spacer * ($k-i - 1) + $k-table-cell-horizontal-spacing;
         }
 
         &:before {
-          left: ($k-table-item-level-spacer * ($k-i - 1)) - (18px - $k-table-cell-spacing-horizontal);
+          left: ($k-table-item-level-spacer * ($k-i - 1)) - (18px - $k-table-cell-horizontal-spacing);
 
           @include rtl {
             left: auto;
-            right: ($k-table-item-level-spacer * ($k-i - 1)) - (18px - $k-table-cell-spacing-horizontal);
+            right: ($k-table-item-level-spacer * ($k-i - 1)) - (18px - $k-table-cell-horizontal-spacing);
           }
         }
       }
@@ -562,7 +562,7 @@
       display: block;
       content: " ";
       position: absolute;
-      opacity: $k-table-sorting-opacity-off;
+      opacity: $k-table-sorting-low-opacity;
     }
 
     &:before {
@@ -578,13 +578,13 @@
 
   .k-sort-ascending {
     &:before {
-      opacity: $k-table-sorting-opacity-on;
+      opacity: $k-table-sorting-high-opacity;
     }
   }
 
   .k-sort-descending {
     &:after {
-      opacity: $k-table-sorting-opacity-on;
+      opacity: $k-table-sorting-high-opacity;
     }
   }
 
@@ -607,13 +607,13 @@
     a:hover {
       .k-sort-ascending {
         &:after {
-          opacity: $k-table-sorting-opacity-hover;
+          opacity: $k-table-sorting-medium-opacity;
         }
       }
 
       .k-sort-descending {
         &:before {
-          opacity: $k-table-sorting-opacity-hover;
+          opacity: $k-table-sorting-medium-opacity;
         }
       }
     }

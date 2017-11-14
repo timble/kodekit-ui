@@ -1,4 +1,4 @@
-@if ($k-utilities == true and $k-utilities-loader != false) or $k-utilities-loader == true {
+@if ($k-utilities == true and $k-utility-loader != false) or $k-utility-loader == true {
 
   /**
    * Loader container
@@ -33,7 +33,7 @@
     @include modernizr('.k-cssanimations.k-boxshadow') {
       display: inline-block;
       color: $k-loader-color;
-      font-size: $k-loader-size-small;
+      font-size: $k-loader-small-size;
       margin: 0 auto 2em;
       position: relative;
       text-indent: -9999em;
@@ -73,15 +73,15 @@
       /* Sizes */
 
       &.k-loader--small {
-        font-size: $k-loader-size-small;
+        font-size: $k-loader-small-size;
       }
 
       &.k-loader--medium {
-        font-size: $k-loader-size-medium;
+        font-size: $k-loader-medium-size;
       }
 
       &.k-loader--large {
-        font-size: $k-loader-size-large;
+        font-size: $k-loader-large-size;
       }
     }
 

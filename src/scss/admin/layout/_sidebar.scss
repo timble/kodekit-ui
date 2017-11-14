@@ -34,7 +34,7 @@
   .k-sidebar-left {
 
     @include breakpoint($k-sidebar-left-querie-width) {
-      @include allwidth($k-sidebar-left-width-small);
+      @include allwidth($k-sidebar-left-small-width);
     }
 
     /* Larger sidebar when space is available */
@@ -54,7 +54,7 @@
         position: relative;
         display: flex;
         height: auto;
-        @include allwidth($k-sidebar-left-width-small);
+        @include allwidth($k-sidebar-left-small-width);
         z-index: 1;
       }
 
@@ -69,7 +69,7 @@
   .k-sidebar-right {
 
     @include breakpoint($k-sidebar-right-querie-width) {
-      @include allwidth($k-sidebar-right-width-small);
+      @include allwidth($k-sidebar-right-small-width);
     }
 
     /* Larger sidebar when space is available */
@@ -89,7 +89,7 @@
         position: relative;
         display: flex;
         height: auto;
-        @include allwidth($k-sidebar-right-width-small);
+        @include allwidth($k-sidebar-right-small-width);
         z-index: 1;
       }
 

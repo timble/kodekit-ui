@@ -11,9 +11,9 @@
     height: 0;
     margin-left: 2px;
     vertical-align: middle;
-    border-top: $k-caret-width-base dashed;
-    border-right: $k-caret-width-base solid transparent;
-    border-left: $k-caret-width-base solid transparent;
+    border-top: $k-caret-base-width dashed;
+    border-right: $k-caret-base-width solid transparent;
+    border-left: $k-caret-base-width solid transparent;
 
     @include rtl {
       margin-left: 0;
@@ -46,7 +46,7 @@
     position: absolute;
     top: 100%;
     left: 0;
-    z-index: $k-zindex-dropdown;
+    z-index: $k-dropdown-zindex;
     display: none; /* 1 */
     float: left;
     min-width: 160px;
@@ -177,7 +177,7 @@
     right: 0;
     bottom: 0;
     top: 0;
-    z-index: ($k-zindex-dropdown - 10);
+    z-index: ($k-dropdown-zindex - 10);
   }
 
   /**
@@ -192,7 +192,7 @@
 
     .k-caret {
       border-top: 0;
-      border-bottom: $k-caret-width-base dashed;
+      border-bottom: $k-caret-base-width dashed;
       content: "";
     }
 

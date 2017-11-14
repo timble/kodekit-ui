@@ -51,15 +51,15 @@
   /* Button sizes */
 
   .k-button--tiny {
-    @include button-size($k-button-tiny-border-radius, $k-button-tiny-font-size, $k-button-tiny-line-height, $k-button-tiny-spacing-vertical $k-button-tiny-spacing-horizontal);
+    @include button-size($k-button-tiny-border-radius, $k-button-tiny-font-size, $k-button-tiny-line-height, $k-button-tiny-vertical-spacing $k-button-tiny-horizontal-spacing);
   }
 
   .k-button--small {
-    @include button-size($k-button-small-border-radius, $k-button-small-font-size, $k-button-small-line-height, $k-button-small-spacing-vertical $k-button-small-spacing-horizontal);
+    @include button-size($k-button-small-border-radius, $k-button-small-font-size, $k-button-small-line-height, $k-button-small-vertical-spacing $k-button-small-horizontal-spacing);
   }
 
   .k-button--large {
-    @include button-size($k-button-large-border-radius, $k-button-large-font-size, $k-button-large-line-height, $k-button-large-spacing-vertical $k-button-large-spacing-horizontal);
+    @include button-size($k-button-large-border-radius, $k-button-large-font-size, $k-button-large-line-height, $k-button-large-vertical-spacing $k-button-large-horizontal-spacing);
   }
 
   /* Vertically space out multiple block buttons */

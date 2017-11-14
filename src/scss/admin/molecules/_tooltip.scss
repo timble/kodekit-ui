@@ -10,7 +10,7 @@
 
   .k-tooltip {
     position: absolute;
-    z-index: $k-zindex-tooltip;
+    z-index: $k-tooltip-zindex;
     display: block;
     font-size: $k-tooltip-font-size; /* 1 */
     opacity: 0;
@@ -50,7 +50,7 @@
     color: $k-tooltip-color;
     text-align: $k-tooltip-align;
     background-color: $k-tooltip-background;
-    border-radius: $k-tooltip-radius;
+    border-radius: $k-tooltip-border-radius;
   }
 
   /* Arrows */

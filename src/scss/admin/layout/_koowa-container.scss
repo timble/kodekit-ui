@@ -12,7 +12,7 @@
    */
 
   &.k-ui-container {
-    max-width: $k-minwidth; /* 1 */
+    max-width: $k-min-width; /* 1 */
     margin: 0; /* 6 */
     border: none; /* 6 */
     width: 100%;
@@ -20,7 +20,7 @@
     padding: $k-koowa-padding;
 
     background: $k-koowa-background; /* 3 */
-    color: $k-color-type; /* 3 */
+    color: $k-type-color; /* 3 */
 
     display: flex;
     flex: 1 1 auto;
@@ -30,7 +30,7 @@
     -moz-osx-font-smoothing: $k-firefox-font-smoothing;
     -webkit-overflow-scrolling: touch;
 
-    @include breakpoint($k-minwidth) {
+    @include breakpoint($k-min-width) {
       max-width: none; /* 2 */
     }
 

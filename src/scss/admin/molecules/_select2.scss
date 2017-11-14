@@ -11,7 +11,7 @@
 $k-form-control-default-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
 
 // @see https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/mixins/_forms.scss#L43
-$k-form-control-focus-box-shadow: $k-form-control-default-box-shadow, 0 0 8px rgba($k-input-border-focus, 0.6);
+$k-form-control-focus-box-shadow: $k-form-control-default-box-shadow, 0 0 8px rgba($k-input-focus-border, 0.6);
 
 // @see https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_forms.scss#L128
 $k-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
@@ -19,7 +19,7 @@ $k-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in-ou
 // Custom variables
 // -------------------------
 
-$k-dropdown-arrow-color: $k-input-color-placeholder !default;
+$k-dropdown-arrow-color: $k-input-placeholder-color !default;
 $k-dropdown-box-shadow: 0 6px 12px rgba(0, 0, 0, .175) !default;
 $k-clear-selection-color: $k-dropdown-arrow-color !default;
 
@@ -72,7 +72,7 @@ $k-clear-selection-color: $k-dropdown-arrow-color !default;
 
     .select2-selection__arrow b {
       border-color: transparent transparent $k-dropdown-arrow-color transparent;
-      border-width: 0 $k-caret-width-large $k-caret-width-large $k-caret-width-large;
+      border-width: 0 $k-caret-large-width $k-caret-large-width $k-caret-large-width;
     }
   }
 }
@@ -113,7 +113,7 @@ $k-clear-selection-color: $k-dropdown-arrow-color !default;
 
     .select2-selection--single {
       .select2-selection__arrow {
-        height: $k-input-height-base;
+        height: $k-input-base-height;
       }
     }
 
@@ -132,7 +132,7 @@ $k-clear-selection-color: $k-dropdown-arrow-color !default;
     /* Set proper styling for the search input field */
 
     .select2-search__field {
-      height: $k-input-height-base;
+      height: $k-input-base-height;
       margin: 0;
     }
 
@@ -144,7 +144,7 @@ $k-clear-selection-color: $k-dropdown-arrow-color !default;
       }
 
       .select2-search__field {
-        height: $k-input-height-base - 2px;
+        height: $k-input-base-height - 2px;
         margin: 0;
         box-shadow: none;
         background: transparent;
@@ -200,12 +200,12 @@ $k-clear-selection-color: $k-dropdown-arrow-color !default;
       outline: 0;
 
       &::-webkit-input-placeholder {
-        color: $k-input-color-placeholder;
+        color: $k-input-placeholder-color;
       }
 
       /* Firefox 18- */
       &:-moz-placeholder {
-        color: $k-input-color-placeholder;
+        color: $k-input-placeholder-color;
       }
 
       /**
@@ -214,12 +214,12 @@ $k-clear-selection-color: $k-dropdown-arrow-color !default;
        * @see http://stackoverflow.com/questions/24236240/color-for-styled-placeholder-text-is-muted-in-firefox
        */
       &::-moz-placeholder {
-        color: $k-input-color-placeholder;
+        color: $k-input-placeholder-color;
         opacity: 1;
       }
 
       &:-ms-input-placeholder {
-        color: $k-input-color-placeholder;
+        color: $k-input-placeholder-color;
       }
     }
 
@@ -313,7 +313,7 @@ $k-clear-selection-color: $k-dropdown-arrow-color !default;
       .select2-selection {
         @include box-shadow($k-form-control-focus-box-shadow);
         @include transition($k-form-control-transition);
-        border-color: $k-input-border-focus;
+        border-color: $k-input-focus-border;
       }
     }
 
@@ -324,7 +324,7 @@ $k-clear-selection-color: $k-dropdown-arrow-color !default;
 
       .select2-selection .select2-selection__arrow b {
         border-color: transparent transparent $k-dropdown-arrow-color transparent;
-        border-width: 0 $k-caret-width-base $k-caret-width-base $k-caret-width-base;
+        border-width: 0 $k-caret-base-width $k-caret-base-width $k-caret-base-width;
       }
 
       /**
@@ -402,7 +402,7 @@ $k-clear-selection-color: $k-dropdown-arrow-color !default;
 
     .select2-dropdown {
       @include box-shadow($k-dropdown-box-shadow);
-      border-color: $k-input-border-focus;
+      border-color: $k-input-focus-border;
       overflow-x: hidden;
       margin-top: -1px;
       &--above {
@@ -424,9 +424,9 @@ $k-clear-selection-color: $k-dropdown-arrow-color !default;
     \*------------------------------------*/
 
     .select2-selection--single {
-      height: $k-input-height-base;
+      height: $k-input-base-height;
       line-height: $k-line-height-base;
-      padding: $k-padding-base-vertical $k-padding-base-horizontal + $k-caret-width-base*3 $k-padding-base-vertical $k-padding-base-horizontal;
+      padding: $k-padding-base-vertical $k-padding-base-horizontal + $k-caret-base-width*3 $k-padding-base-vertical $k-padding-base-horizontal;
 
       /**
        * Adjust the single Select2's dropdown arrow button appearance.
@@ -437,16 +437,16 @@ $k-clear-selection-color: $k-dropdown-arrow-color !default;
         bottom: 0;
         right: $k-padding-base-horizontal;
         top: 0;
-        width: $k-caret-width-base;
+        width: $k-caret-base-width;
 
         b {
           border-color: $k-dropdown-arrow-color transparent transparent transparent;
           border-style: solid;
-          border-width: $k-caret-width-base $k-caret-width-base 0 $k-caret-width-base;
+          border-width: $k-caret-base-width $k-caret-base-width 0 $k-caret-base-width;
           height: 0;
           left: 0;
-          margin-left: -$k-caret-width-base;
-          margin-top: -$k-caret-width-base/2;
+          margin-left: -$k-caret-base-width;
+          margin-top: -$k-caret-base-width/2;
           position: absolute;
           top: 50%;
           width: 0;
@@ -459,7 +459,7 @@ $k-clear-selection-color: $k-dropdown-arrow-color !default;
       }
 
       .select2-selection__placeholder {
-        color: $k-input-color-placeholder;
+        color: $k-input-placeholder-color;
       }
     }
 
@@ -468,7 +468,7 @@ $k-clear-selection-color: $k-dropdown-arrow-color !default;
     \*------------------------------------*/
 
     .select2-selection--multiple {
-      min-height: $k-input-height-base;
+      min-height: $k-input-base-height;
 
       .select2-selection__rendered {
         box-sizing: border-box;
@@ -484,7 +484,7 @@ $k-clear-selection-color: $k-dropdown-arrow-color !default;
       }
 
       .select2-selection__placeholder {
-        color: $k-input-color-placeholder;
+        color: $k-input-placeholder-color;
         float: left;
         margin-top: 5px;
       }
@@ -512,7 +512,7 @@ $k-clear-selection-color: $k-dropdown-arrow-color !default;
         .select2-search__field {
           background: transparent;
           padding: 0 $k-padding-base-horizontal;
-          height: $k-input-height-base - 2;
+          height: $k-input-base-height - 2;
           line-height: $k-line-height-base;
           margin-top: 0;
           min-width: 5em;
@@ -565,9 +565,9 @@ $k-clear-selection-color: $k-dropdown-arrow-color !default;
       .select2-selection--single {
         border-radius: $k-small-border-radius;
         font-size: $k-small-font-size;
-        height: $k-input-height-small;
+        height: $k-input-small-height;
         line-height: $k-small-line-height;
-        padding: $k-padding-small-vertical $k-padding-small-horizontal + $k-caret-width-base*3 $k-padding-small-vertical $k-padding-small-horizontal;
+        padding: $k-padding-small-vertical $k-padding-small-horizontal + $k-caret-base-width*3 $k-padding-small-vertical $k-padding-small-horizontal;
 
         /* 2 */
         .select2-selection__arrow b {
@@ -576,7 +576,7 @@ $k-clear-selection-color: $k-dropdown-arrow-color !default;
       }
 
       .select2-selection--multiple {
-        min-height: $k-input-height-small;
+        min-height: $k-input-small-height;
 
         .select2-selection__choice {
           font-size: $k-small-font-size;
@@ -588,7 +588,7 @@ $k-clear-selection-color: $k-dropdown-arrow-color !default;
         .select2-search--inline .select2-search__field {
           padding: 0 $k-padding-small-horizontal;
           font-size: $k-small-font-size;
-          height: $k-input-height-small - 2;
+          height: $k-input-small-height - 2;
           line-height: $k-small-line-height;
         }
 
@@ -604,25 +604,25 @@ $k-clear-selection-color: $k-dropdown-arrow-color !default;
       .select2-selection--single {
         border-radius: $k-large-border-radius;
         font-size: $k-large-font-size;
-        height: $k-input-height-large;
+        height: $k-input-large-height;
         line-height: $k-large-line-height;
-        padding: $k-padding-large-vertical $k-padding-large-horizontal + $k-caret-width-large*3 $k-padding-large-vertical $k-padding-large-horizontal;
+        padding: $k-padding-large-vertical $k-padding-large-horizontal + $k-caret-large-width*3 $k-padding-large-vertical $k-padding-large-horizontal;
 
         /* 1 */
         .select2-selection__arrow {
-          width: $k-caret-width-large;
+          width: $k-caret-large-width;
 
           b {
-            border-width: $k-caret-width-large $k-caret-width-large 0 $k-caret-width-large;
-            margin-left: -$k-caret-width-large;
+            border-width: $k-caret-large-width $k-caret-large-width 0 $k-caret-large-width;
+            margin-left: -$k-caret-large-width;
             margin-left: -$k-padding-large-vertical;
-            margin-top: -$k-caret-width-large/2;
+            margin-top: -$k-caret-large-width/2;
           }
         }
       }
 
       .select2-selection--multiple {
-        min-height: $k-input-height-large;
+        min-height: $k-input-large-height;
 
         .select2-selection__choice {
           font-size: $k-large-font-size;
@@ -635,7 +635,7 @@ $k-clear-selection-color: $k-dropdown-arrow-color !default;
         .select2-search--inline .select2-search__field {
           padding: 0 $k-padding-large-horizontal;
           font-size: $k-large-font-size;
-          height: $k-input-height-large - 2;
+          height: $k-input-large-height - 2;
           line-height: $k-large-line-height;
         }
 
@@ -669,7 +669,7 @@ $k-clear-selection-color: $k-dropdown-arrow-color !default;
        */
 
       .select2-selection--single {
-        padding-left: $k-padding-base-horizontal + $k-caret-width-base*3;
+        padding-left: $k-padding-base-horizontal + $k-caret-base-width*3;
         padding-right: $k-padding-base-horizontal;
         .select2-selection__rendered {
           padding-right: 0;

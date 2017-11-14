@@ -66,7 +66,7 @@
       @include pseudo(after) {
         left: 0;
         top: 0;
-        width: $k-navigation-border-width;
+        width: $k-navigation-pseudo-width;
         height: 100%;
 
         @include rtl {

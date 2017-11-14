@@ -1,10 +1,10 @@
-@if ($k-utilities == true and $k-utilities-colors != false) or $k-utilities-colors == true {
+@if ($k-utilities == true and $k-utility-colors != false) or $k-utility-colors == true {
 
   /**
    * Colors
    */
 
   .k-color-error {
-    color: $k-color-error;
+    color: $k-error-color;
   }
 }

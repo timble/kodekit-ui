@@ -18,7 +18,7 @@
       margin: 0;
       border: $k-optionlist-border;
       padding: $k-optionlist-spacing;
-      border-radius: $k-optionlist-radius;
+      border-radius: $k-optionlist-border-radius;
       background: $k-optionlist-background;
       display: flex;
       flex-wrap: wrap;
@@ -56,8 +56,8 @@
         line-height: $k-optionlist-label-line-height;
         text-align: center;
         color: $k-optionlist-label-color;
-        font-weight: $k-optionlist-label-weight;
-        border-radius: $k-optionlist-label-radius; /* 2 */
+        font-weight: $k-optionlist-label-font-weight;
+        border-radius: $k-optionlist-label-border-radius; /* 2 */
         cursor: pointer;
         user-select: none; /* 3 */
         word-wrap: break-word;
@@ -82,7 +82,7 @@
           display: block;
           content: " ";
           opacity: 0; /* 3 */
-          border-radius: $k-optionlist-label-radius; /* 4 */
+          border-radius: $k-optionlist-label-border-radius; /* 4 */
           transform: scale(0,0); /* 5 */
           background: $k-optionlist-label-background;
           @include transition;
@@ -136,7 +136,7 @@
         display: block;
         opacity: 0; /* 2 */
         visibility: hidden; /* 2 */
-        border-radius: $k-optionlist-radius; /* 4 */
+        border-radius: $k-optionlist-border-radius; /* 4 */
         border: $k-optionlist-label-focus-border;
         box-shadow: $k-optionlist-label-focus-box-shadow;
       }

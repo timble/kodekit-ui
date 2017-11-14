@@ -18,12 +18,12 @@
 
   .k-card--rounded {
     .k-card__body {
-      border-radius: $k-card-radius;
+      border-radius: $k-card-border-radius;
     }
 
     .k-card__caption {
-      border-bottom-left-radius: $k-card-radius - 1px;
-      border-bottom-right-radius: $k-card-radius - 1px;
+      border-bottom-left-radius: $k-card-border-radius - 1px;
+      border-bottom-right-radius: $k-card-border-radius - 1px;
     }
 
     .k-card__image,
@@ -36,29 +36,29 @@
 
       &:only-child {
         &, img {
-          border-radius: $k-card-radius - 1px;
+          border-radius: $k-card-border-radius - 1px;
         }
       }
       &:first-child {
         &, img {
-          border-top-left-radius: $k-card-radius - 1px;
-          border-top-right-radius: $k-card-radius - 1px;
+          border-top-left-radius: $k-card-border-radius - 1px;
+          border-top-right-radius: $k-card-border-radius - 1px;
         }
       }
       &:last-child {
         &, img {
-          border-bottom-left-radius: $k-card-radius - 1px;
-          border-bottom-right-radius: $k-card-radius - 1px;
+          border-bottom-left-radius: $k-card-border-radius - 1px;
+          border-bottom-right-radius: $k-card-border-radius - 1px;
         }
       }
     }
 
     .k-card__image--background {
-      border-radius: $k-card-radius - 1px;
+      border-radius: $k-card-border-radius - 1px;
     }
 
     .k-card__image--spaced-background {
-      border-radius: $k-card-radius - 2px;
+      border-radius: $k-card-border-radius - 2px;
     }
   }
 

@@ -20,7 +20,7 @@
     height: $k-toggle-button-size;
     padding: 0;
     border: none;
-    border-radius: $k-toggle-button-radius;
+    border-radius: $k-toggle-button-border-radius;
     margin: 10px;
     background: $k-toggle-button-background;
     color: $k-toggle-button-color;
@@ -78,7 +78,7 @@
       display: block;
       background: $k-toggle-button-color;
       vertical-align: middle;
-      border-radius: $k-toggle-button-radius;
+      border-radius: $k-toggle-button-border-radius;
       @include transition(0.3s);
     }
   }

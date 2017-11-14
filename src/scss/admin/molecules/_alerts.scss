@@ -15,8 +15,8 @@
   /* Overflowing alert with 33% max-height */
 
   .k-alert--overflow {
-    min-height: $k-alert-overflow-minheight;
-    max-height: $k-alert-overflow-maxheight;
+    min-height: $k-alert-overflow-min-height;
+    max-height: $k-alert-overflow-max-height;
     overflow: auto;
     flex: 0 1 auto;
   }

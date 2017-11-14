@@ -57,7 +57,7 @@
   input[type="tel"],
   input[type="color"],
   .uneditable-input {
-    height: $k-input-height-base; /* 5 */
+    height: $k-input-base-height; /* 5 */
 
     @include modernizr('.k-touchevents') {
       &:focus,

@@ -31,7 +31,7 @@
     .k-pagination__pages {
       padding: 0;
       margin: 0;
-      border-radius: $k-pagination-radius;
+      border-radius: $k-pagination-border-radius;
 
       /* Override for rtl ul-ol-li styling */
 
@@ -71,7 +71,7 @@
           & > a,
           & > span {
             margin-left: 0;
-            @include border-left-radius($k-pagination-radius);
+            @include border-left-radius($k-pagination-border-radius);
           }
 
           @include rtl {
@@ -79,7 +79,7 @@
             & > span {
               margin-right: 0;
               @include border-left-radius(0);
-              @include border-right-radius($k-pagination-radius);
+              @include border-right-radius($k-pagination-border-radius);
             }
           }
         }
@@ -87,11 +87,11 @@
         &:last-child {
           & > a,
           & > span {
-            @include border-right-radius($k-pagination-radius);
+            @include border-right-radius($k-pagination-border-radius);
 
             @include rtl {
               @include border-right-radius(0);
-              @include border-left-radius($k-pagination-radius);
+              @include border-left-radius($k-pagination-border-radius);
             }
           }
         }

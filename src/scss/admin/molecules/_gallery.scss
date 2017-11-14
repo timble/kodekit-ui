@@ -40,24 +40,24 @@
 
     &.k-is-selected {
       .k-card__header {
-        background: $k-color-accent;
-        border-color: darkest($k-color-accent);
-        color: $k-color-accent-type;
+        background: $k-accent-color;
+        border-color: darkest($k-accent-color);
+        color: $k-accent-type-color;
 
         a {
-          color: $k-color-accent-type;
+          color: $k-accent-type-color;
         }
       }
 
       .k-card__body {
-        color: $k-color-accent-type;
-        border-color: darker($k-color-accent);
+        color: $k-accent-type-color;
+        border-color: darker($k-accent-color);
       }
 
       &:hover,
       &:focus {
         .k-card__header {
-          background: darkest($k-color-accent);
+          background: darkest($k-accent-color);
         }
       }
     }

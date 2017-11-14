@@ -8,7 +8,7 @@
 }
 
 // Calculate the grid items
-@mixin setGridBreakpoint($width: $k-grid-itemWidth, $spacing: $k-grid-spacing, $gridwidth: $k-grid-width) {
+@mixin setGridBreakpoint($width: $k-grid-item-width, $spacing: $k-grid-spacing, $gridwidth: $k-grid-width) {
 
   // Calculating max number
   $k-number: floor($gridwidth / $width);
@@ -25,14 +25,14 @@
     // Setting separate breakpoint for $k-desktop width
     @if ( $k-breakpoint-width > $k-desktop and $k-prev-breakpoint-width < $k-desktop ) {
       $k-breakpoint: $k-desktop;
-      $k-columns: floor(($k-desktop - $k-sidebar-left-width-small - $spacing) / ($width + $spacing));
+      $k-columns: floor(($k-desktop - $k-sidebar-left-small-width - $spacing) / ($width + $spacing));
       @include setGridItemWidth($k-breakpoint,$k-columns);
     }
 
     // All breakpoints above $k-desktop
     @if ( $k-breakpoint-width > $k-desktop and $k-breakpoint-width < $k-delta ) {
-      $k-columns: floor(($k-breakpoint-width - $k-sidebar-left-width-small - $spacing) / ($width + $spacing));
-      $k-breakpoint: $k-sidebar-left-width-small + (($k-columns * $width) + (($k-columns + 1) * $spacing));
+      $k-columns: floor(($k-breakpoint-width - $k-sidebar-left-small-width - $spacing) / ($width + $spacing));
+      $k-breakpoint: $k-sidebar-left-small-width + (($k-columns * $width) + (($k-columns + 1) * $spacing));
       @if ( $k-breakpoint < $k-desktop ) {
         $k-breakpoint: $k-breakpoint + ($width + $spacing);
       }

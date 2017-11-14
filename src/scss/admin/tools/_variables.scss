@@ -9,24 +9,24 @@ $k-generated:                   true !default;
 $k-generated-icons:             inherit !default;
 
 $k-utilities:                   true !default;
-$k-utilities-colors:            inherit !default;
-$k-utilities-animations:        inherit !default;
-$k-utilities-content-block:     inherit !default;
-$k-utilities-coverall:          inherit !default;
-$k-utilities-dynamic-holder:    inherit !default;
-$k-utilities-ellipsis:          inherit !default;
-$k-utilities-flexing:           inherit !default;
-$k-utilities-hidden:            inherit !default;
-$k-utilities-loader:            inherit !default;
-$k-utilities-no-margin:         inherit !default;
-$k-utilities-no-transition:     inherit !default;
-$k-utilities-no-wrap:           inherit !default;
-$k-utilities-position-relative: inherit !default;
-$k-utilities-ratio-content:     inherit !default;
-$k-utilities-this-or-that:      inherit !default;
-$k-utilities-touchevents:       inherit !default;
-$k-utilities-visually-hidden:   inherit !default;
-$k-utilities-visually-shown:    inherit !default;
+$k-utility-colors:              inherit !default;
+$k-utility-animations:          inherit !default;
+$k-utility-content-block:       inherit !default;
+$k-utility-coverall:            inherit !default;
+$k-utility-dynamic-holder:      inherit !default;
+$k-utility-ellipsis:            inherit !default;
+$k-utility-flexing:             inherit !default;
+$k-utility-hidden:              inherit !default;
+$k-utility-loader:              inherit !default;
+$k-utility-no-margin:           inherit !default;
+$k-utility-no-transition:       inherit !default;
+$k-utility-no-wrap:             inherit !default;
+$k-utility-position-relative:   inherit !default;
+$k-utility-ratio-content:       inherit !default;
+$k-utility-this-or-that:        inherit !default;
+$k-utility-touchevents:         inherit !default;
+$k-utility-visually-hidden:     inherit !default;
+$k-utility-visually-shown:      inherit !default;
 
 $k-layout:                      true !default;
 $k-layout-component:            inherit !default;
@@ -106,14 +106,14 @@ $k-vendor-normalize:            inherit !default;
 // 2. Separate $k-desktop variable is being used so all styles
 //    change together when going from small to larger screen.
 
-$k-alpha:     400px !default;
-$k-beta:      600px !default;
-$k-charlie:   768px !default;
-$k-delta:     1024px !default;
-$k-echo:      1200px !default;
+$k-alpha:       400px !default;
+$k-beta:        600px !default;
+$k-charlie:     768px !default;
+$k-delta:       1024px !default;
+$k-echo:        1200px !default;
 
-$k-minwidth:  $k-alpha !default; // 1
-$k-desktop:   $k-charlie !default; // 2
+$k-min-width:   $k-alpha !default; // 1
+$k-desktop:     $k-charlie !default; // 2
 
 
 // Typography
@@ -223,8 +223,8 @@ $k-darkest-percentage:    12% !default;
 
 $k-disabled-cursor:           not-allowed !default;
 
-$k-zindex-dropdown:           1000 !default;
-$k-zindex-tooltip:            1070 !default;
+$k-dropdown-zindex:           1000 !default;
+$k-tooltip-zindex:            1070 !default;
 
 $k-transition-duration:       180ms !default;
 $k-transition-easing:         cubic-bezier(0.2, 0.57, 0.44, 0.83) !default;
@@ -239,77 +239,77 @@ $k-optionlist-focus-class:    '.k-optionlist__focus' !default;
 $k-optionlist-boolean-class:  '.k-optionlist--boolean' !default;
 $k-optionlist-block-class:    '.k-optionlist--block' !default;
 
-$k-opacity-off:               0.33 !default;
-$k-opacity-hover:             0.66 !default;
-$k-opacity-on:                1 !default;
+$k-low-opacity:               0.33 !default;
+$k-medium-opacity:            0.66 !default;
+$k-high-opacity:              1 !default;
 
 
 // Colors
 // ==========================================================================
 
-$k-color-primary:         #e1e1e1 !default;
+$k-primary-color:         #e1e1e1 !default;
 
-$k-color-primary-plus-1:  lighten($k-color-primary, 2%) !default;
-$k-color-primary-plus-2:  lighten($k-color-primary, 5%) !default;
-$k-color-primary-plus-3:  lighten($k-color-primary, 6%) !default;
-$k-color-primary-plus-4:  lighten($k-color-primary, 7%) !default;
-$k-color-primary-plus-5:  lighten($k-color-primary, 10%) !default;
-$k-color-primary-plus-6:  lighten($k-color-primary, 12%) !default;
+$k-primary-plus-1-color:  lighten($k-primary-color, 2%) !default;
+$k-primary-plus-2-color:  lighten($k-primary-color, 5%) !default;
+$k-primary-plus-3-color:  lighten($k-primary-color, 6%) !default;
+$k-primary-plus-4-color:  lighten($k-primary-color, 7%) !default;
+$k-primary-plus-5-color:  lighten($k-primary-color, 10%) !default;
+$k-primary-plus-6-color:  lighten($k-primary-color, 12%) !default;
 
-$k-color-primary-min-1:   darken($k-color-primary, 2%) !default;
-$k-color-primary-min-2:   darken($k-color-primary, 8%) !default;
-$k-color-primary-min-3:   darken($k-color-primary, 28%) !default;
-$k-color-primary-min-4:   darken($k-color-primary, 41%) !default;
-$k-color-primary-min-5:   darken($k-color-primary, 55%) !default;
-$k-color-primary-min-6:   darken($k-color-primary, 68%) !default;
-$k-color-primary-min-7:   darken($k-color-primary, 75%) !default;
+$k-primary-min-1-color:   darken($k-primary-color, 2%) !default;
+$k-primary-min-2-color:   darken($k-primary-color, 8%) !default;
+$k-primary-min-3-color:   darken($k-primary-color, 28%) !default;
+$k-primary-min-4-color:   darken($k-primary-color, 41%) !default;
+$k-primary-min-5-color:   darken($k-primary-color, 55%) !default;
+$k-primary-min-6-color:   darken($k-primary-color, 68%) !default;
+$k-primary-min-7-color:   darken($k-primary-color, 75%) !default;
 
 
 // Type
 
-$k-color-type:            #222222 !default;
-$k-color-type-lighter:    #444444 !default;
-$k-color-type-light:      lighten($k-color-type, 50%) !default;
+$k-type-color:            #222222 !default;
+$k-type-lighter-color:    #444444 !default;
+$k-type-light-color:      lighten($k-type-color, 50%) !default;
 
 
 // Base color
 
-$k-color-base:            #2c3e50 !default;
-$k-color-base-type:       white !default;
+$k-base-color:            #2c3e50 !default;
+$k-base-type-color:       white !default;
 
 
 // Accent color
 
-$k-color-accent:          #3071a9 !default;
-$k-color-accent-type:     white !default;
+$k-accent-color:          #3071a9 !default;
+$k-accent-type-color:     white !default;
 
 
 // States
 
-$k-color-success:         #27ae60 !default;
-$k-color-success-type:    white !default;
+$k-success-color:         #27ae60 !default;
+$k-success-type-color:    white !default;
 
-$k-color-error:           #c0392b !default;
-$k-color-error-type:      white !default;
+$k-error-color:           #c0392b !default;
+$k-error-type-color:      white !default;
 
-$k-color-neutral:         #3498db !default;
-$k-color-neutral-type:    white !default;
+$k-neutral-color:         #3498db !default;
+$k-neutral-type-color:    white !default;
 
-$k-color-warning:         #e67e22 !default;
-$k-color-warning-type:    white !default;
+$k-warning-color:         #e67e22 !default;
+$k-warning-type-color:    white !default;
 
 
 // Elements
 
-$k-color-button:          white !default;
-$k-color-forms:           white !default;
-$k-color-forms-disabled:  #ddd !default;
+$k-button-color:          white !default;
+$k-form-color:            white !default;
+$k-form-disabled-color:   #ddd !default;
 
 
 // Links
 // ==========================================================================
 
-$k-link-color: $k-color-type !default;
+$k-link-color:            $k-type-color !default;
 
 
 // Border
@@ -334,17 +334,17 @@ $k-koowa-padding:     0 !default;
 // Login
 // ==========================================================================
 
-$k-login-container-background:  $k-color-base !default;
-$k-login-container-color:       $k-color-base-type !default;
+$k-login-container-background:  $k-base-color !default;
+$k-login-container-color:       $k-base-type-color !default;
 $k-login-container-spacing:     $k-spacing !default;
 
 $k-login-width:                 360px !default;
-$k-login-radius:                $k-border-radius !default;
+$k-login-border-radius:         $k-border-radius !default;
 $k-login-background:            white !default;
-$k-login-color:                 $k-color-type !default;
+$k-login-color:                 $k-type-color !default;
 $k-login-font-size:             $k-large-font-size !default;
 $k-login-spacing:               $k-spacing !default;
-$k-login-shadow:                0 6px 0 -4px rgba(0,0,0,.3) !default;
+$k-login-box-shadow:            0 6px 0 -4px rgba(0,0,0,.3) !default;
 
 
 // Topbar
@@ -355,8 +355,8 @@ $k-top-container-size:                                $k-element-huge-size !defa
 $k-top-container-width:                               276px !default;
 $k-top-container-box-shadow:                          inset 5px 5px 5px rgba(black, 0.1) !default;
 $k-top-container-breakpoint:                          $k-charlie !default;
-$k-top-container-background:                          $k-color-base !default;
-$k-top-container-color:                               $k-color-base-type !default;
+$k-top-container-background:                          $k-base-color !default;
+$k-top-container-color:                               $k-base-type-color !default;
 $k-top-container-font-size:                           $k-large-font-size !default;
 $k-top-container-line-height:                         $k-large-line-height !default;
 $k-top-container-spacing:                             $k-small-spacing !default;
@@ -364,8 +364,8 @@ $k-top-container-spacing:                             $k-small-spacing !default;
 $k-top-container-navigation-item-line-height:         $k-element-large-size !default;
 $k-top-container-navigation-item-border:              1px solid rgba(white, 0.15) !default;
 $k-top-container-navigation-item-spacing:             0 $k-spacing !default;
-$k-top-container-navigation-item-spacing-breakpoint:  0 $k-small-spacing !default;
-$k-top-container-navigation-item-spacing-delta:       0 $k-small-spacing !default;
+$k-top-container-navigation-item-breakpoint-spacing:  0 $k-small-spacing !default;
+$k-top-container-navigation-item-delta-spacing:       0 $k-small-spacing !default;
 
 
 // Content
@@ -378,14 +378,14 @@ $k-content-border:       darkest($k-content-background) !default;
 // Title-bar
 // ==========================================================================
 
-$k-title-bar-background:          $k-color-primary-plus-3 !default;
+$k-title-bar-background:          $k-primary-plus-3-color !default;
 $k-title-bar-border:              darkest($k-title-bar-background) !default;
-$k-title-bar-color:               $k-color-type !default;
+$k-title-bar-color:               $k-type-color !default;
 $k-title-bar-font-size:           $k-huge-font-size !default;
 $k-title-bar-z-index:             10 !default;
 $k-title-bar-spacing:             $k-extrasmall-spacing !default;
 
-$k-title-bar-mobile-background:   $k-color-primary !default;
+$k-title-bar-mobile-background:   $k-primary-color !default;
 $k-title-bar-mobile-border:       darkest($k-title-bar-mobile-background) !default;
 
 
@@ -394,10 +394,10 @@ $k-title-bar-mobile-border:       darkest($k-title-bar-mobile-background) !defau
 
 $k-toolbar-spacing:         $k-extrasmall-spacing !default;
 $k-toolbar-height:          $k-unit-size !default;
-$k-toolbar-button-height:   $k-unit-size - $k-toolbar-spacing !default;
-$k-toolbar-background:      $k-color-primary-plus-3 !default;
+$k-toolbar-background:      $k-primary-plus-3-color !default;
 $k-toolbar-border:          darkest($k-toolbar-background) !default;
-$k-toolbar-color:           $k-color-type !default;
+$k-toolbar-color:           $k-type-color !default;
+$k-toolbar-button-height:   $k-unit-size - $k-toolbar-spacing !default;
 
 
 // Sidebar
@@ -406,17 +406,17 @@ $k-toolbar-color:           $k-color-type !default;
 // 1. Sidebar width on smaller screens
 // 2. Sidebar width when screen is "$k-desktop"
 
-$k-sidebar-left-width-small:    208px !default; // 1
+$k-sidebar-left-small-width:    208px !default; // 1
 $k-sidebar-left-width:          272px !default; // 2
 $k-sidebar-left-querie-width:   $k-charlie !default; // 2
 
-$k-sidebar-right-width-small:   208px !default; // 1
+$k-sidebar-right-small-width:   208px !default; // 1
 $k-sidebar-right-width:         272px !default; // 2
 $k-sidebar-right-querie-width:  $k-beta !default; // 2
 
-$k-sidebar-background:          $k-color-primary-plus-2 !default;
+$k-sidebar-background:          $k-primary-plus-2-color !default;
 $k-sidebar-border:              darkest($k-sidebar-background) !default;
-$k-sidebar-color:               $k-color-type !default;
+$k-sidebar-color:               $k-type-color !default;
 
 
 // Sidebar item
@@ -428,7 +428,7 @@ $k-sidebar-item-flex-min-height:        96px !default;
 $k-sidebar-item-toggle-background:      white !default;
 $k-sidebar-item-toggle-border:          1px solid #ddd !default;
 $k-sidebar-item-toggle-size:            20px !default;
-$k-sidebar-item-toggle-radius:          $k-sidebar-item-toggle-size / 2 !default;
+$k-sidebar-item-toggle-border-radius:   $k-sidebar-item-toggle-size / 2 !default;
 $k-sidebar-item-toggle-font-size:       $k-tiny-font-size !default;
 $k-sidebar-item-toggle-line-height:     $k-sidebar-item-toggle-size - 2px !default;
 
@@ -448,18 +448,18 @@ $k-navigation-spacing:            $k-extrasmall-spacing !default;
 $k-navigation-font-size:          $k-large-font-size !default;
 $k-navigation-line-height:        $k-small-line-height !default;
 
-$k-navigation-background:         $k-color-primary-plus-1 !default;
+$k-navigation-background:         $k-primary-plus-1-color !default;
 $k-navigation-border:             darkest($k-navigation-background) !default;
-$k-navigation-border-width:       5px !default;
-$k-navigation-color:              $k-color-type !default;
+$k-navigation-pseudo-width:       5px !default;
+$k-navigation-color:              $k-type-color !default;
 
 $k-navigation-hover-background:   lighter($k-navigation-background) !default;
-$k-navigation-hover-border:       $k-color-accent !default;
-$k-navigation-hover-color:        $k-color-type !default;
+$k-navigation-hover-border:       $k-accent-color !default;
+$k-navigation-hover-color:        $k-type-color !default;
 
 $k-navigation-active-background:  $k-navigation-background !default;
-$k-navigation-active-border:      $k-color-accent !default;
-$k-navigation-active-color:       $k-color-accent !default;
+$k-navigation-active-border:      $k-accent-color !default;
+$k-navigation-active-color:       $k-accent-color !default;
 $k-navigation-active-font-weight: $k-bold-font-weight !default;
 
 
@@ -468,16 +468,15 @@ $k-navigation-active-font-weight: $k-bold-font-weight !default;
 
 $k-list-spacing:                  $k-tiny-spacing !default;
 
-$k-list-item-line-height:         $k-line-height !default;
-
+$k-list-link-line-height:         $k-line-height !default;
 $k-list-link-spacing:             $k-extrasmall-spacing $k-spacing !default;
 $k-list-link-color:               $k-sidebar-color !default;
 
 $k-list-link-hover-background:    lighter($k-sidebar-background) !default;
-$k-list-link-hover-color:         $k-color-type !default;
+$k-list-link-hover-color:         $k-type-color !default;
 
 $k-list-link-active-background:   $k-sidebar-background !default;
-$k-list-link-active-color:        $k-color-type !default;
+$k-list-link-active-color:        $k-type-color !default;
 $k-list-link-active-font-weight:  $k-bold-font-weight !default;
 
 $k-list-icon-spacing:             $k-extrasmall-spacing !default;
@@ -488,12 +487,16 @@ $k-list-icon-spacing:             $k-extrasmall-spacing !default;
 
 $k-tree-spacing:                    $k-list-spacing !default;
 $k-tree-size:                       $k-element-small-size !default;
-$k-tree-element-spacing-start:      $k-spacing !default;
-$k-tree-element-spacing-end:        $k-tiny-spacing !default;
+
+$k-tree-element-start-spacing:      $k-spacing !default;
+$k-tree-element-end-spacing:        $k-tiny-spacing !default;
+
 $k-tree-element-hover-background:   lighter($k-sidebar-background) !default;
-$k-tree-selected-background:        $k-color-accent !default;
-$k-tree-selected-color:             $k-color-accent-type !default;
+
+$k-tree-selected-background:        $k-accent-color !default;
+$k-tree-selected-color:             $k-accent-type-color !default;
 $k-tree-selected-font-weight:       $k-bold-font-weight !default;
+
 $k-tree-toggle-size:                ceil($k-tree-size / 8) !default;
 
 
@@ -512,10 +515,10 @@ $k-breadcrumb-missing-content:    "…" !default; // 3
 $k-breadcrumb-divider-content:    "»" !default; // 4
 $k-breadcrumb-divider-size:       round($k-breadcrumb-size / 2) !default; // 5
 
-$k-breadcrumb-background:         $k-color-primary-plus-4 !default;
+$k-breadcrumb-background:         $k-primary-plus-4-color !default;
 $k-breadcrumb-border:             darkest($k-breadcrumb-background) !default;
-$k-breadcrumb-color:              $k-color-type !default;
-$k-breadcrumb-active-weight:      $k-bold-font-weight !default;
+$k-breadcrumb-color:              $k-type-color !default;
+$k-breadcrumb-active-font-weight: $k-bold-font-weight !default;
 
 $k-breadcrumb-hover-background:   darker($k-breadcrumb-background) !default;
 
@@ -527,17 +530,17 @@ $k-breadcrumb-hover-background:   darker($k-breadcrumb-background) !default;
 
 $k-scopebar-size:                           $k-unit-size !default; // 1
 
-$k-scopebar-background:                     $k-color-primary-plus-4 !default;
+$k-scopebar-background:                     $k-primary-plus-4-color !default;
 $k-scopebar-border:                         darkest($k-scopebar-background) !default;
-$k-scopebar-color:                          $k-color-type !default;
+$k-scopebar-color:                          $k-type-color !default;
 
-$k-scopebar-search-background:              $k-color-forms !default;
-$k-scopebar-search-color:                   $k-color-type !default;
+$k-scopebar-search-background:              $k-form-color !default;
+$k-scopebar-search-color:                   $k-type-color !default;
 
 $k-scopebar-filter-font-size:               $k-font-size !default;
 
-$k-scopebar-search-size-delta:              $k-font-size * 17 !default;
-$k-scopebar-search-size-echo:               $k-font-size * 22 !default;
+$k-scopebar-search-delta-size:              $k-font-size * 17 !default;
+$k-scopebar-search-echo-size:               $k-font-size * 22 !default;
 
 $k-scopebar-submit-button-spacing:          $k-font-size * 2 !default;
 $k-scopebar-submit-button-size:             $k-font-size !default;
@@ -546,25 +549,24 @@ $k-scopebar-empty-button-spacing:           round($k-font-size * 1.5) !default;
 $k-scopebar-empty-button-size:              round($k-font-size * 0.75) !default;
 
 $k-scopebar-filter-label-size:              round($k-font-size * 1.2) !default;
-$k-scopebar-filter-label-background:        $k-color-error !default;
-$k-scopebar-filter-label-color:             $k-color-error-type !default;
+$k-scopebar-filter-label-background:        $k-error-color !default;
+$k-scopebar-filter-label-color:             $k-error-type-color !default;
 $k-scopebar-filter-label-font-size:         $k-small-font-size !default;
 
-$k-scopebar-buttons-spacing:                $k-tiny-spacing !default;
+$k-scopebar-button-spacing:                 $k-tiny-spacing !default;
+$k-scopebar-button-hover-background:        darker($k-primary-plus-6-color) !default;
 
 
 // Dropdowns
 // ==========================================================================
 
-$k-dropdown-background:                 $k-color-primary-plus-6 !default;
+$k-dropdown-background:                 $k-primary-plus-6-color !default;
 $k-dropdown-border:                     darkest($k-dropdown-background) !default;
-$k-dropdown-color:                      $k-color-type !default;
+$k-dropdown-color:                      $k-type-color !default;
 
-$k-dropdown-buttons-background:         $k-color-primary-plus-5 !default;
-$k-dropdown-buttons-border:             darkest($k-dropdown-background) !default;
-$k-dropdown-buttons-color:              $k-color-type !default;
-
-$k-scopebar-buttons-hover-background:   darker($k-dropdown-buttons-background) !default;
+$k-dropdown-button-background:          $k-primary-plus-5-color !default;
+$k-dropdown-button-border:              darkest($k-dropdown-background) !default;
+$k-dropdown-button-color:               $k-type-color !default;
 
 
 // Table
@@ -573,50 +575,49 @@ $k-scopebar-buttons-hover-background:   darker($k-dropdown-buttons-background) !
 // 1. Height of the table cells
 // 2. Table cell padding
 
-$k-table-cell-size:                       $k-unit-size !default; // 1
-$k-table-cell-spacing-vertical:           $k-base-vertical-spacing !default; // 2
-$k-table-cell-spacing-horizontal:         $k-extrasmall-horizontal-spacing !default; // 2
-$k-table-cell-align:                      left !default; // 2
-$k-table-cell-align-rtl:                  right !default; // 2
-$k-table-cell-vertical-align:             middle !default; // 2
-$k-table-cell-icon-size:                  $k-icon-size !default;
+$k-table-background:                      $k-primary-plus-6-color !default;
 
-$k-table-background:                      $k-color-primary-plus-6 !default;
-
-$k-table-header-background:               $k-color-primary-plus-5 !default;
+$k-table-header-background:               $k-primary-plus-5-color !default;
 $k-table-header-border:                   darkest($k-table-header-background) !default;
-$k-table-header-color:                    $k-color-type !default;
-$k-table-header-hover-background:         $k-color-primary-plus-4 !default;
+$k-table-header-color:                    $k-type-color !default;
+$k-table-header-hover-background:         $k-primary-plus-4-color !default;
 $k-table-header-font-weight:              $k-normal-font-weight !default;
 
-$k-table-cell-background-even:            $k-color-primary-plus-6 !default;
-$k-table-cell-background-odd:             $k-color-primary-plus-6 !default;
-$k-table-cell-color:                      $k-color-type !default;
+$k-table-cell-size:                       $k-unit-size !default; // 1
+$k-table-cell-vertical-spacing:           $k-base-vertical-spacing !default; // 2
+$k-table-cell-horizontal-spacing:         $k-extrasmall-horizontal-spacing !default; // 2
+$k-table-cell-align:                      left !default; // 2
+$k-table-cell-rtl-align:                  right !default; // 2
+$k-table-cell-vertical-align:             middle !default; // 2
+$k-table-cell-icon-size:                  $k-icon-size !default;
+$k-table-cell-even-background:            $k-primary-plus-6-color !default;
+$k-table-cell-odd-background:             $k-primary-plus-6-color !default;
+$k-table-cell-border:                     darker($k-table-cell-odd-background) !default;
+$k-table-cell-color:                      $k-type-color !default;
 
-$k-table-cell-hover-background-even:      $k-color-primary-plus-5 !default;
-$k-table-cell-hover-background-odd:       $k-color-primary-plus-5 !default;
-$k-table-cell-border:                     darker($k-table-cell-background-odd) !default;
+$k-table-cell-even-hover-background:      $k-primary-plus-5-color !default;
+$k-table-cell-odd-hover-background:       $k-primary-plus-5-color !default;
 
-$k-table-cell-accent-background:          $k-color-accent !default;
-$k-table-cell-accent-color:               $k-color-accent-type !default;
+$k-table-cell-accent-background:          $k-accent-color !default;
+$k-table-cell-accent-color:               $k-accent-type-color !default;
 
-$k-table-cell-accent-hover-background:    darken($k-color-accent,10%) !default;
+$k-table-cell-accent-hover-background:    darken($k-accent-color,10%) !default;
 
 $k-table-cell-small-font-size:            $k-small-font-size !default;
 $k-table-cell-small-line-height:          $k-small-line-height !default;
 
 $k-table-row-positioner-size:             16px !default;
-$k-table-row-positioner-color:            $k-color-primary-min-2 !default;
+$k-table-row-positioner-color:            $k-primary-min-2-color !default;
 
-$k-table-item-state-pending:              $k-color-warning !default;
-$k-table-item-state-expired:              $k-color-neutral !default;
-$k-table-item-state-unpublished:          $k-color-error !default;
-$k-table-item-state-published:            $k-color-success !default;
+$k-table-item-pending-color:              $k-warning-color !default;
+$k-table-item-expired-color:              $k-neutral-color !default;
+$k-table-item-unpublished-color:          $k-error-color !default;
+$k-table-item-published-color:            $k-success-color !default;
 
-$k-table-sub-header-spacing:              0.7em $k-table-cell-spacing-horizontal 0.5em !default;
+$k-table-sub-header-spacing:              0.7em $k-table-cell-horizontal-spacing 0.5em !default;
 $k-table-sub-header-font-size:            $k-small-font-size !default;
 $k-table-sub-header-line-height:          $k-small-line-height !default;
-$k-table-sub-header-weight:               $k-bold-font-weight !default;
+$k-table-sub-header-font-weight:          $k-bold-font-weight !default;
 $k-table-sub-header-background:           $k-table-header-background !default;
 $k-table-sub-header-border:               $k-table-cell-border !default;
 
@@ -629,9 +630,9 @@ $k-table-item-level-icon-spacing:         $k-tiny-spacing !default;
 $k-table-sorting-spacing:                 0.66em !default;
 $k-table-sorting-width:                   6px !default;
 $k-table-sorting-height:                  3px !default;
-$k-table-sorting-opacity-off:             $k-opacity-off !default;
-$k-table-sorting-opacity-hover:           $k-opacity-hover !default;
-$k-table-sorting-opacity-on:              $k-opacity-on !default;
+$k-table-sorting-low-opacity:             $k-low-opacity !default;
+$k-table-sorting-medium-opacity:          $k-medium-opacity !default;
+$k-table-sorting-high-opacity:            $k-high-opacity !default;
 
 
 // Table pagination
@@ -647,30 +648,31 @@ $k-table-pagination-border:               $k-table-header-border !default;
 // ==========================================================================
 
 $k-table-responsive-toggle-size:          20px !default;
-$k-table-responsive-toggle-color:         $k-color-type-light !default;
-$k-table-responsive-toggle-color-active:  $k-table-cell-accent-color !default;
-$k-table-responsive-toggle-border-size:   1px !default;
+$k-table-responsive-toggle-color:         $k-type-light-color !default;
+$k-table-responsive-toggle-active-color:  $k-table-cell-accent-color !default;
+$k-table-responsive-toggle-border-width:  1px !default;
+$k-table-responsive-toggle-border:        $k-table-responsive-toggle-border-width solid $k-table-responsive-toggle-color !default;
 $k-table-responsive-toggle-icon-size:     10px !default;
 $k-table-responsive-toggle-line-height:   1.3em !default;
-$k-table-responsive-detail-weight:        $k-bold-font-weight !default;
-$k-table-responsive-detail-spacing:       $k-table-cell-spacing-vertical $k-table-cell-spacing-horizontal !default;
+$k-table-responsive-detail-font-weight:   $k-bold-font-weight !default;
+$k-table-responsive-detail-spacing:       $k-table-cell-vertical-spacing $k-table-cell-horizontal-spacing !default;
 $k-table-responsive-detail-min-height:    round($k-unit-size * 0.75) !default;
 
 
 // Component layout
 // ==========================================================================
 
-$k-component-background: $k-color-primary-plus-5 !default;
+$k-component-background: $k-primary-plus-5-color !default;
 
 
 // Form block
 // ==========================================================================
 
-$k-form-block-background:         $k-color-primary-plus-6 !default;
+$k-form-block-background:         $k-primary-plus-6-color !default;
 $k-form-block-border:             darkest($k-form-block-background) !default;
 
 $k-form-block-header-spacing:     $k-extrasmall-spacing $k-extrasmall-spacing ($k-extrasmall-spacing - 1px) !default;
-$k-form-block-header-background:  $k-color-primary-plus-4 !default;
+$k-form-block-header-background:  $k-primary-plus-4-color !default;
 $k-form-block-header-border:      darkest($k-form-block-header-background) !default;
 $k-form-block-header-font-weight: $k-bold-font-weight !default;
 
@@ -688,9 +690,9 @@ $k-form-block-content-spacing:    ($k-extrasmall-spacing - 1px) $k-extrasmall-sp
 $k-off-canvas-overlay-background:   black !default;
 $k-off-canvas-overlay-opacity:      0.75 !default;
 $k-toggle-button-size:              32px !default;
-$k-toggle-button-background:        $k-color-accent !default;
+$k-toggle-button-background:        $k-accent-color !default;
 $k-toggle-button-color:             white !default;
-$k-toggle-button-radius:            3px !default;
+$k-toggle-button-border-radius:     3px !default;
 $k-hamburger-bar-width:             15px !default; // 1
 $k-hamburger-bar-height:            round($k-hamburger-bar-width / 5) !default; // 2
 $k-info-bar-width:                  5px !default; // 3
@@ -702,10 +704,11 @@ $k-info-bar-height:                 $k-info-bar-width * 2 !default; // 4
 
 $k-form-option-size:          16px !default;
 $k-form-option-background:    white !default;
-$k-form-option-border:        $k-color-primary-min-3 !default;
-$k-form-option-border-size:   1px !default;
-$k-form-option-color:         $k-color-accent !default;
-$k-form-option-shadow:        inset 0 1px 2px rgba(0, 0, 0, 0.15) !default;
+$k-form-option-border-color:  $k-primary-min-3-color !default;
+$k-form-option-border-width:  1px !default;
+$k-form-option-border:        $k-form-option-border-width solid $k-form-option-border-color !default;
+$k-form-option-color:         $k-accent-color !default;
+$k-form-option-box-shadow:    inset 0 1px 2px rgba(0, 0, 0, 0.15) !default;
 
 
 // Styled file input
@@ -713,12 +716,13 @@ $k-form-option-shadow:        inset 0 1px 2px rgba(0, 0, 0, 0.15) !default;
 
 $k-styled-file-input-fallback-font-size:    $k-font-size !default;
 $k-styled-file-input-fallback-line-height:  $k-line-height !default;
+$k-styled-file-input-fallback-color:        $k-accent-color !default;
+
 $k-styled-file-input-font-weight:           $k-normal-font-weight !default;
 $k-styled-file-input-cursor:                pointer !default;
-$k-styled-file-input-fallback-color:        $k-color-accent !default;
-$k-styled-file-input-background:            $k-color-accent !default;
-$k-styled-file-input-color:                 $k-color-accent-type !default;
-$k-styled-file-input-radius:                $k-large-border-radius !default;
+$k-styled-file-input-background:            $k-accent-color !default;
+$k-styled-file-input-color:                 $k-accent-type-color !default;
+$k-styled-file-input-border-radius:         $k-large-border-radius !default;
 $k-styled-file-input-font-size:             $k-large-font-size !default;
 $k-styled-file-input-line-height:           $k-large-line-height !default;
 $k-styled-file-input-spacing:               $k-large-vertical-spacing $k-large-horizontal-spacing !default;
@@ -728,7 +732,7 @@ $k-styled-file-input-spacing:               $k-large-vertical-spacing $k-large-h
 // ==========================================================================
 
 $k-empty-state-background:    white !default;
-$k-empty-state-color:         $k-color-type !default;
+$k-empty-state-color:         $k-type-color !default;
 $k-empty-state-spacing:       $k-spacing !default;
 $k-empty-state-font-size:     $k-large-font-size !default;
 $k-empty-state-line-height:   $k-large-line-height !default;
@@ -738,49 +742,54 @@ $k-empty-state-align:         center !default;
 // Grid
 // ==========================================================================
 
-$k-grid-itemWidth:  $k-font-size * 12 !default;
 $k-grid-spacing:    $k-large-font-size !default;
 $k-grid-width:      2560px !default;
+$k-grid-item-width: $k-font-size * 12 !default;
 
 
 // Tabs
 // ==========================================================================
 
-$k-tabs-link-spacing:                     $k-extrasmall-spacing $k-spacing ($k-extrasmall-spacing - 2px) !default;
-
 $k-tabs-wrapper-height:                   $k-large-spacing * 2 !default;
 
-$k-tabs-link-hover-background:            $k-color-primary-plus-2 !default;
-
-$k-tabs-disabled-link-color:              $k-color-primary-min-6 !default;
-$k-tabs-disabled-link-hover-color:        $k-tabs-disabled-link-color !default;
-
 $k-tabs-border-width:                     1px !default;
-$k-tabs-border:                           $k-color-primary-min-1 !default;
+$k-tabs-border-color:                     $k-primary-min-1-color !default;
+$k-tabs-border:                           $k-tabs-border-width solid $k-tabs-border-color !default;
 $k-tabs-spacing:                          (($k-large-spacing / 2) - 1px) !default;
-$k-tabs-link-hover-border:                $k-color-primary-min-1 !default;
 
 $k-tabs-item-spacing:                     2px !default;
-$k-tabs-item-border:                      1px solid transparent !default;
-$k-tabs-item-font-size:                   $k-font-size !default;
-$k-tabs-item-line-height:                 $k-line-height !default;
-$k-tabs-item-border-radius:               $k-border-radius $k-border-radius 0 0 !default;
-$k-tabs-item-disabled-cursor:             $k-disabled-cursor !default;
 
-$k-tabs-active-link-hover-background:     white !default;
-$k-tabs-active-link-hover-color:          $k-color-primary-min-7 !default;
-$k-tabs-active-link-hover-border:         $k-color-primary-min-1 !default;
+$k-tabs-link-border:                      1px solid transparent !default;
+$k-tabs-link-font-size:                   $k-font-size !default;
+$k-tabs-link-line-height:                 $k-line-height !default;
+$k-tabs-link-border-radius:               $k-border-radius $k-border-radius 0 0 !default;
+
+$k-tabs-link-disabled-cursor:             $k-disabled-cursor !default;
+
+$k-tabs-link-spacing:                     $k-extrasmall-spacing $k-spacing ($k-extrasmall-spacing - 2px) !default;
+$k-tabs-link-hover-background:            $k-primary-plus-2-color !default;
+$k-tabs-link-hover-border:                $k-primary-min-1-color !default;
+
+$k-tabs-link-disabled-color:              $k-primary-min-6-color !default;
+$k-tabs-link-disabled-hover-color:        $k-tabs-link-disabled-color !default;
+
+$k-tabs-link-active-hover-background:     white !default;
+$k-tabs-link-active-hover-color:          $k-primary-min-7-color !default;
+$k-tabs-link-active-hover-border:         $k-primary-min-1-color !default;
 
 $k-tabs-overflow-button-width:            32px !default;
-$k-tabs-overflow-button-opacity-off:      $k-opacity-off !default;
-$k-tabs-overflow-button-opacity-on:       $k-opacity-on !default;
-$k-tabs-overflow-button-border:           1px solid $k-tabs-border !default;
+$k-tabs-overflow-button-low-opacity:      $k-low-opacity !default;
+$k-tabs-overflow-button-high-opacity:     $k-high-opacity !default;
+$k-tabs-overflow-button-border:           $k-tabs-border !default;
 
 $k-tabs-scroller-height:                  $k-tabs-wrapper-height * 1.5 !default;
 $k-tabs-scroller-spacing:                 ($k-large-spacing / 2) ($k-spacing / 2) 0 !default;
-$k-tabs-scroller-spacing-charlie:         $k-spacing !default;
+$k-tabs-scroller-charlie-spacing:         $k-spacing !default;
+
 $k-tabs-scroller-item-active-background:  $k-component-background !default;
-$k-tabs-scroller-item-active-color:       $k-color-type !default;
+$k-tabs-scroller-item-active-color:       $k-type-color !default;
+
+$k-tabs-content-tab-spacing:              $k-extrasmall-spacing !default
 
 
 // Buttons
@@ -790,56 +799,55 @@ $k-button-font-weight:               $k-normal-font-weight !default;
 $k-button-spacer:                    $k-tiny-spacing !default;
 $k-button-active-class:              $k-active-class !default;
 $k-button-disabled-class:            $k-disabled-class !default;
-
-$k-button-default-color:             $k-color-type !default;
-$k-button-default-background:        $k-color-button !default;
-$k-button-default-border:            $k-color-primary-min-2 !default;
-
-$k-button-primary-color:             $k-color-accent-type !default;
-$k-button-primary-background:        $k-color-accent !default;
-$k-button-primary-border:            darken($k-button-primary-background, 5%) !default;
-
-$k-button-success-color:             $k-color-success-type !default;
-$k-button-success-background:        $k-color-success !default
-$k-button-success-border:            darken($k-button-success-background, 5%) !default;
-
-$k-button-info-color:                $k-color-neutral-type !default;
-$k-button-info-background:           $k-color-neutral !default;
-$k-button-info-border:               darken($k-button-info-background, 5%) !default;
-
-$k-button-warning-color:             $k-color-warning-type !default;
-$k-button-warning-background:        $k-color-warning !default;
-$k-button-warning-border:            darken($k-button-warning-background, 5%) !default;
-
-$k-button-danger-color:              $k-color-error-type !default;
-$k-button-danger-background:         $k-color-error !default;
-$k-button-danger-border:             darken($k-button-danger-background, 5%) !default;
-
-$k-button-link-disabled-color:       $k-color-primary-min-6 !default;
-
 $k-button-border-radius:             $k-border-radius !default;
 $k-button-font-size:                 $k-font-size !default;
 $k-button-line-height:               $k-line-height - 2px !default;
-$k-button-spacing-vertical:          $k-base-vertical-spacing !default;
-$k-button-spacing-horizontal:        $k-base-horizontal-spacing !default;
+$k-button-vertical-spacing:          $k-base-vertical-spacing !default;
+$k-button-horizontal-spacing:        $k-base-horizontal-spacing !default;
+
+$k-button-default-color:             $k-type-color !default;
+$k-button-default-background:        $k-button-color !default;
+$k-button-default-border:            $k-primary-min-2-color !default;
+
+$k-button-primary-color:             $k-accent-type-color !default;
+$k-button-primary-background:        $k-accent-color !default;
+$k-button-primary-border:            darken($k-button-primary-background, 5%) !default;
+
+$k-button-success-color:             $k-success-type-color !default;
+$k-button-success-background:        $k-success-color !default
+$k-button-success-border:            darken($k-button-success-background, 5%) !default;
+
+$k-button-info-color:                $k-neutral-type-color !default;
+$k-button-info-background:           $k-neutral-color !default;
+$k-button-info-border:               darken($k-button-info-background, 5%) !default;
+
+$k-button-warning-color:             $k-warning-type-color !default;
+$k-button-warning-background:        $k-warning-color !default;
+$k-button-warning-border:            darken($k-button-warning-background, 5%) !default;
+
+$k-button-danger-color:              $k-error-type-color !default;
+$k-button-danger-background:         $k-error-color !default;
+$k-button-danger-border:             darken($k-button-danger-background, 5%) !default;
+
+$k-button-link-disabled-color:       $k-primary-min-6-color !default;
 
 $k-button-tiny-border-radius:        $k-small-border-radius !default;
 $k-button-tiny-font-size:            $k-tiny-font-size !default;
 $k-button-tiny-line-height:          $k-tiny-line-height !default;
-$k-button-tiny-spacing-vertical:     $k-tiny-vertical-spacing + 1px !default;
-$k-button-tiny-spacing-horizontal:   $k-tiny-horizontal-spacing !default;
+$k-button-tiny-vertical-spacing:     $k-tiny-vertical-spacing + 1px !default;
+$k-button-tiny-horizontal-spacing:   $k-tiny-horizontal-spacing !default;
 
 $k-button-small-border-radius:       $k-small-border-radius !default;
 $k-button-small-font-size:           $k-small-font-size !default;
 $k-button-small-line-height:         $k-small-line-height !default;
-$k-button-small-spacing-vertical:    $k-extrasmall-vertical-spacing + 1px !default;
-$k-button-small-spacing-horizontal:  $k-extrasmall-horizontal-spacing !default;
+$k-button-small-vertical-spacing:    $k-extrasmall-vertical-spacing + 1px !default;
+$k-button-small-horizontal-spacing:  $k-extrasmall-horizontal-spacing !default;
 
 $k-button-large-border-radius:       $k-large-border-radius !default;
 $k-button-large-font-size:           $k-large-font-size !default;
 $k-button-large-line-height:         $k-large-line-height - 2px !default;
-$k-button-large-spacing-vertical:    $k-large-vertical-spacing !default;
-$k-button-large-spacing-horizontal:  $k-large-horizontal-spacing !default;
+$k-button-large-vertical-spacing:    $k-large-vertical-spacing !default;
+$k-button-large-horizontal-spacing:  $k-large-horizontal-spacing !default;
 
 
 // Heading
@@ -852,46 +860,44 @@ $k-heading-line-height:   $k-huge-line-height !default;
 // Pagination
 // ==========================================================================
 
-$k-pagination-background:         $k-color-accent-type !default;
-$k-pagination-border:             $k-color-primary-min-1 !default;
-$k-pagination-color:              $k-color-accent !default;
-$k-pagination-radius:             $k-border-radius !default;
+$k-pagination-background:         $k-accent-type-color !default;
+$k-pagination-border:             $k-primary-min-1-color !default;
+$k-pagination-color:              $k-accent-color !default;
+$k-pagination-border-radius:      $k-border-radius !default;
 $k-pagination-spacing:            ($k-base-vertical-spacing - 1px) $k-base-horizontal-spacing !default;
 $k-pagination-line-height:        ($k-base-vertical-spacing - 1px) $k-base-horizontal-spacing !default;
 
-$k-pagination-hover-background:   $k-color-primary-plus-2 !default;
-$k-pagination-hover-color:        darker($k-color-accent) !default;
-$k-pagination-hover-border:       $k-color-primary-min-1 !default;
+$k-pagination-hover-background:   $k-primary-plus-2-color !default;
+$k-pagination-hover-color:        darker($k-accent-color) !default;
+$k-pagination-hover-border:       $k-primary-min-1-color !default;
 
-$k-pagination-active-background:  $k-color-accent !default;
-$k-pagination-active-color:       $k-color-accent-type !default;
-$k-pagination-active-border:      darker($k-color-accent) !default;
-
-
+$k-pagination-active-background:  $k-accent-color !default;
+$k-pagination-active-color:       $k-accent-type-color !default;
+$k-pagination-active-border:      darker($k-accent-color) !default;
 
 
 // Tooltips
 // ==========================================================================
 
-$k-tooltip-max-width:     264px !default;
-$k-tooltip-color:         white !default;
-$k-tooltip-background:    black !default;
-$k-tooltip-spacing:       $k-tiny-spacing $k-extrasmall-spacing !default;
-$k-tooltip-align:         center !default;
-$k-tooltip-radius:        $k-border-radius !default;
-$k-tooltip-font-size:     $k-small-font-size !default;
-$k-tooltip-opacity:       0.9 !default;
-$k-tooltip-arrow-width:   5px !default;
-$k-tooltip-arrow-color:   $k-tooltip-background !default;
+$k-tooltip-max-width:       264px !default;
+$k-tooltip-color:           white !default;
+$k-tooltip-background:      black !default;
+$k-tooltip-spacing:         $k-tiny-spacing $k-extrasmall-spacing !default;
+$k-tooltip-align:           center !default;
+$k-tooltip-border-radius:   $k-border-radius !default;
+$k-tooltip-font-size:       $k-small-font-size !default;
+$k-tooltip-opacity:         0.9 !default;
+$k-tooltip-arrow-width:     5px !default;
+$k-tooltip-arrow-color:     $k-tooltip-background !default;
 
 
 // Wells
 // ==========================================================================
 
 $k-well-spacing:              $k-small-spacing !default;
-$k-well-background:           $k-color-primary-plus-4 !default;
+$k-well-background:           $k-primary-plus-4-color !default;
 $k-well-border:               darken($k-well-background, 7%) !default;
-$k-well-radius:               $k-border-radius !default;
+$k-well-border-radius:        $k-border-radius !default;
 $k-well-box-shadow:           inset 0 1px 1px rgba(0, 0, 0, 0.05) !default;
 
 $k-well-paragraph-spacing:    $k-well-spacing !default;
@@ -904,27 +910,27 @@ $k-well-content-border:       1px solid $k-well-border !default;
 // Cards
 // ==========================================================================
 
-$k-card-background:           $k-color-primary-plus-6 !default;
-$k-card-border:               $k-color-primary-min-1 !default;
-$k-card-color:                $k-color-type !default;
-$k-card-radius:               $k-border-radius !default;
+$k-card-background:           $k-primary-plus-6-color !default;
+$k-card-border:               $k-primary-min-1-color !default;
+$k-card-color:                $k-type-color !default;
+$k-card-border-radius:        $k-border-radius !default;
 $k-card-spacing:              $k-extrasmall-spacing !default;
 $k-card-hover-border:         darkest($k-card-border) !default;
 
-$k-card-selected-background:  $k-color-accent !default;
-$k-card-selected-border:      $k-color-accent !default;
-$k-card-selected-color:       $k-color-accent-type !default;
+$k-card-selected-background:  $k-accent-color !default;
+$k-card-selected-border:      $k-accent-color !default;
+$k-card-selected-color:       $k-accent-type-color !default;
 
-$k-card-header-background:    $k-color-primary-plus-5 !default;
-$k-card-header-border:        $k-color-primary-min-1 !default;
-$k-card-header-color:         $k-color-type !default;
+$k-card-header-background:    $k-primary-plus-5-color !default;
+$k-card-header-border:        $k-primary-min-1-color !default;
+$k-card-header-color:         $k-type-color !default;
 $k-card-header-spacing:       $k-card-spacing !default;
 $k-card-header-font-weight:   $k-bold-font-weight !default;
 $k-card-header-hover-border:  darkest($k-card-header-border) !default;
 
-$k-card-footer-background:    $k-color-primary-plus-5 !default;
-$k-card-footer-border:        $k-color-primary-min-1 !default;
-$k-card-footer-color:         $k-color-type !default;
+$k-card-footer-background:    $k-primary-plus-5-color !default;
+$k-card-footer-border:        $k-primary-min-1-color !default;
+$k-card-footer-color:         $k-type-color !default;
 $k-card-footer-spacing:       $k-card-spacing !default;
 $k-card-footer-hover-border:  darkest($k-card-footer-border) !default;
 
@@ -935,160 +941,128 @@ $k-card-caption-spacing:      $k-small-spacing $k-extrasmall-spacing !default;
 // Feedback states
 // ==========================================================================
 
-$k-state-success-color:       darker($k-color-success) !default;
-$k-state-success-background:  adjust-hue(darken($k-color-success, 40%), 5%) !default;
-$k-state-success-border:      darkest($k-color-success) !default;
+$k-state-success-color:       darker($k-success-color) !default;
+$k-state-success-background:  adjust-hue(darken($k-success-color, 40%), 5%) !default;
+$k-state-success-border:      darkest($k-success-color) !default;
 
-$k-state-info-color:          darker($k-color-neutral) !default;
-$k-state-info-background:     lighten($k-color-neutral, 50%) !default;
-$k-state-info-border:         darkest($k-color-neutral) !default;
+$k-state-info-color:          darker($k-neutral-color) !default;
+$k-state-info-background:     lighten($k-neutral-color, 50%) !default;
+$k-state-info-border:         darkest($k-neutral-color) !default;
 
-$k-state-warning-color:       darker($k-color-warning) !default;
-$k-state-warning-background:  lighten($k-color-warning, 50%) !default;
-$k-state-warning-border:      darkest($k-color-warning) !default;
+$k-state-warning-color:       darker($k-warning-color) !default;
+$k-state-warning-background:  lighten($k-warning-color, 50%) !default;
+$k-state-warning-border:      darkest($k-warning-color) !default;
 
-$k-state-danger-color:        darker($k-color-error) !default;
-$k-state-danger-background:   lighten($k-color-error, 50%) !default;
-$k-state-danger-border:       darkest($k-color-error) !default;
+$k-state-danger-color:        darker($k-error-color) !default;
+$k-state-danger-background:   lighten($k-error-color, 50%) !default;
+$k-state-danger-border:       darkest($k-error-color) !default;
 
 
 // Alerts
 // ==========================================================================
 
-$k-alert-spacing:             $k-small-spacing !default;
-$k-alert-border-radius:       $k-border-radius !default;
+$k-alert-spacing:               $k-small-spacing !default;
+$k-alert-border-radius:         $k-border-radius !default;
 
-$k-alert-success-background:  $k-color-success !default;
-$k-alert-success-color:       $k-color-success-type !default;
+$k-alert-success-background:    $k-success-color !default;
+$k-alert-success-color:         $k-success-type-color !default;
 
-$k-alert-info-background:     $k-color-neutral !default;
-$k-alert-info-color:          $k-color-neutral-type !default;
+$k-alert-info-background:       $k-neutral-color !default;
+$k-alert-info-color:            $k-neutral-type-color !default;
 
+$k-alert-warning-background:    $k-warning-color !default;
+$k-alert-warning-color:         $k-warning-type-color !default;
 
-$k-alert-warning-background:  $k-color-warning !default;
-$k-alert-warning-color:       $k-color-warning-type !default;
+$k-alert-danger-background:     $k-error-color !default;
+$k-alert-danger-color:          $k-error-type-color !default;
 
-$k-alert-danger-background:   $k-color-error !default;
-$k-alert-danger-color:        $k-color-error-type !default;
-
-$k-alert-overflow-minheight:  $k-unit-size * 2 !default;
-$k-alert-overflow-maxheight:  33% !default;
+$k-alert-overflow-min-height:   $k-unit-size * 2 !default;
+$k-alert-overflow-max-height:   33% !default;
 
 
 // Dropdowns
 // ==========================================================================
 
 $k-dropdown-background:             white !default;
-$k-dropdown-border:                 $k-color-primary-min-2 !default;
-$k-dropdown-fallback-border:        $k-color-primary-min-2 !default;
+$k-dropdown-border:                 $k-primary-min-2-color !default;
+$k-dropdown-fallback-border:        $k-primary-min-2-color !default;
 
-$k-dropdown-divider-background:     $k-color-primary-plus-1 !default;
+$k-dropdown-divider-background:     $k-primary-plus-1-color !default;
 
-$k-dropdown-link-color:             $k-color-type !default;
+$k-dropdown-link-color:             $k-type-color !default;
 
 $k-dropdown-link-hover-color:       darken($k-dropdown-link-color, 5%) !default;
-$k-dropdown-link-hover-background:  $k-color-primary-plus-1 !default;
+$k-dropdown-link-hover-background:  $k-primary-plus-1-color !default;
 
-$k-dropdown-link-active-color:      $k-color-accent-type !default;
-$k-dropdown-link-active-background: $k-color-accent !default;
+$k-dropdown-link-active-color:      $k-accent-type-color !default;
+$k-dropdown-link-active-background: $k-accent-color !default;
 
-$k-dropdown-link-disabled-color:    $k-color-primary-min-6 !default;
+$k-dropdown-link-disabled-color:    $k-primary-min-6-color !default;
 
-$k-dropdown-header-color:           $k-color-primary-min-6 !default;
+$k-dropdown-header-color:           $k-primary-min-6-color !default;
 $k-dropdown-caret-color:            black !default;
 
-$k-caret-width-base:                4px !default;
-$k-caret-width-large:               5px !default;
+$k-caret-base-width:                4px !default;
+$k-caret-large-width:               5px !default;
 
 
 // Forms
 // ==========================================================================
 
-$k-input-background:                $k-color-forms !default;
-$k-input-background-disabled:       $k-color-forms-disabled !default;
-$k-input-border:                    $k-color-primary-min-2 !default;
-$k-input-color:                     $k-color-primary-min-7 !default;
+$k-input-background:                $k-form-color !default;
+$k-input-border:                    $k-primary-min-2-color !default;
+$k-input-color:                     $k-primary-min-7-color !default;
+
+$k-input-disabled-background:       $k-form-disabled-color !default;
 
 $k-input-border-radius:             $k-border-radius !default;
-$k-input-border-radius-large:       $k-large-border-radius !default;
-$k-input-border-radius-small:       $k-small-border-radius !default;
+$k-input-large-border-radius:       $k-large-border-radius !default;
+$k-input-small-border-radius:       $k-small-border-radius !default;
 
-$k-input-border-focus:              $k-color-neutral !default;
-$k-input-color-placeholder:         $k-color-primary-min-3 !default;
+$k-input-focus-border:              $k-neutral-color !default;
+$k-input-placeholder-color:         $k-primary-min-3-color !default;
 
-$k-input-group-addon-bg:            $k-color-primary-plus-2 !default;
-$k-input-group-addon-border-color:  $k-input-border !default;
+$k-input-group-addon-background:    $k-primary-plus-2-color !default;
+$k-input-group-addon-border:        $k-input-border !default;
 
-$k-input-height-base:               ($k-line-height + ($k-base-vertical-spacing * 2)) !default;
-$k-input-height-large:              ($k-large-line-height + ($k-large-vertical-spacing * 2)) !default;
-$k-input-height-small:              ($k-line-height + ($k-extrasmall-vertical-spacing * 2)) !default;
+$k-input-base-height:               ($k-line-height + ($k-base-vertical-spacing * 2)) !default;
+$k-input-large-height:              ($k-large-line-height + ($k-large-vertical-spacing * 2)) !default;
+$k-input-small-height:              ($k-line-height + ($k-extrasmall-vertical-spacing * 2)) !default;
 
 
 // Optionlist
 // ==========================================================================
 
 $k-optionlist-border:                   1px solid $k-input-border !default;
-$k-optionlist-radius:                   $k-input-border-radius !default;
+$k-optionlist-border-radius:            $k-input-border-radius !default;
 $k-optionlist-background:               $k-input-background !default;
 $k-optionlist-spacing:                  1px !default;
 
-$k-optionlist-label-spacing:            floor(($k-input-height-base - $k-font-size - 6px) / 2) 10px !default;
+$k-optionlist-label-spacing:            floor(($k-input-base-height - $k-font-size - 6px) / 2) 10px !default;
 $k-optionlist-label-line-height:        1.25em !default;
-$k-optionlist-label-background:         $k-color-neutral !default;
+$k-optionlist-label-background:         $k-neutral-color !default;
 $k-optionlist-label-color:              $k-input-color !default;
-$k-optionlist-label-weight:             $k-normal-font-weight !default;
-$k-optionlist-label-radius:             $k-input-border-radius - 1px !default;
+$k-optionlist-label-font-weight:        $k-normal-font-weight !default;
+$k-optionlist-label-border-radius:      $k-input-border-radius - 1px !default;
 
-$k-optionlist-label-focus-color:        $k-color-neutral-type - 1px !default;
-$k-optionlist-label-focus-border:       1px solid $k-input-border-focus !default;
-$k-optionlist-label-focus-box-shadow:   inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($k-input-border-focus, 0.6) !default;
+$k-optionlist-label-focus-color:        $k-neutral-type-color - 1px !default;
+$k-optionlist-label-focus-border:       1px solid $k-input-focus-border !default;
+$k-optionlist-label-focus-box-shadow:   inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($k-input-focus-border, 0.6) !default;
 
-$k-optionlist-0-color:                  $k-color-error !default;
-$k-optionlist-1-color:                  $k-color-success !default;
+$k-optionlist-0-color:                  $k-error-color !default;
+$k-optionlist-1-color:                  $k-success-color !default;
 
 $k-optionlist-disabled-cursor:          $k-disabled-cursor !default;
-$k-optionlist-disabled-active-color:    $k-color-error !default;
-
-
-// Radio toggle
-// ==========================================================================
-//
-// 1. Use styled radio toggles?
-// 2. The color for "false"/0 items
-// 3. The color for "true"/1 items
-// 4. The color for neutral items
-
-$k-radio-toggle:          true !default; // 1
-$k-radio-toggle-0:        $k-color-error !default; // 2
-$k-radio-toggle-1:        $k-color-success !default; // 3
-$k-radio-toggle-neutral:  $k-color-neutral !default; // 4
-
-
-// Checkbox toggle
-// ==========================================================================
-//
-// 1. Use styled checkbox toggles?
-
-$k-checkbox-toggle:                 true !default; // 1
-$k-checkbox-toggle-size:            32px !default;
-$k-checkbox-toggle-border-width:    1px !default;
-$k-checkbox-toggle-padding:         1px !default;
-$k-checkbox-toggle-border-radius:   6px !default;
-$k-checkbox-toggle-width-inner:     ($k-checkbox-toggle-size * 2) - (($k-checkbox-toggle-border-width + $k-checkbox-toggle-padding) * 2) !default;
-$k-checkbox-toggle-height-inner:    $k-checkbox-toggle-size - (($k-checkbox-toggle-border-width + $k-checkbox-toggle-padding) * 2) !default;
-$k-checkbox-toggle-0:               $k-color-error !default;
-$k-checkbox-toggle-1:               $k-color-success !default;
-$k-checkbox-toggle-neutral-0:       $k-color-primary-min-1 !default;
-$k-checkbox-toggle-neutral-1:       $k-color-neutral !default;
+$k-optionlist-disabled-active-color:    $k-error-color !default;
 
 
 // Loader
 // ==========================================================================
 
-$k-loader-size-small:             5px !default;
-$k-loader-size-medium:            10px !default;
-$k-loader-size-large:             20px !default;
-$k-loader-color:                  $k-color-accent !default;
+$k-loader-small-size:             5px !default;
+$k-loader-medium-size:            10px !default;
+$k-loader-large-size:             20px !default;
+$k-loader-color:                  $k-accent-color !default;
 $k-loader-duration:               1.61s !default;
 
 $k-loader-container-background:   white !default;
@@ -1100,11 +1074,12 @@ $k-loader-container-opacity:      0.8 !default;
 
 $k-icon-path:                   '../fonts' !default;
 
-$k-icon-color-accent:           $k-color-accent !default;
-$k-icon-color-success:          $k-color-success !default;
-$k-icon-color-error:            $k-color-error !default;
+$k-icon-accent-color:           $k-accent-color !default;
+$k-icon-success-color:          $k-success-color !default;
+$k-icon-error-color:            $k-error-color !default;
 
 $k-icon-text-font-size:         inherit!important !default;
+
 $k-icon-text-item-line-height:  $k-line-height !default;
 $k-icon-text-item-align:        middle !default;
 $k-icon-text-item-spacing:      $k-tiny-spacing !default;
@@ -1201,13 +1176,14 @@ $k-rtlicons:  'account-login',
 
 // Overrides for Select2-bootstrap theme
 // ==========================================================================
+// Do not change since we copied the bootstrap Select 2 styling
 
 $k-font-family-base:          inherit !default;
 $k-font-size-base:            $k-font-size !default;
 $k-line-height-base:          $k-line-height !default;
 
 $k-input-bg:                  $k-input-background !default;
-$k-input-bg-disabled:         $k-input-background-disabled !default;
+$k-input-bg-disabled:         $k-input-disabled-background !default;
 
 $k-padding-base-vertical:     $k-base-vertical-spacing !default;
 $k-padding-base-horizontal:   $k-base-horizontal-spacing !default;
@@ -1219,8 +1195,8 @@ $k-padding-large-horizontal:  $k-large-horizontal-spacing !default;
 $k-dropdown-link-hover-bg:    $k-dropdown-link-hover-background !default;
 $k-dropdown-link-active-bg:   $k-dropdown-link-active-background !default;
 
-$k-button-default-bg:            $k-button-default-background !default;
-$k-button-danger-bg:             $k-button-danger-background !default;
+$k-button-default-bg:         $k-button-default-background !default;
+$k-button-danger-bg:          $k-button-danger-background !default;
 
 $k-state-warning-text:        $k-state-warning-color !default;
 $k-state-danger-text:         $k-state-danger-color !default;

@@ -22,7 +22,7 @@
   margin-right: $k-button-spacer;
   font-size: $k-button-font-size;
   line-height: $k-button-line-height;
-  padding: $k-button-spacing-vertical $k-button-spacing-horizontal;
+  padding: $k-button-vertical-spacing $k-button-horizontal-spacing;
 
   &:last-child {
     margin-right: 0;
@@ -74,7 +74,7 @@
 // ==========================================================================
 
 @mixin button-link($active-class: $k-button-active-class, $disabled-class: $k-button-disabled-class) {
-  color: $k-color-type;
+  color: $k-type-color;
   font-weight: normal;
   border-radius: 0;
   padding-left: 0;
@@ -98,7 +98,7 @@
 
   &:hover,
   &:focus {
-    color: $k-color-type;
+    color: $k-type-color;
     text-decoration: underline;
     background-color: transparent;
   }

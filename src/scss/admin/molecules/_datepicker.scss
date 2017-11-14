@@ -22,7 +22,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      z-index: $k-zindex-dropdown;
+      z-index: $k-dropdown-zindex;
       padding: 5px;
       margin: 2px 0 0;
       list-style: none;
@@ -152,19 +152,19 @@
 
     table tr td {
       &.day:hover {
-        background: $k-color-primary-plus-2;
+        background: $k-primary-plus-2-color;
         cursor: pointer;
       }
 
       &.old,
       &.new {
-        color: $k-color-primary-min-6;
+        color: $k-primary-min-6-color;
       }
 
       &.disabled,
       &.disabled:hover {
         background: none;
-        color: $k-color-primary-min-6;
+        color: $k-primary-min-6-color;
         cursor: default;
         opacity: 0.5;
       }
@@ -196,7 +196,7 @@
       &.range:hover,
       &.range.disabled,
       &.range.disabled:hover {
-        background: $k-color-primary-plus-2;
+        background: $k-primary-plus-2-color;
         border-radius: 0;
       }
 
@@ -204,7 +204,7 @@
       &.range.today:hover,
       &.range.today.disabled,
       &.range.today.disabled:hover {
-        $k-todayBackground: mix(orange, $k-color-primary-plus-2, 50%);
+        $k-todayBackground: mix(orange, $k-primary-plus-2-color, 50%);
         background: $k-todayBackground;
         border-radius: 0;
       }
@@ -215,7 +215,7 @@
       &.selected.disabled:hover {
         color: #fff;
         text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-        background: lighten($k-color-primary-min-6, 10);
+        background: lighten($k-primary-min-6-color, 10);
       }
 
       &.active,
@@ -238,13 +238,13 @@
         border-radius: 4px;
 
         &:hover {
-          background: $k-color-primary-plus-2;
+          background: $k-primary-plus-2-color;
         }
 
         &.disabled,
         &.disabled:hover {
           background: none;
-          color: $k-color-primary-min-6;
+          color: $k-primary-min-6-color;
           cursor: default;
         }
 
@@ -259,7 +259,7 @@
 
         &.old,
         &.new {
-          color: $k-color-primary-min-6;
+          color: $k-primary-min-6-color;
         }
       }
     }
@@ -272,7 +272,7 @@
     tfoot tr th {
       cursor: pointer;
       &:hover {
-        background: $k-color-primary-plus-2;
+        background: $k-primary-plus-2-color;
       }
     }
 
@@ -327,7 +327,7 @@
       text-align: center;
       text-shadow: 0 1px 0 white;
       vertical-align: middle;
-      background-color: $k-color-primary-plus-2;
+      background-color: $k-primary-plus-2-color;
       border: 1px solid #ccc;
       margin-left: -5px;
       margin-right: -5px;

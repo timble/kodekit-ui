@@ -7,7 +7,7 @@
     padding: $k-well-spacing;
     background-color: $k-well-background;
     border: 1px solid $k-well-border;
-    border-radius: $k-well-radius;
+    border-radius: $k-well-border-radius;
     box-shadow: $k-well-box-shadow;
     @include content-block();
 
@@ -22,7 +22,7 @@
     padding: $k-well-content-spacing;
     background: $k-well-content-background;
     border: $k-well-content-border;
-    border-radius: $k-well-radius;
+    border-radius: $k-well-border-radius;
   }
 
   /* Wells tabs */
@@ -33,7 +33,7 @@
       background: $k-well-content-background;
       border: $k-well-content-border;
       border-top: none;
-      border-radius: 0 0 $k-well-radius $k-well-radius;
+      border-radius: 0 0 $k-well-border-radius $k-well-border-radius;
     }
   }
 }
