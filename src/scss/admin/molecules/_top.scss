@@ -220,7 +220,7 @@
     }
 
     .k-wrapper {
-      > .k-off-canvas-overlay {
+      > .k-off-canvas-overlay-right {
         z-index: 10;
 
         @include breakpoint($k-sidebar-right-querie-width) {
@@ -242,8 +242,8 @@
         transform: translateX(0);
       }
 
-      > .k-off-canvas-overlay {
-        opacity: $k-off-canvas-overlay-opacity;
+      > .k-off-canvas-overlay-right {
+        opacity: $k-off-canvas-overlay-right-opacity;
 
         @include breakpoint($k-sidebar-right-querie-width) {
           opacity: 0;

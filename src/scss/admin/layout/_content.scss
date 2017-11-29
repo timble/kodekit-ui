@@ -59,8 +59,8 @@
     /* Set opacity */
 
     .k-content {
-      & > .k-off-canvas-overlay {
-        opacity: $k-off-canvas-overlay-opacity;
+      & > .k-off-canvas-overlay-left {
+        opacity: $k-off-canvas-overlay-left-opacity;
 
         @include breakpoint($k-sidebar-left-querie-width) {
           opacity: 0;
@@ -87,7 +87,7 @@
 
       /* 2. Set z-index so it will become visible */
 
-      & > .k-off-canvas-overlay {
+      & > .k-off-canvas-overlay-left {
         z-index: 9;
 
         @include breakpoint($k-sidebar-left-querie-width) {

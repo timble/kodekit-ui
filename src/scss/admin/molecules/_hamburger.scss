@@ -11,7 +11,7 @@
    * 3. Hide when the sidebar is visible
    */
 
-  .k-off-canvas-menu-toggle {
+  .k-off-canvas-toggle {
     position: relative;
     z-index: 10;
     float: left;
@@ -48,7 +48,7 @@
 
     /* Set proper margins */
 
-    &.k-off-canvas-menu-toggle--left {
+    &.k-off-canvas-toggle--left {
       margin-right: 0;
 
       @include rtl {
@@ -57,7 +57,7 @@
       }
     }
 
-    &.k-off-canvas-menu-toggle--right {
+    &.k-off-canvas-toggle--right {
       margin-left: 0;
 
       @include rtl {
@@ -69,8 +69,8 @@
 
   /* Button styling */
 
-  .k-off-canvas-menu-toggle--left,
-  .k-off-canvas-menu-toggle--right {
+  .k-off-canvas-toggle--left,
+  .k-off-canvas-toggle--right {
     .k-toggle-button-bar1,
     .k-toggle-button-bar2,
     .k-toggle-button-bar3 {
@@ -89,7 +89,7 @@
    * We don't need RTLstyling here since we're calculating the icons to be in the middle
    */
 
-  .k-off-canvas-menu-toggle--left {
+  .k-off-canvas-toggle--left {
     .k-toggle-button-bar1,
     .k-toggle-button-bar2,
     .k-toggle-button-bar3 {
@@ -114,7 +114,7 @@
   /* Transform hamburger into a cross when the sidebar is opened */
 
   .k-show-left-menu {
-    .k-off-canvas-menu-toggle--left {
+    .k-off-canvas-toggle--left {
       .k-toggle-button-bar1 {
         top: round(($k-toggle-button-size / 2) - ($k-hamburger-bar-height / 2));
         transform: rotate(135deg);
@@ -138,7 +138,7 @@
    * We don't need RTLstyling here since we're calculating the icons to be in the middle
    */
 
-  .k-off-canvas-menu-toggle--right {
+  .k-off-canvas-toggle--right {
     .k-toggle-button-bar1,
     .k-toggle-button-bar2,
     .k-toggle-button-bar3 {
@@ -162,7 +162,7 @@
   /* Transform "i" into a cross when the sidebar is opened */
 
   .k-show-right-menu {
-    .k-off-canvas-menu-toggle--right {
+    .k-off-canvas-toggle--right {
       .k-toggle-button-bar1 {
         opacity: 0;
         transform: scale(0);

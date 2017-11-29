@@ -135,7 +135,7 @@
             function toggleMenu(menu, event) {
                 // Close other menu when opened
                 if ( wrapper.is('[class*="'+openedClass+'"]') && !wrapper.is('[class*="'+openedClass+'-'+position+'"]') ) {
-                    var brother = wrapper.find('button[class^="k-off-canvas-menu-toggle"]').not(menuToggle);
+                    var brother = wrapper.find('button[class^="k-off-canvas-toggle"]').not(menuToggle);
                     brother.trigger('click');
                 }
                 // Decide wether to open or close the menu

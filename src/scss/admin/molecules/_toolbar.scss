@@ -101,16 +101,16 @@
       }
     }
 
-    .k-off-canvas-menu-toggle-holder {
+    .k-off-canvas-toggle-holder {
       display: inline-block;
       vertical-align: middle;
 
-      .k-off-canvas-menu-toggle {
+      .k-off-canvas-toggle {
         margin-bottom: 0;
       }
     }
 
-    .k-off-canvas-menu-toggle-holder--right {
+    .k-off-canvas-toggle-holder--right {
       float: right;
 
       @include rtl {

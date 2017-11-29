@@ -27,12 +27,12 @@
    */
 
   .k-title-bar {
-    .k-off-canvas-menu-toggle-holder,
+    .k-off-canvas-toggle-holder,
     .k-title-bar__heading {
       flex: 0 0 auto
     }
 
-    .k-off-canvas-menu-toggle-holder {
+    .k-off-canvas-toggle-holder {
       white-space: nowrap;
     }
 
@@ -50,7 +50,7 @@
       }
     }
 
-    .k-off-canvas-menu-toggle {
+    .k-off-canvas-toggle {
       margin: $k-title-bar-spacing $k-title-bar-spacing ($k-title-bar-spacing - 1px);
     }
   }

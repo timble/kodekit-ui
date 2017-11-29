@@ -45,7 +45,10 @@
    * 4. Hide overlay when screen is wide enough
    */
 
-  .k-off-canvas-overlay {
+  .k-off-canvas-overlay-top,
+  .k-off-canvas-overlay-left,
+  .k-off-canvas-overlay-right,
+  .k-off-canvas-overlay-form {
     @include coverall; /* 1 */
     z-index: -1; /* 2 */
     display: block;

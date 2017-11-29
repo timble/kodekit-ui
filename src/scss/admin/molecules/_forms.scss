@@ -123,7 +123,7 @@
 
   /* Shared styling between radio boxes and checkboxes */
 
-  @include modernizr('.k-appearance.k-checked') {
+  @include modernizr('.k-appearance') {
     input[type="checkbox"],
     input[type="radio"] {
 
@@ -215,7 +215,7 @@
 
   /* RTL */
 
-  @include modernizr-rtl('.k-appearance.k-checked') {
+  @include modernizr-rtl('.k-appearance') {
     input[type="checkbox"],
     input[type="radio"] {
       margin: 0 0 0 .33em;
@@ -252,7 +252,7 @@
    * 5. Set the color of the check icon
    */
 
-  @include modernizr('.k-appearance.k-checked') {
+  @include modernizr('.k-appearance') {
     input[type="checkbox"] {
       border-radius: 0; /* 1 */
 
@@ -277,7 +277,7 @@
    * 5. Making inner circle actually round
    */
 
-  @include modernizr('.k-appearance.k-checked') {
+  @include modernizr('.k-appearance') {
     input[type="radio"] {
       border-radius: 50%; /* 1 */
 

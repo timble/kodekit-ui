@@ -553,6 +553,7 @@ $k-scopebar-filter-font-size:               $k-font-size !default;
 $k-scopebar-search-delta-size:              $k-font-size * 17 !default;
 $k-scopebar-search-echo-size:               $k-font-size * 22 !default;
 $k-scopebar-search-visible-class:           $k-visible-class !default;
+$k-scopebar-search-button-visible-class:    $k-visible-class !default;
 
 $k-scopebar-submit-button-spacing:          $k-font-size * 2 !default;
 $k-scopebar-submit-button-size:             $k-font-size !default;
@@ -705,16 +706,20 @@ $k-form-block-content-spacing:    ($k-extrasmall-spacing - 1px) $k-extrasmall-sp
 // 3. The information bar width, best to use a number dividable by 5
 // 4. The height is automatically calculated
 
-$k-off-canvas-overlay-background:   black !default;
-$k-off-canvas-overlay-opacity:      0.75 !default;
-$k-toggle-button-size:              32px !default;
-$k-toggle-button-background:        $k-accent-color !default;
-$k-toggle-button-color:             white !default;
-$k-toggle-button-border-radius:     3px !default;
-$k-hamburger-bar-width:             15px !default; // 1
-$k-hamburger-bar-height:            round($k-hamburger-bar-width / 5) !default; // 2
-$k-info-bar-width:                  5px !default; // 3
-$k-info-bar-height:                 $k-info-bar-width * 2 !default; // 4
+$k-off-canvas-overlay-background:     black !default;
+$k-off-canvas-overlay-opacity:        0.75 !default;
+$k-off-canvas-overlay-top-opacity:    $k-off-canvas-overlay-opacity !default;
+$k-off-canvas-overlay-left-opacity:   $k-off-canvas-overlay-opacity !default;
+$k-off-canvas-overlay-right-opacity:  $k-off-canvas-overlay-opacity !default;
+$k-off-canvas-overlay-form-opacity:   $k-off-canvas-overlay-opacity !default;
+$k-toggle-button-size:                32px !default;
+$k-toggle-button-background:          $k-accent-color !default;
+$k-toggle-button-color:               white !default;
+$k-toggle-button-border-radius:       3px !default;
+$k-hamburger-bar-width:               15px !default; // 1
+$k-hamburger-bar-height:              round($k-hamburger-bar-width / 5) !default; // 2
+$k-info-bar-width:                    5px !default; // 3
+$k-info-bar-height:                   $k-info-bar-width * 2 !default; // 4
 
 
 // Form styles
@@ -779,6 +784,7 @@ $k-tabs-border:                           $k-tabs-border-width solid $k-tabs-bor
 $k-tabs-spacing:                          (($k-large-spacing / 2) - 1px) !default;
 
 $k-tabs-item-spacing:                     2px !default;
+$k-tabs-item-active-class:                $k-active-class !default;
 
 $k-tabs-link-border:                      1px solid transparent !default;
 $k-tabs-link-font-size:                   $k-font-size !default;
@@ -823,6 +829,7 @@ $k-button-font-weight:               $k-normal-font-weight !default;
 $k-button-spacer:                    $k-tiny-spacing !default;
 $k-button-active-class:              $k-active-class !default;
 $k-button-disabled-class:            $k-disabled-class !default;
+$k-button-open-class:                $k-open-class !default;
 $k-button-border-radius:             $k-border-radius !default;
 $k-button-font-size:                 $k-font-size !default;
 $k-button-line-height:               $k-line-height - 2px !default;
@@ -852,8 +859,6 @@ $k-button-warning-border:            darken($k-button-warning-background, 5%) !d
 $k-button-danger-color:              $k-error-type-color !default;
 $k-button-danger-background:         $k-error-color !default;
 $k-button-danger-border:             darken($k-button-danger-background, 5%) !default;
-
-$k-button-active-class:              $k-active-class !default;
 
 $k-button-link-disabled-color:       $k-primary-min-6-color !default;
 

@@ -58,8 +58,8 @@
      */
 
     .k-component {
-      .k-off-canvas-overlay {
-        opacity: $k-off-canvas-overlay-opacity; /* 1 */
+      .k-off-canvas-overlay-right {
+        opacity: $k-off-canvas-overlay-right-opacity; /* 1 */
 
         @include breakpoint($k-sidebar-right-querie-width) {
           opacity: 0;
@@ -76,7 +76,7 @@
 
   .k-is-opened-right {
     .k-component {
-      .k-off-canvas-overlay {
+      .k-off-canvas-overlay-right {
         z-index: 9; /* 1 */
 
         @include breakpoint($k-sidebar-right-querie-width) {

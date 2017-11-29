@@ -147,8 +147,8 @@
   }
 
   &:active,
-  &.k-is-active,
-  .k-is-open > &.dropdown-toggle {
+  &#{$k-button-active-class},
+  #{$k-button-open-class} > &.dropdown-toggle {
     color: $k-color;
     background-color: darken($k-background, 10%);
     border-color: darken($k-border, 12%);
@@ -169,7 +169,7 @@
     background-image: none;
   }
 
-  &.k-is-disabled,
+  &#{$k-button-disabled-class},
   &[disabled],
   fieldset[disabled] & {
     &:hover,

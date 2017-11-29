@@ -275,7 +275,7 @@
       z-index: 2;
     }
 
-    &.k-is-active {
+    &#{$k-scopebar-dropdown-active-class} {
       overflow: visible;
       z-index: 3;
 
@@ -637,7 +637,7 @@
         color: $k-primary-min-7-color;
       }
 
-      &.k-is-visible {
+      &#{$k-scopebar-search-button-visible-class} {
         display: inline-block;
       }
     }
