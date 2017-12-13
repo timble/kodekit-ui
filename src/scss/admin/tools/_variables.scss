@@ -87,10 +87,6 @@ $k-molecule-top:                inherit !default;
 $k-molecule-tree:               inherit !default;
 $k-molecule-wells:              inherit !default;
 
-$k-vendors:                     true !default;
-$k-vendor-select2:              inherit !default;
-$k-vendor-normalize:            inherit !default;
-
 
 // Breakpoints
 // ==========================================================================
@@ -1213,28 +1209,55 @@ $k-rtlicons:  'account-login',
 
 // Overrides for Select2-bootstrap theme
 // ==========================================================================
-// Do not change since we copied the bootstrap Select 2 styling
+// Do not change since we're using the bootstrap Select 2 styling
 
-$k-font-family-base:          inherit !default;
-$k-font-size-base:            $k-font-size !default;
-$k-line-height-base:          $k-line-height !default;
+$border-radius-base:                $k-border-radius !default;
+$border-radius-large:               $k-large-border-radius !default;
+$border-radius-small:               $k-small-border-radius !default;
 
-$k-input-bg:                  $k-input-background !default;
-$k-input-bg-disabled:         $k-input-disabled-background !default;
+$btn-default-bg:                    $k-button-default-background !default;
+$btn-default-border:                $k-button-default-border !default;
 
-$k-padding-base-vertical:     $k-base-vertical-spacing !default;
-$k-padding-base-horizontal:   $k-base-horizontal-spacing !default;
-$k-padding-small-vertical:    $k-extrasmall-vertical-spacing !default;
-$k-padding-small-horizontal:  $k-extrasmall-horizontal-spacing !default;
-$k-padding-large-vertical:    $k-large-vertical-spacing !default;
-$k-padding-large-horizontal:  $k-large-horizontal-spacing !default;
+$caret-width-base:                  $k-caret-base-width !default;
+$caret-width-large:                 $k-caret-large-width !default;
 
-$k-dropdown-link-hover-bg:    $k-dropdown-link-hover-background !default;
-$k-dropdown-link-active-bg:   $k-dropdown-link-active-background !default;
+$cursor-disabled:                   $k-disabled-cursor !default;
 
-$k-button-default-bg:         $k-button-default-background !default;
-$k-button-danger-bg:          $k-button-danger-background !default;
+$dropdown-header-color:             $k-dropdown-header-color !default;
+$dropdown-link-active-bg:           $k-dropdown-link-active-background !default;
+$dropdown-link-active-color:        $k-dropdown-link-active-color !default;
+$dropdown-link-disabled-color:      $k-dropdown-link-disabled-color !default;
+$dropdown-link-hover-bg:            $k-dropdown-link-hover-background !default;
+$dropdown-link-hover-color:         $k-dropdown-link-hover-color !default;
 
-$k-state-warning-text:        $k-state-warning-color !default;
-$k-state-danger-text:         $k-state-danger-color !default;
-$k-state-success-text:        $k-state-success-color !default;
+$font-size-base:                    $k-font-size !default;
+$font-size-large:                   $k-large-font-size !default;
+$font-size-small:                   $k-small-font-size !default;
+
+$padding-base-horizontal:           $k-base-horizontal-spacing !default;
+$padding-large-horizontal:          $k-large-horizontal-spacing !default;
+$padding-small-horizontal:          $k-extrasmall-vertical-spacing !default;
+$padding-base-vertical:             $k-base-vertical-spacing !default;
+$padding-large-vertical:            $k-large-vertical-spacing !default;
+$padding-small-vertical:            $k-extrasmall-vertical-spacing !default;
+
+$line-height-base:                  $k-line-height !default;
+$line-height-large:                 $k-large-line-height !default;
+$line-height-small:                 $k-small-line-height !default;
+
+$input-bg:                          $k-input-background !default;
+$input-bg-disabled:                 $k-input-disabled-background !default;
+$input-color:                       $k-input-color !default;
+$input-color-placeholder:           $k-input-placeholder-color !default;
+$input-border:                      $k-input-border !default;
+$input-border-focus:                $k-input-focus-border !default;
+$input-border-radius:               $k-input-border-radius !default;
+$input-height-base:                 $k-input-base-height !default;
+$input-height-large:                $k-input-large-height !default;
+$input-height-small:                $k-input-small-height !default;
+$state-warning-text:                $k-state-warning-color !default;
+$state-danger-text:                 $k-state-danger-color !default;
+$state-success-text:                $k-state-success-color !default;
+
+$s2bs-clear-selection-hover-color:  $k-button-default-color !default;
+$s2bs-remove-choice-hover-color:    $k-button-default-color !default;

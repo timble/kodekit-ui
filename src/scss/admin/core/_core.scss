@@ -36,7 +36,7 @@
   /* Base */
 
   @import "../atoms/boxsizing";
-  @import "../vendor/normalize";
+  @import "../3rdparty/normalize";
 
 
   /* Layout */
@@ -84,13 +84,10 @@
   @import "../molecules/icons";
   @import "../molecules/list";
   @import "../molecules/login";
-  @import "../molecules/modal";
   @import "../molecules/navigation";
   @import "../molecules/optionlist";
   @import "../molecules/pagination";
-  @import "../molecules/responsive-table";
   @import "../molecules/scopebar";
-  @import "../molecules/select2";
   @import "../molecules/sidebar-item";
   @import "../molecules/styled-file-input";
   @import "../molecules/table";
@@ -99,7 +96,6 @@
   @import "../molecules/toolbar";
   @import "../molecules/tooltip";
   @import "../molecules/top";
-  @import "../molecules/tree";
   @import "../molecules/wells";
 
 
@@ -129,26 +125,3 @@
   @import "../utilities/visually-shown";
 
 }
-
-
-/* 3rd party
-   ========================================================================== */
-
-/**
- * Markup might be rendered outside of a <div class="koowa"> therefor we need
- * to put the CSS outside of the namespace as well.
- * Placing after the .koowa namespace styling to win easier over classes like `.koowa ...`
- *
- * 1. Select2
- * 2. Select2 bootstrap theme to match the bootstrap forms
- * 3. We need the dropdowns for the datepicker to work
- * 4. Modals are being generated outside of the koowa namespace
- * 5. The datepicker popup is located outside of koowa namespace
- */
-
-@import "../vendor/select2/core"; /* 1 */
-@import "../molecules/select2"; /* 2 */
-@import "../molecules/dropdowns"; /* 3 */
-@import "../molecules/modal"; /* 4 */
-@import "../molecules/datepicker"; /* 5 */
-
