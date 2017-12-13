@@ -12,32 +12,6 @@ module.exports = function(grunt) {
         // Grunt variables
         srcPath: 'src',
         distPath: 'dist',
-        jquery: [
-            'node_modules/jquery/dist/jquery.js',
-            '<%= srcPath %>/js/koowa.noconflict.js'
-        ],
-        admin: [
-            '<%= srcPath %>/js/kquery.set.js',
-            'node_modules/select2/dist/js/select2.full.js',
-            'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
-            'node_modules/footable/js/footable.js',
-            'node_modules/jqtree/tree.jquery.js',
-            '<%= srcPath %>/js/custom-file-input.js',
-            '<%= srcPath %>/js/bootstrap-dropdown.js',
-            '<%= srcPath %>/js/bootstrap-tab.js',
-            '<%= srcPath %>/js/bootstrap-tooltip.js',
-            '<%= srcPath %>/js/jquery.ui.widget.js',
-            '<%= srcPath %>/js/koowa.scopebar.js',
-            '<%= srcPath %>/js/koowa.class.js',
-            '<%= srcPath %>/js/koowa.grid.js',
-            '<%= srcPath %>/js/koowa.tree.js',
-            '<%= srcPath %>/js/datepicker.js',
-            '<%= srcPath %>/js/tabbable.js',
-            '<%= srcPath %>/js/off-canvas-menu.js',
-            '<%= srcPath %>/js/konami.js',
-            '<%= srcPath %>/js/main.js',
-            '<%= srcPath %>/js/kquery.unset.js'
-        ],
 
 
         // Compile sass files
@@ -162,18 +136,9 @@ module.exports = function(grunt) {
                         'node_modules/jquery/dist/jquery.js',
                         '<%= srcPath %>/js/koowa.noconflict.js'
                     ],
-                    '<%= distPath %>/js/jquery.min.js': [
-                        'node_modules/jquery/dist/jquery.min.js',
-                        '<%= srcPath %>/js/koowa.noconflict.js'
-                    ],
                     '<%= distPath %>/js/jquery.magnific-popup.js': [
                         '<%= srcPath %>/js/kquery.set.js',
                         'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
-                        '<%= srcPath %>/js/kquery.unset.js'
-                    ],
-                    '<%= distPath %>/js/jquery.magnific-popup.min.js': [
-                        '<%= srcPath %>/js/kquery.set.js',
-                        'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
                         '<%= srcPath %>/js/kquery.unset.js'
                     ],
                     '<%= distPath %>/js/jquery.validate.js': [
@@ -190,11 +155,6 @@ module.exports = function(grunt) {
                     '<%= distPath %>/js/koowa.select2.js': [
                         '<%= srcPath %>/js/kquery.set.js',
                         'node_modules/select2/dist/js/select2.full.js',
-                        '<%= srcPath %>/js/kquery.unset.js'
-                    ],
-                    '<%= distPath %>/js/koowa.select2.min.js': [
-                        '<%= srcPath %>/js/kquery.set.js',
-                        'node_modules/select2/dist/js/select2.full.min.js',
                         '<%= srcPath %>/js/kquery.unset.js'
                     ],
                     '<%= distPath %>/js/koowa.tree.js': [
@@ -251,38 +211,14 @@ module.exports = function(grunt) {
                 preserveComments: /(?:^!|@(?:license|preserve|cc_on))/ // preserve @license tags
             },
             build: {
-                files: {
-                    '<%= distPath %>/js/bootstrap.min.js': [
-                        '<%= srcPath %>/js/bootstrap.js'
-                    ],
-                    '<%= distPath %>/js/koowa.datepicker.min.js': [
-                        '<%= srcPath %>/js/kquery.set.js',
-                        '<%= srcPath %>/js/datepicker.js',
-                        '<%= srcPath %>/js/kquery.unset.js'
-                    ],
-                    '<%= distPath %>/js/koowa.tree.min.js': [
-                        '<%= srcPath %>/js/kquery.set.js',
-                        'node_modules/jqtree/tree.jquery.js',
-                        '<%= srcPath %>/js/koowa.tree.js',
-                        '<%= srcPath %>/js/kquery.unset.js'
-                    ],
-                    '<%= distPath %>/js/tooltip.min.js': [
-                        '<%= srcPath %>/js/kquery.set.js',
-                        '<%= srcPath %>/js/bootstrap-tooltip.js',
-                        '<%= srcPath %>/js/kquery.unset.js'
-                    ],
-                    '<%= distPath %>/js/modernizr.min.js': [
-                        '<%= distPath %>/js/modernizr.js'
-                    ],
-                    '<%= distPath %>/js/jquery.validate.min.js': [
-                        '<%= srcPath %>/js/kquery.set.js',
-                        'node_modules/jquery-validation/dist/jquery.validate.js',
-                        '<%= srcPath %>/js/jquery.validate.patch.js',
-                        '<%= srcPath %>/js/kquery.unset.js'
-                    ],
-                    '<%= distPath %>/js/koowa.min.js': '<%= distPath %>/js/koowa.js',
-                    '<%= distPath %>/js/admin.min.js': '<%= distPath %>/js/admin.js'
-                }
+                files: [{
+                    expand: true,
+                    cwd: '<%= distPath %>/js',
+                    src: ['*.js', '!*.min.js'],
+                    dest: '<%= distPath %>/js',
+                    ext: '.min.js',
+                    extDot: 'last'
+                }]
             }
         },
 
