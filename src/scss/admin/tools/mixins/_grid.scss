@@ -1,6 +1,6 @@
 // Grid
 
-@mixin setGridItemWidth($breakpoint,$columns) {
+@mixin setGridItemWidth($breakpoint, $columns) {
   @media (min-width: $breakpoint ) {
     width: percentage(1/$columns);
     @content;
@@ -8,7 +8,10 @@
 }
 
 // Calculate the grid items
-@mixin setGridBreakpoint($width: $k-grid-item-width, $spacing: $k-grid-spacing, $gridwidth: $k-grid-width) {
+@mixin setGridBreakpoint(
+  $width: $k-grid-item-width,
+  $spacing: $k-grid-spacing,
+  $gridwidth: $k-grid-width) {
 
   // Calculating max number
   $k-number: floor($gridwidth / $width);
