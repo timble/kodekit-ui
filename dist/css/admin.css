@@ -2150,10 +2150,7 @@ body.k-is-resizing {
   /**
    * Check if :checked is supported using modernizr
    */
-  /* Table pagination */
-  /**
-   * 1. Faking a bottom border, this shadow will disappear when pagination is positioned to bottom
-   */
+  /* Pagination */
   /* Scopebar
      ========================================================================== */
   /**
@@ -2223,6 +2220,10 @@ body.k-is-resizing {
    */
   /* Positioner */
   /* Table heading sorting */
+  /* Table pagination */
+  /**
+   * 1. Faking a bottom border, this shadow will disappear when pagination is positioned to bottom
+   */
   /* Tabs
      ========================================================================== */
   /**
@@ -6979,17 +6980,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   border-color: #c0392b;
 }
 
-.k-ui-namespace .k-table-pagination {
-  padding: 8px 8px 7px;
-  background: #fbfbfb;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
-  border-top: 1px solid gainsboro;
-  box-shadow: 0 1px 0 gainsboro;
-  /* 1 */
-}
-
 .k-ui-namespace .k-pagination {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -8973,6 +8963,17 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 .k-ui-namespace th a:focus .k-sort-descending:before,
 .k-ui-namespace th a:hover .k-sort-descending:before {
   opacity: 0.66;
+}
+
+.k-ui-namespace .k-table-pagination {
+  padding: 8px 8px 7px;
+  background: #fbfbfb;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  border-top: 1px solid gainsboro;
+  box-shadow: 0 1px 0 gainsboro;
+  /* 1 */
 }
 
 .k-ui-namespace .k-tabs-container {

@@ -1,20 +1,6 @@
 @if ($k-molecules == true and $k-molecule-pagination != false) or $k-molecule-pagination == true {
 
-  /* Table pagination */
-
-  /**
-   * 1. Faking a bottom border, this shadow will disappear when pagination is positioned to bottom
-   */
-
-  .k-table-pagination {
-    padding: $k-table-pagination-spacing $k-table-pagination-spacing ($k-table-pagination-spacing - 1px);
-    background: $k-table-pagination-background;
-    flex: 0 0 auto;
-    @include border(top, $k-table-pagination-border);
-    @if $k-borders != false {
-      box-shadow: 0 1px 0 $k-table-pagination-border; /* 1 */
-    }
-  }
+  /* Pagination */
 
   .k-pagination {
     display: flex;
