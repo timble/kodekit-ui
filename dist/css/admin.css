@@ -3967,7 +3967,7 @@ body.k-is-resizing {
   text-decoration: none;
 }
 
-.k-ui-namespace .k-button:focus, .k-ui-namespace .k-button.focus, .k-ui-namespace .k-button:active:focus, .k-ui-namespace .k-button:active.focus, .k-ui-namespace .k-button.k-is-active:focus, .k-ui-namespace .k-button.k-is-active.focus {
+.k-ui-namespace .k-button:focus, .k-ui-namespace .k-button:active:focus, .k-ui-namespace .k-button.k-is-active:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
@@ -3994,7 +3994,7 @@ body.k-is-resizing {
   border-color: #cdcdcd;
 }
 
-.k-ui-namespace .k-button--default:focus, .k-ui-namespace .k-button--default.has-focus {
+.k-ui-namespace .k-button--default:focus, .k-ui-namespace .k-button--default.k-has-focus {
   color: #222222;
   background-color: #e6e6e6;
   border-color: #8d8d8d;
@@ -4014,31 +4014,26 @@ body.k-is-resizing {
   box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.125);
 }
 
-.k-ui-namespace .k-button--default:active:hover, .k-ui-namespace .k-button--default:active:focus, .k-ui-namespace .k-button--default:active.has-focus, .k-ui-namespace .k-button--default.k-is-active:hover, .k-ui-namespace .k-button--default.k-is-active:focus, .k-ui-namespace .k-button--default.k-is-active.has-focus,
+.k-ui-namespace .k-button--default:active:hover, .k-ui-namespace .k-button--default:active:focus, .k-ui-namespace .k-button--default:active.k-has-focus, .k-ui-namespace .k-button--default.k-is-active:hover, .k-ui-namespace .k-button--default.k-is-active:focus, .k-ui-namespace .k-button--default.k-is-active.k-has-focus,
 .k-is-open > .k-ui-namespace .k-button--default.dropdown-toggle:hover,
 .k-is-open > .k-ui-namespace .k-button--default.dropdown-toggle:focus,
-.k-is-open > .k-ui-namespace .k-button--default.dropdown-toggle.has-focus {
+.k-is-open > .k-ui-namespace .k-button--default.dropdown-toggle.k-has-focus {
   color: #222222;
   background-color: #d4d4d4;
   border-color: #8d8d8d;
 }
 
-.k-ui-namespace .k-button--default:active, .k-ui-namespace .k-button--default.is-active,
+.k-ui-namespace .k-button--default:active, .k-ui-namespace .k-button--default.k-is-active,
 .k-is-open > .k-ui-namespace .k-button--default.dropdown-toggle {
   background-image: none;
 }
 
-.k-ui-namespace .k-button--default.k-is-disabled:hover, .k-ui-namespace .k-button--default.k-is-disabled:focus, .k-ui-namespace .k-button--default.k-is-disabled.has-focus, .k-ui-namespace .k-button--default[disabled]:hover, .k-ui-namespace .k-button--default[disabled]:focus, .k-ui-namespace .k-button--default[disabled].has-focus,
+.k-ui-namespace .k-button--default.k-is-disabled:hover, .k-ui-namespace .k-button--default.k-is-disabled:focus, .k-ui-namespace .k-button--default.k-is-disabled.k-has-focus, .k-ui-namespace .k-button--default[disabled]:hover, .k-ui-namespace .k-button--default[disabled]:focus, .k-ui-namespace .k-button--default[disabled].k-has-focus,
 fieldset[disabled] .k-ui-namespace .k-button--default:hover,
 fieldset[disabled] .k-ui-namespace .k-button--default:focus,
-fieldset[disabled] .k-ui-namespace .k-button--default.has-focus {
+fieldset[disabled] .k-ui-namespace .k-button--default.k-has-focus {
   background-color: white;
   border-color: #cdcdcd;
-}
-
-.k-ui-namespace .k-button--default .badge {
-  color: white;
-  background-color: #222222;
 }
 
 .k-ui-namespace .k-button--primary {
@@ -4047,7 +4042,7 @@ fieldset[disabled] .k-ui-namespace .k-button--default.has-focus {
   border-color: #2a6495;
 }
 
-.k-ui-namespace .k-button--primary:focus, .k-ui-namespace .k-button--primary.has-focus {
+.k-ui-namespace .k-button--primary:focus, .k-ui-namespace .k-button--primary.k-has-focus {
   color: white;
   background-color: #255681;
   border-color: #0e2132;
@@ -4067,31 +4062,26 @@ fieldset[disabled] .k-ui-namespace .k-button--default.has-focus {
   box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.125);
 }
 
-.k-ui-namespace .k-button--primary:active:hover, .k-ui-namespace .k-button--primary:active:focus, .k-ui-namespace .k-button--primary:active.has-focus, .k-ui-namespace .k-button--primary.k-is-active:hover, .k-ui-namespace .k-button--primary.k-is-active:focus, .k-ui-namespace .k-button--primary.k-is-active.has-focus,
+.k-ui-namespace .k-button--primary:active:hover, .k-ui-namespace .k-button--primary:active:focus, .k-ui-namespace .k-button--primary:active.k-has-focus, .k-ui-namespace .k-button--primary.k-is-active:hover, .k-ui-namespace .k-button--primary.k-is-active:focus, .k-ui-namespace .k-button--primary.k-is-active.k-has-focus,
 .k-is-open > .k-ui-namespace .k-button--primary.dropdown-toggle:hover,
 .k-is-open > .k-ui-namespace .k-button--primary.dropdown-toggle:focus,
-.k-is-open > .k-ui-namespace .k-button--primary.dropdown-toggle.has-focus {
+.k-is-open > .k-ui-namespace .k-button--primary.dropdown-toggle.k-has-focus {
   color: white;
   background-color: #1d4465;
   border-color: #0e2132;
 }
 
-.k-ui-namespace .k-button--primary:active, .k-ui-namespace .k-button--primary.is-active,
+.k-ui-namespace .k-button--primary:active, .k-ui-namespace .k-button--primary.k-is-active,
 .k-is-open > .k-ui-namespace .k-button--primary.dropdown-toggle {
   background-image: none;
 }
 
-.k-ui-namespace .k-button--primary.k-is-disabled:hover, .k-ui-namespace .k-button--primary.k-is-disabled:focus, .k-ui-namespace .k-button--primary.k-is-disabled.has-focus, .k-ui-namespace .k-button--primary[disabled]:hover, .k-ui-namespace .k-button--primary[disabled]:focus, .k-ui-namespace .k-button--primary[disabled].has-focus,
+.k-ui-namespace .k-button--primary.k-is-disabled:hover, .k-ui-namespace .k-button--primary.k-is-disabled:focus, .k-ui-namespace .k-button--primary.k-is-disabled.k-has-focus, .k-ui-namespace .k-button--primary[disabled]:hover, .k-ui-namespace .k-button--primary[disabled]:focus, .k-ui-namespace .k-button--primary[disabled].k-has-focus,
 fieldset[disabled] .k-ui-namespace .k-button--primary:hover,
 fieldset[disabled] .k-ui-namespace .k-button--primary:focus,
-fieldset[disabled] .k-ui-namespace .k-button--primary.has-focus {
+fieldset[disabled] .k-ui-namespace .k-button--primary.k-has-focus {
   background-color: #3071a9;
   border-color: #2a6495;
-}
-
-.k-ui-namespace .k-button--primary .badge {
-  color: #3071a9;
-  background-color: white;
 }
 
 .k-ui-namespace .k-button--success {
@@ -4100,7 +4090,7 @@ fieldset[disabled] .k-ui-namespace .k-button--primary.has-focus {
   border-color: #229955;
 }
 
-.k-ui-namespace .k-button--success:focus, .k-ui-namespace .k-button--success.has-focus {
+.k-ui-namespace .k-button--success:focus, .k-ui-namespace .k-button--success.k-has-focus {
   color: white;
   background-color: #1e8449;
   border-color: #0b311b;
@@ -4120,31 +4110,26 @@ fieldset[disabled] .k-ui-namespace .k-button--primary.has-focus {
   box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.125);
 }
 
-.k-ui-namespace .k-button--success:active:hover, .k-ui-namespace .k-button--success:active:focus, .k-ui-namespace .k-button--success:active.has-focus, .k-ui-namespace .k-button--success.k-is-active:hover, .k-ui-namespace .k-button--success.k-is-active:focus, .k-ui-namespace .k-button--success.k-is-active.has-focus,
+.k-ui-namespace .k-button--success:active:hover, .k-ui-namespace .k-button--success:active:focus, .k-ui-namespace .k-button--success:active.k-has-focus, .k-ui-namespace .k-button--success.k-is-active:hover, .k-ui-namespace .k-button--success.k-is-active:focus, .k-ui-namespace .k-button--success.k-is-active.k-has-focus,
 .k-is-open > .k-ui-namespace .k-button--success.dropdown-toggle:hover,
 .k-is-open > .k-ui-namespace .k-button--success.dropdown-toggle:focus,
-.k-is-open > .k-ui-namespace .k-button--success.dropdown-toggle.has-focus {
+.k-is-open > .k-ui-namespace .k-button--success.dropdown-toggle.k-has-focus {
   color: white;
   background-color: #176739;
   border-color: #0b311b;
 }
 
-.k-ui-namespace .k-button--success:active, .k-ui-namespace .k-button--success.is-active,
+.k-ui-namespace .k-button--success:active, .k-ui-namespace .k-button--success.k-is-active,
 .k-is-open > .k-ui-namespace .k-button--success.dropdown-toggle {
   background-image: none;
 }
 
-.k-ui-namespace .k-button--success.k-is-disabled:hover, .k-ui-namespace .k-button--success.k-is-disabled:focus, .k-ui-namespace .k-button--success.k-is-disabled.has-focus, .k-ui-namespace .k-button--success[disabled]:hover, .k-ui-namespace .k-button--success[disabled]:focus, .k-ui-namespace .k-button--success[disabled].has-focus,
+.k-ui-namespace .k-button--success.k-is-disabled:hover, .k-ui-namespace .k-button--success.k-is-disabled:focus, .k-ui-namespace .k-button--success.k-is-disabled.k-has-focus, .k-ui-namespace .k-button--success[disabled]:hover, .k-ui-namespace .k-button--success[disabled]:focus, .k-ui-namespace .k-button--success[disabled].k-has-focus,
 fieldset[disabled] .k-ui-namespace .k-button--success:hover,
 fieldset[disabled] .k-ui-namespace .k-button--success:focus,
-fieldset[disabled] .k-ui-namespace .k-button--success.has-focus {
+fieldset[disabled] .k-ui-namespace .k-button--success.k-has-focus {
   background-color: #27ae60;
   border-color: #229955;
-}
-
-.k-ui-namespace .k-button--success .badge {
-  color: #27ae60;
-  background-color: white;
 }
 
 .k-ui-namespace .k-button--info {
@@ -4153,7 +4138,7 @@ fieldset[disabled] .k-ui-namespace .k-button--success.has-focus {
   border-color: #258cd1;
 }
 
-.k-ui-namespace .k-button--info:focus, .k-ui-namespace .k-button--info.has-focus {
+.k-ui-namespace .k-button--info:focus, .k-ui-namespace .k-button--info.k-has-focus {
   color: white;
   background-color: #217dbb;
   border-color: #124364;
@@ -4173,31 +4158,26 @@ fieldset[disabled] .k-ui-namespace .k-button--success.has-focus {
   box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.125);
 }
 
-.k-ui-namespace .k-button--info:active:hover, .k-ui-namespace .k-button--info:active:focus, .k-ui-namespace .k-button--info:active.has-focus, .k-ui-namespace .k-button--info.k-is-active:hover, .k-ui-namespace .k-button--info.k-is-active:focus, .k-ui-namespace .k-button--info.k-is-active.has-focus,
+.k-ui-namespace .k-button--info:active:hover, .k-ui-namespace .k-button--info:active:focus, .k-ui-namespace .k-button--info:active.k-has-focus, .k-ui-namespace .k-button--info.k-is-active:hover, .k-ui-namespace .k-button--info.k-is-active:focus, .k-ui-namespace .k-button--info.k-is-active.k-has-focus,
 .k-is-open > .k-ui-namespace .k-button--info.dropdown-toggle:hover,
 .k-is-open > .k-ui-namespace .k-button--info.dropdown-toggle:focus,
-.k-is-open > .k-ui-namespace .k-button--info.dropdown-toggle.has-focus {
+.k-is-open > .k-ui-namespace .k-button--info.dropdown-toggle.k-has-focus {
   color: white;
   background-color: #1c699d;
   border-color: #124364;
 }
 
-.k-ui-namespace .k-button--info:active, .k-ui-namespace .k-button--info.is-active,
+.k-ui-namespace .k-button--info:active, .k-ui-namespace .k-button--info.k-is-active,
 .k-is-open > .k-ui-namespace .k-button--info.dropdown-toggle {
   background-image: none;
 }
 
-.k-ui-namespace .k-button--info.k-is-disabled:hover, .k-ui-namespace .k-button--info.k-is-disabled:focus, .k-ui-namespace .k-button--info.k-is-disabled.has-focus, .k-ui-namespace .k-button--info[disabled]:hover, .k-ui-namespace .k-button--info[disabled]:focus, .k-ui-namespace .k-button--info[disabled].has-focus,
+.k-ui-namespace .k-button--info.k-is-disabled:hover, .k-ui-namespace .k-button--info.k-is-disabled:focus, .k-ui-namespace .k-button--info.k-is-disabled.k-has-focus, .k-ui-namespace .k-button--info[disabled]:hover, .k-ui-namespace .k-button--info[disabled]:focus, .k-ui-namespace .k-button--info[disabled].k-has-focus,
 fieldset[disabled] .k-ui-namespace .k-button--info:hover,
 fieldset[disabled] .k-ui-namespace .k-button--info:focus,
-fieldset[disabled] .k-ui-namespace .k-button--info.has-focus {
+fieldset[disabled] .k-ui-namespace .k-button--info.k-has-focus {
   background-color: #3498db;
   border-color: #258cd1;
-}
-
-.k-ui-namespace .k-button--info .badge {
-  color: #3498db;
-  background-color: white;
 }
 
 .k-ui-namespace .k-button--warning {
@@ -4206,7 +4186,7 @@ fieldset[disabled] .k-ui-namespace .k-button--info.has-focus {
   border-color: #d67118;
 }
 
-.k-ui-namespace .k-button--warning:focus, .k-ui-namespace .k-button--warning.has-focus {
+.k-ui-namespace .k-button--warning:focus, .k-ui-namespace .k-button--warning.k-has-focus {
   color: white;
   background-color: #bf6516;
   border-color: #64350b;
@@ -4226,31 +4206,26 @@ fieldset[disabled] .k-ui-namespace .k-button--info.has-focus {
   box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.125);
 }
 
-.k-ui-namespace .k-button--warning:active:hover, .k-ui-namespace .k-button--warning:active:focus, .k-ui-namespace .k-button--warning:active.has-focus, .k-ui-namespace .k-button--warning.k-is-active:hover, .k-ui-namespace .k-button--warning.k-is-active:focus, .k-ui-namespace .k-button--warning.k-is-active.has-focus,
+.k-ui-namespace .k-button--warning:active:hover, .k-ui-namespace .k-button--warning:active:focus, .k-ui-namespace .k-button--warning:active.k-has-focus, .k-ui-namespace .k-button--warning.k-is-active:hover, .k-ui-namespace .k-button--warning.k-is-active:focus, .k-ui-namespace .k-button--warning.k-is-active.k-has-focus,
 .k-is-open > .k-ui-namespace .k-button--warning.dropdown-toggle:hover,
 .k-is-open > .k-ui-namespace .k-button--warning.dropdown-toggle:focus,
-.k-is-open > .k-ui-namespace .k-button--warning.dropdown-toggle.has-focus {
+.k-is-open > .k-ui-namespace .k-button--warning.dropdown-toggle.k-has-focus {
   color: white;
   background-color: #9f5412;
   border-color: #64350b;
 }
 
-.k-ui-namespace .k-button--warning:active, .k-ui-namespace .k-button--warning.is-active,
+.k-ui-namespace .k-button--warning:active, .k-ui-namespace .k-button--warning.k-is-active,
 .k-is-open > .k-ui-namespace .k-button--warning.dropdown-toggle {
   background-image: none;
 }
 
-.k-ui-namespace .k-button--warning.k-is-disabled:hover, .k-ui-namespace .k-button--warning.k-is-disabled:focus, .k-ui-namespace .k-button--warning.k-is-disabled.has-focus, .k-ui-namespace .k-button--warning[disabled]:hover, .k-ui-namespace .k-button--warning[disabled]:focus, .k-ui-namespace .k-button--warning[disabled].has-focus,
+.k-ui-namespace .k-button--warning.k-is-disabled:hover, .k-ui-namespace .k-button--warning.k-is-disabled:focus, .k-ui-namespace .k-button--warning.k-is-disabled.k-has-focus, .k-ui-namespace .k-button--warning[disabled]:hover, .k-ui-namespace .k-button--warning[disabled]:focus, .k-ui-namespace .k-button--warning[disabled].k-has-focus,
 fieldset[disabled] .k-ui-namespace .k-button--warning:hover,
 fieldset[disabled] .k-ui-namespace .k-button--warning:focus,
-fieldset[disabled] .k-ui-namespace .k-button--warning.has-focus {
+fieldset[disabled] .k-ui-namespace .k-button--warning.k-has-focus {
   background-color: #e67e22;
   border-color: #d67118;
-}
-
-.k-ui-namespace .k-button--warning .badge {
-  color: #e67e22;
-  background-color: white;
 }
 
 .k-ui-namespace .k-button--danger {
@@ -4259,7 +4234,7 @@ fieldset[disabled] .k-ui-namespace .k-button--warning.has-focus {
   border-color: #ab3326;
 }
 
-.k-ui-namespace .k-button--danger:focus, .k-ui-namespace .k-button--danger.has-focus {
+.k-ui-namespace .k-button--danger:focus, .k-ui-namespace .k-button--danger.k-has-focus {
   color: white;
   background-color: #962d22;
   border-color: #43140f;
@@ -4279,31 +4254,26 @@ fieldset[disabled] .k-ui-namespace .k-button--warning.has-focus {
   box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.125);
 }
 
-.k-ui-namespace .k-button--danger:active:hover, .k-ui-namespace .k-button--danger:active:focus, .k-ui-namespace .k-button--danger:active.has-focus, .k-ui-namespace .k-button--danger.k-is-active:hover, .k-ui-namespace .k-button--danger.k-is-active:focus, .k-ui-namespace .k-button--danger.k-is-active.has-focus,
+.k-ui-namespace .k-button--danger:active:hover, .k-ui-namespace .k-button--danger:active:focus, .k-ui-namespace .k-button--danger:active.k-has-focus, .k-ui-namespace .k-button--danger.k-is-active:hover, .k-ui-namespace .k-button--danger.k-is-active:focus, .k-ui-namespace .k-button--danger.k-is-active.k-has-focus,
 .k-is-open > .k-ui-namespace .k-button--danger.dropdown-toggle:hover,
 .k-is-open > .k-ui-namespace .k-button--danger.dropdown-toggle:focus,
-.k-is-open > .k-ui-namespace .k-button--danger.dropdown-toggle.has-focus {
+.k-is-open > .k-ui-namespace .k-button--danger.dropdown-toggle.k-has-focus {
   color: white;
   background-color: #79241b;
   border-color: #43140f;
 }
 
-.k-ui-namespace .k-button--danger:active, .k-ui-namespace .k-button--danger.is-active,
+.k-ui-namespace .k-button--danger:active, .k-ui-namespace .k-button--danger.k-is-active,
 .k-is-open > .k-ui-namespace .k-button--danger.dropdown-toggle {
   background-image: none;
 }
 
-.k-ui-namespace .k-button--danger.k-is-disabled:hover, .k-ui-namespace .k-button--danger.k-is-disabled:focus, .k-ui-namespace .k-button--danger.k-is-disabled.has-focus, .k-ui-namespace .k-button--danger[disabled]:hover, .k-ui-namespace .k-button--danger[disabled]:focus, .k-ui-namespace .k-button--danger[disabled].has-focus,
+.k-ui-namespace .k-button--danger.k-is-disabled:hover, .k-ui-namespace .k-button--danger.k-is-disabled:focus, .k-ui-namespace .k-button--danger.k-is-disabled.k-has-focus, .k-ui-namespace .k-button--danger[disabled]:hover, .k-ui-namespace .k-button--danger[disabled]:focus, .k-ui-namespace .k-button--danger[disabled].k-has-focus,
 fieldset[disabled] .k-ui-namespace .k-button--danger:hover,
 fieldset[disabled] .k-ui-namespace .k-button--danger:focus,
-fieldset[disabled] .k-ui-namespace .k-button--danger.has-focus {
+fieldset[disabled] .k-ui-namespace .k-button--danger.k-has-focus {
   background-color: #c0392b;
   border-color: #ab3326;
-}
-
-.k-ui-namespace .k-button--danger .badge {
-  color: #c0392b;
-  background-color: white;
 }
 
 .k-ui-namespace .k-button--link {
