@@ -768,6 +768,17 @@ $k-grid-spacing:    $k-large-font-size !default;
 $k-grid-width:      2560px !default;
 $k-grid-item-width: $k-font-size * 12 !default;
 
+$k-grid-selected-class: $k-selected-class !default;
+
+$k-grid-selected-header-background: $k-accent-color !default;
+$k-grid-selected-header-border-color: darkest($k-grid-selected-header-background) !default;
+$k-grid-selected-header-color: $k-accent-type-color !default;
+$k-grid-selected-header-anchor-color: $k-accent-type-color !default;
+$k-grid-selected-header-hover-background: darkest($k-accent-color) !default;
+
+$k-grid-selected-body-border-color: darker($k-accent-color) !default;
+$k-grid-selected-body-color: $k-accent-type-color !default;
+
 
 // Tabs
 // ==========================================================================

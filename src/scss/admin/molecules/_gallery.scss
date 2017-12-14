@@ -41,26 +41,26 @@
 
     /* Selected styling */
 
-    &.k-is-selected {
+    &#{$k-grid-selected-class} {
       .k-card__header {
-        background: $k-accent-color;
-        border-color: darkest($k-accent-color);
-        color: $k-accent-type-color;
+        background: $k-grid-selected-header-background;
+        border-color: $k-grid-selected-header-border-color;
+        color: $k-grid-selected-header-color;
 
         a {
-          color: $k-accent-type-color;
+          color: $k-grid-selected-header-anchor-color;
         }
       }
 
       .k-card__body {
-        color: $k-accent-type-color;
-        border-color: darker($k-accent-color);
+        color: $k-grid-selected-body-color;
+        border-color: $k-grid-selected-body-border-color;
       }
 
       &:hover,
       &:focus {
         .k-card__header {
-          background: darkest($k-accent-color);
+          background:$k-grid-selected-header-hover-background;
         }
       }
     }
