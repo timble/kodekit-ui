@@ -196,6 +196,7 @@ module.exports = function(grunt) {
                         '<%= srcPath %>/js/tabbable.js',
                         '<%= srcPath %>/js/off-canvas-menu.js',
                         '<%= srcPath %>/js/konami.js',
+                        '<%= srcPath %>/js/tabsScroller.js',
                         '<%= srcPath %>/js/main.js',
                         '<%= srcPath %>/js/kquery.unset.js'
                     ]
