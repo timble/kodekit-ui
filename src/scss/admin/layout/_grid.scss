@@ -10,7 +10,6 @@
     overflow: hidden;
     width: 100%;
     margin: 0 auto;
-    padding: $k-spacing ($k-spacing / 2);
     flex: 0 0 auto;
 
     /* When resizing */
@@ -19,15 +18,6 @@
     }
   }
 
-  /* Flex container */
-
-  .k-container--flex {
-    margin: 0 auto;
-    padding: $k-spacing;
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 auto;
-  }
 
   /* --------------------------------------------------------------------------
      Grid children
@@ -36,58 +26,62 @@
   /* Main container */
 
   .k-container__main {
-    margin-bottom: $k-spacing;
+    padding: $k-spacing;
 
     @include breakpoint($k-charlie) {
       float: left;
-      margin: 0 ($k-spacing / 2) $k-spacing;
-      width: calc(100% * 8 / 12 - #{$k-spacing});
+      width: calc(100% * 8 / 12 - #{$k-spacing * 1.5});
+
+      &:first-child {
+        padding-right: ($k-spacing / 2);
+      }
+
+      &:last-child {
+        padding-left: ($k-spacing / 2);
+      }
 
       @include rtl {
         float: right;
+
+        &:first-child {
+          padding-left: ($k-spacing / 2);
+        }
+
+        &:last-child {
+          padding-right: ($k-spacing / 2);
+        }
       }
-    }
-  }
-
-  /* When a sidebar is active next to it */
-
-  .k-sidebar + .k-content .k-container__main {
-    @include breakpoint($k-charlie) {
-      width: 100%;
-    }
-
-    @include breakpoint($k-delta) {
-      width: calc(100% * 8 / 12 - #{$k-spacing});
-      margin-bottom: 0;
     }
   }
 
   /* Sub container */
 
   .k-container__sub {
-    margin-bottom: $k-spacing;
+    padding: $k-spacing;
 
     @include breakpoint($k-charlie) {
       float: left;
-      margin: 0 ($k-spacing / 2) $k-spacing;
-      width: calc(100% * 4 / 12 - #{$k-spacing});
+      width: calc(100% * 4 / 12 - #{$k-spacing * 1.5});
+
+      &:first-child {
+        padding-right: ($k-spacing / 2);
+      }
+
+      &:last-child {
+        padding-left: ($k-spacing / 2);
+      }
 
       @include rtl {
         float: right;
+
+        &:first-child {
+          padding-left: ($k-spacing / 2);
+        }
+
+        &:last-child {
+          padding-right: ($k-spacing / 2);
+        }
       }
-    }
-  }
-
-  /* When a sidebar is active next to it */
-
-  .k-sidebar + .k-content .k-container__sub {
-    @include breakpoint($k-charlie) {
-      width: 100%;
-    }
-
-    @include breakpoint($k-delta) {
-      width: calc(100% * 4 / 12 - #{$k-spacing});
-      margin-bottom: 0;
     }
   }
 
@@ -96,15 +90,6 @@
   .k-container__full {
     clear: both;
     width: auto;
-    margin: 0 0 $k-spacing;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    @include breakpoint($k-charlie) {
-      margin-left: ($k-spacing / 2);
-      margin-right: ($k-spacing / 2);
-    }
+    padding: $k-spacing;
   }
 }

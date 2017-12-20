@@ -13,6 +13,8 @@
     width: 100%;
     margin: 0 auto;
     padding: 0;
+    display: flex;
+    flex-direction: column;
     flex: 1 1 auto;
 
     /* When resizing */
@@ -27,8 +29,12 @@
 
     > .k-tabs-content {
       @include clearfix;
+      display: flex;
+      flex: 1 1 auto;
 
       > .k-tab {
+        flex-direction: column;
+        flex: 1 1 auto;
         padding: 0;
       }
     }
@@ -42,6 +48,7 @@
     position: relative;
     height: $k-tabs-wrapper-height;
     overflow: hidden;
+    flex: 0 0 auto;
     @include transition;
   }
 
@@ -180,7 +187,7 @@
     }
 
     > #{$k-tabs-content-tab-active-class} {
-      display: block;
+      display: flex;
     }
   }
 

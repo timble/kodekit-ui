@@ -6,11 +6,31 @@
    * DO or don't flexing children. USeful inside flexing containers on elemtns that have no pre-defined styling for flexbox
    */
 
+  .k-flexbox.k-flexbox.k-flexbox {
+    display: flex;
+  }
+
+  .k-flexbox-column.k-flexbox-column.k-flexbox-column {
+    flex-direction: column;
+  }
+
+  .k-flexbox-from-charlie.k-flexbox-from-charlie.k-flexbox-from-charlie {
+    @include breakpoint($k-charlie) {
+      display: flex;
+    }
+  }
+
   .k-dont-flex.k-dont-flex.k-dont-flex {
     flex: 0 0 auto;
   }
 
   .k-do-flex.k-do-flex.k-do-flex {
     flex: 1 1 auto;
+  }
+
+  .k-do-flex-from-charlie.k-do-flex-from-charlie.k-do-flex-from-charlie {
+    @include breakpoint($k-charlie) {
+      flex: 1 1 auto;
+    }
   }
 }

@@ -1770,14 +1770,11 @@ body.k-is-resizing {
   /* Grid
      ========================================================================== */
   /* Container */
-  /* Flex container */
   /* --------------------------------------------------------------------------
      Grid children
      -------------------------------------------------------------------------- */
   /* Main container */
-  /* When a sidebar is active next to it */
   /* Sub container */
-  /* When a sidebar is active next to it */
   /* Full container */
   /* Koowa UI container
      ========================================================================== */
@@ -2934,7 +2931,6 @@ body.k-is-resizing {
   overflow: hidden;
   width: 100%;
   margin: 0 auto;
-  padding: 16px 8px;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
@@ -2954,92 +2950,62 @@ body.k-is-resizing {
   overflow: hidden;
 }
 
-.k-ui-namespace .k-container--flex {
-  margin: 0 auto;
-  padding: 16px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-}
-
 .k-ui-namespace .k-container__main {
-  margin-bottom: 16px;
+  padding: 16px;
 }
 
 @media screen and (min-width: 768px) {
   .k-ui-namespace .k-container__main {
     float: left;
-    margin: 0 8px 16px;
-    width: calc(100% * 8 / 12 - 16px);
+    width: calc(100% * 8 / 12 - 24px);
+  }
+  .k-ui-namespace .k-container__main:first-child {
+    padding-right: 8px;
+  }
+  .k-ui-namespace .k-container__main:last-child {
+    padding-left: 8px;
   }
   [dir="rtl"] .k-ui-namespace .k-container__main {
     float: right;
   }
-}
-
-@media screen and (min-width: 768px) {
-  .k-ui-namespace .k-sidebar + .k-content .k-container__main {
-    width: 100%;
+  [dir="rtl"] .k-ui-namespace .k-container__main:first-child {
+    padding-left: 8px;
   }
-}
-
-@media screen and (min-width: 1024px) {
-  .k-ui-namespace .k-sidebar + .k-content .k-container__main {
-    width: calc(100% * 8 / 12 - 16px);
-    margin-bottom: 0;
+  [dir="rtl"] .k-ui-namespace .k-container__main:last-child {
+    padding-right: 8px;
   }
 }
 
 .k-ui-namespace .k-container__sub {
-  margin-bottom: 16px;
+  padding: 16px;
 }
 
 @media screen and (min-width: 768px) {
   .k-ui-namespace .k-container__sub {
     float: left;
-    margin: 0 8px 16px;
-    width: calc(100% * 4 / 12 - 16px);
+    width: calc(100% * 4 / 12 - 24px);
+  }
+  .k-ui-namespace .k-container__sub:first-child {
+    padding-right: 8px;
+  }
+  .k-ui-namespace .k-container__sub:last-child {
+    padding-left: 8px;
   }
   [dir="rtl"] .k-ui-namespace .k-container__sub {
     float: right;
   }
-}
-
-@media screen and (min-width: 768px) {
-  .k-ui-namespace .k-sidebar + .k-content .k-container__sub {
-    width: 100%;
+  [dir="rtl"] .k-ui-namespace .k-container__sub:first-child {
+    padding-left: 8px;
   }
-}
-
-@media screen and (min-width: 1024px) {
-  .k-ui-namespace .k-sidebar + .k-content .k-container__sub {
-    width: calc(100% * 4 / 12 - 16px);
-    margin-bottom: 0;
+  [dir="rtl"] .k-ui-namespace .k-container__sub:last-child {
+    padding-right: 8px;
   }
 }
 
 .k-ui-namespace .k-container__full {
   clear: both;
   width: auto;
-  margin: 0 0 16px;
-}
-
-.k-ui-namespace .k-container__full:last-child {
-  margin-bottom: 0;
-}
-
-@media screen and (min-width: 768px) {
-  .k-ui-namespace .k-container__full {
-    margin-left: 8px;
-    margin-right: 8px;
-  }
+  padding: 16px;
 }
 
 .k-ui-namespace.k-ui-container {
@@ -8982,6 +8948,13 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   width: 100%;
   margin: 0 auto;
   padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
@@ -9006,6 +8979,15 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   padding-top: 11px;
 }
 
+.k-ui-namespace .k-tabs-container > .k-tabs-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
 .k-ui-namespace .k-tabs-container > .k-tabs-content:before, .k-ui-namespace .k-tabs-container > .k-tabs-content:after {
   display: table;
   content: " ";
@@ -9016,6 +8998,13 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-tabs-container > .k-tabs-content > .k-tab {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   padding: 0;
 }
 
@@ -9023,6 +9012,9 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   position: relative;
   height: 48px;
   overflow: hidden;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
   transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
   -webkit-backface-visibility: hidden;
 }
@@ -9139,7 +9131,9 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-tabs-content > .k-is-active {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .k-ui-namespace .k-tabs-scroller-prev,
@@ -9941,6 +9935,27 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   text-overflow: ellipsis;
 }
 
+.k-ui-namespace .k-flexbox.k-flexbox.k-flexbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.k-ui-namespace .k-flexbox-column.k-flexbox-column.k-flexbox-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .k-ui-namespace .k-flexbox-from-charlie.k-flexbox-from-charlie.k-flexbox-from-charlie {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
 .k-ui-namespace .k-dont-flex.k-dont-flex.k-dont-flex {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
@@ -9951,6 +9966,14 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .k-ui-namespace .k-do-flex-from-charlie.k-do-flex-from-charlie.k-do-flex-from-charlie {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+  }
 }
 
 .k-ui-namespace .k-hidden.k-hidden.k-hidden,
@@ -10217,6 +10240,10 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   height: auto;
   width: auto;
   margin: 0;
+}
+
+.k-ui-namespace .k-overflow {
+  overflow: auto;
 }
 
 /* ==========================================================================
