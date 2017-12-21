@@ -17115,11 +17115,12 @@ var Konami = function (callback) {
                     toolbar = container.find('.k-js-toolbar'),
                     wrapper = container.find('.k-js-wrapper'),
                     content = container.find('.k-js-content'),
+                    page = container.find('.k-js-page'),
                     component = container.find('.k-js-component'),
                     toggle = container.find('.k-off-canvas-toggle--' + position),
                     $toggle = $(toggle_button),
                     $toggleButton = null,
-                    transitionElements = content;
+                    transitionElements = page || content;
 
                 // Add proper class to toggle buttons
                 $toggle.addClass('k-off-canvas-toggle-holder--' + position).children('button').addClass('k-off-canvas-toggle--' + position);
@@ -17147,7 +17148,7 @@ var Konami = function (callback) {
                     element.offCanvasMenu({
                         menuToggle: $toggleButton,
                         wrapper: wrapper,
-                        container: content,
+                        container: page || content,
                         position: position,
                         offCanvasOverlay: 'k-off-canvas-overlay-' + position,
                         transitionElements: transitionElements

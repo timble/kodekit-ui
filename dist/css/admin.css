@@ -2814,6 +2814,7 @@ body.k-is-resizing {
   /* Set opacity */
 }
 
+.k-ui-namespace .k-show-left-menu .k-page,
 .k-ui-namespace .k-show-left-menu .k-content {
   -webkit-transform: translate(272px, 0);
           transform: translate(272px, 0);
@@ -2821,6 +2822,7 @@ body.k-is-resizing {
 }
 
 @media screen and (min-width: 768px) {
+  .k-ui-namespace .k-show-left-menu .k-page,
   .k-ui-namespace .k-show-left-menu .k-content {
     -webkit-transform: translate(0, 0);
             transform: translate(0, 0);
@@ -2828,54 +2830,76 @@ body.k-is-resizing {
   }
 }
 
+.k-ui-namespace .k-show-left-menu .k-page .k-content,
+.k-ui-namespace .k-show-left-menu .k-content .k-content {
+  -webkit-transform: none;
+          transform: none;
+}
+
+[dir="rtl"] .k-ui-namespace .k-show-left-menu .k-page,
 [dir="rtl"] .k-ui-namespace .k-show-left-menu .k-content {
   -webkit-transform: translate(-272px, 0);
           transform: translate(-272px, 0);
 }
 
 @media screen and (min-width: 768px) {
+  [dir="rtl"] .k-ui-namespace .k-show-left-menu .k-page,
   [dir="rtl"] .k-ui-namespace .k-show-left-menu .k-content {
     -webkit-transform: translate(0, 0);
             transform: translate(0, 0);
   }
 }
 
+[dir="rtl"] .k-ui-namespace .k-show-left-menu .k-page .k-content,
+[dir="rtl"] .k-ui-namespace .k-show-left-menu .k-content .k-content {
+  -webkit-transform: none;
+          transform: none;
+}
+
+.k-ui-namespace .k-show-left-menu .k-page > .k-off-canvas-overlay-left,
 .k-ui-namespace .k-show-left-menu .k-content > .k-off-canvas-overlay-left {
   opacity: 0.75;
 }
 
 @media screen and (min-width: 768px) {
+  .k-ui-namespace .k-show-left-menu .k-page > .k-off-canvas-overlay-left,
   .k-ui-namespace .k-show-left-menu .k-content > .k-off-canvas-overlay-left {
     opacity: 0;
   }
 }
 
+.k-ui-namespace .k-is-opened-left .k-page,
 .k-ui-namespace .k-is-opened-left .k-content {
   overflow: hidden;
   /* 2. Set z-index so it will become visible */
 }
 
 @media screen and (min-width: 768px) {
+  .k-ui-namespace .k-is-opened-left .k-page,
   .k-ui-namespace .k-is-opened-left .k-content {
     overflow: auto;
   }
 }
 
 @media screen and (min-width: 600px) {
+  .k-ui-namespace .k-is-opened-left .k-page,
   .k-ui-namespace .k-is-opened-left .k-content {
     overflow: auto;
   }
 }
 
-.k-is-resizing .k-ui-namespace .k-is-opened-left .k-content {
+.k-is-resizing .k-ui-namespace .k-is-opened-left .k-page, .k-is-resizing
+.k-ui-namespace .k-is-opened-left .k-content {
   overflow: hidden;
 }
 
+.k-ui-namespace .k-is-opened-left .k-page > .k-off-canvas-overlay-left,
 .k-ui-namespace .k-is-opened-left .k-content > .k-off-canvas-overlay-left {
   z-index: 9;
 }
 
 @media screen and (min-width: 768px) {
+  .k-ui-namespace .k-is-opened-left .k-page > .k-off-canvas-overlay-left,
   .k-ui-namespace .k-is-opened-left .k-content > .k-off-canvas-overlay-left {
     z-index: -1;
   }
@@ -9253,6 +9277,14 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   text-align: center;
 }
 
+.k-ui-namespace .k-title-bar .k-title-bar__heading:first-child {
+  margin-left: 48px;
+}
+
+.k-ui-namespace .k-title-bar .k-title-bar__heading:last-child {
+  margin-right: 48px;
+}
+
 @media screen and (min-width: 768px) {
   .k-ui-namespace .k-title-bar .k-title-bar__heading {
     text-align: left;
@@ -9948,6 +9980,14 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
           flex-direction: column;
 }
 
+@media screen and (min-width: 600px) {
+  .k-ui-namespace .k-flexbox-from-beta.k-flexbox-from-beta.k-flexbox-from-beta {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .k-ui-namespace .k-flexbox-from-charlie.k-flexbox-from-charlie.k-flexbox-from-charlie {
     display: -webkit-box;
@@ -9966,6 +10006,14 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
+}
+
+@media screen and (min-width: 600px) {
+  .k-ui-namespace .k-do-flex-from-beta.k-do-flex-from-beta.k-do-flex-from-beta {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+  }
 }
 
 @media screen and (min-width: 768px) {

@@ -41,6 +41,14 @@
       padding: $k-title-bar-spacing $k-title-bar-spacing ($k-title-bar-spacing - 1px);
       text-align: center;
 
+      &:first-child {
+        margin-left: 48px;
+      }
+
+      &:last-child {
+        margin-right: 48px;
+      }
+
       @include breakpoint($k-charlie) {
         text-align: left;
 
