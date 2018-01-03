@@ -1,4 +1,4 @@
-@if ($k-molecules == true and $k-molecule-top != false) or $k-molecule-top == true {
+@if ($k-layout == true and $k-layout-top != false) or $k-layout-top == true {
 
   /* Top container */
 
@@ -36,6 +36,7 @@
       &:focus,
       &:hover {
         background: darker($k-top-container-background);
+        color: inherit;
       }
     }
 
@@ -220,10 +221,10 @@
     }
 
     .k-wrapper {
-      > .k-off-canvas-overlay-right {
+      > .k-off-canvas-overlay-top {
         z-index: 10;
 
-        @include breakpoint($k-sidebar-right-querie-width) {
+        @include breakpoint($k-top-container-breakpoint) {
           z-index: -1;
         }
       }
@@ -242,10 +243,10 @@
         transform: translateX(0);
       }
 
-      > .k-off-canvas-overlay-right {
+      > .k-off-canvas-overlay-top {
         opacity: $k-off-canvas-overlay-right-opacity;
 
-        @include breakpoint($k-sidebar-right-querie-width) {
+        @include breakpoint($k-top-container-breakpoint) {
           opacity: 0;
         }
       }
@@ -254,7 +255,7 @@
 
   /* Toggler */
 
-  .menu-toggle {
+  .k-top-navigation-toggle {
     position: absolute;
     top: 0;
     right: 0;
@@ -262,7 +263,7 @@
     border: 1px solid white;
     background: transparent;
     border-radius: $k-border-radius;
-    padding: 5px 10px;
+    padding: 7px;
     margin: 8px;
 
     @include breakpoint($k-top-container-breakpoint) {

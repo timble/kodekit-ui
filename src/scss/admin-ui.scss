@@ -26,3 +26,228 @@
 
 
 
+
+
+.k-page-content {
+  position: relative;
+  display: none;
+  @include transition(transform);
+
+  flex: 1 1 auto;
+  width: auto;
+  min-height: 0;
+  overflow: visible;
+  max-width: 100%; // for breadcrumbs to work properly
+
+  &.k-is-active {
+    display: flex;
+  }
+
+  &:nth-last-child(2):first-child,
+  &:only-child {
+    display: flex;
+  }
+
+  > .k-content {
+    position: static;
+    z-index: auto;
+  }
+}
+
+.k-page {
+  position: relative;
+  z-index: 3;
+  overflow: hidden !important;
+  @include transition(transform);
+
+  display: flex;
+  flex: 1 1 auto;
+  width: auto;
+  min-height: 0;
+
+
+  &.k-show-right-menu {
+    .k-page-content {
+      transform: translateX(-85%);
+
+      @include breakpoint($k-delta) {
+        transform: none;
+      }
+    }
+  }
+
+  &.k-is-opened-right {
+    .k-form {
+      z-index: 1;
+    }
+
+    .k-page-content > .k-off-canvas-overlay-form {
+      z-index: 9;
+
+      @include breakpoint($k-delta) {
+        z-index: -1;
+      }
+    }
+  }
+
+  &.k-show-right-menu {
+    .k-component {
+      transform: none;
+    }
+
+    .k-page-content > .k-off-canvas-overlay-form {
+      opacity: $k-off-canvas-overlay-form-opacity;
+
+      @include breakpoint($k-delta) {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.k-js-middlepane.k-js-middlepane.k-js-middlepane {
+  position: relative;
+
+  @include breakpoint(0, range, $k-delta) {
+    min-width: 1px!important;
+    width: auto!important;
+    max-width: none!important;
+  }
+
+  @include breakpoint($k-delta) {
+    padding-right: 8px;
+  }
+}
+
+.k-middlepane-resizer {
+  width: 8px;
+  height: 100%;
+  background: white;
+  border-left: 1px solid #dcdcdc;
+  position: absolute;
+  z-index: 99;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  cursor: col-resize;
+  display: none;
+
+  @include breakpoint($k-delta) {
+    display: block;
+  }
+}
+
+
+.k-form {
+  border-left: 1px solid #dcdcdc;
+
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  overflow: hidden; /* 2 */
+  min-height: 0;
+
+  position: absolute;
+  z-index: -1;
+  left: 100%;
+  top: 0;
+  bottom: 0;
+  width: 85%;
+
+
+  @include breakpoint($k-delta) {
+    position: relative;
+    left: auto;
+    width: auto;
+    z-index: 1;
+
+    .k-js-form-toggle {
+      display: none;
+    }
+  }
+}
+
+.k-form__child {
+  display: none;
+
+  /**
+   * When flexbox is in use
+   *
+   * 1. Reset width needed for table
+   * 2. Set overflow for breadcrumbs to properly work
+   */
+
+  flex: 1 1 auto;
+  flex-direction: column;
+  width: auto; /* 1 */
+  overflow: hidden; /* 2 */
+  min-height: 0;
+
+  &.k-is-active {
+    display: flex;
+  }
+}
+
+$k-content-width-delta: 25vw; // Still need to add to KUI itself
+
+.k-content:not(:only-child) {
+  @include breakpoint($k-delta) {
+    @include allwidth($k-content-width-delta);
+    min-width: 221px;
+  }
+
+  & + .k-form {
+    flex: 1 1 auto;
+  }
+}
+
+
+
+
+
+
+
+
+// When dragging make sure nothing gets selected
+.is-unresponsive {
+  &,
+  *:not(.k-middlepane-resizer) {
+    pointer-events: none;
+    user-select: none;
+    user-focus: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+.k-ui-namespace .k-scopebar__item--search.k-scopebar__item--search {
+  min-width: 100%;
+  width: 100%;
+  max-width: 100%;
+
+  .k-search__field {
+    border-left: none;
+  }
+}

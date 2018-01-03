@@ -101,6 +101,7 @@ module.exports = function(grunt) {
                     "eventlistener",
                     "appearance",
                     "boxshadow",
+                    "checked",
                     "cssanimations",
                     "flexbox",
                     "flexboxlegacy",
@@ -199,6 +200,11 @@ module.exports = function(grunt) {
                         '<%= srcPath %>/js/tabsScroller.js',
                         '<%= srcPath %>/js/main.js',
                         '<%= srcPath %>/js/kquery.unset.js'
+                    ],
+                    '<%= distPath %>/js/kui-initialize.js': [
+                        '<%= srcPath %>/js/cookies.js',
+                        '<%= srcPath %>/js/ondomready.js',
+                        '<%= srcPath %>/js/initialize.js'
                     ]
                 }
             }

@@ -223,7 +223,7 @@
                 submenuClass = 'has-open-submenu',
                 menuContent = $menu.attr('data-toggle-button-content') || 'Menu';
 
-            var toggle_button = '<button type="button" id="k-js-top-navigation-toggle" class="top-navigation-toggle" title="Menu toggle" aria-label="Menu toggle">'+menuContent+'</button>';
+            var toggle_button = '<button type="button" id="k-js-top-navigation-toggle" class="k-top-navigation-toggle" title="Menu toggle" aria-label="Menu toggle">'+menuContent+'</button>';
 
             // Append toggle button and overlay
             $menu.parent().append($(toggle_button));
@@ -303,6 +303,34 @@
                     closeMenu();
                 }
             });
+        }
+
+
+        // Form itself
+        var $form = $('.k-js-form');
+
+        // See if it exists
+        if ($form.length) {
+
+            var toggle_button = '<button type="button" class="k-button k-button--default k-form-toggle k-js-form-toggle" title="Form toggle" aria-label="Form toggle"><span class="k-icon-chevron-left" aria-hidden="true"></span></button>';
+
+            // Append toggle button and overlay
+            $('.k-page .k-js-toolbar').append(kQuery(toggle_button));
+
+            // Off canvas
+            $form.offCanvasMenu({
+                menuToggle: $('.k-js-form-toggle'),
+                position: 'right',
+                container: $('.k-page-content'),
+                expandedWidth: '276',
+                offCanvasOverlay: 'k-off-canvas-overlay-form',
+                wrapper: $('.k-page')
+            });
+
+
+
+
+
         }
 
 
@@ -389,6 +417,50 @@
                 // Run on window resize
                 window.addEventListener( 'resize', resizeThrottler );
             }
+        }
+
+
+        // Middlepane
+
+        var middlepane = document.querySelector(".k-js-middlepane");
+        var middlepaneResizer = document.createElement("div");
+        middlepaneResizer.className = "k-middlepane-resizer";
+        middlepane.appendChild(middlepaneResizer);
+        middlepaneResizer.addEventListener("mousedown", initDrag, false);
+        var startW, startWidth, newWidth;
+
+        function initDrag(e) {
+            startW = e.clientX;
+            startWidth = parseInt(document.defaultView.getComputedStyle(middlepane).width, 10);
+            document.documentElement.addEventListener("mousemove", doDrag, false);
+            document.documentElement.addEventListener("mouseup", stopDrag, false);
+        }
+
+        function doDrag(e) {
+            document.body.classList.add("is-unresponsive");
+            newWidth = (startWidth + e.clientX - startW);
+            if ((startWidth + e.clientX - startW) <= 221) {
+                newWidth = 221;
+            }
+            middlepane.style.width = newWidth + "px";
+            middlepane.style.minWidth = newWidth + "px";
+            middlepane.style.maxWidth = newWidth + "px";
+        }
+
+        function stopDrag(e) {
+            document.documentElement.removeEventListener("mousemove", doDrag, false);
+            document.documentElement.removeEventListener("mouseup", stopDrag, false);
+            document.body.classList.remove("is-unresponsive");
+            middlepane.removeAttribute('style');
+
+            var width = startWidth + e.clientX - startW;
+            if (width <= 221) {
+                width = 221;
+            }
+
+            createCookie("middlepanewidth", width, 30);
+            kuiMiddlepane.setCSS(width);
+            window.dispatchEvent(new Event('resize'));
         }
 
 
