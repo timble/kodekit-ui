@@ -57,13 +57,17 @@
             }
 
             // Create overlay wrapper
-            $.each(transitionElements, function() {
-                if ($(this).find('.' + plugin.settings.offCanvasOverlay)[0] == undefined) {
-                    $(this).append('<div class="' + plugin.settings.offCanvasOverlay + '">');
-                    var newOverlay = $('.' + plugin.settings.offCanvasOverlay);
-                    $.extend(offCanvasOverlay, newOverlay);
-                }
-            });
+            function addOverlay() {
+                $.each(transitionElements, function() {
+                    if ($(this).find('.' + plugin.settings.offCanvasOverlay)[0] == undefined) {
+                        $(this).append('<div class="' + plugin.settings.offCanvasOverlay + '">');
+                        var newOverlay = $('.' + plugin.settings.offCanvasOverlay);
+                        $.extend(offCanvasOverlay, newOverlay);
+                    }
+                });
+            }
+
+            addOverlay();
 
             function tabToggle(menu) {
                 // When tabbing on toggle button
@@ -102,6 +106,8 @@
             function openMenu(menu) {
                 // Clear the timeout when user clicks open menu
                 clearTimeout(timeout);
+
+                addOverlay();
 
                 // Set to expanded for accessibility
                 menuToggle.attr({'aria-expanded': 'true'});
@@ -172,7 +178,9 @@
 
                 // Don't close the menu when clicked on sidemenu
                 menu.click(function(event){
-                    event.stopPropagation();
+                    if ( wrapper.hasClass(menuExpandedClass) ) {
+                        event.stopPropagation();
+                    }
                 });
 
                 // Close menu if esc keydown and menu is open and set focus to toggle button

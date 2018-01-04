@@ -12966,7 +12966,8 @@ module.exports = '1.3.4';
 
   , show: function () {
       var $this = this.element
-        , $ul = $this.closest('ul:not(.k-dropdown__menu)')
+        , $ul = $this.parent().parent('ul:not(.k-dropdown__menu)')
+        , $tbody = $this.parent().parent().parent('tbody')
         , selector = $this.attr('data-target')
         , previous
         , $target
@@ -12978,8 +12979,15 @@ module.exports = '1.3.4';
       }
 
       if ( $this.parent('li').hasClass('k-is-active') ) return
+      if ( $this.parent().parent('tr').hasClass('k-is-active') ) return
 
-      previous = $ul.find('.k-is-active:last a')[0]
+      if ($this.parent('li')) {
+          previous = $ul.find('.k-is-active:last a')[0]
+      }
+
+      if ($this.parent('td')) {
+          previous = $tbody.find('.k-is-active:last a')[0]
+      }
 
       e = $.Event('show', {
         relatedTarget: previous
@@ -12991,7 +12999,13 @@ module.exports = '1.3.4';
 
       $target = $(selector)
 
-      this.activate($this.parent('li'), $ul)
+      if ($this.parent('li')[0]) {
+          this.activate($this.parent('li'), $ul)
+      }
+      if ($this.parent().parent('tr')[0]) {
+          this.activate($this.parent().parent('tr'), $tbody)
+      }
+
       this.activate($target, $target.parent(), function () {
         $this.trigger({
           type: 'shown'
@@ -16572,13 +16586,17 @@ $(function() {
             }
 
             // Create overlay wrapper
-            $.each(transitionElements, function() {
-                if ($(this).find('.' + plugin.settings.offCanvasOverlay)[0] == undefined) {
-                    $(this).append('<div class="' + plugin.settings.offCanvasOverlay + '">');
-                    var newOverlay = $('.' + plugin.settings.offCanvasOverlay);
-                    $.extend(offCanvasOverlay, newOverlay);
-                }
-            });
+            function addOverlay() {
+                $.each(transitionElements, function() {
+                    if ($(this).find('.' + plugin.settings.offCanvasOverlay)[0] == undefined) {
+                        $(this).append('<div class="' + plugin.settings.offCanvasOverlay + '">');
+                        var newOverlay = $('.' + plugin.settings.offCanvasOverlay);
+                        $.extend(offCanvasOverlay, newOverlay);
+                    }
+                });
+            }
+
+            addOverlay();
 
             function tabToggle(menu) {
                 // When tabbing on toggle button
@@ -16617,6 +16635,8 @@ $(function() {
             function openMenu(menu) {
                 // Clear the timeout when user clicks open menu
                 clearTimeout(timeout);
+
+                addOverlay();
 
                 // Set to expanded for accessibility
                 menuToggle.attr({'aria-expanded': 'true'});
@@ -16687,7 +16707,9 @@ $(function() {
 
                 // Don't close the menu when clicked on sidemenu
                 menu.click(function(event){
-                    event.stopPropagation();
+                    if ( wrapper.hasClass(menuExpandedClass) ) {
+                        event.stopPropagation();
+                    }
                 });
 
                 // Close menu if esc keydown and menu is open and set focus to toggle button
@@ -17415,46 +17437,54 @@ var Konami = function (callback) {
 
         // Middlepane
 
-        var middlepane = document.querySelector(".k-js-middlepane");
-        var middlepaneResizer = document.createElement("div");
-        middlepaneResizer.className = "k-middlepane-resizer";
-        middlepane.appendChild(middlepaneResizer);
-        middlepaneResizer.addEventListener("mousedown", initDrag, false);
-        var startW, startWidth, newWidth;
 
-        function initDrag(e) {
-            startW = e.clientX;
-            startWidth = parseInt(document.defaultView.getComputedStyle(middlepane).width, 10);
-            document.documentElement.addEventListener("mousemove", doDrag, false);
-            document.documentElement.addEventListener("mouseup", stopDrag, false);
-        }
-
-        function doDrag(e) {
-            document.body.classList.add("is-unresponsive");
-            newWidth = (startWidth + e.clientX - startW);
-            if ((startWidth + e.clientX - startW) <= 221) {
-                newWidth = 221;
-            }
-            middlepane.style.width = newWidth + "px";
-            middlepane.style.minWidth = newWidth + "px";
-            middlepane.style.maxWidth = newWidth + "px";
-        }
-
-        function stopDrag(e) {
-            document.documentElement.removeEventListener("mousemove", doDrag, false);
-            document.documentElement.removeEventListener("mouseup", stopDrag, false);
-            document.body.classList.remove("is-unresponsive");
-            middlepane.removeAttribute('style');
-
-            var width = startWidth + e.clientX - startW;
-            if (width <= 221) {
-                width = 221;
+        kodekitUI.dragger = function() {
+            var middlepane = document.querySelector(".k-js-middlepane");
+            if (middlepane !== null) {
+                var middlepaneResizer = document.createElement("div");
+                middlepaneResizer.className = "k-middlepane-resizer";
+                middlepane.appendChild(middlepaneResizer);
+                middlepaneResizer.addEventListener("mousedown", initDrag, false);
+                var startW, startWidth, newWidth;
             }
 
-            createCookie("middlepanewidth", width, 30);
-            kuiMiddlepane.setCSS(width);
-            window.dispatchEvent(new Event('resize'));
-        }
+            function initDrag(e) {
+                startW = e.clientX;
+                startWidth = parseInt(document.defaultView.getComputedStyle(middlepane).width, 10);
+                document.documentElement.addEventListener("mousemove", doDrag, false);
+                document.documentElement.addEventListener("mouseup", stopDrag, false);
+            }
+
+            function doDrag(e) {
+                document.body.classList.add("is-unresponsive");
+                newWidth = (startWidth + e.clientX - startW);
+                if ((startWidth + e.clientX - startW) <= 221) {
+                    newWidth = 221;
+                }
+                middlepane.style.width = newWidth + "px";
+                middlepane.style.minWidth = newWidth + "px";
+                middlepane.style.maxWidth = newWidth + "px";
+            }
+
+            function stopDrag(e) {
+                document.documentElement.removeEventListener("mousemove", doDrag, false);
+                document.documentElement.removeEventListener("mouseup", stopDrag, false);
+                document.body.classList.remove("is-unresponsive");
+                middlepane.removeAttribute('style');
+
+                var width = startWidth + e.clientX - startW;
+                if (width <= 221) {
+                    width = 221;
+                }
+
+                createCookie("middlepanewidth", width, 30);
+                kodekitUI.setCSS(width);
+                window.dispatchEvent(new Event('resize'));
+            }
+        };
+
+        kodekitUI.dragger();
+
 
 
         // Tabs scroller

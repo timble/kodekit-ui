@@ -36,7 +36,8 @@
 
   , show: function () {
       var $this = this.element
-        , $ul = $this.closest('ul:not(.k-dropdown__menu)')
+        , $ul = $this.parent().parent('ul:not(.k-dropdown__menu)')
+        , $tbody = $this.parent().parent().parent('tbody')
         , selector = $this.attr('data-target')
         , previous
         , $target
@@ -48,8 +49,15 @@
       }
 
       if ( $this.parent('li').hasClass('k-is-active') ) return
+      if ( $this.parent().parent('tr').hasClass('k-is-active') ) return
 
-      previous = $ul.find('.k-is-active:last a')[0]
+      if ($this.parent('li')) {
+          previous = $ul.find('.k-is-active:last a')[0]
+      }
+
+      if ($this.parent('td')) {
+          previous = $tbody.find('.k-is-active:last a')[0]
+      }
 
       e = $.Event('show', {
         relatedTarget: previous
@@ -61,7 +69,13 @@
 
       $target = $(selector)
 
-      this.activate($this.parent('li'), $ul)
+      if ($this.parent('li')[0]) {
+          this.activate($this.parent('li'), $ul)
+      }
+      if ($this.parent().parent('tr')[0]) {
+          this.activate($this.parent().parent('tr'), $tbody)
+      }
+
       this.activate($target, $target.parent(), function () {
         $this.trigger({
           type: 'shown'

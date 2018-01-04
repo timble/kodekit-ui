@@ -177,7 +177,13 @@
     width: auto;
     z-index: 1;
 
-    .k-js-form-toggle {
+
+  }
+}
+
+.k-ui-namespace {
+  .k-form-toggle {
+    @include breakpoint($k-delta) {
       display: none;
     }
   }
@@ -250,4 +256,173 @@ $k-content-width-delta: 25vw; // Still need to add to KUI itself
   .k-search__field {
     border-left: none;
   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.k-wrapper.k-show-left-menu {
+  .k-page.k-show-right-menu {
+    .k-content {
+      transform: translateX(0);
+
+      & ~ .k-off-canvas-overlay-form {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+
+
+.k-is-active.k-is-active {
+  > td {
+    font-weight: bold;
+    background: #fbfbfb;
+  }
+}
+
+
+.k-spaced-m {
+  padding: 10px;
+
+  // Temp we need to move this
+  text-align: center;
+
+  img {
+    max-width: 80px;
+  }
+}
+
+.unavalaible,
+.uninstalled {
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
+
+.k-ui-namespace .k-table-container .k-table__item-level__icon-item {
+  padding-left: 0;
+}
+
+.k-button {
+  input[type="checkbox"] {
+    margin: 0 -1px !important;
+    vertical-align: top !important;
+  }
+  .k-dropdown {
+    .k-dropdown__toggle {
+      text-decoration: none;
+      margin: -5px -10px;
+      padding: 5px 10px;
+    }
+    .k-dropdown__menu {
+      margin-top: 6px;
+      left: -11px;
+    }
+  }
+  [class*="icon-"] {
+    margin: 0 !important;
+  }
+}
+
+
+.k-card__section + .k-card__ection {
+  border-top: 1px solid #ddd;
+}
+
+#gravatar {
+  margin: auto;
+  border-radius: 50%;
+  max-width: 40px;
+}
+
+
+.k-flag-object {
+  display: flex;
+}
+
+.k-flag-object__aside {
+  flex-shrink: 0;
+
+  + .k-flag-object__body {
+    padding-left: 10px;
+  }
+}
+
+.k-flag-object__body {
+  flex-grow: 1;
+}
+
+
+.k-form-toggle.k-form-toggle {
+  position: absolute;
+  float: right;
+  visibility: hidden;
+  opacity: 0;
+  @include transition();
+}
+
+.k-is-opened-right {
+  .k-form-toggle.k-form-toggle {
+    position: relative;
+    visibility: visible;
+    z-index: 11;
+
+    @include breakpoint($k-delta) {
+      visibility: hidden;
+    }
+  }
+}
+
+.k-show-right-menu {
+  .k-form-toggle.k-form-toggle {
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.cke_chrome.cke_chrome,
+.cke_inner.cke_inner,
+.cke_contents.cke_contents {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  height: auto !important;
+
+  iframe {
+    flex: 1 1 auto;
+  }
+}
+
+.cke_resizer.cke_resizer {
+  display: none;
+}
+
+
+.k-js-table-row-click {
+  cursor: pointer;
+}
+
+
+.k-container__full--spaced-top.k-container__full--spaced-top {
+  padding: $k-spacing 0 0;
 }

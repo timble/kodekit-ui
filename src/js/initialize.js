@@ -1,7 +1,7 @@
 // Middlepane code
-var kuiMiddlepane = {}; // Object for public APIs
+var kodekitUI = {}; // Object for public APIs
 
-kuiMiddlepane.setCSS = function(width) {
+kodekitUI.setCSS = function(width) {
     // Get style element
     var style = document.querySelector('[data-type]', 'middlepanewidth');
     var css =
@@ -44,7 +44,7 @@ kuiMiddlepane.setCSS = function(width) {
 
     // If a cookie is set
     if (widthCookieValue !== null) {
-        kuiMiddlepane.setCSS(widthCookieValue);
+        kodekitUI.setCSS(widthCookieValue);
     }
 
 })();

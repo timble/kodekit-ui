@@ -52,17 +52,17 @@
                 <div class="k-sidebar-item">
                     <ul class="k-navigation">
                         <li class="k-is-active">
-                            <a href="javascript:void(0);">
+                            <a href="#page1" data-k-toggle="tab">
                                 Articles
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);">
+                            <a class="js-load-categories" href="#page2" data-k-toggle="tab">
                                 Categories
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);">
+                            <a href="#page3" data-k-toggle="tab">
                                 Settings
                             </a>
                         </li>
@@ -89,7 +89,11 @@
                 </div>
             </div>
             <div class="k-page k-js-page">
-                <div class="k-page-content">
+
+
+                <div class="k-page-content k-is-active" id="page1">
+
+
                     <div class="k-content k-js-content k-js-middlepane">
                         <div class="k-toolbar k-js-toolbar">
                             <button type="button" class="k-button k-button--success">
@@ -134,12 +138,12 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr>
+                                            <tr class="k-is-active">
                                                 <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
                                                 <td class="k-table-data--toggle"></td>
                                                 <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
                                                 <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Cras elit aenean</a>
+                                                    <a href="#form1" data-k-toggle="tab">Cras elit aenean</a>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -147,7 +151,7 @@
                                                 <td class="k-table-data--toggle"></td>
                                                 <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
                                                 <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Fermentum quam porta</a>
+                                                    <a href="#form2" data-k-toggle="tab">Fermentum quam porta</a>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -155,7 +159,7 @@
                                                 <td class="k-table-data--toggle"></td>
                                                 <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
                                                 <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Ornare nullam sem</a>
+                                                    <a href="#form3" data-k-toggle="tab">Ornare nullam sem</a>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -163,7 +167,7 @@
                                                 <td class="k-table-data--toggle"></td>
                                                 <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
                                                 <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Ornare nullam sem</a>
+                                                    <a href="#form4" data-k-toggle="tab">Ornare nullam sem</a>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -171,7 +175,7 @@
                                                 <td class="k-table-data--toggle"></td>
                                                 <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
                                                 <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Fermentum quam porta</a>
+                                                    <a href="#form5" data-k-toggle="tab">Fermentum quam porta</a>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -179,7 +183,7 @@
                                                 <td class="k-table-data--toggle"></td>
                                                 <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
                                                 <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Pellentesque condimentum euismod</a>
+                                                    <a href="#form6" data-k-toggle="tab">Pellentesque condimentum euismod</a>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -187,7 +191,7 @@
                                                 <td class="k-table-data--toggle"></td>
                                                 <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
                                                 <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Purus fringilla tristique fermentum inceptos bibendum magna</a>
+                                                    <a href="#form7" data-k-toggle="tab">Purus fringilla tristique fermentum inceptos bibendum magna</a>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -195,7 +199,7 @@
                                                 <td class="k-table-data--toggle"></td>
                                                 <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
                                                 <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Ornare nullam sem</a>
+                                                    <a href="#form8" data-k-toggle="tab">Ornare nullam sem</a>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -203,7 +207,7 @@
                                                 <td class="k-table-data--toggle"></td>
                                                 <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
                                                 <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Pellentesque condimentum euismod</a>
+                                                    <a href="#form9" data-k-toggle="tab">Pellentesque condimentum euismod</a>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -211,31 +215,7 @@
                                                 <td class="k-table-data--toggle"></td>
                                                 <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
                                                 <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Purus fringilla tristique fermentum</a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
-                                                <td class="k-table-data--toggle"></td>
-                                                <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
-                                                <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Purus fringilla tristique fermentum inceptos bibendum magna</a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
-                                                <td class="k-table-data--toggle"></td>
-                                                <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
-                                                <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Ornare nullam sem</a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
-                                                <td class="k-table-data--toggle"></td>
-                                                <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
-                                                <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Fermentum quam porta</a>
+                                                    <a href="#form10" data-k-toggle="tab">Purus fringilla tristique fermentum</a>
                                                 </td>
                                             </tr>
                                             </tbody>
@@ -272,7 +252,7 @@
                     </div>
 
                     <div class="k-form k-js-form">
-                        <div class="k-form__child k-is-active" id="site1">
+                        <div class="k-form__child k-is-active" id="form1">
 
                             <!-- Component wrapper -->
                             <div class="k-component-wrapper">
@@ -294,11 +274,58 @@
                                         </div><!-- .k-container__full -->
                                     </div><!-- .k-container -->
 
+                                    <div class="k-tabs-container">
+                                        <div class="k-tabs-wrapper k-js-tabs-wrapper">
+                                            <div class="k-tabs-scroller k-js-tabs-scroller">
+                                                <ul class="k-tabs">
+                                                    <li class="k-is-active">
+                                                        <a href="#tab1" data-k-toggle="tab">Tab 1</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#tab2" data-k-toggle="tab">Tab 2</a>
+                                                    </li>
+                                                    <li class="k-is-disabled">
+                                                        <a href="#tab3" data-k-toggle="tab">Tab 3 (disabled)</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="k-tabs-content">
+                                            <div id="tab1" class="k-tab k-is-active">
+                                                Content tab 1
+                                            </div>
+                                            <div id="tab2" class="k-tab">
+                                                Content tab 2
+                                            </div>
+                                            <div id="tab3" class="k-tab">
+                                                Content tab 3
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </form><!-- .k-component -->
                             </div><!-- .k-component-wrapper -->
                         </div><!-- .k-form__child -->
+                        <div class="k-form__child" id="form2">Form 2</div>
+                        <div class="k-form__child" id="form3">Form 3</div>
+                        <div class="k-form__child" id="form4">Form 4</div>
+                        <div class="k-form__child" id="form5">Form 5</div>
+                        <div class="k-form__child" id="form6">Form 6</div>
+                        <div class="k-form__child" id="form7">Form 7</div>
+                        <div class="k-form__child" id="form8">Form 8</div>
+                        <div class="k-form__child" id="form9">Form 9</div>
+                        <div class="k-form__child" id="form10">Form 10</div>
                     </div><!-- .k-form -->
 
+                </div>
+
+
+                <div class="k-page-content" id="page2">
+                    Page 2
+                </div>
+
+                <div class="k-page-content" id="page3">
+                    Page 3
                 </div>
             </div>
         </div>
