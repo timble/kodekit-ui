@@ -26,34 +26,6 @@
 
 
 
-
-
-.k-page-content {
-  position: relative;
-  display: none;
-  @include transition(transform);
-
-  flex: 1 1 auto;
-  width: auto;
-  min-height: 0;
-  overflow: visible;
-  max-width: 100%; // for breadcrumbs to work properly
-
-  &.k-is-active {
-    display: flex;
-  }
-
-  &:nth-last-child(2):first-child,
-  &:only-child {
-    display: flex;
-  }
-
-  > .k-content {
-    position: static;
-    z-index: auto;
-  }
-}
-
 .k-page {
   position: relative;
   z-index: 3;
@@ -77,11 +49,11 @@
   }
 
   &.k-is-opened-right {
-    .k-form {
+    .k-subcontent {
       z-index: 1;
     }
 
-    .k-page-content > .k-off-canvas-overlay-form {
+    .k-page-content > .k-off-canvas-overlay-subcontent {
       z-index: 9;
 
       @include breakpoint($k-delta) {
@@ -95,8 +67,8 @@
       transform: none;
     }
 
-    .k-page-content > .k-off-canvas-overlay-form {
-      opacity: $k-off-canvas-overlay-form-opacity;
+    .k-page-content > .k-off-canvas-overlay-subcontent {
+      opacity: $k-off-canvas-overlay-subcontent-opacity;
 
       @include breakpoint($k-delta) {
         opacity: 0;
@@ -105,56 +77,30 @@
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.k-js-middlepane.k-js-middlepane.k-js-middlepane {
+.k-page-content {
   position: relative;
-
-  @include breakpoint(0, range, $k-delta) {
-    min-width: 1px!important;
-    width: auto!important;
-    max-width: none!important;
-  }
-
-  @include breakpoint($k-delta) {
-    padding-right: 8px;
-  }
-}
-
-.k-middlepane-resizer {
-  width: 8px;
-  height: 100%;
-  background: white;
-  border-left: 1px solid #dcdcdc;
-  position: absolute;
-  z-index: 99;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  cursor: col-resize;
   display: none;
+  @include transition(transform);
 
-  @include breakpoint($k-delta) {
-    display: block;
+  flex: 1 1 auto;
+  width: auto;
+  min-height: 0;
+  overflow: visible;
+  max-width: 100%; // for breadcrumbs to work properly
+
+  &.k-is-active {
+    display: flex;
+  }
+
+  &:nth-last-child(2):first-child,
+  &:only-child {
+    display: flex;
   }
 }
 
 
-.k-form {
+
+.k-subcontent {
   border-left: 1px solid #dcdcdc;
 
   display: flex;
@@ -182,14 +128,14 @@
 }
 
 .k-ui-namespace {
-  .k-form-toggle {
+  .k-subcontent-toggle {
     @include breakpoint($k-delta) {
       display: none;
     }
   }
 }
 
-.k-form__child {
+.k-subcontent__child {
   display: none;
 
   /**
@@ -212,16 +158,6 @@
 
 $k-content-width-delta: 25vw; // Still need to add to KUI itself
 
-.k-content:not(:only-child) {
-  @include breakpoint($k-delta) {
-    @include allwidth($k-content-width-delta);
-    min-width: 221px;
-  }
-
-  & + .k-form {
-    flex: 1 1 auto;
-  }
-}
 
 
 
@@ -248,13 +184,61 @@ $k-content-width-delta: 25vw; // Still need to add to KUI itself
 
 
 
-.k-ui-namespace .k-scopebar__item--search.k-scopebar__item--search {
-  min-width: 100%;
-  width: 100%;
-  max-width: 100%;
+.k-content:not(:only-child) {
 
-  .k-search__field {
-    border-left: none;
+  @include breakpoint($k-delta) {
+    @include allwidth($k-content-width-delta);
+    min-width: 221px;
+  }
+
+  & + .k-subcontent {
+    flex: 1 1 auto;
+  }
+
+  .k-scopebar__item--search.k-scopebar__item--search {
+    min-width: 100%;
+    width: 100%;
+    max-width: 100%;
+
+    .k-search__field {
+      border-left: none;
+    }
+  }
+  .k-table-container td {
+    cursor: pointer;
+  }
+
+
+  &.k-js-middlepane.k-js-middlepane {
+    position: relative;
+
+    @include breakpoint(0, range, $k-delta) {
+      min-width: 1px!important;
+      width: auto!important;
+      max-width: none!important;
+    }
+
+    @include breakpoint($k-delta) {
+      padding-right: 8px;
+    }
+
+    .k-middlepane-resizer {
+      width: 8px;
+      height: 100%;
+      background: white;
+      border-left: 1px solid #dcdcdc;
+      position: absolute;
+      z-index: 99;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      cursor: col-resize;
+      display: none;
+
+      @include breakpoint($k-delta) {
+        display: block;
+      }
+    }
   }
 }
 
@@ -262,8 +246,11 @@ $k-content-width-delta: 25vw; // Still need to add to KUI itself
 
 
 
-
-
+.k-ui-namespace .k-scopebar {
+  @include breakpoint($k-delta) {
+    justify-content: flex-end;
+  }
+}
 
 
 
@@ -277,7 +264,7 @@ $k-content-width-delta: 25vw; // Still need to add to KUI itself
     .k-content {
       transform: translateX(0);
 
-      & ~ .k-off-canvas-overlay-form {
+      & ~ .k-off-canvas-overlay-subcontent {
         opacity: 0;
       }
     }
@@ -365,7 +352,7 @@ $k-content-width-delta: 25vw; // Still need to add to KUI itself
 }
 
 
-.k-form-toggle.k-form-toggle {
+.k-subcontent-toggle.k-subcontent-toggle {
   position: absolute;
   float: right;
   visibility: hidden;
@@ -374,7 +361,7 @@ $k-content-width-delta: 25vw; // Still need to add to KUI itself
 }
 
 .k-is-opened-right {
-  .k-form-toggle.k-form-toggle {
+  .k-subcontent-toggle.k-subcontent-toggle {
     position: relative;
     visibility: visible;
     z-index: 11;
@@ -386,19 +373,23 @@ $k-content-width-delta: 25vw; // Still need to add to KUI itself
 }
 
 .k-show-right-menu {
-  .k-form-toggle.k-form-toggle {
+  .k-subcontent-toggle.k-subcontent-toggle {
     opacity: 1;
   }
 }
 
 
 
+// For when using tables inside form and you want table to be attached to the sides
+.k-container__full--spaced-top.k-container__full--spaced-top {
+  padding: $k-spacing 0 0;
+}
 
 
 
 
 
-
+// CKE
 
 .cke_chrome.cke_chrome,
 .cke_inner.cke_inner,
@@ -418,11 +409,3 @@ $k-content-width-delta: 25vw; // Still need to add to KUI itself
 }
 
 
-.k-js-table-row-click {
-  cursor: pointer;
-}
-
-
-.k-container__full--spaced-top.k-container__full--spaced-top {
-  padding: $k-spacing 0 0;
-}

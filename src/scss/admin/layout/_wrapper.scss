@@ -48,7 +48,7 @@
   .k-off-canvas-overlay-top,
   .k-off-canvas-overlay-left,
   .k-off-canvas-overlay-right,
-  .k-off-canvas-overlay-form {
+  .k-off-canvas-overlay-subcontent {
     @include coverall; /* 1 */
     z-index: -1; /* 2 */
     display: block;

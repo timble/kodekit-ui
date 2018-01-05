@@ -1,23 +1,140 @@
 (function($) {
 
+
+    /**
+     * Variables
+     */
+
+    var $footable = $('.k-js-responsive-table'),
+        $sidebarToggle = $('.k-js-sidebar-toggle-item'),
+        $scopebar = $('.k-js-scopebar'),
+        $select2 = $('.k-js-select2'),
+        $datepicker = $('.k-js-datepicker'),
+        $magnificImage = $('.k-js-image-modal'),
+        $magnificInline = $('.k-js-inline-modal'),
+        $magnificIframe = $('.k-js-iframe-modal'),
+        $tooltip = $('.k-js-tooltip'),
+        $gallery = $('.k-js-gallery'),
+        resizeClass = 'k-is-resizing',
+        resizeTimer;
+
+
+    /**
+     * Sidebar off-canvas toggles
+     */
+    function offCanvasToggles() {
+        if ($('.k-js-title-bar, .k-js-toolbar').length && $('.k-js-wrapper').length && $('.k-js-content').length)
+        {
+            // Vars
+            var sidebar_left  = $('.k-js-sidebar-left'),
+                sidebar_right = $('.k-js-sidebar-right');
+
+            function addOffCanvasButton(element, position) {
+
+                var toggle_button_content = element.attr('data-toggle-button-content') || '<span class="k-toggle-button-bar1"></span><span class="k-toggle-button-bar2"></span><span class="k-toggle-button-bar3"></span>';
+                var toggle_button = '<div class="k-off-canvas-toggle-holder">' +
+                    '<button class="k-off-canvas-toggle" type="button">' +
+                    toggle_button_content +
+                    '</button>' +
+                    '</div>';
+
+                // Variables
+                var kContainer = '.k-ui-container',
+                    container = element.closest(kContainer),
+                    titlebar = container.find('.k-js-title-bar'),
+                    toolbar = container.find('.k-js-toolbar'),
+                    wrapper = container.find('.k-js-wrapper'),
+                    content = container.find('.k-js-content'),
+                    page = container.find('.k-js-page'),
+                    component = container.find('.k-js-component'),
+                    toggle = container.find('.k-off-canvas-toggle--' + position),
+                    $toggle = $(toggle_button),
+                    $toggleButton = null,
+                    transitionElements = page || content;
+
+                // Add proper class to toggle buttons
+                $toggle.addClass('k-off-canvas-toggle-holder--' + position).children('button').addClass('k-off-canvas-toggle--' + position);
+
+                // Add toggle buttons
+                if (toggle.length === 0) {
+                    if ( position == 'left' ) {
+                        if ( titlebar.length) {
+                            titlebar.prepend($toggle);
+                        } else if (toolbar.length) {
+                            toolbar.prepend($toggle);
+                        }
+                    } else if ( position == 'right') {
+                        if ( toolbar.length) {
+                            toolbar.append($toggle);
+                        } else if (titlebar.length) {
+                            titlebar.append($toggle);
+                        }
+                        transitionElements = component;
+                    }
+
+                    $toggleButton = $('.k-off-canvas-toggle--' + position);
+
+                    console.log('run', $toggleButton, wrapper, page, content, transitionElements, element);
+
+                    // Initialize the offcanvas plugin
+                    element.offCanvasMenu({
+                        menuToggle: $toggleButton,
+                        wrapper: wrapper,
+                        container: page || content,
+                        position: position,
+                        offCanvasOverlay: 'k-off-canvas-overlay-' + position,
+                        transitionElements: transitionElements
+                    });
+                }
+            }
+
+            if (sidebar_left.length) {
+                // Add button for left sidebar
+                $.each(sidebar_left, function() {
+                    addOffCanvasButton($(this), 'left');
+                });
+
+                var sidebarLeftTree = $('.k-tree'),
+                    sidebarLeftList = $('.k-list');
+
+                if ( ( sidebarLeftTree.length || sidebarLeftList.length ) ) {
+                    sidebarLeftTree.on('click', '.jqtree-title', function() {
+                        if ( $('.k-js-wrapper').hasClass('k-is-opened-left') ) {
+                            $('.k-off-canvas-toggle--left').trigger('click');
+                        }
+                    });
+                    sidebarLeftList.on('click', 'a', function() {
+                        if ( $('.k-js-wrapper').hasClass('k-is-opened-left') ) {
+                            $('.k-off-canvas-toggle--left').trigger('click');
+                        }
+                    });
+                }
+            }
+
+            if (sidebar_right.length) {
+                // Add button for right sidebar
+                $.each(sidebar_right, function() {
+                    addOffCanvasButton($(this), 'right');
+                });
+
+                // Open right sidebar on selecting items in table
+                // Only apply to actual `<a>` elements
+                $('.k-table-container table').on('click', 'a', function(event) {
+                    // stopPropagation for all links except for those with `.navigate` class
+                    if ( !$(this).hasClass('navigate') ) {
+                        event.stopPropagation();
+                    }
+                    // Only apply if parent is a `<td>` (so not a `<th>`)
+                    if ($(this).parents('td').length > 0) {
+                        $('.k-off-canvas-toggle--right').trigger('click');
+                    }
+                });
+            }
+        }
+    }
+
+
     $(document).ready(function () {
-
-        /**
-         * Variables
-         */
-
-        var $footable = $('.k-js-responsive-table'),
-            $sidebarToggle = $('.k-js-sidebar-toggle-item'),
-            $scopebar = $('.k-js-scopebar'),
-            $select2 = $('.k-js-select2'),
-            $datepicker = $('.k-js-datepicker'),
-            $magnificImage = $('.k-js-image-modal'),
-            $magnificInline = $('.k-js-inline-modal'),
-            $magnificIframe = $('.k-js-iframe-modal'),
-            $tooltip = $('.k-js-tooltip'),
-            $gallery = $('.k-js-gallery'),
-            resizeClass = 'k-is-resizing',
-            resizeTimer;
 
 
         /**
@@ -96,117 +213,8 @@
         }
 
 
-        /**
-         * Sidebar off-canvas toggles
-         */
 
-        if ($('.k-js-title-bar, .k-js-toolbar').length && $('.k-js-wrapper').length && $('.k-js-content').length)
-        {
-            // Vars
-            var sidebar_left  = $('.k-js-sidebar-left'),
-                sidebar_right = $('.k-js-sidebar-right');
-
-            function addOffCanvasButton(element, position) {
-
-                var toggle_button_content = element.attr('data-toggle-button-content') || '<span class="k-toggle-button-bar1"></span><span class="k-toggle-button-bar2"></span><span class="k-toggle-button-bar3"></span>';
-                var toggle_button = '<div class="k-off-canvas-toggle-holder">' +
-                        '<button class="k-off-canvas-toggle" type="button">' +
-                        toggle_button_content +
-                        '</button>' +
-                        '</div>';
-
-                // Variables
-                var kContainer = '.k-ui-container',
-                    container = element.closest(kContainer),
-                    titlebar = container.find('.k-js-title-bar'),
-                    toolbar = container.find('.k-js-toolbar'),
-                    wrapper = container.find('.k-js-wrapper'),
-                    content = container.find('.k-js-content'),
-                    page = container.find('.k-js-page'),
-                    component = container.find('.k-js-component'),
-                    toggle = container.find('.k-off-canvas-toggle--' + position),
-                    $toggle = $(toggle_button),
-                    $toggleButton = null,
-                    transitionElements = page || content;
-
-                // Add proper class to toggle buttons
-                $toggle.addClass('k-off-canvas-toggle-holder--' + position).children('button').addClass('k-off-canvas-toggle--' + position);
-
-                // Add toggle buttons
-                if (toggle.length === 0) {
-                    if ( position == 'left' ) {
-                        if ( titlebar.length) {
-                            titlebar.prepend($toggle);
-                        } else if (toolbar.length) {
-                            toolbar.prepend($toggle);
-                        }
-                    } else if ( position == 'right') {
-                        if ( toolbar.length) {
-                            toolbar.append($toggle);
-                        } else if (titlebar.length) {
-                            titlebar.append($toggle);
-                        }
-                        transitionElements = component;
-                    }
-
-                    $toggleButton = $('.k-off-canvas-toggle--' + position);
-
-                    // Initialize the offcanvas plugin
-                    element.offCanvasMenu({
-                        menuToggle: $toggleButton,
-                        wrapper: wrapper,
-                        container: page || content,
-                        position: position,
-                        offCanvasOverlay: 'k-off-canvas-overlay-' + position,
-                        transitionElements: transitionElements
-                    });
-                }
-            }
-
-            if (sidebar_left.length) {
-                // Add button for left sidebar
-                $.each(sidebar_left, function() {
-                    addOffCanvasButton($(this), 'left');
-                });
-
-                var sidebarLeftTree = $('.k-tree'),
-                    sidebarLeftList = $('.k-list');
-
-                if ( ( sidebarLeftTree.length || sidebarLeftList.length ) ) {
-                    sidebarLeftTree.on('click', '.jqtree-title', function() {
-                        if ( $('.k-js-wrapper').hasClass('k-is-opened-left') ) {
-                            $('.k-off-canvas-toggle--left').trigger('click');
-                        }
-                    });
-                    sidebarLeftList.on('click', 'a', function() {
-                        if ( $('.k-js-wrapper').hasClass('k-is-opened-left') ) {
-                            $('.k-off-canvas-toggle--left').trigger('click');
-                        }
-                    });
-                }
-            }
-
-            if (sidebar_right.length) {
-                // Add button for right sidebar
-                $.each(sidebar_right, function() {
-                    addOffCanvasButton($(this), 'right');
-                });
-
-                // Open right sidebar on selecting items in table
-                // Only apply to actual `<a>` elements
-                $('.k-table-container table').on('click', 'a', function(event) {
-                    // stopPropagation for all links except for those with `.navigate` class
-                    if ( !$(this).hasClass('navigate') ) {
-                        event.stopPropagation();
-                    }
-                    // Only apply if parent is a `<td>` (so not a `<th>`)
-                    if ($(this).parents('td').length > 0) {
-                        $('.k-off-canvas-toggle--right').trigger('click');
-                    }
-                });
-            }
-        }
-
+        offCanvasToggles();
 
 
         // Initiate responsive top menu
@@ -307,23 +315,25 @@
 
 
         // Form itself
-        var $form = $('.k-js-form');
+        var $form = $('.k-js-subcontent');
 
         // See if it exists
         if ($form.length) {
 
-            var toggle_button = '<button type="button" class="k-button k-button--default k-form-toggle k-js-form-toggle" title="Form toggle" aria-label="Form toggle"><span class="k-icon-chevron-left" aria-hidden="true"></span></button>';
+            console.log('yes');
+
+            var toggle_button = '<button type="button" class="k-button k-button--default k-subcontent-toggle k-js-subcontent-toggle" title="Subcontent toggle" aria-label="Subcontent toggle"><span class="k-icon-chevron-left" aria-hidden="true"></span></button>';
 
             // Append toggle button and overlay
             $('.k-page .k-js-toolbar').append(kQuery(toggle_button));
 
             // Off canvas
             $form.offCanvasMenu({
-                menuToggle: $('.k-js-form-toggle'),
+                menuToggle: $('.k-js-subcontent-toggle'),
                 position: 'right',
                 container: $('.k-page-content'),
                 expandedWidth: '276',
-                offCanvasOverlay: 'k-off-canvas-overlay-form',
+                offCanvasOverlay: 'k-off-canvas-overlay-subcontent',
                 wrapper: $('.k-page')
             });
 
@@ -664,6 +674,16 @@
             }, 200);
         });
 
+
     });
+
+    kodekitUI.loaded = function() {
+        if ($select2.length) {
+            $('.k-js-select2').select2({
+                theme: "bootstrap"
+            });
+        }
+        offCanvasToggles();
+    };
 
 })(kQuery);

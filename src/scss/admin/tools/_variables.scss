@@ -702,20 +702,20 @@ $k-form-block-content-spacing:    ($k-extrasmall-spacing - 1px) $k-extrasmall-sp
 // 3. The information bar width, best to use a number dividable by 5
 // 4. The height is automatically calculated
 
-$k-off-canvas-overlay-background:     black !default;
-$k-off-canvas-overlay-opacity:        0.75 !default;
-$k-off-canvas-overlay-top-opacity:    $k-off-canvas-overlay-opacity !default;
-$k-off-canvas-overlay-left-opacity:   $k-off-canvas-overlay-opacity !default;
-$k-off-canvas-overlay-right-opacity:  $k-off-canvas-overlay-opacity !default;
-$k-off-canvas-overlay-form-opacity:   $k-off-canvas-overlay-opacity !default;
-$k-toggle-button-size:                32px !default;
-$k-toggle-button-background:          $k-accent-color !default;
-$k-toggle-button-color:               white !default;
-$k-toggle-button-border-radius:       3px !default;
-$k-hamburger-bar-width:               15px !default; // 1
-$k-hamburger-bar-height:              round($k-hamburger-bar-width / 5) !default; // 2
-$k-info-bar-width:                    5px !default; // 3
-$k-info-bar-height:                   $k-info-bar-width * 2 !default; // 4
+$k-off-canvas-overlay-background:           black !default;
+$k-off-canvas-overlay-opacity:              0.75 !default;
+$k-off-canvas-overlay-top-opacity:          $k-off-canvas-overlay-opacity !default;
+$k-off-canvas-overlay-left-opacity:         $k-off-canvas-overlay-opacity !default;
+$k-off-canvas-overlay-right-opacity:        $k-off-canvas-overlay-opacity !default;
+$k-off-canvas-overlay-subcontent-opacity:   $k-off-canvas-overlay-opacity !default;
+$k-toggle-button-size:                      32px !default;
+$k-toggle-button-background:                $k-accent-color !default;
+$k-toggle-button-color:                     white !default;
+$k-toggle-button-border-radius:             3px !default;
+$k-hamburger-bar-width:                     15px !default; // 1
+$k-hamburger-bar-height:                    round($k-hamburger-bar-width / 5) !default; // 2
+$k-info-bar-width:                          5px !default; // 3
+$k-info-bar-height:                         $k-info-bar-width * 2 !default; // 4
 
 
 // Form styles
