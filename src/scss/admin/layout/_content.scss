@@ -28,6 +28,47 @@
     width: auto; /* 1 */
     overflow: hidden; /* 2 */
     min-height: 0;
+
+
+    /**
+     * When content has a subcontent sibling
+     */
+
+    &:not(:only-child) {
+      position: relative;
+
+      @include breakpoint($k-delta) {
+        @include allwidth($k-content-width-delta);
+        padding-right: 8px; /* Make room for resizer */
+      }
+
+      .k-pane-resizer {
+        width: 8px;
+        height: 100%;
+        background: white;
+        border-left: 1px solid #dcdcdc;
+        position: absolute;
+        z-index: 99;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        cursor: col-resize;
+        display: none;
+
+        @include breakpoint($k-delta) {
+          display: block;
+        }
+      }
+
+      .k-scopebar__item--search {
+        @include allwidth(100%);
+
+        .k-search__field {
+          border-left: none;
+          border-right: none;
+        }
+      }
+    }
   }
 
   /**
@@ -38,7 +79,7 @@
    */
 
   .k-show-left-menu {
-    .k-page,
+    .k-content-area,
     .k-content {
       transform: translate($k-sidebar-left-width, 0); /* 1 */
 
@@ -52,7 +93,7 @@
     }
 
     @include rtl {
-      .k-page,
+      .k-content-area,
       .k-content {
         transform: translate(-($k-sidebar-left-width), 0);
 
@@ -68,7 +109,7 @@
 
     /* Set opacity */
 
-    .k-page,
+    .k-content-area,
     .k-content {
       & > .k-off-canvas-overlay-left {
         opacity: $k-off-canvas-overlay-left-opacity;
@@ -81,7 +122,7 @@
   }
 
   .k-is-opened-left {
-    .k-page,
+    .k-content-area,
     .k-content {
       overflow: hidden;
 

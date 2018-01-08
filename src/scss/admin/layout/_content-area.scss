@@ -1,0 +1,72 @@
+@if ($k-layout == true and $k-layout-content-area != false) or $k-layout-content-area == true {
+  .k-content-area {
+    position: relative;
+    z-index: 3;
+    overflow: hidden !important;
+    @include transition(transform);
+
+    display: flex;
+    flex: 1 1 auto;
+    width: auto;
+    min-height: 0;
+
+    &.k-show-right-menu {
+      .k-content-area__child {
+        transform: translateX(-85%);
+
+        @include breakpoint($k-delta) {
+          transform: none;
+        }
+      }
+    }
+
+    &.k-is-opened-right {
+      .k-subcontent {
+        z-index: 1;
+      }
+
+      .k-content-area__child > .k-off-canvas-overlay-subcontent {
+        z-index: 9;
+
+        @include breakpoint($k-delta) {
+          z-index: -1;
+        }
+      }
+    }
+
+    &.k-show-right-menu {
+      .k-component {
+        transform: none;
+      }
+
+      .k-content-area__child > .k-off-canvas-overlay-subcontent {
+        opacity: $k-off-canvas-overlay-subcontent-opacity;
+
+        @include breakpoint($k-delta) {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  .k-content-area__child {
+    position: relative;
+    display: none;
+    @include transition(transform);
+
+    flex: 1 1 auto;
+    width: auto;
+    min-height: 0;
+    overflow: visible;
+    max-width: 100%; // for breadcrumbs to work properly
+
+    &.k-is-active {
+      display: flex;
+    }
+
+    &:nth-last-child(2):first-child,
+    &:only-child {
+      display: flex;
+    }
+  }
+}

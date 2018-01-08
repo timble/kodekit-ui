@@ -49,6 +49,28 @@
           text-align: center;
         }
       }
+
+
+      /* Properly align dropdown button in button */
+
+      .k-dropdown {
+
+        /* Pullback so whole button becomes clickable */
+
+        .k-dropdown__toggle {
+          text-decoration: none;
+          margin: (-($k-toolbar-spacing - 1px));
+          padding: $k-toolbar-spacing - 1px;
+        }
+
+
+        /* Pull back to toggle button */
+
+        .k-dropdown__menu {
+          margin-top: $k-toolbar-spacing - 2px;
+          left: -($k-toolbar-spacing);
+        }
+      }
     }
 
     @include rtl {

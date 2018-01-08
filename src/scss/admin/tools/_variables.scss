@@ -32,11 +32,13 @@ $k-layout:                      true !default;
 $k-layout-component:            inherit !default;
 $k-layout-component-wrapper:    inherit !default;
 $k-layout-content:              inherit !default;
+$k-layout-content-area:         inherit !default;
 $k-layout-content-wrapper:      inherit !default;
 $k-layout-flex-wrapper:         inherit !default;
 $k-layout-grid:                 inherit !default;
 $k-layout-koowa-container:      inherit !default;
 $k-layout-sidebar:              inherit !default;
+$k-layout-subcontent:           inherit !default;
 $k-layout-top:                  inherit !default;
 $k-layout-wrapper:              inherit !default;
 
@@ -375,8 +377,9 @@ $k-top-container-navigation-item-open-submenu-class:  '.has-open-submenu' !defau
 // Content
 // ==========================================================================
 
-$k-content-background:   white !default;
-$k-content-border:       darkest($k-content-background) !default;
+$k-content-background:    white !default;
+$k-content-border:        darkest($k-content-background) !default;
+$k-content-width-delta:   25vw;
 
 
 // Title-bar

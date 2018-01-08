@@ -1776,6 +1776,11 @@ body.k-is-resizing {
   /* Main container */
   /* Sub container */
   /* Full container */
+  /**
+   * Full container -- spaced top
+   *
+   * For when using tables inside form and you want table to be attached to the sides
+   */
   /* Koowa UI container
      ========================================================================== */
   /**
@@ -2182,7 +2187,12 @@ body.k-is-resizing {
   /* Scopebar label showing how many active filters you have below a filter button */
   /* Scopebar breadcrumbs */
   /* Scopebar buttons */
-  /* Scopebar search */
+  /**
+   * Scopebar search
+   *
+   * 1. For placement of the icons
+   * 2. When only child, stick to the right (left for RTL)
+   */
   /* Sidebar item
      ========================================================================== */
   /**
@@ -2808,13 +2818,61 @@ body.k-is-resizing {
   overflow: hidden;
   /* 2 */
   min-height: 0;
+  /**
+     * When content has a subcontent sibling
+     */
+}
+
+.k-ui-namespace .k-content:not(:only-child) {
+  position: relative;
+}
+
+@media screen and (min-width: 1024px) {
+  .k-ui-namespace .k-content:not(:only-child) {
+    min-width: 25vw;
+    width: 25vw;
+    max-width: 25vw;
+    padding-right: 8px;
+    /* Make room for resizer */
+  }
+}
+
+.k-ui-namespace .k-content:not(:only-child) .k-pane-resizer {
+  width: 8px;
+  height: 100%;
+  background: white;
+  border-left: 1px solid #dcdcdc;
+  position: absolute;
+  z-index: 99;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  cursor: col-resize;
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .k-ui-namespace .k-content:not(:only-child) .k-pane-resizer {
+    display: block;
+  }
+}
+
+.k-ui-namespace .k-content:not(:only-child) .k-scopebar__item--search {
+  min-width: 100%;
+  width: 100%;
+  max-width: 100%;
+}
+
+.k-ui-namespace .k-content:not(:only-child) .k-scopebar__item--search .k-search__field {
+  border-left: none;
+  border-right: none;
 }
 
 .k-ui-namespace .k-show-left-menu {
   /* Set opacity */
 }
 
-.k-ui-namespace .k-show-left-menu .k-page,
+.k-ui-namespace .k-show-left-menu .k-content-area,
 .k-ui-namespace .k-show-left-menu .k-content {
   -webkit-transform: translate(272px, 0);
           transform: translate(272px, 0);
@@ -2822,7 +2880,7 @@ body.k-is-resizing {
 }
 
 @media screen and (min-width: 768px) {
-  .k-ui-namespace .k-show-left-menu .k-page,
+  .k-ui-namespace .k-show-left-menu .k-content-area,
   .k-ui-namespace .k-show-left-menu .k-content {
     -webkit-transform: translate(0, 0);
             transform: translate(0, 0);
@@ -2830,76 +2888,161 @@ body.k-is-resizing {
   }
 }
 
-.k-ui-namespace .k-show-left-menu .k-page .k-content,
+.k-ui-namespace .k-show-left-menu .k-content-area .k-content,
 .k-ui-namespace .k-show-left-menu .k-content .k-content {
   -webkit-transform: none;
           transform: none;
 }
 
-[dir="rtl"] .k-ui-namespace .k-show-left-menu .k-page, [dir="rtl"] .k-ui-namespace .k-show-left-menu .k-content {
+[dir="rtl"] .k-ui-namespace .k-show-left-menu .k-content-area, [dir="rtl"] .k-ui-namespace .k-show-left-menu .k-content {
   -webkit-transform: translate(-272px, 0);
           transform: translate(-272px, 0);
 }
 
 @media screen and (min-width: 768px) {
-  [dir="rtl"] .k-ui-namespace .k-show-left-menu .k-page, [dir="rtl"] .k-ui-namespace .k-show-left-menu .k-content {
+  [dir="rtl"] .k-ui-namespace .k-show-left-menu .k-content-area, [dir="rtl"] .k-ui-namespace .k-show-left-menu .k-content {
     -webkit-transform: translate(0, 0);
             transform: translate(0, 0);
   }
 }
 
-[dir="rtl"] .k-ui-namespace .k-show-left-menu .k-page .k-content, [dir="rtl"] .k-ui-namespace .k-show-left-menu .k-content .k-content {
+[dir="rtl"] .k-ui-namespace .k-show-left-menu .k-content-area .k-content, [dir="rtl"] .k-ui-namespace .k-show-left-menu .k-content .k-content {
   -webkit-transform: none;
           transform: none;
 }
 
-.k-ui-namespace .k-show-left-menu .k-page > .k-off-canvas-overlay-left,
+.k-ui-namespace .k-show-left-menu .k-content-area > .k-off-canvas-overlay-left,
 .k-ui-namespace .k-show-left-menu .k-content > .k-off-canvas-overlay-left {
   opacity: 0.75;
 }
 
 @media screen and (min-width: 768px) {
-  .k-ui-namespace .k-show-left-menu .k-page > .k-off-canvas-overlay-left,
+  .k-ui-namespace .k-show-left-menu .k-content-area > .k-off-canvas-overlay-left,
   .k-ui-namespace .k-show-left-menu .k-content > .k-off-canvas-overlay-left {
     opacity: 0;
   }
 }
 
-.k-ui-namespace .k-is-opened-left .k-page,
+.k-ui-namespace .k-is-opened-left .k-content-area,
 .k-ui-namespace .k-is-opened-left .k-content {
   overflow: hidden;
   /* 2. Set z-index so it will become visible */
 }
 
 @media screen and (min-width: 768px) {
-  .k-ui-namespace .k-is-opened-left .k-page,
+  .k-ui-namespace .k-is-opened-left .k-content-area,
   .k-ui-namespace .k-is-opened-left .k-content {
     overflow: auto;
   }
 }
 
 @media screen and (min-width: 600px) {
-  .k-ui-namespace .k-is-opened-left .k-page,
+  .k-ui-namespace .k-is-opened-left .k-content-area,
   .k-ui-namespace .k-is-opened-left .k-content {
     overflow: auto;
   }
 }
 
-.k-is-resizing .k-ui-namespace .k-is-opened-left .k-page, .k-is-resizing
+.k-is-resizing .k-ui-namespace .k-is-opened-left .k-content-area, .k-is-resizing
 .k-ui-namespace .k-is-opened-left .k-content {
   overflow: hidden;
 }
 
-.k-ui-namespace .k-is-opened-left .k-page > .k-off-canvas-overlay-left,
+.k-ui-namespace .k-is-opened-left .k-content-area > .k-off-canvas-overlay-left,
 .k-ui-namespace .k-is-opened-left .k-content > .k-off-canvas-overlay-left {
   z-index: 9;
 }
 
 @media screen and (min-width: 768px) {
-  .k-ui-namespace .k-is-opened-left .k-page > .k-off-canvas-overlay-left,
+  .k-ui-namespace .k-is-opened-left .k-content-area > .k-off-canvas-overlay-left,
   .k-ui-namespace .k-is-opened-left .k-content > .k-off-canvas-overlay-left {
     z-index: -1;
   }
+}
+
+.k-ui-namespace .k-content-area {
+  position: relative;
+  z-index: 3;
+  overflow: hidden !important;
+  transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+  transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+  -webkit-backface-visibility: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  width: auto;
+  min-height: 0;
+}
+
+.k-ui-namespace .k-content-area.k-show-right-menu .k-content-area__child {
+  -webkit-transform: translateX(-85%);
+          transform: translateX(-85%);
+}
+
+@media screen and (min-width: 1024px) {
+  .k-ui-namespace .k-content-area.k-show-right-menu .k-content-area__child {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+.k-ui-namespace .k-content-area.k-is-opened-right .k-subcontent {
+  z-index: 1;
+}
+
+.k-ui-namespace .k-content-area.k-is-opened-right .k-content-area__child > .k-off-canvas-overlay-subcontent {
+  z-index: 9;
+}
+
+@media screen and (min-width: 1024px) {
+  .k-ui-namespace .k-content-area.k-is-opened-right .k-content-area__child > .k-off-canvas-overlay-subcontent {
+    z-index: -1;
+  }
+}
+
+.k-ui-namespace .k-content-area.k-show-right-menu .k-component {
+  -webkit-transform: none;
+          transform: none;
+}
+
+.k-ui-namespace .k-content-area.k-show-right-menu .k-content-area__child > .k-off-canvas-overlay-subcontent {
+  opacity: 0.75;
+}
+
+@media screen and (min-width: 1024px) {
+  .k-ui-namespace .k-content-area.k-show-right-menu .k-content-area__child > .k-off-canvas-overlay-subcontent {
+    opacity: 0;
+  }
+}
+
+.k-ui-namespace .k-content-area__child {
+  position: relative;
+  display: none;
+  transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+  transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+  -webkit-backface-visibility: hidden;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  width: auto;
+  min-height: 0;
+  overflow: visible;
+  max-width: 100%;
+}
+
+.k-ui-namespace .k-content-area__child.k-is-active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.k-ui-namespace .k-content-area__child:nth-last-child(2):first-child, .k-ui-namespace .k-content-area__child:only-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .k-ui-namespace .k-content-wrapper {
@@ -2978,7 +3121,7 @@ body.k-is-resizing {
 @media screen and (min-width: 768px) {
   .k-ui-namespace .k-container__main {
     float: left;
-    width: calc(100% * 8 / 12 - 24px);
+    width: calc(100% * 8 / 12);
   }
   .k-ui-namespace .k-container__main:first-child {
     padding-right: 8px;
@@ -3004,7 +3147,7 @@ body.k-is-resizing {
 @media screen and (min-width: 768px) {
   .k-ui-namespace .k-container__sub {
     float: left;
-    width: calc(100% * 4 / 12 - 24px);
+    width: calc(100% * 4 / 12);
   }
   .k-ui-namespace .k-container__sub:first-child {
     padding-right: 8px;
@@ -3027,6 +3170,10 @@ body.k-is-resizing {
   clear: both;
   width: auto;
   padding: 16px;
+}
+
+.k-ui-namespace .k-container__full--spaced-top.k-container__full--spaced-top {
+  padding: 16px 0 0;
 }
 
 .k-ui-namespace.k-ui-container {
@@ -3259,6 +3406,97 @@ body.k-is-resizing {
   z-index: 1;
 }
 
+.k-ui-namespace .k-subcontent {
+  border-left: 1px solid #dcdcdc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+  /* 2 */
+  min-height: 0;
+  position: absolute;
+  z-index: -1;
+  left: 100%;
+  top: 0;
+  bottom: 0;
+  width: 85%;
+}
+
+@media screen and (min-width: 1024px) {
+  .k-ui-namespace .k-subcontent {
+    position: relative;
+    left: auto;
+    width: auto;
+    z-index: 1;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .k-ui-namespace .k-ui-namespace .k-subcontent-toggle {
+    display: none;
+  }
+}
+
+.k-ui-namespace .k-subcontent__child {
+  display: none;
+  /**
+     * When flexbox is in use
+     *
+     * 1. Reset width needed for table
+     * 2. Set overflow for breadcrumbs to properly work
+     */
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: auto;
+  /* 1 */
+  overflow: hidden;
+  /* 2 */
+  min-height: 0;
+}
+
+.k-ui-namespace .k-subcontent__child.k-is-active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.k-ui-namespace .k-subcontent-toggle.k-subcontent-toggle {
+  position: absolute;
+  float: right;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+  -webkit-backface-visibility: hidden;
+}
+
+.k-ui-namespace .k-is-opened-right .k-subcontent-toggle.k-subcontent-toggle {
+  position: relative;
+  visibility: visible;
+  z-index: 11;
+}
+
+@media screen and (min-width: 1024px) {
+  .k-ui-namespace .k-is-opened-right .k-subcontent-toggle.k-subcontent-toggle {
+    visibility: hidden;
+  }
+}
+
+.k-ui-namespace .k-show-right-menu .k-subcontent-toggle.k-subcontent-toggle {
+  opacity: 1;
+}
+
 .k-ui-namespace .k-top-container {
   background: #2c3e50;
   color: white;
@@ -3350,12 +3588,28 @@ body.k-is-resizing {
 @media screen and (min-width: 768px) {
   .k-ui-namespace .k-top-container__navigation .k-navigation-right {
     float: right;
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 768px) and (min-width: 768px) {
+  .k-ui-namespace .k-top-container__navigation .k-navigation-right li ul {
+    left: auto;
+    right: 0;
+  }
+}
+
+@media screen and (min-width: 768px) and (min-width: 768px) {
+  .k-ui-namespace .k-top-container__navigation .k-navigation-right li li ul {
+    left: auto;
+    right: 100%;
   }
 }
 
 @media screen and (min-width: 768px) {
   [dir="rtl"] .k-ui-namespace .k-top-container__navigation .k-navigation-right {
     float: left;
+    margin-right: auto;
   }
 }
 
@@ -3413,10 +3667,10 @@ body.k-is-resizing {
 .k-ui-namespace .k-top-container__navigation li > a:not(:only-child):after {
   display: inline-block;
   content: " ";
-  border-left: 4px solid transparent;
+  border-top: 4px solid;
   border-right: 4px solid transparent;
   border-bottom: 2px solid transparent;
-  border-top: 4px solid;
+  border-left: 4px solid transparent;
   margin-left: 8px;
 }
 
@@ -3461,6 +3715,21 @@ body.k-is-resizing {
   background: transparent;
 }
 
+.k-ui-namespace .k-top-container__navigation li ul li:focus, .k-ui-namespace .k-top-container__navigation li ul li:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.k-ui-namespace .k-top-container__navigation li ul li:focus > ul, .k-ui-namespace .k-top-container__navigation li ul li:hover > ul {
+  display: block;
+}
+
+@media screen and (min-width: 768px) {
+  .k-ui-namespace .k-top-container__navigation li ul li ul {
+    top: -2px;
+    left: 100%;
+  }
+}
+
 .k-ui-namespace .k-top-container__navigation li ul a {
   height: 32px;
   line-height: 32px;
@@ -3471,10 +3740,25 @@ body.k-is-resizing {
   background: rgba(0, 0, 0, 0.1);
 }
 
+.k-ui-namespace .k-top-container__navigation li ul a:focus + ul, .k-ui-namespace .k-top-container__navigation li ul a:hover + ul {
+  display: block;
+}
+
 @media screen and (min-width: 768px) {
   .k-ui-namespace .k-top-container__navigation li ul a {
     color: #2c3e50;
   }
+}
+
+.k-ui-namespace .k-top-container__navigation li ul a:not(:only-child):after {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  border-top: 4px solid transparent;
+  border-right: none;
+  border-bottom: 4px solid transparent;
+  border-left: 4px solid;
+  margin-top: -4px;
 }
 
 .k-ui-namespace .k-top-container__navigation li .has-open-submenu + ul {
@@ -4221,6 +4505,9 @@ body.k-is-resizing {
   font-size: 13px;
   line-height: 18px;
   padding: 6px 12px;
+  /* Align checkbox properly inside button */
+  /* Align single icon buttons */
+  /* Properly align dropdown button in button */
 }
 
 .k-ui-namespace .k-button:last-child {
@@ -4259,6 +4546,31 @@ body.k-is-resizing {
   cursor: not-allowed;
   opacity: 0.65;
   pointer-events: none;
+}
+
+.k-ui-namespace .k-button.k-button input[type="checkbox"] {
+  margin: 0 -1px;
+  vertical-align: top;
+}
+
+.k-ui-namespace .k-button [class*="icon-"]:only-child {
+  margin: 0;
+}
+
+.k-ui-namespace .k-button .k-dropdown {
+  /* Pullback so whole button becomes clickable */
+  /* Pull back to toggle button */
+}
+
+.k-ui-namespace .k-button .k-dropdown .k-dropdown__toggle {
+  text-decoration: none;
+  margin: -6px -12px;
+  padding: 6px 12px;
+}
+
+.k-ui-namespace .k-button .k-dropdown .k-dropdown__menu {
+  margin-top: 4px;
+  left: -6px;
 }
 
 .k-ui-namespace .k-button--default {
@@ -4970,6 +5282,34 @@ fieldset[disabled] .k-ui-namespace .k-button--danger.k-has-focus {
   border-color: #3071a9;
   background: #3071a9;
   color: white;
+}
+
+.k-ui-namespace .cke_chrome.cke_chrome,
+.k-ui-namespace .cke_inner.cke_inner,
+.k-ui-namespace .cke_contents.cke_contents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  height: auto !important;
+}
+
+.k-ui-namespace .cke_chrome.cke_chrome iframe,
+.k-ui-namespace .cke_inner.cke_inner iframe,
+.k-ui-namespace .cke_contents.cke_contents iframe {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.k-ui-namespace .cke_resizer.cke_resizer {
+  display: none;
 }
 
 .k-ui-namespace .datepicker {
@@ -7911,6 +8251,9 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 .k-ui-namespace .k-scopebar__item--search {
   position: relative;
+  /* 1 */
+  margin-left: auto;
+  /* 2 */
   /* Hide when JS is enabled */
   /* Flexbox */
   -webkit-box-flex: 1;
@@ -7929,6 +8272,11 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   /* The search submit button */
   /* The search empty / reset button */
   /*  The active search label */
+}
+
+[dir="rtl"] .k-ui-namespace .k-scopebar__item--search {
+  margin-left: 0;
+  margin-right: auto;
 }
 
 .k-js-enabled .k-ui-namespace .k-scopebar__item--search {
@@ -8456,6 +8804,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
      * 1. Small extra info below title display:block to display below title
      */
   /* Hover background */
+  /* Active rows */
 }
 
 .k-ui-namespace .k-table-container table {
@@ -8527,7 +8876,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   /* 4 */
   margin-left: -8px;
   margin-right: -8px;
-  line-height: 28px;
+  line-height: 27px;
   text-decoration: none;
 }
 
@@ -8567,6 +8916,14 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 .k-ui-namespace .k-table-container a {
   color: inherit;
+}
+
+.k-ui-namespace .k-table-container .k-is-active > td {
+  font-weight: bold;
+}
+
+.k-ui-namespace .k-table-container .k-is-active > td:nth-child(n) {
+  background: #fbfafa;
 }
 
 .k-ui-namespace .k-table-container a {
@@ -9608,6 +9965,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
        * Only make them square if media queries are supported
        * By default we just want them as buttons
        */
+  /* Properly align dropdown button in button */
 }
 
 @media screen and (min-width: 0) and (max-width: 768px) {
@@ -9617,6 +9975,22 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
     height: 32px;
     text-align: center;
   }
+}
+
+.k-ui-namespace .k-toolbar .k-button .k-dropdown {
+  /* Pullback so whole button becomes clickable */
+  /* Pull back to toggle button */
+}
+
+.k-ui-namespace .k-toolbar .k-button .k-dropdown .k-dropdown__toggle {
+  text-decoration: none;
+  margin: -7px;
+  padding: 7px;
+}
+
+.k-ui-namespace .k-toolbar .k-button .k-dropdown .k-dropdown__menu {
+  margin-top: 6px;
+  left: -8px;
 }
 
 [dir="rtl"] .k-ui-namespace .k-toolbar .k-button {
@@ -9830,6 +10204,40 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   border-radius: 0 0 4px 4px;
 }
 
+.k-ui-namespace .align-left {
+  text-align: left;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin-right: auto;
+}
+
+[dir="rtl"] .k-ui-namespace .align-left {
+  text-align: right;
+  margin-right: 0;
+  margin-left: auto;
+}
+
+.k-ui-namespace .align-center {
+  text-align: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.k-ui-namespace .align-right {
+  text-align: right;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-left: auto;
+}
+
+[dir="rtl"] .k-ui-namespace .align-right {
+  text-align: left;
+  margin-left: 0;
+  margin-right: auto;
+}
+
 .k-ui-namespace .k-color-error {
   color: #c0392b;
 }
@@ -9935,6 +10343,27 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.k-ui-namespace .k-flag-object {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.k-ui-namespace .k-flag-object__aside {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.k-ui-namespace .k-flag-object__aside + .k-flag-object__body {
+  padding-left: 1em;
+}
+
+.k-ui-namespace .k-flag-object__body {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 .k-ui-namespace .k-flexbox.k-flexbox.k-flexbox {
@@ -10238,6 +10667,25 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 .k-touchevents .k-ui-namespace .k-touchevents-hidden {
   display: none !important;
+}
+
+.k-ui-namespace .unavalaible,
+.k-ui-namespace .uninstalled {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: no-drop;
+}
+
+.k-ui-namespace .is-unresponsive,
+.k-ui-namespace .is-unresponsive *:not(.k-pane-resizer) {
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  user-focus: none;
 }
 
 .k-ui-namespace .k-visually-hidden.k-visually-hidden.k-visually-hidden {
@@ -12578,380 +13026,11 @@ img.mfp-img {
   line-height: 24px;
 }
 
-.k-page {
-  position: relative;
-  z-index: 3;
-  overflow: hidden !important;
-  transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-  transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-  -webkit-backface-visibility: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  width: auto;
-  min-height: 0;
-}
-
-.k-page.k-show-right-menu .k-page-content {
-  -webkit-transform: translateX(-85%);
-          transform: translateX(-85%);
-}
-
-@media screen and (min-width: 1024px) {
-  .k-page.k-show-right-menu .k-page-content {
-    -webkit-transform: none;
-            transform: none;
-  }
-}
-
-.k-page.k-is-opened-right .k-subcontent {
-  z-index: 1;
-}
-
-.k-page.k-is-opened-right .k-page-content > .k-off-canvas-overlay-subcontent {
-  z-index: 9;
-}
-
-@media screen and (min-width: 1024px) {
-  .k-page.k-is-opened-right .k-page-content > .k-off-canvas-overlay-subcontent {
-    z-index: -1;
-  }
-}
-
-.k-page.k-show-right-menu .k-component {
-  -webkit-transform: none;
-          transform: none;
-}
-
-.k-page.k-show-right-menu .k-page-content > .k-off-canvas-overlay-subcontent {
-  opacity: 0.75;
-}
-
-@media screen and (min-width: 1024px) {
-  .k-page.k-show-right-menu .k-page-content > .k-off-canvas-overlay-subcontent {
-    opacity: 0;
-  }
-}
-
-.k-page-content {
-  position: relative;
-  display: none;
-  transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-  transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-  -webkit-backface-visibility: hidden;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  width: auto;
-  min-height: 0;
-  overflow: visible;
-  max-width: 100%;
-}
-
-.k-page-content.k-is-active {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.k-page-content:nth-last-child(2):first-child, .k-page-content:only-child {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.k-subcontent {
-  border-left: 1px solid #dcdcdc;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  overflow: hidden;
-  /* 2 */
-  min-height: 0;
-  position: absolute;
-  z-index: -1;
-  left: 100%;
-  top: 0;
-  bottom: 0;
-  width: 85%;
-}
-
-@media screen and (min-width: 1024px) {
-  .k-subcontent {
-    position: relative;
-    left: auto;
-    width: auto;
-    z-index: 1;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .k-ui-namespace .k-subcontent-toggle {
-    display: none;
-  }
-}
-
-.k-subcontent__child {
-  display: none;
-  /**
-   * When flexbox is in use
-   *
-   * 1. Reset width needed for table
-   * 2. Set overflow for breadcrumbs to properly work
-   */
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: auto;
-  /* 1 */
-  overflow: hidden;
-  /* 2 */
-  min-height: 0;
-}
-
-.k-subcontent__child.k-is-active {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.is-unresponsive,
-.is-unresponsive *:not(.k-middlepane-resizer) {
-  pointer-events: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  user-focus: none;
-}
-
-@media screen and (min-width: 1024px) {
-  .k-content:not(:only-child) {
-    min-width: 25vw;
-    width: 25vw;
-    max-width: 25vw;
-    min-width: 221px;
-  }
-}
-
-.k-content:not(:only-child) + .k-subcontent {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-}
-
-.k-content:not(:only-child) .k-scopebar__item--search.k-scopebar__item--search {
-  min-width: 100%;
-  width: 100%;
-  max-width: 100%;
-}
-
-.k-content:not(:only-child) .k-scopebar__item--search.k-scopebar__item--search .k-search__field {
-  border-left: none;
-}
-
-.k-content:not(:only-child) .k-table-container td {
-  cursor: pointer;
-}
-
-.k-content:not(:only-child).k-js-middlepane.k-js-middlepane {
-  position: relative;
-}
-
-@media screen and (min-width: 0) and (max-width: 1024px) {
-  .k-content:not(:only-child).k-js-middlepane.k-js-middlepane {
-    min-width: 1px !important;
-    width: auto !important;
-    max-width: none !important;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .k-content:not(:only-child).k-js-middlepane.k-js-middlepane {
-    padding-right: 8px;
-  }
-}
-
-.k-content:not(:only-child).k-js-middlepane.k-js-middlepane .k-middlepane-resizer {
-  width: 8px;
-  height: 100%;
-  background: white;
-  border-left: 1px solid #dcdcdc;
-  position: absolute;
-  z-index: 99;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  cursor: col-resize;
-  display: none;
-}
-
-@media screen and (min-width: 1024px) {
-  .k-content:not(:only-child).k-js-middlepane.k-js-middlepane .k-middlepane-resizer {
-    display: block;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .k-ui-namespace .k-scopebar {
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-  }
-}
-
-.k-wrapper.k-show-left-menu .k-page.k-show-right-menu .k-content {
+.k-wrapper.k-show-left-menu .k-content-area.k-show-right-menu .k-content {
   -webkit-transform: translateX(0);
           transform: translateX(0);
 }
 
-.k-wrapper.k-show-left-menu .k-page.k-show-right-menu .k-content ~ .k-off-canvas-overlay-subcontent {
+.k-wrapper.k-show-left-menu .k-content-area.k-show-right-menu .k-content ~ .k-off-canvas-overlay-subcontent {
   opacity: 0;
-}
-
-.k-is-active.k-is-active > td {
-  font-weight: bold;
-  background: #fbfbfb;
-}
-
-.k-spaced-m {
-  padding: 10px;
-  text-align: center;
-}
-
-.k-spaced-m img {
-  max-width: 80px;
-}
-
-.unavalaible,
-.uninstalled {
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
-  opacity: 0.5;
-}
-
-.k-ui-namespace .k-table-container .k-table__item-level__icon-item {
-  padding-left: 0;
-}
-
-.k-button input[type="checkbox"] {
-  margin: 0 -1px !important;
-  vertical-align: top !important;
-}
-
-.k-button .k-dropdown .k-dropdown__toggle {
-  text-decoration: none;
-  margin: -5px -10px;
-  padding: 5px 10px;
-}
-
-.k-button .k-dropdown .k-dropdown__menu {
-  margin-top: 6px;
-  left: -11px;
-}
-
-.k-button [class*="icon-"] {
-  margin: 0 !important;
-}
-
-.k-card__section + .k-card__ection {
-  border-top: 1px solid #ddd;
-}
-
-#gravatar {
-  margin: auto;
-  border-radius: 50%;
-  max-width: 40px;
-}
-
-.k-flag-object {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.k-flag-object__aside {
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-}
-
-.k-flag-object__aside + .k-flag-object__body {
-  padding-left: 10px;
-}
-
-.k-flag-object__body {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-}
-
-.k-subcontent-toggle.k-subcontent-toggle {
-  position: absolute;
-  float: right;
-  visibility: hidden;
-  opacity: 0;
-  transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-  -webkit-backface-visibility: hidden;
-}
-
-.k-is-opened-right .k-subcontent-toggle.k-subcontent-toggle {
-  position: relative;
-  visibility: visible;
-  z-index: 11;
-}
-
-@media screen and (min-width: 1024px) {
-  .k-is-opened-right .k-subcontent-toggle.k-subcontent-toggle {
-    visibility: hidden;
-  }
-}
-
-.k-show-right-menu .k-subcontent-toggle.k-subcontent-toggle {
-  opacity: 1;
-}
-
-.k-container__full--spaced-top.k-container__full--spaced-top {
-  padding: 16px 0 0;
-}
-
-.cke_chrome.cke_chrome,
-.cke_inner.cke_inner,
-.cke_contents.cke_contents {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  height: auto !important;
-}
-
-.cke_chrome.cke_chrome iframe,
-.cke_inner.cke_inner iframe,
-.cke_contents.cke_contents iframe {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-}
-
-.cke_resizer.cke_resizer {
-  display: none;
 }

@@ -17340,16 +17340,16 @@ var Konami = function (callback) {
             var toggle_button = '<button type="button" class="k-button k-button--default k-subcontent-toggle k-js-subcontent-toggle" title="Subcontent toggle" aria-label="Subcontent toggle"><span class="k-icon-chevron-left" aria-hidden="true"></span></button>';
 
             // Append toggle button and overlay
-            $('.k-page .k-js-toolbar').append(kQuery(toggle_button));
+            $('.k-content-area .k-js-toolbar').append(kQuery(toggle_button));
 
             // Off canvas
             $form.offCanvasMenu({
                 menuToggle: $('.k-js-subcontent-toggle'),
                 position: 'right',
-                container: $('.k-page-content'),
+                container: $('.k-content-area__child'),
                 expandedWidth: '276',
                 offCanvasOverlay: 'k-off-canvas-overlay-subcontent',
-                wrapper: $('.k-page')
+                wrapper: $('.k-content-area')
             });
 
 
@@ -17452,7 +17452,7 @@ var Konami = function (callback) {
             var middlepane = document.querySelector(".k-js-middlepane");
             if (middlepane !== null) {
                 var middlepaneResizer = document.createElement("div");
-                middlepaneResizer.className = "k-middlepane-resizer";
+                middlepaneResizer.className = "k-pane-resizer";
                 middlepane.appendChild(middlepaneResizer);
                 middlepaneResizer.addEventListener("mousedown", initDrag, false);
                 var startW, startWidth, newWidth;
@@ -17702,6 +17702,7 @@ var Konami = function (callback) {
     };
 
 })(kQuery);
+
 
 window.jQuery = globalCacheForjQueryReplacement;
 globalCacheForjQueryReplacement = undefined;

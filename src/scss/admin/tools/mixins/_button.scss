@@ -69,6 +69,43 @@
     opacity: 0.65;
     pointer-events: none;
   }
+
+
+  /* Align checkbox properly inside button */
+
+  &.k-button input[type="checkbox"] {
+    margin: 0 -1px;
+    vertical-align: top;
+  }
+
+
+  /* Align single icon buttons */
+
+  [class*="icon-"]:only-child {
+    margin: 0;
+  }
+
+
+  /* Properly align dropdown button in button */
+
+  .k-dropdown {
+
+    /* Pullback so whole button becomes clickable */
+
+    .k-dropdown__toggle {
+      text-decoration: none;
+      margin: (-($k-button-vertical-spacing)) (-($k-button-horizontal-spacing));
+      padding: $k-button-vertical-spacing $k-button-horizontal-spacing;
+    }
+
+
+    /* Pull back to toggle button */
+
+    .k-dropdown__menu {
+      margin-top: $k-button-vertical-spacing - 2px;
+      left: -($k-button-vertical-spacing);
+    }
+  }
 }
 
 

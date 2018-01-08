@@ -498,10 +498,21 @@
     }
   }
 
-  /* Scopebar search */
+  /**
+   * Scopebar search
+   *
+   * 1. For placement of the icons
+   * 2. When only child, stick to the right (left for RTL)
+   */
 
   .k-scopebar__item--search {
-    position: relative;
+    position: relative; /* 1 */
+    margin-left: auto; /* 2 */
+
+    @include rtl {
+      margin-left: 0;
+      margin-right: auto;
+    }
 
     /* Hide when JS is enabled */
 

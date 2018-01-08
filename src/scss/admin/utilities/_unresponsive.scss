@@ -1,0 +1,9 @@
+// When dragging make sure nothing gets selected
+.is-unresponsive {
+  &,
+  *:not(.k-pane-resizer) {
+    pointer-events: none;
+    user-select: none;
+    user-focus: none;
+  }
+}

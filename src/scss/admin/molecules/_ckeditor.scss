@@ -1,0 +1,18 @@
+// CKE
+
+.cke_chrome.cke_chrome,
+.cke_inner.cke_inner,
+.cke_contents.cke_contents {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  height: auto !important;
+
+  iframe {
+    flex: 1 1 auto;
+  }
+}
+
+.cke_resizer.cke_resizer {
+  display: none;
+}

@@ -1,0 +1,81 @@
+@if ($k-layout == true and $k-layout-subcontent != false) or $k-layout-subcontent == true {
+  .k-subcontent {
+    border-left: 1px solid #dcdcdc;
+
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    overflow: hidden; /* 2 */
+    min-height: 0;
+
+    position: absolute;
+    z-index: -1;
+    left: 100%;
+    top: 0;
+    bottom: 0;
+    width: 85%;
+
+    @include breakpoint($k-delta) {
+      position: relative;
+      left: auto;
+      width: auto;
+      z-index: 1;
+
+    }
+  }
+
+  .k-ui-namespace {
+    .k-subcontent-toggle {
+      @include breakpoint($k-delta) {
+        display: none;
+      }
+    }
+  }
+
+  .k-subcontent__child {
+    display: none;
+
+    /**
+     * When flexbox is in use
+     *
+     * 1. Reset width needed for table
+     * 2. Set overflow for breadcrumbs to properly work
+     */
+
+    flex: 1 1 auto;
+    flex-direction: column;
+    width: auto; /* 1 */
+    overflow: hidden; /* 2 */
+    min-height: 0;
+
+    &.k-is-active {
+      display: flex;
+    }
+  }
+
+  .k-subcontent-toggle.k-subcontent-toggle {
+    position: absolute;
+    float: right;
+    visibility: hidden;
+    opacity: 0;
+    @include transition();
+  }
+
+  .k-is-opened-right {
+    .k-subcontent-toggle.k-subcontent-toggle {
+      position: relative;
+      visibility: visible;
+      z-index: 11;
+
+      @include breakpoint($k-delta) {
+        visibility: hidden;
+      }
+    }
+  }
+
+  .k-show-right-menu {
+    .k-subcontent-toggle.k-subcontent-toggle {
+      opacity: 1;
+    }
+  }
+}

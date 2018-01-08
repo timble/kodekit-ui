@@ -83,11 +83,27 @@
     .k-navigation-right {
       @include breakpoint($k-top-container-breakpoint) {
         float: right;
+        margin-left: auto;
+
+        li ul {
+          @include breakpoint($k-top-container-breakpoint) {
+            left: auto;
+            right: 0;
+          }
+        }
+
+        li li ul {
+          @include breakpoint($k-top-container-breakpoint) {
+            left: auto;
+            right: 100%;
+          }
+        }
       }
 
       @include rtl {
         @include breakpoint($k-top-container-breakpoint) {
-          float: left
+          float: left;
+          margin-right: auto;
         }
       }
     }
@@ -144,10 +160,10 @@
           &:after {
             display: inline-block;
             content: " ";
-            border-left: 4px solid transparent;
+            border-top: 4px solid;
             border-right: 4px solid transparent;
             border-bottom: 2px solid transparent;
-            border-top: 4px solid;
+            border-left: 4px solid transparent;
             margin-left: 8px;
           }
         }
@@ -187,6 +203,22 @@
         li {
           float: none;
           background: transparent;
+
+          &:focus,
+          &:hover {
+            background: rgba(black, 0.1);
+
+            & > ul {
+              display: block;
+            }
+          }
+
+          ul {
+            @include breakpoint($k-top-container-breakpoint) {
+              top: -2px;
+              left: 100%;
+            }
+          }
         }
 
         a {
@@ -197,10 +229,28 @@
           &:focus,
           &:hover {
             background: rgba(black, 0.1);
+
+            & + ul {
+              display: block;
+            }
           }
 
           @include breakpoint($k-top-container-breakpoint) {
             color: $k-top-container-background;
+          }
+
+          // Basic fallback for parent items
+          &:not(:only-child) {
+            &:after {
+              position: absolute;
+              top: 50%;
+              right: 8px;
+              border-top: 4px solid transparent;
+              border-right: none;
+              border-bottom: 4px solid transparent;
+              border-left: 4px solid;
+              margin-top: -4px;
+            }
           }
         }
       }

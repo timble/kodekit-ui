@@ -1,0 +1,15 @@
+.k-flag-object {
+  display: flex;
+}
+
+.k-flag-object__aside {
+  flex-shrink: 0;
+
+  + .k-flag-object__body {
+    padding-left: 1em;
+  }
+}
+
+.k-flag-object__body {
+  flex-grow: 1;
+}

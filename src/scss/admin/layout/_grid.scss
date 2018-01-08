@@ -30,7 +30,7 @@
 
     @include breakpoint($k-charlie) {
       float: left;
-      width: calc(100% * 8 / 12 - #{$k-spacing * 1.5});
+      width: calc(100% * 8 / 12);
 
       &:first-child {
         padding-right: ($k-spacing / 2);
@@ -53,6 +53,7 @@
       }
     }
   }
+
 
   /* Sub container */
 
@@ -61,7 +62,7 @@
 
     @include breakpoint($k-charlie) {
       float: left;
-      width: calc(100% * 4 / 12 - #{$k-spacing * 1.5});
+      width: calc(100% * 4 / 12);
 
       &:first-child {
         padding-right: ($k-spacing / 2);
@@ -85,11 +86,23 @@
     }
   }
 
+
   /* Full container */
 
   .k-container__full {
     clear: both;
     width: auto;
     padding: $k-spacing;
+  }
+
+
+  /**
+   * Full container -- spaced top
+   *
+   * For when using tables inside form and you want table to be attached to the sides
+   */
+
+  .k-container__full--spaced-top.k-container__full--spaced-top {
+    padding: $k-spacing 0 0;
   }
 }
