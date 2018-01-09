@@ -379,7 +379,7 @@ $k-top-container-navigation-item-open-submenu-class:  '.has-open-submenu' !defau
 
 $k-content-background:    white !default;
 $k-content-border:        darkest($k-content-background) !default;
-$k-content-width-delta:   25vw;
+$k-content-width-delta:   33%;
 
 
 // Title-bar
@@ -391,6 +391,7 @@ $k-title-bar-color:               $k-type-color !default;
 $k-title-bar-font-size:           $k-huge-font-size !default;
 $k-title-bar-z-index:             10 !default;
 $k-title-bar-spacing:             $k-extrasmall-spacing !default;
+$k-title-bar-toggle-spacing:      $k-extrasmall-spacing !default;
 
 $k-title-bar-mobile-background:   $k-primary-color !default;
 $k-title-bar-mobile-border:       darkest($k-title-bar-mobile-background) !default;

@@ -36,6 +36,22 @@
     }
   }
 
+
+  /* TODO: describe why we have this */
+
+  &.k-show-left-menu {
+    .k-content-area.k-show-right-menu {
+      .k-content {
+        transform: translateX(0);
+
+        & ~ .k-off-canvas-overlay-subcontent {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+
   /**
    * The overlay
    *

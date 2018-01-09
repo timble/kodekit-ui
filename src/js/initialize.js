@@ -1,5 +1,5 @@
 // Middlepane code
-var kodekitUI = {}; // Object for public APIs
+var kodekitUI = {};
 
 kodekitUI.setCSS = function(width) {
     // Get style element
@@ -23,7 +23,7 @@ kodekitUI.setCSS = function(width) {
 
 (function () {
 
-    // Add class to html element
+    // Add js-enabled class to html element
     var el = document.documentElement;
     var cl = "k-js-enabled";
     if (el.classList) {

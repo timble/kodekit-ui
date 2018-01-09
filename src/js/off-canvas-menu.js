@@ -43,7 +43,7 @@
                 expandedWidth = menu.outerWidth(),
                 offCanvasOverlay = $('.' + plugin.settings.offCanvasOverlay),
                 transitionDuration = Math.round(parseFloat(container.css('transition-duration')) * 1000),
-                transitionElements = plugin.settings.transitionElements || plugin.settings.container,
+                transitionElements = plugin.settings.transitionElements,
                 timeout;
 
             // Set proper menuExpandedClass if not set manually
@@ -54,6 +54,11 @@
             // Set proper menuExpandedClass if not set manually
             if ( wrapper.is('body') ) {
                 wrapper = $('html, body');
+            }
+
+            // Set transitionElements
+            if ( plugin.settings.transitionElements == null) {
+                transitionElements = container;
             }
 
             // Create overlay wrapper
@@ -114,7 +119,7 @@
 
                 // Add classes and CSS to the wrapper
                 // All styling in CSS comes from this parent element
-                wrapper.addClass(menuExpandedClass + ' ' + openedClass + '-' + position);
+                wrapper.addClass(menuExpandedClass + ' ' + openedClass);
 
                 // Enable tabbing within menu
                 timeout = setTimeout(function() {
@@ -134,13 +139,13 @@
 
                 // Remove style and class when transition has ended, so the menu stays visible on closing
                 timeout = setTimeout(function() {
-                    wrapper.removeClass(openedClass + '-' + position);
+                    wrapper.removeClass(openedClass);
                 }, transitionDuration);
             }
 
             function toggleMenu(menu, event) {
                 // Close other menu when opened
-                if ( wrapper.is('[class*="'+openedClass+'"]') && !wrapper.is('[class*="'+openedClass+'-'+position+'"]') ) {
+                if ( wrapper.is('[class*="'+openedClass+'"]') && !wrapper.is('[class*="'+openedClass+'"]') ) {
                     var brother = wrapper.find('button[class^="k-off-canvas-toggle"]').not(menuToggle);
                     brother.trigger('click');
                 }

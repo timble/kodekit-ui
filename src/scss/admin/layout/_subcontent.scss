@@ -24,11 +24,9 @@
     }
   }
 
-  .k-ui-namespace {
-    .k-subcontent-toggle {
-      @include breakpoint($k-delta) {
-        display: none;
-      }
+  .k-subcontent-toggle {
+    @include breakpoint($k-delta) {
+      display: none;
     }
   }
 
@@ -53,29 +51,20 @@
     }
   }
 
-  .k-subcontent-toggle.k-subcontent-toggle {
+  .k-button.k-subcontent-toggle {
     position: absolute;
-    float: right;
     visibility: hidden;
     opacity: 0;
+    top: 8px;
+    padding-left: 4px;
+    padding-right: 4px;
+    right: 8px;
+    width: 32px;
+    margin: 0;
     @include transition();
-  }
 
-  .k-is-opened-right {
-    .k-subcontent-toggle.k-subcontent-toggle {
-      position: relative;
-      visibility: visible;
-      z-index: 11;
-
-      @include breakpoint($k-delta) {
-        visibility: hidden;
-      }
-    }
-  }
-
-  .k-show-right-menu {
-    .k-subcontent-toggle.k-subcontent-toggle {
-      opacity: 1;
+    @include breakpoint($k-delta) {
+      display: none;
     }
   }
 }

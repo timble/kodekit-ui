@@ -16572,7 +16572,7 @@ $(function() {
                 expandedWidth = menu.outerWidth(),
                 offCanvasOverlay = $('.' + plugin.settings.offCanvasOverlay),
                 transitionDuration = Math.round(parseFloat(container.css('transition-duration')) * 1000),
-                transitionElements = plugin.settings.transitionElements || plugin.settings.container,
+                transitionElements = plugin.settings.transitionElements,
                 timeout;
 
             // Set proper menuExpandedClass if not set manually
@@ -16583,6 +16583,11 @@ $(function() {
             // Set proper menuExpandedClass if not set manually
             if ( wrapper.is('body') ) {
                 wrapper = $('html, body');
+            }
+
+            // Set transitionElements
+            if ( plugin.settings.transitionElements == null) {
+                transitionElements = container;
             }
 
             // Create overlay wrapper
@@ -16643,7 +16648,7 @@ $(function() {
 
                 // Add classes and CSS to the wrapper
                 // All styling in CSS comes from this parent element
-                wrapper.addClass(menuExpandedClass + ' ' + openedClass + '-' + position);
+                wrapper.addClass(menuExpandedClass + ' ' + openedClass);
 
                 // Enable tabbing within menu
                 timeout = setTimeout(function() {
@@ -16663,13 +16668,13 @@ $(function() {
 
                 // Remove style and class when transition has ended, so the menu stays visible on closing
                 timeout = setTimeout(function() {
-                    wrapper.removeClass(openedClass + '-' + position);
+                    wrapper.removeClass(openedClass);
                 }, transitionDuration);
             }
 
             function toggleMenu(menu, event) {
                 // Close other menu when opened
-                if ( wrapper.is('[class*="'+openedClass+'"]') && !wrapper.is('[class*="'+openedClass+'-'+position+'"]') ) {
+                if ( wrapper.is('[class*="'+openedClass+'"]') && !wrapper.is('[class*="'+openedClass+'"]') ) {
                     var brother = wrapper.find('button[class^="k-off-canvas-toggle"]').not(menuToggle);
                     brother.trigger('click');
                 }
@@ -17065,10 +17070,17 @@ var Konami = function (callback) {
                     toggle = container.find('.k-off-canvas-toggle--' + position),
                     $toggle = $(toggle_button),
                     $toggleButton = null,
-                    transitionElements = page || content;
+                    transitionElements;
 
                 // Add proper class to toggle buttons
                 $toggle.addClass('k-off-canvas-toggle-holder--' + position).children('button').addClass('k-off-canvas-toggle--' + position);
+
+                var offcanvascontainer = content;
+                var transitionElements = content;
+                if ( page.length ) {
+                    offcanvascontainer = page;
+                    transitionElements = page;
+                }
 
                 // Add toggle buttons
                 if (toggle.length === 0) {
@@ -17089,13 +17101,18 @@ var Konami = function (callback) {
 
                     $toggleButton = $('.k-off-canvas-toggle--' + position);
 
-                    console.log('run', $toggleButton, wrapper, page, content, transitionElements, element);
+                    $toggleButton.on('click', function() {
+                        if ( $('.k-show-subcontent-area').length ) {
+                            $('.k-js-subcontent-toggle').trigger('click');
+                        }
+                    });
 
                     // Initialize the offcanvas plugin
                     element.offCanvasMenu({
                         menuToggle: $toggleButton,
+                        openedClass: 'k-is-opened-' + position,
                         wrapper: wrapper,
-                        container: page || content,
+                        container: offcanvascontainer,
                         position: position,
                         offCanvasOverlay: 'k-off-canvas-overlay-' + position,
                         transitionElements: transitionElements
@@ -17232,131 +17249,10 @@ var Konami = function (callback) {
         offCanvasToggles();
 
 
-        // Initiate responsive top menu
-
-        // Menu itself
-        var $menu = $('.k-js-top-navigation');
-
-        // See if it exists
-        if ($menu.length) {
-
-            // Variables
-            var $menuItem = $('.k-js-top-navigation > ul > li > a'),
-                menuClass = 'has-open-menu',
-                submenuClass = 'has-open-submenu',
-                menuContent = $menu.attr('data-toggle-button-content') || 'Menu';
-
-            var toggle_button = '<button type="button" id="k-js-top-navigation-toggle" class="k-top-navigation-toggle" title="Menu toggle" aria-label="Menu toggle">'+menuContent+'</button>';
-
-            // Append toggle button and overlay
-            $menu.parent().append($(toggle_button));
-
-            // Off canvas
-            $menu.offCanvasMenu({
-                menuToggle: $('#k-js-top-navigation-toggle'),
-                position: 'right',
-                container: $('.k-wrapper'),
-                expandedWidth: '276',
-                offCanvasOverlay: 'k-off-canvas-overlay-top',
-                wrapper: $('.k-ui-container')
-            });
-
-            // Click a menu item
-            // @TODO: Only for certain classes
-            function clickMenuItem($element) {
-                $element.on('click', function(event) {
-                    if (!$(this).next('ul').length) return;
-                    event.preventDefault();
-                    if ( $menu.hasClass(menuClass) && $(this).hasClass(submenuClass) ) {
-                        closeMenu();
-                    } else {
-                        openMenuItem($(this));
-                    }
-                });
-            }
-
-            // Open a menu item
-            function openMenuItem($element) {
-                if ( $menu.hasClass(menuClass) && $(this).hasClass(submenuClass) ) {
-                    closeMenu();
-                } else {
-                    $('.' + submenuClass).removeClass(submenuClass);
-                    $element.addClass(submenuClass);
-                    $menu.addClass(menuClass);
-                }
-            }
-
-            // Hover a menu item
-            function hoverMenuItem() {
-                $menuItem.on('mouseover', function(event) {
-                    // Only on desktop
-                    if ( $('.k-top-container').css('z-index') >= 11) {
-                        event.preventDefault();
-                        if ( $menu.hasClass(menuClass) ) {
-                            $menu.find('.' + submenuClass).blur();
-                            openMenuItem($(this));
-                        }
-                    }
-                });
-            }
-
-            // Close all items
-            function closeMenu() {
-                $menu.removeClass(menuClass).find('.' + submenuClass).removeClass(submenuClass);
-            }
-
-            // Initiate
-            clickMenuItem($menuItem);
-            hoverMenuItem();
-
-            // On clicking next to the menu
-            $(document).mouseup(function(e) {
-                var $navigationList = $('.k-js-top-navigation > ul');
-
-                // if the target of the click isn't the container nor a descendant of the container
-                if (!$navigationList.is(e.target) && $navigationList.has(e.target).length === 0)
-                {
-                    closeMenu();
-                }
-            });
-
-            // On ESC key
-            $(document).keyup(function(e) {
-                if (e.keyCode === 27) {
-                    closeMenu();
-                }
-            });
-        }
-
-
-        // Form itself
-        var $form = $('.k-js-subcontent');
-
-        // See if it exists
-        if ($form.length) {
-
-            console.log('yes');
-
-            var toggle_button = '<button type="button" class="k-button k-button--default k-subcontent-toggle k-js-subcontent-toggle" title="Subcontent toggle" aria-label="Subcontent toggle"><span class="k-icon-chevron-left" aria-hidden="true"></span></button>';
-
-            // Append toggle button and overlay
-            $('.k-content-area .k-js-toolbar').append(kQuery(toggle_button));
-
-            // Off canvas
-            $form.offCanvasMenu({
-                menuToggle: $('.k-js-subcontent-toggle'),
-                position: 'right',
-                container: $('.k-content-area__child'),
-                expandedWidth: '276',
-                offCanvasOverlay: 'k-off-canvas-overlay-subcontent',
-                wrapper: $('.k-content-area')
-            });
 
 
 
 
-
-        }
 
 
         // Filter and search toggle buttons in the scopebar
@@ -17466,7 +17362,7 @@ var Konami = function (callback) {
             }
 
             function doDrag(e) {
-                document.body.classList.add("is-unresponsive");
+                document.getElementsByClassName('k-ui-container')[0].classList.add("is-unresponsive");
                 newWidth = (startWidth + e.clientX - startW);
                 if ((startWidth + e.clientX - startW) <= 221) {
                     newWidth = 221;
@@ -17479,7 +17375,7 @@ var Konami = function (callback) {
             function stopDrag(e) {
                 document.documentElement.removeEventListener("mousemove", doDrag, false);
                 document.documentElement.removeEventListener("mouseup", stopDrag, false);
-                document.body.classList.remove("is-unresponsive");
+                document.getElementsByClassName('k-ui-container')[0].classList.remove("is-unresponsive");
                 middlepane.removeAttribute('style');
 
                 var width = startWidth + e.clientX - startW;
@@ -17689,20 +17585,189 @@ var Konami = function (callback) {
             }, 200);
         });
 
+        kodekitUI.loaded = function() {
+            if ($select2.length) {
+                $('.k-js-select2').select2({
+                    theme: "bootstrap"
+                });
+            }
+            offCanvasToggles();
+        };
 
     });
 
-    kodekitUI.loaded = function() {
-        if ($select2.length) {
-            $('.k-js-select2').select2({
-                theme: "bootstrap"
-            });
-        }
-        offCanvasToggles();
-    };
 
 })(kQuery);
 
+
+
+// Top navigation
+
+(function($) {
+
+    $(document).ready(function () {
+
+        // Menu itself
+        var $menu = $('.k-js-top-navigation');
+
+        // See if it exists
+        if ($menu.length) {
+
+            // Variables
+            var $menuItem = $('.k-js-top-navigation > ul > li > a'),
+                menuClass = 'has-open-menu',
+                submenuClass = 'has-open-submenu',
+                menuContent = $menu.attr('data-toggle-button-content') || 'Menu';
+
+            // Append toggle button
+            $menu.parent().append($('<button type="button" id="k-js-top-navigation-toggle" class="k-top-navigation-toggle" title="Menu toggle" aria-label="Menu toggle">'+menuContent+'</button>'));
+
+            // Off canvas
+            $menu.offCanvasMenu({
+                menuToggle: $('#k-js-top-navigation-toggle'),
+                menuExpandedClass: 'k-show-top-menu',
+                openedClass: 'k-is-opened-top',
+                position: 'right',
+                container: $('.k-js-wrapper'),
+                expandedWidth: '276',
+                offCanvasOverlay: 'k-off-canvas-overlay-top',
+                wrapper: $('.k-ui-container')
+            });
+
+            // Click a menu item
+            // @TODO: Only for certain classes
+            function clickMenuItem($element) {
+                $element.on('click', function(event) {
+                    if (!$(this).next('ul').length) return;
+                    event.preventDefault();
+                    if ( $menu.hasClass(menuClass) && $(this).hasClass(submenuClass) ) {
+                        closeMenu();
+                    } else {
+                        openMenuItem($(this));
+                    }
+                });
+            }
+
+            // Open a menu item
+            function openMenuItem($element) {
+                if ( $menu.hasClass(menuClass) && $(this).hasClass(submenuClass) ) {
+                    closeMenu();
+                } else {
+                    $('.' + submenuClass).removeClass(submenuClass);
+                    $element.addClass(submenuClass);
+                    $menu.addClass(menuClass);
+                }
+            }
+
+            // Hover a menu item
+            function hoverMenuItem() {
+                $menuItem.on('mouseover', function(event) {
+                    // Only on desktop
+                    if ( $('.k-top-container').css('z-index') >= 11) {
+                        event.preventDefault();
+                        if ( $menu.hasClass(menuClass) ) {
+                            $menu.find('.' + submenuClass).blur();
+                            openMenuItem($(this));
+                        }
+                    }
+                });
+            }
+
+            // Close all items
+            function closeMenu() {
+                $menu.removeClass(menuClass).find('.' + submenuClass).removeClass(submenuClass);
+            }
+
+            // Initiate
+            clickMenuItem($menuItem);
+            hoverMenuItem();
+
+            // On clicking next to the menu
+            $(document).mouseup(function(e) {
+                var $navigationList = $('.k-js-top-navigation > ul');
+
+                // if the target of the click isn't the container nor a descendant of the container
+                if (!$navigationList.is(e.target) && $navigationList.has(e.target).length === 0)
+                {
+                    closeMenu();
+                }
+            });
+
+            // On ESC key
+            $(document).keyup(function(e) {
+                if (e.keyCode === 27) {
+                    closeMenu();
+                }
+            });
+        }
+
+    });
+
+})(kQuery);
+
+// Subcontent toggle
+
+(function($) {
+
+    $(document).ready(function () {
+
+        // Sub content itself
+        var $subcontent = $('.k-js-subcontent');
+
+        // See if it exists
+        if ($subcontent.length) {
+
+            var $subcontentChild = $('.k-content-area__child')
+
+            // Append toggle button and overlay
+            $subcontentChild.append(kQuery('<button type="button" class="k-button k-button--default k-subcontent-toggle k-js-subcontent-toggle" title="Subcontent toggle" aria-label="Subcontent toggle"><span class="k-icon-chevron-left" aria-hidden="true"></span></button>'));
+
+            // Off canvas
+            $subcontent.offCanvasMenu({
+                menuToggle: $('.k-js-subcontent-toggle'),
+                menuExpandedClass: 'k-show-subcontent-area',
+                openedClass: 'k-is-opened-subcontent',
+                position: 'right',
+                container: $subcontentChild,
+                expandedWidth: '276',
+                offCanvasOverlay: 'k-off-canvas-overlay-subcontent',
+                wrapper: $('.k-content-area')
+            });
+
+
+            // Open right sidebar on selecting items in table
+            // Only apply to actual `<a>` elements
+            $('.k-table-container table').on('click', 'a', function(event) {
+                // Only apply if parent is a `<td>` (so not a `<th>`)
+                if ($(this).parents('td').length > 0) {
+                    var target = $(this)[0].closest('.k-content-area__child');
+                    var targetToggle = $(target).find('.k-js-subcontent-toggle');
+                    // Wait at least 2 frames to make sure actions are not attached simultaneously
+                    setTimeout(function() {
+                        targetToggle.trigger('click');
+                    }, 32);
+                }
+            });
+
+            // Open subcontent on clicking TD
+            $('.k-table-container table tbody').on('click', 'tr', function(event) {
+
+                // Return if target is anchor
+                if ( event.target.nodeName === 'A') return;
+                if ( event.target.nodeName === 'INPUT') return;
+
+                // Stop row select action
+                event.stopPropagation();
+
+                // Trigger click anchor
+                $(this).find('a').trigger('click');
+
+            });
+
+        }
+    });
+
+})(kQuery);
 
 window.jQuery = globalCacheForjQueryReplacement;
 globalCacheForjQueryReplacement = undefined;

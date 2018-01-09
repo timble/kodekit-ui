@@ -263,7 +263,7 @@
 
   /* Mobile settings */
 
-  &.k-is-opened-right {
+  &.k-is-opened-top {
     overflow: visible;
 
     .k-top-container__navigation {
@@ -285,7 +285,7 @@
     transition: transform 200ms ease-in-out;
   }
 
-  &.k-show-right-menu {
+  &.k-show-top-menu {
     .k-wrapper {
       transform: translateX(-276px);
 

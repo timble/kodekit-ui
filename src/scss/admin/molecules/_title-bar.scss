@@ -39,6 +39,7 @@
     .k-title-bar__heading {
       flex: 1 1 auto;
       padding: $k-title-bar-spacing $k-title-bar-spacing ($k-title-bar-spacing - 1px);
+      line-height: (($k-button-line-height + ($k-button-vertical-spacing * 2) + 2px + ($k-title-bar-toggle-spacing + ($k-title-bar-toggle-spacing - 1px))) - (($k-title-bar-spacing + ($k-title-bar-spacing - 1px))));
       text-align: center;
 
       &:first-child {
@@ -59,7 +60,7 @@
     }
 
     .k-off-canvas-toggle {
-      margin: $k-title-bar-spacing $k-title-bar-spacing ($k-title-bar-spacing - 1px);
+      margin: $k-title-bar-toggle-spacing $k-title-bar-toggle-spacing ($k-title-bar-toggle-spacing - 1px);
     }
   }
 

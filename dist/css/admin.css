@@ -51,6 +51,7 @@ html {
 /**
    * 1. By using 100% we can work with full-height auto overflowing flexbox pages
    * 2. Remove all spacing
+   * 3. Setting up flexbox
    * 3. Hide overflowing content on resizing to make sure we never get any weird jumping scrollbar issues
    */
 body {
@@ -66,19 +67,22 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  /* 3 */
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  /* 3 */
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
+  /* 3 */
   /* When resizing */
 }
 
 body.k-is-resizing {
   overflow: hidden;
-  /* 3 */
+  /* 4 */
 }
 
 /* Icons
@@ -1550,7 +1554,7 @@ body.k-is-resizing {
    ========================================================================== */
 /**
  * By namespacing we make sure our styles never interfere with other styles on the page
- * For example when using Kodekit UI inside of another framework or CMS like Joomla! or WordPress
+ * For example when using Kodekit UI inside of another framework or CMS
  */
 .k-ui-namespace {
   /* Base */
@@ -1811,6 +1815,7 @@ body.k-is-resizing {
    * 2. Set back to auto when screen is wide enough
    * 3. Hide all overflow when resizing to avoid jumpy layout
    */
+  /* TODO: describe why we have this */
   /**
    * The overlay
    *
@@ -1827,6 +1832,7 @@ body.k-is-resizing {
   /**
    * 1. By using 100% we can work with full-height auto overflowing flexbox pages
    * 2. Remove all spacing
+   * 3. Setting up flexbox
    * 3. Hide overflowing content on resizing to make sure we never get any weird jumping scrollbar issues
    */
   /* Definition list
@@ -2823,21 +2829,35 @@ body.k-is-resizing {
      */
 }
 
-.k-ui-namespace .k-content:not(:only-child) {
+.k-ui-namespace .k-content:not(:last-child) {
   position: relative;
 }
 
 @media screen and (min-width: 1024px) {
-  .k-ui-namespace .k-content:not(:only-child) {
-    min-width: 25vw;
-    width: 25vw;
-    max-width: 25vw;
+  .k-ui-namespace .k-content:not(:last-child) {
+    min-width: 33%;
+    width: 33%;
+    max-width: 33%;
     padding-right: 8px;
     /* Make room for resizer */
   }
 }
 
-.k-ui-namespace .k-content:not(:only-child) .k-pane-resizer {
+@media screen and (min-width: 600px) {
+  .k-ui-namespace .k-content:not(:last-child) .k-sidebar-right {
+    min-width: 0;
+    width: 208px;
+    max-width: 50%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .k-ui-namespace .k-content:not(:last-child) .k-sidebar-right {
+    width: 272px;
+  }
+}
+
+.k-ui-namespace .k-content:not(:last-child) .k-pane-resizer {
   width: 8px;
   height: 100%;
   background: white;
@@ -2852,18 +2872,18 @@ body.k-is-resizing {
 }
 
 @media screen and (min-width: 1024px) {
-  .k-ui-namespace .k-content:not(:only-child) .k-pane-resizer {
+  .k-ui-namespace .k-content:not(:last-child) .k-pane-resizer {
     display: block;
   }
 }
 
-.k-ui-namespace .k-content:not(:only-child) .k-scopebar__item--search {
+.k-ui-namespace .k-content:not(:last-child) .k-scopebar__item--search {
   min-width: 100%;
   width: 100%;
   max-width: 100%;
 }
 
-.k-ui-namespace .k-content:not(:only-child) .k-scopebar__item--search .k-search__field {
+.k-ui-namespace .k-content:not(:last-child) .k-scopebar__item--search .k-search__field {
   border-left: none;
   border-right: none;
 }
@@ -2977,44 +2997,50 @@ body.k-is-resizing {
   min-height: 0;
 }
 
-.k-ui-namespace .k-content-area.k-show-right-menu .k-content-area__child {
+.k-ui-namespace .k-content-area.k-show-subcontent-area .k-component {
+  -webkit-transform: none;
+          transform: none;
+}
+
+.k-ui-namespace .k-content-area.k-show-subcontent-area .k-content-area__child {
   -webkit-transform: translateX(-85%);
           transform: translateX(-85%);
 }
 
 @media screen and (min-width: 1024px) {
-  .k-ui-namespace .k-content-area.k-show-right-menu .k-content-area__child {
+  .k-ui-namespace .k-content-area.k-show-subcontent-area .k-content-area__child {
     -webkit-transform: none;
             transform: none;
   }
 }
 
-.k-ui-namespace .k-content-area.k-is-opened-right .k-subcontent {
-  z-index: 1;
-}
-
-.k-ui-namespace .k-content-area.k-is-opened-right .k-content-area__child > .k-off-canvas-overlay-subcontent {
-  z-index: 9;
-}
-
-@media screen and (min-width: 1024px) {
-  .k-ui-namespace .k-content-area.k-is-opened-right .k-content-area__child > .k-off-canvas-overlay-subcontent {
-    z-index: -1;
-  }
-}
-
-.k-ui-namespace .k-content-area.k-show-right-menu .k-component {
-  -webkit-transform: none;
-          transform: none;
-}
-
-.k-ui-namespace .k-content-area.k-show-right-menu .k-content-area__child > .k-off-canvas-overlay-subcontent {
+.k-ui-namespace .k-content-area.k-show-subcontent-area .k-content-area__child > .k-off-canvas-overlay-subcontent {
   opacity: 0.75;
 }
 
 @media screen and (min-width: 1024px) {
-  .k-ui-namespace .k-content-area.k-show-right-menu .k-content-area__child > .k-off-canvas-overlay-subcontent {
+  .k-ui-namespace .k-content-area.k-show-subcontent-area .k-content-area__child > .k-off-canvas-overlay-subcontent {
     opacity: 0;
+  }
+}
+
+.k-ui-namespace .k-content-area.k-is-opened-subcontent .k-subcontent {
+  z-index: 1;
+}
+
+.k-ui-namespace .k-content-area.k-is-opened-subcontent .k-button.k-subcontent-toggle {
+  visibility: visible;
+  opacity: 1;
+  z-index: 10;
+}
+
+.k-ui-namespace .k-content-area.k-is-opened-subcontent .k-content-area__child > .k-off-canvas-overlay-subcontent {
+  z-index: 9;
+}
+
+@media screen and (min-width: 1024px) {
+  .k-ui-namespace .k-content-area.k-is-opened-subcontent .k-content-area__child > .k-off-canvas-overlay-subcontent {
+    z-index: -1;
   }
 }
 
@@ -3439,7 +3465,7 @@ body.k-is-resizing {
 }
 
 @media screen and (min-width: 1024px) {
-  .k-ui-namespace .k-ui-namespace .k-subcontent-toggle {
+  .k-ui-namespace .k-subcontent-toggle {
     display: none;
   }
 }
@@ -3472,29 +3498,24 @@ body.k-is-resizing {
   display: flex;
 }
 
-.k-ui-namespace .k-subcontent-toggle.k-subcontent-toggle {
+.k-ui-namespace .k-button.k-subcontent-toggle {
   position: absolute;
-  float: right;
   visibility: hidden;
   opacity: 0;
+  top: 8px;
+  padding-left: 4px;
+  padding-right: 4px;
+  right: 8px;
+  width: 32px;
+  margin: 0;
   transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
   -webkit-backface-visibility: hidden;
 }
 
-.k-ui-namespace .k-is-opened-right .k-subcontent-toggle.k-subcontent-toggle {
-  position: relative;
-  visibility: visible;
-  z-index: 11;
-}
-
 @media screen and (min-width: 1024px) {
-  .k-ui-namespace .k-is-opened-right .k-subcontent-toggle.k-subcontent-toggle {
-    visibility: hidden;
+  .k-ui-namespace .k-button.k-subcontent-toggle {
+    display: none;
   }
-}
-
-.k-ui-namespace .k-show-right-menu .k-subcontent-toggle.k-subcontent-toggle {
-  opacity: 1;
 }
 
 .k-ui-namespace .k-top-container {
@@ -3765,20 +3786,20 @@ body.k-is-resizing {
   display: block;
 }
 
-.k-ui-namespace.k-is-opened-right {
+.k-ui-namespace.k-is-opened-top {
   overflow: visible;
 }
 
-.k-ui-namespace.k-is-opened-right .k-top-container__navigation {
+.k-ui-namespace.k-is-opened-top .k-top-container__navigation {
   display: block;
 }
 
-.k-ui-namespace.k-is-opened-right .k-wrapper > .k-off-canvas-overlay-top {
+.k-ui-namespace.k-is-opened-top .k-wrapper > .k-off-canvas-overlay-top {
   z-index: 10;
 }
 
 @media screen and (min-width: 768px) {
-  .k-ui-namespace.k-is-opened-right .k-wrapper > .k-off-canvas-overlay-top {
+  .k-ui-namespace.k-is-opened-top .k-wrapper > .k-off-canvas-overlay-top {
     z-index: -1;
   }
 }
@@ -3788,24 +3809,24 @@ body.k-is-resizing {
   transition: transform 200ms ease-in-out;
 }
 
-.k-ui-namespace.k-show-right-menu .k-wrapper {
+.k-ui-namespace.k-show-top-menu .k-wrapper {
   -webkit-transform: translateX(-276px);
           transform: translateX(-276px);
 }
 
 @media screen and (min-width: 768px) {
-  .k-ui-namespace.k-show-right-menu .k-wrapper {
+  .k-ui-namespace.k-show-top-menu .k-wrapper {
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }
 }
 
-.k-ui-namespace.k-show-right-menu .k-wrapper > .k-off-canvas-overlay-top {
+.k-ui-namespace.k-show-top-menu .k-wrapper > .k-off-canvas-overlay-top {
   opacity: 0.75;
 }
 
 @media screen and (min-width: 768px) {
-  .k-ui-namespace.k-show-right-menu .k-wrapper > .k-off-canvas-overlay-top {
+  .k-ui-namespace.k-show-top-menu .k-wrapper > .k-off-canvas-overlay-top {
     opacity: 0;
   }
 }
@@ -3871,6 +3892,15 @@ body.k-is-resizing {
   /* 3 */
 }
 
+.k-ui-namespace.k-show-left-menu .k-content-area.k-show-right-menu .k-content {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.k-ui-namespace.k-show-left-menu .k-content-area.k-show-right-menu .k-content ~ .k-off-canvas-overlay-subcontent {
+  opacity: 0;
+}
+
 .k-ui-namespace .k-off-canvas-overlay-top,
 .k-ui-namespace .k-off-canvas-overlay-left,
 .k-ui-namespace .k-off-canvas-overlay-right,
@@ -3913,19 +3943,22 @@ body.k-is-resizing {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  /* 3 */
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  /* 3 */
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
+  /* 3 */
   /* When resizing */
 }
 
 .k-ui-namespace body.k-is-resizing {
   overflow: hidden;
-  /* 3 */
+  /* 4 */
 }
 
 .k-ui-namespace dl {
@@ -9885,6 +9918,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   padding: 8px 8px 7px;
+  line-height: 32px;
   text-align: center;
 }
 
@@ -10678,8 +10712,8 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   cursor: no-drop;
 }
 
-.k-ui-namespace .is-unresponsive,
-.k-ui-namespace .is-unresponsive *:not(.k-pane-resizer) {
+.k-ui-namespace.is-unresponsive,
+.k-ui-namespace.is-unresponsive *:not(.k-pane-resizer) {
   pointer-events: none;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -10719,11 +10753,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 /* ==========================================================================
    3rd party
    ========================================================================== */
-/**
- * Markup might be rendered outside of a <div class="k-ui-namespace"> therefor we need
- * to put the CSS outside of the namespace as well.
- * Placing after the .k-ui-namespace namespace styling to win easier over classes like `.k-ui-namespace ...`
- */
 /* Untouched files
    ========================================================================== */
 .select2-container {
@@ -13024,13 +13053,4 @@ img.mfp-img {
   font-weight: 400;
   font-size: 17px;
   line-height: 24px;
-}
-
-.k-wrapper.k-show-left-menu .k-content-area.k-show-right-menu .k-content {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
-}
-
-.k-wrapper.k-show-left-menu .k-content-area.k-show-right-menu .k-content ~ .k-off-canvas-overlay-subcontent {
-  opacity: 0;
 }

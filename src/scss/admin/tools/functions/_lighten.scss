@@ -1,0 +1,15 @@
+// Lighten a color with a certain percentage
+// Doing this by using a function makes sure we can change all the 'lighten'
+// values in the whole project at once.
+
+@function light($color, $percentage: $k-light-percentage){
+  @return lighten($color, $percentage)
+}
+
+@function lighter($color, $percentage: $k-lighter-percentage){
+  @return lighten($color, $percentage)
+}
+
+@function lightest($color, $percentage: $k-lightest-percentage){
+  @return lighten($color, $percentage)
+}

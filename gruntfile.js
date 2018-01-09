@@ -199,6 +199,8 @@ module.exports = function(grunt) {
                         '<%= srcPath %>/js/konami.js',
                         '<%= srcPath %>/js/tabsScroller.js',
                         '<%= srcPath %>/js/main.js',
+                        '<%= srcPath %>/js/ui.topnavigation.js',
+                        '<%= srcPath %>/js/ui.subcontenttoggle.js',
                         '<%= srcPath %>/js/kquery.unset.js'
                     ],
                     '<%= distPath %>/js/kui-initialize.js': [

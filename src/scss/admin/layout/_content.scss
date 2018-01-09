@@ -34,12 +34,24 @@
      * When content has a subcontent sibling
      */
 
-    &:not(:only-child) {
+    &:not(:last-child) {
       position: relative;
 
       @include breakpoint($k-delta) {
         @include allwidth($k-content-width-delta);
         padding-right: 8px; /* Make room for resizer */
+      }
+
+      .k-sidebar-right {
+        @include breakpoint($k-sidebar-right-querie-width) {
+          min-width: 0;
+          width: $k-sidebar-right-small-width;
+          max-width: 50%;
+        }
+
+        @include breakpoint($k-delta) {
+          width: $k-sidebar-right-width;
+        }
       }
 
       .k-pane-resizer {

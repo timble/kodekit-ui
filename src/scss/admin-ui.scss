@@ -23,16 +23,3 @@
 /*  Loading all untouched 3rd party plugin SCSS files */
 
 @import "admin/core/3rdparty";
-
-
-.k-wrapper.k-show-left-menu {
-  .k-content-area.k-show-right-menu {
-    .k-content {
-      transform: translateX(0);
-
-      & ~ .k-off-canvas-overlay-subcontent {
-        opacity: 0;
-      }
-    }
-  }
-}
