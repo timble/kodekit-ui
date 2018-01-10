@@ -126,9 +126,10 @@
     .k-off-canvas-toggle-holder {
       display: inline-block;
       vertical-align: middle;
+      margin: ($k-toolbar-spacing - 1px) 0 0 $k-toolbar-spacing;
 
       .k-off-canvas-toggle {
-        margin-bottom: 0;
+        margin: 0;
       }
     }
 

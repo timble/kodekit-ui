@@ -53,14 +53,18 @@
       @include breakpoint($k-charlie) {
         text-align: left;
 
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+
         @include rtl {
           text-align: right;
         }
       }
-    }
-
-    .k-off-canvas-toggle {
-      margin: $k-title-bar-toggle-spacing $k-title-bar-toggle-spacing ($k-title-bar-toggle-spacing - 1px);
     }
   }
 

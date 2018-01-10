@@ -61,6 +61,7 @@ $k-molecule-alert:              inherit !default;
 $k-molecule-breadcrumb:         inherit !default;
 $k-molecule-buttons:            inherit !default;
 $k-molecule-card:               inherit !default;
+$k-molecule-ckeditor:           inherit !default;
 $k-molecule-datepicker:         inherit !default;
 $k-molecule-dropdowns:          inherit !default;
 $k-molecule-empty-state:        inherit !default;
@@ -237,6 +238,22 @@ $k-visible-class:             '.k-is-visible' !default;
 $k-focus-class:               '.k-has-focus' !default;
 $k-drop-focus-class:          '.k-has-drop-focus' !default;
 
+$k-left-menu-show-class:      '.k-show-left-menu' !default;
+$k-left-menu-opened-class:    '.k-is-opened-left' !default;
+$k-left-menu-overlay-class:   '.k-off-canvas-overlay-left' !default;
+
+$k-right-menu-show-class:     '.k-show-right-menu' !default;
+$k-right-menu-opened-class:   '.k-is-opened-right' !default;
+$k-right-menu-overlay-class:  '.k-off-canvas-overlay-right' !default;
+
+$k-subcontent-show-class:     '.k-show-subcontent-area' !default;
+$k-subcontent-opened-class:   '.k-is-opened-subcontent' !default;
+$k-subcontent-overlay-class:  '.k-off-canvas-overlay-subcontent' !default;
+
+$k-top-menu-show-class:       '.k-show-top-menu' !default;
+$k-top-menu-opened-class:     '.k-is-opened-top' !default;
+$k-top-menu-overlay-class:    '.k-off-canvas-overlay-top' !default;
+
 $k-optionlist-class:          '.k-optionlist' !default;
 $k-optionlist-content-class:  '.k-optionlist__content' !default;
 $k-optionlist-focus-class:    '.k-optionlist__focus' !default;
@@ -377,9 +394,26 @@ $k-top-container-navigation-item-open-submenu-class:  '.has-open-submenu' !defau
 // Content
 // ==========================================================================
 
-$k-content-background:    white !default;
-$k-content-border:        darkest($k-content-background) !default;
-$k-content-width-delta:   33%;
+$k-content-background:          white !default;
+$k-content-border:              darkest($k-content-background) !default;
+$k-content-width-delta:         280px !default;
+$k-content-resizer-width:       8px !default;
+$k-content-resizer-breakpoint:  $k-delta !default;
+$k-content-resizer-background:  $k-primary-plus-6-color !default;
+$k-content-resizer-border:      1px solid $k-primary-color !default;
+
+
+// Subcontent
+// ==========================================================================
+
+$k-subcontent-background:           white !default;
+$k-subcontent-border:               1px solid $k-primary-color !default;
+$k-subcontent-breakpoint:           $k-delta !default;
+$k-subcontent-width:                calc(100% - 48px) !default;
+$k-subcontent-child-active-class:   $k-active-class !default;
+$k-subcontent-toggle-position:      $k-extrasmall-spacing !default;
+$k-subcontent-toggle-size:          $k-element-medium-size !default;
+$k-subcontent-toggle-spacing:       $k-tiny-spacing !default;
 
 
 // Title-bar
@@ -621,6 +655,8 @@ $k-table-cell-accent-hover-background:    darken($k-accent-color,10%) !default;
 
 $k-table-cell-small-font-size:            $k-small-font-size !default;
 $k-table-cell-small-line-height:          $k-small-line-height !default;
+
+$k-table-row-active-class:                $k-active-class !default;
 
 $k-table-row-selected-class:              $k-selected-class !default;
 $k-table-row-positioner-selected-class:   $k-selected-class !default;

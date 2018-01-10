@@ -1,69 +1,74 @@
 @if ($k-layout == true and $k-layout-subcontent != false) or $k-layout-subcontent == true {
-  .k-subcontent {
-    border-left: 1px solid #dcdcdc;
 
+  /* Subcontent
+     ========================================================================== */
+
+  .k-subcontent {
+    background: $k-subcontent-background;
+    border-left: $k-subcontent-border;
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;
     overflow: hidden; /* 2 */
     min-height: 0;
-
     position: absolute;
     z-index: -1;
     left: 100%;
+    width: $k-subcontent-width;
     top: 0;
     bottom: 0;
-    width: 85%;
 
-    @include breakpoint($k-delta) {
+    @include breakpoint($k-subcontent-breakpoint) {
       position: relative;
       left: auto;
       width: auto;
       z-index: 1;
-
     }
   }
 
-  .k-subcontent-toggle {
-    @include breakpoint($k-delta) {
+  .k-button.k-subcontent-toggle {
+    @include breakpoint($k-subcontent-breakpoint) {
       display: none;
     }
   }
 
+
+  /**
+   * Subcontent children
+   */
+
   .k-subcontent__child {
     display: none;
-
-    /**
-     * When flexbox is in use
-     *
-     * 1. Reset width needed for table
-     * 2. Set overflow for breadcrumbs to properly work
-     */
-
     flex: 1 1 auto;
     flex-direction: column;
-    width: auto; /* 1 */
-    overflow: hidden; /* 2 */
+    width: auto;
+    overflow: hidden;
     min-height: 0;
 
-    &.k-is-active {
+    &#{$k-subcontent-child-active-class} {
       display: flex;
     }
   }
+
+
+  /**
+   * Subcontent toggle button
+   */
 
   .k-button.k-subcontent-toggle {
     position: absolute;
     visibility: hidden;
     opacity: 0;
-    top: 8px;
-    padding-left: 4px;
-    padding-right: 4px;
-    right: 8px;
-    width: 32px;
+    top: $k-subcontent-toggle-position;
+    right: $k-subcontent-toggle-position;
+    padding-left: $k-subcontent-toggle-spacing;
+    padding-right: $k-subcontent-toggle-spacing;
+    width: $k-subcontent-toggle-size;
     margin: 0;
+    backface-visibility: hidden;
     @include transition();
 
-    @include breakpoint($k-delta) {
+    @include breakpoint($k-subcontent-breakpoint) {
       display: none;
     }
   }

@@ -36,7 +36,7 @@
         padding-right: ($k-spacing / 2);
       }
 
-      &:last-child {
+      &:last-child:not(:first-child) {
         padding-left: ($k-spacing / 2);
       }
 
@@ -68,7 +68,7 @@
         padding-right: ($k-spacing / 2);
       }
 
-      &:last-child {
+      &:last-child:not(:first-child) {
         padding-left: ($k-spacing / 2);
       }
 

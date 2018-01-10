@@ -86,7 +86,9 @@
                 // if the target of the click isn't the container nor a descendant of the container
                 if (!$navigationList.is(e.target) && $navigationList.has(e.target).length === 0)
                 {
-                    closeMenu();
+                    if ( $menu.hasClass(menuClass) ) {
+                        closeMenu();
+                    }
                 }
             });
 

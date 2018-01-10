@@ -9,6 +9,8 @@
     flex-direction: column;
     flex: 1 1 auto;
     overflow: hidden;
+    backface-visibility: hidden;
+    @include transition(transform);
   }
 
   /**
@@ -19,8 +21,8 @@
    * 3. Hide all overflow when resizing to avoid jumpy layout
    */
 
-  .k-is-opened-left,
-  .k-is-opened-right {
+  #{$k-left-menu-opened-class},
+  #{$k-right-menu-opened-class} {
     overflow: hidden; /* 1 */
 
     @include breakpoint($k-sidebar-left-querie-width) {
@@ -37,23 +39,8 @@
   }
 
 
-  /* TODO: describe why we have this */
-
-  &.k-show-left-menu {
-    .k-content-area.k-show-right-menu {
-      .k-content {
-        transform: translateX(0);
-
-        & ~ .k-off-canvas-overlay-subcontent {
-          opacity: 0;
-        }
-      }
-    }
-  }
-
-
   /**
-   * The overlay
+   * The overlays
    *
    * 1. Cover the entire container
    * 2. Hide by setting z-index to -1 because item can't transition if display is set from none to block
@@ -61,16 +48,17 @@
    * 4. Hide overlay when screen is wide enough
    */
 
-  .k-off-canvas-overlay-top,
-  .k-off-canvas-overlay-left,
-  .k-off-canvas-overlay-right,
-  .k-off-canvas-overlay-subcontent {
+  #{$k-top-menu-overlay-class},
+  #{$k-left-menu-overlay-class},
+  #{$k-right-menu-overlay-class},
+  #{$k-subcontent-overlay-class} {
     @include coverall; /* 1 */
     z-index: -1; /* 2 */
     display: block;
     opacity: 0; /* 3 */
     content: " ";
     background: $k-off-canvas-overlay-background;
+    backface-visibility: hidden;
     @include transition(opacity);
   }
 }

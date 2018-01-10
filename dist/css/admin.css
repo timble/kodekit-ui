@@ -1763,6 +1763,15 @@ body.k-is-resizing {
    * 1. Set left to the width of the menu so the menu will appear
    * 2. Reset when screen is wide enough
    */
+  /* Set overflow and z-index */
+  /* Content area
+     ========================================================================== */
+  /**
+   * Toggling the subcontent area
+   */
+  /**
+   * Content area children
+   */
   /* Content wrapper
      ========================================================================== */
   /**
@@ -1797,10 +1806,18 @@ body.k-is-resizing {
   /* Sidebar
      ========================================================================== */
   /* The left and right sidebar */
-  /* Left sidebar specific styling */
+  /* Left sidebar specific */
   /* When left sidebar is toggled */
-  /* Right sidebar specific styling */
+  /* Right sidebar specific */
   /* When right sidebar is toggled */
+  /* Subcontent
+     ========================================================================== */
+  /**
+   * Subcontent children
+   */
+  /**
+   * Subcontent toggle button
+   */
   /* Top container */
   /* Top logo */
   /* Menu nav */
@@ -1815,9 +1832,8 @@ body.k-is-resizing {
    * 2. Set back to auto when screen is wide enough
    * 3. Hide all overflow when resizing to avoid jumpy layout
    */
-  /* TODO: describe why we have this */
   /**
-   * The overlay
+   * The overlays
    *
    * 1. Cover the entire container
    * 2. Hide by setting z-index to -1 because item can't transition if display is set from none to block
@@ -1941,6 +1957,8 @@ body.k-is-resizing {
   /**
    * Selected card
    */
+  /* CK Editor
+     ========================================================================== */
   /* Datepicker
      ========================================================================== */
   /* Dropdowns
@@ -2233,8 +2251,11 @@ body.k-is-resizing {
    * Selected
    *
    * When rows are selected they are highlighted
+   */
+  /**
+   * Active rows
    *
-   * 1. Coloring Links and extra elements that don't color automatically with their parent
+   * When rows are active they are highlighted
    */
   /* Positioner */
   /* Table heading sorting */
@@ -2689,10 +2710,6 @@ body.k-is-resizing {
   /* 2 */
   padding: 0;
   /* 2 */
-  transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-  transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-  -webkit-backface-visibility: hidden;
-  /* 3 */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2704,6 +2721,12 @@ body.k-is-resizing {
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   overflow: auto;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+  transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+  -webkit-backface-visibility: hidden;
+  /* 3 */
 }
 
 .k-is-resizing .k-ui-namespace .k-component {
@@ -2717,28 +2740,27 @@ body.k-is-resizing {
 }
 
 .k-ui-namespace .k-show-right-menu .k-component {
-  -webkit-transform: translate(-272px, 0);
-          transform: translate(-272px, 0);
-  /* 1 */
+  -webkit-transform: translateX(-272px);
+          transform: translateX(-272px);
 }
 
 @media screen and (min-width: 600px) {
   .k-ui-namespace .k-show-right-menu .k-component {
-    -webkit-transform: translate(0, 0);
-            transform: translate(0, 0);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
     /* 2 */
   }
 }
 
 [dir="rtl"] .k-ui-namespace .k-show-right-menu .k-component {
-  -webkit-transform: translate(272px, 0);
-          transform: translate(272px, 0);
+  -webkit-transform: translateZ(272px);
+          transform: translateZ(272px);
 }
 
 @media screen and (min-width: 600px) {
   [dir="rtl"] .k-ui-namespace .k-show-right-menu .k-component {
-    -webkit-transform: translate(0, 0);
-            transform: translate(0, 0);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
 }
 
@@ -2767,12 +2789,6 @@ body.k-is-resizing {
 .k-ui-namespace .k-component-wrapper {
   position: relative;
   background: #fbfafa;
-  /**
-     * When flexbox is in use
-     *
-     * 1. Reset width needed for table
-     * 2. Set overflow for breadcrumbs to properly work
-     */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2785,7 +2801,7 @@ body.k-is-resizing {
           flex: 1 1 auto;
   overflow: auto;
   min-height: 0;
-  /* Hide overtflow when resizing the window */
+  /* Hide overflow when resizing the window */
 }
 
 .k-is-resizing .k-ui-namespace .k-component-wrapper {
@@ -2799,16 +2815,6 @@ body.k-is-resizing {
   /* 1 */
   background: white;
   /* 2 */
-  transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-  transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-  -webkit-backface-visibility: hidden;
-  /* 3 */
-  /**
-     * When flexbox is in use
-     *
-     * 1. Reset width needed for table
-     * 2. Set overflow for breadcrumbs to properly work
-     */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2819,27 +2825,42 @@ body.k-is-resizing {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: auto;
-  /* 1 */
   overflow: hidden;
-  /* 2 */
+  /* Set overflow for breadcrumbs to properly work */
   min-height: 0;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+  transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+  -webkit-backface-visibility: hidden;
+  /* 3 */
   /**
-     * When content has a subcontent sibling
+     * When content has a sub content sibling
      */
 }
 
 .k-ui-namespace .k-content:not(:last-child) {
-  position: relative;
+  /**
+       * Set width and make room for resizer
+       */
+  /**
+       * When there's also a right sidebar make sure the right sidebar is only 50% of the width
+       * and reset this when querie is reached
+       */
+  /**
+       * The resizer
+       */
+  /**
+       * Search container adjustments
+       */
 }
 
 @media screen and (min-width: 1024px) {
   .k-ui-namespace .k-content:not(:last-child) {
-    min-width: 33%;
-    width: 33%;
-    max-width: 33%;
+    min-width: 280px;
+    width: 280px;
+    max-width: 280px;
     padding-right: 8px;
-    /* Make room for resizer */
   }
 }
 
@@ -2861,7 +2882,7 @@ body.k-is-resizing {
   width: 8px;
   height: 100%;
   background: white;
-  border-left: 1px solid #dcdcdc;
+  border-left: 1px solid #e1e1e1;
   position: absolute;
   z-index: 99;
   right: 0;
@@ -2869,6 +2890,11 @@ body.k-is-resizing {
   bottom: 0;
   cursor: col-resize;
   display: none;
+}
+
+[dir="rtl"] .k-ui-namespace .k-content:not(:last-child) .k-pane-resizer {
+  right: auto;
+  left: 0;
 }
 
 @media screen and (min-width: 1024px) {
@@ -2912,6 +2938,7 @@ body.k-is-resizing {
 .k-ui-namespace .k-show-left-menu .k-content .k-content {
   -webkit-transform: none;
           transform: none;
+  /* Reset transform when .k-content is inside a .k-content-area */
 }
 
 [dir="rtl"] .k-ui-namespace .k-show-left-menu .k-content-area, [dir="rtl"] .k-ui-namespace .k-show-left-menu .k-content {
@@ -2931,14 +2958,14 @@ body.k-is-resizing {
           transform: none;
 }
 
-.k-ui-namespace .k-show-left-menu .k-content-area > .k-off-canvas-overlay-left,
-.k-ui-namespace .k-show-left-menu .k-content > .k-off-canvas-overlay-left {
+.k-ui-namespace .k-show-left-menu .k-content-area .k-off-canvas-overlay-left,
+.k-ui-namespace .k-show-left-menu .k-content .k-off-canvas-overlay-left {
   opacity: 0.75;
 }
 
 @media screen and (min-width: 768px) {
-  .k-ui-namespace .k-show-left-menu .k-content-area > .k-off-canvas-overlay-left,
-  .k-ui-namespace .k-show-left-menu .k-content > .k-off-canvas-overlay-left {
+  .k-ui-namespace .k-show-left-menu .k-content-area .k-off-canvas-overlay-left,
+  .k-ui-namespace .k-show-left-menu .k-content .k-off-canvas-overlay-left {
     opacity: 0;
   }
 }
@@ -2968,14 +2995,14 @@ body.k-is-resizing {
   overflow: hidden;
 }
 
-.k-ui-namespace .k-is-opened-left .k-content-area > .k-off-canvas-overlay-left,
-.k-ui-namespace .k-is-opened-left .k-content > .k-off-canvas-overlay-left {
+.k-ui-namespace .k-is-opened-left .k-content-area .k-off-canvas-overlay-left,
+.k-ui-namespace .k-is-opened-left .k-content .k-off-canvas-overlay-left {
   z-index: 9;
 }
 
 @media screen and (min-width: 768px) {
-  .k-ui-namespace .k-is-opened-left .k-content-area > .k-off-canvas-overlay-left,
-  .k-ui-namespace .k-is-opened-left .k-content > .k-off-canvas-overlay-left {
+  .k-ui-namespace .k-is-opened-left .k-content-area .k-off-canvas-overlay-left,
+  .k-ui-namespace .k-is-opened-left .k-content .k-off-canvas-overlay-left {
     z-index: -1;
   }
 }
@@ -2983,10 +3010,7 @@ body.k-is-resizing {
 .k-ui-namespace .k-content-area {
   position: relative;
   z-index: 3;
-  overflow: hidden !important;
-  transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-  transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-  -webkit-backface-visibility: hidden;
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2995,51 +3019,50 @@ body.k-is-resizing {
           flex: 1 1 auto;
   width: auto;
   min-height: 0;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+  transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+  -webkit-backface-visibility: hidden;
 }
 
-.k-ui-namespace .k-content-area.k-show-subcontent-area .k-component {
-  -webkit-transform: none;
-          transform: none;
+.k-ui-namespace .k-show-subcontent-area .k-button.k-subcontent-toggle {
+  opacity: 1;
 }
 
-.k-ui-namespace .k-content-area.k-show-subcontent-area .k-content-area__child {
-  -webkit-transform: translateX(-85%);
-          transform: translateX(-85%);
+.k-ui-namespace .k-show-subcontent-area .k-content-area__child {
+  -webkit-transform: translateX(-100%) translateX(48px);
+          transform: translateX(-100%) translateX(48px);
 }
 
 @media screen and (min-width: 1024px) {
-  .k-ui-namespace .k-content-area.k-show-subcontent-area .k-content-area__child {
+  .k-ui-namespace .k-show-subcontent-area .k-content-area__child {
     -webkit-transform: none;
             transform: none;
   }
 }
 
-.k-ui-namespace .k-content-area.k-show-subcontent-area .k-content-area__child > .k-off-canvas-overlay-subcontent {
+.k-ui-namespace .k-show-subcontent-area .k-off-canvas-overlay-subcontent {
   opacity: 0.75;
 }
 
 @media screen and (min-width: 1024px) {
-  .k-ui-namespace .k-content-area.k-show-subcontent-area .k-content-area__child > .k-off-canvas-overlay-subcontent {
+  .k-ui-namespace .k-show-subcontent-area .k-off-canvas-overlay-subcontent {
     opacity: 0;
   }
 }
 
-.k-ui-namespace .k-content-area.k-is-opened-subcontent .k-subcontent {
-  z-index: 1;
-}
-
-.k-ui-namespace .k-content-area.k-is-opened-subcontent .k-button.k-subcontent-toggle {
+.k-ui-namespace .k-is-opened-subcontent .k-button.k-subcontent-toggle {
   visibility: visible;
-  opacity: 1;
   z-index: 10;
 }
 
-.k-ui-namespace .k-content-area.k-is-opened-subcontent .k-content-area__child > .k-off-canvas-overlay-subcontent {
+.k-ui-namespace .k-is-opened-subcontent .k-off-canvas-overlay-subcontent {
   z-index: 9;
 }
 
 @media screen and (min-width: 1024px) {
-  .k-ui-namespace .k-content-area.k-is-opened-subcontent .k-content-area__child > .k-off-canvas-overlay-subcontent {
+  .k-ui-namespace .k-is-opened-subcontent .k-off-canvas-overlay-subcontent {
     z-index: -1;
   }
 }
@@ -3047,9 +3070,6 @@ body.k-is-resizing {
 .k-ui-namespace .k-content-area__child {
   position: relative;
   display: none;
-  transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-  transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-  -webkit-backface-visibility: hidden;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
@@ -3057,6 +3077,11 @@ body.k-is-resizing {
   min-height: 0;
   overflow: visible;
   max-width: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+  transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+  -webkit-backface-visibility: hidden;
 }
 
 .k-ui-namespace .k-content-area__child.k-is-active {
@@ -3078,8 +3103,6 @@ body.k-is-resizing {
   /* 2 */
   margin: 0;
   overflow: hidden;
-  border-bottom: 1px solid #e0e0e0;
-  /* When flexbox is in use */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3152,7 +3175,7 @@ body.k-is-resizing {
   .k-ui-namespace .k-container__main:first-child {
     padding-right: 8px;
   }
-  .k-ui-namespace .k-container__main:last-child {
+  .k-ui-namespace .k-container__main:last-child:not(:first-child) {
     padding-left: 8px;
   }
   [dir="rtl"] .k-ui-namespace .k-container__main {
@@ -3178,7 +3201,7 @@ body.k-is-resizing {
   .k-ui-namespace .k-container__sub:first-child {
     padding-right: 8px;
   }
-  .k-ui-namespace .k-container__sub:last-child {
+  .k-ui-namespace .k-container__sub:last-child:not(:first-child) {
     padding-left: 8px;
   }
   [dir="rtl"] .k-ui-namespace .k-container__sub {
@@ -3277,111 +3300,12 @@ body.k-is-resizing {
 }
 
 .k-ui-namespace .k-sidebar-left {
-  /* Larger sidebar when space is available */
-  /* When JavaScript is enabled */
-}
-
-@media screen and (min-width: 768px) {
-  .k-ui-namespace .k-sidebar-left {
-    min-width: 208px;
-    width: 208px;
-    max-width: 208px;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .k-ui-namespace .k-sidebar-left {
-    min-width: 272px;
-    width: 272px;
-    max-width: 272px;
-  }
-}
-
-.k-js-enabled .k-ui-namespace .k-sidebar-left {
-  min-width: 272px;
-  width: 272px;
-  max-width: 272px;
-  /* On 'desktop' we 'open' the sidebar by default */
-  /* And we make it even larger when there's enough space */
-}
-
-@media screen and (min-width: 768px) {
-  .k-js-enabled .k-ui-namespace .k-sidebar-left {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    height: auto;
-    min-width: 208px;
-    width: 208px;
-    max-width: 208px;
-    z-index: 1;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .k-js-enabled .k-ui-namespace .k-sidebar-left {
-    min-width: 272px;
-    width: 272px;
-    max-width: 272px;
-  }
-}
-
-.k-ui-namespace .k-sidebar-right {
-  /* Larger sidebar when space is available */
-  /* When JavaScript is enabled */
-}
-
-@media screen and (min-width: 600px) {
-  .k-ui-namespace .k-sidebar-right {
-    min-width: 208px;
-    width: 208px;
-    max-width: 208px;
-  }
-}
-
-@media screen and (min-width: 600px) {
-  .k-ui-namespace .k-sidebar-right {
-    min-width: 272px;
-    width: 272px;
-    max-width: 272px;
-  }
-}
-
-.k-js-enabled .k-ui-namespace .k-sidebar-right {
-  min-width: 272px;
-  width: 272px;
-  max-width: 272px;
-  /* On 'desktop' we 'open' the sidebar by default */
-  /* And we make it even larger when there's enough space */
-}
-
-@media screen and (min-width: 600px) {
-  .k-js-enabled .k-ui-namespace .k-sidebar-right {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    height: auto;
-    min-width: 208px;
-    width: 208px;
-    max-width: 208px;
-    z-index: 1;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .k-js-enabled .k-ui-namespace .k-sidebar-right {
-    min-width: 272px;
-    width: 272px;
-    max-width: 272px;
-  }
-}
-
-.k-ui-namespace .k-sidebar-left {
-  border-right: 1px solid #cfcfcf;
   background: #eeeeee;
   color: #222222;
+  border-right: 1px solid #cfcfcf;
+  /* Sidebar width */
+  /* Larger sidebar when space is available */
+  /* When JavaScript is enabled */
 }
 
 [dir="rtl"] .k-ui-namespace .k-sidebar-left {
@@ -3398,6 +3322,52 @@ body.k-is-resizing {
   right: 0;
 }
 
+@media screen and (min-width: 768px) {
+  .k-ui-namespace .k-sidebar-left {
+    min-width: 208px;
+    width: 208px;
+    max-width: 208px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .k-ui-namespace .k-sidebar-left {
+    min-width: 272px;
+    width: 272px;
+    max-width: 272px;
+  }
+}
+
+.k-js-enabled .k-ui-namespace .k-sidebar-left {
+  min-width: 272px;
+  width: 272px;
+  max-width: 272px;
+  /* On 'desktop' we 'open' the sidebar by default */
+  /* And we make it even larger when there's enough space */
+}
+
+@media screen and (min-width: 768px) {
+  .k-js-enabled .k-ui-namespace .k-sidebar-left {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: auto;
+    min-width: 208px;
+    width: 208px;
+    max-width: 208px;
+    z-index: 1;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .k-js-enabled .k-ui-namespace .k-sidebar-left {
+    min-width: 272px;
+    width: 272px;
+    max-width: 272px;
+  }
+}
+
 .k-ui-namespace .k-is-opened-left .k-sidebar-left {
   z-index: 1;
   display: -webkit-box;
@@ -3406,9 +3376,12 @@ body.k-is-resizing {
 }
 
 .k-ui-namespace .k-sidebar-right {
-  border-left: 1px solid #cfcfcf;
   background: #eeeeee;
   color: #222222;
+  border-left: 1px solid #cfcfcf;
+  /* Sidebar width */
+  /* Larger sidebar when space is available */
+  /* When JavaScript is enabled */
 }
 
 [dir="rtl"] .k-ui-namespace .k-sidebar-right {
@@ -3425,6 +3398,52 @@ body.k-is-resizing {
   left: 0;
 }
 
+@media screen and (min-width: 600px) {
+  .k-ui-namespace .k-sidebar-right {
+    min-width: 208px;
+    width: 208px;
+    max-width: 208px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .k-ui-namespace .k-sidebar-right {
+    min-width: 272px;
+    width: 272px;
+    max-width: 272px;
+  }
+}
+
+.k-js-enabled .k-ui-namespace .k-sidebar-right {
+  min-width: 272px;
+  width: 272px;
+  max-width: 272px;
+  /* On 'desktop' we 'open' the sidebar by default */
+  /* And we make it even larger when there's enough space */
+}
+
+@media screen and (min-width: 600px) {
+  .k-js-enabled .k-ui-namespace .k-sidebar-right {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: auto;
+    min-width: 208px;
+    width: 208px;
+    max-width: 208px;
+    z-index: 1;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .k-js-enabled .k-ui-namespace .k-sidebar-right {
+    min-width: 272px;
+    width: 272px;
+    max-width: 272px;
+  }
+}
+
 .k-ui-namespace .k-is-opened-right .k-sidebar-right {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3433,7 +3452,8 @@ body.k-is-resizing {
 }
 
 .k-ui-namespace .k-subcontent {
-  border-left: 1px solid #dcdcdc;
+  background: white;
+  border-left: 1px solid #e1e1e1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3450,9 +3470,9 @@ body.k-is-resizing {
   position: absolute;
   z-index: -1;
   left: 100%;
+  width: calc(100% - 48px);
   top: 0;
   bottom: 0;
-  width: 85%;
 }
 
 @media screen and (min-width: 1024px) {
@@ -3465,19 +3485,13 @@ body.k-is-resizing {
 }
 
 @media screen and (min-width: 1024px) {
-  .k-ui-namespace .k-subcontent-toggle {
+  .k-ui-namespace .k-button.k-subcontent-toggle {
     display: none;
   }
 }
 
 .k-ui-namespace .k-subcontent__child {
   display: none;
-  /**
-     * When flexbox is in use
-     *
-     * 1. Reset width needed for table
-     * 2. Set overflow for breadcrumbs to properly work
-     */
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
@@ -3486,9 +3500,7 @@ body.k-is-resizing {
       -ms-flex-direction: column;
           flex-direction: column;
   width: auto;
-  /* 1 */
   overflow: hidden;
-  /* 2 */
   min-height: 0;
 }
 
@@ -3503,11 +3515,13 @@ body.k-is-resizing {
   visibility: hidden;
   opacity: 0;
   top: 8px;
+  right: 8px;
   padding-left: 4px;
   padding-right: 4px;
-  right: 8px;
   width: 32px;
   margin: 0;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
   -webkit-backface-visibility: hidden;
 }
@@ -3794,19 +3808,14 @@ body.k-is-resizing {
   display: block;
 }
 
-.k-ui-namespace.k-is-opened-top .k-wrapper > .k-off-canvas-overlay-top {
+.k-ui-namespace.k-is-opened-top .k-wrapper .k-off-canvas-overlay-top {
   z-index: 10;
 }
 
 @media screen and (min-width: 768px) {
-  .k-ui-namespace.k-is-opened-top .k-wrapper > .k-off-canvas-overlay-top {
+  .k-ui-namespace.k-is-opened-top .k-wrapper .k-off-canvas-overlay-top {
     z-index: -1;
   }
-}
-
-.k-ui-namespace .k-wrapper {
-  transition: -webkit-transform 200ms ease-in-out;
-  transition: transform 200ms ease-in-out;
 }
 
 .k-ui-namespace.k-show-top-menu .k-wrapper {
@@ -3821,12 +3830,12 @@ body.k-is-resizing {
   }
 }
 
-.k-ui-namespace.k-show-top-menu .k-wrapper > .k-off-canvas-overlay-top {
+.k-ui-namespace.k-show-top-menu .k-wrapper .k-off-canvas-overlay-top {
   opacity: 0.75;
 }
 
 @media screen and (min-width: 768px) {
-  .k-ui-namespace.k-show-top-menu .k-wrapper > .k-off-canvas-overlay-top {
+  .k-ui-namespace.k-show-top-menu .k-wrapper .k-off-canvas-overlay-top {
     opacity: 0;
   }
 }
@@ -3862,6 +3871,11 @@ body.k-is-resizing {
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   overflow: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+  transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+  -webkit-backface-visibility: hidden;
 }
 
 .k-ui-namespace .k-is-opened-left,
@@ -3892,15 +3906,6 @@ body.k-is-resizing {
   /* 3 */
 }
 
-.k-ui-namespace.k-show-left-menu .k-content-area.k-show-right-menu .k-content {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
-}
-
-.k-ui-namespace.k-show-left-menu .k-content-area.k-show-right-menu .k-content ~ .k-off-canvas-overlay-subcontent {
-  opacity: 0;
-}
-
 .k-ui-namespace .k-off-canvas-overlay-top,
 .k-ui-namespace .k-off-canvas-overlay-left,
 .k-ui-namespace .k-off-canvas-overlay-right,
@@ -3918,6 +3923,8 @@ body.k-is-resizing {
   /* 3 */
   content: " ";
   background: black;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   transition: opacity 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
   -webkit-backface-visibility: hidden;
 }
@@ -6939,7 +6946,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   padding: 0;
   border: none;
   border-radius: 3px;
-  margin: 10px;
+  margin: 8px 8px 7px;
   background: #3071a9;
   color: white;
   /* Set proper margins */
@@ -8837,7 +8844,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
      * 1. Small extra info below title display:block to display below title
      */
   /* Hover background */
-  /* Active rows */
 }
 
 .k-ui-namespace .k-table-container table {
@@ -8949,14 +8955,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 .k-ui-namespace .k-table-container a {
   color: inherit;
-}
-
-.k-ui-namespace .k-table-container .k-is-active > td {
-  font-weight: bold;
-}
-
-.k-ui-namespace .k-table-container .k-is-active > td:nth-child(n) {
-  background: #fbfafa;
 }
 
 .k-ui-namespace .k-table-container a {
@@ -9478,17 +9476,30 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   /* Re-set background on td's while hovering th */
 }
 
-.k-ui-namespace .k-table-container tr.k-is-selected td {
+.k-ui-namespace .k-table-container tr.k-is-selected > td {
   background: #3071a9;
   color: white;
 }
 
-.k-ui-namespace .k-table-container tr.k-is-selected td a, .k-ui-namespace .k-table-container tr.k-is-selected td i, .k-ui-namespace .k-table-container tr.k-is-selected td span {
+.k-ui-namespace .k-table-container tr.k-is-selected > td a, .k-ui-namespace .k-table-container tr.k-is-selected > td i, .k-ui-namespace .k-table-container tr.k-is-selected > td span {
   color: white;
 }
 
-.k-ui-namespace .k-table-container tr.k-is-selected:hover td, .k-ui-namespace .k-table-container tr.k-is-selected:focus td {
+.k-ui-namespace .k-table-container tr.k-is-selected:hover > td, .k-ui-namespace .k-table-container tr.k-is-selected:focus > td {
   background-color: #255681;
+}
+
+.k-ui-namespace .k-table-container .k-is-active {
+  /* Set font weight */
+  /* Set background but not for also selected rows */
+}
+
+.k-ui-namespace .k-table-container .k-is-active > td {
+  font-weight: bold;
+}
+
+.k-ui-namespace .k-table-container .k-is-active:not(.k-is-selected) > td:nth-child(n) {
+  background: #fbfafa;
 }
 
 .k-ui-namespace .k-positioner {
@@ -9934,13 +9945,15 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   .k-ui-namespace .k-title-bar .k-title-bar__heading {
     text-align: left;
   }
+  .k-ui-namespace .k-title-bar .k-title-bar__heading:first-child {
+    margin-left: 0;
+  }
+  .k-ui-namespace .k-title-bar .k-title-bar__heading:last-child {
+    margin-right: 0;
+  }
   [dir="rtl"] .k-ui-namespace .k-title-bar .k-title-bar__heading {
     text-align: right;
   }
-}
-
-.k-ui-namespace .k-title-bar .k-off-canvas-toggle {
-  margin: 8px 8px 7px;
 }
 
 .k-ui-namespace .k-title-bar--mobile {
@@ -10066,10 +10079,11 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 .k-ui-namespace .k-toolbar .k-off-canvas-toggle-holder {
   display: inline-block;
   vertical-align: middle;
+  margin: 7px 0 0 8px;
 }
 
 .k-ui-namespace .k-toolbar .k-off-canvas-toggle-holder .k-off-canvas-toggle {
-  margin-bottom: 0;
+  margin: 0;
 }
 
 .k-ui-namespace .k-toolbar .k-off-canvas-toggle-holder--right {
@@ -10744,6 +10758,10 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 .k-ui-namespace .k-overflow {
   overflow: auto;
+}
+
+.k-ui-namespace .k-no-padding-bottom.k-no-padding-bottom {
+  padding-bottom: 0;
 }
 
 /* ==========================================================================

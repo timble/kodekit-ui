@@ -10,10 +10,11 @@
         // See if it exists
         if ($subcontent.length) {
 
-            var $subcontentChild = $('.k-content-area__child')
+            var $subcontentChild = $('.k-content-area__child'),
+                subcontentButtonContent = $subcontent.attr('data-toggle-button-content') || '<span class="k-icon-chevron-left" aria-hidden="true"></span>';
 
             // Append toggle button and overlay
-            $subcontentChild.append(kQuery('<button type="button" class="k-button k-button--default k-subcontent-toggle k-js-subcontent-toggle" title="Subcontent toggle" aria-label="Subcontent toggle"><span class="k-icon-chevron-left" aria-hidden="true"></span></button>'));
+            $subcontentChild.append(kQuery('<button type="button" class="k-button k-button--default k-subcontent-toggle k-js-subcontent-toggle" title="Subcontent toggle" aria-label="Subcontent toggle">'+subcontentButtonContent+'</button>'));
 
             // Off canvas
             $subcontent.offCanvasMenu({

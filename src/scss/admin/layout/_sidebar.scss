@@ -31,17 +31,42 @@
     }
   }
 
+
+  /* Left sidebar specific */
+
   .k-sidebar-left {
+    background: $k-sidebar-background;
+    color: $k-sidebar-color;
+    @include border(right, $k-sidebar-border);
+
+    @include rtl {
+      border-right: none;
+      @include border(left, $k-sidebar-border);
+    }
+
+    @include js-enabled {
+      left: 0;
+
+      @include rtl {
+        left: auto;
+        right: 0;
+      }
+    }
+
+
+    /* Sidebar width */
 
     @include breakpoint($k-sidebar-left-querie-width) {
       @include allwidth($k-sidebar-left-small-width);
     }
+
 
     /* Larger sidebar when space is available */
 
     @include breakpoint($k-delta) {
       @include allwidth($k-sidebar-left-width);
     }
+
 
     /* When JavaScript is enabled */
 
@@ -58,6 +83,7 @@
         z-index: 1;
       }
 
+
       /* And we make it even larger when there's enough space */
 
       @include breakpoint($k-delta) {
@@ -66,17 +92,52 @@
     }
   }
 
+
+  /* When left sidebar is toggled */
+
+  #{$k-left-menu-opened-class} {
+    .k-sidebar-left {
+      z-index: 1;
+      display: flex;
+    }
+  }
+
+
+  /* Right sidebar specific */
+
   .k-sidebar-right {
+    background: $k-sidebar-background;
+    color: $k-sidebar-color;
+    @include border(left, $k-sidebar-border);
+
+    @include rtl {
+      border-left: none;
+      @include border(right, $k-sidebar-border);
+    }
+
+    @include js-enabled {
+      right: 0;
+
+      @include rtl {
+        right: auto;
+        left: 0;
+      }
+    }
+
+
+    /* Sidebar width */
 
     @include breakpoint($k-sidebar-right-querie-width) {
       @include allwidth($k-sidebar-right-small-width);
     }
+
 
     /* Larger sidebar when space is available */
 
     @include breakpoint($k-sidebar-right-querie-width) {
       @include allwidth($k-sidebar-right-width);
     }
+
 
     /* When JavaScript is enabled */
 
@@ -101,66 +162,10 @@
     }
   }
 
-  /* Left sidebar specific styling */
-
-  .k-sidebar-left {
-    @include border(right, $k-sidebar-border);
-    background: $k-sidebar-background;
-    color: $k-sidebar-color;
-
-    @include rtl {
-      border-right: none;
-      @include border(left, $k-sidebar-border);
-    }
-
-    @include js-enabled {
-      left: 0;
-    }
-
-    @include js-enabled {
-      @include rtl {
-        left: auto;
-        right: 0;
-      }
-    }
-  }
-
-  /* When left sidebar is toggled */
-
-  .k-is-opened-left {
-    .k-sidebar-left {
-      z-index: 1;
-      display: flex;
-    }
-  }
-
-  /* Right sidebar specific styling */
-
-  .k-sidebar-right {
-    @include border(left, $k-sidebar-border);
-    background: $k-sidebar-background;
-    color: $k-sidebar-color;
-
-    @include rtl {
-      border-left: none;
-      @include border(right, $k-sidebar-border);
-    }
-
-    @include js-enabled {
-      right: 0;
-    }
-
-    @include js-enabled {
-      @include rtl {
-        right: auto;
-        left: 0;
-      }
-    }
-  }
 
   /* When right sidebar is toggled */
 
-  .k-is-opened-right {
+  #{$k-right-menu-opened-class} {
     .k-sidebar-right {
       display: flex;
       z-index: 1;

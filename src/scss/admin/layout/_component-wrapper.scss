@@ -6,21 +6,13 @@
   .k-component-wrapper {
     position: relative;
     background: $k-component-background;
-
-    /**
-     * When flexbox is in use
-     *
-     * 1. Reset width needed for table
-     * 2. Set overflow for breadcrumbs to properly work
-     */
-
     display: flex;
     flex-direction: row;
     flex: 1 1 auto;
     overflow: auto;
     min-height: 0;
 
-    /* Hide overtflow when resizing the window */
+    /* Hide overflow when resizing the window */
 
     @include resizing {
       overflow: hidden;

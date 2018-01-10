@@ -45,6 +45,7 @@
                     toolbar = container.find('.k-js-toolbar'),
                     wrapper = container.find('.k-js-wrapper'),
                     content = container.find('.k-js-content'),
+                    contentArea = container.find('.k-js-content-area'),
                     page = container.find('.k-js-page'),
                     component = container.find('.k-js-component'),
                     toggle = container.find('.k-off-canvas-toggle--' + position),
@@ -57,9 +58,9 @@
 
                 var offcanvascontainer = content;
                 var transitionElements = content;
-                if ( page.length ) {
-                    offcanvascontainer = page;
-                    transitionElements = page;
+                if ( contentArea.length ) {
+                    offcanvascontainer = contentArea;
+                    transitionElements = contentArea;
                 }
 
                 // Add toggle buttons

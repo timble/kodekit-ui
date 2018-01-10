@@ -16705,15 +16705,10 @@ $(function() {
                 // Close menu by clicking anywhere
                 wrapper.click(function(event){
                     if ( wrapper.hasClass(menuExpandedClass) ) {
-                        event.stopPropagation();
-                        closeMenu();
-                    }
-                });
-
-                // Don't close the menu when clicked on sidemenu
-                menu.click(function(event){
-                    if ( wrapper.hasClass(menuExpandedClass) ) {
-                        event.stopPropagation();
+                        if ( event.target == $('.'+plugin.settings.offCanvasOverlay)[0] ) {
+                            event.stopPropagation();
+                            closeMenu();
+                        }
                     }
                 });
 
@@ -17065,6 +17060,7 @@ var Konami = function (callback) {
                     toolbar = container.find('.k-js-toolbar'),
                     wrapper = container.find('.k-js-wrapper'),
                     content = container.find('.k-js-content'),
+                    contentArea = container.find('.k-js-content-area'),
                     page = container.find('.k-js-page'),
                     component = container.find('.k-js-component'),
                     toggle = container.find('.k-off-canvas-toggle--' + position),
@@ -17077,9 +17073,9 @@ var Konami = function (callback) {
 
                 var offcanvascontainer = content;
                 var transitionElements = content;
-                if ( page.length ) {
-                    offcanvascontainer = page;
-                    transitionElements = page;
+                if ( contentArea.length ) {
+                    offcanvascontainer = contentArea;
+                    transitionElements = contentArea;
                 }
 
                 // Add toggle buttons
@@ -17689,7 +17685,9 @@ var Konami = function (callback) {
                 // if the target of the click isn't the container nor a descendant of the container
                 if (!$navigationList.is(e.target) && $navigationList.has(e.target).length === 0)
                 {
-                    closeMenu();
+                    if ( $menu.hasClass(menuClass) ) {
+                        closeMenu();
+                    }
                 }
             });
 
@@ -17717,10 +17715,11 @@ var Konami = function (callback) {
         // See if it exists
         if ($subcontent.length) {
 
-            var $subcontentChild = $('.k-content-area__child')
+            var $subcontentChild = $('.k-content-area__child'),
+                subcontentButtonContent = $subcontent.attr('data-toggle-button-content') || '<span class="k-icon-chevron-left" aria-hidden="true"></span>';
 
             // Append toggle button and overlay
-            $subcontentChild.append(kQuery('<button type="button" class="k-button k-button--default k-subcontent-toggle k-js-subcontent-toggle" title="Subcontent toggle" aria-label="Subcontent toggle"><span class="k-icon-chevron-left" aria-hidden="true"></span></button>'));
+            $subcontentChild.append(kQuery('<button type="button" class="k-button k-button--default k-subcontent-toggle k-js-subcontent-toggle" title="Subcontent toggle" aria-label="Subcontent toggle">'+subcontentButtonContent+'</button>'));
 
             // Off canvas
             $subcontent.offCanvasMenu({

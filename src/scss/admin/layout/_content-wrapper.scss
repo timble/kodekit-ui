@@ -13,10 +13,6 @@
     clear: both; /* 2 */
     margin: 0;
     overflow: hidden;
-    @include border(bottom, $k-content-border);
-
-    /* When flexbox is in use */
-
     display: flex;
     flex-direction: row;
     flex: 1 1 auto;

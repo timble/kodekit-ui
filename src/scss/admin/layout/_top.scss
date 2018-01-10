@@ -263,7 +263,7 @@
 
   /* Mobile settings */
 
-  &.k-is-opened-top {
+  &#{$k-top-menu-opened-class} {
     overflow: visible;
 
     .k-top-container__navigation {
@@ -271,7 +271,7 @@
     }
 
     .k-wrapper {
-      > .k-off-canvas-overlay-top {
+      #{$k-top-menu-overlay-class} {
         z-index: 10;
 
         @include breakpoint($k-top-container-breakpoint) {
@@ -281,11 +281,7 @@
     }
   }
 
-  .k-wrapper {
-    transition: transform 200ms ease-in-out;
-  }
-
-  &.k-show-top-menu {
+  &#{$k-top-menu-show-class} {
     .k-wrapper {
       transform: translateX(-276px);
 
@@ -293,7 +289,7 @@
         transform: translateX(0);
       }
 
-      > .k-off-canvas-overlay-top {
+      #{$k-top-menu-overlay-class} {
         opacity: $k-off-canvas-overlay-right-opacity;
 
         @include breakpoint($k-top-container-breakpoint) {

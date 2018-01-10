@@ -180,18 +180,6 @@
     a {
       color: inherit;
     }
-
-    /* Active rows */
-
-    .k-is-active {
-      > td {
-        font-weight: bold;
-
-        &:nth-child(n) {
-          background: $k-table-cell-even-hover-background;
-        }
-      }
-    }
   }
 
 
@@ -484,13 +472,11 @@
    * Selected
    *
    * When rows are selected they are highlighted
-   *
-   * 1. Coloring Links and extra elements that don't color automatically with their parent
    */
 
   .k-table-container {
     tr#{$k-table-row-selected-class} {
-      td {
+      > td {
         background: $k-table-cell-selected-background;
         color: $k-table-cell-selected-color;
 
@@ -503,8 +489,36 @@
 
       &:hover,
       &:focus {
-        td {
+        > td {
           background-color: $k-table-cell-accent-hover-background;
+        }
+      }
+    }
+  }
+
+  /**
+   * Active rows
+   *
+   * When rows are active they are highlighted
+   */
+
+  .k-table-container {
+    #{$k-table-row-active-class} {
+
+      /* Set font weight */
+
+      > td {
+        font-weight: bold;
+      }
+
+
+      /* Set background but not for also selected rows */
+
+      &:not(#{$k-table-row-selected-class}) {
+        > td {
+          &:nth-child(n) {
+            background: $k-table-cell-even-hover-background;
+          }
         }
       }
     }

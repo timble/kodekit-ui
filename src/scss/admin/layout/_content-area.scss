@@ -1,68 +1,77 @@
 @if ($k-layout == true and $k-layout-content-area != false) or $k-layout-content-area == true {
+
+  /* Content area
+     ========================================================================== */
+
   .k-content-area {
     position: relative;
     z-index: 3;
-    overflow: hidden !important;
-    @include transition(transform);
-
+    overflow: hidden;
     display: flex;
     flex: 1 1 auto;
     width: auto;
     min-height: 0;
+    backface-visibility: hidden;
+    @include transition(transform);
+  }
 
-    &.k-show-subcontent-area {
-      .k-component {
+
+  /**
+   * Toggling the subcontent area
+   */
+
+  #{$k-subcontent-show-class} {
+    .k-button.k-subcontent-toggle {
+      opacity: 1;
+    }
+
+    .k-content-area__child {
+      transform: translateX(-100%) translateX(48px);
+
+      @include breakpoint($k-delta) {
         transform: none;
-      }
-
-      .k-content-area__child {
-        transform: translateX(-85%);
-
-        @include breakpoint($k-delta) {
-          transform: none;
-        }
-      }
-
-      .k-content-area__child > .k-off-canvas-overlay-subcontent {
-        opacity: $k-off-canvas-overlay-subcontent-opacity;
-
-        @include breakpoint($k-delta) {
-          opacity: 0;
-        }
       }
     }
 
-    &.k-is-opened-subcontent {
-      .k-subcontent {
-        z-index: 1;
-      }
+    #{$k-subcontent-overlay-class} {
+      opacity: $k-off-canvas-overlay-subcontent-opacity;
 
-      .k-button.k-subcontent-toggle {
-        visibility: visible;
-        opacity: 1;
-        z-index: 10;
-      }
-
-      .k-content-area__child > .k-off-canvas-overlay-subcontent {
-        z-index: 9;
-
-        @include breakpoint($k-delta) {
-          z-index: -1;
-        }
+      @include breakpoint($k-delta) {
+        opacity: 0;
       }
     }
   }
 
+  #{$k-subcontent-opened-class} {
+    .k-button.k-subcontent-toggle {
+      visibility: visible;
+      z-index: 10;
+    }
+
+    #{$k-subcontent-overlay-class} {
+      z-index: 9;
+
+      @include breakpoint($k-delta) {
+        z-index: -1;
+      }
+    }
+  }
+
+
+  /**
+   * Content area children
+   */
+
   .k-content-area__child {
     position: relative;
     display: none;
-    @include transition(transform);
-
     flex: 1 1 auto;
     width: auto;
     min-height: 0;
     overflow: visible;
     max-width: 100%; // for breadcrumbs to work properly
+    backface-visibility: hidden;
+    @include transition(transform);
 
     &.k-is-active {
       display: flex;

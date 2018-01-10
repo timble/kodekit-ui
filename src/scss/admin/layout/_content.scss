@@ -13,34 +13,35 @@
     position: relative; /* 1 */
     z-index: 2; /* 1 */
     background: $k-content-background; /* 2 */
-    @include transition(transform); /* 3 */
-
-    /**
-     * When flexbox is in use
-     *
-     * 1. Reset width needed for table
-     * 2. Set overflow for breadcrumbs to properly work
-     */
-
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;
-    width: auto; /* 1 */
-    overflow: hidden; /* 2 */
+    overflow: hidden; /* Set overflow for breadcrumbs to properly work */
     min-height: 0;
+    backface-visibility: hidden;
+    @include transition(transform); /* 3 */
 
 
     /**
-     * When content has a subcontent sibling
+     * When content has a sub content sibling
      */
 
     &:not(:last-child) {
-      position: relative;
+
+      /**
+       * Set width and make room for resizer
+       */
 
       @include breakpoint($k-delta) {
         @include allwidth($k-content-width-delta);
-        padding-right: 8px; /* Make room for resizer */
+        padding-right: $k-content-resizer-width;
       }
+
+
+      /**
+       * When there's also a right sidebar make sure the right sidebar is only 50% of the width
+       * and reset this when querie is reached
+       */
 
       .k-sidebar-right {
         @include breakpoint($k-sidebar-right-querie-width) {
@@ -54,11 +55,16 @@
         }
       }
 
+
+      /**
+       * The resizer
+       */
+
       .k-pane-resizer {
-        width: 8px;
+        width: $k-content-resizer-width;
         height: 100%;
-        background: white;
-        border-left: 1px solid #dcdcdc;
+        background: $k-content-resizer-background;
+        border-left: $k-content-resizer-border;
         position: absolute;
         z-index: 99;
         right: 0;
@@ -67,10 +73,20 @@
         cursor: col-resize;
         display: none;
 
-        @include breakpoint($k-delta) {
+        @include rtl {
+          right: auto;
+          left: 0;
+        }
+
+        @include breakpoint($k-content-resizer-breakpoint) {
           display: block;
         }
       }
+
+
+      /**
+       * Search container adjustments
+       */
 
       .k-scopebar__item--search {
         @include allwidth(100%);
@@ -83,6 +99,7 @@
     }
   }
 
+
   /**
    * Container when toggled
    *
@@ -90,7 +107,7 @@
    * 2. Reset when screen is wide enough
    */
 
-  .k-show-left-menu {
+  #{$k-left-menu-show-class} {
     .k-content-area,
     .k-content {
       transform: translate($k-sidebar-left-width, 0); /* 1 */
@@ -100,7 +117,7 @@
       }
 
       .k-content {
-        transform: none;
+        transform: none; /* Reset transform when .k-content is inside a .k-content-area */
       }
     }
 
@@ -119,11 +136,12 @@
       }
     }
 
+
     /* Set opacity */
 
     .k-content-area,
     .k-content {
-      & > .k-off-canvas-overlay-left {
+      .k-off-canvas-overlay-left {
         opacity: $k-off-canvas-overlay-left-opacity;
 
         @include breakpoint($k-sidebar-left-querie-width) {
@@ -133,7 +151,10 @@
     }
   }
 
-  .k-is-opened-left {
+
+  /* Set overflow and z-index */
+
+  #{$k-left-menu-opened-class} {
     .k-content-area,
     .k-content {
       overflow: hidden;
@@ -152,7 +173,7 @@
 
       /* 2. Set z-index so it will become visible */
 
-      & > .k-off-canvas-overlay-left {
+      #{$k-left-menu-overlay-class} {
         z-index: 9;
 
         @include breakpoint($k-sidebar-left-querie-width) {

@@ -176,15 +176,10 @@
                 // Close menu by clicking anywhere
                 wrapper.click(function(event){
                     if ( wrapper.hasClass(menuExpandedClass) ) {
-                        event.stopPropagation();
-                        closeMenu();
-                    }
-                });
-
-                // Don't close the menu when clicked on sidemenu
-                menu.click(function(event){
-                    if ( wrapper.hasClass(menuExpandedClass) ) {
-                        event.stopPropagation();
+                        if ( event.target == $('.'+plugin.settings.offCanvasOverlay)[0] ) {
+                            event.stopPropagation();
+                            closeMenu();
+                        }
                     }
                 });
 
