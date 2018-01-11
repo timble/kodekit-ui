@@ -184,7 +184,6 @@ module.exports = function(grunt) {
                         'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
                         'node_modules/footable/js/footable.js',
                         'node_modules/jqtree/tree.jquery.js',
-                        '<%= srcPath %>/js/custom-file-input.js',
                         '<%= srcPath %>/js/bootstrap-dropdown.js',
                         '<%= srcPath %>/js/bootstrap-tab.js',
                         '<%= srcPath %>/js/bootstrap-tooltip.js',
@@ -194,19 +193,22 @@ module.exports = function(grunt) {
                         '<%= srcPath %>/js/koowa.grid.js',
                         '<%= srcPath %>/js/koowa.tree.js',
                         '<%= srcPath %>/js/datepicker.js',
-                        '<%= srcPath %>/js/tabbable.js',
-                        '<%= srcPath %>/js/off-canvas-menu.js',
-                        '<%= srcPath %>/js/konami.js',
-                        '<%= srcPath %>/js/tabsScroller.js',
-                        '<%= srcPath %>/js/main.js',
-                        '<%= srcPath %>/js/ui.topnavigation.js',
+                        '<%= srcPath %>/js/ui.konami.js',
+                        '<%= srcPath %>/js/ui.custom-file-input.js',
+                        '<%= srcPath %>/js/ui.tabbable.js',
+                        '<%= srcPath %>/js/ui.off-canvas-menu.js',
+                        '<%= srcPath %>/js/ui.ajaxloading.js',
+                        '<%= srcPath %>/js/ui.dragger.js',
+                        '<%= srcPath %>/js/ui.sidebartoggle.js',
                         '<%= srcPath %>/js/ui.subcontenttoggle.js',
+                        '<%= srcPath %>/js/ui.topnavigation.js',
+                        '<%= srcPath %>/js/ui.tabs-scroller.js',
+                        '<%= srcPath %>/js/ui.main.js',
                         '<%= srcPath %>/js/kquery.unset.js'
                     ],
                     '<%= distPath %>/js/kui-initialize.js': [
-                        '<%= srcPath %>/js/cookies.js',
-                        '<%= srcPath %>/js/ondomready.js',
-                        '<%= srcPath %>/js/initialize.js'
+                        '<%= srcPath %>/js/ui.cookies.js',
+                        '<%= srcPath %>/js/ui.initialize.js'
                     ]
                 }
             }
