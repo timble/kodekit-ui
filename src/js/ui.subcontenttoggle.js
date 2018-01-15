@@ -16,7 +16,9 @@
                     subcontentButtonContent = $subcontent.attr('data-toggle-button-content') || '<span class="k-icon-chevron-left" aria-hidden="true"></span>';
 
                 // Append toggle button and overlay
-                $subcontentChild.append(kQuery('<button type="button" class="k-button k-button--default k-subcontent-toggle k-js-subcontent-toggle" title="Subcontent toggle" aria-label="Subcontent toggle">' + subcontentButtonContent + '</button>'));
+                if ( !$('.k-js-subcontent-toggle').length ) {
+                    $subcontentChild.append(kQuery('<button type="button" class="k-button k-button--default k-subcontent-toggle k-js-subcontent-toggle" title="Subcontent toggle" aria-label="Subcontent toggle">' + subcontentButtonContent + '</button>'));
+                }
 
                 // Off canvas
                 $subcontent.offCanvasMenu({
@@ -46,7 +48,7 @@
                 });
 
                 // Open subcontent on clicking TD
-                $('.k-table-container table tbody').on('click', 'tr', function (event) {
+                $('.k-table-container table tbody').off().on('click', 'tr', function (event) {
 
                     // Return if click to select class is added to table
                     if ($(this).closest('table').hasClass('k-js-click-to-select')) return;
@@ -58,7 +60,7 @@
                     // Stop row select action
                     event.stopPropagation();
 
-                    // Trigger click anchor
+                    // Trigger click anchor (but wait for ajax)
                     $(this).find('a').trigger('click');
 
                 });

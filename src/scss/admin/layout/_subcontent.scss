@@ -38,16 +38,12 @@
    */
 
   .k-subcontent__child {
-    display: none;
+    display: flex;
     flex: 1 1 auto;
     flex-direction: column;
     width: auto;
     overflow: hidden;
     min-height: 0;
-
-    &#{$k-subcontent-child-active-class} {
-      display: flex;
-    }
   }
 
 

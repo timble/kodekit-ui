@@ -8,7 +8,7 @@
 
         kodekitUI.dragger = function() {
             var middlepane = document.querySelector(".k-js-middlepane");
-            if (middlepane !== null) {
+            if (middlepane !== null && document.querySelector('.k-pane-resizer') == undefined) {
                 var middlepaneResizer = document.createElement("div");
                 middlepaneResizer.className = "k-pane-resizer";
                 middlepane.appendChild(middlepaneResizer);

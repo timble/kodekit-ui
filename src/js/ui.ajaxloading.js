@@ -8,22 +8,37 @@
 
         kodekitUI.ajaxloading = function() {
 
-            // Variables
-            var $sidebarLeftLink = $('.k-js-ajax-content');
+            var ajaxLink = $('[data-ajax-target]');
+            if ( ajaxLink.length ) {
+                $('.k-ui-container').on('click', ajaxLink, function(event) {
 
-            if ( $sidebarLeftLink.length ) {
-                $sidebarLeftLink.on('click', 'a', function(event) {
+                    // Variables
+                    var $target = event.target,
+                        href = $target.href,
+                        ajaxTarget = $($target).attr('data-ajax-target'),
+                        activeClass = 'k-is-active';
+
+                    if ( !ajaxTarget ) return;
+
                     event.preventDefault();
                     event.stopPropagation();
-                    var href = $(this)[0].href;
-                    var $ul = $(this).parent().parent('ul');
 
-                    $ul.find('.k-is-active').removeClass('k-is-active');
-                    $(this).parent('li').addClass('k-is-active');
+                    var getActiveElement = function(element) {
+                        for ( ; element && element !== document; element = element.parentNode ) {
+                            if ( $(element).parent().find('.'+activeClass).length ) return element;
+                        }
+                        return null;
+                    };
+
+                    var $activeElement = getActiveElement($target);
+
+                    $($activeElement).parent().children('.'+activeClass).removeClass(activeClass);
+                    $($activeElement).addClass(activeClass);
 
                     // Load
-                    $("#k-js-ajax-content").load(href + " #k-js-ajax-content-child", function(responseTxt, statusTxt, xhr){
+                    $('#'+ajaxTarget).load(href + ' #'+ajaxTarget+' > :first-child', function(responseTxt, statusTxt, xhr) {
                         if(statusTxt == "success") {
+
                             // Trigger close sidebar click when changing menu items
                             if ( $('.k-js-wrapper').hasClass('k-show-left-menu') ) {
                                 $('.k-off-canvas-toggle--left').trigger('click');
@@ -36,8 +51,11 @@
                             console.log('error');
                         }
                     });
+
+                    console.log(true);
                 });
             }
+
         };
 
     });

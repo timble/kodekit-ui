@@ -3491,7 +3491,9 @@ body.k-is-resizing {
 }
 
 .k-ui-namespace .k-subcontent__child {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
@@ -3502,12 +3504,6 @@ body.k-is-resizing {
   width: auto;
   overflow: hidden;
   min-height: 0;
-}
-
-.k-ui-namespace .k-subcontent__child.k-is-active {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .k-ui-namespace .k-button.k-subcontent-toggle {
@@ -13071,4 +13067,9 @@ img.mfp-img {
   font-weight: 400;
   font-size: 17px;
   line-height: 24px;
+}
+
+.select2.select2-container--bootstrap {
+  width: 100% !important;
+  max-width: 100% !important;
 }

@@ -17016,22 +17016,37 @@ var Konami = function (callback) {
 
         kodekitUI.ajaxloading = function() {
 
-            // Variables
-            var $sidebarLeftLink = $('.k-js-ajax-content');
+            var ajaxLink = $('[data-ajax-target]');
+            if ( ajaxLink.length ) {
+                $('.k-ui-container').on('click', ajaxLink, function(event) {
 
-            if ( $sidebarLeftLink.length ) {
-                $sidebarLeftLink.on('click', 'a', function(event) {
+                    // Variables
+                    var $target = event.target,
+                        href = $target.href,
+                        ajaxTarget = $($target).attr('data-ajax-target'),
+                        activeClass = 'k-is-active';
+
+                    if ( !ajaxTarget ) return;
+
                     event.preventDefault();
                     event.stopPropagation();
-                    var href = $(this)[0].href;
-                    var $ul = $(this).parent().parent('ul');
 
-                    $ul.find('.k-is-active').removeClass('k-is-active');
-                    $(this).parent('li').addClass('k-is-active');
+                    var getActiveElement = function(element) {
+                        for ( ; element && element !== document; element = element.parentNode ) {
+                            if ( $(element).parent().find('.'+activeClass).length ) return element;
+                        }
+                        return null;
+                    };
+
+                    var $activeElement = getActiveElement($target);
+
+                    $($activeElement).parent().children('.'+activeClass).removeClass(activeClass);
+                    $($activeElement).addClass(activeClass);
 
                     // Load
-                    $("#k-js-ajax-content").load(href + " #k-js-ajax-content-child", function(responseTxt, statusTxt, xhr){
+                    $('#'+ajaxTarget).load(href + ' #'+ajaxTarget+' > :first-child', function(responseTxt, statusTxt, xhr) {
                         if(statusTxt == "success") {
+
                             // Trigger close sidebar click when changing menu items
                             if ( $('.k-js-wrapper').hasClass('k-show-left-menu') ) {
                                 $('.k-off-canvas-toggle--left').trigger('click');
@@ -17044,8 +17059,11 @@ var Konami = function (callback) {
                             console.log('error');
                         }
                     });
+
+                    console.log(true);
                 });
             }
+
         };
 
     });
@@ -17062,7 +17080,7 @@ var Konami = function (callback) {
 
         kodekitUI.dragger = function() {
             var middlepane = document.querySelector(".k-js-middlepane");
-            if (middlepane !== null) {
+            if (middlepane !== null && document.querySelector('.k-pane-resizer') == undefined) {
                 var middlepaneResizer = document.createElement("div");
                 middlepaneResizer.className = "k-pane-resizer";
                 middlepane.appendChild(middlepaneResizer);
@@ -17408,7 +17426,9 @@ var Konami = function (callback) {
                     subcontentButtonContent = $subcontent.attr('data-toggle-button-content') || '<span class="k-icon-chevron-left" aria-hidden="true"></span>';
 
                 // Append toggle button and overlay
-                $subcontentChild.append(kQuery('<button type="button" class="k-button k-button--default k-subcontent-toggle k-js-subcontent-toggle" title="Subcontent toggle" aria-label="Subcontent toggle">' + subcontentButtonContent + '</button>'));
+                if ( !$('.k-js-subcontent-toggle').length ) {
+                    $subcontentChild.append(kQuery('<button type="button" class="k-button k-button--default k-subcontent-toggle k-js-subcontent-toggle" title="Subcontent toggle" aria-label="Subcontent toggle">' + subcontentButtonContent + '</button>'));
+                }
 
                 // Off canvas
                 $subcontent.offCanvasMenu({
@@ -17438,7 +17458,7 @@ var Konami = function (callback) {
                 });
 
                 // Open subcontent on clicking TD
-                $('.k-table-container table tbody').on('click', 'tr', function (event) {
+                $('.k-table-container table tbody').off().on('click', 'tr', function (event) {
 
                     // Return if click to select class is added to table
                     if ($(this).closest('table').hasClass('k-js-click-to-select')) return;
@@ -17450,7 +17470,7 @@ var Konami = function (callback) {
                     // Stop row select action
                     event.stopPropagation();
 
-                    // Trigger click anchor
+                    // Trigger click anchor (but wait for ajax)
                     $(this).find('a').trigger('click');
 
                 });
