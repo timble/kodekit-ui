@@ -17110,6 +17110,59 @@ var Konami = function (callback) {
 })(kQuery);
 
 /**
+ * Gallery
+ */
+
+(function($) {
+
+    $(document).ready(function () {
+
+        kodekitUI.gallery = function() {
+
+            var $gallery = $('.k-js-gallery');
+            if ( $gallery.length ) {
+
+                // variables
+                var galleryMaxWidth = 240,
+                    supportsGrid = CSS.supports('display', 'grid'),
+                    galleryEventTimeout;
+
+                // Throttle window resize function for better performance
+                var resizeThrottler = function() {
+                    if (!galleryEventTimeout) {
+                        galleryEventTimeout = setTimeout(function() {
+                            galleryEventTimeout = null; // Reset timeout
+                            // Walk through all galleries
+                            setWidth();
+                        }, 200);
+                    }
+                };
+
+                // Set Width
+                var setWidth = function() {
+                    var galleryWidth = parseFloat($gallery.width()),
+                        items = Math.ceil(galleryWidth / galleryMaxWidth);
+                    $gallery.attr('data-gallery-items', items);
+                };
+
+                // Only run when CSS grid is not supported
+                if (supportsGrid !== true && $gallery.length !== 0) {
+
+                    // Run on default
+                    setWidth();
+
+                    // Run on window resize
+                    window.addEventListener( 'resize', resizeThrottler );
+                }
+            }
+
+        };
+
+    });
+
+})(kQuery);
+
+/**
  * Sidebar off-canvas toggles
  */
 
@@ -17267,6 +17320,70 @@ var Konami = function (callback) {
                     });
                 }
             }
+        };
+
+    });
+
+})(kQuery);
+
+/**
+ * Filter and search toggle buttons in the scopebar
+ */
+
+(function($) {
+
+    $(document).ready(function () {
+
+        kodekitUI.scopebarToggles = function() {
+
+            var $scopebar = $('.k-js-scopebar');
+            if ($scopebar.length) {
+
+                $.each($scopebar, function () {
+
+                    var $this = $(this),
+                        $scopebarFilters = $this.find('.k-scopebar__item--filters'),
+                        $scopebarSearch = $this.find('.k-scopebar__item--search'),
+                        scopebarToggleClass = '.k-scopebar__item--toggle-buttons',
+                        scopebarToggleButtonContainer = '<div class="k-scopebar__item k-scopebar__item--toggle-buttons"></div>';
+
+                    if (!$this.find(scopebarToggleClass).length) {
+                        $this.prepend(scopebarToggleButtonContainer);
+                    }
+                    var toggleButtons = $this.find(scopebarToggleClass);
+
+                    if ($scopebarFilters.length && !$this.find('.k-toggle-scopebar-filters').length) {
+                        toggleButtons.prepend('<button type="button" class="k-scopebar__button k-toggle-scopebar-filters k-js-toggle-filters">' +
+                            '<span class="k-icon-filter" aria-hidden="true">' +
+                            '<span class="k-visually-hidden">Filters toggle</span>' +
+                            '<div class="k-js-filter-count k-scopebar__item-label k-scopebar__item-label--numberless"></div>' +
+                            '</button>');
+                    }
+
+                    if ($scopebarSearch.length && !$this.find('.k-toggle-scopebar-search').length) {
+
+                        toggleButtons.prepend('<button type="button" class="k-scopebar__button k-toggle-scopebar-search k-js-toggle-search">' +
+                            '<span class="k-icon-magnifying-glass" aria-hidden="true">' +
+                            '<span class="k-visually-hidden">Search toggle</span>' +
+                            '<div class="k-js-search-count k-scopebar__item-label k-scopebar__item-label--numberless" style="display: none"></div>' +
+                            '</button>');
+
+                        if (toggleButtons.siblings('.k-scopebar__item--search').find('.k-search__field').val()) {
+                            $('.k-js-search-count').show();
+                        }
+                    }
+                });
+
+                // Toggle search
+                $('.k-js-toggle-filters').on('click', function () {
+                    $(this).parent().siblings('.k-scopebar__item--filters').slideToggle('fast');
+                });
+
+                $('.k-js-toggle-search').on('click', function () {
+                    $(this).parent().siblings('.k-scopebar__item--search').slideToggle('fast');
+                });
+            }
+
         };
 
     });
@@ -17645,17 +17762,7 @@ var Konami = function (callback) {
          * Variables
          */
 
-        var $footable = $('.k-js-responsive-table'),
-            $sidebarToggle = $('.k-js-sidebar-toggle-item'),
-            $scopebar = $('.k-js-scopebar'),
-            $select2 = $('.k-js-select2'),
-            $datepicker = $('.k-js-datepicker'),
-            $magnificImage = $('.k-js-image-modal'),
-            $magnificInline = $('.k-js-inline-modal'),
-            $magnificIframe = $('.k-js-iframe-modal'),
-            $tooltip = $('.k-js-tooltip'),
-            $gallery = $('.k-js-gallery'),
-            resizeClass = 'k-is-resizing',
+        var resizeClass = 'k-is-resizing',
             resizeTimer;
 
 
@@ -17663,6 +17770,7 @@ var Konami = function (callback) {
          * Footable
          */
 
+        var $footable = $('.k-js-responsive-table');
         if ($footable.length) {
             $footable.footable({
                 toggleSelector: '.footable-toggle',
@@ -17679,6 +17787,7 @@ var Konami = function (callback) {
          * Select 2
          */
 
+        var $select2 = $('.k-js-select2');
         if ($select2.length) {
             $select2.select2({
                 theme: "bootstrap"
@@ -17690,6 +17799,7 @@ var Konami = function (callback) {
          * Datepicker
          */
 
+        var $datepicker = $('.k-js-datepicker');
         if ($datepicker.length) {
             $datepicker.kdatepicker();
         }
@@ -17698,6 +17808,10 @@ var Konami = function (callback) {
         /**
          * Magnific popup
          */
+
+        var $magnificImage = $('.k-js-image-modal'),
+            $magnificInline = $('.k-js-inline-modal'),
+            $magnificIframe = $('.k-js-iframe-modal');
 
         if ($magnificImage.length || $magnificInline.length || $magnificIframe.length) {
             if ($magnificImage.length) { $magnificImage.magnificPopup({type:'image'}); }
@@ -17710,6 +17824,7 @@ var Konami = function (callback) {
          * Tooltip
          */
 
+        var $tooltip = $('.k-js-tooltip');
         if ($tooltip.length) {
             $tooltip.ktooltip({
                 animation: true,
@@ -17726,6 +17841,7 @@ var Konami = function (callback) {
          * Toggleable sidebar item
          */
 
+        var $sidebarToggle = $('.k-js-sidebar-toggle-item');
         if ( $sidebarToggle.length ) {
             var toggle = $('<div class="k-sidebar-item__toggle"><span class="k-visually-hidden">Toggle</span></div>');
             $sidebarToggle.addClass('k-sidebar-item--toggle').find('.k-sidebar-item__header').append(toggle);
@@ -17733,110 +17849,6 @@ var Konami = function (callback) {
                 $(this).toggleClass('k-is-active').parent().next().slideToggle(180);
             });
         }
-
-
-        /**
-         * Filter and search toggle buttons in the scopebar
-         */
-
-        if ( $scopebar.length ) {
-
-            $.each($scopebar, function() {
-
-                var $this = $(this),
-                    $scopebarFilters = $this.find('.k-scopebar__item--filters'),
-                    $scopebarSearch = $this.find('.k-scopebar__item--search'),
-                    scopebarToggleClass = '.k-scopebar__item--toggle-buttons',
-                    scopebarToggleButtonContainer = '<div class="k-scopebar__item k-scopebar__item--toggle-buttons"></div>';
-
-                if ( !$this.find(scopebarToggleClass).length ) {
-                    $this.prepend(scopebarToggleButtonContainer);
-                }
-                var toggleButtons = $this.find(scopebarToggleClass);
-
-                if ( $scopebarFilters.length && !$this.find('.k-toggle-scopebar-filters').length ) {
-                    toggleButtons.prepend('<button type="button" class="k-scopebar__button k-toggle-scopebar-filters k-js-toggle-filters">' +
-                        '<span class="k-icon-filter" aria-hidden="true">' +
-                        '<span class="k-visually-hidden">Filters toggle</span>' +
-                        '<div class="k-js-filter-count k-scopebar__item-label k-scopebar__item-label--numberless"></div>' +
-                        '</button>');
-                }
-
-                if ( $scopebarSearch.length && !$this.find('.k-toggle-scopebar-search').length ) {
-
-                    toggleButtons.prepend('<button type="button" class="k-scopebar__button k-toggle-scopebar-search k-js-toggle-search">' +
-                        '<span class="k-icon-magnifying-glass" aria-hidden="true">' +
-                        '<span class="k-visually-hidden">Search toggle</span>' +
-                        '<div class="k-js-search-count k-scopebar__item-label k-scopebar__item-label--numberless" style="display: none"></div>' +
-                        '</button>');
-
-                    if (toggleButtons.siblings('.k-scopebar__item--search').find('.k-search__field').val()) {
-                        $('.k-js-search-count').show();
-                    }
-                }
-            });
-
-            // Toggle search
-            $('.k-js-toggle-filters').on('click', function() {
-                $(this).parent().siblings('.k-scopebar__item--filters').slideToggle('fast');
-            });
-
-            $('.k-js-toggle-search').on('click', function() {
-                $(this).parent().siblings('.k-scopebar__item--search').slideToggle('fast');
-            });
-        }
-
-
-        /**
-         * Gallery
-         */
-
-        if ( $gallery.length ) {
-
-            // variables
-            var galleryMaxWidth = 240,
-                supportsGrid = CSS.supports('display', 'grid'),
-                galleryEventTimeout;
-
-            // Throttle window resize function for better performance
-            var resizeThrottler = function() {
-                if (!galleryEventTimeout) {
-                    galleryEventTimeout = setTimeout(function() {
-                        galleryEventTimeout = null; // Reset timeout
-                        // Walk through all galleries
-                        setWidth();
-                    }, 200);
-                }
-            };
-
-            // Set Width
-            var setWidth = function() {
-                var galleryWidth = parseFloat($gallery.width()),
-                    items = Math.ceil(galleryWidth / galleryMaxWidth);
-                $gallery.attr('data-gallery-items', items);
-            };
-
-            // Only run when CSS grid is not supported
-            if (supportsGrid !== true && $gallery.length !== 0) {
-
-                // Run on default
-                setWidth();
-
-                // Run on window resize
-                window.addEventListener( 'resize', resizeThrottler );
-            }
-        }
-
-
-        /**
-         * Load kodekitUI functions
-         */
-
-        kodekitUI.tabsScroller();
-        kodekitUI.sidebarToggle();
-        kodekitUI.subcontentToggle();
-        kodekitUI.dragger();
-        kodekitUI.ajaxloading();
 
 
         /**
@@ -17848,6 +17860,19 @@ var Konami = function (callback) {
                 'font-family': 'Comic Sans MS'
             });
         });
+
+
+        /**
+         * Load kodekitUI functions
+         */
+
+        kodekitUI.tabsScroller();
+        kodekitUI.sidebarToggle();
+        kodekitUI.scopebarToggles();
+        kodekitUI.subcontentToggle();
+        kodekitUI.gallery();
+        kodekitUI.dragger();
+        kodekitUI.ajaxloading();
 
 
         /**
@@ -17867,6 +17892,7 @@ var Konami = function (callback) {
                 $('body').removeClass(resizeClass);
 
                 // Run tabs scroll function
+                // @TODO: Move to scroller script itself?
                 kodekitUI.tabsScroller();
 
             }, 200);
@@ -17886,20 +17912,18 @@ var Konami = function (callback) {
                 });
             }
 
-            // Sidebar toggles
-            kodekitUI.sidebarToggle();
 
-            // Tabs
+            /**
+             * (RE)-Load kodekitUI functions
+             */
+
             kodekitUI.tabsScroller();
-
-            // Sidebar toggle
             kodekitUI.sidebarToggle();
-
-            // Dragger
+            kodekitUI.scopebarToggles();
+            kodekitUI.subcontentToggle();
+            kodekitUI.gallery();
             kodekitUI.dragger();
 
-            // Subcontent
-            kodekitUI.subcontentToggle();
         };
 
     });

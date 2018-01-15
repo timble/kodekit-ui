@@ -48,4 +48,3 @@ kodekitUI.setCSS = function(width) {
     }
 
 })();
-
