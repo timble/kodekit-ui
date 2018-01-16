@@ -148,7 +148,7 @@
                         }
                     }
 
-                    // Run 500ms after document ready
+                    // Run 250ms after document ready
                     // 1. To make sure tabs are loaded
                     // 2. To display users that tabs are scrollable
                     setTimeout(function() {
@@ -159,7 +159,7 @@
                         setTimeout(function() {
                             scrollToTab($scroller.find('.k-is-active a'));
                         }, tabsAnimationSpeed);
-                    }, 500);
+                    }, 250);
 
                     // When clicking tabs
                     $tabs.on('click', 'li a', function() {

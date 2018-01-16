@@ -47,11 +47,11 @@
                 });
 
                 // Toggle search
-                $('.k-js-toggle-filters').on('click', function () {
+                $('.k-js-toggle-filters').off().on('click', function () {
                     $(this).parent().siblings('.k-scopebar__item--filters').slideToggle('fast');
                 });
 
-                $('.k-js-toggle-search').on('click', function () {
+                $('.k-js-toggle-search').off().on('click', function () {
                     $(this).parent().siblings('.k-scopebar__item--search').slideToggle('fast');
                 });
             }

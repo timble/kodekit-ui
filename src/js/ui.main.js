@@ -147,14 +147,47 @@
          * AJAX loaded
          */
 
-        kodekitUI.loaded = function() {
+        kodekitUI.loaded = function(responseTxt, statusTxt, xhr, pageHead, pageTitle) {
+
+            console.log('ajax loaded');
 
             // Select2
+            $select2 = $('.k-js-select2');
             if ($select2.length) {
                 $('.k-js-select2').select2({
                     theme: "bootstrap"
                 });
             }
+
+            //Footable
+            $footable = $('.k-js-responsive-table');
+            if ($footable.length) {
+                $footable.footable({
+                    toggleSelector: '.footable-toggle',
+                    breakpoints: {
+                        phone: 400,
+                        tablet: 600,
+                        desktop: 800
+                    }
+                });
+            }
+
+            // Tabs
+            $('a[data-k-toggle="tab"]').on('shown', function (e) {
+                console.log(e);
+                var table = $(e.target.hash).find('.k-js-responsive-table');
+                console.log(table[0]);
+                if (table.length) {
+                    $(table[0]).removeClass('footable footable-loaded').footable({
+                        toggleSelector: '.footable-toggle',
+                        breakpoints: {
+                            phone: 400,
+                            tablet: 600,
+                            desktop: 800
+                        }
+                    });
+                }
+            });
 
 
             /**
@@ -167,6 +200,15 @@
             kodekitUI.subcontentToggle();
             kodekitUI.gallery();
             kodekitUI.dragger();
+
+
+            /**
+             * Run onload event if it's defined
+             */
+
+            if ( kodekitUI.onAjaxLoad !== undefined ) {
+                kodekitUI.onAjaxLoad(responseTxt, statusTxt, xhr, pageHead, pageTitle);
+            }
 
         };
 

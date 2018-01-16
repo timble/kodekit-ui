@@ -16375,7 +16375,7 @@ var Konami = function (callback) {
                 obj["e" + type + fn] = fn;
                 obj[type + fn] = function () {
                     obj["e" + type + fn](window.event, ref_obj);
-                }
+                };
                 obj.attachEvent("on" + type, obj[type + fn]);
             }
         },
@@ -16448,7 +16448,7 @@ var Konami = function (callback) {
                 }
             }
         }
-    }
+    };
 
     typeof callback === "string" && konami.load(callback);
     if (typeof callback === "function") {
@@ -16486,14 +16486,14 @@ var Konami = function (callback) {
 		});
 
 		// Add class for drop hover
-		input.ondragover = function(ev) { this.classList.add('has-drop-focus'); };
-		input.ondragleave = function(ev) { this.classList.remove('has-drop-focus'); };
-		input.ondragend = function(ev) { this.classList.remove('has-drop-focus'); };
-		input.ondrop = function(ev) { this.classList.remove('has-drop-focus'); };
+		input.ondragover = function(ev) { this.classList.add('k-has-drop-focus'); };
+		input.ondragleave = function(ev) { this.classList.remove('k-has-drop-focus'); };
+		input.ondragend = function(ev) { this.classList.remove('k-has-drop-focus'); };
+		input.ondrop = function(ev) { this.classList.remove('k-has-drop-focus'); };
 
 		// Firefox bug fix
-		input.addEventListener('focus', function(){ input.classList.add('has-focus'); });
-		input.addEventListener('blur', function(){ input.classList.remove('has-focus'); });
+		input.addEventListener('focus', function(){ input.classList.add('k-has-focus'); });
+		input.addEventListener('blur', function(){ input.classList.remove('k-has-focus'); });
 	});
 }( document, window, 0 ));
 
@@ -17006,6 +17006,7 @@ var Konami = function (callback) {
     }
 
 })(kQuery);
+
 /**
  * Sidebar off-canvas toggles
  */
@@ -17044,6 +17045,7 @@ var Konami = function (callback) {
                     $($activeElement).addClass(activeClass);
 
                     // Load
+                    // <script> will get stripped from content
                     $('#'+ajaxTarget).load(href + ' #'+ajaxTarget+' > :first-child', function(responseTxt, statusTxt, xhr) {
                         if(statusTxt == "success") {
 
@@ -17052,16 +17054,21 @@ var Konami = function (callback) {
                                 $('.k-off-canvas-toggle--left').trigger('click');
                             }
 
+                            // Flat text page value
+                            var pageHead = responseTxt.split('<head>')[1].split('</head>')[0],
+                                pageTitle = pageHead.split('<title>')[1].split('</title>')[0];
+
                             // Trigger loaded code
-                            kodekitUI.loaded();
+                            kodekitUI.loaded(responseTxt, statusTxt, xhr, pageHead, pageTitle);
+
                         }
                         if(statusTxt == "error") {
-                            console.log('error');
+                            console.error("Error: " + xhr.status + ": " + xhr.statusText);
                         }
                     });
 
-                    console.log(true);
                 });
+
             }
 
         };
@@ -17393,11 +17400,11 @@ var Konami = function (callback) {
                 });
 
                 // Toggle search
-                $('.k-js-toggle-filters').on('click', function () {
+                $('.k-js-toggle-filters').off().on('click', function () {
                     $(this).parent().siblings('.k-scopebar__item--filters').slideToggle('fast');
                 });
 
-                $('.k-js-toggle-search').on('click', function () {
+                $('.k-js-toggle-search').off().on('click', function () {
                     $(this).parent().siblings('.k-scopebar__item--search').slideToggle('fast');
                 });
             }
@@ -17445,7 +17452,7 @@ var Konami = function (callback) {
 
                 // Open right sidebar on selecting items in table
                 // Only apply to actual `<a>` elements
-                $('.k-table-container table').on('click', 'a', function (event) {
+                $('.k-table-container table').off().on('click', 'a', function (event) {
                     // Only apply if parent is a `<td>` (so not a `<th>`)
                     if ($(this).parents('td').length > 0) {
                         var target = $(this)[0].closest('.k-content-area__child');
@@ -17739,7 +17746,7 @@ var Konami = function (callback) {
                         }
                     }
 
-                    // Run 500ms after document ready
+                    // Run 250ms after document ready
                     // 1. To make sure tabs are loaded
                     // 2. To display users that tabs are scrollable
                     setTimeout(function() {
@@ -17750,7 +17757,7 @@ var Konami = function (callback) {
                         setTimeout(function() {
                             scrollToTab($scroller.find('.k-is-active a'));
                         }, tabsAnimationSpeed);
-                    }, 500);
+                    }, 250);
 
                     // When clicking tabs
                     $tabs.on('click', 'li a', function() {
@@ -17923,14 +17930,47 @@ var Konami = function (callback) {
          * AJAX loaded
          */
 
-        kodekitUI.loaded = function() {
+        kodekitUI.loaded = function(responseTxt, statusTxt, xhr, pageHead, pageTitle) {
+
+            console.log('ajax loaded');
 
             // Select2
+            $select2 = $('.k-js-select2');
             if ($select2.length) {
                 $('.k-js-select2').select2({
                     theme: "bootstrap"
                 });
             }
+
+            //Footable
+            $footable = $('.k-js-responsive-table');
+            if ($footable.length) {
+                $footable.footable({
+                    toggleSelector: '.footable-toggle',
+                    breakpoints: {
+                        phone: 400,
+                        tablet: 600,
+                        desktop: 800
+                    }
+                });
+            }
+
+            // Tabs
+            $('a[data-k-toggle="tab"]').on('shown', function (e) {
+                console.log(e);
+                var table = $(e.target.hash).find('.k-js-responsive-table');
+                console.log(table[0]);
+                if (table.length) {
+                    $(table[0]).removeClass('footable footable-loaded').footable({
+                        toggleSelector: '.footable-toggle',
+                        breakpoints: {
+                            phone: 400,
+                            tablet: 600,
+                            desktop: 800
+                        }
+                    });
+                }
+            });
 
 
             /**
@@ -17943,6 +17983,15 @@ var Konami = function (callback) {
             kodekitUI.subcontentToggle();
             kodekitUI.gallery();
             kodekitUI.dragger();
+
+
+            /**
+             * Run onload event if it's defined
+             */
+
+            if ( kodekitUI.onAjaxLoad !== undefined ) {
+                kodekitUI.onAjaxLoad(responseTxt, statusTxt, xhr, pageHead, pageTitle);
+            }
 
         };
 

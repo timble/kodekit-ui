@@ -36,6 +36,7 @@
                     $($activeElement).addClass(activeClass);
 
                     // Load
+                    // <script> will get stripped from content
                     $('#'+ajaxTarget).load(href + ' #'+ajaxTarget+' > :first-child', function(responseTxt, statusTxt, xhr) {
                         if(statusTxt == "success") {
 
@@ -44,16 +45,21 @@
                                 $('.k-off-canvas-toggle--left').trigger('click');
                             }
 
+                            // Flat text page value
+                            var pageHead = responseTxt.split('<head>')[1].split('</head>')[0],
+                                pageTitle = pageHead.split('<title>')[1].split('</title>')[0];
+
                             // Trigger loaded code
-                            kodekitUI.loaded();
+                            kodekitUI.loaded(responseTxt, statusTxt, xhr, pageHead, pageTitle);
+
                         }
                         if(statusTxt == "error") {
-                            console.log('error');
+                            console.error("Error: " + xhr.status + ": " + xhr.statusText);
                         }
                     });
 
-                    console.log(true);
                 });
+
             }
 
         };

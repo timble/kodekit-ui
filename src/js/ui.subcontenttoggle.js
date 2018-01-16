@@ -35,7 +35,7 @@
 
                 // Open right sidebar on selecting items in table
                 // Only apply to actual `<a>` elements
-                $('.k-table-container table').on('click', 'a', function (event) {
+                $('.k-table-container table').off().on('click', 'a', function (event) {
                     // Only apply if parent is a `<td>` (so not a `<th>`)
                     if ($(this).parents('td').length > 0) {
                         var target = $(this)[0].closest('.k-content-area__child');

@@ -34,7 +34,10 @@
 
       @include breakpoint($k-delta) {
         @include allwidth($k-content-width-delta);
-        padding-right: $k-content-resizer-width;
+
+        @include js-enabled {
+          padding-right: $k-content-resizer-width;
+        }
       }
 
 

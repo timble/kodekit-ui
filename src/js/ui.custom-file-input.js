@@ -26,13 +26,13 @@
 		});
 
 		// Add class for drop hover
-		input.ondragover = function(ev) { this.classList.add('has-drop-focus'); };
-		input.ondragleave = function(ev) { this.classList.remove('has-drop-focus'); };
-		input.ondragend = function(ev) { this.classList.remove('has-drop-focus'); };
-		input.ondrop = function(ev) { this.classList.remove('has-drop-focus'); };
+		input.ondragover = function(ev) { this.classList.add('k-has-drop-focus'); };
+		input.ondragleave = function(ev) { this.classList.remove('k-has-drop-focus'); };
+		input.ondragend = function(ev) { this.classList.remove('k-has-drop-focus'); };
+		input.ondrop = function(ev) { this.classList.remove('k-has-drop-focus'); };
 
 		// Firefox bug fix
-		input.addEventListener('focus', function(){ input.classList.add('has-focus'); });
-		input.addEventListener('blur', function(){ input.classList.remove('has-focus'); });
+		input.addEventListener('focus', function(){ input.classList.add('k-has-focus'); });
+		input.addEventListener('blur', function(){ input.classList.remove('k-has-focus'); });
 	});
 }( document, window, 0 ));
