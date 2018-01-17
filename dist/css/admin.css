@@ -1959,8 +1959,6 @@ body.k-is-resizing {
    */
   /* CK Editor
      ========================================================================== */
-  /* Datepicker
-     ========================================================================== */
   /* Dropdowns
      ========================================================================== */
   /* Dropdown arrow/caret */
@@ -5348,309 +5346,6 @@ fieldset[disabled] .k-ui-namespace .k-button--danger.k-has-focus {
 
 .k-ui-namespace .cke_resizer.cke_resizer {
   display: none;
-}
-
-.k-ui-namespace .datepicker {
-  direction: ltr;
-  /**
-     * Inline display inside a table presents some problems with
-     * border and background colors.
-     */
-  /* Basic styling for calendar-week cells */
-}
-
-.k-ui-namespace .datepicker.datepicker-inline {
-  width: 224px;
-}
-
-.k-ui-namespace .datepicker.datepicker-rtl {
-  direction: rtl;
-}
-
-.k-ui-namespace .datepicker.datepicker-rtl table tr td span {
-  float: right;
-}
-
-.k-ui-namespace .datepicker.datepicker-dropdown {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  padding: 5px;
-  margin: 2px 0 0;
-  list-style: none;
-  background-color: white;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-  background-clip: padding-box;
-}
-
-.k-ui-namespace .datepicker.datepicker-dropdown:before {
-  content: '';
-  display: inline-block;
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-  border-bottom: 7px solid #ccc;
-  border-top: 0;
-  border-bottom-color: rgba(0, 0, 0, 0.2);
-  position: absolute;
-}
-
-.k-ui-namespace .datepicker.datepicker-dropdown:after {
-  content: '';
-  display: inline-block;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-bottom: 6px solid white;
-  border-top: 0;
-  position: absolute;
-}
-
-.k-ui-namespace .datepicker.datepicker-dropdown.datepicker-orient-left:before {
-  left: 6px;
-}
-
-.k-ui-namespace .datepicker.datepicker-dropdown.datepicker-orient-left:after {
-  left: 7px;
-}
-
-.k-ui-namespace .datepicker.datepicker-dropdown.datepicker-orient-right:before {
-  right: 6px;
-}
-
-.k-ui-namespace .datepicker.datepicker-dropdown.datepicker-orient-right:after {
-  right: 7px;
-}
-
-.k-ui-namespace .datepicker.datepicker-dropdown.datepicker-orient-top:before {
-  top: -7px;
-}
-
-.k-ui-namespace .datepicker.datepicker-dropdown.datepicker-orient-top:after {
-  top: -6px;
-}
-
-.k-ui-namespace .datepicker.datepicker-dropdown.datepicker-orient-bottom:before {
-  bottom: -7px;
-  border-bottom: 0;
-  border-top: 7px solid #999;
-}
-
-.k-ui-namespace .datepicker.datepicker-dropdown.datepicker-orient-bottom:after {
-  bottom: -6px;
-  border-bottom: 0;
-  border-top: 6px solid white;
-}
-
-.k-ui-namespace .datepicker > div {
-  display: none;
-}
-
-.k-ui-namespace .datepicker.days div.datepicker-days {
-  display: block;
-}
-
-.k-ui-namespace .datepicker.months div.datepicker-months {
-  display: block;
-}
-
-.k-ui-namespace .datepicker.years div.datepicker-years {
-  display: block;
-}
-
-.k-ui-namespace .datepicker table {
-  margin: 0;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  background: transparent;
-  border: none;
-}
-
-.k-ui-namespace .datepicker tr {
-  background: transparent;
-  border: none;
-}
-
-.k-ui-namespace .datepicker tr:nth-child(n) {
-  background: transparent;
-  border: none;
-}
-
-.k-ui-namespace .datepicker td,
-.k-ui-namespace .datepicker th {
-  text-align: center;
-  width: 20px;
-  height: 20px;
-  border: none;
-  border-radius: 4px;
-  background: transparent;
-  padding: 4px 8px;
-}
-
-.k-ui-namespace .datepicker td:nth-child(n),
-.k-ui-namespace .datepicker th:nth-child(n) {
-  background: transparent;
-  border: none;
-}
-
-.table-striped .k-ui-namespace .datepicker table tr td, .table-striped .k-ui-namespace .datepicker table tr th {
-  background-color: transparent;
-}
-
-.k-ui-namespace .datepicker table tr td {
-  /**
-       * 1. Add last
-       */
-  /* Thank bootstrap 2.0 for this selector... */
-}
-
-.k-ui-namespace .datepicker table tr td.day:hover {
-  background: #eeeeee;
-  cursor: pointer;
-}
-
-.k-ui-namespace .datepicker table tr td.old, .k-ui-namespace .datepicker table tr td.new {
-  color: #343434;
-}
-
-.k-ui-namespace .datepicker table tr td.disabled, .k-ui-namespace .datepicker table tr td.disabled:hover {
-  background: none;
-  color: #343434;
-  cursor: default;
-  opacity: 0.5;
-}
-
-.k-ui-namespace .datepicker table tr td.today, .k-ui-namespace .datepicker table tr td.today:hover, .k-ui-namespace .datepicker table tr td.today.disabled, .k-ui-namespace .datepicker table tr td.today.disabled:hover {
-  background: #ffdb99;
-  color: #000;
-  /* 1 */
-}
-
-.k-ui-namespace .datepicker table tr td.today:hover:hover {
-  color: #000;
-}
-
-.k-ui-namespace .datepicker table tr td.today.active:hover {
-  color: #fff;
-}
-
-.k-ui-namespace .datepicker table tr td.range, .k-ui-namespace .datepicker table tr td.range:hover, .k-ui-namespace .datepicker table tr td.range.disabled, .k-ui-namespace .datepicker table tr td.range.disabled:hover {
-  background: #eeeeee;
-  border-radius: 0;
-}
-
-.k-ui-namespace .datepicker table tr td.range.today, .k-ui-namespace .datepicker table tr td.range.today:hover, .k-ui-namespace .datepicker table tr td.range.today.disabled, .k-ui-namespace .datepicker table tr td.range.today.disabled:hover {
-  background: #f6c977;
-  border-radius: 0;
-}
-
-.k-ui-namespace .datepicker table tr td.selected, .k-ui-namespace .datepicker table tr td.selected:hover, .k-ui-namespace .datepicker table tr td.selected.disabled, .k-ui-namespace .datepicker table tr td.selected.disabled:hover {
-  color: #fff;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background: #4d4d4d;
-}
-
-.k-ui-namespace .datepicker table tr td.active, .k-ui-namespace .datepicker table tr td.active:hover, .k-ui-namespace .datepicker table tr td.active.disabled, .k-ui-namespace .datepicker table tr td.active.disabled:hover {
-  color: #fff;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background: #3071a9;
-}
-
-.k-ui-namespace .datepicker table tr td span {
-  display: block;
-  width: 23%;
-  height: 54px;
-  line-height: 54px;
-  float: left;
-  margin: 1%;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.k-ui-namespace .datepicker table tr td span:hover {
-  background: #eeeeee;
-}
-
-.k-ui-namespace .datepicker table tr td span.disabled, .k-ui-namespace .datepicker table tr td span.disabled:hover {
-  background: none;
-  color: #343434;
-  cursor: default;
-}
-
-.k-ui-namespace .datepicker table tr td span.active, .k-ui-namespace .datepicker table tr td span.active:hover, .k-ui-namespace .datepicker table tr td span.active.disabled, .k-ui-namespace .datepicker table tr td span.active.disabled:hover {
-  color: #fff;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background: #3071a9;
-}
-
-.k-ui-namespace .datepicker table tr td span.old, .k-ui-namespace .datepicker table tr td span.new {
-  color: #343434;
-}
-
-.k-ui-namespace .datepicker th.datepicker-switch {
-  width: 145px;
-}
-
-.k-ui-namespace .datepicker thead tr:first-child th,
-.k-ui-namespace .datepicker tfoot tr th {
-  cursor: pointer;
-}
-
-.k-ui-namespace .datepicker thead tr:first-child th:hover,
-.k-ui-namespace .datepicker tfoot tr th:hover {
-  background: #eeeeee;
-}
-
-.k-ui-namespace .datepicker .cw {
-  font-size: 11px;
-  width: 12px;
-  padding: 0 2px 0 5px;
-  vertical-align: middle;
-}
-
-.k-ui-namespace .datepicker thead tr:first-child th.cw {
-  cursor: default;
-  background-color: transparent;
-}
-
-.k-ui-namespace .input-append.date .add-on i,
-.k-ui-namespace .input-prepend.date .add-on i {
-  display: block;
-  cursor: pointer;
-  width: 16px;
-  height: 16px;
-}
-
-.k-ui-namespace .input-daterange input {
-  text-align: center;
-}
-
-.k-ui-namespace .input-daterange input:first-child {
-  border-radius: 3px 0 0 3px;
-}
-
-.k-ui-namespace .input-daterange input:last-child {
-  border-radius: 0 3px 3px 0;
-}
-
-.k-ui-namespace .input-daterange .add-on {
-  display: inline-block;
-  width: auto;
-  min-width: 16px;
-  height: 20px;
-  padding: 4px 5px;
-  font-weight: normal;
-  line-height: 20px;
-  text-align: center;
-  text-shadow: 0 1px 0 white;
-  vertical-align: middle;
-  background-color: #eeeeee;
-  border: 1px solid #ccc;
-  margin-left: -5px;
-  margin-right: -5px;
 }
 
 .k-ui-namespace .k-caret {
@@ -13074,4 +12769,309 @@ img.mfp-img {
 .select2.select2-container--bootstrap {
   width: 100% !important;
   max-width: 100% !important;
+}
+
+/* Datepicker
+     ========================================================================== */
+.datepicker {
+  direction: ltr;
+  /**
+     * Inline display inside a table presents some problems with
+     * border and background colors.
+     */
+  /* Basic styling for calendar-week cells */
+}
+
+.datepicker.datepicker-inline {
+  width: 224px;
+}
+
+.datepicker.datepicker-rtl {
+  direction: rtl;
+}
+
+.datepicker.datepicker-rtl table tr td span {
+  float: right;
+}
+
+.datepicker.datepicker-dropdown {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 5px;
+  margin: 2px 0 0;
+  list-style: none;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box;
+}
+
+.datepicker.datepicker-dropdown:before {
+  content: '';
+  display: inline-block;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #ccc;
+  border-top: 0;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+}
+
+.datepicker.datepicker-dropdown:after {
+  content: '';
+  display: inline-block;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid white;
+  border-top: 0;
+  position: absolute;
+}
+
+.datepicker.datepicker-dropdown.datepicker-orient-left:before {
+  left: 6px;
+}
+
+.datepicker.datepicker-dropdown.datepicker-orient-left:after {
+  left: 7px;
+}
+
+.datepicker.datepicker-dropdown.datepicker-orient-right:before {
+  right: 6px;
+}
+
+.datepicker.datepicker-dropdown.datepicker-orient-right:after {
+  right: 7px;
+}
+
+.datepicker.datepicker-dropdown.datepicker-orient-top:before {
+  top: -7px;
+}
+
+.datepicker.datepicker-dropdown.datepicker-orient-top:after {
+  top: -6px;
+}
+
+.datepicker.datepicker-dropdown.datepicker-orient-bottom:before {
+  bottom: -7px;
+  border-bottom: 0;
+  border-top: 7px solid #999;
+}
+
+.datepicker.datepicker-dropdown.datepicker-orient-bottom:after {
+  bottom: -6px;
+  border-bottom: 0;
+  border-top: 6px solid white;
+}
+
+.datepicker > div {
+  display: none;
+}
+
+.datepicker.days div.datepicker-days {
+  display: block;
+}
+
+.datepicker.months div.datepicker-months {
+  display: block;
+}
+
+.datepicker.years div.datepicker-years {
+  display: block;
+}
+
+.datepicker table {
+  margin: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background: transparent;
+  border: none;
+}
+
+.datepicker tr {
+  background: transparent;
+  border: none;
+}
+
+.datepicker tr:nth-child(n) {
+  background: transparent;
+  border: none;
+}
+
+.datepicker td,
+.datepicker th {
+  text-align: center;
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  padding: 4px 8px;
+}
+
+.datepicker td:nth-child(n),
+.datepicker th:nth-child(n) {
+  background: transparent;
+  border: none;
+}
+
+.table-striped .datepicker table tr td, .table-striped .datepicker table tr th {
+  background-color: transparent;
+}
+
+.datepicker table tr td {
+  /**
+       * 1. Add last
+       */
+  /* Thank bootstrap 2.0 for this selector... */
+}
+
+.datepicker table tr td.day:hover {
+  background: #eeeeee;
+  cursor: pointer;
+}
+
+.datepicker table tr td.old, .datepicker table tr td.new {
+  color: #343434;
+}
+
+.datepicker table tr td.disabled, .datepicker table tr td.disabled:hover {
+  background: none;
+  color: #343434;
+  cursor: default;
+  opacity: 0.5;
+}
+
+.datepicker table tr td.today, .datepicker table tr td.today:hover, .datepicker table tr td.today.disabled, .datepicker table tr td.today.disabled:hover {
+  background: #ffdb99;
+  color: #000;
+  /* 1 */
+}
+
+.datepicker table tr td.today:hover:hover {
+  color: #000;
+}
+
+.datepicker table tr td.today.active:hover {
+  color: #fff;
+}
+
+.datepicker table tr td.range, .datepicker table tr td.range:hover, .datepicker table tr td.range.disabled, .datepicker table tr td.range.disabled:hover {
+  background: #eeeeee;
+  border-radius: 0;
+}
+
+.datepicker table tr td.range.today, .datepicker table tr td.range.today:hover, .datepicker table tr td.range.today.disabled, .datepicker table tr td.range.today.disabled:hover {
+  background: #f6c977;
+  border-radius: 0;
+}
+
+.datepicker table tr td.selected, .datepicker table tr td.selected:hover, .datepicker table tr td.selected.disabled, .datepicker table tr td.selected.disabled:hover {
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background: #4d4d4d;
+}
+
+.datepicker table tr td.active, .datepicker table tr td.active:hover, .datepicker table tr td.active.disabled, .datepicker table tr td.active.disabled:hover {
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background: #3071a9;
+}
+
+.datepicker table tr td span {
+  display: block;
+  width: 23%;
+  height: 54px;
+  line-height: 54px;
+  float: left;
+  margin: 1%;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.datepicker table tr td span:hover {
+  background: #eeeeee;
+}
+
+.datepicker table tr td span.disabled, .datepicker table tr td span.disabled:hover {
+  background: none;
+  color: #343434;
+  cursor: default;
+}
+
+.datepicker table tr td span.active, .datepicker table tr td span.active:hover, .datepicker table tr td span.active.disabled, .datepicker table tr td span.active.disabled:hover {
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background: #3071a9;
+}
+
+.datepicker table tr td span.old, .datepicker table tr td span.new {
+  color: #343434;
+}
+
+.datepicker th.datepicker-switch {
+  width: 145px;
+}
+
+.datepicker thead tr:first-child th,
+.datepicker tfoot tr th {
+  cursor: pointer;
+}
+
+.datepicker thead tr:first-child th:hover,
+.datepicker tfoot tr th:hover {
+  background: #eeeeee;
+}
+
+.datepicker .cw {
+  font-size: 11px;
+  width: 12px;
+  padding: 0 2px 0 5px;
+  vertical-align: middle;
+}
+
+.datepicker thead tr:first-child th.cw {
+  cursor: default;
+  background-color: transparent;
+}
+
+.input-append.date .add-on i,
+.input-prepend.date .add-on i {
+  display: block;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}
+
+.input-daterange input {
+  text-align: center;
+}
+
+.input-daterange input:first-child {
+  border-radius: 3px 0 0 3px;
+}
+
+.input-daterange input:last-child {
+  border-radius: 0 3px 3px 0;
+}
+
+.input-daterange .add-on {
+  display: inline-block;
+  width: auto;
+  min-width: 16px;
+  height: 20px;
+  padding: 4px 5px;
+  font-weight: normal;
+  line-height: 20px;
+  text-align: center;
+  text-shadow: 0 1px 0 white;
+  vertical-align: middle;
+  background-color: #eeeeee;
+  border: 1px solid #ccc;
+  margin-left: -5px;
+  margin-right: -5px;
 }
