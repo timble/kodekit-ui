@@ -37,26 +37,28 @@
 
                     // Load
                     // <script> will get stripped from content
-                    $('#'+ajaxTarget).load(href + ' #'+ajaxTarget+' > :first-child', function(responseTxt, statusTxt, xhr) {
-                        if(statusTxt == "success") {
+                    setTimeout(function() {
+                        $('#'+ajaxTarget).load(href + ' #'+ajaxTarget+' > :first-child', function(responseTxt, statusTxt, xhr) {
+                            if(statusTxt == "success") {
 
-                            // Trigger close sidebar click when changing menu items
-                            if ( $('.k-js-wrapper').hasClass('k-show-left-menu') ) {
-                                $('.k-off-canvas-toggle--left').trigger('click');
+                                // Trigger close sidebar click when changing menu items
+                                if ( $('.k-js-wrapper').hasClass('k-show-left-menu') ) {
+                                    $('.k-off-canvas-toggle--left').trigger('click');
+                                }
+
+                                // Flat text page value
+                                var pageHead = responseTxt.split('<head>')[1].split('</head>')[0],
+                                    pageTitle = pageHead.split('<title>')[1].split('</title>')[0];
+
+                                // Trigger loaded code
+                                kodekitUI.loaded(responseTxt, statusTxt, xhr, pageHead, pageTitle);
+
                             }
-
-                            // Flat text page value
-                            var pageHead = responseTxt.split('<head>')[1].split('</head>')[0],
-                                pageTitle = pageHead.split('<title>')[1].split('</title>')[0];
-
-                            // Trigger loaded code
-                            kodekitUI.loaded(responseTxt, statusTxt, xhr, pageHead, pageTitle);
-
-                        }
-                        if(statusTxt == "error") {
-                            console.error("Error: " + xhr.status + ": " + xhr.statusText);
-                        }
-                    });
+                            if(statusTxt == "error") {
+                                console.error("Error: " + xhr.status + ": " + xhr.statusText);
+                            }
+                        });
+                    }, 200);
 
                 });
 

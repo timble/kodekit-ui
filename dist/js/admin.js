@@ -17046,26 +17046,28 @@ var Konami = function (callback) {
 
                     // Load
                     // <script> will get stripped from content
-                    $('#'+ajaxTarget).load(href + ' #'+ajaxTarget+' > :first-child', function(responseTxt, statusTxt, xhr) {
-                        if(statusTxt == "success") {
+                    setTimeout(function() {
+                        $('#'+ajaxTarget).load(href + ' #'+ajaxTarget+' > :first-child', function(responseTxt, statusTxt, xhr) {
+                            if(statusTxt == "success") {
 
-                            // Trigger close sidebar click when changing menu items
-                            if ( $('.k-js-wrapper').hasClass('k-show-left-menu') ) {
-                                $('.k-off-canvas-toggle--left').trigger('click');
+                                // Trigger close sidebar click when changing menu items
+                                if ( $('.k-js-wrapper').hasClass('k-show-left-menu') ) {
+                                    $('.k-off-canvas-toggle--left').trigger('click');
+                                }
+
+                                // Flat text page value
+                                var pageHead = responseTxt.split('<head>')[1].split('</head>')[0],
+                                    pageTitle = pageHead.split('<title>')[1].split('</title>')[0];
+
+                                // Trigger loaded code
+                                kodekitUI.loaded(responseTxt, statusTxt, xhr, pageHead, pageTitle);
+
                             }
-
-                            // Flat text page value
-                            var pageHead = responseTxt.split('<head>')[1].split('</head>')[0],
-                                pageTitle = pageHead.split('<title>')[1].split('</title>')[0];
-
-                            // Trigger loaded code
-                            kodekitUI.loaded(responseTxt, statusTxt, xhr, pageHead, pageTitle);
-
-                        }
-                        if(statusTxt == "error") {
-                            console.error("Error: " + xhr.status + ": " + xhr.statusText);
-                        }
-                    });
+                            if(statusTxt == "error") {
+                                console.error("Error: " + xhr.status + ": " + xhr.statusText);
+                            }
+                        });
+                    }, 200);
 
                 });
 
@@ -17430,16 +17432,17 @@ var Konami = function (callback) {
             if ($subcontent.length) {
 
                 var $subcontentChild = $('.k-content-area__child'),
-                    subcontentButtonContent = $subcontent.attr('data-toggle-button-content') || '<span class="k-icon-chevron-left" aria-hidden="true"></span>';
+                    subcontentButtonContent = $subcontent.attr('data-toggle-button-content') || '<span class="k-icon-chevron-left" aria-hidden="true"></span>',
+                    subcontentToggle = $('.k-js-subcontent-toggle');
 
                 // Append toggle button and overlay
-                if ( !$('.k-js-subcontent-toggle').length ) {
+                if ( !subcontentToggle.length ) {
                     $subcontentChild.append(kQuery('<button type="button" class="k-button k-button--default k-subcontent-toggle k-js-subcontent-toggle" title="Subcontent toggle" aria-label="Subcontent toggle">' + subcontentButtonContent + '</button>'));
                 }
 
                 // Off canvas
                 $subcontent.offCanvasMenu({
-                    menuToggle: $('.k-js-subcontent-toggle'),
+                    menuToggle: subcontentToggle,
                     menuExpandedClass: 'k-show-subcontent-area',
                     openedClass: 'k-is-opened-subcontent',
                     position: 'right',
@@ -17466,7 +17469,6 @@ var Konami = function (callback) {
 
                 // Open subcontent on clicking TD
                 $('.k-table-container table tbody').off().on('click', 'tr', function (event) {
-
                     // Return if click to select class is added to table
                     if ($(this).closest('table').hasClass('k-js-click-to-select')) return;
 
@@ -17475,11 +17477,11 @@ var Konami = function (callback) {
                     if (event.target.nodeName === 'INPUT') return;
 
                     // Stop row select action
+                    event.preventDefault();
                     event.stopPropagation();
 
                     // Trigger click anchor (but wait for ajax)
                     $(this).find('a').trigger('click');
-
                 });
 
             }
@@ -17772,6 +17774,15 @@ var Konami = function (callback) {
                             tabsCalculateScroll($scroller, $tabs, $tabsWrapper);
                         }, 200);
                     });
+
+                    // Run on window resize
+                    $(window).on('resize', function() {
+                        // Throttle
+                        clearTimeout(resizeTimer);
+                        resizeTimer = setTimeout(function() {
+                            tabsCalculateScroll($scroller, $tabs, $tabsWrapper);
+                        }, 200);
+                    });
                 });
 
             }
@@ -17882,6 +17893,7 @@ var Konami = function (callback) {
          * Sidebar toggle
          *
          * Toggleable sidebar item
+         * Not needed to reload since sidebar will stay
          */
 
         var $sidebarToggle = $('.k-js-sidebar-toggle-item');
@@ -17896,6 +17908,7 @@ var Konami = function (callback) {
 
         /**
          * Konami
+         * Not needed to reload since we're targeting html element which won't change
          */
 
         new Konami(function() {
@@ -17907,24 +17920,45 @@ var Konami = function (callback) {
 
         /**
          * Load functions
+         *
+         * Quick function to run all functions
+         * Use on:
+         * - Page load
+         * - AJAX change
+         * - On other DOM changes when needed
          */
 
-        footable();
-        select2();
-        datepicker();
-        modal();
-        tooltip();
+        kodekitUI.loadFunctions = function() {
+
+            /**
+             * Local functions
+             */
+
+            footable();
+            select2();
+            datepicker();
+            modal();
+            tooltip();
+
+            /**
+             * Global kodekitUI functions
+             */
+
+            kodekitUI.tabsScroller();
+            kodekitUI.sidebarToggle();
+            kodekitUI.scopebarToggles();
+            kodekitUI.subcontentToggle();
+            kodekitUI.gallery();
+            kodekitUI.dragger();
+        };
+
 
         /**
-         * Load kodekitUI functions
+         * Run functions DOM loaded
+         * Load "ajaxloading" only once to make sure events are not fire multiple times
          */
 
-        kodekitUI.tabsScroller();
-        kodekitUI.sidebarToggle();
-        kodekitUI.scopebarToggles();
-        kodekitUI.subcontentToggle();
-        kodekitUI.gallery();
-        kodekitUI.dragger();
+        kodekitUI.loadFunctions();
         kodekitUI.ajaxloading();
 
 
@@ -17944,11 +17978,17 @@ var Konami = function (callback) {
                 // Remove the class when resize is done
                 $('body').removeClass(resizeClass);
 
-                // Run tabs scroll function
-                // @TODO: Move to scroller script itself?
-                kodekitUI.tabsScroller();
-
             }, 200);
+        });
+
+
+        /**
+         * Tab change
+         * Run code on tab change
+         */
+
+        $('a[data-k-toggle="tab"]').on('shown', function (e) {
+            footable();
         });
 
 
@@ -17958,32 +17998,11 @@ var Konami = function (callback) {
 
         kodekitUI.loaded = function(responseTxt, statusTxt, xhr, pageHead, pageTitle) {
 
-            footable();
-            select2();
-            datepicker();
-            modal();
-            tooltip();
-
-            // Tabs
-            $('a[data-k-toggle="tab"]').on('shown', function (e) {
-                footable();
-                select2();
-                datepicker();
-                modal();
-                tooltip();
-            });
-
-
             /**
-             * (RE)-Load kodekitUI functions
+             * Run functions
              */
 
-            kodekitUI.tabsScroller();
-            kodekitUI.sidebarToggle();
-            kodekitUI.scopebarToggles();
-            kodekitUI.subcontentToggle();
-            kodekitUI.gallery();
-            kodekitUI.dragger();
+            kodekitUI.loadFunctions();
 
 
             /**

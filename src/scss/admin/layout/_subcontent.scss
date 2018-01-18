@@ -44,6 +44,14 @@
     width: auto;
     overflow: hidden;
     min-height: 0;
+
+    &:not(:only-child) {
+      display: none;
+
+      &#{$k-subcontent-child-active-class} {
+        display: flex;
+      }
+    }
   }
 
 

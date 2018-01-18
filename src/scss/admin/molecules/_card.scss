@@ -75,7 +75,9 @@
     color: $k-card-color;
     text-decoration: none;
     @include transition;
+  }
 
+  a.k-card__body {
     &:focus,
     &:hover {
       border-color: $k-card-hover-border;
@@ -145,11 +147,6 @@
       border-top: 1px solid $k-card-header-border;
       padding-top: $k-card-header-spacing - 1px;
     }
-
-    &:focus,
-    &:hover {
-      border-color: $k-card-header-hover-border;
-    }
   }
 
   /**
@@ -194,11 +191,6 @@
 
     &:not(:last-child) {
       border-bottom: 1px solid $k-card-footer-border;
-    }
-
-    &:focus,
-    &:hover {
-      border-color: $k-card-footer-hover-border;
     }
   }
 

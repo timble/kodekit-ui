@@ -13,16 +13,17 @@
             if ($subcontent.length) {
 
                 var $subcontentChild = $('.k-content-area__child'),
-                    subcontentButtonContent = $subcontent.attr('data-toggle-button-content') || '<span class="k-icon-chevron-left" aria-hidden="true"></span>';
+                    subcontentButtonContent = $subcontent.attr('data-toggle-button-content') || '<span class="k-icon-chevron-left" aria-hidden="true"></span>',
+                    subcontentToggle = $('.k-js-subcontent-toggle');
 
                 // Append toggle button and overlay
-                if ( !$('.k-js-subcontent-toggle').length ) {
+                if ( !subcontentToggle.length ) {
                     $subcontentChild.append(kQuery('<button type="button" class="k-button k-button--default k-subcontent-toggle k-js-subcontent-toggle" title="Subcontent toggle" aria-label="Subcontent toggle">' + subcontentButtonContent + '</button>'));
                 }
 
                 // Off canvas
                 $subcontent.offCanvasMenu({
-                    menuToggle: $('.k-js-subcontent-toggle'),
+                    menuToggle: subcontentToggle,
                     menuExpandedClass: 'k-show-subcontent-area',
                     openedClass: 'k-is-opened-subcontent',
                     position: 'right',
@@ -49,7 +50,6 @@
 
                 // Open subcontent on clicking TD
                 $('.k-table-container table tbody').off().on('click', 'tr', function (event) {
-
                     // Return if click to select class is added to table
                     if ($(this).closest('table').hasClass('k-js-click-to-select')) return;
 
@@ -58,11 +58,11 @@
                     if (event.target.nodeName === 'INPUT') return;
 
                     // Stop row select action
+                    event.preventDefault();
                     event.stopPropagation();
 
                     // Trigger click anchor (but wait for ajax)
                     $(this).find('a').trigger('click');
-
                 });
 
             }

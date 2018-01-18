@@ -174,6 +174,15 @@
                             tabsCalculateScroll($scroller, $tabs, $tabsWrapper);
                         }, 200);
                     });
+
+                    // Run on window resize
+                    $(window).on('resize', function() {
+                        // Throttle
+                        clearTimeout(resizeTimer);
+                        resizeTimer = setTimeout(function() {
+                            tabsCalculateScroll($scroller, $tabs, $tabsWrapper);
+                        }, 200);
+                    });
                 });
 
             }

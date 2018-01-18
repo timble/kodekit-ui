@@ -99,6 +99,7 @@
          * Sidebar toggle
          *
          * Toggleable sidebar item
+         * Not needed to reload since sidebar will stay
          */
 
         var $sidebarToggle = $('.k-js-sidebar-toggle-item');
@@ -113,6 +114,7 @@
 
         /**
          * Konami
+         * Not needed to reload since we're targeting html element which won't change
          */
 
         new Konami(function() {
@@ -124,24 +126,45 @@
 
         /**
          * Load functions
+         *
+         * Quick function to run all functions
+         * Use on:
+         * - Page load
+         * - AJAX change
+         * - On other DOM changes when needed
          */
 
-        footable();
-        select2();
-        datepicker();
-        modal();
-        tooltip();
+        kodekitUI.loadFunctions = function() {
+
+            /**
+             * Local functions
+             */
+
+            footable();
+            select2();
+            datepicker();
+            modal();
+            tooltip();
+
+            /**
+             * Global kodekitUI functions
+             */
+
+            kodekitUI.tabsScroller();
+            kodekitUI.sidebarToggle();
+            kodekitUI.scopebarToggles();
+            kodekitUI.subcontentToggle();
+            kodekitUI.gallery();
+            kodekitUI.dragger();
+        };
+
 
         /**
-         * Load kodekitUI functions
+         * Run functions DOM loaded
+         * Load "ajaxloading" only once to make sure events are not fire multiple times
          */
 
-        kodekitUI.tabsScroller();
-        kodekitUI.sidebarToggle();
-        kodekitUI.scopebarToggles();
-        kodekitUI.subcontentToggle();
-        kodekitUI.gallery();
-        kodekitUI.dragger();
+        kodekitUI.loadFunctions();
         kodekitUI.ajaxloading();
 
 
@@ -161,11 +184,17 @@
                 // Remove the class when resize is done
                 $('body').removeClass(resizeClass);
 
-                // Run tabs scroll function
-                // @TODO: Move to scroller script itself?
-                kodekitUI.tabsScroller();
-
             }, 200);
+        });
+
+
+        /**
+         * Tab change
+         * Run code on tab change
+         */
+
+        $('a[data-k-toggle="tab"]').on('shown', function (e) {
+            footable();
         });
 
 
@@ -175,32 +204,11 @@
 
         kodekitUI.loaded = function(responseTxt, statusTxt, xhr, pageHead, pageTitle) {
 
-            footable();
-            select2();
-            datepicker();
-            modal();
-            tooltip();
-
-            // Tabs
-            $('a[data-k-toggle="tab"]').on('shown', function (e) {
-                footable();
-                select2();
-                datepicker();
-                modal();
-                tooltip();
-            });
-
-
             /**
-             * (RE)-Load kodekitUI functions
+             * Run functions
              */
 
-            kodekitUI.tabsScroller();
-            kodekitUI.sidebarToggle();
-            kodekitUI.scopebarToggles();
-            kodekitUI.subcontentToggle();
-            kodekitUI.gallery();
-            kodekitUI.dragger();
+            kodekitUI.loadFunctions();
 
 
             /**

@@ -3506,6 +3506,16 @@ body.k-is-resizing {
   min-height: 0;
 }
 
+.k-ui-namespace .k-subcontent__child:not(:only-child) {
+  display: none;
+}
+
+.k-ui-namespace .k-subcontent__child:not(:only-child).k-is-active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .k-ui-namespace .k-button.k-subcontent-toggle {
   position: absolute;
   visibility: hidden;
@@ -5162,15 +5172,15 @@ fieldset[disabled] .k-ui-namespace .k-button--danger.k-has-focus {
   -webkit-backface-visibility: hidden;
 }
 
-.k-ui-namespace .k-card__body:focus, .k-ui-namespace .k-card__body:hover {
+.k-ui-namespace a.k-card__body:focus, .k-ui-namespace a.k-card__body:hover {
   border-color: #bdbdbd;
 }
 
-.k-ui-namespace .k-card__body:focus .k-card__header, .k-ui-namespace .k-card__body:hover .k-card__header {
+.k-ui-namespace a.k-card__body:focus .k-card__header, .k-ui-namespace a.k-card__body:hover .k-card__header {
   border-color: #bdbdbd;
 }
 
-.k-ui-namespace .k-card__body:focus .k-card__footer, .k-ui-namespace .k-card__body:hover .k-card__footer {
+.k-ui-namespace a.k-card__body:focus .k-card__footer, .k-ui-namespace a.k-card__body:hover .k-card__footer {
   border-color: #bdbdbd;
 }
 
@@ -5234,10 +5244,6 @@ fieldset[disabled] .k-ui-namespace .k-button--danger.k-has-focus {
   padding-top: 7px;
 }
 
-.k-ui-namespace .k-card__header:focus, .k-ui-namespace .k-card__header:hover {
-  border-color: #bdbdbd;
-}
-
 .k-ui-namespace .k-card__section {
   position: relative;
   z-index: 1;
@@ -5274,10 +5280,6 @@ fieldset[disabled] .k-ui-namespace .k-button--danger.k-has-focus {
 
 .k-ui-namespace .k-card__footer:not(:last-child) {
   border-bottom: 1px solid gainsboro;
-}
-
-.k-ui-namespace .k-card__footer:focus, .k-ui-namespace .k-card__footer:hover {
-  border-color: #bdbdbd;
 }
 
 .k-ui-namespace .k-card__caption {
@@ -9751,7 +9753,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 .k-ui-namespace .k-toolbar [class^="k-icon"] {
   display: inline-block;
-  margin: 0 0.25em 0 0.1em;
 }
 
 @media screen and (min-width: 0) and (max-width: 768px) {
@@ -9763,6 +9764,10 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
     font-size: 17px;
     line-height: 17px;
   }
+}
+
+.k-ui-namespace .k-toolbar [class^="k-icon"]:first-child {
+  margin: 0 0.25em 0 0.1em;
 }
 
 [dir="rtl"] .k-ui-namespace .k-toolbar [class^="k-icon"] {

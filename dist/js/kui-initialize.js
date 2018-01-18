@@ -33,9 +33,9 @@ function eraseCookie(name) {
     createCookie(name,"",-1);
 }
 
-// Middlepane code
-var kodekitUI = {};
+var kodekitUI = {}; // global variable
 
+// Set CSS
 kodekitUI.setCSS = function(width) {
     // Get style element
     var style = document.querySelector('[data-type]', 'middlepanewidth');
