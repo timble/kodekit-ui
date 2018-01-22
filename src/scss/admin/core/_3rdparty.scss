@@ -1,19 +1,27 @@
-/* ==========================================================================
-   3rd party
-   ========================================================================== */
+// ==========================================================================
+// 3rd party
+// ==========================================================================
 
-/* Untouched files
-   ========================================================================== */
-
-@import "../../../../node_modules/select2/src/scss/core";
-@import "../../../../node_modules/select2-bootstrap-theme/src/select2-bootstrap";
-
-
-/* Modifications
-   ========================================================================== */
+// Modified files
+// ==========================================================================
 
 @import "../3rdparty/footable";
 @import "../3rdparty/jqtree";
 @import "../3rdparty/magnific";
 @import "../3rdparty/select2";
 @import "../3rdparty/datepicker";
+
+
+// Untouched files
+// ==========================================================================
+
+%select2extender {
+  @import "../../../../node_modules/select2/src/scss/core";
+  @import "../../../../node_modules/select2-bootstrap-theme/src/select2-bootstrap";
+}
+
+html {
+  @if ($k-molecules == true and $k-molecule-select2 != false) or $k-molecule-select2 == true {
+    @extend %select2extender;
+  }
+}

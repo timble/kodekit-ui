@@ -1,15 +1,17 @@
-.k-flag-object {
-  display: flex;
-}
-
-.k-flag-object__aside {
-  flex-shrink: 0;
-
-  + .k-flag-object__body {
-    padding-left: 1em;
+@if ($k-utilities == true and $k-utility-flag-object != false) or $k-utility-flag-object == true {
+  .k-flag-object {
+    display: flex;
   }
-}
 
-.k-flag-object__body {
-  flex-grow: 1;
+  .k-flag-object__aside {
+    flex-shrink: 0;
+
+    + .k-flag-object__body {
+      padding-left: 1em;
+    }
+  }
+
+  .k-flag-object__body {
+    flex-grow: 1;
+  }
 }

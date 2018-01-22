@@ -1,6 +1,7 @@
 @if ($k-layout == true and $k-layout-top != false) or $k-layout-top == true {
 
-  /* Top container */
+  /* Top container
+     ========================================================================== */
 
   .k-top-container {
     background: $k-top-container-background;
@@ -14,6 +15,7 @@
     }
   }
 
+
   /* Top logo */
 
   .k-top-container__logo {
@@ -23,40 +25,43 @@
       display: inline-block;
       vertical-align: middle;
       width: auto;
-      color: inherit;
     }
 
     a {
-      padding: $k-top-container-spacing;
-      text-decoration: none;
-      font-size: $k-top-container-font-size;
-      font-weight: $k-bold-font-weight;
-      line-height: $k-top-container-line-height;
+      padding: $k-top-container-logo-spacing;
+      font-size: $k-top-container-logo-font-size;
+      font-weight: $k-top-container-logo-font-weight;
+      line-height: $k-top-container-logo-line-height;
+      text-decoration: $k-top-container-logo-text-decoration;
+      color: inherit;
 
       &:focus,
       &:hover {
         background: darker($k-top-container-background);
+        text-decoration: $k-top-container-logo-hover-text-decoration;
         color: inherit;
       }
     }
 
     img {
-      max-height: $k-top-container-size - ($k-top-container-spacing * 2);
+      max-height: $k-top-container-size - ($k-top-container-logo-spacing * 2);
     }
   }
 
-  /* Menu nav */
+
+  /* Top navigation */
 
   .k-top-container__navigation {
     position: absolute;
     top: $k-top-container-size;
     right: 0;
     bottom: 0;
-    width: $k-top-container-width;
+    width: $k-top-container-navigation-width;
     display: none;
     background: $k-top-container-background;
     overflow: auto;
-    box-shadow: $k-top-container-box-shadow;
+    box-shadow: $k-top-container-navigation-box-shadow;
+
 
     /* On desktop */
 
@@ -71,6 +76,7 @@
       flex: 1 1 auto;
     }
 
+
     /* First level */
 
     ul {
@@ -78,34 +84,6 @@
       margin: 0;
       padding: 0;
       flex: 0 0 auto;
-    }
-
-    .k-navigation-right {
-      @include breakpoint($k-top-container-breakpoint) {
-        float: right;
-        margin-left: auto;
-
-        li ul {
-          @include breakpoint($k-top-container-breakpoint) {
-            left: auto;
-            right: 0;
-          }
-        }
-
-        li li ul {
-          @include breakpoint($k-top-container-breakpoint) {
-            left: auto;
-            right: 100%;
-          }
-        }
-      }
-
-      @include rtl {
-        @include breakpoint($k-top-container-breakpoint) {
-          float: left;
-          margin-right: auto;
-        }
-      }
     }
 
     li {
@@ -155,19 +133,6 @@
           background: darker($k-top-container-background);
         }
 
-        // Basic fallback for parent items
-        &:not(:only-child) {
-          &:after {
-            display: inline-block;
-            content: " ";
-            border-top: 4px solid;
-            border-right: 4px solid transparent;
-            border-bottom: 2px solid transparent;
-            border-left: 4px solid transparent;
-            margin-left: 8px;
-          }
-        }
-
         @include breakpoint($k-top-container-breakpoint) {
           height: $k-top-container-size;
           border-bottom: none;
@@ -178,7 +143,25 @@
         @include breakpoint($k-delta) {
           padding: $k-top-container-navigation-item-delta-spacing;
         }
+
+
+        /* Basic fallback for parent items */
+
+        @if $k-top-container-navigation-item-level1-parent-arrow == true {
+          &:not(:only-child) {
+            &:after {
+              display: inline-block;
+              content: " ";
+              border-top: 4px solid;
+              border-right: 4px solid transparent;
+              border-bottom: 2px solid transparent;
+              border-left: 4px solid transparent;
+              margin-left: 8px;
+            }
+          }
+        }
       }
+
 
       /* Second level */
 
@@ -239,17 +222,20 @@
             color: $k-top-container-background;
           }
 
-          // Basic fallback for parent items
-          &:not(:only-child) {
-            &:after {
-              position: absolute;
-              top: 50%;
-              right: 8px;
-              border-top: 4px solid transparent;
-              border-right: none;
-              border-bottom: 4px solid transparent;
-              border-left: 4px solid;
-              margin-top: -4px;
+          /* Basic fallback for parent items */
+
+          @if $k-top-container-navigation-item-level1-parent-arrow == true {
+            &:not(:only-child) {
+              &:after {
+                position: absolute;
+                top: 50%;
+                right: 8px;
+                border-top: 4px solid transparent;
+                border-right: none;
+                border-bottom: 4px solid transparent;
+                border-left: 4px solid;
+                margin-top: -4px;
+              }
             }
           }
         }
@@ -259,7 +245,39 @@
         display: block;
       }
     }
+
+
+    /* Right aligned navigation */
+
+    .k-navigation-right {
+      @include breakpoint($k-top-container-breakpoint) {
+        float: right;
+        margin-left: auto;
+
+        li ul {
+          @include breakpoint($k-top-container-breakpoint) {
+            left: auto;
+            right: 0;
+          }
+        }
+
+        li li ul {
+          @include breakpoint($k-top-container-breakpoint) {
+            left: auto;
+            right: 100%;
+          }
+        }
+      }
+
+      @include rtl {
+        @include breakpoint($k-top-container-breakpoint) {
+          float: left;
+          margin-right: auto;
+        }
+      }
+    }
   }
+
 
   /* Mobile settings */
 
@@ -283,7 +301,7 @@
 
   &#{$k-top-menu-show-class} {
     .k-wrapper {
-      transform: translateX(-276px);
+      transform: translateX(-($k-top-container-navigation-width));
 
       @include breakpoint($k-top-container-breakpoint) {
         transform: translateX(0);
@@ -298,6 +316,7 @@
       }
     }
   }
+
 
   /* Toggler */
 

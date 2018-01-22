@@ -9,22 +9,28 @@ $k-generated:                   true !default;
 $k-generated-icons:             inherit !default;
 
 $k-utilities:                   true !default;
+$k-utility-align:               inherit !default;
 $k-utility-colors:              inherit !default;
 $k-utility-animations:          inherit !default;
 $k-utility-content-block:       inherit !default;
 $k-utility-coverall:            inherit !default;
 $k-utility-dynamic-holder:      inherit !default;
 $k-utility-ellipsis:            inherit !default;
+$k-utility-flag-object:         inherit !default;
 $k-utility-flexing:             inherit !default;
 $k-utility-hidden:              inherit !default;
 $k-utility-loader:              inherit !default;
 $k-utility-no-margin:           inherit !default;
+$k-utility-no-padding:          inherit !default;
 $k-utility-no-transition:       inherit !default;
 $k-utility-no-wrap:             inherit !default;
+$k-utility-overflow:            inherit !default;
 $k-utility-position-relative:   inherit !default;
 $k-utility-ratio-content:       inherit !default;
 $k-utility-this-or-that:        inherit !default;
 $k-utility-touchevents:         inherit !default;
+$k-utility-unavailable:         inherit !default;
+$k-utility-unresponsive:        inherit !default;
 $k-utility-visually-hidden:     inherit !default;
 $k-utility-visually-shown:      inherit !default;
 
@@ -74,6 +80,7 @@ $k-molecule-icons:              inherit !default;
 $k-molecule-list:               inherit !default;
 $k-molecule-login:              inherit !default;
 $k-molecule-modal:              inherit !default;
+$k-molecule-modernizr:          inherit !default;
 $k-molecule-navigation:         inherit !default;
 $k-molecule-optionlist:         inherit !default;
 $k-molecule-pagination:         inherit !default;
@@ -373,14 +380,19 @@ $k-login-box-shadow:            0 6px 0 -4px rgba(0,0,0,.3) !default;
 
 $k-top-container-z-index:                             11 !default;
 $k-top-container-size:                                $k-element-huge-size !default;
-$k-top-container-width:                               276px !default;
-$k-top-container-box-shadow:                          inset 5px 5px 5px rgba(black, 0.1) !default;
 $k-top-container-breakpoint:                          $k-charlie !default;
 $k-top-container-background:                          $k-base-color !default;
 $k-top-container-color:                               $k-base-type-color !default;
-$k-top-container-font-size:                           $k-large-font-size !default;
-$k-top-container-line-height:                         $k-large-line-height !default;
-$k-top-container-spacing:                             $k-small-spacing !default;
+
+$k-top-container-logo-spacing:                        $k-small-spacing !default;
+$k-top-container-logo-font-size:                      $k-large-font-size !default;
+$k-top-container-logo-font-weight:                    $k-bold-font-weight !default;
+$k-top-container-logo-line-height:                    $k-large-line-height !default;
+$k-top-container-logo-text-decoration:                none !default;
+$k-top-container-logo-hover-text-decoration:          none !default;
+
+$k-top-container-navigation-width:                    276px !default;
+$k-top-container-navigation-box-shadow:               inset 5px 5px 5px rgba(black, 0.1) !default;
 
 $k-top-container-navigation-item-disabled-class:      $k-disabled-class !default;
 $k-top-container-navigation-item-line-height:         $k-element-large-size !default;
@@ -389,6 +401,9 @@ $k-top-container-navigation-item-spacing:             0 $k-spacing !default;
 $k-top-container-navigation-item-breakpoint-spacing:  0 $k-small-spacing !default;
 $k-top-container-navigation-item-delta-spacing:       0 $k-small-spacing !default;
 $k-top-container-navigation-item-open-submenu-class:  '.has-open-submenu' !default;
+
+$k-top-container-navigation-item-level1-parent-arrow: true !default;
+$k-top-container-navigation-item-level2-parent-arrow: true !default;
 
 
 // Content

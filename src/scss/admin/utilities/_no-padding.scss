@@ -1,0 +1,35 @@
+@if ($k-utilities == true and $k-utility-no-padding != false) or $k-utility-no-paddingn == true {
+
+  /* Remove padding */
+
+  .k-no-padding.k-no-padding.k-no-padding {
+    padding: 0;
+  }
+
+  .k-no-horizontal-padding.k-no-horizontal-padding.k-no-horizontal-padding {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .k-no-vertical-padding.k-no-vertical-padding.k-no-vertical-padding {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .k-no-padding-top.k-no-padding-top.k-no-padding-top {
+    padding-top: 0;
+  }
+
+  .k-no-padding-right.k-no-padding-right.k-no-padding-right {
+    padding-right: 0;
+  }
+
+  .k-no-padding-bottom.k-no-padding-bottom.k-no-padding-bottom {
+    padding-bottom: 0;
+  }
+
+  .k-no-padding-left.k-no-padding-left.k-no-padding-left {
+    padding-left: 0;
+  }
+
+}

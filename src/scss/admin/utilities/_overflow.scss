@@ -1,0 +1,15 @@
+@if ($k-utilities == true and $k-utility-overflow != false) or $k-utility-overflow == true {
+
+  /* Overflow */
+
+  .k-overflow.k-overflow.k-overflow {
+    overflow: auto;
+  }
+
+  .k-overflow-hidden.k-overflow-hidden.k-overflow-hidden {
+    overflow: hidden;
+  }
+}
+
+
+
