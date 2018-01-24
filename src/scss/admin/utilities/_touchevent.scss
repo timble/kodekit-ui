@@ -1,4 +1,4 @@
-@if ($k-utilities == true and $k-utility-touchevents != false) or $k-utility-touchevents == true {
+@if ($k-utilities == true and $k-utility-touchevent != false) or $k-utility-touchevent == true {
 
   /**
    * Hide elements for touch enabled devices

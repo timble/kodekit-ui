@@ -209,7 +209,6 @@ module.exports = function(grunt) {
                         '<%= srcPath %>/js/kquery.unset.js'
                     ],
                     '<%= distPath %>/js/kui-initialize.js': [
-                        '<%= srcPath %>/js/ui.cookies.js',
                         '<%= srcPath %>/js/ui.initialize.js'
                     ]
                 }

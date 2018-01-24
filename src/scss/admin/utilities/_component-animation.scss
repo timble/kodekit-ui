@@ -1,4 +1,4 @@
-@if ($k-utilities == true and $k-utility-animations != false) or $k-utility-animations == true {
+@if ($k-utilities == true and $k-utility-animation != false) or $k-utility-animation == true {
 
   /**
    * Component animations
@@ -8,6 +8,8 @@
    * We don't use the `.opacity()` mixin here since it causes a bug with text
    * fields in IE7-8. Source: https://github.com/twbs/bootstrap/pull/3552.
    */
+
+  // @TODO: Do we still need this?
 
   .fade {
     opacity: 0;

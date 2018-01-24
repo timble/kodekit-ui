@@ -12,9 +12,19 @@
             if ( $gallery.length ) {
 
                 // variables
-                var galleryMaxWidth = 240,
+                var galleryMaxWidth = $gallery.attr('data-maxwidth') || 240,
                     supportsGrid = CSS.supports('display', 'grid'),
                     galleryEventTimeout;
+
+                // Set width for gallery items
+                $gallery.find('.k-gallery__items').each(function() {
+                    kodekitUI.createCookie("kodekitUI.gallerywidth", galleryMaxWidth);
+                    kodekitUI.setCSS(
+                        '.k-ui-namespace .k-gallery__items {' +
+                            'grid-template-columns: repeat(auto-fill, minmax('+galleryMaxWidth+'px, 1fr))' +
+                        '}'
+                    );
+                });
 
                 // Throttle window resize function for better performance
                 var resizeThrottler = function() {

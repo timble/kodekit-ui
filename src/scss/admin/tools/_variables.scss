@@ -6,12 +6,13 @@
 // Enable individual molecules by setting `$k-molecules: false` and `$k-molecule-alert: true' for example
 
 $k-generated:                   true !default;
-$k-generated-icons:             inherit !default;
+$k-generated-icon:              inherit !default;
 
 $k-utilities:                   true !default;
 $k-utility-align:               inherit !default;
-$k-utility-colors:              inherit !default;
-$k-utility-animations:          inherit !default;
+$k-utility-background:          inherit !default;
+$k-utility-color:               inherit !default;
+$k-utility-animation:           inherit !default;
 $k-utility-content-block:       inherit !default;
 $k-utility-coverall:            inherit !default;
 $k-utility-dynamic-holder:      inherit !default;
@@ -28,7 +29,7 @@ $k-utility-overflow:            inherit !default;
 $k-utility-position-relative:   inherit !default;
 $k-utility-ratio-content:       inherit !default;
 $k-utility-this-or-that:        inherit !default;
-$k-utility-touchevents:         inherit !default;
+$k-utility-touchevent:          inherit !default;
 $k-utility-unavailable:         inherit !default;
 $k-utility-unresponsive:        inherit !default;
 $k-utility-visually-hidden:     inherit !default;
@@ -65,18 +66,18 @@ $k-atom-ul-ol-li:               inherit !default;
 $k-molecules:                   true !default;
 $k-molecule-alert:              inherit !default;
 $k-molecule-breadcrumb:         inherit !default;
-$k-molecule-buttons:            inherit !default;
+$k-molecule-button:             inherit !default;
 $k-molecule-card:               inherit !default;
 $k-molecule-ckeditor:           inherit !default;
 $k-molecule-datepicker:         inherit !default;
-$k-molecule-dropdowns:          inherit !default;
+$k-molecule-dropdown:           inherit !default;
 $k-molecule-empty-state:        inherit !default;
 $k-molecule-form-block:         inherit !default;
-$k-molecule-forms:              inherit !default;
+$k-molecule-form:               inherit !default;
 $k-molecule-gallery:            inherit !default;
 $k-molecule-hamburger:          inherit !default;
 $k-molecule-heading:            inherit !default;
-$k-molecule-icons:              inherit !default;
+$k-molecule-icon:               inherit !default;
 $k-molecule-list:               inherit !default;
 $k-molecule-login:              inherit !default;
 $k-molecule-modal:              inherit !default;
@@ -90,12 +91,12 @@ $k-molecule-select2:            inherit !default;
 $k-molecule-sidebar-item:       inherit !default;
 $k-molecule-styled-file-input:  inherit !default;
 $k-molecule-table:              inherit !default;
-$k-molecule-tabs:               inherit !default;
+$k-molecule-tab:                inherit !default;
 $k-molecule-title-bar:          inherit !default;
 $k-molecule-toolbar:            inherit !default;
 $k-molecule-tooltip:            inherit !default;
 $k-molecule-tree:               inherit !default;
-$k-molecule-wells:              inherit !default;
+$k-molecule-well:               inherit !default;
 
 
 // Breakpoints
@@ -176,6 +177,8 @@ $k-extrasmall-horizontal-spacing:   8px !default;
 
 $k-large-vertical-spacing:          8px !default;
 $k-large-horizontal-spacing:        16px !default;
+
+$k-flexbox-spacing:                 $k-spacing !default;
 
 
 // Unit

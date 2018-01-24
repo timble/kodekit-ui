@@ -16458,6 +16458,7 @@ var Konami = function (callback) {
 
     return konami;
 };
+
 /*
 	By Osvaldas Valutis, www.osvaldas.info
 	Available for use under the MIT License
@@ -17019,6 +17020,7 @@ var Konami = function (callback) {
 
             var ajaxLink = $('[data-ajax-target]');
             if ( ajaxLink.length ) {
+
                 $('.k-ui-container').on('click', ajaxLink, function(event) {
 
                     // Variables
@@ -17029,45 +17031,56 @@ var Konami = function (callback) {
 
                     if ( !ajaxTarget ) return;
 
+                    console.log('ui.ajaxloading.onclick');
+
                     event.preventDefault();
                     event.stopPropagation();
 
+                    // Find the 'active' element
                     var getActiveElement = function(element) {
                         for ( ; element && element !== document; element = element.parentNode ) {
                             if ( $(element).parent().find('.'+activeClass).length ) return element;
                         }
                         return null;
                     };
-
                     var $activeElement = getActiveElement($target);
 
+                    // Remove class from siblings and add class to current item
                     $($activeElement).parent().children('.'+activeClass).removeClass(activeClass);
                     $($activeElement).addClass(activeClass);
 
                     // Load
-                    // <script> will get stripped from content
-                    setTimeout(function() {
-                        $('#'+ajaxTarget).load(href + ' #'+ajaxTarget+' > :first-child', function(responseTxt, statusTxt, xhr) {
-                            if(statusTxt == "success") {
+                    // warning: <script> will get stripped from content
+                    $('#'+ajaxTarget).load(href + ' #'+ajaxTarget+' > :first-child', function(responseTxt, statusTxt, xhr) {
 
-                                // Trigger close sidebar click when changing menu items
-                                if ( $('.k-js-wrapper').hasClass('k-show-left-menu') ) {
-                                    $('.k-off-canvas-toggle--left').trigger('click');
-                                }
+                        console.log('ui.ajaxloading.setTimeout');
 
-                                // Flat text page value
-                                var pageHead = responseTxt.split('<head>')[1].split('</head>')[0],
-                                    pageTitle = pageHead.split('<title>')[1].split('</title>')[0];
+                        // Success
+                        if(statusTxt == "success") {
 
-                                // Trigger loaded code
-                                kodekitUI.loaded(responseTxt, statusTxt, xhr, pageHead, pageTitle);
+                            console.log('ui.ajaxloading.success');
 
+                            // Trigger close sidebar click when changing menu items
+                            if ( $('.k-js-wrapper').hasClass('k-show-left-menu') ) {
+                                console.log('ui.ajaxloading.toggleclick');
+                                $('.k-off-canvas-toggle--left').trigger('click');
                             }
-                            if(statusTxt == "error") {
-                                console.error("Error: " + xhr.status + ": " + xhr.statusText);
-                            }
-                        });
-                    }, 200);
+
+                            // Flat text page values
+                            var pageHead = responseTxt.split('<head>')[1].split('</head>')[0],
+                                pageTitle = pageHead.split('<title>')[1].split('</title>')[0];
+
+                            // Trigger loaded code
+                            kodekitUI.loaded(responseTxt, statusTxt, xhr, pageHead, pageTitle);
+
+                        }
+
+                        // Error
+                        if(statusTxt == "error") {
+                            console.error("Error: " + xhr.status + ": " + xhr.statusText);
+                        }
+
+                    });
 
                 });
 
@@ -17088,6 +17101,7 @@ var Konami = function (callback) {
     $(document).ready(function () {
 
         kodekitUI.dragger = function() {
+
             var middlepane = document.querySelector(".k-js-middlepane");
             if (middlepane !== null && document.querySelector('.k-pane-resizer') == undefined) {
                 var middlepaneResizer = document.createElement("div");
@@ -17105,7 +17119,7 @@ var Konami = function (callback) {
             }
 
             function doDrag(e) {
-                document.getElementsByClassName('k-ui-container')[0].classList.add("is-unresponsive");
+                document.getElementsByClassName('k-ui-container')[0].classList.add("k-is-unresponsive");
                 newWidth = (startWidth + e.clientX - startW);
                 if ((startWidth + e.clientX - startW) <= 221) {
                     newWidth = 221;
@@ -17118,7 +17132,7 @@ var Konami = function (callback) {
             function stopDrag(e) {
                 document.documentElement.removeEventListener("mousemove", doDrag, false);
                 document.documentElement.removeEventListener("mouseup", stopDrag, false);
-                document.getElementsByClassName('k-ui-container')[0].classList.remove("is-unresponsive");
+                document.getElementsByClassName('k-ui-container')[0].classList.remove("k-is-unresponsive");
                 middlepane.removeAttribute('style');
 
                 var width = startWidth + e.clientX - startW;
@@ -17126,8 +17140,16 @@ var Konami = function (callback) {
                     width = 221;
                 }
 
-                createCookie("middlepanewidth", width, 30);
-                kodekitUI.setCSS(width);
+                kodekitUI.createCookie("kodekitUI.middlepanewidth", width);
+                kodekitUI.setCSS(
+                    '@media screen and (min-width: 1024px) {' +
+                    '.k-ui-container .k-content:not(:only-child) {' +
+                    'min-width:'+width+'px;' +
+                    'width:'+width+'px;' +
+                    'max-width:'+width+'px;' +
+                    '}' +
+                    '}'
+                );
                 window.dispatchEvent(new Event('resize'));
             }
         };
@@ -17150,9 +17172,19 @@ var Konami = function (callback) {
             if ( $gallery.length ) {
 
                 // variables
-                var galleryMaxWidth = 240,
+                var galleryMaxWidth = $gallery.attr('data-maxwidth') || 240,
                     supportsGrid = CSS.supports('display', 'grid'),
                     galleryEventTimeout;
+
+                // Set width for gallery items
+                $gallery.find('.k-gallery__items').each(function() {
+                    kodekitUI.createCookie("kodekitUI.gallerywidth", galleryMaxWidth);
+                    kodekitUI.setCSS(
+                        '.k-ui-namespace .k-gallery__items {' +
+                            'grid-template-columns: repeat(auto-fill, minmax('+galleryMaxWidth+'px, 1fr))' +
+                        '}'
+                    );
+                });
 
                 // Throttle window resize function for better performance
                 var resizeThrottler = function() {
@@ -17759,7 +17791,7 @@ var Konami = function (callback) {
                         setTimeout(function() {
                             scrollToTab($scroller.find('.k-is-active a'));
                         }, tabsAnimationSpeed);
-                    }, 250);
+                    }, 200);
 
                     // When clicking tabs
                     $tabs.on('click', 'li a', function() {

@@ -1,4 +1,4 @@
-@if ($k-generated == true and $k-generated-icons != false) or $k-generated-icons == true {
+@if ($k-generated == true and $k-generated-icon != false) or $k-generated-icon == true {
 
   /* Custom icon font
      ========================================================================== */
@@ -360,7 +360,7 @@ $icons: (
   }
 }
 
-@if ($k-generated == true and $k-generated-icons != false) or $k-generated-icons == true {
+@if ($k-generated == true and $k-generated-icon != false) or $k-generated-icon == true {
   /**
    * Icon classes
    *

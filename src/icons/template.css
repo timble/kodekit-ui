@@ -1,4 +1,4 @@
-@if ($k-generated == true and $k-generated-icons != false) or $k-generated-icons == true {
+@if ($k-generated == true and $k-generated-icon != false) or $k-generated-icon == true {
 
   /* Custom icon font
      ========================================================================== */
@@ -119,7 +119,7 @@ $icons: (<% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { %>
   }
 }
 
-@if ($k-generated == true and $k-generated-icons != false) or $k-generated-icons == true {
+@if ($k-generated == true and $k-generated-icon != false) or $k-generated-icon == true {
   /**
    * Icon classes
    *

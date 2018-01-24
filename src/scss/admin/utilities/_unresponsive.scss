@@ -1,8 +1,16 @@
 @if ($k-utilities == true and $k-utility-unresponsive != false) or $k-utility-unresponsive == true {
 
-  /* When dragging make sure nothing gets selected */
 
-  &.is-unresponsive {
+  /**
+   * Unavailable
+   *
+   * When dragging make sure nothing gets selected
+   */
+
+  &.k-unresponsive,
+  &.k-is-unresponsive,
+  .k-unresponsive,
+  .k-is-unresponsive{
     &,
     *:not(.k-pane-resizer) {
       pointer-events: none;

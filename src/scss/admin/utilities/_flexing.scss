@@ -14,18 +14,6 @@
     flex-direction: column;
   }
 
-  .k-flexbox-from-beta.k-flexbox-from-beta.k-flexbox-from-beta {
-    @include breakpoint($k-beta) {
-      display: flex;
-    }
-  }
-
-  .k-flexbox-from-charlie.k-flexbox-from-charlie.k-flexbox-from-charlie {
-    @include breakpoint($k-charlie) {
-      display: flex;
-    }
-  }
-
   .k-dont-flex.k-dont-flex.k-dont-flex {
     flex: 0 0 auto;
   }
@@ -34,15 +22,36 @@
     flex: 1 1 auto;
   }
 
-  .k-do-flex-from-beta.k-do-flex-from-beta.k-do-flex-from-beta {
-    @include breakpoint($k-beta) {
+
+  /* Start at different breakpoints */
+
+  @include breakpoint($k-beta) {
+    .k-flexbox-from-beta.k-flexbox-from-beta.k-flexbox-from-beta {
+      display: flex;
+    }
+    .k-flexbox-column-from-beta.k-flexbox-column-from-beta.k-flexbox-column-from-beta {
+      flex-direction: column;
+    }
+    .k-do-flex-from-beta.k-do-flex-from-beta.k-do-flex-from-beta {
       flex: 1 1 auto;
+    }
+    .k-dont-flex-from-beta.k-dont-flex-from-beta.k-dont-flex-from-beta {
+      flex: 0 0 auto;
     }
   }
 
-  .k-do-flex-from-charlie.k-do-flex-from-charlie.k-do-flex-from-charlie {
-    @include breakpoint($k-charlie) {
+  @include breakpoint($k-charlie) {
+    .k-flexbox-from-charlie.k-flexbox-from-charlie.k-flexbox-from-charlie {
+      display: flex;
+    }
+    .k-flexbox-column-from-charlie.k-flexbox-column-from-charlie.k-flexbox-column-from-charlie {
+      flex-direction: column;
+    }
+    .k-do-flex-from-charlie.k-do-flex-from-charlie.k-do-flex-from-charlie {
       flex: 1 1 auto;
+    }
+    .k-dont-flex-from-charlie.k-dont-flex-from-charlie.k-dont-flex-from-charlie {
+      flex: 0 0 auto;
     }
   }
 }

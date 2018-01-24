@@ -1,0 +1,40 @@
+@if ($k-utilities == true and $k-utility-background != false) or $k-utility-background == true {
+
+  /**
+   * Colors
+   */
+
+  .k-background-type {
+    background: $k-type-color;
+  }
+
+  .k-background-base {
+    background: $k-base-color;
+    color: $k-base-type-color;
+  }
+
+  .k-background-accent {
+    background: $k-accent-color;
+    color: $k-accent-type-color;
+  }
+
+  .k-background-success {
+    background: $k-success-color;
+    color: $k-success-type-color;
+  }
+
+  .k-background-neutral {
+    background: $k-neutral-color;
+    color: $k-neutral-type-color;
+  }
+
+  .k-background-warning {
+    background: $k-warning-color;
+    color: $k-warning-type-color;
+  }
+
+  .k-background-error {
+    background: $k-error-color;
+    color: $k-error-type-color;
+  }
+}

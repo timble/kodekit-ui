@@ -1957,10 +1957,6 @@ body.k-is-resizing {
   /* Dropdown grid */
   /* Empty state
      ========================================================================== */
-  /* Form block
-     ========================================================================== */
-  /* The header */
-  /* The content */
   /* Forms
      ========================================================================== */
   /**
@@ -2070,6 +2066,10 @@ body.k-is-resizing {
   /* Form row group */
   /* Form row */
   /* Form field info */
+  /* Form block
+     ========================================================================== */
+  /* The header */
+  /* The content */
   /* Gallery
      ========================================================================== */
   /* Set widths */
@@ -2287,6 +2287,12 @@ body.k-is-resizing {
      ========================================================================== */
   /* Wells content */
   /* Wells tabs */
+  /* Align left */
+  /* Align center */
+  /* Align right */
+  /**
+   * Colors
+   */
   /**
    * Colors
    */
@@ -2303,6 +2309,7 @@ body.k-is-resizing {
    *
    * Element with a bottom margin except when item itself is a last-child
    */
+  /* Top margin except for first-child */
   /**
    * "Cover all" link
    *
@@ -2323,10 +2330,14 @@ body.k-is-resizing {
    * Text overflow
    */
   /**
+   * Flag object
+   */
+  /**
    * Flexing boxes
    *
    * DO or don't flexing children. USeful inside flexing containers on elemtns that have no pre-defined styling for flexbox
    */
+  /* Start at different breakpoints */
   /**
    * Hidden
    * Hide content in a non-accessible way. Content is hidden for everybody including screenreaders
@@ -2356,9 +2367,21 @@ body.k-is-resizing {
     */
   /* Overflow */
   /**
+   * Static positioned element
+   */
+  /**
    * Relative positioned element
+   */
+  /**
+   * Absolute positioned element
+   */
+  /**
+   * Fixed positioned element
+   */
+  /**
+   * Sticky positioned element
    *
-   * Could be useful to add to parnet sof absolutely positioned items
+   * Has top: 0; to ensure sticky works
    */
   /**
    * Ratio content
@@ -2371,7 +2394,14 @@ body.k-is-resizing {
   /**
    * Hide elements for touch enabled devices
    */
-  /* When dragging make sure nothing gets selected */
+  /**
+   * Unavailable
+   */
+  /**
+   * Unavailable
+   *
+   * When dragging make sure nothing gets selected
+   */
   /**
    * Visually hidden
    *
@@ -5568,27 +5598,6 @@ fieldset[disabled] .k-ui-namespace .k-button--danger.k-has-focus {
   margin-bottom: 0;
 }
 
-.k-ui-namespace .k-form-block {
-  background: white;
-  border: 1px solid #e0e0e0;
-  margin-bottom: 16px;
-}
-
-.k-ui-namespace .k-form-block:last-child {
-  margin-bottom: 0;
-}
-
-.k-ui-namespace .k-form-block__header {
-  border-bottom: 1px solid #d4d4d4;
-  padding: 8px 8px 7px;
-  background: #f3f3f3;
-  font-weight: 700;
-}
-
-.k-ui-namespace .k-form-block__content {
-  padding: 7px 8px;
-}
-
 .k-ui-namespace .k-form-control {
   display: block;
   width: 100%;
@@ -6413,6 +6422,27 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   margin-bottom: 0;
 }
 
+.k-ui-namespace .k-form-block {
+  background: white;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 16px;
+}
+
+.k-ui-namespace .k-form-block:last-child {
+  margin-bottom: 0;
+}
+
+.k-ui-namespace .k-form-block__header {
+  border-bottom: 1px solid #d4d4d4;
+  padding: 8px 8px 7px;
+  background: #f3f3f3;
+  font-weight: 700;
+}
+
+.k-ui-namespace .k-form-block__content {
+  padding: 7px 8px;
+}
+
 .k-ui-namespace .k-gallery-container {
   padding: 8.5px;
   margin-bottom: 16px;
@@ -6447,7 +6477,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 @supports (display: grid) {
   .k-ui-namespace .k-gallery__items {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(223px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   }
 }
 
@@ -9915,20 +9945,21 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   border-radius: 0 0 4px 4px;
 }
 
-.k-ui-namespace .align-left {
+.k-ui-namespace .k-align-left {
   text-align: left;
   -ms-flex-item-align: start;
       align-self: flex-start;
   margin-right: auto;
+  /* RTL */
 }
 
-[dir="rtl"] .k-ui-namespace .align-left {
+[dir="rtl"] .k-ui-namespace .k-align-left {
   text-align: right;
   margin-right: 0;
   margin-left: auto;
 }
 
-.k-ui-namespace .align-center {
+.k-ui-namespace .k-align-center {
   text-align: center;
   -ms-flex-item-align: center;
       align-self: center;
@@ -9936,17 +9967,76 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   margin-right: auto;
 }
 
-.k-ui-namespace .align-right {
+.k-ui-namespace .k-align-right {
   text-align: right;
   -ms-flex-item-align: end;
       align-self: flex-end;
   margin-left: auto;
+  /* RTL */
 }
 
-[dir="rtl"] .k-ui-namespace .align-right {
+[dir="rtl"] .k-ui-namespace .k-align-right {
   text-align: left;
   margin-left: 0;
   margin-right: auto;
+}
+
+.k-ui-namespace .k-background-type {
+  background: #222222;
+}
+
+.k-ui-namespace .k-background-base {
+  background: #2c3e50;
+  color: white;
+}
+
+.k-ui-namespace .k-background-accent {
+  background: #3071a9;
+  color: white;
+}
+
+.k-ui-namespace .k-background-success {
+  background: #27ae60;
+  color: white;
+}
+
+.k-ui-namespace .k-background-neutral {
+  background: #3498db;
+  color: white;
+}
+
+.k-ui-namespace .k-background-warning {
+  background: #e67e22;
+  color: white;
+}
+
+.k-ui-namespace .k-background-error {
+  background: #c0392b;
+  color: white;
+}
+
+.k-ui-namespace .k-color-type {
+  color: #222222;
+}
+
+.k-ui-namespace .k-color-base {
+  color: #2c3e50;
+}
+
+.k-ui-namespace .k-color-accent {
+  color: #3071a9;
+}
+
+.k-ui-namespace .k-color-success {
+  color: #27ae60;
+}
+
+.k-ui-namespace .k-color-neutral {
+  color: #3498db;
+}
+
+.k-ui-namespace .k-color-warning {
+  color: #e67e22;
 }
 
 .k-ui-namespace .k-color-error {
@@ -10068,13 +10158,17 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-flag-object__aside + .k-flag-object__body {
-  padding-left: 1em;
+  padding-left: 16px;
 }
 
 .k-ui-namespace .k-flag-object__body {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+}
+
+.k-ui-namespace .k-flag-object__body + .k-flag-object__aside {
+  padding-left: 16px;
 }
 
 .k-ui-namespace .k-flexbox.k-flexbox.k-flexbox {
@@ -10090,22 +10184,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
           flex-direction: column;
 }
 
-@media screen and (min-width: 600px) {
-  .k-ui-namespace .k-flexbox-from-beta.k-flexbox-from-beta.k-flexbox-from-beta {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .k-ui-namespace .k-flexbox-from-charlie.k-flexbox-from-charlie.k-flexbox-from-charlie {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
 .k-ui-namespace .k-dont-flex.k-dont-flex.k-dont-flex {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
@@ -10119,18 +10197,50 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 @media screen and (min-width: 600px) {
+  .k-ui-namespace .k-flexbox-from-beta.k-flexbox-from-beta.k-flexbox-from-beta {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .k-ui-namespace .k-flexbox-column-from-beta.k-flexbox-column-from-beta.k-flexbox-column-from-beta {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
   .k-ui-namespace .k-do-flex-from-beta.k-do-flex-from-beta.k-do-flex-from-beta {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 auto;
             flex: 1 1 auto;
   }
+  .k-ui-namespace .k-dont-flex-from-beta.k-dont-flex-from-beta.k-dont-flex-from-beta {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+  }
 }
 
 @media screen and (min-width: 768px) {
+  .k-ui-namespace .k-flexbox-from-charlie.k-flexbox-from-charlie.k-flexbox-from-charlie {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .k-ui-namespace .k-flexbox-column-from-charlie.k-flexbox-column-from-charlie.k-flexbox-column-from-charlie {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
   .k-ui-namespace .k-do-flex-from-charlie.k-do-flex-from-charlie.k-do-flex-from-charlie {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 auto;
             flex: 1 1 auto;
+  }
+  .k-ui-namespace .k-dont-flex-from-charlie.k-dont-flex-from-charlie.k-dont-flex-from-charlie {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
   }
 }
 
@@ -10245,12 +10355,12 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   margin: 0;
 }
 
-.k-ui-namespace .k-no-horizontal-margin.k-no-horizontal-margin.k-no-horizontal-margin {
+.k-ui-namespace .k-no-margin-horizontal.k-no-margin-horizontal.k-no-margin-horizontal {
   margin-right: 0;
   margin-left: 0;
 }
 
-.k-ui-namespace .k-no-vertical-margin.k-no-vertical-margin.k-no-vertical-margin {
+.k-ui-namespace .k-no-margin-vertical.k-no-margin-vertical.k-no-margin-vertical {
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -10287,8 +10397,26 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   overflow: hidden;
 }
 
+.k-ui-namespace .k-position-static {
+  position: static;
+}
+
 .k-ui-namespace .k-position-relative {
   position: relative;
+}
+
+.k-ui-namespace .k-position-absolute {
+  position: absolute;
+}
+
+.k-ui-namespace .k-position-fixed {
+  position: fixed;
+}
+
+.k-ui-namespace .k-position-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 .k-ui-namespace .k-ratio-block {
@@ -10414,8 +10542,8 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   display: none !important;
 }
 
-.k-ui-namespace .unavalaible,
-.k-ui-namespace .uninstalled {
+.k-ui-namespace .k-unavailable,
+.k-ui-namespace .k-is-unavailable {
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
   opacity: 0.5;
@@ -10423,8 +10551,13 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   cursor: no-drop;
 }
 
-.k-ui-namespace.is-unresponsive,
-.k-ui-namespace.is-unresponsive *:not(.k-pane-resizer) {
+.k-ui-namespace.k-unresponsive,
+.k-ui-namespace.k-unresponsive *:not(.k-pane-resizer), .k-ui-namespace.k-is-unresponsive,
+.k-ui-namespace.k-is-unresponsive *:not(.k-pane-resizer),
+.k-ui-namespace .k-unresponsive,
+.k-ui-namespace .k-unresponsive *:not(.k-pane-resizer),
+.k-ui-namespace .k-is-unresponsive,
+.k-ui-namespace .k-is-unresponsive *:not(.k-pane-resizer) {
   pointer-events: none;
   -webkit-user-select: none;
      -moz-user-select: none;

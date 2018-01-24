@@ -159,7 +159,7 @@
                         setTimeout(function() {
                             scrollToTab($scroller.find('.k-is-active a'));
                         }, tabsAnimationSpeed);
-                    }, 250);
+                    }, 200);
 
                     // When clicking tabs
                     $tabs.on('click', 'li a', function() {

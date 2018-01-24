@@ -66,19 +66,19 @@
 
   // Molecules
 
-  @import "../molecules/alerts";
+  @import "../molecules/alert";
   @import "../molecules/breadcrumb";
-  @import "../molecules/buttons";
+  @import "../molecules/button";
   @import "../molecules/card";
   @import "../molecules/ckeditor";
-  @import "../molecules/dropdowns";
+  @import "../molecules/dropdown";
   @import "../molecules/empty-state";
+  @import "../molecules/form";
   @import "../molecules/form-block";
-  @import "../molecules/forms";
   @import "../molecules/gallery";
   @import "../molecules/hamburger";
   @import "../molecules/heading";
-  @import "../molecules/icons";
+  @import "../molecules/icon";
   @import "../molecules/list";
   @import "../molecules/login";
   @import "../molecules/navigation";
@@ -88,19 +88,20 @@
   @import "../molecules/sidebar-item";
   @import "../molecules/styled-file-input";
   @import "../molecules/table";
-  @import "../molecules/tabs";
+  @import "../molecules/tab";
   @import "../molecules/title-bar";
   @import "../molecules/toolbar";
   @import "../molecules/tooltip";
-  @import "../molecules/wells";
+  @import "../molecules/well";
 
 
   // Utilities
   // Loading last so we have the biggest chance of 'winning' specificity wars without using !important
 
   @import "../utilities/align";
-  @import "../utilities/colors";
-  @import "../utilities/component-animations";
+  @import "../utilities/background";
+  @import "../utilities/color";
+  @import "../utilities/component-animation";
   @import "../utilities/content-block";
   @import "../utilities/coverall";
   @import "../utilities/dynamic-content-holder";
@@ -116,7 +117,7 @@
   @import "../utilities/position-relative";
   @import "../utilities/ratio-content";
   @import "../utilities/this-or-that";
-  @import "../utilities/touchevents";
+  @import "../utilities/touchevent";
   @import "../utilities/unavailable";
   @import "../utilities/unresponsive";
   @import "../utilities/visually-hidden";

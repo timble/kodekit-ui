@@ -7,6 +7,7 @@
     $(document).ready(function () {
 
         kodekitUI.dragger = function() {
+
             var middlepane = document.querySelector(".k-js-middlepane");
             if (middlepane !== null && document.querySelector('.k-pane-resizer') == undefined) {
                 var middlepaneResizer = document.createElement("div");
@@ -24,7 +25,7 @@
             }
 
             function doDrag(e) {
-                document.getElementsByClassName('k-ui-container')[0].classList.add("is-unresponsive");
+                document.getElementsByClassName('k-ui-container')[0].classList.add("k-is-unresponsive");
                 newWidth = (startWidth + e.clientX - startW);
                 if ((startWidth + e.clientX - startW) <= 221) {
                     newWidth = 221;
@@ -37,7 +38,7 @@
             function stopDrag(e) {
                 document.documentElement.removeEventListener("mousemove", doDrag, false);
                 document.documentElement.removeEventListener("mouseup", stopDrag, false);
-                document.getElementsByClassName('k-ui-container')[0].classList.remove("is-unresponsive");
+                document.getElementsByClassName('k-ui-container')[0].classList.remove("k-is-unresponsive");
                 middlepane.removeAttribute('style');
 
                 var width = startWidth + e.clientX - startW;
@@ -45,8 +46,16 @@
                     width = 221;
                 }
 
-                createCookie("middlepanewidth", width, 30);
-                kodekitUI.setCSS(width);
+                kodekitUI.createCookie("kodekitUI.middlepanewidth", width);
+                kodekitUI.setCSS(
+                    '@media screen and (min-width: 1024px) {' +
+                    '.k-ui-container .k-content:not(:only-child) {' +
+                    'min-width:'+width+'px;' +
+                    'width:'+width+'px;' +
+                    'max-width:'+width+'px;' +
+                    '}' +
+                    '}'
+                );
                 window.dispatchEvent(new Event('resize'));
             }
         };
