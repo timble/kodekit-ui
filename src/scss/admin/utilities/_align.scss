@@ -1,14 +1,16 @@
 @if ($k-utilities == true and $k-utility-align != false) or $k-utility-align == true {
 
-  /* Align left */
+  /* Align
+     ========================================================================== */
+
+  /**
+   * Align left
+   */
 
   .k-align-left {
     text-align: left;
     align-self: flex-start;
     margin-right: auto;
-
-
-    /* RTL */
 
     @include rtl {
       text-align: right;
@@ -18,7 +20,9 @@
   }
 
 
-  /* Align center */
+  /**
+   * Align center
+   */
 
   .k-align-center {
     text-align: center;
@@ -28,15 +32,14 @@
   }
 
 
-  /* Align right */
+  /**
+   * Align right
+   */
 
   .k-align-right {
     text-align: right;
     align-self: flex-end;
     margin-left: auto;
-
-
-    /* RTL */
 
     @include rtl {
       text-align: left;

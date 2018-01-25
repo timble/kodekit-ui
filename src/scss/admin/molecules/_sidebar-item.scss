@@ -44,13 +44,17 @@
       }
     }
 
-    /* On mobile */
+
+    /**
+     * On mobile
+     */
 
     &--flex {
       display: flex;
       flex-direction: column;
       max-height: 100%;
     }
+
 
     /**
      * Overflowing items
@@ -68,6 +72,7 @@
       }
     }
   }
+
 
   /**
    * Toggle item
@@ -112,7 +117,10 @@
     }
   }
 
-  /* Sidebar item header */
+
+  /**
+   * Sidebar item header
+   */
 
   .k-sidebar-item__header {
     padding: $k-sidebar-item-spacing $k-sidebar-item-spacing 0;
@@ -122,7 +130,10 @@
     line-height: $k-sidebar-item-header-line-height;
   }
 
-  /* Sidebar item content */
+
+  /**
+   * Sidebar item content
+   */
 
   .k-sidebar-item__content {
     padding: $k-sidebar-item-spacing;

@@ -34,8 +34,6 @@
       max-width: none; /* 2 */
     }
 
-    /* RTL */
-
     @include rtl {
       direction: rtl;
     }

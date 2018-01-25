@@ -35,7 +35,7 @@ html {
    * 1. By using 100% we can work with full-height auto overflowing flexbox pages
    * 2. Remove all spacing
    * 3. Setting up flexbox
-   * 3. Hide overflowing content on resizing to make sure we never get any weird jumping scrollbar issues
+   * 4. Hide overflowing content on resizing to make sure we never get any weird jumping scrollbar issues
    */
 body {
   min-height: 100%;
@@ -46,7 +46,9 @@ body {
   /* 2 */
   margin: 0;
   /* 2 */
-  /* Setup flexbox */
+  /**
+     * Setup flexbox
+     */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -60,7 +62,9 @@ body {
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   /* 3 */
-  /* When resizing */
+  /**
+     * When resizing
+     */
 }
 
 body.k-is-resizing {
@@ -1527,9 +1531,9 @@ body.k-is-resizing {
 }
 
 .k-ui-namespace {
+  /* Box sizing
+     ========================================================================== */
   /**
-   * Box sizing
-   *
    * Border box everything:
    * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
    */
@@ -1731,7 +1735,9 @@ body.k-is-resizing {
    * 1. Set left to the width of the menu so the menu will appear
    * 2. Reset when screen is wide enough
    */
-  /* Set overflow and z-index */
+  /**
+   * Set overflow and z-index
+   */
   /* Content area
      ========================================================================== */
   /**
@@ -1739,6 +1745,8 @@ body.k-is-resizing {
    */
   /**
    * Content area children
+   *
+   * 1. for breadcrumbs to work properly
    */
   /* Content wrapper
      ========================================================================== */
@@ -1748,15 +1756,19 @@ body.k-is-resizing {
    */
   /* Flex wrapper
      ========================================================================== */
-  /* Grid
+  /* Container
      ========================================================================== */
-  /* Container */
-  /* --------------------------------------------------------------------------
-     Grid children
-     -------------------------------------------------------------------------- */
-  /* Main container */
-  /* Sub container */
-  /* Full container */
+  /* Container children
+     ========================================================================== */
+  /**
+   * Main container
+   */
+  /**
+   * Sub container
+   */
+  /**
+   * Full container
+   */
   /**
    * Full container -- spaced top
    *
@@ -1771,13 +1783,44 @@ body.k-is-resizing {
    * 2. Reset the max-width when viewport is as large as minwidth
    * 3. Default styling
    */
+  /* ==========================================================================
+     Login screen
+     ========================================================================== */
+  /**
+   * Login container
+   *
+   * Container holding the login window
+   *
+   * 1. Setting up for centering the login window
+   */
+  /**
+   * Login window
+   *
+   * 1. Horizontal and vertical centering
+   */
+  /**
+   * Brand
+   */
+  /**
+   * Form
+   */
   /* Sidebar
      ========================================================================== */
-  /* The left and right sidebar */
-  /* Left sidebar specific */
-  /* When left sidebar is toggled */
-  /* Right sidebar specific */
-  /* When right sidebar is toggled */
+  /**
+   * The left and right sidebar
+   */
+  /**
+   * Left sidebar specific
+   */
+  /**
+   * When left sidebar is toggled
+   */
+  /**
+   * Right sidebar specific
+   */
+  /**
+   * When right sidebar is toggled
+   */
   /* Subcontent
      ========================================================================== */
   /**
@@ -1786,12 +1829,32 @@ body.k-is-resizing {
   /**
    * Subcontent toggle button
    */
+  /* Title bar
+     ========================================================================== */
+  /**
+   * 1. Set the z-index higher than the menus
+   * 2. Setting a background so container will fall nicely over the sidebar
+   */
+  /**
+   * Titlebar contents
+   */
+  /**
+   * Mobile title
+   */
   /* Top container
      ========================================================================== */
-  /* Top logo */
-  /* Top navigation */
-  /* Mobile settings */
-  /* Toggler */
+  /**
+   * Top logo
+   */
+  /**
+   * Top navigation
+   */
+  /**
+   * Mobile settings
+   */
+  /**
+   * Toggler
+   */
   /* Wrapper
      ========================================================================== */
   /**
@@ -1817,7 +1880,7 @@ body.k-is-resizing {
    * 1. By using 100% we can work with full-height auto overflowing flexbox pages
    * 2. Remove all spacing
    * 3. Setting up flexbox
-   * 3. Hide overflowing content on resizing to make sure we never get any weird jumping scrollbar issues
+   * 4. Hide overflowing content on resizing to make sure we never get any weird jumping scrollbar issues
    */
   /* Definition list
      ========================================================================== */
@@ -1843,11 +1906,9 @@ body.k-is-resizing {
    * 2. Eliminating line-height bug when used alone in container
    * 3. No hidden borders on parents
    */
-  /* Input
+  /* Normalize form controls
      ========================================================================== */
   /**
-   * Normalize form controls
-   *
    * 1. Override content-box in Normalize (* isn't specific enough)
    * 2. Position radios and checkboxes better
    * 3. Make range inputs behave like textual form controls
@@ -1864,8 +1925,8 @@ body.k-is-resizing {
   /* Legend
      ========================================================================== */
   /**
-   * 1. No margin top for the first legend
-   * 2. No margin bottom for the last legend
+   * 1. No margin bottom for the last legend
+   * 2. No padding top for the first legend
    */
   /* Paragraph
      ========================================================================== */
@@ -1876,8 +1937,12 @@ body.k-is-resizing {
      ========================================================================== */
   /* Alerts
      ========================================================================== */
-  /* Overflowing alert with 33% max-height */
-  /* Alternate styles */
+  /**
+   * Overflowing alert with 33% max-height
+   */
+  /**
+   * Alternate styles
+   */
   /* Breadcrumbs
      ========================================================================== */
   /**
@@ -1885,16 +1950,32 @@ body.k-is-resizing {
    * 2. Hide scroll when resizing to avoid weird jumps on OSX
    * 3. Don't flex in the layout structure
    */
-  /* Single breadcrumb items */
+  /**
+   * Single breadcrumb items
+   */
   /* Buttons
      ========================================================================== */
-  /* Alternate buttons */
-  /* Link buttons */
-  /* Block button */
-  /* Button sizes */
-  /* Vertically space out multiple block buttons */
-  /* Specificity overrides */
-  /* Button groups */
+  /**
+   * Alternate buttons
+   */
+  /**
+   * Link buttons
+   */
+  /**
+   * Block button
+   */
+  /**
+   * Button sizes
+   */
+  /**
+   * Vertically space out multiple block buttons
+   */
+  /**
+   * Specificity overrides
+   */
+  /**
+   * Button groups
+   */
   /* Card
      ========================================================================== */
   /**
@@ -1926,11 +2007,20 @@ body.k-is-resizing {
    */
   /* CK Editor
      ========================================================================== */
+  /**
+   * Hide the resizer since element is flexing
+   */
   /* Dropdowns
      ========================================================================== */
-  /* Dropdown arrow/caret */
-  /* The dropdown wrapper (div) */
-  /* The dropdown toggle */
+  /**
+   * Dropdown arrow/caret
+   */
+  /**
+   * The dropdown wrapper (div)
+   */
+  /**
+   * The dropdown toggle
+   */
   /**
    * The dropdown menu (ul)
    *
@@ -1940,21 +2030,31 @@ body.k-is-resizing {
   /**
    * Dividers (basically an hr) within the dropdown
    */
-  /* Hover / Focus state */
-  /* Active state */
+  /**
+   * Hover / Focus state
+   */
+  /**
+   * Active state
+   */
   /**
    * Disabled state
    *
    * Gray out text and ensure the hover/focus state remains gray
    */
-  /* Open state for the dropdown */
-  /* Backdrop to catch body clicks on mobile, etc. */
+  /**
+   * Open state for the dropdown
+   */
+  /**
+   * Backdrop to catch body clicks on mobile, etc.
+   */
   /**
    * Dropup
    *
    * Allow for dropdowns to go bottom up (aka, dropup-menu)
    */
-  /* Dropdown grid */
+  /**
+   * Dropdown grid
+   */
   /* Empty state
      ========================================================================== */
   /* Forms
@@ -1968,7 +2068,9 @@ body.k-is-resizing {
    * 5. Unstyle the caret on `<select>`s in IE10+.
    * 6. iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
    */
-  /* Reset height for `textarea`s */
+  /**
+   * Reset height for `textarea`s
+   */
   /**
    * Search inputs in iOS
    *
@@ -1987,9 +2089,15 @@ body.k-is-resizing {
    *
    * Note that as of 8.3, iOS doesn't support `datetime` or `week`.
    */
-  /* Checkbox & Radio inputs */
-  /* Shared styling between radio boxes and checkboxes */
-  /* RTL */
+  /**
+   * Checkbox & Radio inputs
+   */
+  /**
+   * Shared styling between radio boxes and checkboxes
+   */
+  /**
+   * Right to left
+   */
   /**
    * Checkbox
    *
@@ -2009,8 +2117,9 @@ body.k-is-resizing {
    * 4. positioning the inner circle
    * 5. Making inner circle actually round
    */
-  /* Feedback states */
-  /* Static form label */
+  /**
+   * Feedback states
+   */
   /**
    * Static form control text
    *
@@ -2020,24 +2129,32 @@ body.k-is-resizing {
    * 1. Size it appropriately next to real form controls
    * 2. Remove default margin from `p`
    */
-  /* Input group */
-  /**
+  /* Input group
+   *
    * 1. For dropdowns
    * 2. Prevent input groups from inheriting border styles from table cells when placed within a table
    * 3. Ensure that the input is always above the *appended* addon button for proper border colors.
    * 4. IE9 fubars the placeholder attribute in text inputs and the arrows on
-        select elements in input groups. To fix it, we float the input.
+   *    select elements in input groups. To fix it, we float the input.
    * 5. Put focused element on top of the rest
    */
-  /* Sizes */
-  /* Input group parts */
+  /**
+   * Sizes
+   */
+  /**
+   * Input group parts
+   */
   /**
    * Addon and addon wrapper for buttons
    *
    * 1. Match the inputs
    */
-  /* Text addon */
-  /* Reset rounded corners */
+  /**
+   * Text addon
+   */
+  /**
+   * Reset rounded corners
+   */
   /**
    * Button input groups
    *
@@ -2048,8 +2165,9 @@ body.k-is-resizing {
    * 3. Bring the "active" button to the front
    * 4. Negative margin to only have a 1px border between the two
    */
-  /* Form groups */
   /**
+   * Form groups
+   *
    * Designed to help with the organization and spacing of vertical forms. For
    * horizontal forms, use the predefined grid classes.
    */
@@ -2062,18 +2180,36 @@ body.k-is-resizing {
    * The `.k-form-group-* k-form-control` variations are sadly duplicated to avoid the
    * issue documented in https://github.com/twbs/bootstrap/issues/15074.
    */
-  /* Inline form group */
-  /* Form row group */
-  /* Form row */
-  /* Form field info */
+  /**
+   * Inline form group
+   */
+  /**
+   * Form row group
+   *
+   * 1. To make sure we don't get empty pixels on the right
+   */
+  /**
+   * Form row
+   */
+  /**
+   * Form field info
+   */
   /* Form block
      ========================================================================== */
-  /* The header */
-  /* The content */
+  /**
+   * The header
+   */
+  /**
+   * The content
+   */
   /* Gallery
      ========================================================================== */
-  /* Set widths */
-  /* Make sure that the files are separated from the folders */
+  /**
+   * Set widths
+   */
+  /**
+   * Make sure that the files are separated from the folders
+   */
   /* Hamburger
      ========================================================================== */
   /**
@@ -2083,25 +2219,35 @@ body.k-is-resizing {
    * 2. Show when JS is enabled
    * 3. Hide when the sidebar is visible
    */
-  /* Button styling */
+  /**
+   * Button styling
+   */
   /**
    * Left button
    *
    * We don't need RTLstyling here since we're calculating the icons to be in the middle
    */
-  /* Transform hamburger into a cross when the sidebar is opened */
+  /**
+   * Transform hamburger into a cross when the sidebar is opened
+   */
   /**
    * Right button
    *
    * We don't need RTLstyling here since we're calculating the icons to be in the middle
    */
-  /* Transform "i" into a cross when the sidebar is opened */
+  /**
+   * Transform "i" into a cross when the sidebar is opened
+   */
   /* Heading
      ========================================================================== */
   /* Icons
      ========================================================================== */
-  /* Icon colors */
-  /* Icon sizes */
+  /**
+   * Icon colors
+   */
+  /**
+   * Icon sizes
+   */
   /**
    * Custom background image icons
    *
@@ -2111,27 +2257,6 @@ body.k-is-resizing {
      ========================================================================== */
   /**
    * 1. Reset default <ul> styling
-   */
-  /* ==========================================================================
-     Login screen
-     ========================================================================== */
-  /**
-   * Login container
-   *
-   * Container holding the login window
-   *
-   * 1. Setting up for centering the login window
-   */
-  /**
-   * Login window
-   *
-   * 1. Horizontal and vertical centering
-   */
-  /**
-   * Brand
-   */
-  /**
-   * Form
    */
   /* Navigation
      ========================================================================== */
@@ -2166,16 +2291,28 @@ body.k-is-resizing {
    * 1. Clearing for floating buttons
    * 2. Move first button away from edge
    */
-  /* Scopebar Filters */
+  /**
+   * Scopebar Filters
+   */
   /**
    * 1. Clearfix so we can float individual filters
    * 2. For positioning dropdowns on smaller screens
    */
-  /* Individual filter */
-  /* Filter title and icon */
-  /* Scopebar label showing how many active filters you have below a filter button */
-  /* Scopebar breadcrumbs */
-  /* Scopebar buttons */
+  /**
+   * Individual filter
+   */
+  /**
+   * Filter title and icon
+   */
+  /**
+   * Scopebar label showing how many active filters you have below a filter button
+   */
+  /**
+   * Scopebar breadcrumbs
+   */
+  /**
+   * Scopebar buttons
+   */
   /**
    * Scopebar search
    *
@@ -2189,45 +2326,13 @@ body.k-is-resizing {
    *
    * 1. Same as width but minus 2px border width
    */
-  /* Sidebar item header */
-  /* Sidebar item content */
+  /**
+   * Sidebar item header
+   */
+  /**
+   * Sidebar item content
+   */
   /* Styled file input */
-  /* Table
-     ========================================================================== */
-  /* WARNING: Do not use transition on any element since this will hit scroll performance big on certain browsers! */
-  /**
-   * Table
-   *
-   * 1. Should be as tall as possible for dropdown overflows. Pushes the pagination to the bottom
-   */
-  /**
-   * Default table settings
-   *
-   * 1. override browser default
-   */
-  /**
-   * Table elements
-   */
-  /* Table cell settings */
-  /* Table item states */
-  /* Table sub header */
-  /* Table levels */
-  /**
-   * Selected
-   *
-   * When rows are selected they are highlighted
-   */
-  /**
-   * Active rows
-   *
-   * When rows are active they are highlighted
-   */
-  /* Positioner */
-  /* Table heading sorting */
-  /* Table pagination */
-  /**
-   * 1. Faking a bottom border, this shadow will disappear when pagination is positioned to bottom
-   */
   /* Tabs
      ========================================================================== */
   /**
@@ -2252,16 +2357,54 @@ body.k-is-resizing {
   /**
    * Left and right buttons for scrollable tabs
    */
-  /* Title bar
+  /* Table
      ========================================================================== */
+  /* WARNING: Do not use transition on any element since this will hit scroll performance big on certain browsers! */
   /**
-   * 1. Set the z-index higher than the menus
-   * 2. Setting a background so container will fall nicely over the sidebar
+   * Table
+   *
+   * 1. Should be as tall as possible for dropdown overflows. Pushes the pagination to the bottom
    */
   /**
-   * Titlebar contents
+   * Default table settings
+   *
+   * 1. override browser default
    */
-  /* Mobile title */
+  /**
+   * Table elements
+   */
+  /**
+   * Table cell settings
+   */
+  /**
+   * Table item states
+   */
+  /**
+   * Table sub header
+   */
+  /**
+   * Table levels
+   */
+  /**
+   * Selected
+   *
+   * When rows are selected they are highlighted
+   */
+  /**
+   * Active rows
+   *
+   * When rows are active they are highlighted
+   */
+  /**
+   * Positioner
+   */
+  /**
+   * Table heading sorting
+   */
+  /* Table pagination
+   *
+   * 1. Faking a bottom border, this shadow will disappear when pagination is positioned to bottom
+   */
   /* Toolbar
      ========================================================================== */
   /**
@@ -2272,7 +2415,9 @@ body.k-is-resizing {
   /**
    * Toolbar contents
    */
-  /* Text on the toolbar buttons */
+  /**
+   * Text on the toolbar buttons
+   */
   /* Tooltip
      ========================================================================== */
   /**
@@ -2282,20 +2427,32 @@ body.k-is-resizing {
   /**
    * Wrapper for the tooltip content
    */
-  /* Arrows */
-  /* Wells
+  /**
+   * Arrows
+   */
+  /* Well
      ========================================================================== */
-  /* Wells content */
-  /* Wells tabs */
-  /* Align left */
-  /* Align center */
-  /* Align right */
   /**
-   * Colors
+   * Well content
    */
   /**
-   * Colors
+   * Well tabs
    */
+  /* Align
+     ========================================================================== */
+  /**
+   * Align left
+   */
+  /**
+   * Align center
+   */
+  /**
+   * Align right
+   */
+  /* Background
+     ========================================================================== */
+  /* Color
+     ========================================================================== */
   /**
    * Component animations
    *
@@ -2304,12 +2461,16 @@ body.k-is-resizing {
    * We don't use the `.opacity()` mixin here since it causes a bug with text
    * fields in IE7-8. Source: https://github.com/twbs/bootstrap/pull/3552.
    */
+  /* Content block
+     ========================================================================== */
   /**
-   * Content block
-   *
    * Element with a bottom margin except when item itself is a last-child
    */
-  /* Top margin except for first-child */
+  /**
+   * Top margin except for first-child
+   */
+  /* Cover all
+     ========================================================================== */
   /**
    * "Cover all" link
    *
@@ -2322,29 +2483,40 @@ body.k-is-resizing {
    *
    * Use inside the same parent as the above "coverall" link to place this link on top of the pseudo element
    */
+  /* Dynamic content holder
+     ========================================================================== */
   /**
-   * Dynamic content holder
    * Add `<script>` and other hidden content (like modals) inside this div so the elements won't be in the way for flexbox
    */
+  /* Ellipsis
+     ========================================================================== */
   /**
    * Text overflow
    */
+  /* Flag object
+     ========================================================================== */
   /**
-   * Flag object
+   * Aside
    */
   /**
-   * Flexing boxes
-   *
+   * Body
+   */
+  /* Flexing
+     ========================================================================== */
+  /**
    * DO or don't flexing children. USeful inside flexing containers on elemtns that have no pre-defined styling for flexbox
    */
-  /* Start at different breakpoints */
   /**
-   * Hidden
+   * Start at different breakpoints
+   */
+  /* Hidden
+     ========================================================================== */
+  /**
    * Hide content in a non-accessible way. Content is hidden for everybody including screenreaders
    */
+  /* Loader
+     ========================================================================== */
   /**
-   * Loader container
-   *
    * Cover it's entire parent (the parent with an `absolute` or `relative` position)
    * - Add `k-hidden` class to the element when items are done loading
    */
@@ -2354,18 +2526,16 @@ body.k-is-resizing {
    * Falls back to `Loading...` on non capable browsers
    * Add `k-hidden` class to the element when items are done loading
    */
-  /* Remove margin */
-  /**
-   * No transition
-   *
-   * Disable all transitions
-   */
-  /**
-   * No wrap
-   *
-   * Nowrap element
-    */
-  /* Overflow */
+  /* No margin
+     ========================================================================== */
+  /* No transition
+     ========================================================================== */
+  /* No wrap
+     ========================================================================== */
+  /* Overflow
+     ========================================================================== */
+  /* Position
+     ========================================================================== */
   /**
    * Static positioned element
    */
@@ -2383,33 +2553,33 @@ body.k-is-resizing {
    *
    * Has top: 0; to ensure sticky works
    */
+  /* Ratio content
+     ========================================================================== */
+  /* This or that
+     ========================================================================== */
   /**
-   * Ratio content
-   */
-  /**
-   * This or that
-   *
    * Line items up next to each other
    */
+  /* Touch events
+     ========================================================================== */
   /**
    * Hide elements for touch enabled devices
    */
+  /* Unavailable
+     ========================================================================== */
+  /* Unresponsive
+     ========================================================================== */
   /**
-   * Unavailable
+   * Make sure nothing can get selected
    */
+  /* Visually hidden
+     ========================================================================== */
   /**
-   * Unavailable
-   *
-   * When dragging make sure nothing gets selected
-   */
-  /**
-   * Visually hidden
-   *
    * Hide the content in an accessible way. Content is hidden for viewers but not for screenreaders
    */
+  /* Visually shown
+     ========================================================================== */
   /**
-   * Visually shown
-   *
    * Show content that have the visually-hidden class
    * Use as @extend for items that are already extending `.k-visually-hidden`
    * Try not to use `.k-visually-hidden` and `.k-visually-shown` classes together if possible.
@@ -2790,7 +2960,9 @@ body.k-is-resizing {
           flex: 1 1 auto;
   overflow: auto;
   min-height: 0;
-  /* Hide overflow when resizing the window */
+  /**
+     * Hide overflow when resizing the window
+     */
 }
 
 .k-is-resizing .k-ui-namespace .k-component-wrapper {
@@ -2906,7 +3078,9 @@ body.k-is-resizing {
 }
 
 .k-ui-namespace .k-show-left-menu {
-  /* Set opacity */
+  /**
+     * Set opacity
+     */
 }
 
 .k-ui-namespace .k-show-left-menu .k-content-area,
@@ -2914,6 +3088,9 @@ body.k-is-resizing {
   -webkit-transform: translate(272px, 0);
           transform: translate(272px, 0);
   /* 1 */
+  /**
+       * Reset transform when .k-content is inside a .k-content-area
+       */
 }
 
 @media screen and (min-width: 768px) {
@@ -2929,7 +3106,6 @@ body.k-is-resizing {
 .k-ui-namespace .k-show-left-menu .k-content .k-content {
   -webkit-transform: none;
           transform: none;
-  /* Reset transform when .k-content is inside a .k-content-area */
 }
 
 [dir="rtl"] .k-ui-namespace .k-show-left-menu .k-content-area, [dir="rtl"] .k-ui-namespace .k-show-left-menu .k-content {
@@ -2964,7 +3140,9 @@ body.k-is-resizing {
 .k-ui-namespace .k-is-opened-left .k-content-area,
 .k-ui-namespace .k-is-opened-left .k-content {
   overflow: hidden;
-  /* 2. Set z-index so it will become visible */
+  /**
+       * Set z-index so it will become visible
+       */
 }
 
 @media screen and (min-width: 768px) {
@@ -3068,6 +3246,7 @@ body.k-is-resizing {
   min-height: 0;
   overflow: visible;
   max-width: 100%;
+  /* 1 */
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
@@ -3243,7 +3422,6 @@ body.k-is-resizing {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-overflow-scrolling: touch;
-  /* RTL */
 }
 
 @media screen and (min-width: 400px) {
@@ -3255,6 +3433,71 @@ body.k-is-resizing {
 
 [dir="rtl"] .k-ui-namespace.k-ui-container {
   direction: rtl;
+}
+
+.k-ui-namespace .k-login-container {
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  /* 1 */
+  white-space: nowrap;
+  /* 1 */
+  padding: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.k-ui-namespace .k-login {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  margin: auto;
+  display: inline-block;
+  /* 1 */
+  vertical-align: middle;
+  /* 1 */
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+
+.k-ui-namespace .k-login__brand {
+  display: block;
+  height: auto;
+  width: auto;
+  max-width: 100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 16px;
+  font-size: 17px;
+}
+
+.k-ui-namespace .k-login__brand img {
+  max-height: 100%;
+  vertical-align: middle;
+}
+
+.k-ui-namespace .k-login__content {
+  background: white;
+  color: #222222;
+  width: 100%;
+  border-radius: 4px;
+  padding: 16px;
+  box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  white-space: normal;
+}
+
+[dir="rtl"] .k-ui-namespace .k-login__content {
+  text-align: right;
 }
 
 .k-ui-namespace .k-sidebar-left,
@@ -3272,8 +3515,12 @@ body.k-is-resizing {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
-  /* When resizing */
-  /* When JavaScript is enabled */
+  /**
+     * When resizing
+     */
+  /**
+     * When JavaScript is enabled
+     */
 }
 
 .k-is-resizing .k-ui-namespace .k-sidebar-left, .k-is-resizing
@@ -3294,9 +3541,15 @@ body.k-is-resizing {
   background: #eeeeee;
   color: #222222;
   border-right: 1px solid #cfcfcf;
-  /* Sidebar width */
-  /* Larger sidebar when space is available */
-  /* When JavaScript is enabled */
+  /**
+     * Sidebar width
+     */
+  /**
+     * Larger sidebar when space is available
+     */
+  /**
+     * When JavaScript is enabled
+     */
 }
 
 [dir="rtl"] .k-ui-namespace .k-sidebar-left {
@@ -3333,8 +3586,12 @@ body.k-is-resizing {
   min-width: 272px;
   width: 272px;
   max-width: 272px;
-  /* On 'desktop' we 'open' the sidebar by default */
-  /* And we make it even larger when there's enough space */
+  /**
+       * On 'desktop' we 'open' the sidebar by default
+       */
+  /**
+       * And we make it even larger when there's enough space
+       */
 }
 
 @media screen and (min-width: 768px) {
@@ -3370,9 +3627,15 @@ body.k-is-resizing {
   background: #eeeeee;
   color: #222222;
   border-left: 1px solid #cfcfcf;
-  /* Sidebar width */
-  /* Larger sidebar when space is available */
-  /* When JavaScript is enabled */
+  /**
+     * Sidebar width
+     */
+  /**
+     * Larger sidebar when space is available
+     */
+  /**
+     * When JavaScript is enabled
+     */
 }
 
 [dir="rtl"] .k-ui-namespace .k-sidebar-right {
@@ -3409,8 +3672,12 @@ body.k-is-resizing {
   min-width: 272px;
   width: 272px;
   max-width: 272px;
-  /* On 'desktop' we 'open' the sidebar by default */
-  /* And we make it even larger when there's enough space */
+  /**
+       * On 'desktop' we 'open' the sidebar by default
+       */
+  /**
+       * And we make it even larger when there's enough space
+       */
 }
 
 @media screen and (min-width: 600px) {
@@ -3529,6 +3796,85 @@ body.k-is-resizing {
   }
 }
 
+.k-ui-namespace .k-title-bar {
+  border-bottom: 1px solid #d2d2d2;
+  position: relative;
+  /* 1 */
+  z-index: 10;
+  /* 1 */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  background: #f0f0f0;
+  /* 2 */
+  color: #222222;
+  font-size: 21px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+
+.k-ui-namespace .k-title-bar .k-off-canvas-toggle-holder,
+.k-ui-namespace .k-title-bar .k-title-bar__heading {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+
+.k-ui-namespace .k-title-bar .k-off-canvas-toggle-holder {
+  white-space: nowrap;
+}
+
+.k-ui-namespace .k-title-bar .k-title-bar__heading {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  padding: 8px 8px 7px;
+  line-height: 32px;
+  text-align: center;
+}
+
+.k-ui-namespace .k-title-bar .k-title-bar__heading:first-child {
+  margin-left: 48px;
+}
+
+.k-ui-namespace .k-title-bar .k-title-bar__heading:last-child {
+  margin-right: 48px;
+}
+
+@media screen and (min-width: 768px) {
+  .k-ui-namespace .k-title-bar .k-title-bar__heading {
+    text-align: left;
+  }
+  .k-ui-namespace .k-title-bar .k-title-bar__heading:first-child {
+    margin-left: 0;
+  }
+  .k-ui-namespace .k-title-bar .k-title-bar__heading:last-child {
+    margin-right: 0;
+  }
+  [dir="rtl"] .k-ui-namespace .k-title-bar .k-title-bar__heading {
+    text-align: right;
+  }
+}
+
+.k-ui-namespace .k-title-bar--mobile {
+  border-bottom: 1px solid #c2c2c2;
+  background: #e1e1e1;
+}
+
+@media screen and (min-width: 768px) {
+  .k-ui-namespace .k-title-bar--mobile {
+    display: none;
+  }
+}
+
 .k-ui-namespace .k-top-container {
   background: #2c3e50;
   color: white;
@@ -3586,9 +3932,15 @@ body.k-is-resizing {
   background: #2c3e50;
   overflow: auto;
   box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.1);
-  /* On desktop */
-  /* First level */
-  /* Right aligned navigation */
+  /**
+     * On desktop
+     */
+  /**
+     * First level
+     */
+  /**
+     * Right aligned navigation
+     */
 }
 
 @media screen and (min-width: 768px) {
@@ -3623,7 +3975,9 @@ body.k-is-resizing {
   position: relative;
   margin: 0;
   padding: 0;
-  /* Second level */
+  /**
+       * Second level
+       */
 }
 
 @media screen and (min-width: 768px) {
@@ -3657,7 +4011,9 @@ body.k-is-resizing {
   color: inherit;
   text-shadow: none;
   text-decoration: none;
-  /* Basic fallback for parent items */
+  /**
+         * Basic fallback for parent items
+         */
 }
 
 .k-ui-namespace .k-top-container__navigation li > a.has-open-submenu {
@@ -3741,7 +4097,9 @@ body.k-is-resizing {
   height: 32px;
   line-height: 32px;
   border-bottom: none;
-  /* Basic fallback for parent items */
+  /**
+           * Basic fallback for parent items
+           */
 }
 
 .k-ui-namespace .k-top-container__navigation li ul a:focus, .k-ui-namespace .k-top-container__navigation li ul a:hover {
@@ -3947,7 +4305,9 @@ body.k-is-resizing {
   /* 2 */
   margin: 0;
   /* 2 */
-  /* Setup flexbox */
+  /**
+     * Setup flexbox
+     */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3961,7 +4321,9 @@ body.k-is-resizing {
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   /* 3 */
-  /* When resizing */
+  /**
+     * When resizing
+     */
 }
 
 .k-ui-namespace body.k-is-resizing {
@@ -3996,6 +4358,13 @@ body.k-is-resizing {
   float: left;
   clear: left;
   margin-right: 4px;
+}
+
+[dir="rtl"] .k-ui-namespace dt {
+  float: right;
+  clear: right;
+  margin-right: 0;
+  margin-left: 4px;
 }
 
 .k-ui-namespace dd {
@@ -4215,6 +4584,7 @@ body.k-is-resizing {
   line-height: 28px;
   font-weight: 400;
   margin-bottom: 16px;
+  /* 1 */
 }
 
 .k-ui-namespace legend:last-child {
@@ -4223,6 +4593,7 @@ body.k-is-resizing {
 
 .k-ui-namespace legend:first-child {
   padding-top: 0;
+  /* 2 */
 }
 
 .k-ui-namespace p {
@@ -4235,14 +4606,16 @@ body.k-is-resizing {
   margin-bottom: 0;
 }
 
-.k-ui-namespace ul, .k-ui-namespace ol {
+.k-ui-namespace ul,
+.k-ui-namespace ol {
   margin-bottom: 16px;
   margin-left: 0;
   margin-right: 0;
   padding-left: 1.5em;
 }
 
-.k-ui-namespace ul:last-child, .k-ui-namespace ol:last-child {
+.k-ui-namespace ul:last-child,
+.k-ui-namespace ol:last-child {
   margin-bottom: 0;
 }
 
@@ -4354,7 +4727,9 @@ body.k-is-resizing {
      * 1. Set 'missing' content
      * 2. Reset to default content on wider screens
      */
-  /* Active item */
+  /**
+     * Active item
+     */
 }
 
 .k-is-resizing .k-ui-namespace .k-breadcrumb {
@@ -4393,15 +4768,21 @@ body.k-is-resizing {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 auto;
           flex: 0 1 auto;
-  /* Display on larger screens */
-  /* List item separator */
+  /**
+       * Display on larger screens
+       */
+  /**
+       * List item separator
+       */
   position: relative;
-  /* No separator on first item */
+  /**
+       * No separator on first item
+       */
   /**
        * Hover
        *
        * 1. Reset flexbox so the whole item is visible
-            No :focus since <li> can't be focused
+       *    No :focus since <li> can't be focused
        * 2. Wrap the active item when another item is being hovered
        */
 }
@@ -4970,14 +5351,18 @@ fieldset[disabled] .k-ui-namespace .k-button--danger.k-has-focus {
   position: relative;
   display: inline-block;
   vertical-align: middle;
-  /* Prevent double borders when buttons are next to each other */
+  /**
+     * Prevent double borders when buttons are next to each other
+     */
 }
 
 .k-ui-namespace .k-button-group > .k-button {
   position: relative;
   float: left;
   margin: 0;
-  /* Bring the "active" button to the front */
+  /**
+       * Bring the "active" button to the front
+       */
 }
 
 [dir="rtl"] .k-ui-namespace .k-button-group > .k-button {
@@ -5385,13 +5770,14 @@ fieldset[disabled] .k-ui-namespace .k-button--danger.k-has-focus {
   border-radius: 4px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   background-clip: padding-box;
-  /* Winning over .k-ui-namespace ul */
   /**
-      * Links within the dropdown menu
-      *
-      * 1. prevent links from randomly breaking onto new lines
-      */
-  /* RTL */
+     * Winning over .k-ui-namespace ul
+     */
+  /**
+     * Links within the dropdown menu
+     *
+     * 1. prevent links from randomly breaking onto new lines
+     */
 }
 
 .k-ui-namespace .k-dropdown__menu.k-dropdown__menu {
@@ -5457,8 +5843,12 @@ fieldset[disabled] .k-ui-namespace .k-button--danger.k-has-focus {
 }
 
 .k-ui-namespace .k-dropdown.k-is-open {
-  /* Show the menu */
-  /* Remove the outline when :focus is triggered */
+  /**
+     * Show the menu
+     */
+  /**
+     * Remove the outline when :focus is triggered
+     */
 }
 
 .k-ui-namespace .k-dropdown.k-is-open > .k-dropdown__menu {
@@ -5479,8 +5869,12 @@ fieldset[disabled] .k-ui-namespace .k-button--danger.k-has-focus {
 }
 
 .k-ui-namespace .k-dropdown--dropup {
-  /* Reverse the caret */
-  /* Different positioning for bottom up menu */
+  /**
+     * Reverse the caret
+     */
+  /**
+     * Different positioning for bottom up menu
+     */
 }
 
 .k-ui-namespace .k-dropdown--dropup .k-caret {
@@ -5497,7 +5891,9 @@ fieldset[disabled] .k-ui-namespace .k-button--danger.k-has-focus {
 
 .k-ui-namespace .k-dropdown__menu--grid {
   width: 212px;
-  /* override above default settings */
+  /**
+     * override above default settings
+     */
 }
 
 .k-ui-namespace .k-dropdown__menu--grid.k-dropdown__menu--grid {
@@ -5619,9 +6015,13 @@ fieldset[disabled] .k-ui-namespace .k-button--danger.k-has-focus {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   /* 5 */
-  /* Placeholders */
+  /**
+     * Placeholders
+     */
   /* 6 */
-  /* Disabled and read-only inputs */
+  /**
+     * Disabled and read-only inputs
+     */
 }
 
 .k-ui-namespace .k-form-control:focus {
@@ -5690,7 +6090,9 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-appearance .k-ui-namespace {
-  /* Put some space between the second box and the first label */
+  /**
+     * Put some space between the second box and the first label
+     */
 }
 
 .k-appearance .k-ui-namespace input[type="checkbox"],
@@ -5719,8 +6121,12 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
   transition: background 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
   -webkit-backface-visibility: hidden;
-  /* Hover to indicate element is clickable */
-  /* Set disabled border color a bit lighter so it won't appear to be larger */
+  /**
+       * Hover to indicate element is clickable
+       */
+  /**
+       * Set disabled border color a bit lighter so it won't appear to be larger
+       */
   /**
        * 1. Position pseudo element absolute to have full control
        * 2. Position top-left, margin, width and height will take care of centering
@@ -5969,8 +6375,12 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   width: 100%;
   border-collapse: separate;
   /* 2 */
-  /* The form control */
-  /* The button */
+  /**
+     * The form control
+     */
+  /**
+     * The button
+     */
 }
 
 .k-ui-namespace .k-input-group .k-form-control {
@@ -6108,7 +6518,9 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   border-radius: 4px;
   overflow: hidden;
   text-overflow: ellipsis;
-  /* Nuke default margins from checkboxes and radios to vertically center within. */
+  /**
+     * Nuke default margins from checkboxes and radios to vertically center within.
+     */
 }
 
 .k-ui-namespace .k-input-group__addon input[type="radio"],
@@ -6292,9 +6704,9 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 .k-ui-namespace .k-form-row-group {
   display: table;
-  /* To make sure we don't get empty pixels on the right */
+  /* 1 */
   width: 100%;
-  /* To make sure we don't get empty pixels on the right */
+  /* 1 */
   background: white;
   border-radius: 5px;
   border: 1px solid #cdcdcd;
@@ -6486,7 +6898,9 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   display: inline-block;
   vertical-align: middle;
   font-size: 1rem;
-  /* Selected styling */
+  /**
+     * Selected styling
+     */
 }
 
 @supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
@@ -6639,7 +7053,9 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   margin: 8px 8px 7px;
   background: #3071a9;
   color: white;
-  /* Set proper margins */
+  /**
+     * Set proper margins
+     */
 }
 
 [dir="rtl"] .k-ui-namespace .k-off-canvas-toggle {
@@ -6851,15 +7267,21 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   background: transparent;
   /* 1 */
   margin: 4px 0;
-  /* Items */
+  /**
+     * Items
+     */
   /**
      * Links
      *
      * 1. Make item fully clickable
      * 2. removing underlines
      */
-  /* Active link */
-  /* Icons */
+  /**
+     * Active link
+     */
+  /**
+     * Icons
+     */
 }
 
 [dir="rtl"] .k-ui-namespace .k-list {
@@ -6880,7 +7302,9 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   line-height: 20px;
   text-decoration: none;
   /* 2 */
-  /* Hover & focus state */
+  /**
+       * Hover & focus state
+       */
 }
 
 .k-ui-namespace .k-list a:hover, .k-ui-namespace .k-list a:focus {
@@ -6911,71 +7335,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   margin-left: 8px;
 }
 
-.k-ui-namespace .k-login-container {
-  background: #2c3e50;
-  color: white;
-  text-align: center;
-  /* 1 */
-  white-space: nowrap;
-  /* 1 */
-  padding: 16px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.k-ui-namespace .k-login {
-  width: 100%;
-  max-width: 360px;
-  height: auto;
-  margin: auto;
-  display: inline-block;
-  /* 1 */
-  vertical-align: middle;
-  /* 1 */
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
-}
-
-.k-ui-namespace .k-login__brand {
-  display: block;
-  height: auto;
-  width: auto;
-  max-width: 100%;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 16px;
-  font-size: 17px;
-}
-
-.k-ui-namespace .k-login__brand img {
-  max-height: 100%;
-  vertical-align: middle;
-}
-
-.k-ui-namespace .k-login__content {
-  background: white;
-  color: #222222;
-  width: 100%;
-  border-radius: 4px;
-  padding: 16px;
-  box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.3);
-  text-align: left;
-  white-space: normal;
-}
-
-[dir="rtl"] .k-ui-namespace .k-login__content {
-  text-align: right;
-}
-
 .k-ui-namespace .k-navigation {
   margin: 0;
   list-style: none;
@@ -6984,15 +7343,21 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   border-bottom: 1px solid #c8c7c7;
   padding: 16px 0 15px;
   background: #e6e6e6;
-  /* Override for rtl ul-ol-li styling */
-  /* Items */
+  /**
+     * Override for rtl ul-ol-li styling
+     */
+  /**
+     * Items
+     */
   /**
      * Links
      *
      * 1. Make item fully clickable
      * 2. removing underlines
      */
-  /* Active link */
+  /**
+     * Active link
+     */
 }
 
 [dir="rtl"] .k-ui-namespace .k-navigation {
@@ -7014,14 +7379,18 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   font-size: 17px;
   color: #222222;
   text-decoration: none;
-  /* Hover & focus state */
+  /**
+       * Hover & focus state
+       */
   /**
        * Faux border
        *
        * Adding a border to the left, using "after" pseudo since "before" is used for the icon
        */
   position: relative;
-  /* Hover & focus states */
+  /**
+       * Hover & focus states
+       */
 }
 
 [dir="rtl"] .k-ui-namespace .k-navigation a {
@@ -7271,7 +7640,9 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-checked .k-ui-namespace {
-  /* Block element to clear from other floating / inline-block elements */
+  /**
+     * Block element to clear from other floating / inline-block elements
+     */
 }
 
 .k-checked .k-ui-namespace .k-optionlist--block .k-optionlist__content {
@@ -7284,7 +7655,9 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-checked .k-ui-namespace {
-  /* Block element to clear from other floating / inline-block elements */
+  /**
+     * Block element to clear from other floating / inline-block elements
+     */
 }
 
 .k-checked .k-ui-namespace .k-optionlist [disabled] + label {
@@ -7315,15 +7688,21 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
      * 1. Remove list-style and block-level defaults
      * 2. Collapse white-space
      */
-  /* Limit */
+  /**
+     * Limit
+     */
 }
 
 .k-ui-namespace .k-pagination .k-pagination__pages {
   padding: 0;
   margin: 0;
   border-radius: 4px;
-  /* Override for rtl ul-ol-li styling */
-  /* Contents */
+  /**
+       * Override for rtl ul-ol-li styling
+       */
+  /**
+       * Contents
+       */
 }
 
 [dir="rtl"] .k-ui-namespace .k-pagination .k-pagination__pages {
@@ -7458,7 +7837,9 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   width: auto;
-  /* Floating nicely */
+  /**
+     * Floating nicely
+     */
 }
 
 .k-ui-namespace .k-scopebar__item:before, .k-ui-namespace .k-scopebar__item:after {
@@ -7494,9 +7875,12 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
       -ms-flex-order: 15;
           order: 15;
   width: auto;
-  /* Hide on larger screens */
-  /* RTL */
-  /* Buttons */
+  /**
+     * Hide on larger screens
+     */
+  /**
+     * Buttons
+     */
 }
 
 .k-ui-namespace .k-scopebar__item--toggle-buttons:before, .k-ui-namespace .k-scopebar__item--toggle-buttons:after {
@@ -7565,7 +7949,9 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   -webkit-box-ordinal-group: 11;
       -ms-flex-order: 10;
           order: 10;
-  /* Hide when JS is enabled */
+  /**
+     * Hide when JS is enabled
+     */
   /**
      * 1. Reset order
      */
@@ -7573,7 +7959,9 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 .k-js-enabled .k-ui-namespace .k-scopebar__item--filters {
   display: none;
-  /* Show on larger screens */
+  /**
+       * Show on larger screens
+       */
 }
 
 @media screen and (min-width: 400px) {
@@ -7826,7 +8214,9 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-scopebar__item--breadcrumbs {
-  /* Hide when JS is enabled */
+  /**
+     * Hide when JS is enabled
+     */
   /**
      * Flexbox
      *
@@ -7840,13 +8230,19 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
       -ms-flex-order: -1;
           order: -1;
   display: block;
-  /* Adjusted styling to display nicely inside the scopebar */
+  /**
+     * Adjusted styling to display nicely inside the scopebar
+     */
 }
 
 .k-js-enabled .k-ui-namespace .k-scopebar__item--breadcrumbs {
   display: none;
-  /* Show on larger screens */
-  /* Show on larger screens */
+  /**
+       * Show on larger screens
+       */
+  /**
+       * Show on larger screens
+       */
 }
 
 @media screen and (min-width: 400px) {
@@ -7899,12 +8295,13 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-scopebar__item--buttons {
-  /* Floating nicely */
-  /* Flexbox */
   display: block;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
+  /**
+     * Floating nicely
+     */
 }
 
 @media screen and (min-width: 400px) {
@@ -7984,8 +8381,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   /* 1 */
   margin-left: auto;
   /* 2 */
-  /* Hide when JS is enabled */
-  /* Flexbox */
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
@@ -7993,15 +8388,30 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
       -ms-flex-order: 20;
           order: 20;
   /**
+     * Hide when JS is enabled
+     */
+  /**
      * 1. Reset order
      * 2. Set proper widths
      */
-  /* Label */
-  /* The search field */
-  /* Search buttons */
-  /* The search submit button */
-  /* The search empty / reset button */
-  /*  The active search label */
+  /**
+     * Label
+     */
+  /**
+     * The search field
+     */
+  /**
+     * Search buttons
+     */
+  /**
+     * The search submit button
+     */
+  /**
+     * The search empty / reset button
+     */
+  /**
+     * The active search label
+     */
 }
 
 [dir="rtl"] .k-ui-namespace .k-scopebar__item--search {
@@ -8197,7 +8607,9 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-sidebar-item {
-  /* On mobile */
+  /**
+     * On mobile
+     */
   /**
      * Overflowing items
      *
@@ -8361,8 +8773,12 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   position: relative;
   display: inline-block;
   /* The original file input select */
-  /* The button */
-  /* Selected files container */
+  /**
+     * The button
+     */
+  /**
+     * Selected files container
+     */
 }
 
 .k-ui-namespace .k-file-input input {
@@ -8372,9 +8788,15 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
        * 2. Hide the label by default and only show it when addEventListener is available (e.g. when file input is hidden)
        * 3. Display label when file input is hidden
        */
-  /* Styling the label, holding both the button and the selected files container */
-  /* Focus state */
-  /* Hover / focus state */
+  /**
+       * Styling the label, holding both the button and the selected files container
+       */
+  /**
+       * Focus state
+       */
+  /**
+       * Hover / focus state
+       */
 }
 
 .k-eventlistener .k-ui-namespace .k-file-input input {
@@ -8476,6 +8898,274 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   display: none;
 }
 
+.k-ui-namespace .k-tabs-container {
+  overflow: visible;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  /**
+     * When resizing
+     */
+}
+
+.k-ui-namespace .k-tabs-container:before, .k-ui-namespace .k-tabs-container:after {
+  display: table;
+  content: " ";
+}
+
+.k-ui-namespace .k-tabs-container:after {
+  clear: both;
+}
+
+.k-is-resizing .k-ui-namespace .k-tabs-container {
+  overflow: hidden;
+}
+
+.k-ui-namespace .k-tabs-container:not(:first-child) .k-tabs-scroller .k-tabs {
+  border-top: 1px solid gainsboro;
+  padding-top: 11px;
+}
+
+.k-ui-namespace .k-tabs-container > .k-tabs-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.k-ui-namespace .k-tabs-container > .k-tabs-content:before, .k-ui-namespace .k-tabs-container > .k-tabs-content:after {
+  display: table;
+  content: " ";
+}
+
+.k-ui-namespace .k-tabs-container > .k-tabs-content:after {
+  clear: both;
+}
+
+.k-ui-namespace .k-tabs-container > .k-tabs-content > .k-tab {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  padding: 0;
+}
+
+.k-ui-namespace .k-tabs-wrapper {
+  position: relative;
+  height: 48px;
+  overflow: hidden;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+  -webkit-backface-visibility: hidden;
+}
+
+.k-ui-namespace .k-tabs-scroller {
+  height: 72px;
+  overflow: auto;
+}
+
+.k-ui-namespace .k-tabs-scroller > .k-tabs {
+  padding: 12px 8px 0;
+  background: white;
+  white-space: nowrap;
+  display: inline-block;
+  min-width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .k-ui-namespace .k-tabs-scroller > .k-tabs {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+.k-ui-namespace .k-tabs-scroller > .k-tabs li.k-is-active a {
+  background: #fbfafa;
+  color: #222222;
+}
+
+.k-ui-namespace .k-tabs {
+  position: relative;
+  /* 1 */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-bottom: 1px solid gainsboro;
+  font-size: 0;
+  /**
+     * 1. Make the list-items overlay the bottom border
+     */
+  /**
+     * Disabled state sets text to gray and nukes hover/tab effects
+     */
+  /**
+     * Active state, and its :hover to override normal :hover
+     */
+  /**
+     * Links
+     */
+}
+
+.k-ui-namespace .k-tabs li {
+  position: relative;
+  display: inline-block;
+  margin-bottom: -1px;
+  /* 1 */
+  margin-right: 2px;
+}
+
+.k-ui-namespace .k-tabs li:last-child {
+  margin-right: 0;
+}
+
+[dir="rtl"] .k-ui-namespace .k-tabs li {
+  margin-right: auto;
+  margin-left: 2px;
+}
+
+[dir="rtl"] .k-ui-namespace .k-tabs li:last-child {
+  margin-left: 0;
+}
+
+.k-ui-namespace .k-tabs .k-is-disabled a {
+  color: #343434;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.k-ui-namespace .k-tabs .k-is-disabled a:hover, .k-ui-namespace .k-tabs .k-is-disabled a:focus {
+  color: inherit;
+  text-decoration: none;
+  background-color: transparent;
+  cursor: not-allowed;
+}
+
+.k-ui-namespace .k-tabs .k-is-active a, .k-ui-namespace .k-tabs .k-is-active a:hover, .k-ui-namespace .k-tabs .k-is-active a:focus {
+  color: #222222;
+  background-color: white;
+  border: 1px solid gainsboro;
+  border-bottom-color: transparent;
+  cursor: default;
+}
+
+.k-ui-namespace .k-tabs a {
+  position: relative;
+  display: block;
+  padding: 8px 16px 6px;
+  line-height: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.k-ui-namespace .k-tabs a:hover, .k-ui-namespace .k-tabs a:focus {
+  text-decoration: none;
+  background-color: #eeeeee;
+  border-color: gainsboro;
+}
+
+.k-ui-namespace .k-tabs-content > .k-tab {
+  display: none;
+  padding: 8px;
+}
+
+.k-ui-namespace .k-tabs-content > .k-is-active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.k-ui-namespace .k-tabs-scroller-prev,
+.k-ui-namespace .k-tabs-scroller-next {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 32px;
+  overflow: hidden;
+  opacity: 0;
+  background: white;
+  border: 1px solid gainsboro;
+  border-radius: 0;
+  transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+  -webkit-backface-visibility: hidden;
+}
+
+.k-ui-namespace .k-tabs-scroller-prev span,
+.k-ui-namespace .k-tabs-scroller-next span {
+  transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+  -webkit-backface-visibility: hidden;
+}
+
+.k-ui-namespace .k-tabs-scroller-prev {
+  left: 0;
+  border-left: none;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.k-ui-namespace .k-tabs-scroller-next {
+  right: 0;
+  border-right: none;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.k-ui-namespace .k-has-tabs-overflow {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.k-ui-namespace .k-has-tabs-overflow .k-tabs-scroller-prev,
+.k-ui-namespace .k-has-tabs-overflow .k-tabs-scroller-next {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  cursor: no-drop;
+  opacity: 1;
+}
+
+.k-ui-namespace .k-has-tabs-overflow .k-tabs-scroller-prev span,
+.k-ui-namespace .k-has-tabs-overflow .k-tabs-scroller-next span {
+  opacity: 0.33;
+}
+
+.k-ui-namespace .k-has-tabs-left-overflow .k-tabs-scroller-prev {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.k-ui-namespace .k-has-tabs-left-overflow .k-tabs-scroller-prev span {
+  opacity: 1;
+}
+
+.k-ui-namespace .k-has-tabs-right-overflow .k-tabs-scroller-next {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.k-ui-namespace .k-has-tabs-right-overflow .k-tabs-scroller-next span {
+  opacity: 1;
+}
+
 .k-ui-namespace .k-table-container {
   background: white;
   display: -webkit-box;
@@ -8533,7 +9223,9 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
      *
      * 1. Small extra info below title display:block to display below title
      */
-  /* Hover background */
+  /**
+     * Hover background
+     */
 }
 
 .k-ui-namespace .k-table-container table {
@@ -8595,7 +9287,9 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   /* 2 */
   background: #fbfafa;
   font-weight: 400;
-  /* Size icons accordingly */
+  /**
+       * Size icons accordingly
+       */
 }
 
 .k-ui-namespace .k-table-container th a {
@@ -8717,7 +9411,9 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-table-container .k-table-data--multiline {
-  /* Give anchors underlines to set them apart from default text */
+  /**
+       * Give anchors underlines to set them apart from default text
+       */
 }
 
 .k-ui-namespace .k-table-container .k-table-data--multiline a, .k-ui-namespace .k-table-container .k-table-data--multiline span, .k-ui-namespace .k-table-container .k-table-data--multiline input, .k-ui-namespace .k-table-container .k-table-data--multiline svg, .k-ui-namespace .k-table-container .k-table-data--multiline small, .k-ui-namespace .k-table-container .k-table-data--multiline img {
@@ -8784,7 +9480,9 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-table-container .k-table__item--state {
-  /* pointers for clickable elements */
+  /**
+       * pointers for clickable elements
+       */
 }
 
 .k-ui-namespace .k-table-container .k-table__item--state button.k-ui-namespace .k-table-container .k-table__item--state,
@@ -8829,9 +9527,15 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-table-container {
-  /* Set proper spacing before levels */
-  /* Do not display the level icon for the first level items */
-  /* Space icons away from text */
+  /**
+     * Set proper spacing before levels
+     */
+  /**
+     * Do not display the level icon for the first level items
+     */
+  /**
+     * Space icons away from text
+     */
 }
 
 .k-ui-namespace .k-table-container .k-table__item-level {
@@ -9163,7 +9867,9 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-table-container tr.k-is-selected {
-  /* Re-set background on td's while hovering th */
+  /**
+       * Re-set background on td's while hovering th
+       */
 }
 
 .k-ui-namespace .k-table-container tr.k-is-selected > td {
@@ -9180,8 +9886,12 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-table-container .k-is-active {
-  /* Set font weight */
-  /* Set background but not for also selected rows */
+  /**
+       * Set font weight
+       */
+  /**
+       * Set background but not for also selected rows
+       */
 }
 
 .k-ui-namespace .k-table-container .k-is-active > td {
@@ -9312,351 +10022,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   /* 1 */
 }
 
-.k-ui-namespace .k-tabs-container {
-  overflow: visible;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  /* When resizing */
-}
-
-.k-ui-namespace .k-tabs-container:before, .k-ui-namespace .k-tabs-container:after {
-  display: table;
-  content: " ";
-}
-
-.k-ui-namespace .k-tabs-container:after {
-  clear: both;
-}
-
-.k-is-resizing .k-ui-namespace .k-tabs-container {
-  overflow: hidden;
-}
-
-.k-ui-namespace .k-tabs-container:not(:first-child) .k-tabs-scroller .k-tabs {
-  border-top: 1px solid gainsboro;
-  padding-top: 11px;
-}
-
-.k-ui-namespace .k-tabs-container > .k-tabs-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-}
-
-.k-ui-namespace .k-tabs-container > .k-tabs-content:before, .k-ui-namespace .k-tabs-container > .k-tabs-content:after {
-  display: table;
-  content: " ";
-}
-
-.k-ui-namespace .k-tabs-container > .k-tabs-content:after {
-  clear: both;
-}
-
-.k-ui-namespace .k-tabs-container > .k-tabs-content > .k-tab {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  padding: 0;
-}
-
-.k-ui-namespace .k-tabs-wrapper {
-  position: relative;
-  height: 48px;
-  overflow: hidden;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
-  transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-  -webkit-backface-visibility: hidden;
-}
-
-.k-ui-namespace .k-tabs-scroller {
-  height: 72px;
-  overflow: auto;
-}
-
-.k-ui-namespace .k-tabs-scroller > .k-tabs {
-  padding: 12px 8px 0;
-  background: white;
-  white-space: nowrap;
-  display: inline-block;
-  min-width: 100%;
-}
-
-@media screen and (min-width: 768px) {
-  .k-ui-namespace .k-tabs-scroller > .k-tabs {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-}
-
-.k-ui-namespace .k-tabs-scroller > .k-tabs li.k-is-active a {
-  background: #fbfafa;
-  color: #222222;
-}
-
-.k-ui-namespace .k-tabs {
-  position: relative;
-  /* 1 */
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  border-bottom: 1px solid gainsboro;
-  font-size: 0;
-  /**
-     * 1. Make the list-items overlay the bottom border
-     */
-  /**
-     * Disabled state sets text to gray and nukes hover/tab effects
-     */
-  /**
-     * Active state, and its :hover to override normal :hover
-     */
-  /**
-     * Links
-     */
-}
-
-.k-ui-namespace .k-tabs li {
-  position: relative;
-  display: inline-block;
-  margin-bottom: -1px;
-  /* 1 */
-  margin-right: 2px;
-}
-
-.k-ui-namespace .k-tabs li:last-child {
-  margin-right: 0;
-}
-
-[dir="rtl"] .k-ui-namespace .k-tabs li {
-  margin-right: auto;
-  margin-left: 2px;
-}
-
-[dir="rtl"] .k-ui-namespace .k-tabs li:last-child {
-  margin-left: 0;
-}
-
-.k-ui-namespace .k-tabs .k-is-disabled a {
-  color: #343434;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-.k-ui-namespace .k-tabs .k-is-disabled a:hover, .k-ui-namespace .k-tabs .k-is-disabled a:focus {
-  color: inherit;
-  text-decoration: none;
-  background-color: transparent;
-  cursor: not-allowed;
-}
-
-.k-ui-namespace .k-tabs .k-is-active a, .k-ui-namespace .k-tabs .k-is-active a:hover, .k-ui-namespace .k-tabs .k-is-active a:focus {
-  color: #222222;
-  background-color: white;
-  border: 1px solid gainsboro;
-  border-bottom-color: transparent;
-  cursor: default;
-}
-
-.k-ui-namespace .k-tabs a {
-  position: relative;
-  display: block;
-  padding: 8px 16px 6px;
-  line-height: 20px;
-  border: 1px solid transparent;
-  border-radius: 4px 4px 0 0;
-  text-decoration: none;
-  font-size: 13px;
-}
-
-.k-ui-namespace .k-tabs a:hover, .k-ui-namespace .k-tabs a:focus {
-  text-decoration: none;
-  background-color: #eeeeee;
-  border-color: gainsboro;
-}
-
-.k-ui-namespace .k-tabs-content > .k-tab {
-  display: none;
-  padding: 8px;
-}
-
-.k-ui-namespace .k-tabs-content > .k-is-active {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.k-ui-namespace .k-tabs-scroller-prev,
-.k-ui-namespace .k-tabs-scroller-next {
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 32px;
-  overflow: hidden;
-  opacity: 0;
-  background: white;
-  border: 1px solid gainsboro;
-  border-radius: 0;
-  transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-  -webkit-backface-visibility: hidden;
-}
-
-.k-ui-namespace .k-tabs-scroller-prev span,
-.k-ui-namespace .k-tabs-scroller-next span {
-  transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-  -webkit-backface-visibility: hidden;
-}
-
-.k-ui-namespace .k-tabs-scroller-prev {
-  left: 0;
-  border-left: none;
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
-}
-
-.k-ui-namespace .k-tabs-scroller-next {
-  right: 0;
-  border-right: none;
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
-}
-
-.k-ui-namespace .k-has-tabs-overflow {
-  padding-left: 32px;
-  padding-right: 32px;
-}
-
-.k-ui-namespace .k-has-tabs-overflow .k-tabs-scroller-prev,
-.k-ui-namespace .k-has-tabs-overflow .k-tabs-scroller-next {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
-  cursor: no-drop;
-  opacity: 1;
-}
-
-.k-ui-namespace .k-has-tabs-overflow .k-tabs-scroller-prev span,
-.k-ui-namespace .k-has-tabs-overflow .k-tabs-scroller-next span {
-  opacity: 0.33;
-}
-
-.k-ui-namespace .k-has-tabs-left-overflow .k-tabs-scroller-prev {
-  opacity: 1;
-  cursor: pointer;
-}
-
-.k-ui-namespace .k-has-tabs-left-overflow .k-tabs-scroller-prev span {
-  opacity: 1;
-}
-
-.k-ui-namespace .k-has-tabs-right-overflow .k-tabs-scroller-next {
-  opacity: 1;
-  cursor: pointer;
-}
-
-.k-ui-namespace .k-has-tabs-right-overflow .k-tabs-scroller-next span {
-  opacity: 1;
-}
-
-.k-ui-namespace .k-title-bar {
-  border-bottom: 1px solid #d2d2d2;
-  position: relative;
-  /* 1 */
-  z-index: 10;
-  /* 1 */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-  background: #f0f0f0;
-  /* 2 */
-  color: #222222;
-  font-size: 21px;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
-}
-
-.k-ui-namespace .k-title-bar .k-off-canvas-toggle-holder,
-.k-ui-namespace .k-title-bar .k-title-bar__heading {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
-}
-
-.k-ui-namespace .k-title-bar .k-off-canvas-toggle-holder {
-  white-space: nowrap;
-}
-
-.k-ui-namespace .k-title-bar .k-title-bar__heading {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  padding: 8px 8px 7px;
-  line-height: 32px;
-  text-align: center;
-}
-
-.k-ui-namespace .k-title-bar .k-title-bar__heading:first-child {
-  margin-left: 48px;
-}
-
-.k-ui-namespace .k-title-bar .k-title-bar__heading:last-child {
-  margin-right: 48px;
-}
-
-@media screen and (min-width: 768px) {
-  .k-ui-namespace .k-title-bar .k-title-bar__heading {
-    text-align: left;
-  }
-  .k-ui-namespace .k-title-bar .k-title-bar__heading:first-child {
-    margin-left: 0;
-  }
-  .k-ui-namespace .k-title-bar .k-title-bar__heading:last-child {
-    margin-right: 0;
-  }
-  [dir="rtl"] .k-ui-namespace .k-title-bar .k-title-bar__heading {
-    text-align: right;
-  }
-}
-
-.k-ui-namespace .k-title-bar--mobile {
-  border-bottom: 1px solid #c2c2c2;
-  background: #e1e1e1;
-}
-
-@media screen and (min-width: 768px) {
-  .k-ui-namespace .k-title-bar--mobile {
-    display: none;
-  }
-}
-
 .k-ui-namespace .k-toolbar {
   border-bottom: 1px solid #d2d2d2;
   background: #f0f0f0;
@@ -9702,7 +10067,9 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
        * Only make them square if media queries are supported
        * By default we just want them as buttons
        */
-  /* Properly align dropdown button in button */
+  /**
+       * Properly align dropdown button in button
+       */
 }
 
 @media screen and (min-width: 0) and (max-width: 768px) {
@@ -9715,8 +10082,12 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-toolbar .k-button .k-dropdown {
-  /* Pullback so whole button becomes clickable */
-  /* Pull back to toggle button */
+  /**
+         * Pullback so whole button becomes clickable
+         */
+  /**
+         * Pull back to toggle button
+         */
 }
 
 .k-ui-namespace .k-toolbar .k-button .k-dropdown .k-dropdown__toggle {
@@ -9950,7 +10321,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   -ms-flex-item-align: start;
       align-self: flex-start;
   margin-right: auto;
-  /* RTL */
 }
 
 [dir="rtl"] .k-ui-namespace .k-align-left {
@@ -9972,7 +10342,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   -ms-flex-item-align: end;
       align-self: flex-end;
   margin-left: auto;
-  /* RTL */
 }
 
 [dir="rtl"] .k-ui-namespace .k-align-right {
@@ -10277,7 +10646,9 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   position: relative;
   text-indent: -9999em;
   vertical-align: middle;
-  /* Sizes */
+  /**
+       * Sizes
+       */
 }
 
 .k-cssanimations.k-boxshadow .k-ui-namespace .k-loader, .k-cssanimations.k-boxshadow .k-ui-namespace .k-loader:before, .k-cssanimations.k-boxshadow .k-ui-namespace .k-loader:after {
@@ -10586,7 +10957,8 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   margin: 0;
 }
 
-/* Responsive table */
+/* Responsive table
+     ========================================================================== */
 .footable.breakpoint {
   /**
      * Reset padding, and re-set them on individual divs
@@ -11550,7 +11922,8 @@ img.mfp-img {
   line-height: 24px;
 }
 
-/* Select2 overrides */
+/* Select2 overrides
+     ========================================================================== */
 .select2.select2-container--bootstrap {
   width: 100% !important;
   max-width: 100% !important;

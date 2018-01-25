@@ -3,7 +3,9 @@
   /* Sidebar
      ========================================================================== */
 
-  /* The left and right sidebar */
+  /**
+   * The left and right sidebar
+   */
 
   .k-sidebar-left,
   .k-sidebar-right {
@@ -14,13 +16,19 @@
     flex-direction: column;
     flex: 0 0 auto;
 
-    /* When resizing */
+
+    /**
+     * When resizing
+     */
 
     @include resizing {
       overflow: hidden;
     }
 
-    /* When JavaScript is enabled */
+
+    /**
+     * When JavaScript is enabled
+     */
 
     @include js-enabled {
       position: absolute;
@@ -32,7 +40,9 @@
   }
 
 
-  /* Left sidebar specific */
+  /**
+   * Left sidebar specific
+   */
 
   .k-sidebar-left {
     background: $k-sidebar-background;
@@ -54,26 +64,35 @@
     }
 
 
-    /* Sidebar width */
+    /**
+     * Sidebar width
+     */
 
     @include breakpoint($k-sidebar-left-querie-width) {
       @include allwidth($k-sidebar-left-small-width);
     }
 
 
-    /* Larger sidebar when space is available */
+    /**
+     * Larger sidebar when space is available
+     */
 
     @include breakpoint($k-delta) {
       @include allwidth($k-sidebar-left-width);
     }
 
 
-    /* When JavaScript is enabled */
+    /**
+     * When JavaScript is enabled
+     */
 
     @include js-enabled {
       @include allwidth($k-sidebar-left-width);
 
-      /* On 'desktop' we 'open' the sidebar by default */
+
+      /**
+       * On 'desktop' we 'open' the sidebar by default
+       */
 
       @include breakpoint($k-sidebar-left-querie-width) {
         position: relative;
@@ -84,7 +103,9 @@
       }
 
 
-      /* And we make it even larger when there's enough space */
+      /**
+       * And we make it even larger when there's enough space
+       */
 
       @include breakpoint($k-delta) {
         @include allwidth($k-sidebar-left-width);
@@ -93,7 +114,9 @@
   }
 
 
-  /* When left sidebar is toggled */
+  /**
+   * When left sidebar is toggled
+   */
 
   #{$k-left-menu-opened-class} {
     .k-sidebar-left {
@@ -103,7 +126,9 @@
   }
 
 
-  /* Right sidebar specific */
+  /**
+   * Right sidebar specific
+   */
 
   .k-sidebar-right {
     background: $k-sidebar-background;
@@ -125,26 +150,35 @@
     }
 
 
-    /* Sidebar width */
+    /**
+     * Sidebar width
+     */
 
     @include breakpoint($k-sidebar-right-querie-width) {
       @include allwidth($k-sidebar-right-small-width);
     }
 
 
-    /* Larger sidebar when space is available */
+    /**
+     * Larger sidebar when space is available
+     */
 
     @include breakpoint($k-sidebar-right-querie-width) {
       @include allwidth($k-sidebar-right-width);
     }
 
 
-    /* When JavaScript is enabled */
+    /**
+     * When JavaScript is enabled
+     */
 
     @include js-enabled {
       @include allwidth($k-sidebar-right-width);
 
-      /* On 'desktop' we 'open' the sidebar by default */
+
+      /**
+       * On 'desktop' we 'open' the sidebar by default
+       */
 
       @include breakpoint($k-sidebar-right-querie-width) {
         position: relative;
@@ -154,7 +188,10 @@
         z-index: 1;
       }
 
-      /* And we make it even larger when there's enough space */
+
+      /**
+       * And we make it even larger when there's enough space
+       */
 
       @include breakpoint($k-delta) {
         @include allwidth($k-sidebar-right-width);
@@ -163,7 +200,9 @@
   }
 
 
-  /* When right sidebar is toggled */
+  /**
+   * When right sidebar is toggled
+   */
 
   #{$k-right-menu-opened-class} {
     .k-sidebar-right {

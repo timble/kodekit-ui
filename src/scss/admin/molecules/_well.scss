@@ -1,6 +1,6 @@
 @if ($k-molecules == true and $k-molecule-well != false) or $k-molecule-well == true {
 
-  /* Wells
+  /* Well
      ========================================================================== */
 
   .k-well {
@@ -16,7 +16,10 @@
     }
   }
 
-  /* Wells content */
+
+  /**
+   * Well content
+   */
 
   .k-well__content {
     padding: $k-well-content-spacing;
@@ -25,7 +28,10 @@
     border-radius: $k-well-border-radius;
   }
 
-  /* Wells tabs */
+
+  /**
+   * Well tabs
+   */
 
   .k-well {
     .k-tabs-content {

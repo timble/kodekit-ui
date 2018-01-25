@@ -1,6 +1,7 @@
 @if ($k-utilities == true and $k-utility-no-padding != false) or $k-utility-no-paddingn == true {
 
-  /* Remove padding */
+  /* No padding
+     ========================================================================== */
 
   .k-no-padding.k-no-padding.k-no-padding {
     padding: 0;

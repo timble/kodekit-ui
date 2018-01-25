@@ -23,6 +23,7 @@
     }
   }
 
+
   /**
    * Toolbar contents
    */
@@ -33,6 +34,7 @@
       padding: $k-toolbar-spacing - 1px;
       min-width: $k-toolbar-button-height;
       line-height: $k-toolbar-button-height - ($k-toolbar-spacing * 2);
+
 
       /**
        * Make buttons square
@@ -51,11 +53,15 @@
       }
 
 
-      /* Properly align dropdown button in button */
+      /**
+       * Properly align dropdown button in button
+       */
 
       .k-dropdown {
 
-        /* Pullback so whole button becomes clickable */
+        /**
+         * Pullback so whole button becomes clickable
+         */
 
         .k-dropdown__toggle {
           text-decoration: none;
@@ -64,7 +70,9 @@
         }
 
 
-        /* Pull back to toggle button */
+        /**
+         * Pull back to toggle button
+         */
 
         .k-dropdown__menu {
           margin-top: $k-toolbar-spacing - 2px;
@@ -79,6 +87,7 @@
         margin-right: $k-toolbar-spacing;
       }
     }
+
 
     /**
      * Autosave indicator
@@ -98,6 +107,7 @@
       }
     }
 
+
     /**
      * Position the icons
      *
@@ -106,6 +116,8 @@
      */
 
     [class^="k-icon"] {
+      display: inline-block;
+
       @include breakpoint(0, range, $k-charlie) {
         display: block;
         margin: 0 0 $k-toolbar-spacing;
@@ -114,8 +126,6 @@
         font-size: $k-large-font-size;
         line-height: $k-large-font-size;
       }
-
-      display: inline-block;
 
       &:first-child {
         margin: 0 0.25em 0 0.1em;
@@ -145,7 +155,10 @@
     }
   }
 
-  /* Text on the toolbar buttons */
+
+  /**
+   * Text on the toolbar buttons
+   */
 
   .k-toolbar__text {
     @include breakpoint(0, range, $k-charlie) {

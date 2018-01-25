@@ -17,6 +17,7 @@
     }
   }
 
+
   /**
    * Check if :checked is supported using modernizr
    */
@@ -39,7 +40,9 @@
 
   @include modernizr('.k-checked') {
 
-    /* Block element to clear from other floating / inline-block elements */
+    /**
+     * Block element to clear from other floating / inline-block elements
+     */
 
     #{$k-optionlist-block-class} {
       #{$k-optionlist-content-class} {
@@ -57,7 +60,9 @@
 
   @include modernizr('.k-checked') {
 
-    /* Block element to clear from other floating / inline-block elements */
+    /**
+     * Block element to clear from other floating / inline-block elements
+     */
 
     #{$k-optionlist-class} {
       [disabled] + label {

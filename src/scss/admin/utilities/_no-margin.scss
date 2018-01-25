@@ -1,6 +1,7 @@
 @if ($k-utilities == true and $k-utility-no-margin != false) or $k-utility-no-margin == true {
 
-  /* Remove margin */
+  /* No margin
+     ========================================================================== */
 
   .k-no-margin.k-no-margin.k-no-margin {
     margin: 0;

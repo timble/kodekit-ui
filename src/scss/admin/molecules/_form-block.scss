@@ -9,7 +9,10 @@
     @include content-block;
   }
 
-  /* The header */
+
+  /**
+   * The header
+   */
 
   .k-form-block__header {
     @include border(bottom, $k-form-block-header-border);
@@ -18,7 +21,10 @@
     font-weight: $k-form-block-header-font-weight;
   }
 
-  /* The content */
+
+  /**
+   * The content
+   */
 
   .k-form-block__content {
     padding: $k-form-block-content-spacing;

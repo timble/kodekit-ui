@@ -1,8 +1,9 @@
 @if ($k-utilities == true and $k-utility-content-block != false) or $k-utility-content-block == true {
 
+  /* Content block
+     ========================================================================== */
+
   /**
-   * Content block
-   *
    * Element with a bottom margin except when item itself is a last-child
    */
 
@@ -15,7 +16,9 @@
   }
 
 
-  /* Top margin except for first-child */
+  /**
+   * Top margin except for first-child
+   */
 
   .k-content-block-top {
     @include content-block-top;

@@ -16,6 +16,11 @@
     }
   }
 
+
+  /**
+   * Hide the resizer since element is flexing
+   */
+
   .cke_resizer.cke_resizer {
     display: none;
   }

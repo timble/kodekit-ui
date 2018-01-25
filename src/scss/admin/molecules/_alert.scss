@@ -12,7 +12,10 @@
     }
   }
 
-  /* Overflowing alert with 33% max-height */
+
+  /**
+   * Overflowing alert with 33% max-height
+   */
 
   .k-alert--overflow {
     min-height: $k-alert-overflow-min-height;
@@ -21,7 +24,10 @@
     flex: 0 1 auto;
   }
 
-  /* Alternate styles */
+
+  /**
+   * Alternate styles
+   */
 
   .k-alert--success {
     @include alert-variant($k-alert-success-background, $k-alert-success-color);

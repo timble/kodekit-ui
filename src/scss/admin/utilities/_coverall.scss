@@ -1,5 +1,8 @@
 @if ($k-utilities == true and $k-utility-coverall != false) or $k-utility-coverall == true {
 
+  /* Cover all
+     ========================================================================== */
+
   /**
    * "Cover all" link
    *
@@ -13,6 +16,7 @@
       @include coverall;
     }
   }
+
 
   /**
    * "On-top" links

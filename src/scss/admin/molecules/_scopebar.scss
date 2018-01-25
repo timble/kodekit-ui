@@ -23,6 +23,7 @@
     }
   }
 
+
   /**
    * Scopebar items
    *
@@ -37,12 +38,16 @@
     flex: 1 1 auto;
     width: auto;
 
-    /* Floating nicely */
+
+    /**
+     * Floating nicely
+     */
 
     @include breakpoint($k-alpha) {
       float: left;
     }
   }
+
 
   /**
    * Static scopebar items
@@ -52,6 +57,7 @@
     display: block;
     flex: 0 0 auto;
   }
+
 
   /**
    * Toggle buttons
@@ -71,20 +77,24 @@
       flex: 0 0 auto;
     }
 
-    /* Hide on larger screens */
+
+    /**
+     * Hide on larger screens
+     */
 
     @include breakpoint($k-delta) {
       display: none;
     }
-
-    /* RTL */
 
     @include rtl {
       padding-left: 0;
       padding-right: $k-scopebar-button-spacing;
     }
 
-    /* Buttons */
+
+    /**
+     * Buttons
+     */
 
     .k-toggle-scopebar-filters,
     .k-toggle-scopebar-breadcrumbs {
@@ -112,19 +122,28 @@
     }
   }
 
-  /* Scopebar Filters */
+
+  /**
+   * Scopebar Filters
+   */
 
   .k-scopebar__item--filters {
     width: 100%;
     flex: 1 1 auto;
     order: 10;
 
-    /* Hide when JS is enabled */
+
+    /**
+     * Hide when JS is enabled
+     */
 
     @include js-enabled {
       display: none;
 
-      /* Show on larger screens */
+
+      /**
+       * Show on larger screens
+       */
 
       @include breakpoint($k-alpha) {
         width: 100%;
@@ -135,6 +154,7 @@
         display: block;
       }
     }
+
 
     /**
      * 1. Reset order
@@ -150,6 +170,7 @@
     }
   }
 
+
   /**
    * 1. Clearfix so we can float individual filters
    * 2. For positioning dropdowns on smaller screens
@@ -161,7 +182,10 @@
     z-index: 2; /* 2 */
   }
 
-  /* Individual filter */
+
+  /**
+   * Individual filter
+   */
 
   .k-scopebar__item--filter {
     display: block;
@@ -182,7 +206,10 @@
     }
   }
 
-  /* Filter title and icon */
+
+  /**
+   * Filter title and icon
+   */
 
   .k-scopebar__item--filter__title,
   .k-scopebar__item--filter__icon {
@@ -208,7 +235,10 @@
     }
   }
 
-  /* Scopebar label showing how many active filters you have below a filter button */
+
+  /**
+   * Scopebar label showing how many active filters you have below a filter button
+   */
 
   .k-scopebar__item-label {
     position: absolute;
@@ -364,27 +394,39 @@
     }
   }
 
-  /* Scopebar breadcrumbs */
+
+  /**
+   * Scopebar breadcrumbs
+   */
 
   .k-scopebar__item--breadcrumbs {
 
-    /* Hide when JS is enabled */
+    /**
+     * Hide when JS is enabled
+     */
 
     @include js-enabled {
       display: none;
 
-      /* Show on larger screens */
+
+      /**
+       * Show on larger screens
+       */
 
       @include breakpoint($k-alpha) {
         width: 100%;
       }
 
-      /* Show on larger screens */
+
+      /**
+       * Show on larger screens
+       */
 
       @include breakpoint($k-beta) {
         display: block !important;
       }
     }
+
 
     /**
      * Flexbox
@@ -409,7 +451,10 @@
       overflow: hidden;
     }
 
-    /* Adjusted styling to display nicely inside the scopebar */
+
+    /**
+     * Adjusted styling to display nicely inside the scopebar
+     */
 
     .k-breadcrumb {
       position: static;
@@ -424,11 +469,18 @@
     }
   }
 
-  /* Scopebar buttons */
+
+  /**
+   * Scopebar buttons
+   */
 
   .k-scopebar__item--buttons {
+    display: block;
+    flex: 0 0 auto;
 
-    /* Floating nicely */
+    /**
+     * Floating nicely
+     */
 
     @include breakpoint($k-alpha) {
       float: right;
@@ -437,11 +489,6 @@
     @include breakpoint($k-delta) {
       float: none;
     }
-
-    /* Flexbox */
-
-    display: block;
-    flex: 0 0 auto;
   }
 
   .k-scopebar__button {
@@ -477,6 +524,7 @@
       background: lighter($k-scopebar-background);
     }
 
+
     /**
      * 1. Absolute center
      */
@@ -498,6 +546,7 @@
     }
   }
 
+
   /**
    * Scopebar search
    *
@@ -508,23 +557,24 @@
   .k-scopebar__item--search {
     position: relative; /* 1 */
     margin-left: auto; /* 2 */
+    flex: 1 1 auto;
+    order: 20;
 
     @include rtl {
       margin-left: 0;
       margin-right: auto;
     }
 
-    /* Hide when JS is enabled */
+
+    /**
+     * Hide when JS is enabled
+     */
 
     @include js-enabled {
       display: none;
       width: 100%;
     }
 
-    /* Flexbox */
-
-    flex: 1 1 auto;
-    order: 20;
 
     /**
      * 1. Reset order
@@ -578,7 +628,10 @@
       }
     }
 
-    /* Label */
+
+    /**
+     * Label
+     */
 
     label {
       position: absolute;
@@ -591,7 +644,10 @@
       border: 0;
     }
 
-    /* The search field */
+
+    /**
+     * The search field
+     */
 
     .k-search__field {
       @include reset;
@@ -624,7 +680,10 @@
       }
     }
 
-    /* Search buttons */
+
+    /**
+     * Search buttons
+     */
 
     .k-search__submit,
     .k-search__empty {
@@ -653,7 +712,10 @@
       }
     }
 
-    /* The search submit button */
+
+    /**
+     * The search submit button
+     */
 
     .k-search__submit {
       left: (($k-scopebar-submit-button-spacing - round($k-scopebar-size / 2)) / 2);
@@ -665,7 +727,10 @@
       }
     }
 
-    /* The search empty / reset button */
+
+    /**
+     * The search empty / reset button
+     */
 
     .k-search__empty {
       display: none;
@@ -682,7 +747,10 @@
       }
     }
 
-    /*  The active search label */
+
+    /**
+     * The active search label
+     */
 
     .k-scopebar__item-label--numberless {
       position: absolute;

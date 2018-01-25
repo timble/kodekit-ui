@@ -1,4 +1,4 @@
-@if ($k-molecules == true and $k-molecule-title-bar != false) or $k-molecule-title-bar == true {
+@if ($k-layout == true and $k-layout-title-bar != false) or $k-layout-title-bar == true {
 
   /* Title bar
      ========================================================================== */
@@ -21,6 +21,7 @@
     font-size: $k-title-bar-font-size;
     flex: 0 0 auto;
   }
+
 
   /**
    * Titlebar contents
@@ -68,7 +69,10 @@
     }
   }
 
-  /* Mobile title */
+
+  /**
+   * Mobile title
+   */
 
   .k-title-bar--mobile {
     @include border(bottom, $k-title-bar-mobile-border);

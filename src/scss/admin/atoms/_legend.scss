@@ -4,8 +4,8 @@
      ========================================================================== */
 
   /**
-   * 1. No margin top for the first legend
-   * 2. No margin bottom for the last legend
+   * 1. No margin bottom for the last legend
+   * 2. No padding top for the first legend
    */
 
   legend {
@@ -22,10 +22,10 @@
     font-size: $k-huge-font-size;
     line-height: $k-huge-line-height;
     font-weight: $k-normal-font-weight;
-    @include content-block;
+    @include content-block; /* 1 */
 
     &:first-child {
-      padding-top: 0;
+      padding-top: 0; /* 2 */
     }
   }
 }

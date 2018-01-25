@@ -7,6 +7,7 @@
     justify-content: flex-start;
     align-content: center;
 
+
     /**
      * Pagination
      *
@@ -19,13 +20,19 @@
       margin: 0;
       border-radius: $k-pagination-border-radius;
 
-      /* Override for rtl ul-ol-li styling */
+
+      /**
+       * Override for rtl ul-ol-li styling
+       */
 
       @include rtl {
         padding: 0;
       }
 
-      /* Contents */
+
+      /**
+       * Contents
+       */
 
       & > li {
         display: inline; /* 1 */
@@ -108,7 +115,10 @@
       }
     }
 
-    /* Limit */
+
+    /**
+     * Limit
+     */
 
     select {
       height: $k-table-pagination-height;

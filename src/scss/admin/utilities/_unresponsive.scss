@@ -1,10 +1,10 @@
 @if ($k-utilities == true and $k-utility-unresponsive != false) or $k-utility-unresponsive == true {
 
+  /* Unresponsive
+     ========================================================================== */
 
   /**
-   * Unavailable
-   *
-   * When dragging make sure nothing gets selected
+   * Make sure nothing can get selected
    */
 
   &.k-unresponsive,

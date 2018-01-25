@@ -1,6 +1,7 @@
 @if ($k-molecules == true and $k-molecule-responsive-table != false) or $k-molecule-responsive-table == true {
 
-  /* Responsive table */
+  /* Responsive table
+     ========================================================================== */
 
   .footable.breakpoint {
     .footable-toggle {

@@ -1,8 +1,9 @@
 @if ($k-utilities == true and $k-utility-flexing != false) or $k-utility-flexing == true {
 
+  /* Flexing
+     ========================================================================== */
+
   /**
-   * Flexing boxes
-   *
    * DO or don't flexing children. USeful inside flexing containers on elemtns that have no pre-defined styling for flexbox
    */
 
@@ -23,7 +24,9 @@
   }
 
 
-  /* Start at different breakpoints */
+  /**
+   * Start at different breakpoints
+   */
 
   @include breakpoint($k-beta) {
     .k-flexbox-from-beta.k-flexbox-from-beta.k-flexbox-from-beta {

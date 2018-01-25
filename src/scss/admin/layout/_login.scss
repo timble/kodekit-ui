@@ -1,4 +1,4 @@
-@if ($k-molecules == true and $k-molecule-login != false) or $k-molecule-login == true {
+@if ($k-layout == true and $k-layout-login != false) or $k-layout-login == true {
 
   /* ==========================================================================
      Login screen
@@ -23,6 +23,7 @@
     align-items: center;
   }
 
+
   /**
    * Login window
    *
@@ -38,6 +39,7 @@
     vertical-align: middle; /* 1 */
     flex: 0 0 auto;
   }
+
 
   /**
    * Brand
@@ -59,6 +61,7 @@
       vertical-align: middle;
     }
   }
+
 
   /**
    * Form

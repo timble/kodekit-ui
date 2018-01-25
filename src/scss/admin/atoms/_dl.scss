@@ -14,6 +14,13 @@
     float: left;
     clear: left;
     margin-right: $k-tiny-spacing;
+
+    @include rtl {
+      float: right;
+      clear: right;
+      margin-right: 0;
+      margin-left: $k-tiny-spacing;
+    }
   }
 
   dd {

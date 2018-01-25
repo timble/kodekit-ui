@@ -17,7 +17,11 @@
     flex-direction: column;
     flex: 1 1 auto;
 
-    /* When resizing */
+
+    /**
+     * When resizing
+     */
+
     @include resizing {
       overflow: hidden;
     }
@@ -40,6 +44,7 @@
     }
   }
 
+
   /**
    * Tabs wrapper
    */
@@ -51,6 +56,7 @@
     flex: 0 0 auto;
     @include transition;
   }
+
 
   /**
    * Tabs scroller
@@ -79,6 +85,7 @@
     }
   }
 
+
   /**
    * Tabs wrapper
    *
@@ -92,6 +99,7 @@
     list-style: none;
     border-bottom: $k-tabs-border;
     font-size: 0;
+
 
     /**
      * 1. Make the list-items overlay the bottom border
@@ -117,6 +125,7 @@
       }
     }
 
+
     /**
      * Disabled state sets text to gray and nukes hover/tab effects
      */
@@ -135,6 +144,7 @@
       }
     }
 
+
     /**
      * Active state, and its :hover to override normal :hover
      */
@@ -150,6 +160,7 @@
         cursor: default;
       }
     }
+
 
     /**
      * Links
@@ -174,6 +185,7 @@
     }
   }
 
+
   /**
    * Tabbable tabs
    *
@@ -190,6 +202,7 @@
       display: flex;
     }
   }
+
 
   /**
    * Left and right buttons for scrollable tabs

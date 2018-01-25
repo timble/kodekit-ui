@@ -7,7 +7,10 @@
     @include button-default;
   }
 
-  /* Alternate buttons */
+
+  /**
+   * Alternate buttons
+   */
 
   .k-button--default {
     @include button-variant($k-button-default-color, $k-button-default-background, $k-button-default-border);
@@ -33,20 +36,29 @@
     @include button-variant($k-button-danger-color, $k-button-danger-background, $k-button-danger-border);
   }
 
-  /* Link buttons */
+
+  /**
+   * Link buttons
+   */
 
   .k-button--link {
     @include button-link;
   }
 
-  /* Block button */
+
+  /**
+   * Block button
+   */
 
   .k-button--block {
     display: block;
     width: 100%;
   }
 
-  /* Button sizes */
+
+  /**
+   * Button sizes
+   */
 
   .k-button--tiny {
     @include button-size($k-button-tiny-border-radius, $k-button-tiny-font-size, $k-button-tiny-line-height, $k-button-tiny-vertical-spacing $k-button-tiny-horizontal-spacing);
@@ -60,13 +72,19 @@
     @include button-size($k-button-large-border-radius, $k-button-large-font-size, $k-button-large-line-height, $k-button-large-vertical-spacing $k-button-large-horizontal-spacing);
   }
 
-  /* Vertically space out multiple block buttons */
+
+  /**
+   * Vertically space out multiple block buttons
+   */
 
   .k-button--block + .k-button--block {
     margin-top: $k-button-spacer;
   }
 
-  /* Specificity overrides */
+
+  /**
+   * Specificity overrides
+   */
 
   input[type="submit"],
   input[type="reset"],
@@ -76,7 +94,10 @@
     }
   }
 
-  /* Button groups */
+
+  /**
+   * Button groups
+   */
 
   .k-button-group {
     position: relative;
@@ -92,7 +113,10 @@
         float: right;
       }
 
-      /* Bring the "active" button to the front */
+
+      /**
+       * Bring the "active" button to the front
+       */
 
       &:hover,
       &:focus,
@@ -102,7 +126,10 @@
       }
     }
 
-    /* Prevent double borders when buttons are next to each other */
+
+    /**
+     * Prevent double borders when buttons are next to each other
+     */
 
     .k-button + .k-button,
     .k-button + .k-button-group,

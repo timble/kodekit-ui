@@ -62,6 +62,7 @@
     }
   }
 
+
   /**
    * Card body
    */
@@ -91,6 +92,7 @@
       }
     }
   }
+
 
   /**
    * Card image
@@ -122,6 +124,7 @@
     @include coverall(0, 2px, 2px, 2px, 2px); /* 3 */
   }
 
+
   /**
    * Card title
    */
@@ -149,6 +152,7 @@
     }
   }
 
+
   /**
    * Card section
    *
@@ -168,6 +172,7 @@
     padding: 0;
     margin: 1px; /* 1 */
   }
+
 
   /**
    * Card footer
@@ -194,6 +199,7 @@
     }
   }
 
+
   /**
    * Card caption
    */
@@ -214,6 +220,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+
 
   /**
    * Selected card

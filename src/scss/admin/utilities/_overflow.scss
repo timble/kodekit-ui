@@ -1,6 +1,7 @@
 @if ($k-utilities == true and $k-utility-overflow != false) or $k-utility-overflow == true {
 
-  /* Overflow */
+  /* Overflow
+     ========================================================================== */
 
   .k-overflow.k-overflow.k-overflow {
     overflow: auto;

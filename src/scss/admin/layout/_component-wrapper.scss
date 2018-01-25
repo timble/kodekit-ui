@@ -12,7 +12,10 @@
     overflow: auto;
     min-height: 0;
 
-    /* Hide overflow when resizing the window */
+
+    /**
+     * Hide overflow when resizing the window
+     */
 
     @include resizing {
       overflow: hidden;

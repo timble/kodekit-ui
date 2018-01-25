@@ -1,8 +1,7 @@
 @if ($k-utilities == true and $k-utility-unavailable != false) or $k-utility-unavailable == true {
 
-  /**
-   * Unavailable
-   */
+  /* Unavailable
+     ========================================================================== */
 
   .k-unavailable,
   .k-is-unavailable {

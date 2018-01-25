@@ -1,9 +1,7 @@
 @if ($k-layout == true and $k-layout-grid != false) or $k-layout-grid == true {
 
-  /* Grid
+  /* Container
      ========================================================================== */
-
-  /* Container */
 
   .k-container {
     @include clearfix;
@@ -19,11 +17,12 @@
   }
 
 
-  /* --------------------------------------------------------------------------
-     Grid children
-     -------------------------------------------------------------------------- */
+  /* Container children
+     ========================================================================== */
 
-  /* Main container */
+  /**
+   * Main container
+   */
 
   .k-container__main {
     padding: $k-spacing;
@@ -55,7 +54,9 @@
   }
 
 
-  /* Sub container */
+  /**
+   * Sub container
+   */
 
   .k-container__sub {
     padding: $k-spacing;
@@ -87,7 +88,9 @@
   }
 
 
-  /* Full container */
+  /**
+   * Full container
+   */
 
   .k-container__full {
     clear: both;

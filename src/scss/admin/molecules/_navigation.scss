@@ -13,18 +13,25 @@
     padding: ($k-navigation-spacing * 2) 0 (($k-navigation-spacing * 2) - 1px);
     background: $k-navigation-background;
 
-    /* Override for rtl ul-ol-li styling */
+
+    /**
+     * Override for rtl ul-ol-li styling
+     */
 
     @include rtl {
       padding: ($k-navigation-spacing * 2) 0 (($k-navigation-spacing * 2) - 1px);
     }
 
-    /* Items */
+
+    /**
+     * Items
+     */
 
     li {
       display: block;
       line-height: $k-navigation-line-height;
     }
+
 
     /**
      * Links
@@ -48,7 +55,10 @@
         padding-left: round($k-navigation-spacing * 2);
       }
 
-      /* Hover & focus state */
+
+      /**
+       * Hover & focus state
+       */
 
       &:hover,
       &:focus {
@@ -56,6 +66,7 @@
         color: $k-navigation-hover-color;
         text-decoration: none; /* 2 */
       }
+
 
       /**
        * Faux border
@@ -75,7 +86,10 @@
         }
       }
 
-      /* Hover & focus states */
+
+      /**
+       * Hover & focus states
+       */
 
       &:hover,
       &:focus {
@@ -87,7 +101,10 @@
       }
     }
 
-    /* Active link */
+
+    /**
+     * Active link
+     */
 
     #{$k-navigation-active-class} {
       a {

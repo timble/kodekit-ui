@@ -17,6 +17,7 @@
     }
   }
 
+
   /**
    * Table
    *
@@ -29,6 +30,7 @@
     will-change: overflow;
     flex: 1 1 auto; /* 1 */
   }
+
 
   /**
    * Default table settings
@@ -52,6 +54,7 @@
         text-align: right;
       }
     }
+
 
     /**
      * Cells
@@ -83,6 +86,7 @@
       }
     }
 
+
     /**
      * Sticky header
      *
@@ -95,6 +99,7 @@
       top: 0;
       z-index: 1;
     }
+
 
     /**
      * Head
@@ -128,7 +133,10 @@
         }
       }
 
-      /* Size icons accordingly */
+
+      /**
+       * Size icons accordingly
+       */
 
       [class*="k-icon"] {
         font-size: $k-table-cell-icon-size;
@@ -136,6 +144,7 @@
         vertical-align: middle;
       }
     }
+
 
     /**
      * Body
@@ -161,7 +170,10 @@
       }
     }
 
-    /* Hover background */
+
+    /**
+     * Hover background
+     */
 
     tr,
     tr:nth-child(n) {
@@ -206,7 +218,10 @@
     }
   }
 
-  /* Table cell settings */
+
+  /**
+   * Table cell settings
+   */
 
   .k-table-container {
     .k-table-data--right {
@@ -252,7 +267,10 @@
         vertical-align: baseline;
       }
 
-      /* Give anchors underlines to set them apart from default text */
+
+      /**
+       * Give anchors underlines to set them apart from default text
+       */
 
       a {
         text-decoration: underline;
@@ -321,12 +339,17 @@
     }
   }
 
-  /* Table item states */
+
+  /**
+   * Table item states
+   */
 
   .k-table-container {
     .k-table__item--state {
 
-      /* pointers for clickable elements */
+      /**
+       * pointers for clickable elements
+       */
 
       button#{&},
       a#{&} {
@@ -357,7 +380,9 @@
   }
 
 
-  /* Table sub header */
+  /**
+   * Table sub header
+   */
 
   .k-table-container {
     .k-table__sub-header {
@@ -377,7 +402,10 @@
     }
   }
 
-  /* Table levels */
+
+  /**
+   * Table levels
+   */
 
   .k-table-container {
     .k-table__item-level {
@@ -401,7 +429,10 @@
       }
     }
 
-    /* Set proper spacing before levels */
+
+    /**
+     * Set proper spacing before levels
+     */
 
     @for $k-i from 1 through 15 {
       .k-table__item-level#{$k-i} {
@@ -423,13 +454,19 @@
       }
     }
 
-    /* Do not display the level icon for the first level items */
+
+    /**
+     * Do not display the level icon for the first level items
+     */
 
     .k-table__item-level1:before {
       display: none;
     }
 
-    /* Space icons away from text */
+
+    /**
+     * Space icons away from text
+     */
 
     .k-table__item-level__icon-item {
       position: relative;
@@ -468,6 +505,7 @@
     }
   }
 
+
   /**
    * Selected
    *
@@ -485,7 +523,10 @@
         }
       }
 
-      /* Re-set background on td's while hovering th */
+
+      /**
+       * Re-set background on td's while hovering th
+       */
 
       &:hover,
       &:focus {
@@ -496,6 +537,7 @@
     }
   }
 
+
   /**
    * Active rows
    *
@@ -505,14 +547,19 @@
   .k-table-container {
     #{$k-table-row-active-class} {
 
-      /* Set font weight */
+
+      /**
+       * Set font weight
+       */
 
       > td {
         font-weight: bold;
       }
 
 
-      /* Set background but not for also selected rows */
+      /**
+       * Set background but not for also selected rows
+       */
 
       &:not(#{$k-table-row-selected-class}) {
         > td {
@@ -524,7 +571,10 @@
     }
   }
 
-  /* Positioner */
+
+  /**
+   * Positioner
+   */
 
   .k-positioner {
     display: inline-block;
@@ -574,7 +624,10 @@
     }
   }
 
-  /* Table heading sorting */
+
+  /**
+   * Table heading sorting
+   */
 
   .k-sort-ascending,
   .k-sort-descending {
@@ -646,9 +699,9 @@
     }
   }
 
-  /* Table pagination */
 
-  /**
+  /* Table pagination
+   *
    * 1. Faking a bottom border, this shadow will disappear when pagination is positioned to bottom
    */
 

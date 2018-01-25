@@ -1,11 +1,9 @@
 @if ($k-atoms == true and $k-atom-input != false) or $k-atom-input == true {
 
-  /* Input
+  /* Normalize form controls
      ========================================================================== */
 
   /**
-   * Normalize form controls
-   *
    * 1. Override content-box in Normalize (* isn't specific enough)
    * 2. Position radios and checkboxes better
    * 3. Make range inputs behave like textual form controls

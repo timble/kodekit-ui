@@ -1,8 +1,9 @@
 @if ($k-utilities == true and $k-utility-loader != false) or $k-utility-loader == true {
 
+  /* Loader
+     ========================================================================== */
+
   /**
-   * Loader container
-   *
    * Cover it's entire parent (the parent with an `absolute` or `relative` position)
    * - Add `k-hidden` class to the element when items are done loading
    */
@@ -70,7 +71,10 @@
         top: 0;
       }
 
-      /* Sizes */
+
+      /**
+       * Sizes
+       */
 
       &.k-loader--small {
         font-size: $k-loader-small-size;

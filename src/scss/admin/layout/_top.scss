@@ -16,7 +16,9 @@
   }
 
 
-  /* Top logo */
+  /**
+   * Top logo
+   */
 
   .k-top-container__logo {
     height: $k-top-container-size;
@@ -49,7 +51,9 @@
   }
 
 
-  /* Top navigation */
+  /**
+   * Top navigation
+   */
 
   .k-top-container__navigation {
     position: absolute;
@@ -63,7 +67,9 @@
     box-shadow: $k-top-container-navigation-box-shadow;
 
 
-    /* On desktop */
+    /**
+     * On desktop
+     */
 
     @include breakpoint($k-top-container-breakpoint) {
       position: static;
@@ -77,7 +83,9 @@
     }
 
 
-    /* First level */
+    /**
+     * First level
+     */
 
     ul {
       list-style: none;
@@ -145,7 +153,9 @@
         }
 
 
-        /* Basic fallback for parent items */
+        /**
+         * Basic fallback for parent items
+         */
 
         @if $k-top-container-navigation-item-level1-parent-arrow == true {
           &:not(:only-child) {
@@ -163,7 +173,9 @@
       }
 
 
-      /* Second level */
+      /**
+       * Second level
+       */
 
       ul {
         display: none;
@@ -222,7 +234,10 @@
             color: $k-top-container-background;
           }
 
-          /* Basic fallback for parent items */
+
+          /**
+           * Basic fallback for parent items
+           */
 
           @if $k-top-container-navigation-item-level1-parent-arrow == true {
             &:not(:only-child) {
@@ -247,7 +262,9 @@
     }
 
 
-    /* Right aligned navigation */
+    /**
+     * Right aligned navigation
+     */
 
     .k-navigation-right {
       @include breakpoint($k-top-container-breakpoint) {
@@ -279,7 +296,9 @@
   }
 
 
-  /* Mobile settings */
+  /**
+   * Mobile settings
+   */
 
   &#{$k-top-menu-opened-class} {
     overflow: visible;
@@ -318,7 +337,9 @@
   }
 
 
-  /* Toggler */
+  /**
+   * Toggler
+   */
 
   .k-top-navigation-toggle {
     position: absolute;

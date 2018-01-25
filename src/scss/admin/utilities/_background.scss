@@ -1,8 +1,7 @@
 @if ($k-utilities == true and $k-utility-background != false) or $k-utility-background == true {
 
-  /**
-   * Colors
-   */
+  /* Background
+     ========================================================================== */
 
   .k-background-type {
     background: $k-type-color;

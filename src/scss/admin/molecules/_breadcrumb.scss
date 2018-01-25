@@ -20,6 +20,7 @@
       overflow: hidden; /* 2 */
     }
 
+
     /**
      * List
      *
@@ -31,6 +32,7 @@
       @include reset; /* 1 */
       display: flex; /* 2 */
     }
+
 
     /**
      * Styling list items
@@ -58,13 +60,19 @@
         padding-right: $k-breadcrumb-divider-size;
       }
 
-      /* Display on larger screens */
+
+      /**
+       * Display on larger screens
+       */
 
       @include breakpoint($k-breadcrumb-query) {
         display: inline-block;
       }
 
-      /* List item separator */
+
+      /**
+       * List item separator
+       */
 
       @include pseudo(before, $k-content: false) {
         top: 0;
@@ -83,7 +91,10 @@
         }
       }
 
-      /* No separator on first item */
+
+      /**
+       * No separator on first item
+       */
 
       &:first-child {
         padding-left: 0;
@@ -98,11 +109,12 @@
         }
       }
 
+
       /**
        * Hover
        *
        * 1. Reset flexbox so the whole item is visible
-            No :focus since <li> can't be focused
+       *    No :focus since <li> can't be focused
        * 2. Wrap the active item when another item is being hovered
        */
 
@@ -115,6 +127,7 @@
         }
       }
     }
+
 
     /**
      * Links
@@ -132,6 +145,7 @@
       }
     }
 
+
     /**
      * Home and active elements
      *
@@ -145,6 +159,7 @@
       overflow: visible; /* 1 */
       flex: 0 0 auto; /* 2 */
     }
+
 
     /**
      * One but last item
@@ -167,7 +182,10 @@
       }
     }
 
-    /* Active item */
+
+    /**
+     * Active item
+     */
 
     .k-breadcrumb__active {
       .k-breadcrumb__content {
@@ -177,7 +195,10 @@
 
   }
 
-  /* Single breadcrumb items */
+
+  /**
+   * Single breadcrumb items
+   */
 
   .k-breadcrumb__content {
     position: relative;

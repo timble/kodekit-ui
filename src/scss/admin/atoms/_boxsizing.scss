@@ -1,8 +1,9 @@
 @if ($k-atoms == true and $k-atom-box-sizing != false) or $k-atom-box-sizing == true {
 
+  /* Box sizing
+     ========================================================================== */
+
   /**
-   * Box sizing
-   *
    * Border box everything:
    * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
    */

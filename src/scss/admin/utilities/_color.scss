@@ -1,8 +1,7 @@
 @if ($k-utilities == true and $k-utility-color != false) or $k-utility-color == true {
 
-  /**
-   * Colors
-   */
+  /* Color
+     ========================================================================== */
 
   .k-color-type {
     color: $k-type-color;

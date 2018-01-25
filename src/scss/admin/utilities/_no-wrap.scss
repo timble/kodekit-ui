@@ -1,10 +1,7 @@
 @if ($k-utilities == true and $k-utility-no-wrap != false) or $k-utility-no-wrap == true {
 
-  /**
-   * No wrap
-   *
-   * Nowrap element
-    */
+  /* No wrap
+     ========================================================================== */
 
   .k-no-wrap.k-no-wrap.k-no-wrap {
     white-space: nowrap;

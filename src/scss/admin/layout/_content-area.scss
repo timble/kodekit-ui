@@ -60,6 +60,8 @@
 
   /**
    * Content area children
+   *
+   * 1. for breadcrumbs to work properly
    */
 
   .k-content-area__child {
@@ -69,7 +71,7 @@
     width: auto;
     min-height: 0;
     overflow: visible;
-    max-width: 100%; // for breadcrumbs to work properly
+    max-width: 100%; /* 1 */
     backface-visibility: hidden;
     @include transition(transform);
 

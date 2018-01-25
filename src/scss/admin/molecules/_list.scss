@@ -17,11 +17,15 @@
       padding: 0;
     }
 
-    /* Items */
+
+    /**
+     * Items
+     */
 
     li {
       display: block;
     }
+
 
     /**
      * Links
@@ -37,7 +41,10 @@
       line-height: $k-list-link-line-height;
       text-decoration: none; /* 2 */
 
-      /* Hover & focus state */
+
+      /**
+       * Hover & focus state
+       */
 
       &:hover,
       &:focus {
@@ -47,7 +54,10 @@
       }
     }
 
-    /* Active link */
+
+    /**
+     * Active link
+     */
 
     #{$k-list-link-active-class} {
       a {
@@ -62,7 +72,10 @@
       }
     }
 
-    /* Icons */
+
+    /**
+     * Icons
+     */
 
     [class^="k-icon"] {
       display: inline-block;

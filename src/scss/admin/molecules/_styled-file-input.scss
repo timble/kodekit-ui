@@ -35,7 +35,10 @@
         }
       }
 
-      /* Styling the label, holding both the button and the selected files container */
+
+      /**
+       * Styling the label, holding both the button and the selected files container
+       */
 
       + label {
         max-width: 100%;
@@ -52,7 +55,10 @@
         text-align: center;
       }
 
-      /* Focus state */
+
+      /**
+       * Focus state
+       */
 
       &:focus,
       &#{$k-styled-file-focus-class} {
@@ -64,7 +70,10 @@
         }
       }
 
-      /* Hover / focus state */
+
+      /**
+       * Hover / focus state
+       */
 
       &:focus,
       &#{$k-styled-file-focus-class},
@@ -82,7 +91,10 @@
       }
     }
 
-    /* The button */
+
+    /**
+     * The button
+     */
 
     .k-file-input__button {
       display: block;
@@ -107,7 +119,10 @@
       padding: $k-styled-file-input-spacing;
     }
 
-    /* Selected files container */
+
+    /**
+     * Selected files container
+     */
 
     .k-file-input__files {
       width: 100%;

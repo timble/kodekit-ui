@@ -3,7 +3,8 @@
   /* Lists
      ========================================================================== */
 
-  ul, ol {
+  ul,
+  ol {
     @include content-block;
     margin-left: 0;
     margin-right: 0;
@@ -11,7 +12,8 @@
   }
 
   @include rtl {
-    ul, ol {
+    ul,
+    ol {
       padding-left: 0;
       padding-right: 1.5em;
     }

@@ -1,8 +1,9 @@
 @if ($k-utilities == true and $k-utility-visually-hidden != false) or $k-utility-visually-hidden == true {
 
+  /* Visually hidden
+     ========================================================================== */
+
   /**
-   * Visually hidden
-   *
    * Hide the content in an accessible way. Content is hidden for viewers but not for screenreaders
    */
 

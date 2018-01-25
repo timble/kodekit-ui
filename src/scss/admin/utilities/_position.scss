@@ -1,4 +1,7 @@
-@if ($k-utilities == true and $k-utility-position-relative != false) or $k-utility-position-relative == true {
+@if ($k-utilities == true and $k-utility-position != false) or $k-utility-position == true {
+
+  /* Position
+     ========================================================================== */
 
   /**
    * Static positioned element
