@@ -12,7 +12,7 @@
             if ( $gallery.length ) {
 
                 // variables
-                var galleryMaxWidth = $gallery.attr('data-maxwidth') || 240,
+                var galleryMaxWidth = $gallery.attr('data-maxwidth') || 200,
                     supportsGrid = CSS.supports('display', 'grid'),
                     galleryEventTimeout;
 

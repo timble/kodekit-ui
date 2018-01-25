@@ -1968,6 +1968,9 @@ body.k-is-resizing {
    * Button sizes
    */
   /**
+   * Align single icon buttons
+   */
+  /**
    * Vertically space out multiple block buttons
    */
   /**
@@ -2207,9 +2210,6 @@ body.k-is-resizing {
   /**
    * Set widths
    */
-  /**
-   * Make sure that the files are separated from the folders
-   */
   /* Hamburger
      ========================================================================== */
   /**
@@ -2414,9 +2414,6 @@ body.k-is-resizing {
    */
   /**
    * Toolbar contents
-   */
-  /**
-   * Text on the toolbar buttons
    */
   /* Tooltip
      ========================================================================== */
@@ -4893,10 +4890,10 @@ body.k-is-resizing {
   display: block;
   padding: 10px;
   min-width: 40px;
-  min-height: 40px;
+  min-height: 39px;
   overflow: hidden;
   text-align: center;
-  line-height: 20px;
+  line-height: 19px;
   text-decoration: none;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -4975,8 +4972,11 @@ body.k-is-resizing {
   vertical-align: top;
 }
 
-.k-ui-namespace .k-button [class*="icon-"]:only-child {
-  margin: 0;
+.k-ui-namespace .k-button [class*="icon-"]:only-child,
+.k-ui-namespace .k-button .k-visually-hidden + [class*="icon-"] {
+  display: inline-block;
+  margin: -4px;
+  width: 14px;
 }
 
 .k-ui-namespace .k-button .k-dropdown {
@@ -5335,6 +5335,15 @@ fieldset[disabled] .k-ui-namespace .k-button--danger.k-has-focus {
   font-size: 17px;
   line-height: 22px;
   padding: 8px 16px;
+}
+
+.k-ui-namespace .k-button--tiny [class*="icon-"]:only-child,
+.k-ui-namespace .k-button--tiny .k-visually-hidden + [class*="icon-"],
+.k-ui-namespace .k-button--small [class*="icon-"]:only-child,
+.k-ui-namespace .k-button--small .k-visually-hidden + [class*="icon-"] {
+  width: 14px;
+  margin-left: -2px;
+  margin-right: -2px;
 }
 
 .k-ui-namespace .k-button--block + .k-button--block {
@@ -6889,7 +6898,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 @supports (display: grid) {
   .k-ui-namespace .k-gallery__items {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 }
 
@@ -7027,16 +7036,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 .k-ui-namespace [data-gallery-items='24'] .k-gallery__item {
   width: 4.1666666667%;
-}
-
-.k-ui-namespace .k-gallery__item--folder + .k-gallery__item--file {
-  clear: left;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-}
-
-[dir="rtl"] .k-ui-namespace .k-gallery__item--folder + .k-gallery__item--file {
-  clear: right;
 }
 
 .k-ui-namespace .k-off-canvas-toggle {
@@ -10072,12 +10071,40 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
        */
 }
 
+.k-ui-namespace .k-toolbar .k-button:not(.k-toolbar-fullbutton) {
+  /**
+         * Icon on the toolbar button
+         */
+  /**
+         * Text on the toolbar button
+         */
+}
+
 @media screen and (min-width: 0) and (max-width: 768px) {
   .k-ui-namespace .k-toolbar .k-button:not(.k-toolbar-fullbutton) {
     overflow: hidden;
     width: 32px;
     height: 32px;
     text-align: center;
+  }
+}
+
+@media screen and (min-width: 0) and (max-width: 768px) {
+  .k-ui-namespace .k-toolbar .k-button:not(.k-toolbar-fullbutton) [class^="k-icon"] {
+    display: block;
+    margin: 0 0 8px;
+    width: 17px;
+    height: 17px;
+    font-size: 17px;
+    line-height: 17px;
+  }
+}
+
+@media screen and (min-width: 0) and (max-width: 768px) {
+  .k-ui-namespace .k-toolbar .k-button:not(.k-toolbar-fullbutton) .k-toolbar__text {
+    position: relative;
+    z-index: -1;
+    visibility: hidden;
   }
 }
 
@@ -10121,17 +10148,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   display: inline-block;
 }
 
-@media screen and (min-width: 0) and (max-width: 768px) {
-  .k-ui-namespace .k-toolbar [class^="k-icon"] {
-    display: block;
-    margin: 0 0 8px;
-    width: 17px;
-    height: 17px;
-    font-size: 17px;
-    line-height: 17px;
-  }
-}
-
 .k-ui-namespace .k-toolbar [class^="k-icon"]:first-child {
   margin: 0 0.25em 0 0.1em;
 }
@@ -10156,14 +10172,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 [dir="rtl"] .k-ui-namespace .k-toolbar .k-off-canvas-toggle-holder--right {
   float: left;
-}
-
-@media screen and (min-width: 0) and (max-width: 768px) {
-  .k-ui-namespace .k-toolbar__text {
-    position: relative;
-    z-index: -1;
-    visibility: hidden;
-  }
 }
 
 .k-ui-namespace .k-tooltip {

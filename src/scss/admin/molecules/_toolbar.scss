@@ -50,6 +50,35 @@
           height: $k-toolbar-button-height;
           text-align: center;
         }
+
+
+        /**
+         * Icon on the toolbar button
+         */
+
+        [class^="k-icon"] {
+          @include breakpoint(0, range, $k-charlie) {
+            display: block;
+            margin: 0 0 $k-toolbar-spacing;
+            width: $k-large-font-size;
+            height: $k-large-font-size;
+            font-size: $k-large-font-size;
+            line-height: $k-large-font-size;
+          }
+        }
+
+
+        /**
+         * Text on the toolbar button
+         */
+
+        .k-toolbar__text {
+          @include breakpoint(0, range, $k-charlie) {
+            position: relative;
+            z-index: -1;
+            visibility: hidden;
+          }
+        }
       }
 
 
@@ -118,15 +147,6 @@
     [class^="k-icon"] {
       display: inline-block;
 
-      @include breakpoint(0, range, $k-charlie) {
-        display: block;
-        margin: 0 0 $k-toolbar-spacing;
-        width: $k-large-font-size;
-        height: $k-large-font-size;
-        font-size: $k-large-font-size;
-        line-height: $k-large-font-size;
-      }
-
       &:first-child {
         margin: 0 0.25em 0 0.1em;
       }
@@ -152,19 +172,6 @@
       @include rtl {
         float: left;
       }
-    }
-  }
-
-
-  /**
-   * Text on the toolbar buttons
-   */
-
-  .k-toolbar__text {
-    @include breakpoint(0, range, $k-charlie) {
-      position: relative;
-      z-index: -1;
-      visibility: hidden;
     }
   }
 }

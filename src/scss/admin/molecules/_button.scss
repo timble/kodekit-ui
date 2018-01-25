@@ -74,6 +74,21 @@
 
 
   /**
+   * Align single icon buttons
+   */
+
+  .k-button--tiny,
+  .k-button--small {
+    [class*="icon-"]:only-child,
+    .k-visually-hidden + [class*="icon-"] {
+    width: 14px;
+    margin-left: -($k-tiny-spacing / 2);
+    margin-right: -($k-tiny-spacing / 2);
+  }
+  }
+
+
+  /**
    * Vertically space out multiple block buttons
    */
 

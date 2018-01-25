@@ -81,8 +81,11 @@
 
   /* Align single icon buttons */
 
-  [class*="icon-"]:only-child {
-    margin: 0;
+  [class*="icon-"]:only-child,
+  .k-visually-hidden + [class*="icon-"] {
+    display: inline-block;
+    margin: 0 -($k-tiny-spacing);
+    width: 14px;
   }
 
 
