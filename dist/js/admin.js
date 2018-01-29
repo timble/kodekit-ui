@@ -17143,7 +17143,7 @@ var Konami = function (callback) {
                 kodekitUI.createCookie("kodekitUI.middlepanewidth", width);
                 kodekitUI.setCSS(
                     '@media screen and (min-width: 1024px) {' +
-                    '.k-ui-container .k-content:not(:only-child) {' +
+                    '.k-ui-container .k-content-area .k-content:not(:last-child) {' +
                     'min-width:'+width+'px;' +
                     'width:'+width+'px;' +
                     'max-width:'+width+'px;' +

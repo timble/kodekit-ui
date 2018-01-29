@@ -76,7 +76,7 @@ kodekitUI.setCSS = function(css) {
     if (middlepaneWidthCookieValue !== null) {
         kodekitUI.setCSS(
             '@media screen and (min-width: 1024px) {' +
-            '.k-ui-container .k-content:not(:only-child) {' +
+            '.k-ui-container .k-content-area .k-content:not(:last-child) {' +
             'min-width:'+middlepaneWidthCookieValue+'px;' +
             'width:'+middlepaneWidthCookieValue+'px;' +
             'max-width:'+middlepaneWidthCookieValue+'px;' +

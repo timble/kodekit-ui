@@ -1,28 +1,8 @@
-@if ($k-layout == true and $k-layout-login != false) or $k-layout-login == true {
+@if ($k-molecules == true and $k-molecule-login != false) or $k-molecule-login == true {
 
   /* ==========================================================================
      Login screen
      ========================================================================== */
-
-  /**
-   * Login container
-   *
-   * Container holding the login window
-   *
-   * 1. Setting up for centering the login window
-   */
-
-  .k-login-container {
-    background: $k-login-container-background;
-    color: $k-login-container-color;
-    text-align: center; /* 1 */
-    white-space: nowrap; /* 1 */
-    padding: $k-login-container-spacing;
-    display: flex;
-    flex: 1 1 auto;
-    align-items: center;
-  }
-
 
   /**
    * Login window

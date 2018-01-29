@@ -44,11 +44,9 @@ $k-layout-content-wrapper:      inherit !default;
 $k-layout-flex-wrapper:         inherit !default;
 $k-layout-grid:                 inherit !default;
 $k-layout-koowa-container:      inherit !default;
-$k-layout-login:                inherit !default;
+$k-layout-login-container:      inherit !default;
 $k-layout-sidebar:              inherit !default;
 $k-layout-subcontent:           inherit !default;
-$k-layout-title-bar:            inherit !default;
-$k-layout-top:                  inherit !default;
 $k-layout-wrapper:              inherit !default;
 
 $k-atoms:                       true !default;
@@ -81,6 +79,7 @@ $k-molecule-hamburger:          inherit !default;
 $k-molecule-heading:            inherit !default;
 $k-molecule-icon:               inherit !default;
 $k-molecule-list:               inherit !default;
+$k-molecule-login:              inherit !default;
 $k-molecule-modal:              inherit !default;
 $k-molecule-modernizr:          inherit !default;
 $k-molecule-navigation:         inherit !default;
@@ -93,8 +92,10 @@ $k-molecule-sidebar-item:       inherit !default;
 $k-molecule-styled-file-input:  inherit !default;
 $k-molecule-table:              inherit !default;
 $k-molecule-tab:                inherit !default;
+$k-molecule-title-bar:          inherit !default;
 $k-molecule-toolbar:            inherit !default;
 $k-molecule-tooltip:            inherit !default;
+$k-molecule-top:                inherit !default;
 $k-molecule-tree:               inherit !default;
 $k-molecule-well:               inherit !default;
 
@@ -445,7 +446,7 @@ $k-title-bar-z-index:             10 !default;
 $k-title-bar-spacing:             $k-extrasmall-spacing !default;
 $k-title-bar-toggle-spacing:      $k-extrasmall-spacing !default;
 
-$k-title-bar-mobile-background:   $k-primary-color !default;
+$k-title-bar-mobile-background:   $k-title-bar-background !default;
 $k-title-bar-mobile-border:       darkest($k-title-bar-mobile-background) !default;
 
 

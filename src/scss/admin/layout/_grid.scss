@@ -14,6 +14,14 @@
     @include resizing {
       overflow: hidden;
     }
+
+    & + .k-container {
+      .k-container__full,
+      .k-container__main,
+      .k-container__sub {
+        padding-top: 0;
+      }
+    }
   }
 
 
