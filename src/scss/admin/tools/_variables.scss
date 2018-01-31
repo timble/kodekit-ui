@@ -8,6 +8,8 @@
 $k-generated:                   true !default;
 $k-generated-icon:              inherit !default;
 
+$k-css-errors:                  true !default;
+
 $k-utilities:                   true !default;
 $k-utility-align:               inherit !default;
 $k-utility-background:          inherit !default;
@@ -767,6 +769,7 @@ $k-off-canvas-overlay-top-opacity:          $k-off-canvas-overlay-opacity !defau
 $k-off-canvas-overlay-left-opacity:         $k-off-canvas-overlay-opacity !default;
 $k-off-canvas-overlay-right-opacity:        $k-off-canvas-overlay-opacity !default;
 $k-off-canvas-overlay-subcontent-opacity:   $k-off-canvas-overlay-opacity !default;
+$k-toggle-button-font-size:                 $k-font-size !default;
 $k-toggle-button-size:                      32px !default;
 $k-toggle-button-background:                $k-accent-color !default;
 $k-toggle-button-color:                     white !default;

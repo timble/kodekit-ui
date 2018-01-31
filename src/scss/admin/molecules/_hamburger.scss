@@ -40,14 +40,14 @@
     position: relative;
     z-index: 10;
     float: left;
-    width: $k-toggle-button-size;
+    min-width: $k-toggle-button-size;
     height: $k-toggle-button-size;
-    padding: 0;
     border: none;
     border-radius: $k-toggle-button-border-radius;
     margin: $k-title-bar-toggle-spacing $k-title-bar-toggle-spacing ($k-title-bar-toggle-spacing - 1px);
     background: $k-toggle-button-background;
     color: $k-toggle-button-color;
+    font-size: $k-toggle-button-font-size;
 
     @include rtl {
       left: auto;

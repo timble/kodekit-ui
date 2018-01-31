@@ -67,7 +67,7 @@
     right: $k-subcontent-toggle-position;
     padding-left: $k-subcontent-toggle-spacing;
     padding-right: $k-subcontent-toggle-spacing;
-    width: $k-subcontent-toggle-size;
+    min-width: $k-subcontent-toggle-size;
     margin: 0;
     backface-visibility: hidden;
     @include transition();

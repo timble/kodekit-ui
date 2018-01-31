@@ -3776,7 +3776,7 @@ body.k-is-resizing {
   right: 8px;
   padding-left: 4px;
   padding-right: 4px;
-  width: 32px;
+  min-width: 32px;
   margin: 0;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
@@ -6696,14 +6696,14 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   position: relative;
   z-index: 10;
   float: left;
-  width: 32px;
+  min-width: 32px;
   height: 32px;
-  padding: 0;
   border: none;
   border-radius: 3px;
   margin: 8px 8px 7px;
   background: #3071a9;
   color: white;
+  font-size: 13px;
   /**
      * Set proper margins
      */
@@ -11112,6 +11112,89 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   height: auto;
   width: auto;
   margin: 0;
+}
+
+/* CSS errors
+     ========================================================================== */
+/**
+   * Since the way the layout is built is important, we've added errors by default when
+   * using them in a wrong way. Disable by setting the $k-css-errors variable to false when
+   * compiling the CSS or simply add k-no-css-errors class to the k-ui-container element.
+   */
+.k-ui-container:not(.k-no-css-errors) .k-top-container,
+.k-ui-container:not(.k-no-css-errors) .k-wrapper,
+.k-ui-container:not(.k-no-css-errors) .k-content-wrapper,
+.k-ui-container:not(.k-no-css-errors) .k-content-area,
+.k-ui-container:not(.k-no-css-errors) .k-content-area__child,
+.k-ui-container:not(.k-no-css-errors) .k-content,
+.k-ui-container:not(.k-no-css-errors) .k-subcontent,
+.k-ui-container:not(.k-no-css-errors) .k-subcontent__child,
+.k-ui-container:not(.k-no-css-errors) .k-component-wrapper,
+.k-ui-container:not(.k-no-css-errors) .k-component,
+.k-ui-container:not(.k-no-css-errors) .k-sidebar-left,
+.k-ui-container:not(.k-no-css-errors) .k-sidebar-right {
+  outline: 4px solid red;
+  outline-offset: -2px;
+}
+
+.k-ui-container:not(.k-no-css-errors) .k-top-container:after,
+.k-ui-container:not(.k-no-css-errors) .k-wrapper:after,
+.k-ui-container:not(.k-no-css-errors) .k-content-wrapper:after,
+.k-ui-container:not(.k-no-css-errors) .k-content-area:after,
+.k-ui-container:not(.k-no-css-errors) .k-content-area__child:after,
+.k-ui-container:not(.k-no-css-errors) .k-content:after,
+.k-ui-container:not(.k-no-css-errors) .k-subcontent:after,
+.k-ui-container:not(.k-no-css-errors) .k-subcontent__child:after,
+.k-ui-container:not(.k-no-css-errors) .k-component-wrapper:after,
+.k-ui-container:not(.k-no-css-errors) .k-component:after,
+.k-ui-container:not(.k-no-css-errors) .k-sidebar-left:after,
+.k-ui-container:not(.k-no-css-errors) .k-sidebar-right:after {
+  position: absolute;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  content: "There's something wrong in your markup. See UI documentation or add 'k-no-css-errors' class to '.k-ui-container'";
+  background: #c0392b;
+  color: white;
+  padding: 4px;
+}
+
+.k-ui-container:not(.k-no-css-errors) > .k-top-container,
+.k-ui-container:not(.k-no-css-errors) > .k-wrapper,
+.k-ui-container:not(.k-no-css-errors) .k-wrapper > .k-content-wrapper,
+.k-ui-container:not(.k-no-css-errors) .k-content-wrapper > .k-content-area,
+.k-ui-container:not(.k-no-css-errors) .k-content-area > .k-content-area__child,
+.k-ui-container:not(.k-no-css-errors) .k-content-wrapper > .k-content,
+.k-ui-container:not(.k-no-css-errors) .k-content-area__child > .k-content,
+.k-ui-container:not(.k-no-css-errors) .k-content-area__child > .k-subcontent,
+.k-ui-container:not(.k-no-css-errors) .k-subcontent > .k-subcontent__child,
+.k-ui-container:not(.k-no-css-errors) .k-content > .k-component-wrapper,
+.k-ui-container:not(.k-no-css-errors) .k-content-area__child > .k-component-wrapper,
+.k-ui-container:not(.k-no-css-errors) .k-subcontent__child > .k-component-wrapper,
+.k-ui-container:not(.k-no-css-errors) .k-component-wrapper > .k-component,
+.k-ui-container:not(.k-no-css-errors) .k-flex-wrapper:not(:only-child),
+.k-ui-container:not(.k-no-css-errors) .k-content-wrapper > .k-sidebar-left:first-child,
+.k-ui-container:not(.k-no-css-errors) .k-component + .k-sidebar-right {
+  outline: none;
+}
+
+.k-ui-container:not(.k-no-css-errors) > .k-top-container:after,
+.k-ui-container:not(.k-no-css-errors) > .k-wrapper:after,
+.k-ui-container:not(.k-no-css-errors) .k-wrapper > .k-content-wrapper:after,
+.k-ui-container:not(.k-no-css-errors) .k-content-wrapper > .k-content-area:after,
+.k-ui-container:not(.k-no-css-errors) .k-content-area > .k-content-area__child:after,
+.k-ui-container:not(.k-no-css-errors) .k-content-wrapper > .k-content:after,
+.k-ui-container:not(.k-no-css-errors) .k-content-area__child > .k-content:after,
+.k-ui-container:not(.k-no-css-errors) .k-content-area__child > .k-subcontent:after,
+.k-ui-container:not(.k-no-css-errors) .k-subcontent > .k-subcontent__child:after,
+.k-ui-container:not(.k-no-css-errors) .k-content > .k-component-wrapper:after,
+.k-ui-container:not(.k-no-css-errors) .k-content-area__child > .k-component-wrapper:after,
+.k-ui-container:not(.k-no-css-errors) .k-subcontent__child > .k-component-wrapper:after,
+.k-ui-container:not(.k-no-css-errors) .k-component-wrapper > .k-component:after,
+.k-ui-container:not(.k-no-css-errors) .k-flex-wrapper:not(:only-child):after,
+.k-ui-container:not(.k-no-css-errors) .k-content-wrapper > .k-sidebar-left:first-child:after,
+.k-ui-container:not(.k-no-css-errors) .k-component + .k-sidebar-right:after {
+  display: none;
 }
 
 /* Responsive table
