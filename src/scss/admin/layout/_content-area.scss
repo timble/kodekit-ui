@@ -83,5 +83,17 @@
     &:only-child {
       display: flex;
     }
+
+
+    /**
+     * Inherit z-index to make sure toggle button wins over the overlay
+     */
+
+    // To test have a left sidebar and make sure not to have a k-title-bar so
+    // the toggle button will be added to the toolbar instead
+
+    .k-content {
+      z-index: inherit;
+    }
   }
 }

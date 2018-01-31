@@ -4,6 +4,7 @@
      ========================================================================== */
 
   dl {
+    margin-top: 0;
     @include clearfix;
     @include content-block;
   }
@@ -14,6 +15,7 @@
     float: left;
     clear: left;
     margin-right: $k-tiny-spacing;
+    @include content-block($k-tiny-spacing);
 
     @include rtl {
       float: right;
@@ -25,7 +27,6 @@
 
   dd {
     @include reset;
-    display: block;
     @include content-block($k-tiny-spacing);
     max-width: 100%;
 

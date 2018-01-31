@@ -2,30 +2,30 @@
 // Set element to position relative and add a pseudo element with position absolute and a "content"
 
 @mixin pseudo(
-  $k-pseudo: after,
-  $k-parentposition: true,
-  $k-display: true,
-  $k-position: true,
-  $k-content: true) {
+  $pseudo: after,
+  $parentposition: true,
+  $display: true,
+  $position: true,
+  $content: true) {
 
-  @if $k-parentposition == true {
+  @if $parentposition == true {
     position: relative;
   }
 
-  &:#{$k-pseudo} {
+  &:#{$pseudo} {
 
-    @if $k-display == true {
+    @if $display == true {
       display: block;
     }
 
-    @if $k-position == true {
+    @if $position == true {
       position: absolute;
     }
 
-    @if $k-content == true {
+    @if $content == true {
       content: " ";
-    } @else if $k-content != false {
-      content: $k-content;
+    } @else if $content != false {
+      content: $content;
     }
 
     @content;

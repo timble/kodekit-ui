@@ -1758,13 +1758,20 @@ body.k-is-resizing {
      ========================================================================== */
   /* Container
      ========================================================================== */
+  /**
+   * 1. For transparent tabs
+   */
   /* Container children
      ========================================================================== */
   /**
    * Main container
+   *
+   * 1. For transparent tabs
    */
   /**
    * Sub container
+   *
+   * 1. For transparent tabs
    */
   /**
    * Full container
@@ -1904,7 +1911,13 @@ body.k-is-resizing {
    * Overflowing alert with 33% max-height
    */
   /**
+   * Fixed alert
+   */
+  /**
    * Alternate styles
+   */
+  /**
+   * Close button
    */
   /* Breadcrumbs
      ========================================================================== */
@@ -2183,6 +2196,9 @@ body.k-is-resizing {
    * 3. Hide when the sidebar is visible
    */
   /**
+   * Button
+   */
+  /**
    * Button styling
    */
   /**
@@ -2325,6 +2341,9 @@ body.k-is-resizing {
    * Tabs wrapper
    *
    * 1. For proper offset calculation in JS
+   */
+  /**
+   * Transparent tabs
    */
   /**
    * Tabbable tabs
@@ -2527,6 +2546,8 @@ body.k-is-resizing {
    * Add `k-hidden` class to the element when items are done loading
    */
   /* No margin
+     ========================================================================== */
+  /* No padding
      ========================================================================== */
   /* No transition
      ========================================================================== */
@@ -3252,6 +3273,9 @@ body.k-is-resizing {
   transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
   transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
   -webkit-backface-visibility: hidden;
+  /**
+     * Inherit z-index to make sure toggle button wins over the overlay
+     */
 }
 
 .k-ui-namespace .k-content-area__child.k-is-active {
@@ -3264,6 +3288,10 @@ body.k-is-resizing {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.k-ui-namespace .k-content-area__child .k-content {
+  z-index: inherit;
 }
 
 .k-ui-namespace .k-content-wrapper {
@@ -3317,6 +3345,8 @@ body.k-is-resizing {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
+  background-color: inherit;
+  /* 1 */
   /* When resizing */
 }
 
@@ -3341,6 +3371,8 @@ body.k-is-resizing {
 
 .k-ui-namespace .k-container__main {
   padding: 16px;
+  background-color: inherit;
+  /* 1 */
 }
 
 @media screen and (min-width: 768px) {
@@ -3367,6 +3399,8 @@ body.k-is-resizing {
 
 .k-ui-namespace .k-container__sub {
   padding: 16px;
+  background-color: inherit;
+  /* 1 */
 }
 
 @media screen and (min-width: 768px) {
@@ -3871,6 +3905,7 @@ body.k-is-resizing {
 }
 
 .k-ui-namespace dl {
+  margin-top: 0;
   margin-bottom: 16px;
 }
 
@@ -3897,6 +3932,11 @@ body.k-is-resizing {
   float: left;
   clear: left;
   margin-right: 4px;
+  margin-bottom: 4px;
+}
+
+.k-ui-namespace dt:last-child {
+  margin-bottom: 0;
 }
 
 [dir="rtl"] .k-ui-namespace dt {
@@ -3912,7 +3952,6 @@ body.k-is-resizing {
   list-style: none;
   border: none;
   background: transparent;
-  display: block;
   margin-bottom: 4px;
   max-width: 100%;
 }
@@ -4147,9 +4186,10 @@ body.k-is-resizing {
 
 .k-ui-namespace ul,
 .k-ui-namespace ol {
+  margin-top: 0;
+  margin-right: 0;
   margin-bottom: 16px;
   margin-left: 0;
-  margin-right: 0;
   padding-left: 1.5em;
 }
 
@@ -4164,7 +4204,13 @@ body.k-is-resizing {
 }
 
 .k-ui-namespace .k-alert {
-  padding: 12px;
+  position: relative;
+  overflow: hidden;
+  padding: 12px 40px 12px 12px;
+  line-height: 20px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
   margin-bottom: 16px;
 }
 
@@ -4177,12 +4223,27 @@ body.k-is-resizing {
 }
 
 .k-ui-namespace .k-alert--overflow {
-  min-height: 80px;
-  max-height: 33%;
-  overflow: auto;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 auto;
-          flex: 0 1 auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 200px;
+  /**
+     * Add vh max-height unit for dynamic sizing
+     */
+}
+
+@supports (max-height: 100vh) {
+  .k-ui-namespace .k-alert--overflow {
+    max-height: 25vh;
+  }
+}
+
+.k-ui-namespace .k-alert--fixed {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .k-ui-namespace .k-alert--success {
@@ -4219,6 +4280,34 @@ body.k-is-resizing {
 
 .k-ui-namespace .k-alert--danger .alert-link {
   color: #e6e5e5;
+}
+
+.k-ui-namespace .k-alert__close {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: none;
+  background: transparent;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  overflow: hidden;
+  width: 40px;
+  height: 0;
+  padding-top: 40px;
+  color: inherit;
+  font-size: 16px;
+}
+
+.k-ui-namespace .k-alert__close:after {
+  display: block;
+  position: absolute;
+  content: "✕";
+  line-height: 1;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .k-ui-namespace .k-breadcrumb {
@@ -6407,7 +6496,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-gallery-container {
-  padding: 8.5px;
+  padding: 8px;
   margin-bottom: 16px;
 }
 
@@ -6420,7 +6509,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-gallery__items {
-  margin: -8.5px;
   font-size: 0;
 }
 
@@ -6445,7 +6533,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-gallery__item {
-  padding: 8.5px;
+  padding: 8px;
   display: inline-block;
   vertical-align: middle;
   font-size: 1rem;
@@ -6580,12 +6668,34 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   width: 4.1666666667%;
 }
 
+.k-ui-namespace .k-off-canvas-toggle-holder {
+  display: none;
+  /* 1 */
+}
+
+.k-js-enabled .k-ui-namespace .k-off-canvas-toggle-holder {
+  display: block;
+  /* 2 */
+}
+
+@media screen and (min-width: 768px) {
+  .k-js-enabled .k-ui-namespace .k-off-canvas-toggle-holder--left.k-off-canvas-toggle-holder {
+    display: none;
+    /* 3 */
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .k-js-enabled .k-ui-namespace .k-off-canvas-toggle-holder--right.k-off-canvas-toggle-holder {
+    display: none;
+    /* 3 */
+  }
+}
+
 .k-ui-namespace .k-off-canvas-toggle {
   position: relative;
   z-index: 10;
   float: left;
-  display: none;
-  /* 1 */
   width: 32px;
   height: 32px;
   padding: 0;
@@ -6602,25 +6712,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 [dir="rtl"] .k-ui-namespace .k-off-canvas-toggle {
   left: auto;
   float: right;
-}
-
-.k-js-enabled .k-ui-namespace .k-off-canvas-toggle {
-  display: block;
-  /* 2 */
-}
-
-@media screen and (min-width: 768px) {
-  .k-js-enabled .k-ui-namespace .k-off-canvas-toggle--left {
-    display: none;
-    /* 3 */
-  }
-}
-
-@media screen and (min-width: 600px) {
-  .k-js-enabled .k-ui-namespace .k-off-canvas-toggle--right {
-    display: none;
-    /* 3 */
-  }
 }
 
 .k-ui-namespace .k-off-canvas-toggle.k-off-canvas-toggle--left {
@@ -8095,6 +8186,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   margin: 0;
   display: block;
   width: 100%;
+  max-width: none;
   height: 40px;
   border-radius: 0;
   padding: 4px;
@@ -8669,9 +8761,27 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   border-color: gainsboro;
 }
 
+.k-ui-namespace .k-tabs--transparent {
+  background-color: inherit;
+}
+
+.k-ui-namespace .k-tabs--transparent li, .k-ui-namespace .k-tabs--transparent a {
+  background-color: transparent;
+}
+
+.k-ui-namespace .k-tabs--transparent .k-is-active, .k-ui-namespace .k-tabs--transparent .k-is-active:hover, .k-ui-namespace .k-tabs--transparent .k-is-active:focus, .k-ui-namespace .k-tabs--transparent .k-is-active a, .k-ui-namespace .k-tabs--transparent .k-is-active a:hover, .k-ui-namespace .k-tabs--transparent .k-is-active a:focus {
+  background-color: inherit;
+}
+
 .k-ui-namespace .k-tabs-content > .k-tab {
-  display: none;
-  padding: 8px;
+  padding: 12px;
+  /**
+       * Hide tab when it does not have the active class
+       */
+}
+
+.k-ui-namespace .k-tabs-content > .k-tab:not(.k-is-active) {
+  display: none !important;
 }
 
 .k-ui-namespace .k-tabs-content > .k-is-active {
@@ -10767,6 +10877,36 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 .k-ui-namespace .k-no-margin-left.k-no-margin-left.k-no-margin-left {
   margin-left: 0;
+}
+
+.k-ui-namespace .k-no-padding.k-no-padding.k-no-padding {
+  padding: 0;
+}
+
+.k-ui-namespace .k-no-padding-horizontal.k-no-padding-horizontal.k-no-padding-horizontal {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.k-ui-namespace .k-no-padding-vertical.k-no-padding-vertical.k-no-padding-vertical {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.k-ui-namespace .k-no-padding-top.k-no-padding-top.k-no-padding-top {
+  padding-top: 0;
+}
+
+.k-ui-namespace .k-no-padding-right.k-no-padding-right.k-no-padding-right {
+  padding-right: 0;
+}
+
+.k-ui-namespace .k-no-padding-bottom.k-no-padding-bottom.k-no-padding-bottom {
+  padding-bottom: 0;
+}
+
+.k-ui-namespace .k-no-padding-left.k-no-padding-left.k-no-padding-left {
+  padding-left: 0;
 }
 
 .k-ui-namespace .k-no-transition.k-no-transition.k-no-transition {

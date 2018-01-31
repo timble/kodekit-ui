@@ -74,7 +74,7 @@
        * List item separator
        */
 
-      @include pseudo(before, $k-content: false) {
+      @include pseudo(before, $content: false) {
         top: 0;
         bottom: 0;
         left: 0;

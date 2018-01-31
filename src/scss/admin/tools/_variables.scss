@@ -823,20 +823,18 @@ $k-empty-state-align:         center !default;
 // Grid
 // ==========================================================================
 
-$k-grid-spacing:    $k-large-font-size !default;
-$k-grid-width:      2560px !default;
-$k-grid-item-width: $k-font-size * 12 !default;
+$k-grid-spacing:                            $k-spacing !default;
 
-$k-grid-selected-class: $k-selected-class !default;
+$k-grid-selected-class:                     $k-selected-class !default;
 
-$k-grid-selected-header-background: $k-accent-color !default;
-$k-grid-selected-header-border-color: darkest($k-grid-selected-header-background) !default;
-$k-grid-selected-header-color: $k-accent-type-color !default;
-$k-grid-selected-header-anchor-color: $k-accent-type-color !default;
-$k-grid-selected-header-hover-background: darkest($k-accent-color) !default;
+$k-grid-selected-header-background:         $k-accent-color !default;
+$k-grid-selected-header-border-color:       darkest($k-grid-selected-header-background) !default;
+$k-grid-selected-header-color:              $k-accent-type-color !default;
+$k-grid-selected-header-anchor-color:       $k-accent-type-color !default;
+$k-grid-selected-header-hover-background:   darkest($k-accent-color) !default;
 
-$k-grid-selected-body-border-color: darker($k-accent-color) !default;
-$k-grid-selected-body-color: $k-accent-type-color !default;
+$k-grid-selected-body-border-color:         darker($k-accent-color) !default;
+$k-grid-selected-body-color:                $k-accent-type-color !default;
 
 
 // Tabs
@@ -885,7 +883,7 @@ $k-tabs-scroller-item-active-background:  $k-component-background !default;
 $k-tabs-scroller-item-active-color:       $k-type-color !default;
 
 $k-tabs-content-tab-active-class:         $k-active-class !default
-$k-tabs-content-tab-spacing:              $k-extrasmall-spacing !default
+$k-tabs-content-tab-spacing:              $k-small-spacing !default
 
 
 // Buttons
@@ -1061,23 +1059,26 @@ $k-state-danger-border:       darkest($k-error-color) !default;
 // Alerts
 // ==========================================================================
 
-$k-alert-spacing:               $k-small-spacing !default;
-$k-alert-border-radius:         $k-border-radius !default;
+$k-alert-spacing:                 $k-small-spacing !default;
+$k-alert-border-radius:           $k-border-radius !default;
 
-$k-alert-success-background:    $k-success-color !default;
-$k-alert-success-color:         $k-success-type-color !default;
+$k-alert-success-background:      $k-success-color !default;
+$k-alert-success-color:           $k-success-type-color !default;
 
-$k-alert-info-background:       $k-neutral-color !default;
-$k-alert-info-color:            $k-neutral-type-color !default;
+$k-alert-info-background:         $k-neutral-color !default;
+$k-alert-info-color:              $k-neutral-type-color !default;
 
-$k-alert-warning-background:    $k-warning-color !default;
-$k-alert-warning-color:         $k-warning-type-color !default;
+$k-alert-warning-background:      $k-warning-color !default;
+$k-alert-warning-color:           $k-warning-type-color !default;
 
-$k-alert-danger-background:     $k-error-color !default;
-$k-alert-danger-color:          $k-error-type-color !default;
+$k-alert-danger-background:       $k-error-color !default;
+$k-alert-danger-color:            $k-error-type-color !default;
 
-$k-alert-overflow-min-height:   $k-unit-size * 2 !default;
-$k-alert-overflow-max-height:   33% !default;
+$k-alert-overflow-max-height:     200px !default;
+$k-alert-overflow-max-height-vh:  25vh !default;
+
+$k-alert-close-spacing:           $k-tiny-spacing / 2 !default;
+$k-alert-close-size:              $k-unit-size !default;
 
 
 // Dropdowns

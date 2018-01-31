@@ -3,12 +3,17 @@
   /* Container
      ========================================================================== */
 
+  /**
+   * 1. For transparent tabs
+   */
+
   .k-container {
     @include clearfix;
     overflow: hidden;
     width: 100%;
     margin: 0 auto;
     flex: 0 0 auto;
+    background-color: inherit; /* 1 */
 
     /* When resizing */
     @include resizing {
@@ -30,10 +35,13 @@
 
   /**
    * Main container
+   *
+   * 1. For transparent tabs
    */
 
   .k-container__main {
     padding: $k-spacing;
+    background-color: inherit; /* 1 */
 
     @include breakpoint($k-charlie) {
       float: left;
@@ -64,10 +72,13 @@
 
   /**
    * Sub container
+   *
+   * 1. For transparent tabs
    */
 
   .k-container__sub {
     padding: $k-spacing;
+    background-color: inherit; /* 1 */
 
     @include breakpoint($k-charlie) {
       float: left;

@@ -13,7 +13,6 @@
   }
 
   .k-gallery__items {
-    margin: -($k-grid-spacing / 2);
     font-size: 0;
 
     @supports (display: flex) {
@@ -82,3 +81,4 @@
     }
   }
 }
+

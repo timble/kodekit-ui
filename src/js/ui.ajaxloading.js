@@ -21,8 +21,6 @@
 
                     if ( !ajaxTarget ) return;
 
-                    console.log('ui.ajaxloading.onclick');
-
                     event.preventDefault();
                     event.stopPropagation();
 
@@ -43,16 +41,11 @@
                     // warning: <script> will get stripped from content
                     $('#'+ajaxTarget).load(href + ' #'+ajaxTarget+' > :first-child', function(responseTxt, statusTxt, xhr) {
 
-                        console.log('ui.ajaxloading.setTimeout');
-
                         // Success
                         if(statusTxt == "success") {
 
-                            console.log('ui.ajaxloading.success');
-
                             // Trigger close sidebar click when changing menu items
                             if ( $('.k-js-wrapper').hasClass('k-show-left-menu') ) {
-                                console.log('ui.ajaxloading.toggleclick');
                                 $('.k-off-canvas-toggle--left').trigger('click');
                             }
 

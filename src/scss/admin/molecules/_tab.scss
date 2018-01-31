@@ -187,6 +187,29 @@
 
 
   /**
+   * Transparent tabs
+   */
+
+  .k-tabs--transparent {
+    background-color: inherit;
+
+    li, a {
+      background-color: transparent;
+    }
+
+    #{$k-tabs-link-active-class} {
+      &, a {
+        &,
+        &:hover,
+        &:focus {
+          background-color: inherit;
+        }
+      }
+    }
+  }
+
+
+  /**
    * Tabbable tabs
    *
    * Hide tabbable panes to start, show them when `.k-is-active`
@@ -194,8 +217,15 @@
 
   .k-tabs-content {
     > .k-tab {
-      display: none;
       padding: $k-tabs-content-tab-spacing;
+
+      /**
+       * Hide tab when it does not have the active class
+       */
+
+      &:not(#{$k-tabs-content-tab-active-class}) {
+        display: none !important;
+      }
     }
 
     > #{$k-tabs-content-tab-active-class} {

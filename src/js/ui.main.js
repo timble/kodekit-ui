@@ -2,6 +2,7 @@
 
     $(document).ready(function () {
 
+
         /**
          * Variables
          */
@@ -108,6 +109,19 @@
             $sidebarToggle.addClass('k-sidebar-item--toggle').find('.k-sidebar-item__header').append(toggle);
             $sidebarToggle.on('click', '.k-sidebar-item__toggle', function(event) {
                 $(this).toggleClass('k-is-active').parent().next().slideToggle(180);
+            });
+        }
+
+
+        /**
+         * Alert animation
+         */
+
+        var $alert = $('.k-js-alert-close');
+        if ( $alert.length ) {
+            $alert.on('click', function (event) {
+                event.preventDefault();
+                $(this).parent().slideUp(200);
             });
         }
 

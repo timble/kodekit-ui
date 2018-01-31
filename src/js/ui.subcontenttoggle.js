@@ -12,35 +12,45 @@
             // See if it exists
             if ($subcontent.length) {
 
-                var $subcontentChild = $('.k-content-area__child'),
+                var $contentChild = $('.k-content-area__child'),
                     subcontentButtonContent = $subcontent.attr('data-toggle-button-content') || '<span class="k-icon-chevron-left" aria-hidden="true"></span>',
-                    subcontentToggle = $('.k-js-subcontent-toggle');
+                    toggle_button = '<button type="button" class="k-button k-button--default k-subcontent-toggle k-js-subcontent-toggle" title="Subcontent toggle" aria-label="Subcontent toggle">' + subcontentButtonContent + '</button>',
+                    toggle = $contentChild.find('.k-js-subcontent-toggle'),
+                    $toggle = $(toggle_button),
+                    $toggleButton = null;
 
                 // Append toggle button and overlay
-                if ( !subcontentToggle.length ) {
-                    $subcontentChild.append(kQuery('<button type="button" class="k-button k-button--default k-subcontent-toggle k-js-subcontent-toggle" title="Subcontent toggle" aria-label="Subcontent toggle">' + subcontentButtonContent + '</button>'));
+                if ( toggle.length === 0 ) {
+                    $contentChild.append($toggle);
                 }
+
+                $toggleButton = $('.k-js-subcontent-toggle');
 
                 // Off canvas
                 $subcontent.offCanvasMenu({
-                    menuToggle: subcontentToggle,
+                    menuToggle: $toggleButton,
                     menuExpandedClass: 'k-show-subcontent-area',
                     openedClass: 'k-is-opened-subcontent',
                     position: 'right',
-                    container: $subcontentChild,
+                    container: $contentChild,
                     expandedWidth: '276',
                     offCanvasOverlay: 'k-off-canvas-overlay-subcontent',
-                    wrapper: $('.k-content-area')
+                    wrapper: $('.k-js-content-area')
                 });
 
 
                 // Open right sidebar on selecting items in table
                 // Only apply to actual `<a>` elements
-                $('.k-table-container table').off().on('click', 'a', function (event) {
+                $('.k-table-container a').off().on('click', function (event) {
+                    console.log('still going strong 1');
                     // Only apply if parent is a `<td>` (so not a `<th>`)
                     if ($(this).parents('td').length > 0) {
+                        console.log('still going strong');
                         var target = $(this)[0].closest('.k-content-area__child');
                         var targetToggle = $(target).find('.k-js-subcontent-toggle');
+
+                        console.log(target, targetToggle);
+
                         // Wait at least 2 frames to make sure actions are not attached simultaneously
                         setTimeout(function () {
                             targetToggle.trigger('click');

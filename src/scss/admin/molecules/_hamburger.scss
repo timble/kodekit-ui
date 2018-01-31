@@ -11,11 +11,35 @@
    * 3. Hide when the sidebar is visible
    */
 
+  .k-off-canvas-toggle-holder {
+    display: none; /* 1 */
+
+    @include js-enabled {
+      display: block; /* 2 */
+
+      @include breakpoint($k-sidebar-left-querie-width) {
+        &--left.k-off-canvas-toggle-holder {
+          display: none; /* 3 */
+        }
+      }
+
+      @include breakpoint($k-sidebar-right-querie-width) {
+        &--right.k-off-canvas-toggle-holder {
+          display: none; /* 3 */
+        }
+      }
+    }
+  }
+
+
+  /**
+   * Button
+   */
+
   .k-off-canvas-toggle {
     position: relative;
     z-index: 10;
     float: left;
-    display: none; /* 1 */
     width: $k-toggle-button-size;
     height: $k-toggle-button-size;
     padding: 0;
@@ -28,22 +52,6 @@
     @include rtl {
       left: auto;
       float: right;
-    }
-
-    @include js-enabled {
-      display: block; /* 2 */
-
-      @include breakpoint($k-sidebar-left-querie-width) {
-        &--left {
-          display: none; /* 3 */
-        }
-      }
-
-      @include breakpoint($k-sidebar-right-querie-width) {
-        &--right {
-          display: none; /* 3 */
-        }
-      }
     }
 
 
