@@ -28,6 +28,14 @@
     .k-content-area__child {
       transform: translateX(-100%) translateX(48px);
 
+      @include rtl {
+        transform: translateX(100%) translateX(-48px);
+
+        @include breakpoint($k-delta) {
+          transform: none;
+        }
+      }
+
       @include breakpoint($k-delta) {
         transform: none;
       }

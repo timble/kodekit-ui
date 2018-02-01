@@ -18,11 +18,22 @@
     top: 0;
     bottom: 0;
 
+    @include rtl {
+      left: auto;
+      right: 100%;
+      border-left: none;
+      border-right: $k-subcontent-border;
+    }
+
     @include breakpoint($k-subcontent-breakpoint) {
       position: relative;
       left: auto;
       width: auto;
       z-index: 1;
+
+      @include rtl {
+        right: auto;
+      }
     }
   }
 
@@ -74,6 +85,12 @@
 
     @include breakpoint($k-subcontent-breakpoint) {
       display: none;
+    }
+
+    @include rtl {
+      margin: 0;
+      right: auto;
+      left: $k-subcontent-toggle-position;
     }
   }
 }

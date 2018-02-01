@@ -110,6 +110,10 @@
       display: block;
       float: right;
 
+      @include rtl {
+        float: left;
+      }
+
       @include breakpoint($k-delta) {
         display: none;
       }

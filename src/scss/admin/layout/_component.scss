@@ -46,7 +46,7 @@
 
     @include rtl {
       .k-component {
-        transform: translateZ($k-sidebar-right-width);
+        transform: translateX($k-sidebar-right-width);
 
         @include breakpoint($k-sidebar-right-querie-width) {
           transform: translateX(0);

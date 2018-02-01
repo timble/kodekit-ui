@@ -66,6 +66,11 @@
     overflow: auto;
     box-shadow: $k-top-container-navigation-box-shadow;
 
+    @include rtl {
+      right: auto;
+      left: 0;
+    }
+
 
     /**
      * On desktop
@@ -167,6 +172,13 @@
               border-bottom: 2px solid transparent;
               border-left: 4px solid transparent;
               margin-left: 8px;
+
+              @include rtl {
+                border-right: 4px solid transparent;
+                border-left: 2px solid transparent;
+                margin-left: 0;
+                margin-right: 8px;
+              }
             }
           }
         }
@@ -193,6 +205,11 @@
           width: 180px;
           border-bottom: none;
           padding: 2px;
+
+          @include rtl {
+            left: auto;
+            right: 1px;
+          }
         }
 
         li {
@@ -208,10 +225,19 @@
             }
           }
 
+          @include rtl {
+            float: none;
+          }
+
           ul {
             @include breakpoint($k-top-container-breakpoint) {
               top: -2px;
               left: 100%;
+
+              @include rtl {
+                left: auto;
+                right: 100%;
+              }
             }
           }
         }
@@ -250,6 +276,13 @@
                 border-bottom: 4px solid transparent;
                 border-left: 4px solid;
                 margin-top: -4px;
+
+                @include rtl {
+                  right: auto;
+                  left: 8px;
+                  border-left: none;
+                  border-right: 4px solid;
+                }
               }
             }
           }
@@ -289,7 +322,18 @@
       @include rtl {
         @include breakpoint($k-top-container-breakpoint) {
           float: left;
+          margin-left: 0;
           margin-right: auto;
+
+          li ul {
+            left: 0;
+            right: auto;
+          }
+
+          li li ul {
+            left: 100%;
+            right: auto;
+          }
         }
       }
     }
@@ -322,6 +366,10 @@
     .k-wrapper {
       transform: translateX(-($k-top-container-navigation-width));
 
+      @include rtl {
+        transform: translateX($k-top-container-navigation-width);
+      }
+
       @include breakpoint($k-top-container-breakpoint) {
         transform: translateX(0);
       }
@@ -351,6 +399,11 @@
     border-radius: $k-border-radius;
     padding: 7px;
     margin: 8px;
+
+    @include rtl {
+      right: auto;
+      left: 0;
+    }
 
     @include breakpoint($k-top-container-breakpoint) {
       display: none;

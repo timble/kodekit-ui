@@ -16679,6 +16679,7 @@ var Konami = function (callback) {
                 offCanvasOverlay = $('.' + plugin.settings.offCanvasOverlay),
                 transitionDuration = Math.round(parseFloat(container.css('transition-duration')) * 1000),
                 transitionElements = plugin.settings.transitionElements,
+                languageDirection = $('html').attr('dir'),
                 timeout;
 
             // Set proper menuExpandedClass if not set manually
@@ -16855,134 +16856,138 @@ var Konami = function (callback) {
                     (position == 'right' && newPos >= -(expandedWidth) && newPos <= 25);
             }
 
-            function onTouchStart(e) {
+            // Don't run touch code when language direction is not ltr
+            if ( languageDirection != 'ltr' ) {
 
-                if(!wrapper.hasClass(menuExpandedClass)) {
-                    return;
+                function onTouchStart(e) {
+
+                    if (!wrapper.hasClass(menuExpandedClass)) {
+                        return;
+                    }
+
+                    // Set started to true (used by touchend)
+                    started = true;
+
+                    // Get original starting point
+                    pageX = e.originalEvent.touches[0].pageX;
+
+                    // Setting the start object for 'move' and 'end'
+                    start = {
+                        startingX: currentPosition(),
+                        // get touch coordinates for delta calculations in onTouchMove
+                        pageX: pageX,
+                        pageY: e.originalEvent.touches[0].pageY
+                    };
+
+                    // reset deltaX
+                    deltaX = wrapper.position().left;
+
+                    // used for testing first onTouchMove event
+                    isScrolling = undefined;
+
+                    // Get the opacity of the overlay
+                    overlayOpacity = plugin.settings.opacity;
+
+                    // Add class to remove transition for 1-to-1 touch movement
+                    $.each(transitionElements, function () {
+                        $(this).addClass(noTransitionClass);
+                    });
+                    $.each(offCanvasOverlay, function () {
+                        $(this).addClass(noTransitionClass);
+                    });
+
+                    e.stopPropagation();
+
                 }
 
-                // Set started to true (used by touchend)
-                started = true;
+                function onTouchMove(e) {
 
-                // Get original starting point
-                pageX = e.originalEvent.touches[0].pageX;
+                    if (!wrapper.hasClass(menuExpandedClass)) {
+                        return;
+                    }
 
-                // Setting the start object for 'move' and 'end'
-                start = {
-                    startingX: currentPosition(),
-                    // get touch coordinates for delta calculations in onTouchMove
-                    pageX: pageX,
-                    pageY: e.originalEvent.touches[0].pageY
-                };
+                    deltaX = e.originalEvent.touches[0].pageX - start.pageX;
 
-                // reset deltaX
-                deltaX = wrapper.position().left;
+                    // determine if scrolling test has run - one time test
+                    if (typeof isScrolling == 'undefined') {
+                        isScrolling = !!(isScrolling || Math.abs(deltaX) < Math.abs(e.originalEvent.touches[0].pageY - start.pageY));
+                    }
 
-                // used for testing first onTouchMove event
-                isScrolling = undefined;
+                    // if user is not trying to scroll vertically
+                    if (!isScrolling) {
 
-                // Get the opacity of the overlay
-                overlayOpacity = plugin.settings.opacity;
+                        // prevent native scrolling
+                        e.preventDefault();
 
-                // Add class to remove transition for 1-to-1 touch movement
-                $.each(transitionElements, function() {
-                    $(this).addClass(noTransitionClass);
-                });
-                $.each(offCanvasOverlay, function() {
-                    $(this).addClass(noTransitionClass);
-                });
+                        var newPos = position == 'left' ? start.startingX + deltaX
+                            : deltaX - ($(window).width() - start.startingX);
 
-                e.stopPropagation();
+                        var opacity = (overlayOpacity / expandedWidth) * Math.abs(newPos);
 
-            }
+                        if (!inBounds(newPos))
+                            return;
 
-            function onTouchMove(e) {
+                        // translate immediately 1-to-1
+                        $.each(transitionElements, function () {
+                            if (!$(this).hasClass('k-title-bar--mobile')) {
+                                $(this).css({
+                                    '-webkit-transform': 'translate(' + newPos + 'px, 0)',
+                                    '-moz-transform': 'translate(' + newPos + 'px, 0)',
+                                    '-ms-transform': 'translate(' + newPos + 'px, 0)',
+                                    '-o-transform': 'translate(' + newPos + 'px, 0)',
+                                    'transform': 'translate(' + newPos + 'px, 0)'
+                                });
+                            }
+                        });
+                        $.each(offCanvasOverlay, function () {
+                            $(this).css('opacity', opacity);
+                        });
 
-                if(!wrapper.hasClass(menuExpandedClass)) {
-                    return;
+                        e.stopPropagation();
+                    }
                 }
 
-                deltaX = e.originalEvent.touches[0].pageX - start.pageX;
+                function onTouchEnd(e) {
 
-                // determine if scrolling test has run - one time test
-                if (typeof isScrolling == 'undefined') {
-                    isScrolling = !!(isScrolling || Math.abs(deltaX) < Math.abs(e.originalEvent.touches[0].pageY - start.pageY));
-                }
+                    // Escape if invalid start:
+                    if (!started)
+                        return;
 
-                // if user is not trying to scroll vertically
-                if (!isScrolling) {
-
-                    // prevent native scrolling
-                    e.preventDefault();
+                    // Escape if Menu is closed
+                    if (!wrapper.hasClass(menuExpandedClass))
+                        return;
 
                     var newPos = position == 'left' ? start.startingX + deltaX
                         : deltaX - ($(window).width() - start.startingX);
 
-                    var opacity = (overlayOpacity / expandedWidth) * Math.abs(newPos);
+                    // Converting to positive number
+                    var absNewPos = Math.abs(newPos);
 
-                    if(!inBounds(newPos))
-                        return;
+                    // if not scrolling vertically
+                    if (!isScrolling) {
 
-                    // translate immediately 1-to-1
-                    $.each(transitionElements, function() {
-                        if ( !$(this).hasClass('k-title-bar--mobile') ) {
-                            $(this).css({
-                                '-webkit-transform' : 'translate(' + newPos + 'px, 0)',
-                                '-moz-transform'    : 'translate(' + newPos + 'px, 0)',
-                                '-ms-transform'     : 'translate(' + newPos + 'px, 0)',
-                                '-o-transform'      : 'translate(' + newPos + 'px, 0)',
-                                'transform'         : 'translate(' + newPos + 'px, 0)'
-                            });
+                        $.each(transitionElements, function () {
+                            container.removeAttr('style').removeClass(noTransitionClass);
+                            $('.k-js-title-bar').removeAttr('style').removeClass(noTransitionClass);
+                        });
+                        $.each(offCanvasOverlay, function () {
+                            $(this).removeAttr('style').removeClass(noTransitionClass);
+                        });
+
+                        if (( position == 'left' && ( absNewPos <= (expandedWidth * 0.66) || newPos <= 0 ) ) ||
+                            ( position == 'right' && ( absNewPos <= (expandedWidth * 0.66) || newPos >= 0 ) )) {
+                            closeMenu();
+                        } else {
+                            openMenu(menu);
                         }
-                    });
-                    $.each(offCanvasOverlay, function() {
-                        $(this).css('opacity', opacity);
-                    });
+                    }
+
+                    // Reset start object and starting variable:
+                    started = null;
+                    start = {};
 
                     e.stopPropagation();
                 }
-            }
-
-            function onTouchEnd(e){
-
-                // Escape if invalid start:
-                if(!started)
-                    return;
-
-                // Escape if Menu is closed
-                if(!wrapper.hasClass(menuExpandedClass))
-                    return;
-
-                var newPos = position == 'left' ? start.startingX + deltaX
-                    : deltaX - ($(window).width() - start.startingX);
-
-                // Converting to positive number
-                var absNewPos = Math.abs(newPos);
-
-                // if not scrolling vertically
-                if (!isScrolling) {
-
-                    $.each(transitionElements, function() {
-                        container.removeAttr('style').removeClass(noTransitionClass);
-                        $('.k-js-title-bar').removeAttr('style').removeClass(noTransitionClass);
-                    });
-                    $.each(offCanvasOverlay, function() {
-                        $(this).removeAttr('style').removeClass(noTransitionClass);
-                    });
-
-                    if ( ( position == 'left' && ( absNewPos <= (expandedWidth * 0.66) || newPos <= 0 ) ) ||
-                        ( position == 'right' && ( absNewPos <= (expandedWidth * 0.66) || newPos >= 0 ) ) ) {
-                        closeMenu();
-                    } else {
-                        openMenu(menu);
-                    }
-                }
-
-                // Reset start object and starting variable:
-                started = null;
-                start = {};
-
-                e.stopPropagation();
             }
 
         };
@@ -17102,20 +17107,25 @@ var Konami = function (callback) {
                 middlepaneResizer.className = "k-pane-resizer";
                 middlepane.appendChild(middlepaneResizer);
                 middlepaneResizer.addEventListener("mousedown", initDrag, false);
-                var startW, startWidth, newWidth;
+                var startW, startWidth, newWidth, direction;
             }
 
             function initDrag(e) {
                 startW = e.clientX;
                 startWidth = parseInt(document.defaultView.getComputedStyle(middlepane).width, 10);
+                direction = document.documentElement.getAttribute('dir') || 'ltr';
                 document.documentElement.addEventListener("mousemove", doDrag, false);
                 document.documentElement.addEventListener("mouseup", stopDrag, false);
             }
 
             function doDrag(e) {
                 document.getElementsByClassName('k-ui-container')[0].classList.add("k-is-unresponsive");
-                newWidth = (startWidth + e.clientX - startW);
-                if ((startWidth + e.clientX - startW) <= 221) {
+                if ( direction == 'ltr' ) {
+                    newWidth = (startWidth + e.clientX - startW);
+                } else {
+                    newWidth = (startWidth - (e.clientX - startW));
+                }
+                if (newWidth <= 221) {
                     newWidth = 221;
                 }
                 middlepane.style.width = newWidth + "px";
@@ -17129,7 +17139,13 @@ var Konami = function (callback) {
                 document.getElementsByClassName('k-ui-container')[0].classList.remove("k-is-unresponsive");
                 middlepane.removeAttribute('style');
 
-                var width = startWidth + e.clientX - startW;
+                var width;
+
+                if ( direction == 'ltr' ) {
+                    width = startWidth + e.clientX - startW;
+                } else {
+                    width = (startWidth - (e.clientX - startW));
+                }
                 if (width <= 221) {
                     width = 221;
                 }

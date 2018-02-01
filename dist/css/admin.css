@@ -2936,8 +2936,8 @@ body.k-is-resizing {
 }
 
 [dir="rtl"] .k-ui-namespace .k-show-right-menu .k-component {
-  -webkit-transform: translateZ(272px);
-          transform: translateZ(272px);
+  -webkit-transform: translateX(272px);
+          transform: translateX(272px);
 }
 
 @media screen and (min-width: 600px) {
@@ -3052,6 +3052,14 @@ body.k-is-resizing {
   .k-js-enabled .k-ui-namespace .k-content-area .k-content:not(:last-child) {
     padding-right: 8px;
   }
+  .k-js-enabled [dir="rtl"] .k-ui-namespace .k-content-area .k-content:not(:last-child) {
+    padding-right: 0;
+    padding-left: 8px;
+  }
+  .k-js-enabled[dir="rtl"] .k-ui-namespace .k-content-area .k-content:not(:last-child) {
+    padding-right: 0;
+    padding-left: 8px;
+  }
 }
 
 @media screen and (min-width: 600px) {
@@ -3085,6 +3093,8 @@ body.k-is-resizing {
 [dir="rtl"] .k-ui-namespace .k-content-area .k-content:not(:last-child) .k-pane-resizer {
   right: auto;
   left: 0;
+  border-left: none;
+  border-right: 1px solid #e1e1e1;
 }
 
 @media screen and (min-width: 1024px) {
@@ -3229,6 +3239,18 @@ body.k-is-resizing {
 .k-ui-namespace .k-show-subcontent-area .k-content-area__child {
   -webkit-transform: translateX(-100%) translateX(48px);
           transform: translateX(-100%) translateX(48px);
+}
+
+[dir="rtl"] .k-ui-namespace .k-show-subcontent-area .k-content-area__child {
+  -webkit-transform: translateX(100%) translateX(-48px);
+          transform: translateX(100%) translateX(-48px);
+}
+
+@media screen and (min-width: 1024px) {
+  [dir="rtl"] .k-ui-namespace .k-show-subcontent-area .k-content-area__child {
+    -webkit-transform: none;
+            transform: none;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -3561,7 +3583,12 @@ body.k-is-resizing {
   left: 0;
 }
 
-[dir="rtl"] .k-js-enabled .k-ui-namespace .k-sidebar-left {
+.k-js-enabled [dir="rtl"] .k-ui-namespace .k-sidebar-left {
+  left: auto;
+  right: 0;
+}
+
+.k-js-enabled[dir="rtl"] .k-ui-namespace .k-sidebar-left {
   left: auto;
   right: 0;
 }
@@ -3647,7 +3674,12 @@ body.k-is-resizing {
   right: 0;
 }
 
-[dir="rtl"] .k-js-enabled .k-ui-namespace .k-sidebar-right {
+.k-js-enabled [dir="rtl"] .k-ui-namespace .k-sidebar-right {
+  right: auto;
+  left: 0;
+}
+
+.k-js-enabled[dir="rtl"] .k-ui-namespace .k-sidebar-right {
   right: auto;
   left: 0;
 }
@@ -3733,12 +3765,22 @@ body.k-is-resizing {
   bottom: 0;
 }
 
+[dir="rtl"] .k-ui-namespace .k-subcontent {
+  left: auto;
+  right: 100%;
+  border-left: none;
+  border-right: 1px solid #e1e1e1;
+}
+
 @media screen and (min-width: 1024px) {
   .k-ui-namespace .k-subcontent {
     position: relative;
     left: auto;
     width: auto;
     z-index: 1;
+  }
+  [dir="rtl"] .k-ui-namespace .k-subcontent {
+    right: auto;
   }
 }
 
@@ -3794,6 +3836,12 @@ body.k-is-resizing {
   .k-ui-namespace .k-button.k-subcontent-toggle {
     display: none;
   }
+}
+
+[dir="rtl"] .k-ui-namespace .k-button.k-subcontent-toggle {
+  margin: 0;
+  right: auto;
+  left: 8px;
 }
 
 .k-ui-namespace .k-wrapper {
@@ -4121,6 +4169,10 @@ body.k-is-resizing {
 .k-ui-namespace .uneditable-input:active {
   font-size: 16px !important;
   /* 6 */
+}
+
+[dir="rtl"] .k-ui-namespace select, [dir="rtl"] .k-ui-namespace textarea, [dir="rtl"] .k-ui-namespace input[type="text"], [dir="rtl"] .k-ui-namespace input[type="password"], [dir="rtl"] .k-ui-namespace input[type="datetime"], [dir="rtl"] .k-ui-namespace input[type="datetime-local"], [dir="rtl"] .k-ui-namespace input[type="date"], [dir="rtl"] .k-ui-namespace input[type="month"], [dir="rtl"] .k-ui-namespace input[type="time"], [dir="rtl"] .k-ui-namespace input[type="week"], [dir="rtl"] .k-ui-namespace input[type="number"], [dir="rtl"] .k-ui-namespace input[type="email"], [dir="rtl"] .k-ui-namespace input[type="url"], [dir="rtl"] .k-ui-namespace input[type="search"], [dir="rtl"] .k-ui-namespace input[type="tel"], [dir="rtl"] .k-ui-namespace input[type="color"], [dir="rtl"] .k-ui-namespace .uneditable-input {
+  text-align: right;
 }
 
 .k-ui-namespace .select2-selection--multiple,
@@ -7759,6 +7811,10 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   float: right;
 }
 
+[dir="rtl"] .k-ui-namespace .k-scopebar__item--toggle-buttons .k-toggle-scopebar-search {
+  float: left;
+}
+
 @media screen and (min-width: 1024px) {
   .k-ui-namespace .k-scopebar__item--toggle-buttons .k-toggle-scopebar-search {
     display: none;
@@ -8965,6 +9021,11 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   -webkit-backface-visibility: hidden;
 }
 
+[dir="rtl"] .k-ui-namespace .k-tabs-scroller-prev span:before, [dir="rtl"] .k-ui-namespace .k-tabs-scroller-next span:before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
 .k-ui-namespace .k-tabs-scroller-prev {
   left: 0;
   border-left: none;
@@ -10102,6 +10163,10 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   margin: 7px 0 0 8px;
 }
 
+[dir="rtl"] .k-ui-namespace .k-toolbar .k-off-canvas-toggle-holder {
+  margin: 7px 8px 0 0;
+}
+
 .k-ui-namespace .k-toolbar .k-off-canvas-toggle-holder .k-off-canvas-toggle {
   margin: 0;
 }
@@ -10296,6 +10361,11 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
      */
 }
 
+[dir="rtl"] .k-ui-namespace .k-top-container__navigation {
+  right: auto;
+  left: 0;
+}
+
 @media screen and (min-width: 768px) {
   .k-ui-namespace .k-top-container__navigation {
     position: static;
@@ -10405,6 +10475,13 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   margin-left: 8px;
 }
 
+[dir="rtl"] .k-ui-namespace .k-top-container__navigation li > a:not(:only-child):after {
+  border-right: 4px solid transparent;
+  border-left: 2px solid transparent;
+  margin-left: 0;
+  margin-right: 8px;
+}
+
 .k-ui-namespace .k-top-container__navigation li ul {
   display: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
@@ -10424,6 +10501,10 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
     border-bottom: none;
     padding: 2px;
   }
+  [dir="rtl"] .k-ui-namespace .k-top-container__navigation li ul {
+    left: auto;
+    right: 1px;
+  }
 }
 
 .k-ui-namespace .k-top-container__navigation li ul li {
@@ -10439,10 +10520,18 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   display: block;
 }
 
+[dir="rtl"] .k-ui-namespace .k-top-container__navigation li ul li {
+  float: none;
+}
+
 @media screen and (min-width: 768px) {
   .k-ui-namespace .k-top-container__navigation li ul li ul {
     top: -2px;
     left: 100%;
+  }
+  [dir="rtl"] .k-ui-namespace .k-top-container__navigation li ul li ul {
+    left: auto;
+    right: 100%;
   }
 }
 
@@ -10480,6 +10569,13 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   margin-top: -4px;
 }
 
+[dir="rtl"] .k-ui-namespace .k-top-container__navigation li ul a:not(:only-child):after {
+  right: auto;
+  left: 8px;
+  border-left: none;
+  border-right: 4px solid;
+}
+
 .k-ui-namespace .k-top-container__navigation li .has-open-submenu + ul {
   display: block;
 }
@@ -10508,7 +10604,16 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 @media screen and (min-width: 768px) {
   [dir="rtl"] .k-ui-namespace .k-top-container__navigation .k-navigation-right {
     float: left;
+    margin-left: 0;
     margin-right: auto;
+  }
+  [dir="rtl"] .k-ui-namespace .k-top-container__navigation .k-navigation-right li ul {
+    left: 0;
+    right: auto;
+  }
+  [dir="rtl"] .k-ui-namespace .k-top-container__navigation .k-navigation-right li li ul {
+    left: 100%;
+    right: auto;
   }
 }
 
@@ -10533,6 +10638,11 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 .k-ui-namespace.k-show-top-menu .k-wrapper {
   -webkit-transform: translateX(-276px);
           transform: translateX(-276px);
+}
+
+[dir="rtl"] .k-ui-namespace.k-show-top-menu .k-wrapper {
+  -webkit-transform: translateX(276px);
+          transform: translateX(276px);
 }
 
 @media screen and (min-width: 768px) {
@@ -10562,6 +10672,11 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   border-radius: 4px;
   padding: 7px;
   margin: 8px;
+}
+
+[dir="rtl"] .k-ui-namespace .k-top-navigation-toggle {
+  right: auto;
+  left: 0;
 }
 
 @media screen and (min-width: 768px) {
@@ -11399,6 +11514,11 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
           transform: rotate(-90deg);
   transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
   -webkit-backface-visibility: hidden;
+}
+
+[dir="rtl"] .footable.breakpoint .footable-toggle:after {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 .footable.breakpoint tr.k-is-selected .footable-toggle {

@@ -14,20 +14,25 @@
                 middlepaneResizer.className = "k-pane-resizer";
                 middlepane.appendChild(middlepaneResizer);
                 middlepaneResizer.addEventListener("mousedown", initDrag, false);
-                var startW, startWidth, newWidth;
+                var startW, startWidth, newWidth, direction;
             }
 
             function initDrag(e) {
                 startW = e.clientX;
                 startWidth = parseInt(document.defaultView.getComputedStyle(middlepane).width, 10);
+                direction = document.documentElement.getAttribute('dir') || 'ltr';
                 document.documentElement.addEventListener("mousemove", doDrag, false);
                 document.documentElement.addEventListener("mouseup", stopDrag, false);
             }
 
             function doDrag(e) {
                 document.getElementsByClassName('k-ui-container')[0].classList.add("k-is-unresponsive");
-                newWidth = (startWidth + e.clientX - startW);
-                if ((startWidth + e.clientX - startW) <= 221) {
+                if ( direction == 'ltr' ) {
+                    newWidth = (startWidth + e.clientX - startW);
+                } else {
+                    newWidth = (startWidth - (e.clientX - startW));
+                }
+                if (newWidth <= 221) {
                     newWidth = 221;
                 }
                 middlepane.style.width = newWidth + "px";
@@ -41,7 +46,13 @@
                 document.getElementsByClassName('k-ui-container')[0].classList.remove("k-is-unresponsive");
                 middlepane.removeAttribute('style');
 
-                var width = startWidth + e.clientX - startW;
+                var width;
+
+                if ( direction == 'ltr' ) {
+                    width = startWidth + e.clientX - startW;
+                } else {
+                    width = (startWidth - (e.clientX - startW));
+                }
                 if (width <= 221) {
                     width = 221;
                 }

@@ -56,8 +56,10 @@
 
     @include js-enabled {
       left: 0;
+    }
 
-      @include rtl {
+    @include rtl {
+      @include js-enabled(true) {
         left: auto;
         right: 0;
       }
@@ -142,8 +144,10 @@
 
     @include js-enabled {
       right: 0;
+    }
 
-      @include rtl {
+    @include rtl {
+      @include js-enabled(true) {
         right: auto;
         left: 0;
       }

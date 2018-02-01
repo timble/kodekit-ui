@@ -45,6 +45,13 @@
         @include js-enabled {
           padding-right: $k-content-resizer-width;
         }
+
+        @include rtl {
+          @include js-enabled(true) {
+            padding-right: 0;
+            padding-left: $k-content-resizer-width;
+          }
+        }
       }
 
 
@@ -86,6 +93,8 @@
         @include rtl {
           right: auto;
           left: 0;
+          border-left: none;
+          border-right: $k-content-resizer-border;
         }
 
         @include breakpoint($k-content-resizer-breakpoint) {

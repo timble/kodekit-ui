@@ -25,6 +25,10 @@
         line-height: $k-table-responsive-toggle-line-height;
         transform: rotate(-90deg);
         @include transition;
+
+        @include rtl {
+          transform: rotate(90deg);
+        }
       }
     }
 

@@ -258,6 +258,15 @@
     }
   }
 
+  @include rtl {
+    .k-tabs-scroller-prev,
+    .k-tabs-scroller-next {
+      span:before {
+        transform: scaleX(1);
+      }
+    }
+  }
+
   .k-tabs-scroller-prev {
     left: 0;
     border-left: none;

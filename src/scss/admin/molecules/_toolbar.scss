@@ -161,6 +161,10 @@
       vertical-align: middle;
       margin: ($k-toolbar-spacing - 1px) 0 0 $k-toolbar-spacing;
 
+      @include rtl {
+        margin: ($k-toolbar-spacing - 1px) $k-toolbar-spacing 0 0;
+      }
+
       .k-off-canvas-toggle {
         margin: 0;
       }
