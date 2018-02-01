@@ -17167,7 +17167,6 @@ var Konami = function (callback) {
 
                 // variables
                 var galleryMaxWidth = $gallery.attr('data-maxwidth') || 200,
-                    supportsGrid = CSS.supports('display', 'grid'),
                     galleryEventTimeout;
 
                 // Set width for gallery items
@@ -17199,7 +17198,7 @@ var Konami = function (callback) {
                 };
 
                 // Only run when CSS grid is not supported
-                if (supportsGrid !== true && $gallery.length !== 0) {
+                if ($gallery.length !== 0) {
 
                     // Run on default
                     setWidth();

@@ -407,7 +407,9 @@
 
     thead ~ tbody .k-table__sub-header {
       th {
-        top: $k-table-cell-size;
+        @supports (position: sticky) {
+          top: $k-table-cell-size;
+        }
       }
     }
   }
