@@ -397,7 +397,17 @@
         white-space: nowrap;
         background: $k-table-sub-header-background;
         border-bottom-color: $k-table-sub-header-border;
-        top: ($k-table-cell-size + $k-border-width);
+      }
+    }
+
+
+    /**
+     * Only set top when a thead is found
+     */
+
+    thead ~ tbody .k-table__sub-header {
+      th {
+        top: $k-table-cell-size;
       }
     }
   }

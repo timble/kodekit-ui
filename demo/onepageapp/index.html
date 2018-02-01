@@ -13,7 +13,10 @@
 <body>
 <script src="../../dist/js/kui-initialize.js"></script>
 
+<!-- Kodekit UI Container -->
 <div class="k-ui-container k-ui-namespace">
+
+    <!-- Top container -->
     <div class="k-top-container">
         <div class="k-top-container__logo">
             <a href="#">
@@ -42,12 +45,20 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </div><!-- .k-top-container -->
+
+    <!-- Wrapper -->
     <div class="k-wrapper k-js-wrapper">
+
+        <!-- Mobile title bar -->
         <div class="k-title-bar k-title-bar--mobile k-js-title-bar">
             <div class="k-title-bar__heading">Articles</div>
-        </div>
+        </div><!-- .k-title-bar -->
+
+        <!-- Content wrapper -->
         <div class="k-content-wrapper">
+
+            <!-- Sidebar -->
             <div class="k-sidebar-left k-js-sidebar-left">
                 <div class="k-sidebar-item">
                     <ul class="k-navigation">
@@ -87,12 +98,18 @@
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div><!-- .k-sidebar-left -->
+
+            <!-- Content area -->
             <div class="k-content-area k-js-content-area">
 
+                <!-- Content area child -->
                 <div class="k-content-area__child k-is-active" id="page1">
 
+                    <!-- Content -->
                     <div class="k-content k-js-content k-js-middlepane">
+
+                        <!-- Toolbar -->
                         <div class="k-toolbar k-js-toolbar">
                             <button type="button" class="k-button k-button--success">
                                 <span class="k-icon-plus" aria-hidden="true"></span>
@@ -103,9 +120,15 @@
                             <button type="button" class="k-button k-button--default" disabled>
                                 <span class="k-icon-trash" aria-hidden="true"></span>
                             </button>
-                        </div>
+                        </div><!-- .k-toolbar -->
+
+                        <!-- Component wrapper -->
                         <div class="k-component-wrapper">
+
+                            <!-- Component -->
                             <form class="k-component k-js-component k-js-grid-controller k-js-grid">
+
+                                <!-- Scopebar -->
                                 <div class="k-scopebar k-js-scopebar">
                                     <div class="k-scopebar__item k-scopebar__item--search">
                                         <div class="k-search k-search--has-both-buttons">
@@ -123,8 +146,11 @@
                                             </button>
                                         </div>
                                     </div>
-                                </div>
+                                </div><!-- .k-scopebar -->
+
+                                <!-- Table -->
                                 <div class="k-table-container">
+
                                     <div class="k-table">
                                         <table class="k-js-fixed-table-header k-js-responsive-table k-js-click-to-seslect">
                                             <thead>
@@ -244,22 +270,29 @@
                                             </ul>
                                         </div>
                                     </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
 
+                                </div><!-- .k-table-container -->
+
+                            </form><!-- .k-component -->
+
+                        </div><!-- .k-component-wrapper -->
+
+                    </div><!-- .k-content -->
+
+                    <!-- Sub content -->
                     <div class="k-subcontent k-js-subcontent">
+
+                        <!-- Sub content child -->
                         <div class="k-subcontent__child k-is-active" id="form1">
 
                             <!-- Component wrapper -->
                             <div class="k-component-wrapper">
+
                                 <!-- Component -->
                                 <form class="k-component k-js-component">
 
                                     <!-- Container -->
                                     <div class="k-container">
-                                        <!-- Main fields -->
                                         <div class="k-container__full">
                                             <fieldset>
                                                 <div class="k-form-group k-form-group--large">
@@ -269,9 +302,10 @@
                                                     </div>
                                                 </div>
                                             </fieldset>
-                                        </div><!-- .k-container__full -->
+                                        </div>
                                     </div><!-- .k-container -->
 
+                                    <!-- Tabs -->
                                     <div class="k-tabs-container">
                                         <div class="k-tabs-wrapper k-js-tabs-wrapper">
                                             <div class="k-tabs-scroller k-js-tabs-scroller">
@@ -327,12 +361,14 @@
                                                 Content tab 3
                                             </div>
                                         </div>
-                                    </div>
+                                    </div><!-- .k-tabs-container -->
 
                                 </form><!-- .k-component -->
 
                             </div><!-- .k-component-wrapper -->
+
                         </div><!-- .k-subcontent__child -->
+
                         <div class="k-subcontent__child" id="form2">Form 2</div>
                         <div class="k-subcontent__child" id="form3">Form 3</div>
                         <div class="k-subcontent__child" id="form4">Form 4</div>
@@ -342,10 +378,10 @@
                         <div class="k-subcontent__child" id="form8">Form 8</div>
                         <div class="k-subcontent__child" id="form9">Form 9</div>
                         <div class="k-subcontent__child" id="form10">Form 10</div>
+
                     </div><!-- .k-subcontent -->
 
-                </div>
-
+                </div><!-- .k-content-area__child -->
 
                 <div class="k-content-area__child" id="page2">
                     Page 2
@@ -354,10 +390,14 @@
                 <div class="k-content-area__child" id="page3">
                     Page 3
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
+
+            </div><!-- .k-content-area -->
+
+        </div><!-- .k-content-wrapper -->
+
+    </div><!-- .k-wrapper -->
+
+</div><!-- .k-ui-container -->
 
 </body>
 </html>

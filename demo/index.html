@@ -11,44 +11,91 @@
     <script src="../dist/js/admin.min.js"></script>
 </head>
 <body>
-<script data-inline type="text/javascript">(function(){var el=document.documentElement;var cl="k-js-enabled";if(el.classList){el.classList.add(cl);}else{el.className+=" "+cl;}})()</script>
+<script src="../dist/js/kui-initialize.min.js"></script>
 
+<!-- Kodekit UI Container -->
 <div class="k-ui-container k-ui-namespace">
-    <div class="k-wrapper k-js-wrapper">
-        <div class="k-title-bar k-js-title-bar">
-            <div class="k-title-bar__heading">Views</div>
+
+    <!-- Top container -->
+    <div class="k-top-container">
+        <div class="k-top-container__logo">
+            <a href="./index.html">
+                Kodekit UI demos
+            </a>
         </div>
+    </div><!-- .k-top-container -->
+
+    <!-- Wrapper -->
+    <div class="k-wrapper k-js-wrapper">
+
+        <!-- Title bar -->
+        <div class="k-title-bar k-js-title-bar">
+            <div class="k-title-bar__heading">Available demo's</div>
+        </div><!-- .k-title-bar -->
+
+        <!-- Content wrapper -->
         <div class="k-content-wrapper">
+
+            <!-- Content -->
             <div class="k-content k-js-content">
+
+                <!-- Component wrapper -->
                 <div class="k-component-wrapper">
+
+                    <!-- Component -->
                     <div class="k-component k-js-component">
+
+                        <!-- Table -->
                         <div class="k-table-container">
                             <div class="k-table">
                                 <table class="k-js-fixed-table-header">
-                                    <thead>
-                                    <tr>
-                                        <th>Type</th>
-                                    </tr>
-                                    </thead>
                                     <tbody>
-                                    <tr><td><a href="./login/index.html">Login</a></td></tr>
-                                    <tr><td><a href="./list/index.html">List</a></td></tr>
-                                    <tr><td><a href="./form/index.html">Form</a></td></tr>
-                                    <tr><td><a href="./onepageapp/index.html">One-page app</a></td></tr>
-                                    <tr class="k-table__sub-header"><th>Advanced</th></tr>
-                                    <tr><td><a href="./batch/index.html">Batch</a></td></tr>
-                                    <tr><td><a href="./gallery/index.html">Gallery</a></td></tr>
-                                    <tr><td><a href="./modal/index.html">Modal</a></td></tr>
+                                    <tr class="k-table__sub-header">
+                                        <th>Types</th>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="./login/index.html">Login</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="./list/index.html">List</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="./form/index.html">Form</a></td>
+                                    </tr>
+                                    <tr class="k-table__sub-header">
+                                        <th>Advanced</th>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="./onepageapp/index.html">One-page app</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="./gallery/index.html">Gallery</a></td>
+                                    </tr>
+                                    <tr class="k-table__sub-header">
+                                        <th>Modals</th>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="k-js-iframe-modal" href="./batch/index.html">Batch</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="k-js-iframe-modal" href="./modal/index.html">Modal</a></td>
+                                    </tr>
                                     </tbody>
                                 </table>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+                        </div><!-- .k-table-container -->
+
+                    </div><!-- .k-component -->
+
+                </div><!-- .k-component-wrapper -->
+
+            </div><!-- .k-content -->
+
+        </div><!-- .k-content-wrapper -->
+
+    </div><!-- .k-wrapper -->
+
+</div><!-- .k-ui-container -->
 
 </body>
 </html>

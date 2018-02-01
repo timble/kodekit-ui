@@ -13,7 +13,10 @@
 <body>
 <script src="../../dist/js/kui-initialize.min.js"></script>
 
+<!-- Kodekit UI Container -->
 <div class="k-ui-container k-ui-namespace">
+
+    <!-- Top container -->
     <div class="k-top-container">
         <div class="k-top-container__logo">
             <a href="#">
@@ -56,12 +59,20 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </div><!-- .k-top-container -->
+
+    <!-- Wrapper -->
     <div class="k-wrapper k-js-wrapper">
+
+        <!-- Mobile title bar -->
         <div class="k-title-bar k-title-bar--mobile k-js-title-bar">
             <div class="k-title-bar__heading">Articles</div>
-        </div>
+        </div><!-- .k-title-bar--mobile -->
+
+        <!-- Content wrapper -->
         <div class="k-content-wrapper">
+
+            <!-- Sidebar -->
             <div class="k-sidebar-left k-js-sidebar-left">
                 <div class="k-sidebar-item">
                     <ul class="k-navigation">
@@ -108,364 +119,378 @@
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div><!-- .k-sidebar-left -->
 
-            <div class="k-content-area k-js-content-area">
-                <div class="k-content-area__child">
+            <!-- Content -->
+            <div class="k-content k-js-content k-js-middlepane">
 
-                    <div class="k-content k-js-content k-js-middlepane">
-                        <div class="k-toolbar k-js-toolbar">
-                            <button type="button" class="k-button k-button--success">
-                                <span class="k-icon-plus" aria-hidden="true"></span>
-                                New
-                            </button>
-                            <button type="button" class="k-button k-button--default" disabled>
-                                <span class="k-icon-pencil" aria-hidden="true"></span>
-                                Edit
-                            </button>
-                            <button type="button" class="k-button k-button--default" disabled>
-                                <span class="k-icon-trash" aria-hidden="true"></span>
-                                Delete
-                            </button>
-                        </div>
-                        <div class="k-component-wrapper">
-                            <form class="k-component k-js-component k-js-grid-controller k-js-grid">
-                                <div class="k-breadcrumb">
-                                    <ul>
-                                        <li class="k-breadcrumb__home">
-                                            <a class="k-breadcrumb__content" href="javascript:void(0);">
-                                                <span class="k-icon-home" aria-hidden="true"></span>
-                                                <span class="k-visually-hidden">Home</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="k-breadcrumb__content" href="javascript:void(0);">
-                                                Donec ullamcorper nulla non metus auctor fringilla.
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="k-breadcrumb__content" href="javascript:void(0);">
-                                                Risus Egestas Vulputate Fusce Ipsum.
-                                            </a>
-                                        </li>
-                                        <li class="k-breadcrumb__active">
-                                            <span class="k-breadcrumb__content">
-                                                Ligula Inceptos Commodo Sem Ornare.
-                                            </span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="k-scopebar k-js-scopebar">
-                                    <div class="k-dynamic-content-holder">
-                                        <div class="k-js-filters">
-                                            <div data-filter data-title="Status" data-count="0">
-                                                <select class="k-js-select2" name="enabled" data-placeholder="- Select -">
-                                                    <option value="" class="level1">- Select -</option>
-                                                    <option value="1" class="level1">Published</option>
-                                                    <option value="0" class="level1">Unpublished</option>
-                                                </select>
-                                            </div>
-                                        </div>
+                <!-- Toolbar -->
+                <div class="k-toolbar k-js-toolbar">
+                    <button type="button" class="k-button k-button--success">
+                        <span class="k-icon-plus" aria-hidden="true"></span>
+                        <span class="k-button__text">New</span>
+                    </button>
+                    <button type="button" class="k-button k-button--default" disabled>
+                        <span class="k-icon-pencil" aria-hidden="true"></span>
+                        <span class="k-button__text">Edit</span>
+                    </button>
+                    <button type="button" class="k-button k-button--default" disabled>
+                        <span class="k-icon-trash" aria-hidden="true"></span>
+                        <span class="k-button__text">Delete</span>
+                    </button>
+                </div>
+
+                <!-- Component wrapper -->
+                <div class="k-component-wrapper">
+
+                    <!-- Component -->
+                    <form class="k-component k-js-component k-js-grid-controller k-js-grid">
+
+                        <!-- Breadcrumbs -->
+                        <div class="k-breadcrumb">
+                            <ul>
+                                <li class="k-breadcrumb__home">
+                                    <a class="k-breadcrumb__content" href="javascript:void(0);">
+                                        <span class="k-icon-home" aria-hidden="true"></span>
+                                        <span class="k-visually-hidden">Home</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="k-breadcrumb__content" href="javascript:void(0);">
+                                        Donec ullamcorper nulla non metus auctor fringilla.
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="k-breadcrumb__content" href="javascript:void(0);">
+                                        Risus Egestas Vulputate Fusce Ipsum.
+                                    </a>
+                                </li>
+                                <li class="k-breadcrumb__active">
+                                    <span class="k-breadcrumb__content">
+                                        Ligula Inceptos Commodo Sem Ornare.
+                                    </span>
+                                </li>
+                            </ul>
+                        </div><!-- .k-breadcrumb -->
+
+                        <!-- Scopebar -->
+                        <div class="k-scopebar k-js-scopebar">
+                            <div class="k-dynamic-content-holder">
+                                <div class="k-js-filters">
+                                    <div data-filter data-title="Status" data-count="0">
+                                        <select class="k-js-select2" name="enabled" data-placeholder="- Select -">
+                                            <option value="" class="level1">- Select -</option>
+                                            <option value="1" class="level1">Published</option>
+                                            <option value="0" class="level1">Unpublished</option>
+                                        </select>
                                     </div>
-                                    <div class="k-scopebar__item k-scopebar__item--filters">
-                                        <div class="k-scopebar__filters-content">
-                                            <div class="k-scopebar__filters k-js-filter-container">
-                                                <div style="display: none;" class="k-scopebar__item--filter k-scopebar-dropdown k-js-filter-prototype k-js-dropdown">
-                                                    <button type="button" class="k-scopebar-dropdown__button k-js-dropdown-button">
-                                                        <span class="k-scopebar__item--filter__title k-js-dropdown-title"></span>
-                                                        <span class="k-scopebar__item--filter__icon k-icon-chevron-bottom" aria-hidden="true"></span>
-                                                        <div class="k-scopebar__item__label k-js-dropdown-label"></div>
-                                                    </button>
-                                                    <div class="k-scopebar-dropdown__body k-js-dropdown-body">
-                                                        <div class="k-scopebar-dropdown__body__buttons">
-                                                            <button type="button" class="k-button k-button--default k-js-clear-filter">Clear</button>
-                                                            <button type="button" class="k-button k-button--primary k-js-apply-filter">Apply</button>
-                                                        </div>
-                                                    </div>
+                                </div>
+                            </div>
+                            <div class="k-scopebar__item k-scopebar__item--filters">
+                                <div class="k-scopebar__filters-content">
+                                    <div class="k-scopebar__filters k-js-filter-container">
+                                        <div style="display: none;" class="k-scopebar__item--filter k-scopebar-dropdown k-js-filter-prototype k-js-dropdown">
+                                            <button type="button" class="k-scopebar-dropdown__button k-js-dropdown-button">
+                                                <span class="k-scopebar__item--filter__title k-js-dropdown-title"></span>
+                                                <span class="k-scopebar__item--filter__icon k-icon-chevron-bottom" aria-hidden="true"></span>
+                                                <div class="k-scopebar__item__label k-js-dropdown-label"></div>
+                                            </button>
+                                            <div class="k-scopebar-dropdown__body k-js-dropdown-body">
+                                                <div class="k-scopebar-dropdown__body__buttons">
+                                                    <button type="button" class="k-button k-button--default k-js-clear-filter">Clear</button>
+                                                    <button type="button" class="k-button k-button--primary k-js-apply-filter">Apply</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="k-scopebar__item k-scopebar__item--search">
-                                        <div class="k-search k-search--has-both-buttons">
-                                            <label for="input-list-1">Search</label>
-                                            <input type="search" class="k-search__field" placeholder="Search…" id="input-list-1"/>
-                                            <button type="submit" class="k-search__submit">
-                                                <span class="k-icon-magnifying-glass" aria-hidden="true"></span>
-                                                <span class="k-visually-hidden">Search icon</span>
-                                            </button>
-                                            <button type="button" class="k-search__empty ">
-        <span class="k-search__empty-area">
-        <span class="k-icon-disabled" aria-hidden="true"></span>
-        <span class="k-visually-hidden">Clear search</span>
-        </span>
-                                            </button>
-                                        </div>
-                                    </div>
                                 </div>
-                                <div class="k-table-container">
-                                    <div class="k-table">
-                                        <table class="k-js-fixed-table-header k-js-responsive-table">
-                                            <thead>
-                                            <tr>
-                                                <th width="1%" class="k-table-data--form"><input class="k-js-grid-checkall" type="checkbox"/></th>
-                                                <th width="1%" data-toggle="true" class="k-table-data--toggle"></th>
-                                                <th width="1%" class="k-table-data--icon"></th>
-                                                <th class="k-sort-desc"><a href="javascript:void(0);">Title</a></th>
-                                                <th width="5%" data-hide="phone,tablet"><a href="javascript:void(0);">State</a></th>
-                                                <th width="15%" data-hide="phone"><a href="javascript:void(0);">Category</a></th>
-                                                <th width="5%" data-hide="phone,tablet,desktop"><a href="javascript:void(0);">Date</a></th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
-                                                <td class="k-table-data--toggle"></td>
-                                                <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
-                                                <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Cras elit aenean</a>
-                                                </td>
-                                                <td><span class="k-table__item--state k-table__item--state-published">Published</span></td>
-                                                <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Fringilla</a>
-                                                </td>
-                                                <td class="k-table-data--nowrap">5 October 2011</td>
-                                            </tr>
-                                            <tr>
-                                                <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
-                                                <td class="k-table-data--toggle"></td>
-                                                <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
-                                                <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Fermentum quam porta</a>
-                                                </td>
-                                                <td><span class="k-table__item--state k-table__item--state-unpublished">Unpublished</span></td>
-                                                <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Fringilla</a>
-                                                </td>
-                                                <td class="k-table-data--nowrap">5 October 2011</td>
-                                            </tr>
-                                            <tr class="k-table__sub-header">
-                                                <th colspan="7">
-                                                    Sub header
-                                                </th>
-                                            </tr>
-                                            <tr>
-                                                <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
-                                                <td class="k-table-data--toggle"></td>
-                                                <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
-                                                <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Ornare nullam sem</a>
-                                                </td>
-                                                <td><span class="k-table__item--state k-table__item--state-published">Published</span></td>
-                                                <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Fringilla</a>
-                                                </td>
-                                                <td class="k-table-data--nowrap">5 October 2011</td>
-                                            </tr>
-                                            <tr>
-                                                <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
-                                                <td class="k-table-data--toggle"></td>
-                                                <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
-                                                <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Ornare nullam sem</a>
-                                                </td>
-                                                <td><span class="k-table__item--state k-table__item--state-published">Published</span></td>
-                                                <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Fringilla</a>
-                                                </td>
-                                                <td class="k-table-data--nowrap">5 October 2011</td>
-                                            </tr>
-                                            <tr>
-                                                <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
-                                                <td class="k-table-data--toggle"></td>
-                                                <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
-                                                <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Fermentum quam porta</a>
-                                                </td>
-                                                <td><span class="k-table__item--state k-table__item--state-unpublished">Unpublished</span></td>
-                                                <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Fringilla</a>
-                                                </td>
-                                                <td class="k-table-data--nowrap">5 October 2011</td>
-                                            </tr>
-                                            <tr>
-                                                <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
-                                                <td class="k-table-data--toggle"></td>
-                                                <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
-                                                <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Pellentesque condimentum euismod</a>
-                                                </td>
-                                                <td><span class="k-table__item--state k-table__item--state-published">Published</span></td>
-                                                <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Fringilla</a>
-                                                </td>
-                                                <td class="k-table-data--nowrap">5 October 2011</td>
-                                            </tr>
-                                            <tr>
-                                                <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
-                                                <td class="k-table-data--toggle"></td>
-                                                <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
-                                                <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Purus fringilla tristique fermentum inceptos bibendum magna</a>
-                                                </td>
-                                                <td><span class="k-table__item--state k-table__item--state-published">Published</span></td>
-                                                <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Fringilla</a>
-                                                </td>
-                                                <td class="k-table-data--nowrap">5 October 2011</td>
-                                            </tr>
-                                            <tr>
-                                                <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
-                                                <td class="k-table-data--toggle"></td>
-                                                <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
-                                                <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Ornare nullam sem</a>
-                                                </td>
-                                                <td><span class="k-table__item--state k-table__item--state-published">Published</span></td>
-                                                <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Fringilla</a>
-                                                </td>
-                                                <td class="k-table-data--nowrap">5 October 2011</td>
-                                            </tr>
-                                            <tr>
-                                                <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
-                                                <td class="k-table-data--toggle"></td>
-                                                <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
-                                                <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Pellentesque condimentum euismod</a>
-                                                </td>
-                                                <td><span class="k-table__item--state k-table__item--state-published">Published</span></td>
-                                                <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Fringilla</a>
-                                                </td>
-                                                <td class="k-table-data--nowrap">5 October 2011</td>
-                                            </tr>
-                                            <tr>
-                                                <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
-                                                <td class="k-table-data--toggle"></td>
-                                                <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
-                                                <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Purus fringilla tristique fermentum</a>
-                                                </td>
-                                                <td><span class="k-table__item--state k-table__item--state-published">Published</span></td>
-                                                <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Fringilla</a>
-                                                </td>
-                                                <td class="k-table-data--nowrap">5 October 2011</td>
-                                            </tr>
-                                            <tr>
-                                                <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
-                                                <td class="k-table-data--toggle"></td>
-                                                <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
-                                                <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Purus fringilla tristique fermentum inceptos bibendum magna</a>
-                                                </td>
-                                                <td><span class="k-table__item--state k-table__item--state-published">Published</span></td>
-                                                <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Fringilla</a>
-                                                </td>
-                                                <td class="k-table-data--nowrap">5 October 2011</td>
-                                            </tr>
-                                            <tr>
-                                                <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
-                                                <td class="k-table-data--toggle"></td>
-                                                <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
-                                                <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Ornare nullam sem</a>
-                                                </td>
-                                                <td><span class="k-table__item--state k-table__item--state-published">Published</span></td>
-                                                <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Fringilla</a>
-                                                </td>
-                                                <td class="k-table-data--nowrap">5 October 2011</td>
-                                            </tr>
-                                            <tr>
-                                                <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
-                                                <td class="k-table-data--toggle"></td>
-                                                <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
-                                                <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Fermentum quam porta</a>
-                                                </td>
-                                                <td><span class="k-table__item--state k-table__item--state-unpublished">Unpublished</span></td>
-                                                <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Fringilla</a>
-                                                </td>
-                                                <td class="k-table-data--nowrap">5 October 2011</td>
-                                            </tr>
-                                            <tr class="k-table__sub-header">
-                                                <th colspan="7">
-                                                    Sub header
-                                                </th>
-                                            </tr>
-                                            <tr>
-                                                <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
-                                                <td class="k-table-data--toggle"></td>
-                                                <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
-                                                <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Ornare nullam sem</a>
-                                                </td>
-                                                <td><span class="k-table__item--state k-table__item--state-published">Published</span></td>
-                                                <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Fringilla</a>
-                                                </td>
-                                                <td class="k-table-data--nowrap">5 October 2011</td>
-                                            </tr>
-                                            <tr>
-                                                <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
-                                                <td class="k-table-data--toggle"></td>
-                                                <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
-                                                <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Fermentum quam porta</a>
-                                                </td>
-                                                <td><span class="k-table__item--state k-table__item--state-unpublished">Unpublished</span></td>
-                                                <td class="k-table-data--ellipsis">
-                                                    <a href="javascript:void(0);">Fringilla</a>
-                                                </td>
-                                                <td class="k-table-data--nowrap">5 October 2011</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="k-table-pagination">
-                                        <div class="k-pagination">
-                                            <div class="k-pagination__limit">
-                                                <select class="k-form-control">
-                                                    <option value="5">5</option>
-                                                    <option value="10">10</option>
-                                                    <option value="15" selected>15</option>
-                                                </select>
-                                            </div>
-                                            <ul class="k-pagination__pages">
-                                                <li class="k-is-active">
-                                                    <span>1</span>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">2</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">3</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">4</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">5</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">»</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                            </div>
+                            <div class="k-scopebar__item k-scopebar__item--search">
+                                <div class="k-search k-search--has-both-buttons">
+                                    <label for="input-list-1">Search</label>
+                                    <input type="search" class="k-search__field" placeholder="Search…" id="input-list-1"/>
+                                    <button type="submit" class="k-search__submit">
+                                        <span class="k-icon-magnifying-glass" aria-hidden="true"></span>
+                                        <span class="k-visually-hidden">Search icon</span>
+                                    </button>
+                                    <button type="button" class="k-search__empty ">
+                                        <span class="k-search__empty-area">
+                                            <span class="k-icon-disabled" aria-hidden="true"></span>
+                                            <span class="k-visually-hidden">Clear search</span>
+                                        </span>
+                                    </button>
                                 </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+                            </div>
+                        </div><!-- .k-scopebar -->
+
+                        <!-- Table container -->
+                        <div class="k-table-container">
+                            <div class="k-table">
+                                <table class="k-js-fixed-table-header k-js-responsive-table">
+                                    <thead>
+                                    <tr>
+                                        <th width="1%" class="k-table-data--form"><input class="k-js-grid-checkall" type="checkbox"/></th>
+                                        <th width="1%" data-toggle="true" class="k-table-data--toggle"></th>
+                                        <th width="1%" class="k-table-data--icon"></th>
+                                        <th class="k-sort-desc"><a href="javascript:void(0);">Title</a></th>
+                                        <th width="5%" data-hide="phone,tablet"><a href="javascript:void(0);">State</a></th>
+                                        <th width="15%" data-hide="phone"><a href="javascript:void(0);">Category</a></th>
+                                        <th width="5%" data-hide="phone,tablet,desktop"><a href="javascript:void(0);">Date</a></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
+                                        <td class="k-table-data--toggle"></td>
+                                        <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Cras elit aenean</a>
+                                        </td>
+                                        <td><span class="k-table__item--state k-table__item--state-published">Published</span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Fringilla</a>
+                                        </td>
+                                        <td class="k-table-data--nowrap">5 October 2011</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
+                                        <td class="k-table-data--toggle"></td>
+                                        <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Fermentum quam porta</a>
+                                        </td>
+                                        <td><span class="k-table__item--state k-table__item--state-unpublished">Unpublished</span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Fringilla</a>
+                                        </td>
+                                        <td class="k-table-data--nowrap">5 October 2011</td>
+                                    </tr>
+                                    <tr class="k-table__sub-header">
+                                        <th colspan="7">
+                                            Sub header
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
+                                        <td class="k-table-data--toggle"></td>
+                                        <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Ornare nullam sem</a>
+                                        </td>
+                                        <td><span class="k-table__item--state k-table__item--state-published">Published</span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Fringilla</a>
+                                        </td>
+                                        <td class="k-table-data--nowrap">5 October 2011</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
+                                        <td class="k-table-data--toggle"></td>
+                                        <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Ornare nullam sem</a>
+                                        </td>
+                                        <td><span class="k-table__item--state k-table__item--state-published">Published</span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Fringilla</a>
+                                        </td>
+                                        <td class="k-table-data--nowrap">5 October 2011</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
+                                        <td class="k-table-data--toggle"></td>
+                                        <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Fermentum quam porta</a>
+                                        </td>
+                                        <td><span class="k-table__item--state k-table__item--state-unpublished">Unpublished</span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Fringilla</a>
+                                        </td>
+                                        <td class="k-table-data--nowrap">5 October 2011</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
+                                        <td class="k-table-data--toggle"></td>
+                                        <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Pellentesque condimentum euismod</a>
+                                        </td>
+                                        <td><span class="k-table__item--state k-table__item--state-published">Published</span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Fringilla</a>
+                                        </td>
+                                        <td class="k-table-data--nowrap">5 October 2011</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
+                                        <td class="k-table-data--toggle"></td>
+                                        <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Purus fringilla tristique fermentum inceptos bibendum magna</a>
+                                        </td>
+                                        <td><span class="k-table__item--state k-table__item--state-published">Published</span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Fringilla</a>
+                                        </td>
+                                        <td class="k-table-data--nowrap">5 October 2011</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
+                                        <td class="k-table-data--toggle"></td>
+                                        <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Ornare nullam sem</a>
+                                        </td>
+                                        <td><span class="k-table__item--state k-table__item--state-published">Published</span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Fringilla</a>
+                                        </td>
+                                        <td class="k-table-data--nowrap">5 October 2011</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
+                                        <td class="k-table-data--toggle"></td>
+                                        <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Pellentesque condimentum euismod</a>
+                                        </td>
+                                        <td><span class="k-table__item--state k-table__item--state-published">Published</span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Fringilla</a>
+                                        </td>
+                                        <td class="k-table-data--nowrap">5 October 2011</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
+                                        <td class="k-table-data--toggle"></td>
+                                        <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Purus fringilla tristique fermentum</a>
+                                        </td>
+                                        <td><span class="k-table__item--state k-table__item--state-published">Published</span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Fringilla</a>
+                                        </td>
+                                        <td class="k-table-data--nowrap">5 October 2011</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
+                                        <td class="k-table-data--toggle"></td>
+                                        <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Purus fringilla tristique fermentum inceptos bibendum magna</a>
+                                        </td>
+                                        <td><span class="k-table__item--state k-table__item--state-published">Published</span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Fringilla</a>
+                                        </td>
+                                        <td class="k-table-data--nowrap">5 October 2011</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
+                                        <td class="k-table-data--toggle"></td>
+                                        <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Ornare nullam sem</a>
+                                        </td>
+                                        <td><span class="k-table__item--state k-table__item--state-published">Published</span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Fringilla</a>
+                                        </td>
+                                        <td class="k-table-data--nowrap">5 October 2011</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
+                                        <td class="k-table-data--toggle"></td>
+                                        <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Fermentum quam porta</a>
+                                        </td>
+                                        <td><span class="k-table__item--state k-table__item--state-unpublished">Unpublished</span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Fringilla</a>
+                                        </td>
+                                        <td class="k-table-data--nowrap">5 October 2011</td>
+                                    </tr>
+                                    <tr class="k-table__sub-header">
+                                        <th colspan="7">
+                                            Sub header
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
+                                        <td class="k-table-data--toggle"></td>
+                                        <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Ornare nullam sem</a>
+                                        </td>
+                                        <td><span class="k-table__item--state k-table__item--state-published">Published</span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Fringilla</a>
+                                        </td>
+                                        <td class="k-table-data--nowrap">5 October 2011</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="1%" class="k-table-data--form"><input class="k-js-grid-checkbox" type="checkbox"/></td>
+                                        <td class="k-table-data--toggle"></td>
+                                        <td class="k-table-data--icon"><span class="k-icon-document-default" aria-hidden="true"></span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Fermentum quam porta</a>
+                                        </td>
+                                        <td><span class="k-table__item--state k-table__item--state-unpublished">Unpublished</span></td>
+                                        <td class="k-table-data--ellipsis">
+                                            <a href="javascript:void(0);">Fringilla</a>
+                                        </td>
+                                        <td class="k-table-data--nowrap">5 October 2011</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="k-table-pagination">
+                                <div class="k-pagination">
+                                    <div class="k-pagination__limit">
+                                        <select class="k-form-control">
+                                            <option value="5">5</option>
+                                            <option value="10">10</option>
+                                            <option value="15" selected>15</option>
+                                        </select>
+                                    </div>
+                                    <ul class="k-pagination__pages">
+                                        <li class="k-is-active">
+                                            <span>1</span>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">2</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">3</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">4</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">5</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">»</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div><!-- k.table-container -->
+
+                    </form><!-- .k-component -->
+
+                </div><!-- .k-component-wrapper -->
+
+            </div><!-- .k-content -->
+
+        </div><!-- .k-content-wrapper -->
+
+    </div><!-- .k-wrapper -->
+
+</div><!-- .k-ui-container -->
 
 </body>
 </html>

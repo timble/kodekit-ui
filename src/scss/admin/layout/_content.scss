@@ -20,13 +20,20 @@
     min-height: 0;
     backface-visibility: hidden;
     @include transition(transform); /* 3 */
+  }
 
+
+  /**
+   * When content is inside a content-area
+   */
+
+  .k-content-area {
 
     /**
      * When content has a sub content sibling
      */
 
-    &:not(:last-child) {
+    .k-content:not(:last-child) {
 
       /**
        * Set width and make room for resizer
