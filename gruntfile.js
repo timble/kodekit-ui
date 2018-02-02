@@ -259,16 +259,16 @@ module.exports = function(grunt) {
                     atBegin: true
                 }
             },
-            // javascript: {
-            //     files: [
-            //         '<%= srcPath %>/js/*.js'
-            //     ],
-            //     tasks: ['concat', 'uglify'],
-            //     options: {
-            //         interrupt: true,
-            //         atBegin: true
-            //     }
-            // },
+            javascript: {
+                files: [
+                    '<%= srcPath %>/js/*.js'
+                ],
+                tasks: ['concat', 'uglify'],
+                options: {
+                    interrupt: true,
+                    atBegin: true
+                }
+            },
             concat: {
                 files: [
                     '<%= srcPath %>/js/*.js'
