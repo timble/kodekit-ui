@@ -2478,10 +2478,7 @@ body.k-is-resizing {
   /**
    * Component animations
    *
-   * Mainly used for tooltips right now
-   *
-   * We don't use the `.opacity()` mixin here since it causes a bug with text
-   * fields in IE7-8. Source: https://github.com/twbs/bootstrap/pull/3552.
+   * Used for Bootstrap tooltips
    */
   /* Content block
      ========================================================================== */
@@ -10837,30 +10834,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 .k-ui-namespace .fade.in {
   opacity: 1;
-}
-
-.k-ui-namespace .collapse {
-  display: none;
-}
-
-.k-ui-namespace .collapse.in {
-  display: block;
-}
-
-.k-ui-namespace tr.collapse.in {
-  display: table-row;
-}
-
-.k-ui-namespace tbody.collapse.in {
-  display: table-row-group;
-}
-
-.k-ui-namespace .collapsing {
-  position: relative;
-  height: 0;
-  overflow: hidden;
-  transition: opacity 0.5s cubic-bezier(0.2, 0.57, 0.44, 0.83);
-  -webkit-backface-visibility: hidden;
 }
 
 .k-ui-namespace .k-content-block {

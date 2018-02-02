@@ -17577,7 +17577,8 @@ var Konami = function (callback) {
             });
 
             // Click a menu item
-            // @TODO: Only for certain classes
+            // Parent items are not navigatable just like in any other OS
+            // Add your own JS to make sure links are clickable anyway
             function clickMenuItem($element) {
                 $element.on('click', function(event) {
                     if (!$(this).next('ul').length) return;
