@@ -93,5 +93,10 @@
       left: 50%;
       transform: translate(-50%, -50%);
     }
+
+    @include rtl {
+      right: auto;
+      left: $k-alert-close-spacing;
+    }
   }
 }

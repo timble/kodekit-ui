@@ -66,6 +66,13 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
     background-clip: padding-box;
 
+    @include rtl {
+      left: auto;
+      right: 0;
+      float: right;
+      text-align: right;
+    }
+
 
     /**
      * Winning over .k-ui-namespace ul
@@ -92,11 +99,6 @@
       line-height: $k-line-height;
       color: $k-dropdown-link-color;
       white-space: nowrap; /* 1 */
-    }
-
-    @include rtl {
-      left: auto;
-      right: 0;
     }
   }
 

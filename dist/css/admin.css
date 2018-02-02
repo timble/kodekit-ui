@@ -3241,6 +3241,13 @@ body.k-is-resizing {
           transform: translateX(-100%) translateX(48px);
 }
 
+@media screen and (min-width: 1024px) {
+  .k-ui-namespace .k-show-subcontent-area .k-content-area__child {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
 [dir="rtl"] .k-ui-namespace .k-show-subcontent-area .k-content-area__child {
   -webkit-transform: translateX(100%) translateX(-48px);
           transform: translateX(100%) translateX(-48px);
@@ -3248,13 +3255,6 @@ body.k-is-resizing {
 
 @media screen and (min-width: 1024px) {
   [dir="rtl"] .k-ui-namespace .k-show-subcontent-area .k-content-area__child {
-    -webkit-transform: none;
-            transform: none;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .k-ui-namespace .k-show-subcontent-area .k-content-area__child {
     -webkit-transform: none;
             transform: none;
   }
@@ -4368,6 +4368,11 @@ body.k-is-resizing {
           transform: translate(-50%, -50%);
 }
 
+[dir="rtl"] .k-ui-namespace .k-alert__close {
+  right: auto;
+  left: 2px;
+}
+
 .k-ui-namespace .k-breadcrumb {
   border-bottom: 1px solid #d4d4d4;
   overflow: auto;
@@ -5478,6 +5483,13 @@ fieldset[disabled] .k-ui-namespace .k-button--danger.k-has-focus {
      */
 }
 
+[dir="rtl"] .k-ui-namespace .k-dropdown__menu {
+  left: auto;
+  right: 0;
+  float: right;
+  text-align: right;
+}
+
 .k-ui-namespace .k-dropdown__menu.k-dropdown__menu {
   padding: 5px 0;
   margin: 2px 0 0;
@@ -5493,11 +5505,6 @@ fieldset[disabled] .k-ui-namespace .k-button--danger.k-has-focus {
   color: #222222;
   white-space: nowrap;
   /* 1 */
-}
-
-[dir="rtl"] .k-ui-namespace .k-dropdown__menu {
-  left: auto;
-  right: 0;
 }
 
 .k-ui-namespace .k-dropdown__divider {
@@ -10129,6 +10136,11 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   left: -8px;
 }
 
+[dir="rtl"] .k-ui-namespace .k-toolbar .k-button .k-dropdown .k-dropdown__menu {
+  left: auto;
+  right: -8px;
+}
+
 [dir="rtl"] .k-ui-namespace .k-toolbar .k-button {
   margin-left: 0;
   margin-right: 8px;
@@ -10935,6 +10947,11 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   padding-left: 16px;
 }
 
+[dir="rtl"] .k-ui-namespace .k-flag-object__aside + .k-flag-object__body {
+  padding-left: 0;
+  padding-right: 16px;
+}
+
 .k-ui-namespace .k-flag-object__body {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
@@ -10943,6 +10960,11 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 .k-ui-namespace .k-flag-object__body + .k-flag-object__aside {
   padding-left: 16px;
+}
+
+[dir="rtl"] .k-ui-namespace .k-flag-object__body + .k-flag-object__aside {
+  padding-left: 0;
+  padding-right: 16px;
 }
 
 .k-ui-namespace .k-flexbox.k-flexbox.k-flexbox {
@@ -11145,16 +11167,24 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   margin-top: 0;
 }
 
-.k-ui-namespace .k-no-margin-right.k-no-margin-right.k-no-margin-right {
-  margin-right: 0;
-}
-
 .k-ui-namespace .k-no-margin-bottom.k-no-margin-bottom.k-no-margin-bottom {
   margin-bottom: 0;
 }
 
-.k-ui-namespace .k-no-margin-left.k-no-margin-left.k-no-margin-left {
+html:not([dir=rtl]) .k-no-margin-right.k-no-margin-right.k-no-margin-right {
+  margin-right: 0;
+}
+
+[dir="rtl"] .k-ui-namespace .k-no-margin-right.k-no-margin-right.k-no-margin-right {
   margin-left: 0;
+}
+
+html:not([dir=rtl]) .k-no-margin-left.k-no-margin-left.k-no-margin-left {
+  margin-left: 0;
+}
+
+[dir="rtl"] .k-ui-namespace .k-no-margin-left.k-no-margin-left.k-no-margin-left {
+  margin-right: 0;
 }
 
 .k-ui-namespace .k-no-padding.k-no-padding.k-no-padding {
@@ -11175,16 +11205,24 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   padding-top: 0;
 }
 
-.k-ui-namespace .k-no-padding-right.k-no-padding-right.k-no-padding-right {
-  padding-right: 0;
-}
-
 .k-ui-namespace .k-no-padding-bottom.k-no-padding-bottom.k-no-padding-bottom {
   padding-bottom: 0;
 }
 
-.k-ui-namespace .k-no-padding-left.k-no-padding-left.k-no-padding-left {
+html:not([dir=rtl]) .k-no-padding-right.k-no-padding-right.k-no-padding-right {
+  padding-right: 0;
+}
+
+[dir="rtl"] .k-ui-namespace .k-no-padding-right.k-no-padding-right.k-no-padding-right {
   padding-left: 0;
+}
+
+html:not([dir=rtl]) .k-no-padding-left.k-no-padding-left.k-no-padding-left {
+  padding-left: 0;
+}
+
+[dir="rtl"] .k-ui-namespace .k-no-padding-left.k-no-padding-left.k-no-padding-left {
+  padding-right: 0;
 }
 
 .k-ui-namespace .k-no-transition.k-no-transition.k-no-transition {

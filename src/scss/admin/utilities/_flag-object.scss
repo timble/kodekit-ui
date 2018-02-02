@@ -18,6 +18,11 @@
     @if $k-flexbox-spacing != false {
       + .k-flag-object__body {
         padding-left: $k-flexbox-spacing;
+
+        @include rtl {
+          padding-left: 0;
+          padding-right: $k-flexbox-spacing;
+        }
       }
     }
   }
@@ -33,6 +38,11 @@
     @if $k-flexbox-spacing != false {
       + .k-flag-object__aside {
         padding-left: $k-flexbox-spacing;
+
+        @include rtl {
+          padding-left: 0;
+          padding-right: $k-flexbox-spacing;
+        }
       }
     }
   }
