@@ -169,7 +169,6 @@
 
                 // Toggle button:
                 menuToggle.click(function(event) {
-                    console.log('clicked');
                     if ( menuToggle.is(':visible') ) {
                         toggleMenu(menu, event);
                     }

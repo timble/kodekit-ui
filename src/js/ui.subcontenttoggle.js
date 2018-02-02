@@ -42,15 +42,10 @@
                 // Open right sidebar on selecting items in table
                 // Only apply to actual `<a>` elements
                 $('.k-table-container a').off().on('click', function (event) {
-                    console.log('still going strong 1');
                     // Only apply if parent is a `<td>` (so not a `<th>`)
                     if ($(this).parents('td').length > 0) {
-                        console.log('still going strong');
                         var target = $(this)[0].closest('.k-content-area__child');
                         var targetToggle = $(target).find('.k-js-subcontent-toggle');
-
-                        console.log(target, targetToggle);
-
                         // Wait at least 2 frames to make sure actions are not attached simultaneously
                         setTimeout(function () {
                             targetToggle.trigger('click');
