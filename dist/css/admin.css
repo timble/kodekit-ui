@@ -6568,7 +6568,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-gallery-container {
-  padding: 8px;
+  padding: 16px;
   margin-bottom: 16px;
 }
 
@@ -6578,6 +6578,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 .k-ui-namespace .k-gallery {
   overflow: hidden;
+  margin: -8px;
 }
 
 .k-ui-namespace .k-gallery__items {
