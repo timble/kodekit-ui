@@ -1847,6 +1847,11 @@ body.k-is-resizing {
    */
   /* Anchor
      ========================================================================== */
+  /* Backface visibility
+     ========================================================================== */
+  /**
+   * Set to hidden to avoid blurry text after transitioning and transforming elements
+   */
   /* Body
      ========================================================================== */
   /**
@@ -3918,6 +3923,11 @@ body.k-is-resizing {
 
 .k-ui-namespace a:focus, .k-ui-namespace a:hover {
   color: #222222;
+}
+
+.k-ui-namespace, .k-ui-namespace *, .k-ui-namespace *:before, .k-ui-namespace *:after {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 .k-ui-namespace body {

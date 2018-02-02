@@ -1,0 +1,13 @@
+@if ($k-atoms == true and $k-atom-backface-visibility != false) or $k-atom-backface-visibility == true {
+
+  /* Backface visibility
+     ========================================================================== */
+
+  /**
+   * Set to hidden to avoid blurry text after transitioning and transforming elements
+   */
+
+  &, *, *:before, *:after {
+    backface-visibility: hidden;
+  }
+}
