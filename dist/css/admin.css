@@ -8975,6 +8975,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   border-radius: 4px 4px 0 0;
   text-decoration: none;
   font-size: 13px;
+  cursor: pointer;
 }
 
 .k-ui-namespace .k-tabs a:hover, .k-ui-namespace .k-tabs a:focus {

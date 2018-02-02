@@ -16654,6 +16654,7 @@ var Konami = function (callback) {
                 menuToggle: [],
                 expandedWidth: $(element).outerWidth(),
                 offCanvasOverlay: 'k-off-canvas-overlay',
+                offCanvasOverlayPosition: 'after',
                 ariaControls: null,
                 opacity: .75
             },
@@ -16701,7 +16702,11 @@ var Konami = function (callback) {
             function addOverlay() {
                 $.each(transitionElements, function() {
                     if ($(this).find('.' + plugin.settings.offCanvasOverlay)[0] == undefined) {
-                        $(this).append('<div class="' + plugin.settings.offCanvasOverlay + '">');
+                        if ( plugin.settings.offCanvasOverlayPosition !== 'after' ) {
+                            $(this).prepend('<div class="' + plugin.settings.offCanvasOverlay + '">');
+                        } else {
+                            $(this).append('<div class="' + plugin.settings.offCanvasOverlay + '">');
+                        }
                         var newOverlay = $('.' + plugin.settings.offCanvasOverlay);
                         $.extend(offCanvasOverlay, newOverlay);
                     }
@@ -17480,7 +17485,7 @@ var Konami = function (callback) {
 
                 // Append toggle button and overlay
                 if ( toggle.length === 0 ) {
-                    $contentChild.append($toggle);
+                    $contentChild.prepend($toggle);
                 }
 
                 $toggleButton = $('.k-js-subcontent-toggle');
@@ -17494,6 +17499,7 @@ var Konami = function (callback) {
                     container: $contentChild,
                     expandedWidth: '276',
                     offCanvasOverlay: 'k-off-canvas-overlay-subcontent',
+                    offCanvasOverlayPosition: 'before',
                     wrapper: $('.k-js-content-area')
                 });
 
@@ -17505,6 +17511,7 @@ var Konami = function (callback) {
                     if ($(this).parents('td').length > 0) {
                         var target = $(this)[0].closest('.k-content-area__child');
                         var targetToggle = $(target).find('.k-js-subcontent-toggle');
+
                         // Wait at least 2 frames to make sure actions are not attached simultaneously
                         setTimeout(function () {
                             targetToggle.trigger('click');

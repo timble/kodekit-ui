@@ -175,6 +175,7 @@
       border-radius: $k-tabs-link-border-radius;
       text-decoration: none;
       font-size: $k-tabs-link-font-size;
+      cursor: pointer;
 
       &:hover,
       &:focus {

@@ -21,7 +21,7 @@
 
                 // Append toggle button and overlay
                 if ( toggle.length === 0 ) {
-                    $contentChild.append($toggle);
+                    $contentChild.prepend($toggle);
                 }
 
                 $toggleButton = $('.k-js-subcontent-toggle');
@@ -35,6 +35,7 @@
                     container: $contentChild,
                     expandedWidth: '276',
                     offCanvasOverlay: 'k-off-canvas-overlay-subcontent',
+                    offCanvasOverlayPosition: 'before',
                     wrapper: $('.k-js-content-area')
                 });
 
@@ -46,6 +47,7 @@
                     if ($(this).parents('td').length > 0) {
                         var target = $(this)[0].closest('.k-content-area__child');
                         var targetToggle = $(target).find('.k-js-subcontent-toggle');
+
                         // Wait at least 2 frames to make sure actions are not attached simultaneously
                         setTimeout(function () {
                             targetToggle.trigger('click');

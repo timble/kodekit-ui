@@ -19,6 +19,7 @@
                 menuToggle: [],
                 expandedWidth: $(element).outerWidth(),
                 offCanvasOverlay: 'k-off-canvas-overlay',
+                offCanvasOverlayPosition: 'after',
                 ariaControls: null,
                 opacity: .75
             },
@@ -66,7 +67,11 @@
             function addOverlay() {
                 $.each(transitionElements, function() {
                     if ($(this).find('.' + plugin.settings.offCanvasOverlay)[0] == undefined) {
-                        $(this).append('<div class="' + plugin.settings.offCanvasOverlay + '">');
+                        if ( plugin.settings.offCanvasOverlayPosition !== 'after' ) {
+                            $(this).prepend('<div class="' + plugin.settings.offCanvasOverlay + '">');
+                        } else {
+                            $(this).append('<div class="' + plugin.settings.offCanvasOverlay + '">');
+                        }
                         var newOverlay = $('.' + plugin.settings.offCanvasOverlay);
                         $.extend(offCanvasOverlay, newOverlay);
                     }
