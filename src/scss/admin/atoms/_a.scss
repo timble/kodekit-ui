@@ -5,6 +5,7 @@
 
   a {
     color: $k-link-color;
+    cursor: pointer;
 
     &:focus,
     &:hover {
@@ -12,4 +13,3 @@
     }
   }
 }
-

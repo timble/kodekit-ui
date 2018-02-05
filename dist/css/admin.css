@@ -3919,6 +3919,7 @@ body.k-is-resizing {
 
 .k-ui-namespace a {
   color: #222222;
+  cursor: pointer;
 }
 
 .k-ui-namespace a:focus, .k-ui-namespace a:hover {
