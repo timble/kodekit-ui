@@ -215,6 +215,7 @@
       display: block;
       font-size: $k-table-cell-small-font-size;
       line-height: $k-table-cell-small-line-height;
+      padding-top: 1px;
     }
   }
 
@@ -321,7 +322,7 @@
 
     th.k-table-data--icon {
       a {
-        line-height: $k-table-cell-size - ($k-table-cell-vertical-spacing * 2);
+        line-height: $k-table-cell-size - ($k-table-cell-vertical-spacing * 2) - 1px;
       }
     }
 

@@ -24,7 +24,6 @@
 
     @supports (display: grid) {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
   }
 
@@ -33,7 +32,6 @@
     display: inline-block;
     vertical-align: middle;
     font-size: 1rem;
-    flex-basis: 200px;
 
     @supports (display: flex) {
       display: flex;
@@ -77,14 +75,51 @@
 
   @for $i from 1 through 24 {
     [data-gallery-items='#{$i}'] {
-      .k-gallery__item {
+      .k-gallery__item.k-gallery__item {
         width: (100% / $i);
+
+        @supports (display: flex) {
+          flex-basis: (100% / $i);
+        }
 
         @supports (display: grid) {
           width: 100%;
         }
       }
     }
+  }
+
+
+  /**
+   * Gallery sizes
+   */
+
+  .k-gallery {
+    @include gallerySize($k-grid-m-size);
+  }
+
+  .k-gallery--xxs {
+    @include gallerySize($k-grid-xxs-size);
+  }
+
+  .k-gallery--xs {
+    @include gallerySize($k-grid-xs-size);
+  }
+
+  .k-gallery--s {
+    @include gallerySize($k-grid-s-size);
+  }
+
+  .k-gallery--l {
+    @include gallerySize($k-grid-l-size);
+  }
+
+  .k-gallery--xl {
+    @include gallerySize($k-grid-xl-size);
+  }
+
+  .k-gallery--xxl {
+    @include gallerySize($k-grid-xxl-size);
   }
 }
 

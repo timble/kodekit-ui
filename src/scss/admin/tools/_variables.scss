@@ -829,6 +829,14 @@ $k-empty-state-align:         center !default;
 
 $k-grid-spacing:                            $k-spacing !default;
 
+$k-grid-xxs-size:                           56px !default;
+$k-grid-xs-size:                            120px !default;
+$k-grid-s-size:                             160px !default;
+$k-grid-m-size:                             200px !default;
+$k-grid-l-size:                             288px !default;
+$k-grid-xl-size:                            384px !default;
+$k-grid-xxl-size:                           576px !default;
+
 $k-grid-selected-class:                     $k-selected-class !default;
 
 $k-grid-selected-header-background:         $k-accent-color !default;
@@ -964,7 +972,7 @@ $k-pagination-background:         $k-accent-type-color !default;
 $k-pagination-border:             $k-primary-min-1-color !default;
 $k-pagination-color:              $k-accent-color !default;
 $k-pagination-border-radius:      $k-border-radius !default;
-$k-pagination-spacing:            ($k-base-vertical-spacing - 1px) $k-base-horizontal-spacing !default;
+$k-pagination-spacing:            $k-base-vertical-spacing $k-base-horizontal-spacing !default;
 $k-pagination-line-height:        ($k-base-vertical-spacing - 1px) $k-base-horizontal-spacing !default;
 
 $k-pagination-hover-background:   $k-primary-plus-2-color !default;

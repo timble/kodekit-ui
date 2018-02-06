@@ -85,13 +85,4 @@ kodekitUI.setCSS = function(css) {
         );
     }
 
-    // If a cookie is set for gallery
-    if (galleryWidthCookieValue !== null) {
-        kodekitUI.setCSS(
-            '.k-ui-namespace .k-gallery__items {' +
-            'grid-template-columns: repeat(auto-fill, minmax('+galleryWidthCookieValue+'px, 1fr))' +
-            '}'
-        );
-    }
-
 })();

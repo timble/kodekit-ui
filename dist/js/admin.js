@@ -16656,7 +16656,11 @@ var Konami = function (callback) {
                 offCanvasOverlay: 'k-off-canvas-overlay',
                 offCanvasOverlayPosition: 'after',
                 ariaControls: null,
-                opacity: .75
+                opacity: .75,
+                onBeforeToggleOpen: function() {},
+                onAfterToggleOpen: function() {},
+                onBeforeToggleClose: function() {},
+                onAfterToggleClose: function() {}
             },
             plugin = this;
 
@@ -16753,6 +16757,9 @@ var Konami = function (callback) {
                 // Clear the timeout when user clicks open menu
                 clearTimeout(timeout);
 
+                // Function to run before toggling
+                plugin.settings.onBeforeToggleOpen();
+
                 addOverlay();
 
                 // Set to expanded for accessibility
@@ -16765,12 +16772,18 @@ var Konami = function (callback) {
                 // Enable tabbing within menu
                 timeout = setTimeout(function() {
                     tabToggle(menu);
+
+                    // Function to run after toggling
+                    plugin.settings.onAfterToggleOpen();
                 }, transitionDuration);
             }
 
             function closeMenu() {
                 // Clear the timeout when user clicks close menu
                 clearTimeout(timeout);
+
+                // Function to run before toggling
+                plugin.settings.onBeforeToggleOpen();
 
                 // Set to collapsed for accessibility
                 menuToggle.attr({'aria-expanded': 'false'});
@@ -16781,6 +16794,9 @@ var Konami = function (callback) {
                 // Remove style and class when transition has ended, so the menu stays visible on closing
                 timeout = setTimeout(function() {
                     wrapper.removeClass(openedClass);
+
+                    // Function to run after toggling
+                    plugin.settings.onAfterToggleOpen();
                 }, transitionDuration);
             }
 
@@ -16808,7 +16824,7 @@ var Konami = function (callback) {
                 });
 
                 // Toggle button:
-                menuToggle.click(function(event) {
+                menuToggle.off().click(function(event) {
                     if ( menuToggle.is(':visible') ) {
                         toggleMenu(menu, event);
                     }
@@ -17186,18 +17202,9 @@ var Konami = function (callback) {
             if ( $gallery.length ) {
 
                 // variables
-                var galleryMaxWidth = $gallery.attr('data-maxwidth') || 200,
+                var galleryItems = $gallery[0].querySelector('.k-gallery__items'),
+                    galleryMaxWidth = parseInt(((window.getComputedStyle(galleryItems, null).getPropertyValue('content')).split('"')[1]), 10),
                     galleryEventTimeout;
-
-                // Set width for gallery items
-                $gallery.find('.k-gallery__items').each(function() {
-                    kodekitUI.createCookie("kodekitUI.gallerywidth", galleryMaxWidth);
-                    kodekitUI.setCSS(
-                        '.k-ui-namespace .k-gallery__items {' +
-                            'grid-template-columns: repeat(auto-fill, minmax('+galleryMaxWidth+'px, 1fr))' +
-                        '}'
-                    );
-                });
 
                 // Throttle window resize function for better performance
                 var resizeThrottler = function() {
@@ -17214,7 +17221,7 @@ var Konami = function (callback) {
                 var setWidth = function() {
                     var galleryWidth = parseFloat($gallery.width()),
                         items = Math.ceil(galleryWidth / galleryMaxWidth);
-                    $gallery.attr('data-gallery-items', items);
+                    $gallery.attr('data-gallery-items', items - 1);
                 };
 
                 // Only run when CSS grid is not supported
@@ -17303,12 +17310,6 @@ var Konami = function (callback) {
 
                         $toggleButton = $('.k-off-canvas-toggle--' + position);
 
-                        $toggleButton.on('click', function() {
-                            if ( $('.k-show-subcontent-area').length ) {
-                                $('.k-js-subcontent-toggle').trigger('click');
-                            }
-                        });
-
                         // Initialize the offcanvas plugin
                         element.offCanvasMenu({
                             menuToggle: $toggleButton,
@@ -17317,7 +17318,12 @@ var Konami = function (callback) {
                             container: offcanvascontainer,
                             position: position,
                             offCanvasOverlay: 'k-off-canvas-overlay-' + position,
-                            transitionElements: transitionElements
+                            transitionElements: transitionElements,
+                            onBeforeToggleOpen: function() {
+                                if ( $('.k-show-subcontent-area').length ) {
+                                    $('.k-js-subcontent-toggle').trigger('click');
+                                }
+                            }
                         });
                     }
                 }
@@ -17343,6 +17349,8 @@ var Konami = function (callback) {
                             }
                         });
                     }
+
+
                 }
 
                 if (sidebar_right.length) {

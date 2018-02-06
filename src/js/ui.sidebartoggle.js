@@ -67,12 +67,6 @@
 
                         $toggleButton = $('.k-off-canvas-toggle--' + position);
 
-                        $toggleButton.on('click', function() {
-                            if ( $('.k-show-subcontent-area').length ) {
-                                $('.k-js-subcontent-toggle').trigger('click');
-                            }
-                        });
-
                         // Initialize the offcanvas plugin
                         element.offCanvasMenu({
                             menuToggle: $toggleButton,
@@ -81,7 +75,12 @@
                             container: offcanvascontainer,
                             position: position,
                             offCanvasOverlay: 'k-off-canvas-overlay-' + position,
-                            transitionElements: transitionElements
+                            transitionElements: transitionElements,
+                            onBeforeToggleOpen: function() {
+                                if ( $('.k-show-subcontent-area').length ) {
+                                    $('.k-js-subcontent-toggle').trigger('click');
+                                }
+                            }
                         });
                     }
                 }
@@ -107,6 +106,8 @@
                             }
                         });
                     }
+
+
                 }
 
                 if (sidebar_right.length) {

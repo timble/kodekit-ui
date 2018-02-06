@@ -12,18 +12,9 @@
             if ( $gallery.length ) {
 
                 // variables
-                var galleryMaxWidth = $gallery.attr('data-maxwidth') || 200,
+                var galleryItems = $gallery[0].querySelector('.k-gallery__items'),
+                    galleryMaxWidth = parseInt(((window.getComputedStyle(galleryItems, null).getPropertyValue('content')).split('"')[1]), 10),
                     galleryEventTimeout;
-
-                // Set width for gallery items
-                $gallery.find('.k-gallery__items').each(function() {
-                    kodekitUI.createCookie("kodekitUI.gallerywidth", galleryMaxWidth);
-                    kodekitUI.setCSS(
-                        '.k-ui-namespace .k-gallery__items {' +
-                            'grid-template-columns: repeat(auto-fill, minmax('+galleryMaxWidth+'px, 1fr))' +
-                        '}'
-                    );
-                });
 
                 // Throttle window resize function for better performance
                 var resizeThrottler = function() {
@@ -40,7 +31,7 @@
                 var setWidth = function() {
                     var galleryWidth = parseFloat($gallery.width()),
                         items = Math.ceil(galleryWidth / galleryMaxWidth);
-                    $gallery.attr('data-gallery-items', items);
+                    $gallery.attr('data-gallery-items', items - 1);
                 };
 
                 // Only run when CSS grid is not supported

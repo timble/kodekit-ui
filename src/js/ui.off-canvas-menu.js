@@ -21,7 +21,11 @@
                 offCanvasOverlay: 'k-off-canvas-overlay',
                 offCanvasOverlayPosition: 'after',
                 ariaControls: null,
-                opacity: .75
+                opacity: .75,
+                onBeforeToggleOpen: function() {},
+                onAfterToggleOpen: function() {},
+                onBeforeToggleClose: function() {},
+                onAfterToggleClose: function() {}
             },
             plugin = this;
 
@@ -118,6 +122,9 @@
                 // Clear the timeout when user clicks open menu
                 clearTimeout(timeout);
 
+                // Function to run before toggling
+                plugin.settings.onBeforeToggleOpen();
+
                 addOverlay();
 
                 // Set to expanded for accessibility
@@ -130,12 +137,18 @@
                 // Enable tabbing within menu
                 timeout = setTimeout(function() {
                     tabToggle(menu);
+
+                    // Function to run after toggling
+                    plugin.settings.onAfterToggleOpen();
                 }, transitionDuration);
             }
 
             function closeMenu() {
                 // Clear the timeout when user clicks close menu
                 clearTimeout(timeout);
+
+                // Function to run before toggling
+                plugin.settings.onBeforeToggleOpen();
 
                 // Set to collapsed for accessibility
                 menuToggle.attr({'aria-expanded': 'false'});
@@ -146,6 +159,9 @@
                 // Remove style and class when transition has ended, so the menu stays visible on closing
                 timeout = setTimeout(function() {
                     wrapper.removeClass(openedClass);
+
+                    // Function to run after toggling
+                    plugin.settings.onAfterToggleOpen();
                 }, transitionDuration);
             }
 
@@ -173,7 +189,7 @@
                 });
 
                 // Toggle button:
-                menuToggle.click(function(event) {
+                menuToggle.off().click(function(event) {
                     if ( menuToggle.is(':visible') ) {
                         toggleMenu(menu, event);
                     }
