@@ -404,40 +404,6 @@
    */
 
   .k-scopebar__item--breadcrumbs {
-
-    /**
-     * Hide when JS is enabled
-     */
-
-    @include js-enabled {
-      display: none;
-
-
-      /**
-       * Show on larger screens
-       */
-
-      @include breakpoint($k-alpha) {
-        width: 100%;
-      }
-
-
-      /**
-       * Show on larger screens
-       */
-
-      @include breakpoint($k-beta) {
-        display: block !important;
-      }
-    }
-
-
-    /**
-     * Flexbox
-     *
-     * 1. Reset order
-     */
-
     width: auto;
     flex: 1 1 auto;
     order: -1;

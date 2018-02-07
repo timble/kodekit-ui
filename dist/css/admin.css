@@ -1869,6 +1869,11 @@ body.k-is-resizing {
    *    so we reset that to ensure it behaves more like a standard block element.
    *    See https://github.com/twbs/bootstrap/issues/12359.
    */
+  /* Paragraph
+     ========================================================================== */
+  /**
+   * 1. Remove default top-margin
+   */
   /* HTML
      ========================================================================== */
   /**
@@ -4045,6 +4050,16 @@ body.k-is-resizing {
 }
 
 .k-ui-namespace fieldset:last-child {
+  margin-bottom: 0;
+}
+
+.k-ui-namespace h1, .k-ui-namespace h2, .k-ui-namespace h3, .k-ui-namespace h4, .k-ui-namespace h5, .k-ui-namespace h6 {
+  margin-top: 0;
+  /* 1 */
+  margin-bottom: 16px;
+}
+
+.k-ui-namespace h1:last-child, .k-ui-namespace h2:last-child, .k-ui-namespace h3:last-child, .k-ui-namespace h4:last-child, .k-ui-namespace h5:last-child, .k-ui-namespace h6:last-child {
   margin-bottom: 0;
 }
 
@@ -6648,6 +6663,10 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   background: #225179;
 }
 
+.k-ui-namespace .k-gallery__item--folder + .k-gallery__item--file {
+  grid-column: 1;
+}
+
 .k-ui-namespace [data-gallery-items='1'] .k-gallery__item.k-gallery__item {
   width: 100%;
 }
@@ -8438,14 +8457,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-scopebar__item--breadcrumbs {
-  /**
-     * Hide when JS is enabled
-     */
-  /**
-     * Flexbox
-     *
-     * 1. Reset order
-     */
   width: auto;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
@@ -8457,28 +8468,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   /**
      * Adjusted styling to display nicely inside the scopebar
      */
-}
-
-.k-js-enabled .k-ui-namespace .k-scopebar__item--breadcrumbs {
-  display: none;
-  /**
-       * Show on larger screens
-       */
-  /**
-       * Show on larger screens
-       */
-}
-
-@media screen and (min-width: 400px) {
-  .k-js-enabled .k-ui-namespace .k-scopebar__item--breadcrumbs {
-    width: 100%;
-  }
-}
-
-@media screen and (min-width: 600px) {
-  .k-js-enabled .k-ui-namespace .k-scopebar__item--breadcrumbs {
-    display: block !important;
-  }
 }
 
 @media screen and (min-width: 600px) {

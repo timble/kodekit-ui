@@ -17198,7 +17198,7 @@ var Konami = function (callback) {
 
         kodekitUI.gallery = function() {
 
-            var $gallery = $('.k-js-gallery');
+            var $gallery = $('.k-gallery');
             if ( $gallery.length ) {
 
                 // variables

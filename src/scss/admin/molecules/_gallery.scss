@@ -69,6 +69,11 @@
   }
 
 
+  .k-gallery__item--folder + .k-gallery__item--file {
+    grid-column: 1;
+  }
+
+
   /**
    * Set widths
    */
