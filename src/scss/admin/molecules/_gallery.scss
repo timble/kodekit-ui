@@ -4,16 +4,25 @@
      ========================================================================== */
 
   .k-gallery-container {
-    padding: $k-grid-spacing;
     @include content-block();
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    overflow: hidden;
+
+    .k-gallery {
+      flex: 1 1 auto;
+      overflow: auto;
+      padding: $k-grid-spacing;
+    }
   }
 
   .k-gallery {
     overflow: hidden;
-    margin: -($k-grid-spacing / 2);
   }
 
   .k-gallery__items {
+    margin: -($k-grid-spacing / 2);
     font-size: 0;
 
     @supports (display: flex) {
@@ -69,11 +78,6 @@
   }
 
 
-  .k-gallery__item--folder + .k-gallery__item--file {
-    grid-column: 1;
-  }
-
-
   /**
    * Set widths
    */
@@ -126,5 +130,19 @@
   .k-gallery--xxl {
     @include gallerySize($k-grid-xxl-size);
   }
-}
 
+
+  /**
+   * Pagination
+   */
+
+  .k-gallery-pagination {
+    padding: $k-gallery-pagination-spacing $k-gallery-pagination-spacing ($k-gallery-pagination-spacing - 1px);
+    background: $k-gallery-pagination-background;
+    flex: 0 0 auto;
+    @include border(top, $k-gallery-pagination-border);
+    @if $k-borders != false {
+      box-shadow: 0 1px 0 $k-gallery-pagination-border; /* 1 */
+    }
+  }
+}

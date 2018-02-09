@@ -721,6 +721,15 @@ $k-table-pagination-background:           $k-table-header-background !default;
 $k-table-pagination-border:               $k-table-header-border !default;
 
 
+// Gallery pagination
+// ==========================================================================
+
+$k-gallery-pagination-height:             ($k-line-height + ($k-base-vertical-spacing * 2)) !default;
+$k-gallery-pagination-spacing:            $k-extrasmall-spacing !default;
+$k-gallery-pagination-background:         $k-table-header-background !default;
+$k-gallery-pagination-border:               $k-table-header-border !default;
+
+
 // Footable
 // ==========================================================================
 
@@ -833,7 +842,7 @@ $k-grid-spacing:                            $k-spacing !default;
 $k-grid-xxs-size:                           56px !default;
 $k-grid-xs-size:                            120px !default;
 $k-grid-s-size:                             160px !default;
-$k-grid-m-size:                             200px !default;
+$k-grid-m-size:                             192px !default;
 $k-grid-l-size:                             288px !default;
 $k-grid-xl-size:                            384px !default;
 $k-grid-xxl-size:                           576px !default;

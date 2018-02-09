@@ -111,6 +111,7 @@
                 }
 
                 if (sidebar_right.length) {
+
                     // Add button for right sidebar
                     $.each(sidebar_right, function() {
                         addOffCanvasButton($(this), 'right');
@@ -118,7 +119,7 @@
 
                     // Open right sidebar on selecting items in table
                     // Only apply to actual `<a>` elements
-                    $('.k-table-container table').on('click', 'a', function(event) {
+                    $('.k-table-container table').off().on('click', 'a', function(event) {
 
                         // stopPropagation for all links except for those with `.navigate` class
                         if ( !$(this).hasClass('navigate') ) {
@@ -136,7 +137,7 @@
                     });
 
                     // Open subcontent on clicking TD
-                    $('.k-table-container table tbody').on('click', 'tr', function(event) {
+                    $('.k-table-container table tbody').off().on('click', 'tr', function(event) {
 
                         // Return if click to select class is added to table
                         if ( $(this).closest('table').hasClass('k-js-click-to-select')) return;
