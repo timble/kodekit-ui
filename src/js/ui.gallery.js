@@ -11,8 +11,6 @@
             var $gallery = $('.k-gallery');
             if ( $gallery.length ) {
 
-                console.log('what');
-
                 // variables
                 var galleryItems = $gallery[0].querySelector('.k-gallery__items'),
                     galleryMaxWidth = parseInt(((window.getComputedStyle(galleryItems, null).getPropertyValue('content')).split('"')[1]), 10),

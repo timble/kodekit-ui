@@ -839,13 +839,13 @@ $k-empty-state-align:         center !default;
 
 $k-grid-spacing:                            $k-spacing !default;
 
-$k-grid-xxs-size:                           56px !default;
-$k-grid-xs-size:                            120px !default;
-$k-grid-s-size:                             160px !default;
-$k-grid-m-size:                             192px !default;
-$k-grid-l-size:                             288px !default;
-$k-grid-xl-size:                            384px !default;
-$k-grid-xxl-size:                           576px !default;
+$k-grid-xxs-size:                           64px !default;  // 8 * 8
+$k-grid-xs-size:                            112px !default; // 8 * 14
+$k-grid-s-size:                             144px !default; // 8 * 18
+$k-grid-m-size:                             176px !default; // 8 * 22
+$k-grid-l-size:                             224px !default; // 8 * 28
+$k-grid-xl-size:                            288px !default; // 8 * 36
+$k-grid-xxl-size:                           352px !default; // 8 * 44
 
 $k-grid-selected-class:                     $k-selected-class !default;
 

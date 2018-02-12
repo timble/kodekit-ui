@@ -4,17 +4,22 @@
      ========================================================================== */
 
   .k-sidebar-item {
+
     & + & {
       margin-top: $k-sidebar-item-spacing;
     }
 
-    @mixin item--flex {
+    /**
+     * On mobile
+     */
+
+    &--flex {
       display: flex;
       flex-direction: column;
       flex: 0 1 auto;
+      max-height: 100%;
       overflow: hidden;
       min-height: $k-sidebar-item-flex-min-height;
-      max-height: 100%;
 
       div {
         flex: 1 1 auto;
@@ -24,35 +29,6 @@
       .k-sidebar-item__header {
         flex: 0 0 auto;
       }
-    }
-
-    @include breakpoint($k-sidebar-left-querie-width) {
-      flex: 0 0 auto;
-
-      &--flex {
-        &:only-child {
-          @include item--flex;
-        }
-      }
-    }
-
-    @include breakpoint($k-sidebar-left-querie-width) {
-      &--flex {
-        &:nth-child(n) {
-          @include item--flex;
-        }
-      }
-    }
-
-
-    /**
-     * On mobile
-     */
-
-    &--flex {
-      display: flex;
-      flex-direction: column;
-      max-height: 100%;
     }
 
 

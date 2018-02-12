@@ -18,6 +18,10 @@
 
     p {
       @include content-block();
+
+      small {
+        font-size: 80%;
+      }
     }
   }
 }
