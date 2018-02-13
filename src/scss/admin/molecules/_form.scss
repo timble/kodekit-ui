@@ -427,8 +427,13 @@
       font-size: $k-large-font-size;
       line-height: $k-large-line-height;
       border-radius: $k-large-border-radius;
+    }
 
-      @include rtl {
+    @include rtl {
+      & > .k-form-control,
+      & > .select2-container--bootstrap .select2-selection--single,
+      & > .k-input-group__addon,
+      & > .k-input-group__button > .k-button {
         border-radius: $k-large-border-radius;
       }
     }
@@ -462,8 +467,13 @@
       font-size: $k-small-font-size;
       line-height: $k-line-height;
       border-radius: $k-small-border-radius;
+    }
 
-      @include rtl {
+    @include rtl {
+      & > .k-form-control,
+      & > .select2-container--bootstrap .select2-selection--single,
+      & > .k-input-group__addon,
+      & > .k-input-group__button > .k-button {
         border-radius: $k-small-border-radius;
       }
     }
@@ -546,7 +556,7 @@
     border: 1px solid $k-input-group-addon-border;
     border-radius: $k-input-border-radius;
     overflow: hidden;
-    text-overflow: ellipsis;;
+    text-overflow: ellipsis;
 
 
     /**
@@ -565,17 +575,7 @@
    * Reset rounded corners
    */
 
-  .k-input-group .k-form-control:first-child,
-  .k-input-group__addon:first-child,
-  .k-input-group__button:first-child > .k-button,
-  .k-input-group__button:first-child > .k-button-group > .k-button,
-  .k-input-group__button:first-child > .k-dropdown__toggle,
-  .k-input-group__button:last-child > .k-button:not(:last-child):not(.k-dropdown__toggle),
-  .k-input-group__button:last-child > .k-button-group:not(:last-child) > .k-button {
-    @include border-right-radius(0);
-  }
-
-  @include rtl {
+  @at-root html:not([dir="rtl"]) {
     .k-input-group .k-form-control:first-child,
     .k-input-group__addon:first-child,
     .k-input-group__button:first-child > .k-button,
@@ -583,8 +583,19 @@
     .k-input-group__button:first-child > .k-dropdown__toggle,
     .k-input-group__button:last-child > .k-button:not(:last-child):not(.k-dropdown__toggle),
     .k-input-group__button:last-child > .k-button-group:not(:last-child) > .k-button {
-      @include border-right-radius($k-input-border-radius);
-      @include border-left-radius(0);
+      @include border-right-radius(0);
+    }
+  }
+
+  @include rtl {
+    .k-input-group .k-form-control:last-child,
+    .k-input-group__addon:last-child,
+    .k-input-group__button:last-child > .k-button,
+    .k-input-group__button:last-child > .k-button-group > .k-button,
+    .k-input-group__button:last-child > .k-dropdown__toggle,
+    .k-input-group__button:first-child > .k-button:not(:first-child):not(.k-dropdown__toggle),
+    .k-input-group__button:first-child > .k-button-group:not(:first-child) > .k-button {
+      @include border-right-radius(0);
     }
   }
 
@@ -597,17 +608,7 @@
     }
   }
 
-  .k-input-group .k-form-control:last-child,
-  .k-input-group__addon:last-child,
-  .k-input-group__button:last-child > .k-button,
-  .k-input-group__button:last-child > .k-button-group > .k-button,
-  .k-input-group__button:last-child > .k-dropdown__toggle,
-  .k-input-group__button:first-child > .k-button:not(:first-child),
-  .k-input-group__button:first-child > .k-button-group:not(:first-child) > .k-button {
-    @include border-left-radius(0);
-  }
-
-  @include rtl {
+  @at-root html:not([dir="rtl"]) {
     .k-input-group .k-form-control:last-child,
     .k-input-group__addon:last-child,
     .k-input-group__button:last-child > .k-button,
@@ -615,8 +616,19 @@
     .k-input-group__button:last-child > .k-dropdown__toggle,
     .k-input-group__button:first-child > .k-button:not(:first-child),
     .k-input-group__button:first-child > .k-button-group:not(:first-child) > .k-button {
-      @include border-left-radius($k-input-border-radius);
-      @include border-right-radius(0);
+      @include border-left-radius(0);
+    }
+  }
+
+  @include rtl {
+    .k-input-group .k-form-control:first-child,
+    .k-input-group__addon:first-child,
+    .k-input-group__button:first-child > .k-button,
+    .k-input-group__button:first-child > .k-button-group > .k-button,
+    .k-input-group__button:first-child > .k-dropdown__toggle,
+    .k-input-group__button:last-child > .k-button:not(:last-child),
+    .k-input-group__button:last-child > .k-button-group:not(:last-child) > .k-button {
+      @include border-left-radius(0);
     }
   }
 

@@ -6196,7 +6196,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   border-radius: 6px;
 }
 
-[dir="rtl"] .k-ui-namespace .k-input-group--large > .k-form-control, .k-ui-namespace .k-input-group--large > .select2-container--bootstrap .select2-selection--single, .k-ui-namespace .k-input-group--large > .k-input-group__addon, .k-ui-namespace .k-input-group--large > .k-input-group__button > .k-button {
+[dir="rtl"] .k-ui-namespace .k-input-group--large > .k-form-control, [dir="rtl"] .k-ui-namespace .k-input-group--large > .select2-container--bootstrap .select2-selection--single, [dir="rtl"] .k-ui-namespace .k-input-group--large > .k-input-group__addon, [dir="rtl"] .k-ui-namespace .k-input-group--large > .k-input-group__button > .k-button {
   border-radius: 6px;
 }
 
@@ -6229,7 +6229,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   border-radius: 3px;
 }
 
-[dir="rtl"] .k-ui-namespace .k-input-group--small > .k-form-control, .k-ui-namespace .k-input-group--small > .select2-container--bootstrap .select2-selection--single, .k-ui-namespace .k-input-group--small > .k-input-group__addon, .k-ui-namespace .k-input-group--small > .k-input-group__button > .k-button {
+[dir="rtl"] .k-ui-namespace .k-input-group--small > .k-form-control, [dir="rtl"] .k-ui-namespace .k-input-group--small > .select2-container--bootstrap .select2-selection--single, [dir="rtl"] .k-ui-namespace .k-input-group--small > .k-input-group__addon, [dir="rtl"] .k-ui-namespace .k-input-group--small > .k-input-group__button > .k-button {
   border-radius: 3px;
 }
 
@@ -6307,22 +6307,14 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   vertical-align: middle;
 }
 
-.k-ui-namespace .k-input-group .k-form-control:first-child,
-.k-ui-namespace .k-input-group__addon:first-child,
-.k-ui-namespace .k-input-group__button:first-child > .k-button,
-.k-ui-namespace .k-input-group__button:first-child > .k-button-group > .k-button,
-.k-ui-namespace .k-input-group__button:first-child > .k-dropdown__toggle,
-.k-ui-namespace .k-input-group__button:last-child > .k-button:not(:last-child):not(.k-dropdown__toggle),
-.k-ui-namespace .k-input-group__button:last-child > .k-button-group:not(:last-child) > .k-button {
+html:not([dir="rtl"]) .k-input-group .k-form-control:first-child, html:not([dir="rtl"]) .k-input-group__addon:first-child, html:not([dir="rtl"]) .k-input-group__button:first-child > .k-button, html:not([dir="rtl"]) .k-input-group__button:first-child > .k-button-group > .k-button, html:not([dir="rtl"]) .k-input-group__button:first-child > .k-dropdown__toggle, html:not([dir="rtl"]) .k-input-group__button:last-child > .k-button:not(:last-child):not(.k-dropdown__toggle), html:not([dir="rtl"]) .k-input-group__button:last-child > .k-button-group:not(:last-child) > .k-button {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
 
-[dir="rtl"] .k-ui-namespace .k-input-group .k-form-control:first-child, [dir="rtl"] .k-ui-namespace .k-input-group__addon:first-child, [dir="rtl"] .k-ui-namespace .k-input-group__button:first-child > .k-button, [dir="rtl"] .k-ui-namespace .k-input-group__button:first-child > .k-button-group > .k-button, [dir="rtl"] .k-ui-namespace .k-input-group__button:first-child > .k-dropdown__toggle, [dir="rtl"] .k-ui-namespace .k-input-group__button:last-child > .k-button:not(:last-child):not(.k-dropdown__toggle), [dir="rtl"] .k-ui-namespace .k-input-group__button:last-child > .k-button-group:not(:last-child) > .k-button {
-  border-bottom-right-radius: 4px;
-  border-top-right-radius: 4px;
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;
+[dir="rtl"] .k-ui-namespace .k-input-group .k-form-control:last-child, [dir="rtl"] .k-ui-namespace .k-input-group__addon:last-child, [dir="rtl"] .k-ui-namespace .k-input-group__button:last-child > .k-button, [dir="rtl"] .k-ui-namespace .k-input-group__button:last-child > .k-button-group > .k-button, [dir="rtl"] .k-ui-namespace .k-input-group__button:last-child > .k-dropdown__toggle, [dir="rtl"] .k-ui-namespace .k-input-group__button:first-child > .k-button:not(:first-child):not(.k-dropdown__toggle), [dir="rtl"] .k-ui-namespace .k-input-group__button:first-child > .k-button-group:not(:first-child) > .k-button {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .k-ui-namespace .k-input-group__addon:first-child {
@@ -6334,22 +6326,14 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   border-left: none;
 }
 
-.k-ui-namespace .k-input-group .k-form-control:last-child,
-.k-ui-namespace .k-input-group__addon:last-child,
-.k-ui-namespace .k-input-group__button:last-child > .k-button,
-.k-ui-namespace .k-input-group__button:last-child > .k-button-group > .k-button,
-.k-ui-namespace .k-input-group__button:last-child > .k-dropdown__toggle,
-.k-ui-namespace .k-input-group__button:first-child > .k-button:not(:first-child),
-.k-ui-namespace .k-input-group__button:first-child > .k-button-group:not(:first-child) > .k-button {
+html:not([dir="rtl"]) .k-input-group .k-form-control:last-child, html:not([dir="rtl"]) .k-input-group__addon:last-child, html:not([dir="rtl"]) .k-input-group__button:last-child > .k-button, html:not([dir="rtl"]) .k-input-group__button:last-child > .k-button-group > .k-button, html:not([dir="rtl"]) .k-input-group__button:last-child > .k-dropdown__toggle, html:not([dir="rtl"]) .k-input-group__button:first-child > .k-button:not(:first-child), html:not([dir="rtl"]) .k-input-group__button:first-child > .k-button-group:not(:first-child) > .k-button {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
 
-[dir="rtl"] .k-ui-namespace .k-input-group .k-form-control:last-child, [dir="rtl"] .k-ui-namespace .k-input-group__addon:last-child, [dir="rtl"] .k-ui-namespace .k-input-group__button:last-child > .k-button, [dir="rtl"] .k-ui-namespace .k-input-group__button:last-child > .k-button-group > .k-button, [dir="rtl"] .k-ui-namespace .k-input-group__button:last-child > .k-dropdown__toggle, [dir="rtl"] .k-ui-namespace .k-input-group__button:first-child > .k-button:not(:first-child), [dir="rtl"] .k-ui-namespace .k-input-group__button:first-child > .k-button-group:not(:first-child) > .k-button {
-  border-bottom-left-radius: 4px;
-  border-top-left-radius: 4px;
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0;
+[dir="rtl"] .k-ui-namespace .k-input-group .k-form-control:first-child, [dir="rtl"] .k-ui-namespace .k-input-group__addon:first-child, [dir="rtl"] .k-ui-namespace .k-input-group__button:first-child > .k-button, [dir="rtl"] .k-ui-namespace .k-input-group__button:first-child > .k-button-group > .k-button, [dir="rtl"] .k-ui-namespace .k-input-group__button:first-child > .k-dropdown__toggle, [dir="rtl"] .k-ui-namespace .k-input-group__button:last-child > .k-button:not(:last-child), [dir="rtl"] .k-ui-namespace .k-input-group__button:last-child > .k-button-group:not(:last-child) > .k-button {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
 }
 
 .k-ui-namespace .k-input-group__addon:last-child {
