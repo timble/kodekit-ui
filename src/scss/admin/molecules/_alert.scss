@@ -11,6 +11,10 @@
     flex: 0 0 auto;
     @include content-block;
 
+    @include rtl {
+      padding: $k-alert-spacing $k-alert-spacing $k-alert-spacing $k-alert-close-size;
+    }
+
     a {
       color: inherit;
     }

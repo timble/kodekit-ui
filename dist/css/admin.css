@@ -4312,6 +4312,10 @@ body.k-is-resizing {
   margin-bottom: 0;
 }
 
+[dir="rtl"] .k-ui-namespace .k-alert {
+  padding: 12px 12px 12px 40px;
+}
+
 .k-ui-namespace .k-alert a {
   color: inherit;
 }
