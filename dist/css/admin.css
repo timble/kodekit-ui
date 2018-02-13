@@ -3434,9 +3434,11 @@ body.k-is-resizing {
     float: right;
   }
   [dir="rtl"] .k-ui-namespace .k-container__main:first-child {
+    padding-right: 16px;
     padding-left: 8px;
   }
-  [dir="rtl"] .k-ui-namespace .k-container__main:last-child {
+  [dir="rtl"] .k-ui-namespace .k-container__main:last-child:not(:first-child) {
+    padding-left: 16px;
     padding-right: 8px;
   }
 }
@@ -3462,9 +3464,11 @@ body.k-is-resizing {
     float: right;
   }
   [dir="rtl"] .k-ui-namespace .k-container__sub:first-child {
+    padding-right: 16px;
     padding-left: 8px;
   }
-  [dir="rtl"] .k-ui-namespace .k-container__sub:last-child {
+  [dir="rtl"] .k-ui-namespace .k-container__sub:last-child:not(:first-child) {
+    padding-left: 16px;
     padding-right: 8px;
   }
 }

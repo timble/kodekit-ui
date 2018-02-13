@@ -59,10 +59,12 @@
         float: right;
 
         &:first-child {
+          padding-right: $k-spacing;
           padding-left: ($k-spacing / 2);
         }
 
-        &:last-child {
+        &:last-child:not(:first-child) {
+          padding-left: $k-spacing;
           padding-right: ($k-spacing / 2);
         }
       }
@@ -96,10 +98,12 @@
         float: right;
 
         &:first-child {
+          padding-right: $k-spacing;
           padding-left: ($k-spacing / 2);
         }
 
-        &:last-child {
+        &:last-child:not(:first-child) {
+          padding-left: $k-spacing;
           padding-right: ($k-spacing / 2);
         }
       }
