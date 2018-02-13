@@ -983,7 +983,7 @@ $k-pagination-border:             $k-primary-min-1-color !default;
 $k-pagination-color:              $k-accent-color !default;
 $k-pagination-border-radius:      $k-border-radius !default;
 $k-pagination-spacing:            $k-base-vertical-spacing $k-base-horizontal-spacing !default;
-$k-pagination-line-height:        ($k-base-vertical-spacing - 1px) $k-base-horizontal-spacing !default;
+$k-pagination-line-height:        18px !default;
 
 $k-pagination-hover-background:   $k-primary-plus-2-color !default;
 $k-pagination-hover-color:        darker($k-accent-color) !default;

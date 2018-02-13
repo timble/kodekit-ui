@@ -251,4 +251,24 @@
       color: $k-card-selected-color;
     }
   }
+
+
+  /**
+   * Flexing card
+   */
+
+  .k-card--flex {
+    display: flex;
+    flex-direction: column;
+
+    .k-card__body {
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+    }
+
+    .k-card__flex-item {
+      flex: 1 1 auto;
+    }
+  }
 }

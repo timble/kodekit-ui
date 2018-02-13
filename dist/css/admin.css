@@ -1997,6 +1997,9 @@ body.k-is-resizing {
   /**
    * Selected card
    */
+  /**
+   * Flexing card
+   */
   /* CK Editor
      ========================================================================== */
   /**
@@ -5434,6 +5437,35 @@ fieldset[disabled] .k-ui-namespace .k-button--danger.k-has-focus {
   color: white;
 }
 
+.k-ui-namespace .k-card--flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.k-ui-namespace .k-card--flex .k-card__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.k-ui-namespace .k-card--flex .k-card__flex-item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
 .k-ui-namespace .cke_chrome.cke_chrome,
 .k-ui-namespace .cke_inner.cke_inner,
 .k-ui-namespace .cke_contents.cke_contents {
@@ -7992,7 +8024,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   float: left;
   /* 2 */
   padding: 6px 12px;
-  line-height: 5px 12px;
+  line-height: 18px;
   text-decoration: none;
   color: #3071a9;
   background-color: white;
