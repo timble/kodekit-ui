@@ -12005,6 +12005,9 @@ html:not([dir=rtl]) .k-no-padding-left.k-no-padding-left.k-no-padding-left {
   list-style: none;
   border: none;
   background: transparent;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   /* Reset default ul li styling */
 }
 

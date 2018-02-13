@@ -75,6 +75,7 @@
 
   .jqtree-tree {
     @include reset;
+    flex-grow: 1;
 
 
     /* Reset default ul li styling */
