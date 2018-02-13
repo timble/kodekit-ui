@@ -11930,56 +11930,59 @@ html:not([dir=rtl]) .k-no-padding-left.k-no-padding-left.k-no-padding-left {
 
 /* Tree
      ========================================================================== */
-.k-tree.k-tree {
+.k-tree {
   margin: 4px 0;
   overflow: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.k-tree.k-tree:before, .k-tree.k-tree:after {
+.k-tree:before, .k-tree:after {
   display: table;
   content: " ";
 }
 
-.k-tree.k-tree:after {
+.k-tree:after {
   clear: both;
 }
 
-.k-tree.k-tree:last-child {
+.k-tree:last-child {
   margin-bottom: 0;
 }
 
-.k-tree.k-tree .jqtree-element {
-  padding: 0 4px 0 16px;
+.k-tree .jqtree-element {
+  padding: 0 12px 0 16px;
 }
 
-[dir="rtl"] .k-tree.k-tree .jqtree-element {
-  padding: 0 16px 0 4px;
+[dir="rtl"] .k-tree .jqtree-element {
+  padding: 0 16px 0 12px;
 }
 
-.k-tree.k-tree .jqtree-element:hover, .k-tree.k-tree .jqtree-element:focus {
+.k-tree .jqtree-element:hover, .k-tree .jqtree-element:focus {
   background: white;
 }
 
-.k-tree.k-tree > .jqtree-tree.jqtree-tree {
+.k-tree > .jqtree-tree {
   margin: 0;
   padding: 0;
 }
 
-.k-tree.k-tree > .jqtree-tree.jqtree-tree > .jqtree_common > .jqtree-element {
+.k-tree > .jqtree-tree > .jqtree_common > .jqtree-element {
   padding-left: 15px;
 }
 
-[dir="rtl"] .k-tree.k-tree > .jqtree-tree.jqtree-tree > .jqtree_common > .jqtree-element {
-  padding-left: 4px;
+[dir="rtl"] .k-tree > .jqtree-tree > .jqtree_common > .jqtree-element {
+  padding-left: 12px;
   padding-right: 15px;
 }
 
-.k-tree.k-tree .jqtree-selected > .jqtree-element {
+.k-tree .jqtree-selected > .jqtree-element {
   background: #3071a9;
   color: white;
 }
 
-.k-tree.k-tree .jqtree-selected:hover > .jqtree-element {
+.k-tree .jqtree-selected:hover > .jqtree-element {
   background: #2d699d;
 }
 
@@ -11988,24 +11991,20 @@ html:not([dir=rtl]) .k-no-padding-left.k-no-padding-left.k-no-padding-left {
 }
 
 [dir="rtl"] .k-sidebar-item .k-tree > .jqtree-tree > .jqtree-folder .jqtree-element {
-  padding-left: 4px;
+  padding-left: 12px;
   padding-right: 16px;
 }
 
-.jqtree-tree.jqtree-tree {
+.jqtree-tree {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: none;
+  background: transparent;
   /* Reset default ul li styling */
 }
 
-.jqtree-tree.jqtree-tree:before, .jqtree-tree.jqtree-tree:after {
-  display: table;
-  content: " ";
-}
-
-.jqtree-tree.jqtree-tree:after {
-  clear: both;
-}
-
-.jqtree-tree.jqtree-tree, .jqtree-tree.jqtree-tree ul {
+.jqtree-tree ul {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -12015,17 +12014,22 @@ html:not([dir=rtl]) .k-no-padding-left.k-no-padding-left.k-no-padding-left {
   min-width: 100%;
 }
 
-.jqtree-tree.jqtree-tree:before, .jqtree-tree.jqtree-tree:after, .jqtree-tree.jqtree-tree ul:before, .jqtree-tree.jqtree-tree ul:after {
+.jqtree-tree ul:before, .jqtree-tree ul:after {
   display: table;
   content: " ";
 }
 
-.jqtree-tree.jqtree-tree:after, .jqtree-tree.jqtree-tree ul:after {
+.jqtree-tree ul:after {
   clear: both;
 }
 
-[dir="rtl"] .jqtree-tree.jqtree-tree, .jqtree-tree.jqtree-tree ul {
+[dir="rtl"] .jqtree-tree.jqtree-tree {
+  padding: 0;
+}
+
+[dir="rtl"] .jqtree-tree, [dir="rtl"] .jqtree-tree ul {
   float: right;
+  padding: 0;
 }
 
 .jqtree-folder:before, .jqtree-folder:after {

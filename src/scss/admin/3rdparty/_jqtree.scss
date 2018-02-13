@@ -3,10 +3,11 @@
   /* Tree
      ========================================================================== */
 
-  .k-tree.k-tree {
+  .k-tree {
     @include clearfix;
     margin: $k-tree-spacing 0;
     overflow: auto;
+    display: flex;
 
     &:last-child {
       margin-bottom: 0;
@@ -25,7 +26,7 @@
       }
     }
 
-    & > .jqtree-tree.jqtree-tree {
+    & > .jqtree-tree {
       margin: 0;
       padding: 0;
 
@@ -72,19 +73,27 @@
     }
   }
 
-  .jqtree-tree.jqtree-tree {
-    @include clearfix;
+  .jqtree-tree {
+    @include reset;
+
 
     /* Reset default ul li styling */
 
-    &, ul {
+    ul {
       @include reset;
       @include clearfix;
       float: left;
       min-width: 100%;
+    }
 
-      @include rtl {
+    @include rtl {
+      &.jqtree-tree {
+        padding: 0;
+      }
+
+      &, ul {
         float: right;
+        padding: 0;
       }
     }
   }
