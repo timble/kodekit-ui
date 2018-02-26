@@ -1,50 +1,41 @@
-/* Definition list
-   ========================================================================== */
+@if ($k-atoms == true and $k-atom-dl != false) or $k-atom-dl == true {
 
-/*
-Definition list
+  /* Definition list
+     ========================================================================== */
 
-- definition lists have a bottom margin to separate them from each other
-- The last-child doesn't have this bottom margin so parent containers can have four-sided paddings
+  dl {
+    margin-top: 0;
+    @include clearfix;
+    @include content-block;
+  }
 
-markup:
-<dl>
-    <dt>Name</dt>
-    <dd>attachments</dd>
-    <dt>Dimensions</dt>
-    <dd>908 x 655</dd>
-    <dt>Size</dt>
-    <dd>66.60 KB</dd>
-</dl>
+  dt {
+    @include reset;
+    font-weight: $k-bold-font-weight;
+    float: left;
+    clear: left;
+    margin-right: $k-tiny-spacing;
+    @include content-block($k-tiny-spacing);
 
-Styleguide 1.2
+    @include rtl {
+      float: right;
+      clear: right;
+      margin-right: 0;
+      margin-left: $k-tiny-spacing;
+    }
+  }
 
-*/
+  dd {
+    @include reset;
+    @include content-block($k-tiny-spacing);
+    max-width: 100%;
 
-dl {
-  @include clearfix;
-  @include content-block;
-}
+    &.k-ellipsis {
+      vertical-align: bottom;
 
-dt {
-  @include reset;
-  font-weight: $k-bold;
-  float: left;
-  clear: left;
-  margin-right: $k-spacing-tiny;
-}
-
-dd {
-  @include reset;
-  display: block;
-  @include content-block($k-spacing-tiny);
-  max-width: 100%;
-
-  &.k-ellipsis {
-    vertical-align: bottom;
-
-    .k-ellipsis__item {
-      vertical-align: inherit;
+      .k-ellipsis__item {
+        vertical-align: inherit;
+      }
     }
   }
 }

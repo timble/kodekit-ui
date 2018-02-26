@@ -1,0 +1,51 @@
+@if ($k-utilities == true and $k-utility-no-padding != false) or $k-utility-no-paddingn == true {
+
+  /* No padding
+     ========================================================================== */
+
+  .k-no-padding.k-no-padding.k-no-padding {
+    padding: 0;
+  }
+
+  .k-no-padding-horizontal.k-no-padding-horizontal.k-no-padding-horizontal {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .k-no-padding-vertical.k-no-padding-vertical.k-no-padding-vertical {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .k-no-padding-top.k-no-padding-top.k-no-padding-top {
+    padding-top: 0;
+  }
+
+  .k-no-padding-bottom.k-no-padding-bottom.k-no-padding-bottom {
+    padding-bottom: 0;
+  }
+
+  @at-root html:not([dir=rtl]) {
+    .k-no-padding-right.k-no-padding-right.k-no-padding-right {
+      padding-right: 0;
+    }
+  }
+
+  @include rtl {
+    .k-no-padding-right.k-no-padding-right.k-no-padding-right {
+      padding-left: 0;
+    }
+  }
+
+  @at-root html:not([dir=rtl]) {
+    .k-no-padding-left.k-no-padding-left.k-no-padding-left {
+      padding-left: 0;
+    }
+  }
+
+  @include rtl {
+    .k-no-padding-left.k-no-padding-left.k-no-padding-left {
+      padding-right: 0;
+    }
+  }
+}

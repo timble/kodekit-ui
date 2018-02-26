@@ -1,0 +1,27 @@
+@if ($k-molecules == true and $k-molecule-ckeditor != false) or $k-molecule-ckeditor == true {
+
+  /* CK Editor
+     ========================================================================== */
+
+  .cke_chrome.cke_chrome,
+  .cke_inner.cke_inner,
+  .cke_contents.cke_contents {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    height: auto !important;
+
+    iframe {
+      flex: 1 1 auto;
+    }
+  }
+
+
+  /**
+   * Hide the resizer since element is flexing
+   */
+
+  .cke_resizer.cke_resizer {
+    display: none;
+  }
+}

@@ -1,6 +1,6 @@
 # kodekit-ui
 
-**This is a first public preview. Things will change!**
+**This is a public preview. Things might change!**
 
 [Kodekit UI](https://www.joomlatools.com/developer/ui/) is a user interface development kit for web applications. It follows a number of timeless design principles and is build using modern tools and methodologies.
 

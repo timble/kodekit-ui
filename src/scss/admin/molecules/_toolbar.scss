@@ -1,165 +1,186 @@
-/* Toolbar
-   ========================================================================== */
+@if ($k-molecules == true and $k-molecule-toolbar != false) or $k-molecule-toolbar == true {
 
-/*
-Toolbar
+  /* Toolbar
+     ========================================================================== */
 
-- <span class="sg-alert"><strong>Important:</strong> Always add an icon in front of the text since icons are used as only content on mobile</span>
+  /**
+   * 1. Buttons have margin-top and margin-left to separate them from each other
+   *    Setting a bottom padding to separate buttons from bottom of toolbar
+   * 2. Set a right padding for the toggle button
+   */
 
-Markup:
-<!-- Toolbar -->
-<div class="k-toolbar k-js-toolbar">
-    <button type="button" class="k-button k-button--success">
-        <sg-insert>2.12-171</sg-insert>
-        Primary action
-    </button>
-    <button type="button" class="k-button k-button--default">
-        <sg-insert>2.12-164</sg-insert>
-        Other action
-    </button>
-    <button type="button" class="k-button k-button--default" disabled>
-        <sg-insert>2.12-113</sg-insert>
-        Disabled action
-    </button>
-    <button type="button" class="k-button k-button--default" disabled>
-        <sg-insert>2.12-52</sg-insert>
-        Disabled action
-    </button>
-</div><!-- .k-toolbar -->
-
-Styleguide 2.24
-
-*/
-
-/**
- * 1. Buttons have margin-top and margin-left to separate them from each other
- *    Setting a bottom padding to separate buttons from bottom of toolbar
- * 2. Set a right padding for the toggle button
- */
-
-.k-toolbar {
-  @include border(bottom, $k-toolbar-border);
-  background: $k-toolbar-background;
-  min-height: $k-toolbar-height;
-  padding-bottom: 10px; /* 1 */
-  padding-right: 10px; /* 2 */
-
-  @include rtl {
-    padding-right: 0;
-    padding-left: 10px; /* 2 */
-  }
-
-
-  /* When flexbox is in use */
-
-  @include flexbox {
+  .k-toolbar {
+    @include border(bottom, $k-toolbar-border);
+    background: $k-toolbar-background;
+    min-height: $k-toolbar-height;
+    padding-bottom: $k-toolbar-spacing; /* 1 */
+    padding-right: $k-toolbar-spacing; /* 2 */
     flex: 0 0 auto;
+
+    @include rtl {
+      padding-right: 0;
+      padding-left: $k-toolbar-spacing; /* 2 */
+    }
   }
-}
 
 
-/**
- * Toolbar contents
- */
+  /**
+   * Toolbar contents
+   */
 
-.k-toolbar {
-  .k-button {
-    margin: 10px 0 0 10px;
+  .k-toolbar {
+    .k-button {
+      margin: ($k-toolbar-spacing - 1px) 0 0 $k-toolbar-spacing;
+      padding: $k-toolbar-spacing - 1px;
+      min-width: $k-toolbar-button-height;
+      line-height: $k-toolbar-button-height - ($k-toolbar-spacing * 2);
+
+
+      /**
+       * Make buttons square
+       *
+       * Only make them square if media queries are supported
+       * By default we just want them as buttons
+       */
+
+      &:not(.k-toolbar-fullbutton) {
+        @include breakpoint(0, range, $k-charlie) {
+          overflow: hidden;
+          width: $k-toolbar-button-height;
+          height: $k-toolbar-button-height;
+          text-align: center;
+        }
+
+
+        /**
+         * Icon on the toolbar button
+         */
+
+        [class^="k-icon"] {
+          @include breakpoint(0, range, $k-charlie) {
+            display: block;
+            margin: 0 0 $k-toolbar-spacing;
+            width: $k-large-font-size;
+            height: $k-large-font-size;
+            font-size: $k-large-font-size;
+            line-height: $k-large-font-size;
+          }
+        }
+
+
+        /**
+         * Text on the toolbar button
+         */
+
+        .k-toolbar__text {
+          @include breakpoint(0, range, $k-charlie) {
+            position: relative;
+            z-index: -1;
+            visibility: hidden;
+          }
+        }
+      }
+
+
+      /**
+       * Properly align dropdown button in button
+       */
+
+      .k-dropdown {
+
+        /**
+         * Pullback so whole button becomes clickable
+         */
+
+        .k-dropdown__toggle {
+          text-decoration: none;
+          margin: (-($k-toolbar-spacing - 1px));
+          padding: $k-toolbar-spacing - 1px;
+        }
+
+
+        /**
+         * Pull back to toggle button
+         */
+
+        .k-dropdown__menu {
+          margin-top: $k-toolbar-spacing - 2px;
+          left: -($k-toolbar-spacing);
+
+          @include rtl {
+            left: auto;
+            right: -($k-toolbar-spacing);
+          }
+        }
+      }
+    }
+
+    @include rtl {
+      .k-button {
+        margin-left: 0;
+        margin-right: $k-toolbar-spacing;
+      }
+    }
 
 
     /**
-     * Make buttons square
+     * Autosave indicator
      *
-     * Only make them square if media queries are supported
-     * By default we just want them as buttons
+     * Position of the autosave indicator
+     * Use a k-loader for the indicator itself
      */
 
-    @include breakpoint(0, range, $k-charlie) {
-      overflow: hidden;
-      width: 32px;
-      height: 32px;
-      padding: 7px 6px;
-      text-align: center;
-    }
-  }
+    .k-autosave-indicator {
+      margin: $k-toolbar-spacing 0 0 $k-toolbar-spacing;
+      display: inline-block;
+      vertical-align: middle;
+      padding: $k-toolbar-spacing / 2;
 
-  @include rtl {
-    .k-button {
-      margin: 10px 10px 0 0;
-    }
-  }
-
-
-  /**
-   * Autosave indicator
-   *
-   * Position of the autosave indicator
-   * Use a k-loader for the indicator itself
-   */
-
-  .k-autosave-indicator {
-    margin: 10px 0 0 10px;
-    display: inline-block;
-    vertical-align: middle;
-    padding: 5px;
-
-    @include rtl {
-      margin: 10px 10px 0 0;
-    }
-  }
-
-
-  /**
-   * Position the icons
-   *
-   * Only position them if media queries are supported
-   * By default we just want them aligned normally
-   */
-
-  [class^="k-icon"] {
-    @include breakpoint(0, range, $k-charlie) {
-      display: block;
-      margin: 0 0 10px;
-      width: $k-font-size-large;
-      height: $k-font-size-large;
-      font-size: $k-font-size-large;
-      line-height: $k-font-size-large;
+      @include rtl {
+        margin: $k-toolbar-spacing $k-toolbar-spacing 0 0;
+      }
     }
 
-    display: inline-block;
-    margin: 0 0.25em 0 0.1em;
 
-    @include rtl {
-      margin: 0 0.1em 0 0.25em;
+    /**
+     * Position the icons
+     *
+     * Only position them if media queries are supported
+     * By default we just want them aligned normally
+     */
+
+    [class^="k-icon"] {
+      display: inline-block;
+
+      &:first-child {
+        margin: 0 0.25em 0 0.1em;
+      }
+
+      @include rtl {
+        margin: 0 0.1em 0 0.25em;
+      }
     }
-  }
 
+    .k-off-canvas-toggle-holder {
+      display: inline-block;
+      vertical-align: middle;
+      margin: ($k-toolbar-spacing - 1px) 0 0 $k-toolbar-spacing;
 
-  .k-off-canvas-menu-toggle-holder {
-    display: inline-block;
-    vertical-align: middle;
+      @include rtl {
+        margin: ($k-toolbar-spacing - 1px) $k-toolbar-spacing 0 0;
+      }
 
-    .k-off-canvas-menu-toggle {
-      margin-bottom: 0;
+      .k-off-canvas-toggle {
+        margin: 0;
+      }
     }
-  }
 
-  .k-off-canvas-menu-toggle-holder--right {
-    float: right;
+    .k-off-canvas-toggle-holder--right {
+      float: right;
 
-    @include rtl {
-      float: left;
+      @include rtl {
+        float: left;
+      }
     }
-  }
-}
-
-
-/* Text on the toolbar buttons */
-
-.k-toolbar__text {
-  @include breakpoint(0, range, $k-charlie) {
-    position: relative;
-    z-index: -1;
-    visibility: hidden;
   }
 }

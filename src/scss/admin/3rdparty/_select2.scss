@@ -1,0 +1,10 @@
+@if ($k-molecules == true and $k-molecule-select2 != false) or $k-molecule-select2 == true {
+
+  /* Select2 overrides
+     ========================================================================== */
+
+  .select2.select2-container--bootstrap {
+    width: 100%!important;
+    max-width: 100%!important;
+  }
+}

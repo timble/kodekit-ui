@@ -1,0 +1,14 @@
+@if ($k-utilities == true and $k-utility-hidden != false) or $k-utility-hidden == true {
+
+  /* Hidden
+     ========================================================================== */
+
+  /**
+   * Hide content in a non-accessible way. Content is hidden for everybody including screenreaders
+   */
+
+  .k-hidden.k-hidden.k-hidden,
+  .k-is-hidden.k-is-hidden.k-is-hidden {
+    display: none;
+  }
+}

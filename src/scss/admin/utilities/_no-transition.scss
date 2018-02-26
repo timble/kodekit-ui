@@ -1,0 +1,9 @@
+@if ($k-utilities == true and $k-utility-no-transition != false) or $k-utility-no-transition == true {
+
+  /* No transition
+     ========================================================================== */
+
+  .k-no-transition.k-no-transition.k-no-transition {
+    transition: none;
+  }
+}

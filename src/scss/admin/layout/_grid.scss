@@ -1,142 +1,134 @@
-/* Grid
-   ========================================================================== */
+@if ($k-layout == true and $k-layout-grid != false) or $k-layout-grid == true {
 
-/*
-Grid
+  /* Container
+     ========================================================================== */
 
-Fluid grid system
-- Has `full`, `main` and `sub` containers
-- Main and sub float next to each other
-- Main should always come first since the info is more important
-- {unsureText}
+  /**
+   * 1. For transparent tabs
+   */
 
-markup:
-<div class="k-container">
-    <div class="k-container__full">
-        ...
-    </div>
-    <div class="k-container__main">
-        ...
-    </div>
-    <div class="k-container__sub">
-        ...
-    </div>
-</div><!-- .k-container -->
-
-Styleguide 3.7
-
-*/
-
-/* Container */
-
-.k-container {
-  @include clearfix;
-  overflow: hidden;
-  width: 100%;
-  margin: 0 auto (-($k-spacing));
-  padding: $k-spacing ($k-spacing / 2);
-
-  /* When flexbox is in use */
-  @include flexbox {
-    flex: 0 0 auto;
-  }
-
-  /* When resizing */
-  @include resizing {
+  .k-container {
+    @include clearfix;
     overflow: hidden;
-  }
-}
+    width: 100%;
+    margin: 0 auto;
+    flex: 0 0 auto;
+    background-color: inherit; /* 1 */
 
+    /* When resizing */
+    @include resizing {
+      overflow: hidden;
+    }
 
-/* Flex container */
-
-.k-container--flex {
-  margin: 0 auto;
-  padding: $k-spacing;
-
-  @include flexbox {
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 auto;
-  }
-}
-
-
-/* --------------------------------------------------------------------------
-   Grid children
-   -------------------------------------------------------------------------- */
-
-/* Main container */
-
-.k-container__main {
-  margin-bottom: $k-spacing;
-
-  @include breakpoint($k-charlie) {
-    float: left;
-    margin: 0 ($k-spacing / 2) $k-spacing;
-    width: calc(100% * 8/12 - #{$k-spacing});
-
-    @include rtl {
-      float: right;
+    & + .k-container {
+      .k-container__full,
+      .k-container__main,
+      .k-container__sub {
+        padding-top: 0;
+      }
     }
   }
-}
 
 
-/* When a sidebar is active next to it */
+  /* Container children
+     ========================================================================== */
 
-.k-sidebar + .k-content .k-container__main {
-  @include breakpoint($k-charlie) {
-    width: 100%;
-  }
+  /**
+   * Main container
+   *
+   * 1. For transparent tabs
+   */
 
-  @include breakpoint($k-delta) {
-    width: calc(100% * 8/12 - #{$k-spacing});
-    margin-bottom: 0;
-  }
-}
+  .k-container__main {
+    padding: $k-spacing;
+    background-color: inherit; /* 1 */
 
+    @include breakpoint($k-charlie) {
+      float: left;
+      width: calc(100% * 8 / 12);
 
-/* Sub container */
+      &:first-child {
+        padding-right: ($k-spacing / 2);
+      }
 
-.k-container__sub {
-  margin-bottom: $k-spacing;
+      &:last-child:not(:first-child) {
+        padding-left: ($k-spacing / 2);
+      }
 
-  @include breakpoint($k-charlie) {
-    float: left;
-    margin: 0 ($k-spacing / 2) $k-spacing;
-    width: calc(100% * 4/12 - #{$k-spacing});
+      @include rtl {
+        float: right;
 
-    @include rtl {
-      float: right;
+        &:first-child {
+          padding-right: $k-spacing;
+          padding-left: ($k-spacing / 2);
+        }
+
+        &:last-child:not(:first-child) {
+          padding-left: $k-spacing;
+          padding-right: ($k-spacing / 2);
+        }
+      }
     }
   }
-}
 
 
-/* When a sidebar is active next to it */
+  /**
+   * Sub container
+   *
+   * 1. For transparent tabs
+   */
 
-.k-sidebar + .k-content .k-container__sub {
-  @include breakpoint($k-charlie) {
-    width: 100%;
+  .k-container__sub {
+    padding: $k-spacing;
+    background-color: inherit; /* 1 */
+
+    @include breakpoint($k-charlie) {
+      float: left;
+      width: calc(100% * 4 / 12);
+
+      &:first-child {
+        padding-right: ($k-spacing / 2);
+      }
+
+      &:last-child:not(:first-child) {
+        padding-left: ($k-spacing / 2);
+      }
+
+      @include rtl {
+        float: right;
+
+        &:first-child {
+          padding-right: $k-spacing;
+          padding-left: ($k-spacing / 2);
+        }
+
+        &:last-child:not(:first-child) {
+          padding-left: $k-spacing;
+          padding-right: ($k-spacing / 2);
+        }
+      }
+    }
   }
 
-  @include breakpoint($k-delta) {
-    width: calc(100% * 4/12 - #{$k-spacing});
-    margin-bottom: 0;
+
+  /**
+   * Full container
+   */
+
+  .k-container__full {
+    clear: both;
+    width: auto;
+    padding: $k-spacing;
   }
-}
 
 
-/* Full container */
+  /**
+   * Full container -- spaced top
+   *
+   * For when using tables inside form and you want table to be attached to the sides
+   */
 
-.k-container__full {
-  clear: both;
-  width: auto;
-  margin: 0 0 $k-spacing;
-
-  @include breakpoint($k-charlie) {
-    margin-left: ($k-spacing / 2);
-    margin-right: ($k-spacing / 2);
+  .k-container__full--spaced-top.k-container__full--spaced-top {
+    padding: $k-spacing 0 0;
   }
 }

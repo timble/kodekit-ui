@@ -1,0 +1,50 @@
+@if ($k-utilities == true and $k-utility-align != false) or $k-utility-align == true {
+
+  /* Align
+     ========================================================================== */
+
+  /**
+   * Align left
+   */
+
+  .k-align-left {
+    text-align: left;
+    align-self: flex-start;
+    margin-right: auto;
+
+    @include rtl {
+      text-align: right;
+      margin-right: 0;
+      margin-left: auto;
+    }
+  }
+
+
+  /**
+   * Align center
+   */
+
+  .k-align-center {
+    text-align: center;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  /**
+   * Align right
+   */
+
+  .k-align-right {
+    text-align: right;
+    align-self: flex-end;
+    margin-left: auto;
+
+    @include rtl {
+      text-align: left;
+      margin-left: 0;
+      margin-right: auto;
+    }
+  }
+}

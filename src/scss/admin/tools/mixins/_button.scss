@@ -1,0 +1,236 @@
+// Buttons
+// ==========================================================================
+//
+// 1. For input.k-button
+// 2. Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+
+@mixin button-default(
+  $active-class: $k-button-active-class,
+  $disabled-class: $k-button-disabled-class) {
+
+  display: inline-block;
+  margin-bottom: 0; /* 1 */
+  font-weight: $k-button-font-weight;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none; /* 2 */
+  border: 1px solid transparent;
+  white-space: nowrap;
+  box-shadow: none;
+  text-shadow: none;
+  user-select: none;
+  border-radius: $k-button-border-radius;
+  margin-right: $k-button-spacer;
+  font-size: $k-button-font-size;
+  line-height: $k-button-line-height;
+  padding: $k-button-vertical-spacing $k-button-horizontal-spacing;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @include rtl {
+    margin-right: 0;
+    margin-left: $k-button-spacer;
+
+    &:last-child {
+      margin-left: 0;
+    }
+  }
+
+  &, &:hover, &:focus, &:active {
+    text-decoration: none;
+  }
+
+  &,
+  &:active,
+  &#{$active-class} {
+    &:focus {
+      @include tab-focus;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    color: $k-button-default-color;
+  }
+
+  &:active,
+  &#{$active-class} {
+    outline: 0;
+    background-image: none;
+  }
+
+  &[disabled],
+  &#{$disabled-class} {
+    cursor: $k-disabled-cursor;
+    opacity: 0.65;
+    pointer-events: none;
+  }
+
+
+  /* Align checkbox properly inside button */
+
+  &.k-button input[type="checkbox"] {
+    margin: 0 -1px;
+    vertical-align: top;
+  }
+
+
+  /* Align single icon buttons */
+
+  [class*="icon-"]:only-child,
+  .k-visually-hidden + [class*="icon-"] {
+    display: inline-block;
+    margin: 0 -($k-tiny-spacing);
+    width: 14px;
+  }
+
+
+  /* Properly align dropdown button in button */
+
+  .k-dropdown {
+
+    /* Pullback so whole button becomes clickable */
+
+    .k-dropdown__toggle {
+      text-decoration: none;
+      margin: (-($k-button-vertical-spacing)) (-($k-button-horizontal-spacing));
+      padding: $k-button-vertical-spacing $k-button-horizontal-spacing;
+    }
+
+
+    /* Pull back to toggle button */
+
+    .k-dropdown__menu {
+      margin-top: $k-button-vertical-spacing - 2px;
+      left: -($k-button-vertical-spacing);
+    }
+  }
+}
+
+
+// Button link style
+// ==========================================================================
+
+@mixin button-link(
+  $active-class: $k-button-active-class,
+  $disabled-class: $k-button-disabled-class) {
+
+  color: $k-type-color;
+  font-weight: normal;
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
+
+  &,
+  &:active,
+  &#{$active-class},
+  &[disabled],
+  &#{$disabled-class} {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: transparent;
+  }
+
+  &:hover,
+  &:focus {
+    color: $k-type-color;
+    text-decoration: underline;
+    background-color: transparent;
+  }
+
+  &[disabled],
+  &#{$disabled-class} {
+    &:hover,
+    &:focus {
+      color: $k-button-link-disabled-color;
+      text-decoration: none;
+    }
+  }
+}
+
+
+// Button Sizes
+// ==========================================================================
+
+@mixin button-size(
+  $radius,
+  $font-size,
+  $line-height,
+  $padding) {
+
+  border-radius: $radius;
+  font-size: $font-size;
+  line-height: $line-height;
+  padding: $padding;
+}
+
+
+// Button variants
+// ==========================================================================
+
+@mixin button-variant(
+  $color,
+  $background,
+  $border) {
+
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+
+  &:focus,
+  &#{$k-button-focus-class} {
+    color: $color;
+    background-color: darken($background, 10%);
+    border-color: darken($border, 25%);
+  }
+
+  &:hover {
+    color: $color;
+    background-color: darken($background, 10%);
+    border-color: darken($border, 12%);
+  }
+
+  &:active,
+  &#{$k-button-active-class},
+  #{$k-button-open-class} > &.dropdown-toggle {
+    color: $color;
+    background-color: darken($background, 10%);
+    border-color: darken($border, 12%);
+    box-shadow: inset 1px 2px 4px rgba(0,0,0,0.125);
+
+    &:hover,
+    &:focus,
+    &#{$k-button-focus-class} {
+      color: $color;
+      background-color: darken($background, 17%);
+      border-color: darken($border, 25%);
+    }
+  }
+
+  &:active,
+  &#{$k-button-active-class},
+  #{$k-button-open-class} > &.dropdown-toggle {
+    background-image: none;
+  }
+
+  &#{$k-button-disabled-class},
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus,
+    &#{$k-button-focus-class} {
+      background-color: $background;
+      border-color: $border;
+    }
+  }
+}

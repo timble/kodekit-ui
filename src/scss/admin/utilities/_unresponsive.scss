@@ -1,0 +1,22 @@
+@if ($k-utilities == true and $k-utility-unresponsive != false) or $k-utility-unresponsive == true {
+
+  /* Unresponsive
+     ========================================================================== */
+
+  /**
+   * Make sure nothing can get selected
+   */
+
+  &.k-unresponsive,
+  &.k-is-unresponsive,
+  .k-unresponsive,
+  .k-is-unresponsive {
+    &,
+    *:not(.k-pane-resizer) {
+      pointer-events: none;
+      -ms-user-select: none;
+      user-select: none;
+      user-focus: none;
+    }
+  }
+}

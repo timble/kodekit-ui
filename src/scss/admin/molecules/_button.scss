@@ -1,0 +1,220 @@
+@if ($k-molecules == true and $k-molecule-button != false) or $k-molecule-button == true {
+
+  /* Buttons
+     ========================================================================== */
+
+  .k-button {
+    @include button-default;
+  }
+
+
+  /**
+   * Alternate buttons
+   */
+
+  .k-button--default {
+    @include button-variant($k-button-default-color, $k-button-default-background, $k-button-default-border);
+  }
+
+  .k-button--primary {
+    @include button-variant($k-button-primary-color, $k-button-primary-background, $k-button-primary-border);
+  }
+
+  .k-button--success {
+    @include button-variant($k-button-success-color, $k-button-success-background, $k-button-success-border);
+  }
+
+  .k-button--info {
+    @include button-variant($k-button-info-color, $k-button-info-background, $k-button-info-border);
+  }
+
+  .k-button--warning {
+    @include button-variant($k-button-warning-color, $k-button-warning-background, $k-button-warning-border);
+  }
+
+  .k-button--danger {
+    @include button-variant($k-button-danger-color, $k-button-danger-background, $k-button-danger-border);
+  }
+
+
+  /**
+   * Link buttons
+   */
+
+  .k-button--link {
+    @include button-link;
+  }
+
+
+  /**
+   * Block button
+   */
+
+  .k-button--block {
+    display: block;
+    width: 100%;
+  }
+
+
+  /**
+   * Button sizes
+   */
+
+  .k-button--tiny {
+    @include button-size($k-button-tiny-border-radius, $k-button-tiny-font-size, $k-button-tiny-line-height, $k-button-tiny-vertical-spacing $k-button-tiny-horizontal-spacing);
+  }
+
+  .k-button--small {
+    @include button-size($k-button-small-border-radius, $k-button-small-font-size, $k-button-small-line-height, $k-button-small-vertical-spacing $k-button-small-horizontal-spacing);
+  }
+
+  .k-button--large {
+    @include button-size($k-button-large-border-radius, $k-button-large-font-size, $k-button-large-line-height, $k-button-large-vertical-spacing $k-button-large-horizontal-spacing);
+  }
+
+
+  /**
+   * Align single icon buttons
+   */
+
+  .k-button--tiny,
+  .k-button--small {
+    [class*="icon-"]:only-child,
+    .k-visually-hidden + [class*="icon-"] {
+    width: 14px;
+    margin-left: -($k-tiny-spacing / 2);
+    margin-right: -($k-tiny-spacing / 2);
+  }
+  }
+
+
+  /**
+   * Vertically space out multiple block buttons
+   */
+
+  .k-button--block + .k-button--block {
+    margin-top: $k-button-spacer;
+  }
+
+
+  /**
+   * Specificity overrides
+   */
+
+  input[type="submit"],
+  input[type="reset"],
+  input[type="button"] {
+    &.k-button--block {
+      width: 100%;
+    }
+  }
+
+
+  /**
+   * Button groups
+   */
+
+  .k-button-group {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+
+    & > .k-button {
+      position: relative;
+      float: left;
+      margin: 0;
+
+      @include rtl {
+        float: right;
+      }
+
+
+      /**
+       * Bring the "active" button to the front
+       */
+
+      &:hover,
+      &:focus,
+      &:active,
+      &#{$k-button-active-class} {
+        z-index: 2;
+      }
+    }
+
+
+    /**
+     * Prevent double borders when buttons are next to each other
+     */
+
+    .k-button + .k-button,
+    .k-button + .k-button-group,
+    .k-button-group + .k-button,
+    .k-button-group + .k-button-group {
+      margin-left: -1px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    @include rtl {
+      .k-button + .k-button,
+      .k-button + .k-button-group,
+      .k-button-group + .k-button,
+      .k-button-group + .k-button-group {
+        margin-left: 0;
+        margin-right: -1px;
+
+        &:first-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    & > .k-button:not(:first-child):not(:last-child) {
+      border-radius: 0;
+    }
+
+    & > .k-button:first-child:not(:last-child) {
+      @include border-right-radius(0);
+
+      @include rtl {
+        @include border-right-radius($k-button-border-radius);
+        @include border-left-radius(0);
+
+        &.k-button--tiny {
+          @include border-right-radius($k-button-tiny-border-radius);
+        }
+
+        &.k-button--small {
+          @include border-right-radius($k-button-small-border-radius);
+        }
+
+        &.k-button--large {
+          @include border-right-radius($k-button-large-border-radius);
+        }
+      }
+    }
+
+    & > .k-button:last-child:not(:first-child) {
+      @include border-left-radius(0);
+
+      @include rtl {
+        @include border-left-radius($k-button-border-radius);
+        @include border-right-radius(0);
+
+        &.k-button--tiny {
+          @include border-left-radius($k-button-tiny-border-radius);
+        }
+
+        &.k-button--small {
+          @include border-left-radius($k-button-small-border-radius);
+        }
+
+        &.k-button--large {
+          @include border-left-radius($k-button-large-border-radius);
+        }
+      }
+    }
+  }
+}

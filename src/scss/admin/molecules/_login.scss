@@ -1,111 +1,64 @@
-/* ==========================================================================
-   Login screen
-   ========================================================================== */
+@if ($k-molecules == true and $k-molecule-login != false) or $k-molecule-login == true {
 
-/**
- * Login container
- *
- * Container holding the login window
- *
- * 1. Setting up for centering the login window
- */
+  /* ==========================================================================
+     Login screen
+     ========================================================================== */
 
-.k-login-container {
-  background: $k-login-container-background;
-  color: $k-login-container-color;
-  text-align: center; /* 1 */
-  white-space: nowrap; /* 1 */
-  padding: $k-login-container-spacing;
+  /**
+   * Login window
+   *
+   * 1. Horizontal and vertical centering
+   */
+
+  .k-login {
+    width: 100%;
+    max-width: $k-login-width;
+    height: auto;
+    margin: auto;
+    display: inline-block; /* 1 */
+    vertical-align: middle; /* 1 */
+    flex: 0 0 auto;
+  }
 
 
   /**
-   * Pseudo element for vertical centering
-   *
-   * 1. Adjusts for spacing
+   * Brand
    */
 
-  &:before {
-    content: ' ';
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-    margin-right: -0.25em; /* 1 */
-  }
+  .k-login__brand {
+    display: block;
+    height: auto;
+    width: auto;
+    max-width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: $k-login-spacing;
+    font-size: $k-login-font-size;
 
-
-  /* Use flexbox when available */
-
-  @include flexbox(0, 0) {
-    display: flex;
-    flex: 1 1 auto;
-    align-items: center;
-
-
-    /* Hide the pseudo eleemnt when using flexbox */
-
-    &:before {
-      display: none;
+    img {
+      max-height: 100%;
+      vertical-align: middle;
     }
   }
-}
 
 
+  /**
+   * Form
+   */
 
-/**
- * Login window
- *
- * 1. Horizontal and vertical centering
- */
+  .k-login__content {
+    background: $k-login-background;
+    color: $k-login-color;
+    width: 100%;
+    border-radius: $k-login-border-radius;
+    padding: $k-login-spacing;
+    box-shadow: $k-login-box-shadow;
+    text-align: left;
+    white-space: normal;
 
-.k-login {
-  width: 100%;
-  max-width: $k-login-width;
-  height: auto;
-  margin: auto;
-  display: inline-block; /* 1 */
-  vertical-align: middle; /* 1 */
-
-
-  /* Don't flex this window, it needs to be as big as it's children */
-  @include flexbox(0, 0) {
-    flex: 0 0 auto;
+    @include rtl {
+      text-align: right;
+    }
   }
-}
-
-
-/**
- * Brand
- */
-
-.k-login__brand {
-  display: block;
-  height: auto;
-  width: auto;
-  max-width: 100%;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: $k-login-spacing;
-  font-size: 16px;
-
-  img {
-    max-height: 100%;
-    vertical-align: middle;
-  }
-}
-
-
-/**
- * Form
- */
-
-.k-login__content {
-  background: $k-login-background;
-  color: $k-login-color;
-  width: 100%;
-  border-radius: $k-login-radius;
-  padding: $k-login-spacing;
-  box-shadow: $k-login-shadow;
-  text-align: left;
-  white-space: normal;
 }

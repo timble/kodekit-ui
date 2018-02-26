@@ -1,0 +1,33 @@
+@if ($k-utilities == true and $k-utility-color != false) or $k-utility-color == true {
+
+  /* Color
+     ========================================================================== */
+
+  .k-color-type {
+    color: $k-type-color;
+  }
+
+  .k-color-base {
+    color: $k-base-color;
+  }
+
+  .k-color-accent {
+    color: $k-accent-color;
+  }
+
+  .k-color-success {
+    color: $k-success-color;
+  }
+
+  .k-color-neutral {
+    color: $k-neutral-color;
+  }
+
+  .k-color-warning {
+    color: $k-warning-color;
+  }
+
+  .k-color-error {
+    color: $k-error-color;
+  }
+}

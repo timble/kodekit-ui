@@ -1,0 +1,96 @@
+@if ($k-layout == true and $k-layout-subcontent != false) or $k-layout-subcontent == true {
+
+  /* Subcontent
+     ========================================================================== */
+
+  .k-subcontent {
+    background: $k-subcontent-background;
+    border-left: $k-subcontent-border;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    overflow: hidden; /* 2 */
+    min-height: 0;
+    position: absolute;
+    z-index: -1;
+    left: 100%;
+    width: $k-subcontent-width;
+    top: 0;
+    bottom: 0;
+
+    @include rtl {
+      left: auto;
+      right: 100%;
+      border-left: none;
+      border-right: $k-subcontent-border;
+    }
+
+    @include breakpoint($k-subcontent-breakpoint) {
+      position: relative;
+      left: auto;
+      width: auto;
+      z-index: 1;
+
+      @include rtl {
+        right: auto;
+      }
+    }
+  }
+
+  .k-button.k-subcontent-toggle {
+    @include breakpoint($k-subcontent-breakpoint) {
+      display: none;
+    }
+  }
+
+
+  /**
+   * Subcontent children
+   */
+
+  .k-subcontent__child {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    width: auto;
+    overflow: hidden;
+    min-height: 0;
+
+    &:not(:only-child) {
+      display: none;
+
+      &#{$k-subcontent-child-active-class} {
+        display: flex;
+      }
+    }
+  }
+
+
+  /**
+   * Subcontent toggle button
+   */
+
+  .k-button.k-subcontent-toggle {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    top: $k-subcontent-toggle-position;
+    right: $k-subcontent-toggle-position;
+    padding-left: $k-subcontent-toggle-spacing;
+    padding-right: $k-subcontent-toggle-spacing;
+    min-width: $k-subcontent-toggle-size;
+    margin: 0;
+    backface-visibility: hidden;
+    @include transition();
+
+    @include breakpoint($k-subcontent-breakpoint) {
+      display: none;
+    }
+
+    @include rtl {
+      margin: 0;
+      right: auto;
+      left: $k-subcontent-toggle-position;
+    }
+  }
+}

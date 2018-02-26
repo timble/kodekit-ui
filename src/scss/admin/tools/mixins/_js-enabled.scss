@@ -1,0 +1,19 @@
+// JS enabled
+
+@mixin js-enabled($root: false) {
+
+  @at-root .k-js-enabled & {
+    @content;
+  }
+
+
+  // Same level as selectors (useful for when inside modernizr mixin for example)
+
+  @if $root == true {
+    @at-root {
+      .k-js-enabled#{&} {
+        @content
+      }
+    }
+  }
+}

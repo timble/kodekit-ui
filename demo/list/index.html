@@ -11,29 +11,46 @@
     <script src="../../dist/js/admin.min.js"></script>
 </head>
 <body>
-<script data-inline type="text/javascript">(function(){var el=document.documentElement;var cl="k-js-enabled";if(el.classList){el.classList.add(cl);}else{el.className+=" "+cl;}})()</script>
+<script src="../../dist/js/kui-initialize.min.js"></script>
 
+<!-- Kodekit UI Container -->
 <div class="k-ui-container k-ui-namespace">
-    <div class="k-menu-container">
-        <div class="k-menu-container__logo">
+
+    <!-- Top container -->
+    <div class="k-top-container">
+        <div class="k-top-container__logo">
             <a href="#">
                 Kodekit UI
             </a>
         </div>
-        <div class="k-menu-container__nav" id="k-js-menu">
+        <div class="k-top-container__navigation k-js-top-navigation" id="k-js-menu">
             <ul>
                 <li><a href="#">Menu item 1</a></li>
                 <li>
                     <a href="#">Menu item 2</a>
                     <ul>
-                        <li><a href="#">Sub item 1</a></li>
+                        <li>
+                            <a href="#">Sub item 1</a>
+                            <ul>
+                                <li><a href="#">Sub-sub item 1</a></li>
+                                <li><a href="#">Sub-sub item 2</a></li>
+                                <li><a href="#">Sub-sub item 3</a></li>
+                            </ul>
+                        </li>
                         <li><a href="#">Sub item 2</a></li>
-                        <li><a href="#">Sub item 3</a></li>
+                        <li>
+                            <a href="#">Sub item 3</a>
+                            <ul>
+                                <li><a href="#">Sub-sub item 1</a></li>
+                                <li><a href="#">Sub-sub item 2</a></li>
+                                <li><a href="#">Sub-sub item 3</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                 <li><a href="#">Menu item 3</a></li>
             </ul>
-            <ul class="k-menu-right">
+            <ul class="k-navigation-right">
                 <li>
                     <a href="#" title="View site" target="_blank">
                         <span>View site</span>
@@ -42,12 +59,20 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </div><!-- .k-top-container -->
+
+    <!-- Wrapper -->
     <div class="k-wrapper k-js-wrapper">
+
+        <!-- Mobile title bar -->
         <div class="k-title-bar k-title-bar--mobile k-js-title-bar">
             <div class="k-title-bar__heading">Articles</div>
-        </div>
+        </div><!-- .k-title-bar -->
+
+        <!-- Content wrapper -->
         <div class="k-content-wrapper">
+
+            <!-- Sidebar -->
             <div class="k-sidebar-left k-js-sidebar-left">
                 <div class="k-sidebar-item">
                     <ul class="k-navigation">
@@ -73,7 +98,26 @@
                         Categories
                     </div>
                     <div class="k-tree" id="k-jqtree"></div>
-                    <script type="text/javascript" defer>(function($){$(document).ready(function(){new Koowa.Tree('#k-jqtree',{"data":[{"label":"Main category","id":4},{"label":"Sub category 1","id":5,"parent":4},{"label":"Sub category 2","id":6,"parent":4},{"label":"Sub category 3","id":7,"parent":6},{"label":"Depper category","id":8,"parent":4}]});});});</script>
+                    <script type="text/javascript" defer>
+                        (function ($) {
+                            $(document).ready(function () {
+                                new Koowa.Tree('#k-jqtree', {
+                                    "data": [{
+                                        "label": "Main category",
+                                        "id": 4
+                                    }, {"label": "Sub category 1", "id": 5, "parent": 4}, {
+                                        "label": "Sub category 2",
+                                        "id": 6,
+                                        "parent": 4
+                                    }, {"label": "Sub category 3", "id": 7, "parent": 6}, {
+                                        "label": "Depper category",
+                                        "id": 8,
+                                        "parent": 4
+                                    }]
+                                });
+                            });
+                        })(kQuery);
+                    </script>
                 </div>
                 <div class="k-sidebar-item k-sidebar-item--toggle k-js-sidebar-toggle-item">
                     <div class="k-sidebar-item__header">
@@ -94,24 +138,34 @@
                         </li>
                     </ul>
                 </div>
-            </div>
-            <div class="k-content k-js-content">
+            </div><!-- .k-sidebar-left -->
+
+            <!-- Content -->
+            <div class="k-content k-js-content k-js-middlepane">
+
+                <!-- Toolbar -->
                 <div class="k-toolbar k-js-toolbar">
                     <button type="button" class="k-button k-button--success">
                         <span class="k-icon-plus" aria-hidden="true"></span>
-                        New
+                        <span class="k-button__text">New</span>
                     </button>
                     <button type="button" class="k-button k-button--default" disabled>
                         <span class="k-icon-pencil" aria-hidden="true"></span>
-                        Edit
+                        <span class="k-button__text">Edit</span>
                     </button>
                     <button type="button" class="k-button k-button--default" disabled>
                         <span class="k-icon-trash" aria-hidden="true"></span>
-                        Delete
+                        <span class="k-button__text">Delete</span>
                     </button>
                 </div>
+
+                <!-- Component wrapper -->
                 <div class="k-component-wrapper">
+
+                    <!-- Component -->
                     <form class="k-component k-js-component k-js-grid-controller k-js-grid">
+
+                        <!-- Breadcrumbs -->
                         <div class="k-breadcrumb">
                             <ul>
                                 <li class="k-breadcrumb__home">
@@ -131,12 +185,14 @@
                                     </a>
                                 </li>
                                 <li class="k-breadcrumb__active">
-<span class="k-breadcrumb__content">
-Ligula Inceptos Commodo Sem Ornare.
-</span>
+                                    <span class="k-breadcrumb__content">
+                                        Ligula Inceptos Commodo Sem Ornare.
+                                    </span>
                                 </li>
                             </ul>
-                        </div>
+                        </div><!-- .k-breadcrumb -->
+
+                        <!-- Scopebar -->
                         <div class="k-scopebar k-js-scopebar">
                             <div class="k-dynamic-content-holder">
                                 <div class="k-js-filters">
@@ -177,14 +233,16 @@ Ligula Inceptos Commodo Sem Ornare.
                                         <span class="k-visually-hidden">Search icon</span>
                                     </button>
                                     <button type="button" class="k-search__empty ">
-<span class="k-search__empty-area">
-<span class="k-icon-disabled" aria-hidden="true"></span>
-<span class="k-visually-hidden">Clear search</span>
-</span>
+                                        <span class="k-search__empty-area">
+                                            <span class="k-icon-disabled" aria-hidden="true"></span>
+                                            <span class="k-visually-hidden">Clear search</span>
+                                        </span>
                                     </button>
                                 </div>
                             </div>
-                        </div>
+                        </div><!-- .k-scopebar -->
+
+                        <!-- Table container -->
                         <div class="k-table-container">
                             <div class="k-table">
                                 <table class="k-js-fixed-table-header k-js-responsive-table">
@@ -439,13 +497,19 @@ Ligula Inceptos Commodo Sem Ornare.
                                     </ul>
                                 </div>
                             </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+                        </div><!-- k.table-container -->
+
+                    </form><!-- .k-component -->
+
+                </div><!-- .k-component-wrapper -->
+
+            </div><!-- .k-content -->
+
+        </div><!-- .k-content-wrapper -->
+
+    </div><!-- .k-wrapper -->
+
+</div><!-- .k-ui-container -->
 
 </body>
 </html>

@@ -1,0 +1,29 @@
+@if ($k-utilities == true and $k-utility-ellipsis != false) or $k-utility-ellipsis == true {
+
+  /* Ellipsis
+     ========================================================================== */
+
+  /**
+   * Text overflow
+   */
+
+  .k-ellipsis {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    a, span, input, svg, div, small {
+      display: inline-block;
+      vertical-align: middle;
+      max-width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .k-ellipsis__item {
+    // Item to be ellipsed
+  }
+}

@@ -1,0 +1,63 @@
+@if ($k-css-errors != false) {
+
+  /* CSS errors
+     ========================================================================== */
+
+  /**
+   * Since the way the layout is built is important, we've added errors by default when
+   * using them in a wrong way. Disable by setting the $k-css-errors variable to false when
+   * compiling the CSS or simply add k-no-css-errors class to the k-ui-container element.
+   */
+
+  .k-ui-container:not(.k-no-css-errors) {
+    .k-top-container,
+    .k-wrapper,
+    .k-content-wrapper,
+    .k-content-area,
+    .k-content-area__child,
+    .k-content,
+    .k-subcontent,
+    .k-subcontent__child,
+    .k-component-wrapper,
+    .k-component,
+    .k-sidebar-left,
+    .k-sidebar-right {
+      outline: 4px solid red;
+      outline-offset: -2px;
+
+      &:after {
+        position: absolute;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        content: "There's something wrong in your markup. See UI documentation or add 'k-no-css-errors' class to '.k-ui-container'";
+        background: $k-error-color;
+        color: $k-error-type-color;
+        padding: 4px;
+      }
+    }
+
+    > .k-top-container,
+    > .k-wrapper,
+    .k-wrapper > .k-content-wrapper,
+    .k-content-wrapper > .k-content-area,
+    .k-content-area > .k-content-area__child,
+    .k-content-wrapper > .k-content,
+    .k-content-area__child > .k-content,
+    .k-content-area__child > .k-subcontent,
+    .k-subcontent > .k-subcontent__child,
+    .k-content > .k-component-wrapper,
+    .k-content-area__child > .k-component-wrapper,
+    .k-subcontent__child > .k-component-wrapper,
+    .k-component-wrapper > .k-component,
+    .k-flex-wrapper:not(:only-child),
+    .k-content-wrapper > .k-sidebar-left:first-child,
+    .k-component + .k-sidebar-right {
+      outline: none;
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+}

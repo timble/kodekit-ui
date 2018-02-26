@@ -1,0 +1,158 @@
+// Optionlist
+
+@mixin optionlist(
+  $listClass: $k-optionlist-class,
+  $contentClass: $k-optionlist-content-class,
+  $focusClass: $k-optionlist-focus-class) {
+
+
+  /* Block element to clear from other floating / inline-block elements */
+
+  #{$listClass} {
+    @include clearfix;
+    display: block;
+    max-width: 100%;
+    overflow: auto;
+
+
+    /* "Inline" table to make element as wide as children */
+
+    #{$contentClass} {
+      position: relative;
+      margin: 0;
+      border: $k-optionlist-border;
+      padding: $k-optionlist-spacing;
+      border-radius: $k-optionlist-border-radius;
+      background: $k-optionlist-background;
+      display: flex;
+      flex-wrap: wrap;
+      float: left;
+
+
+      /* Hiding the input but keeping accessible */
+
+      input[type=radio] {
+        position: absolute;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        width: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+      }
+
+
+      /**
+       * Label styling
+       *
+       * 1. Display as table cell so the labels line up next to each other
+       * 2. Take one pixel off the radius to look smooth
+       * 3. Don't let the user select
+       */
+
+      label {
+        position: relative;
+        z-index: 1;
+        display: table-cell; /* 1 */
+        margin: 0;
+        padding: $k-optionlist-label-spacing;
+        line-height: $k-optionlist-label-line-height;
+        text-align: center;
+        color: $k-optionlist-label-color;
+        font-weight: $k-optionlist-label-font-weight;
+        border-radius: $k-optionlist-label-border-radius; /* 2 */
+        cursor: pointer;
+        user-select: none; /* 3 */
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        flex: 1 1 auto;
+        @include transition;
+
+
+        /**
+         * Fake background to be able to zoom in in from the center on select
+         *
+         * 1. Cover the entire parent
+         * 2. Low z-index so label content will stay on top
+         * 3. Hide the element by default
+         * 4. Same radius as parent
+         * 5. Scale to 0,0
+         */
+
+        &:before {
+          @include coverall; /* 1 */
+          z-index: -1; /* 2 */
+          display: block;
+          content: " ";
+          opacity: 0; /* 3 */
+          border-radius: $k-optionlist-label-border-radius; /* 4 */
+          transform: scale(0,0); /* 5 */
+          background: $k-optionlist-label-background;
+          @include transition;
+        }
+
+
+        /* A little darker background on hovering (no need for focus since this is a `<label>`) */
+
+        &:hover {
+          background: rgba(0, 0, 0, 0.15);
+        }
+      }
+
+
+      /**
+       * Styling label when checked
+       *
+       * 1. Transparent background for label itself
+       * 2. Show pseudo element
+       */
+
+      input:checked + label {
+        &, &:hover, &:focus {
+          background: transparent; /* 1 */
+          color: $k-optionlist-label-focus-color;
+        }
+
+        &:before {
+          transform: scale(1,1); /* 2 */
+          opacity: 1; /* 2 */
+        }
+      }
+
+
+      /**
+       * Fake focus
+       *
+       * We need to create a separate element for the fake focus
+       * The children have position: relative so we can't just fill up the entire parent div
+       *
+       * 1. Position it on top of the parent element but behind the labels
+       * 2. Hide by default
+       * 3. Display on focus
+       * 4. Set border-radius same as parent
+       */
+
+      #{$focusClass} {
+        @include coverall(-1px); /* 1 */
+        z-index: 0; /* 1 */
+        outline: 0;
+        display: block;
+        opacity: 0; /* 2 */
+        visibility: hidden; /* 2 */
+        border-radius: $k-optionlist-border-radius; /* 4 */
+        border: $k-optionlist-label-focus-border;
+        box-shadow: $k-optionlist-label-focus-box-shadow;
+      }
+
+
+      /* Display on focus and active */
+
+      input:active ~ #{$focusClass},
+      input:focus ~ #{$focusClass} {
+        opacity: 1; /* 3 */
+        visibility: visible; /* 3 */
+      }
+    }
+  }
+}

@@ -1,0 +1,91 @@
+@if ($k-molecules == true and $k-molecule-responsive-table != false) or $k-molecule-responsive-table == true {
+
+  /* Responsive table
+     ========================================================================== */
+
+  .footable.breakpoint {
+    .footable-toggle {
+      content: " ";
+      display: inline-block;
+      width: $k-table-responsive-toggle-size;
+      height: $k-table-responsive-toggle-size;
+      line-height: ($k-table-responsive-toggle-size - ($k-table-responsive-toggle-border-width * 2));
+      border: $k-table-responsive-toggle-border;
+      border-radius: 50%;
+      text-align: center;
+      vertical-align: middle;
+
+      @include icon-after(chevron-bottom, true) {
+        display: inline-block;
+        width: $k-table-responsive-toggle-icon-size;
+        height: $k-table-responsive-toggle-icon-size;
+        margin: ((($k-table-responsive-toggle-size - $k-table-responsive-toggle-icon-size) / 2) - $k-table-responsive-toggle-border-width);
+        color: $k-table-responsive-toggle-color;
+        font-size: $k-table-responsive-toggle-icon-size;
+        line-height: $k-table-responsive-toggle-line-height;
+        transform: rotate(-90deg);
+        @include transition;
+
+        @include rtl {
+          transform: rotate(90deg);
+        }
+      }
+    }
+
+    tr#{$k-table-responsive-selected-class} {
+      .footable-toggle {
+        border-color: $k-table-responsive-toggle-active-color;
+
+        &:after {
+          color: $k-table-responsive-toggle-active-color;
+        }
+      }
+    }
+
+    /**
+     * Reset padding, and re-set them on individual divs
+     */
+
+    .footable-row-detail-cell {
+      padding: 0;
+    }
+
+    tr.footable-detail-show {
+      .footable-toggle {
+        &:after {
+          transform: rotate(0deg);
+        }
+      }
+    }
+
+    .footable-row-detail-row {
+      @include clearfix;
+      @include content-block($k-table-cell-vertical-spacing);
+    }
+
+    .footable-row-detail-name {
+      font-weight: $k-table-responsive-detail-font-weight;
+    }
+
+    /**
+     * 1. Just like table cells
+     * 2. Almost as tall as the main table rows
+     * 3. Same spacing as on table cells
+     */
+
+    .footable-row-detail-name,
+    .footable-row-detail-value {
+      position: relative; /* 1 */
+      min-height: $k-table-responsive-detail-min-height; /* 2 */
+      padding: $k-table-responsive-detail-spacing; /* 3 */
+    }
+
+    /* Hide toggle button for sub headings */
+
+    th {
+      .footable-toggle {
+        display: none;
+      }
+    }
+  }
+}
