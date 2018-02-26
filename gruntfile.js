@@ -14,6 +14,27 @@ module.exports = function(grunt) {
         distPath: 'dist',
 
 
+        // Copy
+        copy: {
+            main: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'node_modules/select2/src/scss',
+                        src: '**',
+                        dest: '<%= srcPath %>/scss/admin/3rdparty/copied/select2'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'node_modules/select2-bootstrap-theme/src',
+                        src: '*.scss',
+                        dest: '<%= srcPath %>/scss/admin/3rdparty/copied/select2-bootstrap-theme'
+                    }
+                ]
+            }
+        },
+
+
         // Compile sass files
         sass: {
             dist: {
@@ -285,7 +306,7 @@ module.exports = function(grunt) {
     });
 
     // The dev task will be used during development
-    grunt.registerTask('default', ['modernizr', 'watch']);
+    grunt.registerTask('default', ['copy', 'modernizr', 'watch']);
 
     // JS only
     grunt.registerTask('js', ['watch:concat']);

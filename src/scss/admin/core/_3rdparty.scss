@@ -16,8 +16,8 @@
 // ==========================================================================
 
 %select2extender {
-  @import "../../../../node_modules/select2/src/scss/core";
-  @import "../../../../node_modules/select2-bootstrap-theme/src/select2-bootstrap";
+  @import "../3rdparty/copied/select2/core";
+  @import "../3rdparty/copied/select2-bootstrap-theme/select2-bootstrap";
 }
 
 html {
