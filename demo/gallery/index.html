@@ -78,12 +78,12 @@
                     <ul class="k-navigation">
                         <li>
                             <a href="javascript:void(0);">
-                                {content}
+                                Articles
                             </a>
                         </li>
                         <li class="k-is-active">
                             <a href="javascript:void(0);">
-                                {content}
+                                Category
                             </a>
                         </li>
                     </ul>
@@ -93,7 +93,26 @@
                         Categories
                     </div>
                     <div class="k-tree" id="k-jqtree"></div>
-                    <script type="text/javascript" defer>(function($){$(document).ready(function(){new Koowa.Tree('#k-jqtree',{"data":[{"label":"Main category","id":4},{"label":"Sub category 1","id":5,"parent":4},{"label":"Sub category 2","id":6,"parent":4},{"label":"Deeper category","id":7,"parent":6},{"label":"Sub category 3","id":8,"parent":4}]});});});</script>
+                    <script type="text/javascript" defer>
+                        (function ($) {
+                            $(document).ready(function () {
+                                new Koowa.Tree('#k-jqtree', {
+                                    "data": [{
+                                        "label": "Main category",
+                                        "id": 4
+                                    }, {"label": "Sub category 1", "id": 5, "parent": 4}, {
+                                        "label": "Sub category 2",
+                                        "id": 6,
+                                        "parent": 4
+                                    }, {"label": "Sub category 3", "id": 7, "parent": 6}, {
+                                        "label": "Depper category",
+                                        "id": 8,
+                                        "parent": 4
+                                    }]
+                                });
+                            });
+                        })(kQuery);
+                    </script>
                 </div>
                 <div class="k-sidebar-item k-sidebar-item--toggle k-js-sidebar-toggle-item">
                     <div class="k-sidebar-item__header">
