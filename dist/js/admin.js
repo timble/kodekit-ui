@@ -17012,6 +17012,9 @@ var Konami = function (callback) {
                     });
                     $.each(offCanvasOverlay, function () {
                         $(this).removeAttr('style').removeClass(noTransitionClass);
+                        if (plugin.settings.transitionElements !== undefined) {
+                            plugin.settings.transitionElements.removeAttr('style').removeClass(noTransitionClass);
+                        }
                     });
 
                     if (( position == 'left' && ( absNewPos <= (expandedWidth * 0.66) || newPos <= 0 ) ) ||
