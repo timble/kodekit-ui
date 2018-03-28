@@ -13,6 +13,7 @@
                 position: 'left',
                 menuExpandedClass: 'k-show-left-menu',
                 openedClass: 'k-is-opened',
+                transitionClass: 'k-is-transitioning',
                 noTransitionClass: 'k-no-transition',
                 wrapper: $(element).parent(),
                 container: $('.container'),
@@ -40,6 +41,7 @@
                 position = plugin.settings.position,
                 menuExpandedClass = plugin.settings.menuExpandedClass,
                 openedClass = plugin.settings.openedClass,
+                transitionClass = plugin.settings.noTransitionClass,
                 noTransitionClass = plugin.settings.noTransitionClass,
                 wrapper = plugin.settings.wrapper,
                 container = plugin.settings.container,
@@ -122,6 +124,9 @@
                 // Clear the timeout when user clicks open menu
                 clearTimeout(timeout);
 
+                // Add class to body
+                $('body').addClass(plugin.settings.transitionClass);
+
                 // Function to run before toggling
                 plugin.settings.onBeforeToggleOpen();
 
@@ -138,6 +143,9 @@
                 timeout = setTimeout(function() {
                     tabToggle(menu);
 
+                    // Remove class from body
+                    $('body').removeClass(plugin.settings.transitionClass);
+
                     // Function to run after toggling
                     plugin.settings.onAfterToggleOpen();
                 }, transitionDuration);
@@ -146,6 +154,9 @@
             function closeMenu() {
                 // Clear the timeout when user clicks close menu
                 clearTimeout(timeout);
+
+                // Add class to body
+                $('body').addClass(plugin.settings.transitionClass);
 
                 // Function to run before toggling
                 plugin.settings.onBeforeToggleOpen();
@@ -159,6 +170,9 @@
                 // Remove style and class when transition has ended, so the menu stays visible on closing
                 timeout = setTimeout(function() {
                     wrapper.removeClass(openedClass);
+
+                    // Remove class from body
+                    $('body').removeClass(plugin.settings.transitionClass);
 
                     // Function to run after toggling
                     plugin.settings.onAfterToggleOpen();
@@ -253,6 +267,9 @@
                 // Set started to true (used by touchend)
                 started = true;
 
+                // Add class to body
+                $('body').addClass(plugin.settings.transitionClass);
+
                 // Get original starting point
                 pageX = e.originalEvent.touches[0].pageX;
 
@@ -341,6 +358,9 @@
                 // Escape if Menu is closed
                 if (!wrapper.hasClass(menuExpandedClass))
                     return;
+
+                // Remove class from body
+                $('body').removeClass(plugin.settings.transitionClass);
 
                 var newPos = position == 'left' ? start.startingX + deltaX
                     : deltaX - ($(window).width() - start.startingX);
