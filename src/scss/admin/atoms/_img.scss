@@ -1,65 +1,25 @@
-/* Image
-   ========================================================================== */
+@if ($k-atoms == true and $k-atom-img != false) or $k-atom-img == true {
 
-/*
-Image
+  /* Image
+     ========================================================================== */
 
-- Images have a max-width to fit nicely into responsive layout
-- When image is the only child in a parent, `vertical-align: middle` is applied to eliminate line-height bug
+  /**
+   * 1. Responsive images
+   * 2. Eliminating line-height bug when used alone in container
+   * 3. No hidden borders on parents
+   */
 
-markup:
-<img src="{image source}" alt="{alternative text}">
+  img {
+    max-width: 100%; /* 1 */
+    height: auto;
 
-sg-wrapper:
-<p>
-    <sg-wrapper-content/>
-</p>
-
-Styleguide 1.4
-
-*/
-
-/**
- * 1. Responsive images
- * 2. Eliminating line-height bug when used alone in container
- * 3. No hidden borders on parents
- */
-
-img {
-  max-width: 100%; /* 1 */
-  height: auto;
-
-  &:only-child {
-    vertical-align: middle; /* 2 */
-    backface-visibility: hidden; /* 3 */
+    &:only-child {
+      vertical-align: middle; /* 2 */
+      backface-visibility: hidden; /* 3 */
+    }
   }
-}
 
-
-.k-image--size-tiny {
-  @include allwidth($k-icon-size-tiny);
-}
-
-.k-image--size-small {
-  @include allwidth($k-icon-size-small);
-}
-
-.k-image--size-default {
-  @include allwidth($k-icon-size);
-}
-
-.k-image--size-medium {
-  @include allwidth($k-icon-size-medium);
-}
-
-.k-image--size-large {
-  @include allwidth($k-icon-size-large);
-}
-
-.k-image--size-xlarge {
-  @include allwidth($k-icon-size-xlarge);
-}
-
-.k-image--size-huge {
-  @include allwidth($k-icon-size-huge);
+  .k-image-16 {
+    @include allwidth(16px);
+  }
 }

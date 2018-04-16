@@ -1,0 +1,74 @@
+@if ($k-molecules == true and $k-molecule-icon != false) or $k-molecule-icon == true {
+
+  /* Icons
+     ========================================================================== */
+
+  /**
+   * Icon colors
+   */
+
+  .k-icon--accent {
+    color: $k-icon-accent-color;
+  }
+
+  .k-icon--success {
+    color: $k-icon-success-color;
+  }
+
+  .k-icon--error {
+    color: $k-icon-error-color;
+  }
+
+
+  /**
+   * Icon sizes
+   */
+
+  .k-icon--size-tiny {
+    font-size: $k-icon-tiny-size;
+  }
+
+  .k-icon--size-small {
+    font-size: $k-icon-small-size;
+  }
+
+  .k-icon--size-default {
+    font-size: $k-icon-size;
+  }
+
+  .k-icon--size-medium {
+    font-size: $k-icon-medium-size;
+  }
+
+  .k-icon--size-large {
+    font-size: $k-icon-large-size;
+  }
+
+  .k-icon--size-xlarge {
+    font-size: $k-icon-xlarge-size;
+  }
+
+  .k-icon--size-huge {
+    font-size: $k-icon-huge-size;
+  }
+
+  .k-icon-text-item {
+    display: inline-block;
+    font-size: $k-icon-text-font-size;
+    line-height: $k-icon-text-item-line-height;
+    vertical-align: $k-icon-text-item-align;
+    margin-right: $k-icon-text-item-spacing;
+  }
+
+
+  /**
+   * Custom background image icons
+   *
+   * Make sure that custom icons get background-size cover so they fit their container nicely
+   */
+
+  [class^="k-icon-document-"]:before,
+  [class*=" k-icon-document-"]:before {
+    background-size: cover;
+  }
+}

@@ -1,0 +1,412 @@
+@if ($k-layout == true and $k-molecule-top != false) or $k-molecule-top == true {
+
+  /* Top container
+     ========================================================================== */
+
+  .k-top-container {
+    background: $k-top-container-background;
+    color: $k-top-container-color;
+    flex: 0 0 auto;
+
+    @include breakpoint($k-top-container-breakpoint) {
+      position: relative;
+      z-index: $k-top-container-z-index;
+      display: flex;
+    }
+  }
+
+
+  /**
+   * Top logo
+   */
+
+  .k-top-container__logo {
+    height: $k-top-container-size;
+
+    a, img {
+      display: inline-block;
+      vertical-align: middle;
+      width: auto;
+    }
+
+    a {
+      padding: $k-top-container-logo-spacing;
+      font-size: $k-top-container-logo-font-size;
+      font-weight: $k-top-container-logo-font-weight;
+      line-height: $k-top-container-logo-line-height;
+      text-decoration: $k-top-container-logo-text-decoration;
+      color: inherit;
+
+      &:focus,
+      &:hover {
+        background: darker($k-top-container-background);
+        text-decoration: $k-top-container-logo-hover-text-decoration;
+        color: inherit;
+      }
+    }
+
+    img {
+      max-height: $k-top-container-size - ($k-top-container-logo-spacing * 2);
+    }
+  }
+
+
+  /**
+   * Top navigation
+   */
+
+  .k-top-container__navigation {
+    position: absolute;
+    top: $k-top-container-size;
+    right: 0;
+    bottom: 0;
+    width: $k-top-container-navigation-width;
+    display: none;
+    background: $k-top-container-background;
+    overflow: auto;
+    box-shadow: $k-top-container-navigation-box-shadow;
+
+    @include rtl {
+      right: auto;
+      left: 0;
+    }
+
+
+    /**
+     * On desktop
+     */
+
+    @include breakpoint($k-top-container-breakpoint) {
+      position: static;
+      display: flex;
+      justify-content: space-between;
+      box-shadow: none;
+      height: $k-top-container-size;
+      width: auto;
+      overflow: visible;
+      flex: 1 1 auto;
+    }
+
+
+    /**
+     * First level
+     */
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      flex: 0 0 auto;
+    }
+
+    li {
+      position: relative;
+      margin: 0;
+      padding: 0;
+
+      @include breakpoint($k-top-container-breakpoint) {
+        float: left;
+      }
+
+      @include rtl {
+        @include breakpoint($k-top-container-breakpoint) {
+          float: right
+        }
+      }
+
+      &#{$k-top-container-navigation-item-disabled-class} {
+        opacity: 0.65;
+        cursor: not-allowed;
+
+        a {
+          pointer-events: none;
+        }
+      }
+
+      > a {
+        line-height: $k-top-container-navigation-item-line-height;
+        position: relative;
+        z-index: 0;
+        display: block;
+        padding: $k-top-container-navigation-item-spacing;
+        border-bottom: $k-top-container-navigation-item-border;
+        color: inherit;
+        text-shadow: none;
+        text-decoration: none;
+
+        &#{$k-top-container-navigation-item-open-submenu-class} {
+          z-index: 1;
+          background: darker($k-top-container-background);
+          text-decoration: none;
+        }
+
+        &:focus,
+        &:hover {
+          text-decoration: none;
+          background: darker($k-top-container-background);
+        }
+
+        @include breakpoint($k-top-container-breakpoint) {
+          height: $k-top-container-size;
+          border-bottom: none;
+          line-height: $k-top-container-size;
+          padding: $k-top-container-navigation-item-breakpoint-spacing;
+        }
+
+        @include breakpoint($k-delta) {
+          padding: $k-top-container-navigation-item-delta-spacing;
+        }
+
+
+        /**
+         * Basic fallback for parent items
+         */
+
+        @if $k-top-container-navigation-item-level1-parent-arrow == true {
+          &:not(:only-child) {
+            &:after {
+              display: inline-block;
+              content: " ";
+              border-top: 4px solid;
+              border-right: 4px solid transparent;
+              border-bottom: 2px solid transparent;
+              border-left: 4px solid transparent;
+              margin-left: 8px;
+
+              @include rtl {
+                border-right: 4px solid transparent;
+                border-left: 2px solid transparent;
+                margin-left: 0;
+                margin-right: 8px;
+              }
+            }
+          }
+        }
+      }
+
+
+      /**
+       * Second level
+       */
+
+      ul {
+        display: none;
+        border-bottom: 1px solid rgba(white, 0.25);
+        padding: 4px 0;
+        background: lighter($k-top-container-background);
+
+        @include breakpoint($k-top-container-breakpoint) {
+          background: white;
+          box-shadow: 2px 4px 6px rgba(black, 0.2), 0 0 0 1px rgba(black, .33);
+          position: absolute;
+          z-index: 0;
+          top: 100%;
+          left: 1px;
+          width: 180px;
+          border-bottom: none;
+          padding: 2px;
+
+          @include rtl {
+            left: auto;
+            right: 1px;
+          }
+        }
+
+        li {
+          float: none;
+          background: transparent;
+
+          &:focus,
+          &:hover {
+            background: rgba(black, 0.1);
+
+            & > ul {
+              display: block;
+            }
+          }
+
+          @include rtl {
+            float: none;
+          }
+
+          ul {
+            @include breakpoint($k-top-container-breakpoint) {
+              top: -2px;
+              left: 100%;
+
+              @include rtl {
+                left: auto;
+                right: 100%;
+              }
+            }
+          }
+        }
+
+        a {
+          height: 32px;
+          line-height: 32px;
+          border-bottom: none;
+
+          &:focus,
+          &:hover {
+            background: rgba(black, 0.1);
+
+            & + ul {
+              display: block;
+            }
+          }
+
+          @include breakpoint($k-top-container-breakpoint) {
+            color: $k-top-container-background;
+          }
+
+
+          /**
+           * Basic fallback for parent items
+           */
+
+          @if $k-top-container-navigation-item-level1-parent-arrow == true {
+            &:not(:only-child) {
+              &:after {
+                position: absolute;
+                top: 50%;
+                right: 8px;
+                border-top: 4px solid transparent;
+                border-right: none;
+                border-bottom: 4px solid transparent;
+                border-left: 4px solid;
+                margin-top: -4px;
+
+                @include rtl {
+                  right: auto;
+                  left: 8px;
+                  border-left: none;
+                  border-right: 4px solid;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      #{$k-top-container-navigation-item-open-submenu-class} + ul {
+        display: block;
+      }
+    }
+
+
+    /**
+     * Right aligned navigation
+     */
+
+    .k-navigation-right {
+      @include breakpoint($k-top-container-breakpoint) {
+        float: right;
+        margin-left: auto;
+
+        li ul {
+          @include breakpoint($k-top-container-breakpoint) {
+            left: auto;
+            right: 0;
+          }
+        }
+
+        li li ul {
+          @include breakpoint($k-top-container-breakpoint) {
+            left: auto;
+            right: 100%;
+          }
+        }
+      }
+
+      @include rtl {
+        @include breakpoint($k-top-container-breakpoint) {
+          float: left;
+          margin-left: 0;
+          margin-right: auto;
+
+          li ul {
+            left: 0;
+            right: auto;
+          }
+
+          li li ul {
+            left: 100%;
+            right: auto;
+          }
+        }
+      }
+    }
+  }
+
+
+  /**
+   * Mobile settings
+   */
+
+  &#{$k-top-menu-opened-class} {
+    overflow: visible;
+
+    .k-top-container__navigation {
+      display: block;
+    }
+
+    .k-wrapper {
+      #{$k-top-menu-overlay-class} {
+        z-index: 10;
+
+        @include breakpoint($k-top-container-breakpoint) {
+          z-index: -1;
+        }
+      }
+    }
+  }
+
+  &#{$k-top-menu-show-class} {
+    .k-wrapper {
+      transform: translateX(-($k-top-container-navigation-width));
+
+      @include rtl {
+        transform: translateX($k-top-container-navigation-width);
+      }
+
+      @include breakpoint($k-top-container-breakpoint) {
+        transform: translateX(0);
+      }
+
+      #{$k-top-menu-overlay-class} {
+        opacity: $k-off-canvas-overlay-right-opacity;
+
+        @include breakpoint($k-top-container-breakpoint) {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+
+  /**
+   * Toggler
+   */
+
+  .k-top-navigation-toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    border: 1px solid white;
+    background: transparent;
+    border-radius: $k-border-radius;
+    padding: 7px;
+    margin: 8px;
+
+    @include rtl {
+      right: auto;
+      left: 0;
+    }
+
+    @include breakpoint($k-top-container-breakpoint) {
+      display: none;
+    }
+  }
+}

@@ -1,193 +1,135 @@
-/*
-Table pagination
+@if ($k-molecules == true and $k-molecule-pagination != false) or $k-molecule-pagination == true {
 
-- Put right below `.k-table` container and inside `.k-table-container` container
+  /* Pagination */
 
-markup:
-<div class="k-table-pagination">
-    <div class="k-pagination">
-        <div class="k-pagination__limit">
-            <select class="k-form-control">
-                <option value="5">5</option>
-                <option value="10" selected>10</option>
-                <option value="15">15</option>
-            </select>
-        </div>
-        <ul class="k-pagination__pages">
-            <li class="k-is-active">
-                <span>1</span>
-            </li>
-            <li>
-                <a href="javascript:void(0)">2</a>
-            </li>
-            <li>
-                <a href="javascript:void(0)">3</a>
-            </li>
-            <li>
-                <a href="javascript:void(0)">4</a>
-            </li>
-            <li>
-                <a href="javascript:void(0)">5</a>
-            </li>
-            <li>
-                <a href="javascript:void(0)">»</a>
-            </li>
-        </ul>
-    </div>
-</div>
-
-Styleguide 2.21.1
-
-*/
-
-/**
- * 1. Faking a bottom border, this shadow will disappear when pagination is positioned to bottom
- */
-
-.k-table-pagination {
-  padding: $k-table-pagination-spacing;
-  background: $k-table-pagination-background;
-  @include border(top, $k-table-pagination-border);
-  @if $k-borders != false {
-    box-shadow: 0 1px 0 $k-table-pagination-border; /* 1 */
-  }
-
-  /* Flexbox */
-
-  @include flexbox {
-    flex: 0 0 auto;
-  }
-
-}
-
-.k-pagination {
-
-  /**
-   * Pagination contents
-   *
-   * 1. Align vertically
-   */
-
-  .k-pagination__limit,
-  .k-pagination__pages {
-    display: inline-block; /* 1 */
-    vertical-align: middle; /* 1 */
-  }
-
-  /**
-   * Pagination
-   *
-   * 1. Remove list-style and block-level defaults
-   * 2. Collapse white-space
-   */
-
-  .k-pagination__pages {
-    padding-left: 0;
-    margin: 0;
-    border-radius: $k-border-radius;
+  .k-pagination {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
 
 
-    /* Override for rtl ul-ol-li styling */
+    /**
+     * Pagination
+     *
+     * 1. Remove list-style and block-level defaults
+     * 2. Collapse white-space
+     */
 
-    @include rtl {
+    .k-pagination__pages {
       padding: 0;
-    }
+      margin: 0;
+      border-radius: $k-pagination-border-radius;
 
 
-    /* Contents */
-
-    & > li {
-      display: inline; /* 1 */
-
-      & > a,
-      & > span {
-        display: block;
-        position: relative;
-        float: left; /* 2 */
-        padding: $k-spacing-base-vertical $k-spacing-base-horizontal;
-        line-height: $k-line-height;
-        text-decoration: none;
-        color: $k-pagination-color;
-        background-color: $k-pagination-background;
-        border: 1px solid $k-pagination-border;
-        margin-left: -1px;
-      }
+      /**
+       * Override for rtl ul-ol-li styling
+       */
 
       @include rtl {
-        & > a,
-        & > span {
-          float: right;
-          margin-left: 0;
-          margin-right: -1px;
-        }
+        padding: 0;
       }
 
-      &:first-child {
+
+      /**
+       * Contents
+       */
+
+      & > li {
+        display: inline; /* 1 */
+
         & > a,
         & > span {
-          margin-left: 0;
-          @include border-left-radius($k-border-radius);
+          display: block;
+          position: relative;
+          float: left; /* 2 */
+          padding: $k-pagination-spacing;
+          line-height: $k-pagination-line-height;
+          text-decoration: none;
+          color: $k-pagination-color;
+          background-color: $k-pagination-background;
+          border: 1px solid $k-pagination-border;
+          margin-left: -1px;
         }
 
         @include rtl {
           & > a,
           & > span {
-            margin-right: 0;
-            @include border-left-radius(0);
-            @include border-right-radius($k-border-radius);
+            float: right;
+            margin-left: 0;
+            margin-right: -1px;
           }
         }
-      }
 
-      &:last-child {
-        & > a,
-        & > span {
-          @include border-right-radius($k-border-radius);
+        &:first-child {
+          & > a,
+          & > span {
+            margin-left: 0;
+            @include border-left-radius($k-pagination-border-radius);
+          }
 
           @include rtl {
-            @include border-right-radius(0);
-            @include border-left-radius($k-border-radius);
+            & > a,
+            & > span {
+              margin-right: 0;
+              @include border-left-radius(0);
+              @include border-right-radius($k-pagination-border-radius);
+            }
           }
+        }
+
+        &:last-child {
+          & > a,
+          & > span {
+            @include border-right-radius($k-pagination-border-radius);
+
+            @include rtl {
+              @include border-right-radius(0);
+              @include border-left-radius($k-pagination-border-radius);
+            }
+          }
+        }
+      }
+
+      & > li > a,
+      & > li > span {
+        &:hover,
+        &:focus {
+          z-index: 2;
+          color: $k-pagination-hover-color;
+          background-color: $k-pagination-hover-background;
+          border-color: $k-pagination-hover-border;
+        }
+      }
+
+      & > #{$k-pagination-active-class} > a,
+      & > #{$k-pagination-active-class} > span {
+        &,
+        &:hover,
+        &:focus {
+          z-index: 3;
+          color: $k-pagination-active-color;
+          background-color: $k-pagination-active-background;
+          border-color: $k-pagination-active-border;
+          cursor: default;
         }
       }
     }
 
-    & > li > a,
-    & > li > span {
-      &:hover,
-      &:focus {
-        z-index: 2;
-        color: $k-pagination-hover-color;
-        background-color: $k-pagination-hover-background;
-        border-color: $k-pagination-hover-border;
+
+    /**
+     * Limit
+     */
+
+    select {
+      height: $k-table-pagination-height;
+      width: auto;
+      margin: 0;
+      margin-right: $k-table-pagination-spacing;
+
+      @include rtl {
+        margin-right: auto;
+        margin-left: $k-table-pagination-spacing;
       }
-    }
-
-    & > .k-is-active > a,
-    & > .k-is-active > span {
-      &,
-      &:hover,
-      &:focus {
-        z-index: 3;
-        color: $k-pagination-active-color;
-        background-color: $k-pagination-active-background;
-        border-color: $k-pagination-active-border;
-        cursor: default;
-      }
-    }
-  }
-
-  /* Limit */
-
-  select {
-    height: $k-table-pagination-height;
-    width: auto;
-    margin: 0;
-    margin-right: $k-table-pagination-spacing;
-
-    @include rtl {
-      margin-right: auto;
-      margin-left: $k-table-pagination-spacing;
     }
   }
 }

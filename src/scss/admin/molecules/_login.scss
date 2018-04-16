@@ -1,0 +1,64 @@
+@if ($k-molecules == true and $k-molecule-login != false) or $k-molecule-login == true {
+
+  /* ==========================================================================
+     Login screen
+     ========================================================================== */
+
+  /**
+   * Login window
+   *
+   * 1. Horizontal and vertical centering
+   */
+
+  .k-login {
+    width: 100%;
+    max-width: $k-login-width;
+    height: auto;
+    margin: auto;
+    display: inline-block; /* 1 */
+    vertical-align: middle; /* 1 */
+    flex: 0 0 auto;
+  }
+
+
+  /**
+   * Brand
+   */
+
+  .k-login__brand {
+    display: block;
+    height: auto;
+    width: auto;
+    max-width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: $k-login-spacing;
+    font-size: $k-login-font-size;
+
+    img {
+      max-height: 100%;
+      vertical-align: middle;
+    }
+  }
+
+
+  /**
+   * Form
+   */
+
+  .k-login__content {
+    background: $k-login-background;
+    color: $k-login-color;
+    width: 100%;
+    border-radius: $k-login-border-radius;
+    padding: $k-login-spacing;
+    box-shadow: $k-login-box-shadow;
+    text-align: left;
+    white-space: normal;
+
+    @include rtl {
+      text-align: right;
+    }
+  }
+}

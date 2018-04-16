@@ -1,0 +1,52 @@
+@if ($k-utilities == true and $k-utility-position != false) or $k-utility-position == true {
+
+  /* Position
+     ========================================================================== */
+
+  /**
+   * Static positioned element
+   */
+
+  .k-position-static {
+    position: static;
+  }
+
+
+  /**
+   * Relative positioned element
+   */
+
+  .k-position-relative {
+    position: relative;
+  }
+
+
+  /**
+   * Absolute positioned element
+   */
+
+  .k-position-absolute {
+    position: absolute;
+  }
+
+
+  /**
+   * Fixed positioned element
+   */
+
+  .k-position-fixed {
+    position: fixed;
+  }
+
+
+  /**
+   * Sticky positioned element
+   *
+   * Has top: 0; to ensure sticky works
+   */
+
+  .k-position-sticky {
+    position: sticky;
+    top: 0;
+  }
+}

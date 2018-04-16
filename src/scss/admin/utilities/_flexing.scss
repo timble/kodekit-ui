@@ -1,0 +1,60 @@
+@if ($k-utilities == true and $k-utility-flexing != false) or $k-utility-flexing == true {
+
+  /* Flexing
+     ========================================================================== */
+
+  /**
+   * DO or don't flexing children. USeful inside flexing containers on elemtns that have no pre-defined styling for flexbox
+   */
+
+  .k-flexbox.k-flexbox.k-flexbox {
+    display: flex;
+  }
+
+  .k-flexbox-column.k-flexbox-column.k-flexbox-column {
+    flex-direction: column;
+  }
+
+  .k-dont-flex.k-dont-flex.k-dont-flex {
+    flex: 0 0 auto;
+  }
+
+  .k-do-flex.k-do-flex.k-do-flex {
+    flex: 1 1 auto;
+  }
+
+
+  /**
+   * Start at different breakpoints
+   */
+
+  @include breakpoint($k-beta) {
+    .k-flexbox-from-beta.k-flexbox-from-beta.k-flexbox-from-beta {
+      display: flex;
+    }
+    .k-flexbox-column-from-beta.k-flexbox-column-from-beta.k-flexbox-column-from-beta {
+      flex-direction: column;
+    }
+    .k-do-flex-from-beta.k-do-flex-from-beta.k-do-flex-from-beta {
+      flex: 1 1 auto;
+    }
+    .k-dont-flex-from-beta.k-dont-flex-from-beta.k-dont-flex-from-beta {
+      flex: 0 0 auto;
+    }
+  }
+
+  @include breakpoint($k-charlie) {
+    .k-flexbox-from-charlie.k-flexbox-from-charlie.k-flexbox-from-charlie {
+      display: flex;
+    }
+    .k-flexbox-column-from-charlie.k-flexbox-column-from-charlie.k-flexbox-column-from-charlie {
+      flex-direction: column;
+    }
+    .k-do-flex-from-charlie.k-do-flex-from-charlie.k-do-flex-from-charlie {
+      flex: 1 1 auto;
+    }
+    .k-dont-flex-from-charlie.k-dont-flex-from-charlie.k-dont-flex-from-charlie {
+      flex: 0 0 auto;
+    }
+  }
+}

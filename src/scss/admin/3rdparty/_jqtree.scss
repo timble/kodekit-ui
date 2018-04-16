@@ -1,0 +1,233 @@
+@if ($k-molecules == true and $k-molecule-tree != false) or $k-molecule-tree == true {
+
+  /* Tree
+     ========================================================================== */
+
+  .k-tree {
+    @include clearfix;
+    margin: $k-tree-spacing 0;
+    overflow: auto;
+    display: flex;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .jqtree-element {
+      padding: 0 $k-tree-element-end-spacing 0 $k-tree-element-start-spacing;
+
+      @include rtl {
+        padding: 0 $k-tree-element-start-spacing 0 $k-tree-element-end-spacing;
+      }
+
+      &:hover,
+      &:focus {
+        background: $k-tree-element-hover-background;
+      }
+    }
+
+    & > .jqtree-tree {
+      margin: 0;
+      padding: 0;
+
+      & > .jqtree_common {
+        & > .jqtree-element {
+          padding-left: 15px;
+
+          @include rtl {
+            padding-left: $k-tree-element-end-spacing;
+            padding-right: 15px;
+          }
+        }
+      }
+    }
+
+    .jqtree-selected {
+      & > .jqtree-element {
+        background: $k-tree-selected-background;
+        color: $k-tree-selected-color;
+      }
+
+      &:hover {
+        & > .jqtree-element {
+          background: dark($k-tree-selected-background);
+        }
+      }
+    }
+  }
+
+  .k-sidebar-item {
+    .k-tree {
+      & > .jqtree-tree {
+        & > .jqtree-folder {
+          .jqtree-element {
+            padding-left: $k-tree-element-start-spacing;
+
+            @include rtl {
+              padding-left: $k-tree-element-end-spacing;
+              padding-right: $k-tree-element-start-spacing;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .jqtree-tree {
+    @include reset;
+    flex-grow: 1;
+
+
+    /* Reset default ul li styling */
+
+    ul {
+      @include reset;
+      @include clearfix;
+      float: left;
+      min-width: 100%;
+    }
+
+    @include rtl {
+      &.jqtree-tree {
+        padding: 0;
+      }
+
+      &, ul {
+        float: right;
+        padding: 0;
+      }
+    }
+  }
+
+  .jqtree-folder {
+    @include clearfix;
+  }
+
+  .jqtree-element {
+    position: relative;
+    display: block;
+    width: 100%;
+    font-size: 0;
+    padding: 0;
+    white-space: nowrap;
+    height: auto;
+    cursor: pointer;
+
+    a {
+      padding: 0;
+      background: transparent;
+    }
+
+    .jqtree-toggler {
+      height: 0;
+      padding-top: $k-tree-size;
+      overflow: hidden;
+      color: inherit;
+    }
+  }
+
+  .jqtree-whitespace,
+  .jqtree-toggler,
+  .jqtree-icon,
+  .jqtree-title {
+    display: inline-block;
+    font-size: $k-font-size;
+    line-height: $k-tree-size;
+    height: $k-tree-size;
+    vertical-align: middle;
+  }
+
+  .jqtree-whitespace,
+  .jqtree-toggler,
+  .jqtree-icon {
+    width: $k-tree-size;
+    text-align: center;
+  }
+
+  .jqtree-icon {
+    &:before {
+      line-height: $k-tree-size;
+    }
+  }
+
+  .k-tree {
+    li li {
+      .jqtree-whitespace + .jqtree_common:not(.jqtree-toggler) {
+        @include pseudo(after) {
+          width: 6px;
+          height: 6px;
+          border-left: 1px solid;
+          border-bottom: 1px solid #aaa;
+          top: 50%;
+          margin-top: -3px;
+          left: -(($k-tree-size / 2) + 3px);
+
+          @include rtl {
+            border-left: none;
+            border-right: 1px solid #aaa;
+            left: auto;
+            right: -(($k-tree-size / 2) + 3px);
+          }
+        }
+      }
+    }
+  }
+
+  .jqtree-toggler {
+    @include pseudo(before) {
+      top: 50%;
+      left: 50%;
+      margin-top: -(round($k-tree-toggle-size / 2) - 1px);
+      margin-left: -($k-tree-toggle-size);
+      @include caret(bottom, $k-tree-toggle-size);
+      @include transition;
+
+      // @include rtl { works fine without RTL }
+    }
+
+    &:hover,
+    &:focus {
+      &:before {
+        border-top-color: black;
+      }
+    }
+
+    &.jqtree-closed {
+      &:before {
+        transform: rotate(-90deg);
+
+        @include rtl {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+
+  .jqtree-selected {
+    & > .jqtree-element {
+      font-weight: $k-tree-selected-font-weight;
+    }
+
+    & > .jqtree_common > .jqtree-toggler {
+      &:hover {
+        color: $k-tree-selected-color;
+
+        &:before {
+          border-top-color: $k-tree-selected-color;
+        }
+      }
+    }
+  }
+
+  .jqtree-closed {
+    ul {
+      display: none;
+    }
+  }
+
+  .jqtree--one-level {
+    .jqtree-whitespace {
+      display: none;
+    }
+  }
+}

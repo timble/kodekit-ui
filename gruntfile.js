@@ -12,33 +12,77 @@ module.exports = function(grunt) {
         // Grunt variables
         srcPath: 'src',
         distPath: 'dist',
-        jquery: [
-            'node_modules/jquery/dist/jquery.js',
-            '<%= srcPath %>/js/koowa.noconflict.js'
-        ],
-        admin: [
-            '<%= srcPath %>/js/kquery.set.js',
-            'node_modules/select2/dist/js/select2.full.js',
-            'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
-            'node_modules/footable/js/footable.js',
-            'node_modules/jqtree/tree.jquery.js',
-            '<%= srcPath %>/js/custom-file-input.js',
-            '<%= srcPath %>/js/bootstrap-dropdown.js',
-            '<%= srcPath %>/js/bootstrap-tab.js',
-            '<%= srcPath %>/js/bootstrap-tooltip.js',
-            '<%= srcPath %>/js/jquery.ui.widget.js',
-            '<%= srcPath %>/js/koowa.scopebar.js',
-            '<%= srcPath %>/js/koowa.class.js',
-            '<%= srcPath %>/js/koowa.grid.js',
-            '<%= srcPath %>/js/koowa.tree.js',
-            '<%= srcPath %>/js/datepicker.js',
-            '<%= srcPath %>/js/overflowing.js',
-            '<%= srcPath %>/js/tabbable.js',
-            '<%= srcPath %>/js/off-canvas-menu.js',
-            '<%= srcPath %>/js/konami.js',
-            '<%= srcPath %>/js/main.js',
-            '<%= srcPath %>/js/kquery.unset.js'
-        ],
+
+
+        // Copy
+        copy: {
+            main: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'node_modules/select2/src/scss',
+                        src: '**',
+                        dest: '<%= srcPath %>/scss/admin/3rdparty/copied/select2'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'node_modules/select2-bootstrap-theme/src',
+                        src: '*.scss',
+                        dest: '<%= srcPath %>/scss/admin/3rdparty/copied/select2-bootstrap-theme'
+                    }
+                ]
+            }
+        },
+
+
+        // Compile sass files
+        sass: {
+            dist: {
+                files: {
+                    '<%= distPath %>/css/admin.css': '<%= srcPath %>/scss/admin-ui.scss'
+                }
+            },
+            options: {
+                includePaths: [
+                    'node_modules'
+                ],
+                outputStyle: 'expanded',
+                sourceMap: false
+            }
+        },
+
+
+        // Autoprefixer
+        autoprefixer: {
+            options: {
+                browsers: ['> 5%', 'last 2 versions']
+            },
+            files: {
+                expand: true,
+                flatten: true,
+                src: '<%= distPath %>/css/*.css',
+                dest: '<%= distPath %>/css/'
+            }
+        },
+
+
+        // Minify and clean CSS
+        cssmin: {
+            options: {
+                roundingPrecision: -1,
+                sourceMap: false
+            },
+            site: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= distPath %>/css',
+                    src: ['*.css', '!*.min.css'],
+                    dest: '<%= distPath %>/css',
+                    ext: '.min.css'
+                }]
+            }
+        },
+
 
         // Iconfont
         webfont: {
@@ -48,7 +92,7 @@ module.exports = function(grunt) {
                     '<%= srcPath %>/icons/*.svg'
                 ],
                 dest: '<%= distPath %>/fonts/k-icons',
-                destCss: '<%= srcPath %>/scss/utilities',
+                destCss: '<%= srcPath %>/scss/admin/generated',
                 options: {
                     codepointsFile: '<%= srcPath %>/fonts/k-icons-codepoints',
                     font: 'k-icons',
@@ -67,7 +111,7 @@ module.exports = function(grunt) {
         modernizr: {
             dist: {
                 "cache": true,
-                "dest": "<%= distPath %>/js/build/modernizr.js",
+                "dest": "<%= distPath %>/js/modernizr.js",
                 "options": [
                     "html5shiv",
                     "prefixedCSS",
@@ -103,13 +147,91 @@ module.exports = function(grunt) {
                         if (filepath.match('footable.js')) {
                             return '(function($) { var jQuery = $;'+src+'})(jQuery);';
                         }
-
                         return src;
-                    },
+                    }
                 },
                 files: {
-                    '<%= distPath %>/js/build/jquery.js': '<%= jquery %>',
-                    '<%= distPath %>/js/build/admin.js': '<%= admin %>'
+                    '<%= distPath %>/js/bootstrap.js': [
+                        '<%= srcPath %>/js/bootstrap.js'
+                    ],
+                    '<%= distPath %>/js/jquery.js': [
+                        'node_modules/jquery/dist/jquery.js',
+                        '<%= srcPath %>/js/koowa.noconflict.js'
+                    ],
+                    '<%= distPath %>/js/jquery.magnific-popup.js': [
+                        '<%= srcPath %>/js/kquery.set.js',
+                        'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
+                        '<%= srcPath %>/js/kquery.unset.js'
+                    ],
+                    '<%= distPath %>/js/jquery.validate.js': [
+                        '<%= srcPath %>/js/kquery.set.js',
+                        'node_modules/jquery-validation/dist/jquery.validate.js',
+                        '<%= srcPath %>/js/jquery.validate.patch.js',
+                        '<%= srcPath %>/js/kquery.unset.js'
+                    ],
+                    '<%= distPath %>/js/koowa.datepicker.js': [
+                        '<%= srcPath %>/js/kquery.set.js',
+                        '<%= srcPath %>/js/datepicker.js',
+                        '<%= srcPath %>/js/kquery.unset.js'
+                    ],
+                    '<%= distPath %>/js/koowa.select2.js': [
+                        '<%= srcPath %>/js/kquery.set.js',
+                        'node_modules/select2/dist/js/select2.full.js',
+                        '<%= srcPath %>/js/kquery.unset.js'
+                    ],
+                    '<%= distPath %>/js/koowa.tree.js': [
+                        '<%= srcPath %>/js/kquery.set.js',
+                        'node_modules/jqtree/tree.jquery.js',
+                        '<%= srcPath %>/js/koowa.tree.js',
+                        '<%= srcPath %>/js/kquery.unset.js'
+                    ],
+                    '<%= distPath %>/js/koowa.js': [
+                        '<%= srcPath %>/js/kquery.set.js',
+                        '<%= srcPath %>/js/jquery.ui.widget.js',
+                        '<%= srcPath %>/js/koowa.scopebar.js',
+                        '<%= srcPath %>/js/koowa.class.js',
+                        '<%= srcPath %>/js/koowa.grid.js',
+                        '<%= srcPath %>/js/koowa.js',
+                        '<%= srcPath %>/js/kquery.unset.js'
+                    ],
+                    '<%= distPath %>/js/tooltip.js': [
+                        '<%= srcPath %>/js/kquery.set.js',
+                        '<%= srcPath %>/js/bootstrap-tooltip.js',
+                        '<%= srcPath %>/js/kquery.unset.js'
+                    ],
+                    '<%= distPath %>/js/admin.js': [
+                        '<%= srcPath %>/js/kquery.set.js',
+                        'node_modules/select2/dist/js/select2.full.js',
+                        'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
+                        'node_modules/footable/js/footable.js',
+                        'node_modules/jqtree/tree.jquery.js',
+                        '<%= srcPath %>/js/bootstrap-dropdown.js',
+                        '<%= srcPath %>/js/bootstrap-tab.js',
+                        '<%= srcPath %>/js/bootstrap-tooltip.js',
+                        '<%= srcPath %>/js/jquery.ui.widget.js',
+                        '<%= srcPath %>/js/koowa.scopebar.js',
+                        '<%= srcPath %>/js/koowa.class.js',
+                        '<%= srcPath %>/js/koowa.grid.js',
+                        '<%= srcPath %>/js/koowa.tree.js',
+                        '<%= srcPath %>/js/datepicker.js',
+                        '<%= srcPath %>/js/ui.konami.js',
+                        '<%= srcPath %>/js/ui.custom-file-input.js',
+                        '<%= srcPath %>/js/ui.tabbable.js',
+                        '<%= srcPath %>/js/ui.off-canvas-menu.js',
+                        '<%= srcPath %>/js/ui.ajaxloading.js',
+                        '<%= srcPath %>/js/ui.dragger.js',
+                        '<%= srcPath %>/js/ui.gallery.js',
+                        '<%= srcPath %>/js/ui.sidebartoggle.js',
+                        '<%= srcPath %>/js/ui.scopebartoggles.js',
+                        '<%= srcPath %>/js/ui.subcontenttoggle.js',
+                        '<%= srcPath %>/js/ui.topnavigation.js',
+                        '<%= srcPath %>/js/ui.tabs-scroller.js',
+                        '<%= srcPath %>/js/ui.main.js',
+                        '<%= srcPath %>/js/kquery.unset.js'
+                    ],
+                    '<%= distPath %>/js/kui-initialize.js': [
+                        '<%= srcPath %>/js/ui.initialize.js'
+                    ]
                 }
             }
         },
@@ -118,15 +240,18 @@ module.exports = function(grunt) {
         // Uglify
         uglify: {
             options: {
-                sourceMap: true,
+                sourceMap: false,
                 preserveComments: /(?:^!|@(?:license|preserve|cc_on))/ // preserve @license tags
             },
             build: {
-                files: {
-                    '<%= distPath %>/js/min/modernizr.js': '<%= distPath %>/js/build/modernizr.js',
-                    '<%= distPath %>/js/min/jquery.js': '<%= distPath %>/js/build/jquery.js',
-                    '<%= distPath %>/js/min/admin.js': '<%= distPath %>/js/build/admin.js'
-                }
+                files: [{
+                    expand: true,
+                    cwd: '<%= distPath %>/js',
+                    src: ['*.js', '!*.min.js'],
+                    dest: '<%= distPath %>/js',
+                    ext: '.min.js',
+                    extDot: 'last'
+                }]
             }
         },
 
@@ -142,6 +267,17 @@ module.exports = function(grunt) {
                 options: {
                     interrupt: true,
                     atBegin: false
+                }
+            },
+            sass: {
+                files: [
+                    '<%= srcPath %>/scss/*.scss',
+                    '<%= srcPath %>/scss/**/*.scss'
+                ],
+                tasks: ['sass', 'autoprefixer', 'cssmin'],
+                options: {
+                    interrupt: true,
+                    atBegin: true
                 }
             },
             javascript: {
@@ -170,7 +306,7 @@ module.exports = function(grunt) {
     });
 
     // The dev task will be used during development
-    grunt.registerTask('default', ['modernizr', 'watch']);
+    grunt.registerTask('default', ['copy', 'modernizr', 'watch']);
 
     // JS only
     grunt.registerTask('js', ['watch:concat']);

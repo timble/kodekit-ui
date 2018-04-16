@@ -1,0 +1,114 @@
+@if ($k-layout == true and $k-layout-content-area != false) or $k-layout-content-area == true {
+
+  /* Content area
+     ========================================================================== */
+
+  .k-content-area {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex: 1 1 auto;
+    width: auto;
+    min-height: 0;
+    backface-visibility: hidden;
+    @include transition(transform);
+
+    @at-root .k-is-transitioning & {
+      z-index: 3;
+    }
+  }
+
+
+  /**
+   * Toggling the subcontent area
+   */
+
+  #{$k-subcontent-show-class} {
+    .k-button.k-subcontent-toggle {
+      opacity: 1;
+    }
+
+    .k-content-area__child {
+      transform: translateX(-100%) translateX(48px);
+
+      @include breakpoint($k-delta) {
+        transform: none;
+      }
+
+      @include rtl {
+        transform: translateX(100%) translateX(-48px);
+
+        @include breakpoint($k-delta) {
+          transform: none;
+        }
+      }
+    }
+
+    #{$k-subcontent-overlay-class} {
+      opacity: $k-off-canvas-overlay-subcontent-opacity;
+
+      @include breakpoint($k-delta) {
+        opacity: 0;
+      }
+    }
+  }
+
+  #{$k-subcontent-opened-class} {
+    .k-content-area {
+      z-index: 3;
+    }
+
+    .k-button.k-subcontent-toggle {
+      visibility: visible;
+      z-index: 10;
+    }
+
+    #{$k-subcontent-overlay-class} {
+      z-index: 9;
+
+      @include breakpoint($k-delta) {
+        z-index: -1;
+      }
+    }
+  }
+
+
+  /**
+   * Content area children
+   *
+   * 1. for breadcrumbs to work properly
+   */
+
+  .k-content-area__child {
+    position: relative;
+    display: none;
+    flex: 1 1 auto;
+    width: auto;
+    min-height: 0;
+    overflow: visible;
+    max-width: 100%; /* 1 */
+    backface-visibility: hidden;
+    @include transition(transform);
+
+    &.k-is-active {
+      display: flex;
+    }
+
+    &:nth-last-child(2):first-child,
+    &:only-child {
+      display: flex;
+    }
+
+
+    /**
+     * Inherit z-index to make sure toggle button wins over the overlay
+     */
+
+    // To test have a left sidebar and make sure not to have a k-title-bar so
+    // the toggle button will be added to the toolbar instead
+
+    .k-content {
+      z-index: inherit;
+    }
+  }
+}

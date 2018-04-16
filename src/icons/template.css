@@ -1,36 +1,38 @@
-/* Custom icon font
-   ========================================================================== */
+@if ($k-generated == true and $k-generated-icon != false) or $k-generated-icon == true {
 
-// The placeholders in this file are being replaced with real values by grunt-webfont
+  /* Custom icon font
+     ========================================================================== */
 
-
-/* @font-face */
-
-@font-face {
-  font-family: "<%= fontBaseName %>";
-  src:    url("#{$icon-path}/<%= fontBaseName %>/<%= fontBaseName %>.eot");
-  src:    url("#{$icon-path}/<%= fontBaseName %>/<%= fontBaseName %>.eot?#iefix") format("embedded-opentype"),
-  url("#{$icon-path}/<%= fontBaseName %>/<%= fontBaseName %>.woff") format("woff"),
-  url("#{$icon-path}/<%= fontBaseName %>/<%= fontBaseName %>.ttf") format("truetype"),
-  url("#{$icon-path}/<%= fontBaseName %>/<%= fontBaseName %>.svg#<%= fontBaseName %>") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
+  // The placeholders in this file are being replaced with real values by grunt-webfont
 
 
-/**
- * Use SVG
- *
- * Always use SVG on touch / mobile
- */
+  /* @font-face */
 
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
     font-family: "<%= fontBaseName %>";
-    src: url("#{$icon-path}/<%= fontBaseName %>/<%= fontBaseName %>.svg#<%= fontBaseName %>") format("svg");
+    src:    url("#{$k-icon-path}/<%= fontBaseName %>/<%= fontBaseName %>.eot");
+    src:    url("#{$k-icon-path}/<%= fontBaseName %>/<%= fontBaseName %>.eot?#iefix") format("embedded-opentype"),
+    url("#{$k-icon-path}/<%= fontBaseName %>/<%= fontBaseName %>.woff") format("woff"),
+    url("#{$k-icon-path}/<%= fontBaseName %>/<%= fontBaseName %>.ttf") format("truetype"),
+    url("#{$k-icon-path}/<%= fontBaseName %>/<%= fontBaseName %>.svg#<%= fontBaseName %>") format("svg");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+
+  /**
+   * Use SVG
+   *
+   * Always use SVG on touch / mobile
+   */
+
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    @font-face {
+      font-family: "<%= fontBaseName %>";
+      src: url("#{$k-icon-path}/<%= fontBaseName %>/<%= fontBaseName %>.svg#<%= fontBaseName %>") format("svg");
+    }
   }
 }
-
 
 // Placeholder
 // To be used in mixins
@@ -67,32 +69,11 @@ $icons: (<% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { %>
   <%= glyphs[glyphIdx] %>: "<% if (addLigatures) { %><%= glyphs[glyphIdx] %><% } else { %>\<%= codepoints[glyphIdx] %><% } %>",<% } %>);
 
 
-// Test if the list conatins a certain value
+// Test if the list contains a certain value
 @function contains($list, $var) {
   @return (null != index($list, $var));
 }
 
-/**
- * Icon classes
- *
- * Creating a class name for each individual icon to be used in markup like:
- * <span class="k-icon-circle"></span>
- */
-
-@each $name, $icon in $icons {
-  .<%= classPrefix %>#{$name} {
-    @extend %icon;
-    &:before {
-      content: "#{$icon}";
-
-      @if contains($rtlicons, $name) {
-        @include rtl {
-          @include flip-item;
-        }
-      }
-    }
-  }
-}
 
 
 // 'Icon before' mixin
@@ -103,7 +84,7 @@ $icons: (<% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { %>
     @if $icon {
       content: "#{map-get($icons, $icon)}";
 
-      @if contains($rtlicons, $icon) {
+      @if contains($k-rtlicons, $icon) {
         @include rtl {
           @include flip-item;
         }
@@ -125,7 +106,7 @@ $icons: (<% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { %>
     @if $icon {
       content: "#{map-get($icons, $icon)}";
 
-      @if contains($rtlicons, $icon) {
+      @if contains($k-rtlicons, $icon) {
         @include rtl {
           @include flip-item;
         }
@@ -135,5 +116,29 @@ $icons: (<% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { %>
       @extend %icon;
     }
     @content;
+  }
+}
+
+@if ($k-generated == true and $k-generated-icon != false) or $k-generated-icon == true {
+  /**
+   * Icon classes
+   *
+   * Creating a class name for each individual icon to be used in markup like:
+   * <span class="k-icon-circle"></span>
+   */
+
+  @each $name, $icon in $icons {
+    .<%= classPrefix %>#{$name} {
+      @extend %icon;
+      &:before {
+        content: "#{$icon}";
+
+        @if contains($k-rtlicons, $name) {
+          @include rtl {
+            @include flip-item;
+          }
+        }
+      }
+    }
   }
 }

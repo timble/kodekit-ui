@@ -1,0 +1,13 @@
+@if ($k-utilities == true and $k-utility-unavailable != false) or $k-utility-unavailable == true {
+
+  /* Unavailable
+     ========================================================================== */
+
+  .k-unavailable,
+  .k-is-unavailable {
+    filter: grayscale(100%);
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: no-drop;
+  }
+}

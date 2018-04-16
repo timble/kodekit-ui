@@ -1,0 +1,106 @@
+@if ($k-molecules == true and $k-molecule-alert != false) or $k-molecule-alert == true {
+
+  /* Alerts
+     ========================================================================== */
+
+  .k-alert {
+    position: relative;
+    overflow: hidden;
+    padding: $k-alert-spacing $k-alert-close-size $k-alert-spacing $k-alert-spacing;
+    line-height: $k-line-height;
+    flex: 0 0 auto;
+    @include content-block;
+
+    @include rtl {
+      padding: $k-alert-spacing $k-alert-spacing $k-alert-spacing $k-alert-close-size;
+    }
+
+    a {
+      color: inherit;
+    }
+  }
+
+
+  /**
+   * Overflowing alert with 33% max-height
+   */
+
+  .k-alert--overflow {
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: $k-alert-overflow-max-height;
+
+
+    /**
+     * Add vh max-height unit for dynamic sizing
+     */
+
+    @supports (max-height: 100vh) {
+      max-height: $k-alert-overflow-max-height-vh;
+    }
+  }
+
+
+  /**
+   * Fixed alert
+   */
+
+  .k-alert--fixed {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+
+  /**
+   * Alternate styles
+   */
+
+  .k-alert--success {
+    @include alert-variant($k-alert-success-background, $k-alert-success-color);
+  }
+
+  .k-alert--info {
+    @include alert-variant($k-alert-info-background, $k-alert-info-color);
+  }
+
+  .k-alert--warning {
+    @include alert-variant($k-alert-warning-background, $k-alert-warning-color);
+  }
+
+  .k-alert--danger {
+    @include alert-variant($k-alert-danger-background, $k-alert-danger-color);
+  }
+
+
+  /**
+   * Close button
+   */
+
+  .k-alert__close {
+    @include reset;
+    position: absolute;
+    top: $k-alert-close-spacing;
+    right: $k-alert-close-spacing;
+    overflow: hidden;
+    width: $k-alert-close-size;
+    height: 0;
+    padding-top: $k-alert-close-size;
+    color: inherit;
+    font-size: 16px;
+
+    @include pseudo(after, false, $content: '✕') {
+      line-height: 1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @include rtl {
+      right: auto;
+      left: $k-alert-close-spacing;
+    }
+  }
+}

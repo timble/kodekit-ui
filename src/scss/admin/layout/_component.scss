@@ -1,98 +1,94 @@
-/* Component
-   ========================================================================== */
+@if ($k-layout == true and $k-layout-component != false) or $k-layout-component == true {
 
-/*
-Component
+  /* Component
+     ========================================================================== */
 
-- Use as <b>child</b> of the `.k-component-wrapper` container only
-- Can have a `.k-sidebar-right` as next sibling
-- {unsureText}
+  /**
+   * 1. Needed for the off-canvas-overlay
+   * 2. Reset for when item is a form
+   * 3. Set transition for off canvas sidebar
+   */
 
-markup:
-<div class="k-component">
-    ...
-</div><!-- .k-component -->
-
-Styleguide 3.6
-
-*/
-
-/**
- * 1. Needed for the off-canvas-overlay
- * 2. Reset for when item is a form
- * 3. Set transition for off canvas sidebar
- */
-
-.k-component {
-  position: relative; /* 1 */
-  z-index: 2; /* 1 */
-  background: $k-component-background;
-  margin: 0; /* 2 */
-  padding: 0; /* 2 */
-  @include transition(transform); /* 3 */
-
-  @include flexbox {
+  .k-component {
+    position: relative; /* 1 */
+    background: $k-component-background;
+    margin: 0; /* 2 */
+    padding: 0; /* 2 */
     display: flex;
     flex-direction: column;
     flex: 1 1 auto;
     overflow: auto;
-  }
+    backface-visibility: hidden;
+    @include transition(transform); /* 3 */
 
-  @include resizing {
-    overflow: hidden;
-  }
-}
+    @include resizing {
+      overflow: hidden;
+    }
 
-
-/**
- * Container when toggled
- *
- * 1. Set left to the negative width of the sidebar so the sidebar will appear
- * 2. Reset when screen is wide enough
- */
-
-.k-show-right-menu {
-  .k-component {
-    transform: translate(-($k-sidebar-right-width), 0); /* 1 */
-
-    @include breakpoint($k-sidebar-right-querie-width) {
-      transform: translate(0, 0); /* 2 */
+    @at-root .k-is-transitioning & {
+      z-index: 2;
     }
   }
 
-  @include rtl {
+
+  /**
+   * Container when toggled
+   *
+   * 1. Set left to the negative width of the sidebar so the sidebar will appear
+   * 2. Reset when screen is wide enough
+   */
+
+  #{$k-right-menu-show-class} {
     .k-component {
-      transform: translate($k-sidebar-right-width, 0);
+      transform: translateX(-($k-sidebar-right-width));
 
       @include breakpoint($k-sidebar-right-querie-width) {
-        transform: translate(0, 0);
+        transform: translateX(0); /* 2 */
+      }
+    }
+
+    @include rtl {
+      .k-component {
+        transform: translateX($k-sidebar-right-width);
+
+        @include breakpoint($k-sidebar-right-querie-width) {
+          transform: translateX(0);
+        }
+      }
+    }
+
+
+    /**
+     * Set opacity
+     */
+
+    .k-component {
+      #{$k-right-menu-overlay-class} {
+        opacity: $k-off-canvas-overlay-right-opacity; /* 1 */
+
+        @include breakpoint($k-sidebar-right-querie-width) {
+          opacity: 0;
+        }
       }
     }
   }
 
 
   /**
-   * Set opacity
+   * Overlay when toggled
+   *
+   * 1. Set z-index so it will become visible
    */
 
-  .k-component {
-    .k-off-canvas-overlay {
-      opacity: $k-off-canvas-overlay-opacity; /* 1 */
-    }
-  }
-}
+  #{$k-right-menu-opened-class} {
+    .k-component {
+      #{$k-right-menu-overlay-class} {
+        z-index: 9; /* 1 */
 
-
-/**
- * Overlay when toggled
- *
- * 1. Set z-index so it will become visible
- */
-
-.k-is-opened-right {
-  .k-component {
-    .k-off-canvas-overlay {
-      z-index: 9; /* 1 */
+        @include breakpoint($k-sidebar-right-querie-width) {
+          z-index: -1;
+        }
+      }
     }
   }
 }

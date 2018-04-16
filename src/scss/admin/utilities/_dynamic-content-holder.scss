@@ -1,0 +1,13 @@
+@if ($k-utilities == true and $k-utility-dynamic-holder != false) or $k-utility-dynamic-holder == true {
+
+  /* Dynamic content holder
+     ========================================================================== */
+
+  /**
+   * Add `<script>` and other hidden content (like modals) inside this div so the elements won't be in the way for flexbox
+   */
+
+  .k-dynamic-content-holder.k-dynamic-content-holder.k-dynamic-content-holder {
+    display: none;
+  }
+}

@@ -1,0 +1,17 @@
+@if ($k-utilities == true and $k-utility-animation != false) or $k-utility-animation == true {
+
+  /**
+   * Component animations
+   *
+   * Used for Bootstrap tooltips
+   */
+
+  .fade {
+    opacity: 0;
+    @include transition(opacity, 0.5s, $k-transition-easing);
+
+    &.in {
+      opacity: 1;
+    }
+  }
+}

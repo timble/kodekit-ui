@@ -1,0 +1,15 @@
+// Darken a color with a certain percentage
+// Doing this by using a function makes sure we can change all the 'darken'
+// values in the whole project at once.
+
+@function dark($color, $percentage: $k-dark-percentage) {
+  @return darken($color, $percentage)
+}
+
+@function darker($color, $percentage: $k-darker-percentage) {
+  @return darken($color, $percentage)
+}
+
+@function darkest($color, $percentage: $k-darkest-percentage) {
+  @return darken($color, $percentage)
+}

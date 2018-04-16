@@ -1,0 +1,22 @@
+// Breakpoint
+// Mobile first media query mixin
+
+@mixin breakpoint(
+  $width,
+  $type: min,
+  $width--max: false) {
+
+  @if $type == min {
+    @media screen and (min-width: $width) {
+      @content;
+    }
+  } @else if $type == max {
+    @media screen and (max-width: $width) {
+      @content;
+    }
+  } @else if $type == range {
+    @media screen and (min-width: $width) and (max-width: $width--max) {
+      @content;
+    }
+  }
+}

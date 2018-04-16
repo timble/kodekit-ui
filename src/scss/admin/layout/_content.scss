@@ -1,117 +1,218 @@
-/* Content
-   ========================================================================== */
+@if ($k-layout == true and $k-layout-content != false) or $k-layout-content == true {
 
-/*
-Content
-
-- Use as <b>child</b> of the `.k-content-wrapper` container only
-- {unsureText}
-
-markup:
-<div class="k-content k-js-content">
-    ...
-</div><!-- .k-content -->
-
-Styleguide 3.5
-
-*/
-
-/**
- * 1. Set the z-index higher than the menus
- * 2. Setting a background so container will fall nicely over the sidebar
- * 3. Set transition for off canvas sidebar
- */
-
-.k-content {
-  position: relative; /* 1 */
-  z-index: 2; /* 1 */
-  background: $k-content-background; /* 2 */
-  @include transition(transform); /* 3 */
-
-
-  /* Faking flexbox on older browsers by using table styling */
-
-  display: table-cell;
-  width: 100%;
-  min-height: 100%;
-
+  /* Content
+     ========================================================================== */
 
   /**
-   * When flexbox is in use
-   *
-   * 1. Reset width needed for table
-   * 2. Set overflow for breadcrumbs to properly work
+   * 1. Set the z-index higher than the menus
+   * 2. Setting a background so container will fall nicely over the sidebar
+   * 3. Set transition for off canvas sidebar
    */
 
-  @include flexbox {
+  .k-content {
+    position: relative; /* 1 */
+    background: $k-content-background; /* 2 */
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;
-    width: auto; /* 1 */
-    overflow: hidden; /* 2 */
+    overflow: hidden; /* Set overflow for breadcrumbs to properly work */
     min-height: 0;
-  }
-}
+    backface-visibility: hidden;
+    @include transition(transform); /* 3 */
 
-
-/**
- * Container when toggled
- *
- * 1. Set left to the width of the menu so the menu will appear
- * 2. Reset when screen is wide enough
- */
-
-.k-show-left-menu {
-  .k-content {
-    transform: translate($k-sidebar-left-width, 0); /* 1 */
-
-    @include breakpoint($k-sidebar-left-querie-width) {
-      transform: translate(0, 0); /* 2 */
+    @at-root .k-is-transitioning & {
+      z-index: 2;
     }
   }
 
-  @include rtl {
-    .k-content {
-      transform: translate(-($k-sidebar-left-width), 0);
 
-      @include breakpoint($k-sidebar-left-querie-width) {
-        transform: translate(0, 0);
+  /**
+   * When content is inside a content-area
+   */
+
+  .k-content-area {
+
+    /**
+     * When content has a sub content sibling
+     */
+
+    .k-content:not(:last-child) {
+
+      /**
+       * Set width and make room for resizer
+       */
+
+      @include breakpoint($k-delta) {
+        @include allwidth($k-content-width-delta);
+
+        @include js-enabled {
+          padding-right: $k-content-resizer-width;
+        }
+
+        @include rtl {
+          @include js-enabled(true) {
+            padding-right: 0;
+            padding-left: $k-content-resizer-width;
+          }
+        }
+      }
+
+
+      /**
+       * When there's also a right sidebar make sure the right sidebar is only 50% of the width
+       * and reset this when querie is reached
+       */
+
+      .k-sidebar-right {
+        @include breakpoint($k-sidebar-right-querie-width) {
+          min-width: 0;
+          width: $k-sidebar-right-small-width;
+          max-width: 50%;
+        }
+
+        @include breakpoint($k-delta) {
+          width: $k-sidebar-right-width;
+        }
+      }
+
+
+      /**
+       * The resizer
+       */
+
+      .k-pane-resizer {
+        width: $k-content-resizer-width;
+        height: 100%;
+        background: $k-content-resizer-background;
+        border-left: $k-content-resizer-border;
+        position: absolute;
+        z-index: 99;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        cursor: col-resize;
+        display: none;
+
+        @include rtl {
+          right: auto;
+          left: 0;
+          border-left: none;
+          border-right: $k-content-resizer-border;
+        }
+
+        @include breakpoint($k-content-resizer-breakpoint) {
+          display: block;
+        }
+      }
+
+
+      /**
+       * Search container adjustments
+       */
+
+      .k-scopebar__item--search {
+        @include allwidth(100%);
+
+        .k-search__field {
+          border-left: none;
+          border-right: none;
+        }
       }
     }
   }
 
 
-  /* Set opacity */
+  /**
+   * Container when toggled
+   *
+   * 1. Set left to the width of the menu so the menu will appear
+   * 2. Reset when screen is wide enough
+   */
 
-  .k-content {
-    & > .k-off-canvas-overlay {
-      opacity: $k-off-canvas-overlay-opacity;
+  #{$k-left-menu-show-class} {
+    .k-content-area,
+    .k-content {
+      transform: translate($k-sidebar-left-width, 0); /* 1 */
+
+      @include breakpoint($k-sidebar-left-querie-width) {
+        transform: translate(0, 0); /* 2 */
+      }
+
+
+      /**
+       * Reset transform when .k-content is inside a .k-content-area
+       */
+
+      .k-content {
+        transform: none;
+      }
+    }
+
+    @include rtl {
+      .k-content-area,
+      .k-content {
+        transform: translate(-($k-sidebar-left-width), 0);
+
+        @include breakpoint($k-sidebar-left-querie-width) {
+          transform: translate(0, 0);
+        }
+
+        .k-content {
+          transform: none;
+        }
+      }
+    }
+
+
+    /**
+     * Set opacity
+     */
+
+    .k-content-area,
+    .k-content {
+      .k-off-canvas-overlay-left {
+        opacity: $k-off-canvas-overlay-left-opacity;
+
+        @include breakpoint($k-sidebar-left-querie-width) {
+          opacity: 0;
+        }
+      }
     }
   }
-}
 
 
-.k-is-opened-left {
-  .k-content {
-    overflow: hidden;
+  /**
+   * Set overflow and z-index
+   */
 
-    @include breakpoint($k-sidebar-left-querie-width) {
-      overflow: auto;
-    }
-
-    @include breakpoint($k-sidebar-right-querie-width) {
-      overflow: auto;
-    }
-
-    @include resizing {
+  #{$k-left-menu-opened-class} {
+    .k-content-area,
+    .k-content {
       overflow: hidden;
-    }
 
+      @include breakpoint($k-sidebar-left-querie-width) {
+        overflow: auto;
+      }
 
-    /* 2. Set z-index so it will become visible */
+      @include breakpoint($k-sidebar-right-querie-width) {
+        overflow: auto;
+      }
 
-    & > .k-off-canvas-overlay {
-      z-index: 9;
+      @include resizing {
+        overflow: hidden;
+      }
+
+      /**
+       * Set z-index so it will become visible
+       */
+
+      #{$k-left-menu-overlay-class} {
+        z-index: 9;
+
+        @include breakpoint($k-sidebar-left-querie-width) {
+          z-index: -1;
+        }
+      }
     }
   }
 }

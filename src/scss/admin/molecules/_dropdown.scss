@@ -1,0 +1,327 @@
+@if ($k-molecules == true and $k-molecule-dropdown != false) or $k-molecule-dropdown == true {
+
+  /* Dropdowns
+     ========================================================================== */
+
+  /**
+   * Dropdown arrow/caret
+   */
+
+  .k-caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: $k-caret-base-width dashed;
+    border-right: $k-caret-base-width solid transparent;
+    border-left: $k-caret-base-width solid transparent;
+
+    @include rtl {
+      margin-left: 0;
+      margin-right: 2px;
+    }
+  }
+
+
+  /**
+   * The dropdown wrapper (div)
+   */
+
+  .k-dropdown {
+    position: relative;
+  }
+
+
+  /**
+   * The dropdown toggle
+   */
+
+  .k-dropdown__toggle {
+    img {
+      max-width: 16px;
+    }
+  }
+
+
+  /**
+   * The dropdown menu (ul)
+   *
+   * 1. Hide by default, but block on "open" of the menu
+   * 2. Ensures proper alignment if parent has it changed (e.g., modal footer)
+   */
+
+  .k-dropdown__menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: $k-dropdown-zindex;
+    display: none; /* 1 */
+    float: left;
+    min-width: 160px;
+    text-align: left; /* 2 */
+    background-color: $k-dropdown-background;
+    border: 1px solid $k-dropdown-border;
+    border-radius: $k-border-radius;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    background-clip: padding-box;
+
+    @include rtl {
+      left: auto;
+      right: 0;
+      float: right;
+      text-align: right;
+    }
+
+
+    /**
+     * Winning over .k-ui-namespace ul
+     */
+
+    &.k-dropdown__menu {
+      padding: 5px 0;
+      margin: 2px 0 0;
+      list-style: none;
+    }
+
+
+    /**
+     * Links within the dropdown menu
+     *
+     * 1. prevent links from randomly breaking onto new lines
+     */
+
+    a {
+      display: block;
+      padding: 5px 15px;
+      clear: both;
+      font-weight: normal;
+      line-height: $k-line-height;
+      color: $k-dropdown-link-color;
+      white-space: nowrap; /* 1 */
+    }
+  }
+
+
+  /**
+   * Dividers (basically an hr) within the dropdown
+   */
+
+  .k-dropdown__divider {
+    height: 1px;
+    margin: 5px 0;
+    overflow: hidden;
+    background-color: #e5e5e5;
+  }
+
+
+  /**
+   * Hover / Focus state
+   */
+
+  .k-dropdown__menu a {
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: $k-dropdown-link-hover-color;
+      background-color: $k-dropdown-link-hover-background;
+    }
+  }
+
+
+  /**
+   * Active state
+   */
+
+  .k-dropdown__menu #{$k-dropdown-item-active-class} a {
+    &,
+    &:hover,
+    &:focus {
+      color: $k-dropdown-link-active-color;
+      text-decoration: none;
+      outline: 0;
+      background-color: $k-dropdown-link-active-background;
+    }
+  }
+
+
+  /**
+   * Disabled state
+   *
+   * Gray out text and ensure the hover/focus state remains gray
+   */
+
+  .k-dropdown__menu #{$k-dropdown-item-disabled-class} a {
+    &,
+    &:hover,
+    &:focus {
+      color: $k-dropdown-link-disabled-color;
+    }
+
+
+    /**
+     * Nuke hover/focus effects
+     *
+     * 1. Remove CSS gradient
+     */
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      background-color: transparent;
+      background-image: none; /* 1 */
+      cursor: $k-disabled-cursor;
+    }
+  }
+
+
+  /**
+   * Open state for the dropdown
+   */
+
+  .k-dropdown#{$k-dropdown-open-class} {
+
+    /**
+     * Show the menu
+     */
+
+    & > .k-dropdown__menu {
+      display: block;
+    }
+
+
+    /**
+     * Remove the outline when :focus is triggered
+     */
+
+    & > a {
+      outline: 0;
+    }
+  }
+
+
+  /**
+   * Backdrop to catch body clicks on mobile, etc.
+   */
+
+  .k-dropdown-backdrop {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: ($k-dropdown-zindex - 10);
+  }
+
+
+  /**
+   * Dropup
+   *
+   * Allow for dropdowns to go bottom up (aka, dropup-menu)
+   */
+
+  .k-dropdown--dropup {
+
+    /**
+     * Reverse the caret
+     */
+
+    .k-caret {
+      border-top: 0;
+      border-bottom: $k-caret-base-width dashed;
+      content: "";
+    }
+
+
+    /**
+     * Different positioning for bottom up menu
+     */
+
+    .k-dropdown__menu {
+      top: auto;
+      bottom: 100%;
+      margin-bottom: 2px;
+    }
+  }
+
+
+  /**
+   * Dropdown grid
+   */
+
+  .k-dropdown__menu--grid {
+    width: 212px;
+
+
+    /**
+     * override above default settings
+     */
+
+    &.k-dropdown__menu--grid {
+      padding: 5px;
+
+      @include rtl {
+        padding: 5px;
+      }
+    }
+
+    img {
+      max-width: 16px;
+      max-height: 16px;
+    }
+
+    li {
+      float: left;
+      width: 40px;
+      height: 40px;
+      margin: 0;
+      padding: 0;
+      display: block;
+
+      @include rtl {
+        float: right;
+      }
+
+      a {
+        display: block;
+        padding: 0;
+        margin: 0;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        border-radius: 3px;
+        float: left;
+
+        [class^="k-icon-document-"],
+        [class*=" k-icon-document-"] {
+          display: block;
+          vertical-align: middle;
+          margin: ((40px - 16px)/2) auto;
+        }
+      }
+    }
+
+    .k-dropdown__block-item {
+      min-width: 100%;
+      clear: both;
+      height: auto;
+      margin: 5px 0 -5px;
+
+      a {
+        position: relative;
+        height: auto;
+        width: auto;
+        float: none;
+        border-top: 1px solid #e5e5e5;
+        text-align: left;
+        margin: 0 -5px;
+        padding: 5px 15px;
+        border-radius: 0 0 $k-border-radius $k-border-radius;
+
+        @include rtl {
+          text-align: right;
+        }
+      }
+    }
+  }
+}

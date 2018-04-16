@@ -1,0 +1,20 @@
+@if ($k-utilities == true and $k-utility-this-or-that != false) or $k-utility-this-or-that == true {
+
+  /* This or that
+     ========================================================================== */
+
+  /**
+   * Line items up next to each other
+   */
+
+  .k-this-or-that {
+    display: inline-block;
+    margin-right: $k-tiny-spacing;
+    vertical-align: middle;
+
+    @include rtl {
+      margin-right: 0;
+      margin-left: $k-tiny-spacing;
+    }
+  }
+}

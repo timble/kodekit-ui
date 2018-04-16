@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="nl" class="k-no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kodekit UI Demo page</title>
+    <link rel="stylesheet" href="../../dist/css/admin.min.css">
+    <script src="../../dist/js/modernizr.min.js"></script>
+    <script src="../../dist/js/jquery.min.js"></script>
+    <script src="../../dist/js/admin.min.js"></script>
+</head>
+<body>
+<script src="../../dist/js/kui-initialize.min.js"></script>
+
+<!-- Kodekit UI Container -->
+<div class="k-ui-container k-ui-namespace">
+
+    <!-- Top container -->
+    <div class="k-top-container">
+        <div class="k-top-container__logo">
+            <a href="#">
+                Kodekit UI
+            </a>
+        </div>
+        <div class="k-top-container__navigation k-js-top-navigation" id="k-js-menu">
+            <ul>
+                <li><a href="#">Menu item 1</a></li>
+                <li>
+                    <a href="#">Menu item 2</a>
+                    <ul>
+                        <li>
+                            <a href="#">Sub item 1</a>
+                            <ul>
+                                <li><a href="#">Sub-sub item 1</a></li>
+                                <li><a href="#">Sub-sub item 2</a></li>
+                                <li><a href="#">Sub-sub item 3</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Sub item 2</a></li>
+                        <li>
+                            <a href="#">Sub item 3</a>
+                            <ul>
+                                <li><a href="#">Sub-sub item 1</a></li>
+                                <li><a href="#">Sub-sub item 2</a></li>
+                                <li><a href="#">Sub-sub item 3</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">Menu item 3</a></li>
+            </ul>
+            <ul class="k-navigation-right">
+                <li>
+                    <a href="#" title="View site" target="_blank">
+                        <span>View site</span>
+                        <span class="k-icon-external-link" aria-hidden="true"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div><!-- .k-top-container -->
+
+    <!-- Wrapper -->
+    <div class="k-wrapper k-js-wrapper">
+
+        <!-- Content wrapper -->
+        <div class="k-content-wrapper">
+
+            <!-- Content -->
+            <div class="k-content k-js-content">
+
+                <!-- Toolbar -->
+                <div class="k-toolbar k-js-toolbar">
+                    <button type="button" class="k-button k-button--success">
+                        <span class="k-icon-plus" aria-hidden="true"></span>
+                        <span class="k-button__text">Save</span>
+                    </button>
+                    <button type="button" class="k-button k-button--default">
+                        <span class="k-icon-pencil" aria-hidden="true"></span>
+                        <span class="k-button__text">Cancel</span>
+                    </button>
+                </div><!-- .k-toolbar -->
+
+                <!-- Component wrapper -->
+                <div class="k-component-wrapper">
+
+                    <!-- Component -->
+                    <form class="k-component k-js-component">
+
+                        <!-- Container -->
+                        <div class="k-container">
+                            <div class="k-container__main">
+                                <div class="k-form-group">
+                                    <div class="k-input-group k-input-group--large">
+                                        <label for="title" class="k-input-group__addon">Title</label>
+                                        <input id="title" class="k-form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- .k-container -->
+
+                        <!-- Tabs container -->
+                        <div class="k-tabs-container">
+
+                            <!-- Tabs wrapper -->
+                            <div class="k-tabs-wrapper k-js-tabs-wrapper">
+                                <div class="k-tabs-scroller k-js-tabs-scroller">
+                                    <ul class="k-tabs k-js-tabs">
+                                        <li class="k-is-active">
+                                            <a href="#tab1" data-k-toggle="tab">Lorem ipsum</a>
+                                        </li>
+                                        <li>
+                                            <a href="#tab2" data-k-toggle="tab">Dolor sit amet</a>
+                                        </li>
+                                        <li>
+                                            <a href="#tab3" data-k-toggle="tab">Consectetuer</a>
+                                        </li>
+                                        <li>
+                                            <a href="#tab4" data-k-toggle="tab">Adipiscing elit</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Tabs content -->
+                            <div class="k-tabs-content">
+                                <div id="tab1" class="k-tab k-is-active">
+                                    <div class="k-container">
+                                        <div class="k-container__full k-no-padding-bottom">
+                                            <div class="k-heading">Example form</div>
+                                        </div>
+                                    </div>
+                                    <div class="k-container">
+                                        <div class="k-container__main">
+                                            <fieldset>
+                                                <div class="k-form-group k-form-group--large">
+                                                    <input class="k-form-control" type="text" placeholder="Title"/>
+                                                </div>
+                                                <div class="k-form-group">
+                                                    <div class="k-input-group k-input-group--small">
+                                                        <label for="input-form-1" class="k-input-group__addon">Alias</label>
+                                                        <input id="input-form-1" type="text" class="k-form-control" placeholder="Placeholder"/>
+                                                    </div>
+                                                </div>
+                                                <div class="k-form-group">
+                                                    <label>Category</label>
+                                                    <select class="k-form-control k-js-select2">
+                                                        <option value="1" selected>Example 1</option>
+                                                        <option value="2">Example 2</option>
+                                                        <option value="3">Example 3</option>
+                                                    </select>
+                                                </div>
+                                                <div class="k-form-group">
+                                                    <label>File</label>
+                                                    <div class="k-file-input-container">
+                                                        <div class="k-file-input">
+                                                            <input class="k-js-file-input" type="file" id="input-form-2" data-multiple-caption="{count} files selected" multiple />
+                                                            <label for="input-form-2">
+                                                                <span class="k-file-input__button">
+                                                                    <span class="k-icon-cloud-upload" aria-hidden="true"></span>
+                                                                    Choose a file&hellip;
+                                                                </span>
+                                                                <span class="k-file-input__files"></span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                        <div class="k-container__sub">
+                                            <fieldset class="k-form-block">
+                                                <div class="k-form-block__header">
+                                                    Publish
+                                                </div>
+                                                <div class="k-form-block__content">
+                                                    <div class="k-form-group">
+                                                        <div class="k-optionlist k-optionlist--boolean">
+                                                            <div class="k-optionlist__content">
+                                                                <input type="radio" name="group-[2.17.1]-1-" id="input-form-3" value="1" checked="checked"/>
+                                                                <label for="input-form-3">True</label>
+                                                                <input type="radio" name="group-[2.17.1]-1-" id="input-form-4" value="0"/>
+                                                                <label for="input-form-4">False</label>
+                                                                <div class="k-optionlist__focus"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="k-form-block">
+                                                <div class="k-form-block__header">
+                                                    Date
+                                                </div>
+                                                <div class="k-form-block__content">
+                                                    <div class="k-form-group">
+                                                        <label>Date</label>
+                                                        <div class="k-input-group">
+                                                            <input class="k-form-control" type="text"/>
+                                                            <span class="k-input-group__button">
+                                                                <button type="button" class="k-button k-button--default k-js-datepicker">
+                                                                    <span class="k-icon-calendar" aria-hidden="true"></span>
+                                                                    <span class="k-visually-hidden">Calendar</span>
+                                                                </button>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="tab2" class="k-tab">
+                                    <div class="k-container">
+                                        <div class="k-container__full">
+                                            <div class="k-heading">Second tab</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="tab3" class="k-tab">
+                                    <div class="k-container">
+                                        <div class="k-container__full">
+                                            <div class="k-heading">Third tab</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="tab4" class="k-tab">
+                                    <div class="k-container">
+                                        <div class="k-container__full">
+                                            <div class="k-heading">Fourth tab</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div><!-- .k-tabs-content -->
+
+                        </div><!-- .k-tabs-container -->
+
+                    </form><!-- .k-component -->
+
+                </div><!-- .k-component-wrapper -->
+
+            </div><!-- .k-content -->
+
+        </div><!-- .k-content-wrapper -->
+
+    </div><!-- .k-wrapper -->
+
+</div><!-- .k-ui-container -->
+
+</body>
+</html>

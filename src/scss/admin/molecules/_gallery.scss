@@ -1,125 +1,148 @@
-/* Gallery
-   ========================================================================== */
+@if ($k-molecules == true and $k-molecule-gallery != false) or $k-molecule-gallery == true {
 
-/*
-Gallery
+  /* Gallery
+     ========================================================================== */
 
-A complete gallery container
-
-markup:
-<!-- Grid -->
-<div class="k-gallery-container">
-    <div class="k-gallery">
-        <div class="k-gallery__items">
-            <div class="k-gallery__item k-gallery__item--folder">
-                <sg-insert>2.4.4</sg-insert>
-            </div>
-            <div class="k-gallery__item k-gallery__item--folder">
-                <sg-insert>2.4.4</sg-insert>
-            </div>
-            <div class="k-gallery__item k-gallery__item--folder">
-                <sg-insert>2.4.4</sg-insert>
-            </div>
-            <div class="k-gallery__item k-gallery__item--file">
-                <sg-insert>2.4.3</sg-insert>
-            </div>
-            <div class="k-gallery__item k-gallery__item--file">
-                <sg-insert>2.4.3</sg-insert>
-            </div>
-            <div class="k-gallery__item k-gallery__item--file">
-                <sg-insert>2.4.3</sg-insert>
-            </div>
-            <div class="k-gallery__item k-gallery__item--file">
-                <sg-insert>2.4.3</sg-insert>
-            </div>
-            <div class="k-gallery__item k-gallery__item--file">
-                <sg-insert>2.4.3</sg-insert>
-            </div>
-        </div>
-    </div>
-</div>
-
-Styleguide 2.10
-
-*/
-
-.k-gallery-container {
-  @include flexbox {
+  .k-gallery-container {
+    @include content-block();
     display: flex;
     flex-direction: column;
     flex: 1 1 auto;
-    overflow: auto;
-  }
-}
+    overflow: hidden;
 
-.k-gallery {
-  padding: $k-grid-spacing / 2;
-  overflow: auto;
-
-  @include flexbox {
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 auto;
-  }
-}
-
-.k-gallery__items {
-  @include clearfix;
-
-  @include flexbox {
-    flex: 1 1 auto;
-  }
-}
-
-.k-gallery__item {
-  float: left;
-  padding: $k-grid-spacing / 2;
-  width: 100%;
-
-  @include rtl {
-    float: right;
+    .k-gallery {
+      flex: 1 1 auto;
+      overflow: auto;
+      padding: $k-grid-spacing;
+    }
   }
 
+  .k-gallery {
+    overflow: hidden;
+  }
 
-  /* Set breakpoints */
+  .k-gallery__items {
+    margin: -($k-grid-spacing / 2);
+    font-size: 0;
 
-  @include setGridBreakpoint;
-
-
-  /* Selected styling */
-
-  &.k-is-selected {
-    .k-card__header {
-      background: $k-color-accent;
-      border-color: darkest($k-color-accent);
-      color: $k-color-accent-type;
-
-      a {
-        color: $k-color-accent-type;
-      }
+    @supports (display: flex) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
     }
 
-    .k-card__body {
-      color: $k-color-accent-type;
-      border-color: darker($k-color-accent);
+    @supports (display: grid) {
+      display: grid;
+    }
+  }
+
+  .k-gallery__item {
+    padding: ($k-grid-spacing / 2);
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1rem;
+
+    @supports (display: flex) {
+      display: flex;
+      flex: 0 0 auto;
     }
 
-    &:hover,
-    &:focus {
+
+    /**
+     * Selected styling
+     */
+
+    &#{$k-grid-selected-class} {
       .k-card__header {
-        background: darkest($k-color-accent);
+        background: $k-grid-selected-header-background;
+        border-color: $k-grid-selected-header-border-color;
+        color: $k-grid-selected-header-color;
+
+        a {
+          color: $k-grid-selected-header-anchor-color;
+        }
+      }
+
+      .k-card__body {
+        color: $k-grid-selected-body-color;
+        border-color: $k-grid-selected-body-border-color;
+      }
+
+      &:hover,
+      &:focus {
+        .k-card__header {
+          background:$k-grid-selected-header-hover-background;
+        }
       }
     }
   }
-}
 
 
-/* Make sure that the files are separated from the folders */
+  /**
+   * Set widths
+   */
 
-.k-gallery__item--folder + .k-gallery__item--file {
-  clear: left;
+  @for $i from 1 through 24 {
+    [data-gallery-items='#{$i}'] {
+      .k-gallery__item.k-gallery__item {
+        width: (100% / $i);
 
-  @include rtl {
-    clear: right;
+        @supports (display: flex) {
+          flex-basis: (100% / $i);
+        }
+
+        @supports (display: grid) {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+
+  /**
+   * Gallery sizes
+   */
+
+  .k-gallery {
+    @include gallerySize($k-grid-m-size);
+  }
+
+  .k-gallery--xxs {
+    @include gallerySize($k-grid-xxs-size);
+  }
+
+  .k-gallery--xs {
+    @include gallerySize($k-grid-xs-size);
+  }
+
+  .k-gallery--s {
+    @include gallerySize($k-grid-s-size);
+  }
+
+  .k-gallery--l {
+    @include gallerySize($k-grid-l-size);
+  }
+
+  .k-gallery--xl {
+    @include gallerySize($k-grid-xl-size);
+  }
+
+  .k-gallery--xxl {
+    @include gallerySize($k-grid-xxl-size);
+  }
+
+
+  /**
+   * Pagination
+   */
+
+  .k-gallery-pagination {
+    padding: $k-gallery-pagination-spacing $k-gallery-pagination-spacing ($k-gallery-pagination-spacing - 1px);
+    background: $k-gallery-pagination-background;
+    flex: 0 0 auto;
+    @include border(top, $k-gallery-pagination-border);
+    @if $k-borders != false {
+      box-shadow: 0 1px 0 $k-gallery-pagination-border; /* 1 */
+    }
   }
 }
