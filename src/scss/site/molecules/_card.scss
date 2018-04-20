@@ -1,12 +1,14 @@
+/* Card
+   ========================================================================== */
+
 /**
- * Admin card overrides
- *
- * Use RGBA to fit template style
+ * Admin card overrides using RGBA to fit template style
  */
 
 .k-card__body {
   background: transparent;
   border: 1px solid rgba(0, 0, 0, 0.15);
+  color: inherit;
 }
 
 a.k-card__body,
@@ -28,14 +30,9 @@ a.k-card__section {
 
 .k-card__header {
   background: rgba(0, 0, 0, 0.075);
+  border-bottom-color: rgba(0, 0, 0, 0.2);
   color: inherit;
 
-  &:not(:first-child) {
-    border-top: 1px solid rgba(0, 0, 0, 0.15);
-  }
-}
-
-.k-card__section {
   &:not(:first-child) {
     border-top: 1px solid rgba(0, 0, 0, 0.15);
   }

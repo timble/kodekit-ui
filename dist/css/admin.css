@@ -6661,7 +6661,6 @@ html:not([dir="rtl"]) .k-input-group .k-form-control:last-child, html:not([dir="
 
 .k-ui-namespace .k-gallery__items {
   margin: -8px;
-  font-size: 0;
 }
 
 @supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
@@ -6686,8 +6685,8 @@ html:not([dir="rtl"]) .k-input-group .k-form-control:last-child, html:not([dir="
 .k-ui-namespace .k-gallery__item {
   padding: 8px;
   display: inline-block;
+  margin-left: -0.25em;
   vertical-align: middle;
-  font-size: 1rem;
   /**
      * Selected styling
      */
@@ -6695,6 +6694,7 @@ html:not([dir="rtl"]) .k-input-group .k-form-control:last-child, html:not([dir="
 
 @supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
   .k-ui-namespace .k-gallery__item {
+    margin-left: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

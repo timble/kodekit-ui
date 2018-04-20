@@ -1,28 +1,16 @@
+/* List
+   ========================================================================== */
+
 .k-list {
   @include reset;
-  @include content-block($section-spacing);
+  @include content-block($k-site-section-spacing);
   overflow-x: hidden;
-
-  & > .k-list__item:first-child {
-    &:before {
-      display: none;
-    }
-  }
 }
 
 .k-list__item {
   line-height: 1.5em;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-
-  // Use psuedo element so border always has left: 0; even when list has levels
-  @include psuedo(before) {
-    top: -1px;
-    left: -999px;
-    right: 0;
-    height: 1px;
-    background: rgba(0, 0, 0, 0.1);
-  }
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
 
   .k-title {
     margin: 0;
@@ -30,6 +18,7 @@
 
   .k-subtitle {
     padding: 0;
+    margin-bottom: 0;
     border: none;
   }
 
@@ -38,7 +27,6 @@
   }
 
   .k-list__item {
-    margin-top: 0.5em;
     padding-left: 1.5em;
 
     @include rtl {
@@ -46,12 +34,12 @@
       padding-right: 1.5em;
     }
 
-    @include psuedo(after) {
-      width: 0.5em;
-      height: 0.5em;
+    @include pseudo(after) {
+      width: 0.4em;
+      height: 0.4em;
       border-left: 1px solid;
       border-bottom: 1px solid;
-      top: 1em;
+      top: 0.6em;
       left: 0.375em;
       opacity: 0.333;
 
@@ -62,30 +50,59 @@
         right: -(($k-tree-size / 2) + 3px);
       }
     }
+
+    &:first-child {
+      margin-top: 0.25em;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
   }
 }
+
+
+/**
+ * Bordered list
+ */
 
 .k-list--bordered {
   border: 1px solid rgba(0, 0, 0, 0.1);
 
-  .k-list__item {
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+  & > .k-list__item:first-child {
+    &:before {
+      display: none;
+    }
+  }
+
+  > .k-list__item {
+    padding: 0.5em;
+
+    // Use pseudo element so border always has left: 0; even when list has levels
+    @include pseudo(before) {
+      top: -1px;
+      left: -999px;
+      right: 0;
+      height: 1px;
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    .k-list__item {
+      padding-left: 1.5em;
+    }
   }
 }
+
+
+/**
+ * Rounded list
+ */
 
 .k-list--rounded {
-  border-radius: $border-radius;
+  border-radius: $k-site-border-radius;
 
   .k-list__item {
     padding-left: 0.5em;
     padding-right: 0.5em;
-  }
-}
-
-.k-list--icons {
-  .k-subtitle {
-    padding-left: 0.5em;
-    border-left: 16px solid transparent;
   }
 }

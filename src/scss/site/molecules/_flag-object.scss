@@ -1,6 +1,5 @@
-/**
- * Flag object
- */
+/* Flag object
+   ========================================================================== */
 
 .k-flag-object {
   position: relative;
@@ -53,7 +52,6 @@
 
 .k-flag-object__body {
   flex: 1 1 auto;
-  overflow: hidden;
   text-overflow: ellipsis;
 }
 
@@ -76,4 +74,3 @@
     padding-right: 0.5em;
   }
 }
-

@@ -1,8 +1,3 @@
-.k-thumbnail {
-  width: 33%;
-  max-width: 240px;
-}
-
 .k-wrapped-content {
   display: table;
   table-layout: fixed;
@@ -13,7 +8,7 @@
 }
 
 .k-link-coverleft {
-  @include psuedo(before) {
+  @include pseudo(before) {
     top: 0;
     right: 100%;
     left: -100%;
@@ -23,19 +18,7 @@
 }
 
 .k-table-pagination {
-  @include content-block($section-spacing);
-}
-
-.k-manage {
-  @include content-block($section-spacing);
-}
-.k-manage__item {
-  display: inline-block;
-}
-
-.k-title + .k-manage,
-.k-subtitle + .k-manage {
-  margin-top: -($section-spacing / 2);
+  @include content-block($k-site-section-spacing);
 }
 
 
@@ -46,40 +29,22 @@
 
 
 
-
-
-
-
-
-
-
-
-
-.gallery {
-  overflow: hidden;
+.k-ui-container {
+  overflow: hidden; // To hide overflowing grid margin for example, also clearing floats
 }
 
-.gallery__items {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
-  margin: -10px;
+
+.k-icon--primary {
+  color: var(--primary-color);
 }
 
-.gallery__item {
-  position: relative;
-  flex: 1 1 auto;
-  margin: 10px;
-  min-width: 220px;
 
-  &:before {
-    display: block;
-    content: " ";
-    padding-top: 75%;
-  }
+// TO win over other templates
+[class*="k-icon"][class*="k-icon"][class*="k-icon"] {
+  @extend %icon;
 }
 
-.gallery__content {
-  @include coverall;
-}
+
+
+
+

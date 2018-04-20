@@ -1,3 +1,6 @@
+/* Table
+   ========================================================================== */
+
 /**
  * Basic table
  */
@@ -6,23 +9,25 @@
   width: 100%;
   max-width: 100%;
   border-collapse: collapse;
-  @include content-block($section-spacing);
+  border: none;
+  @include content-block($k-site-table-spacing);
 
   th,
   td {
+    border: none;
     padding: 0.5em 0.65em;
     vertical-align: middle;
-    border-top: $table-border-width solid $table-border-color;
+    border-top: $k-site-table-border-width solid $k-site-table-border-color;
     text-align: left;
   }
 
   thead th {
     vertical-align: bottom;
-    border-bottom: (2 * $table-border-width) solid $table-border-color;
+    border-bottom: (2 * $k-site-table-border-width) solid $k-site-table-border-color;
   }
 
   tbody + tbody {
-    border-top: (2 * $table-border-width) solid $table-border-color;
+    border-top: (2 * $k-site-table-border-width) solid $k-site-table-border-color;
   }
 }
 
@@ -35,155 +40,6 @@
 
 .k-table--striped {
   tbody tr:nth-of-type(odd) {
-    background-color: $table-bg-accent;
-  }
-}
-
-
-/**
- * Responsive table
- */
-
-.k-table--responsive {
-
-
-  /* Overflow content */
-
-  overflow: auto;
-
-
-  /* Force table to not be like table */
-
-  &, thead, tbody, th, td, tr {
-    display: block;
-
-
-    /**
-     * Cell widths
-     * Not very mobile first but we'd like to keep the widths set in the markup actually working on larger screens
-     */
-
-    @include breakpoint(0, range, $k-beta - 1px) {
-      width: 100%;
-    }
-  }
-
-
-  /* Let table element behave like table again */
-
-  @include breakpoint($k-beta) {
-    & {
-      display: table;
-    }
-
-    thead {
-      display: table-header-group;
-    }
-
-    tbody {
-      display: table-row-group;
-    }
-
-    tr {
-      display: table-row;
-    }
-
-    th, td {
-      display: table-cell;
-    }
-  }
-
-
-  /* Hide table headers (but not display: none;, for accessibility) */
-
-  thead tr {
-    @include visually-hidden;
-
-    @include breakpoint($k-beta) {
-      @include visually-shown;
-    }
-  }
-
-  /**
-   * Borders
-   * Not very mobile first but we'd like to keep the borders set in the classes actually working on larger screens
-   */
-
-  @include breakpoint(0, range, $k-beta - 1px) {
-    td:not(:first-child) {
-      border: none;
-    }
-  }
-}
-
-
-/**
- * Table data styling
- */
-
-.k-table-data--right {
-  text-align: right;
-
-  @include rtl {
-    text-align: left;
-  }
-}
-
-.k-table-data--center {
-  text-align: center;
-}
-
-.k-table-data--nowrap {
-  white-space: nowrap;
-}
-
-.k-table-data--wrap {
-  word-break: break-all;
-}
-
-.k-table-data--form,
-.k-table-data--icon {
-  white-space: nowrap;
-  line-height: 1;
-  vertical-align: middle;
-
-  a, span, input, svg, div, small, img {
-    vertical-align: middle;
-    line-height: 1;
-  }
-
-  [class*="k-icon"] {
-    font-size: $k-icon-size;
-  }
-}
-
-.k-table-data--form {
-  input {
-    margin: 0 !important;
-  }
-}
-
-.k-table-data--icon {
-  img {
-    @include allwidth(16px);
-  }
-}
-
-th.k-table-data--icon {
-  a {
-    line-height: $k-table-cell-size - ($k-table-cell-spacing-vertical * 2);
-  }
-}
-
-.k-table-data--ellipsis {
-  max-width: 0;
-  overflow: hidden;
-
-  a, span, input, svg, div, small {
-    vertical-align: middle;
-    max-width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    background-color: $k-site-table-background-accent;
   }
 }

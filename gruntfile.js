@@ -39,7 +39,8 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 files: {
-                    '<%= distPath %>/css/admin.css': '<%= srcPath %>/scss/admin-ui.scss'
+                    '<%= distPath %>/css/admin.css': '<%= srcPath %>/scss/admin-ui.scss',
+                    '<%= distPath %>/css/site.css': '<%= srcPath %>/scss/site-ui.scss'
                 }
             },
             options: {

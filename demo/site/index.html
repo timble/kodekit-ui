@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="nl" class="k-no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kodekit UI Demo page</title>
+    <link rel="stylesheet" href="../../dist/css/site.min.css">
+    <style type="text/css">
+        :root {
+            --default: #2980b9;
+        }
+        body {
+            padding: 40px;
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            font-size: 16px;
+            line-height: 24px;
+            border-top: 48px solid var(--default);
+            border-bottom: 192px solid var(--default);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: #0b0c0c;
+        }
+
+        a {
+            color: var(--default);
+        }
+
+        hr {
+            width: 100%;
+            height: 4px;
+            background: rgba(0, 0, 0, 0.1);
+            border: none;
+            padding: 0;
+            margin: 40px 0;
+        }
+
+        .example-title {
+            margin-top: 64px;
+            font-size: 20px;
+            margin-bottom: 32px;
+        }
+
+        .example-grid .k-query-grid__body {
+            background: rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <script src="../../dist/js/modernizr.min.js"></script>
+    <script src="../../dist/js/jquery.min.js"></script>
+    <script src="../../dist/js/admin.min.js"></script>
+    <script src="../../dist/js/kui-initialize.min.js"></script>
+</head>
+<body>
+<div class="k-ui-container k-ui-namespace">
+    <script>
+        var hexDigits = new Array("0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f");
+        var rgb2hex = function(rgb) {
+            rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+            return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+        };
+        var hex = function(x) {
+            return isNaN(x) ? "00" : hexDigits[(x - x % 16) / 16] + hexDigits[x % 16];
+        };
+        var getContrast50 = function(hexcolor){
+            return (parseInt(hexcolor, 16) > 0xffffff/2) ? 'black':'white';
+        };
+        var kuiNamespace = document.querySelector('.k-ui-namespace');
+        var link = document.createElement('a');
+        kuiNamespace.insertBefore(link, kuiNamespace.childNodes[0]);
+        var color = window.getComputedStyle(link,null).getPropertyValue('color');
+        var textColor = getContrast50(rgb2hex(color));
+        document.body.style.setProperty('--primary-color', color);
+        document.body.style.setProperty('--primary-text-color', textColor);
+        link.parentNode.removeChild(link);
+    </script>
+    <h1 class="example-title">Title</h1>
+    <h2 class="k-title">
+        <span class="k-flag-object k-flag-object--inline">
+            <span class="k-flag-object__aside">
+                <span class="k-icon-document-folder k-icon--size-medium" aria-hidden="true"></span>
+                <span class="k-visually-hidden">Folder</span>
+            </span>
+            <span class="k-flag-object__body">
+                <a class="k-link-coverleft" href="#">
+                    Title example
+                </a>
+            </span>
+        </span>
+    </h2>
+    <hr />
+
+
+    <h1 class="example-title">Title with subtitle</h1>
+    <h2 class="k-title">
+        <span class="k-flag-object k-flag-object--inline">
+            <span class="k-flag-object__aside">
+                <span class="k-icon-document-folder k-icon--size-medium" aria-hidden="true"></span>
+                <span class="k-visually-hidden">Folder</span>
+            </span>
+            <span class="k-flag-object__body">
+                <a class="k-link-coverleft" href="#">
+                    Title example
+                </a>
+            </span>
+        </span>
+    </h2>
+    <h3 class="k-subtitle k-inline-list k-inline-list--separated">
+        <span class="k-inline-list__item">
+            Published on 27 september 2013
+        </span>
+        <span class="k-inline-list__item">
+            Modified on 12 september 2016
+        </span>
+        <span class="k-inline-list__item">
+            By Demo user
+        </span>
+        <span class="k-inline-list__item">
+            2 downloads
+        </span>
+    </h3>
+    <hr />
+
+
+    <h1 class="example-title">Buttons</h1>
+    <p>
+        <a class="k-button" href="#">Default button</a>
+        <a class="k-button k-button--primary" href="#">Primary button</a>
+        <a class="k-button k-button--error" href="#">Error button</a>
+        <a class="k-button k-button--warning" href="#">Warning button</a>
+        <a class="k-button k-button--success" href="#">Success button</a>
+    </p>
+    <hr />
+
+
+    <h1 class="example-title">Table</h1>
+    <table class="k-table k-table--responsive k-table--zebra k-js-responsive-table">
+        <tbody>
+        <tr>
+            <td>Column</td>
+            <td>Column</td>
+        </tr>
+        <tr>
+            <td>Column</td>
+            <td>Column</td>
+        </tr>
+        </tbody>
+        <thead class="k-visually-hidden">
+        <tr>
+            <th>Test</th>
+            <th data-hide="phone">Test2</th>
+        </tr>
+        </thead>
+    </table>
+    <hr />
+
+
+    <h1 class="example-title">Section</h1>
+    <div class="k-section">Default section</div>
+    <div class="k-section k-section--gradient">Gradient section</div>
+    <div class="k-section k-section--joined k-section--gradient">Joined gradient section (no margin)</div>
+    <div class="k-section k-section--joined">Joined section (no margin)</div>
+    <hr />
+
+
+    <h1 class="example-title">Gallery</h1>
+    <div class="k-gallery">
+        <div class="k-gallery__items">
+            <div class="k-gallery__item">
+                Gallery item
+            </div>
+            <div class="k-gallery__item">
+                Gallery item
+            </div>
+            <div class="k-gallery__item">
+                Gallery item
+            </div>
+            <div class="k-gallery__item">
+                Gallery item
+            </div>
+            <div class="k-gallery__item">
+                Gallery item
+            </div>
+        </div>
+    </div>
+    <hr />
+
+
+    <h1 class="example-title">Grid</h1>
+    <div class="example-grid">
+        <div class="k-query-grid k-query-grid--1-1-1">
+            <div class="k-query-grid__item">
+                <div class="k-query-grid__body">
+                    Sub
+                </div>
+            </div>
+            <div class="k-query-grid__item">
+                <div class="k-query-grid__body">
+                    Sub
+                </div>
+            </div>
+            <div class="k-query-grid__item">
+                <div class="k-query-grid__body">
+                    Sub
+                </div>
+            </div>
+        </div>
+        <div class="k-query-grid k-query-grid--1-2">
+            <div class="k-query-grid__item">
+                <div class="k-query-grid__body">
+                    Sub
+                </div>
+            </div>
+            <div class="k-query-grid__item">
+                <div class="k-query-grid__body">
+                    Main
+                </div>
+            </div>
+        </div>
+        <div class="k-query-grid k-query-grid--2-1">
+            <div class="k-query-grid__item">
+                <div class="k-query-grid__body">
+                    Sub
+                </div>
+            </div>
+            <div class="k-query-grid__item">
+                <div class="k-query-grid__body">
+                    Main
+                </div>
+            </div>
+        </div>
+        <div class="k-query-grid k-query-grid--1-1-1">
+            <div class="k-query-grid__item">
+                <div class="k-query-grid__body">
+                    Sub
+                </div>
+            </div>
+            <div class="k-query-grid__item">
+                <div class="k-query-grid__body">
+                    Sub
+                </div>
+            </div>
+            <div class="k-query-grid__item">
+                <div class="k-query-grid__body">
+                    Sub
+                </div>
+            </div>
+            <div class="k-query-grid__item">
+                <div class="k-query-grid__body">
+                    Sub
+                </div>
+            </div>
+        </div>
+        <div class="k-query-grid k-query-grid--1-3">
+            <div class="k-query-grid__item">
+                <div class="k-query-grid__body">
+                    Sub
+                </div>
+            </div>
+            <div class="k-query-grid__item">
+                <div class="k-query-grid__body">
+                    Main
+                </div>
+            </div>
+        </div>
+        <div class="k-query-grid k-query-grid--3-1">
+            <div class="k-query-grid__item">
+                <div class="k-query-grid__body">
+                    Sub
+                </div>
+            </div>
+            <div class="k-query-grid__item">
+                <div class="k-query-grid__body">
+                    Main
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+
+
+    <h1 class="example-title">Pagination</h1>
+    <div class="k-pagination">
+        <ul class="k-pagination__pages">
+            <li><a href="#">Item</a></li>
+            <li><a href="#">Item</a></li>
+            <li><a href="#">Item</a></li>
+        </ul>
+    </div>
+    <hr />
+
+
+    <h1 class="example-title">Toolbar</h1>
+    <div class="k-toolbar">
+        <a href="#" class="k-button k-button--success">Add</a>
+        <a href="#" class="k-button k-button--error">Delete</a>
+    </div>
+    <hr />
+
+
+    <h1 class="example-title">Tree</h1>
+    <div class="k-tree" id="k-jqtree"></div>
+    <script type="text/javascript">
+        (function($) {
+            $(document).ready(function () {
+                new Koowa.Tree('#k-jqtree', {
+                    "data": [
+                        {"label":"Main category","id":4},
+                        {"label":"Sub category 1","id":5,"parent":4},
+                        {"label":"Sub category 2","id":6,"parent":4},
+                        {"label":"Deeper category","id":7,"parent":6},
+                        {"label":"Sub category 3","id":8,"parent":4}
+                    ]
+                });
+            });
+        })(kQuery);
+    </script>
+    <hr />
+
+
+    <h1 class="example-title">Alert</h1>
+    <div class="k-alert">Alert</div>
+    <div class="k-alert k-alert--primary">Alert</div>
+    <div class="k-alert k-alert--success">Alert</div>
+    <div class="k-alert k-alert--warning">Alert</div>
+    <div class="k-alert k-alert--error">Alert</div>
+    <hr />
+
+
+    <h1 class="example-title">Thumbnail</h1>
+    <p>
+        <a href="#">
+            <img class="k-thumbnail" src="https://placeimg.com/240/135/tech" alt="" />
+        </a>
+    </p>
+    <hr />
+
+
+    <h1 class="example-title">Card</h1>
+    <div class="k-card k-card--rounded">
+        <div class="k-card__body">
+            <div class="k-card__header">
+                Card header
+            </div>
+            <div class="k-card__section">
+                Card section
+            </div>
+        </div>
+    </div>
+    <hr />
+
+
+    <h1 class="example-title">Icons</h1>
+    <p>
+        <span class="k-icon-check"></span>
+        <span class="k-icon-check k-icon--success"></span>
+        <span class="k-icon-check k-icon--error"></span>
+        <span class="k-icon-check k-icon--primary"></span>
+    </p>
+    <p>
+        <span class="k-icon-check k-icon--size-tiny"></span>
+        <span class="k-icon-check k-icon--size-small"></span>
+        <span class="k-icon-check k-icon--size-default"></span>
+        <span class="k-icon-check k-icon--size-medium"></span>
+        <span class="k-icon-check k-icon--size-large"></span>
+        <span class="k-icon-check k-icon--size-xlarge"></span>
+        <span class="k-icon-check k-icon--size-huge"></span>
+    </p>
+    <hr />
+
+
+    <h1 class="example-title">Select2</h1>
+    <select class="k-js-select2">
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Option 3</option>
+    </select>
+    <hr />
+
+
+    <h1 class="example-title">Labels</h1>
+    <p>
+        <span class="k-label">Label</span>
+        <span class="k-label k-label--primary">Label</span>
+        <span class="k-label k-label--success">Label</span>
+        <span class="k-label k-label--warning">Label</span>
+        <span class="k-label k-label--error">Label</span>
+    </p>
+    <p>
+        <a href="#" class="k-label">Label link</a>
+        <a href="#" class="k-label k-label--primary">Label link</a>
+        <a href="#" class="k-label k-label--success">Label link</a>
+        <a href="#" class="k-label k-label--warning">Label link</a>
+        <a href="#" class="k-label k-label--error">Label link</a>
+    </p>
+    <p>
+        <button type="button" class="k-label">Label button</button>
+        <button type="button" class="k-label k-label--primary">Label button</button>
+        <button type="button" class="k-label k-label--success">Label button</button>
+        <button type="button" class="k-label k-label--warning">Label button</button>
+        <button type="button" class="k-label k-label--error">Label button</button>
+    </p>
+    <hr />
+
+    <h1 class="example-title">List (modules)</h1>
+    <ul class="k-list">
+        <li class="k-list__item">
+            List item
+        </li>
+        <li class="k-list__item">
+            List item
+        </li>
+        <li class="k-list__item">
+            List item
+        </li>
+    </ul>
+    <ul class="k-list k-list--bordered">
+        <li class="k-list__item">
+            List item
+        </li>
+        <li class="k-list__item">
+            List item
+        </li>
+        <li class="k-list__item">
+            List item
+        </li>
+    </ul>
+    <ul class="k-list k-list--bordered k-list--rounded">
+        <li class="k-list__item">
+            List item
+        </li>
+        <li class="k-list__item">
+            List item
+        </li>
+        <li class="k-list__item">
+            List item
+        </li>
+    </ul>
+    <ul class="k-list">
+        <li class="k-list__item">
+            <div class="k-title">
+                <div class="k-flag-object k-flag-object--inline">
+                    <div class="k-flag-object__aside">
+                        <div class="k-icon-document-folder k-icon--size-default" aria-hidden="true"></div>
+                        <div class="k-visually-hidden">Folder</div>
+                    </div>
+                    <div class="k-flag-object__body">
+                        <a class="k-link-coverleft" href="#">
+                            Title example
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="k-subtitle k-inline-list">
+                <div class="k-inline-list__item">
+                    Published on 27 september 2013
+                </div>
+                <div class="k-inline-list__item">
+                    Modified on 12 september 2016
+                </div>
+                <div class="k-inline-list__item">
+                    By Demo user
+                </div>
+                <div class="k-inline-list__item">
+                    2 downloads
+                </div>
+            </div>
+            <ul class="k-list">
+                <li class="k-list__item">
+                    <div class="k-title">
+                        <div class="k-flag-object k-flag-object--inline">
+                            <div class="k-flag-object__aside">
+                                <div class="k-icon-document-folder k-icon--size-default" aria-hidden="true"></div>
+                                <div class="k-visually-hidden">Folder</div>
+                            </div>
+                            <div class="k-flag-object__body">
+                                <a class="k-link-coverleft" href="#">
+                                    Title example
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="k-subtitle k-inline-list">
+                        <div class="k-inline-list__item">
+                            Published on 27 september 2013
+                        </div>
+                        <div class="k-inline-list__item">
+                            Modified on 12 september 2016
+                        </div>
+                        <div class="k-inline-list__item">
+                            By Demo user
+                        </div>
+                        <div class="k-inline-list__item">
+                            2 downloads
+                        </div>
+                    </div>
+                </li>
+                <li class="k-list__item">
+                    <div class="k-title">
+                        <div class="k-flag-object k-flag-object--inline">
+                            <div class="k-flag-object__aside">
+                                <div class="k-icon-document-folder k-icon--size-default" aria-hidden="true"></div>
+                                <div class="k-visually-hidden">Folder</div>
+                            </div>
+                            <div class="k-flag-object__body">
+                                <a class="k-link-coverleft" href="#">
+                                    Title example
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="k-subtitle k-inline-list">
+                        <div class="k-inline-list__item">
+                            Published on 27 september 2013
+                        </div>
+                        <div class="k-inline-list__item">
+                            Modified on 12 september 2016
+                        </div>
+                        <div class="k-inline-list__item">
+                            By Demo user
+                        </div>
+                        <div class="k-inline-list__item">
+                            2 downloads
+                        </div>
+                    </div>
+                </li>
+                <li class="k-list__item">
+                    <div class="k-title">
+                        <div class="k-flag-object k-flag-object--inline">
+                            <div class="k-flag-object__aside">
+                                <div class="k-icon-document-folder k-icon--size-default" aria-hidden="true"></div>
+                                <div class="k-visually-hidden">Folder</div>
+                            </div>
+                            <div class="k-flag-object__body">
+                                <a class="k-link-coverleft" href="#">
+                                    Title example
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="k-subtitle k-inline-list">
+                        <div class="k-inline-list__item">
+                            Published on 27 september 2013
+                        </div>
+                        <div class="k-inline-list__item">
+                            Modified on 12 september 2016
+                        </div>
+                        <div class="k-inline-list__item">
+                            By Demo user
+                        </div>
+                        <div class="k-inline-list__item">
+                            2 downloads
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </li>
+        <li class="k-list__item">
+            <div class="k-title">
+                <div class="k-flag-object k-flag-object--inline">
+                    <div class="k-flag-object__aside">
+                        <div class="k-icon-document-folder k-icon--size-default" aria-hidden="true"></div>
+                        <div class="k-visually-hidden">Folder</div>
+                    </div>
+                    <div class="k-flag-object__body">
+                        <a class="k-link-coverleft" href="#">
+                            Title example
+                        </a>
+                        <div class="k-label k-label--error">Uh oh</div>
+                    </div>
+                </div>
+            </div>
+            <div class="k-subtitle k-inline-list">
+                <div class="k-inline-list__item">
+                    Published on 27 september 2013
+                </div>
+                <div class="k-inline-list__item">
+                    Modified on 12 september 2016
+                </div>
+                <div class="k-inline-list__item">
+                    By Demo user
+                </div>
+                <div class="k-inline-list__item">
+                    2 downloads
+                </div>
+            </div>
+        </li>
+        <li class="k-list__item">
+            <div class="k-title">
+                <div class="k-flag-object k-flag-object--inline">
+                    <div class="k-flag-object__aside">
+                        <div class="k-icon-document-folder k-icon--size-default" aria-hidden="true"></div>
+                        <div class="k-visually-hidden">Folder</div>
+                    </div>
+                    <div class="k-flag-object__body">
+                        <a class="k-link-coverleft" href="#">
+                            Title example
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="k-subtitle k-inline-list">
+                <div class="k-inline-list__item">
+                    Published on 27 september 2013
+                </div>
+                <div class="k-inline-list__item">
+                    Modified on 12 september 2016
+                </div>
+                <div class="k-inline-list__item">
+                    By Demo user
+                </div>
+                <div class="k-inline-list__item">
+                    2 downloads
+                </div>
+            </div>
+        </li>
+    </ul>
+    <ul class="k-list k-list--bordered">
+        <li class="k-list__item">
+            <div class="k-title">
+                <div class="k-flag-object k-flag-object--inline">
+                    <div class="k-flag-object__aside">
+                        <div class="k-icon-document-folder k-icon--size-default" aria-hidden="true"></div>
+                        <div class="k-visually-hidden">Folder</div>
+                    </div>
+                    <div class="k-flag-object__body">
+                        <a class="k-link-coverleft" href="#">
+                            Title example
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <ul class="k-list">
+                <li class="k-list__item">
+                    <div class="k-title">
+                        <div class="k-flag-object k-flag-object--inline">
+                            <div class="k-flag-object__aside">
+                                <div class="k-icon-document-folder k-icon--size-default" aria-hidden="true"></div>
+                                <div class="k-visually-hidden">Folder</div>
+                            </div>
+                            <div class="k-flag-object__body">
+                                <a class="k-link-coverleft" href="#">
+                                    Title example
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="k-list__item">
+                    <div class="k-title">
+                        <div class="k-flag-object k-flag-object--inline">
+                            <div class="k-flag-object__aside">
+                                <div class="k-icon-document-folder k-icon--size-default" aria-hidden="true"></div>
+                                <div class="k-visually-hidden">Folder</div>
+                            </div>
+                            <div class="k-flag-object__body">
+                                <a class="k-link-coverleft" href="#">
+                                    Title example
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="k-list__item">
+                    <div class="k-title">
+                        <div class="k-flag-object k-flag-object--inline">
+                            <div class="k-flag-object__aside">
+                                <div class="k-icon-document-folder k-icon--size-default" aria-hidden="true"></div>
+                                <div class="k-visually-hidden">Folder</div>
+                            </div>
+                            <div class="k-flag-object__body">
+                                <a class="k-link-coverleft" href="#">
+                                    Title example
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </li>
+        <li class="k-list__item">
+            <div class="k-title">
+                <div class="k-flag-object k-flag-object--inline">
+                    <div class="k-flag-object__aside">
+                        <div class="k-icon-document-folder k-icon--size-default" aria-hidden="true"></div>
+                        <div class="k-visually-hidden">Folder</div>
+                    </div>
+                    <div class="k-flag-object__body">
+                        <a class="k-link-coverleft" href="#">
+                            Title example
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="k-list__item">
+            <div class="k-title">
+                <div class="k-flag-object k-flag-object--inline">
+                    <div class="k-flag-object__aside">
+                        <div class="k-icon-document-folder k-icon--size-default" aria-hidden="true"></div>
+                        <div class="k-visually-hidden">Folder</div>
+                    </div>
+                    <div class="k-flag-object__body">
+                        <a class="k-link-coverleft" href="#">
+                            Title example
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <hr />
+
+
+    <h1 class="example-title">Examples</h1>
+    <hr />
+    <h2>Single document</h2>
+    <hr />
+
+    <div class="k-section">
+        <h2 class="k-title">
+        <span class="k-flag-object k-flag-object--inline">
+            <span class="k-flag-object__aside">
+                <span class="k-icon-document-folder k-icon--size-medium" aria-hidden="true"></span>
+                <span class="k-visually-hidden">Folder</span>
+            </span>
+            <span class="k-flag-object__body">
+                <a class="k-link-coverleft" href="#">Title example</a>
+                <span class="k-label k-label--success">New</span>
+            </span>
+        </span>
+        </h2>
+        <div class="k-subtitle k-inline-list k-inline-list--separated">
+            <span class="k-inline-list__item">
+                Published on 27 september 2013
+            </span>
+            <span class="k-inline-list__item">
+                Modified on 12 september 2016
+            </span>
+            <span class="k-inline-list__item">
+                By Demo user
+            </span>
+            <span class="k-inline-list__item">
+                2 downloads
+            </span>
+        </div>
+        <div class="k-query-grid k-query-grid--1-3">
+            <div class="k-query-grid__item">
+                <div class="k-query-grid__body">
+                    <a href="#">
+                        <a href="#">
+                            <img class="k-thumbnail" src="https://placeimg.com/800/600/tech" alt="" />
+                        </a>
+                    </a>
+                </div>
+            </div>
+            <div class="k-query-grid__item">
+                <div class="k-query-grid__body">
+                    <div class="k-query-grid k-query-grid--3-1">
+                        <div class="k-query-grid__item">
+                            <div class="k-query-grid__body">
+                                Nulla vitae elit libero, a pharetra augue. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+                            </div>
+                        </div>
+                        <div class="k-query-grid__item">
+                            <div class="k-query-grid__body k-align-center">
+                                <a class="k-button k-button--primary k-button--block" href="#">View<br/><small>(pdf, 580 kb)</small></a><br />
+                                recipe.pdf
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2>Some description title</h2>
+        <p>Donec ullamcorper nulla non metus auctor fringilla. Aenean lacinia bibendum nulla sed consectetur. Donec id elit non mi porta gravida at eget metus. Sed posuere consectetur est at lobortis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+    </div>
+
+    <hr />
+    <h2>Tree example</h2>
+    <hr />
+
+    <div class="k-section">
+
+        <div class="k-query-grid k-query-grid--1-3">
+            <div class="k-query-grid__item">
+                <div class="k-query-grid__body">
+                    Tree
+                </div>
+            </div>
+            <div class="k-query-grid__item">
+                <div class="k-query-grid__body">
+                    <h2 class="k-title">
+        <span class="k-flag-object k-flag-object--inline">
+            <span class="k-flag-object__aside">
+                <span class="k-icon-document-folder k-icon--size-medium" aria-hidden="true"></span>
+                <span class="k-visually-hidden">Folder</span>
+            </span>
+            <span class="k-flag-object__body">
+                <a class="k-link-coverleft" href="#">Title example</a>
+                <span class="k-label k-label--success">New</span>
+            </span>
+        </span>
+                    </h2>
+                    <div class="k-subtitle k-inline-list k-inline-list--separated">
+            <span class="k-inline-list__item">
+                Published on 27 september 2013
+            </span>
+                        <span class="k-inline-list__item">
+                Modified on 12 september 2016
+            </span>
+                        <span class="k-inline-list__item">
+                By Demo user
+            </span>
+                        <span class="k-inline-list__item">
+                2 downloads
+            </span>
+                    </div>
+                    <div class="k-query-grid k-query-grid--1-3">
+                        <div class="k-query-grid__item">
+                            <div class="k-query-grid__body">
+                                <a href="#">
+                                    <a href="#">
+                                        <img class="k-thumbnail" src="https://placeimg.com/800/600/tech" alt="" />
+                                    </a>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="k-query-grid__item">
+                            <div class="k-query-grid__body">
+                                <div class="k-query-grid k-query-grid--3-1">
+                                    <div class="k-query-grid__item">
+                                        <div class="k-query-grid__body">
+                                            Nulla vitae elit libero, a pharetra augue. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+                                        </div>
+                                    </div>
+                                    <div class="k-query-grid__item">
+                                        <div class="k-query-grid__body k-align-center">
+                                            <a class="k-button k-button--primary k-button--block" href="#">View<br/><small>(pdf, 580 kb)</small></a><br />
+                                            recipe.pdf
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>Some description title</h2>
+                    <p>Donec ullamcorper nulla non metus auctor fringilla. Aenean lacinia bibendum nulla sed consectetur. Donec id elit non mi porta gravida at eget metus. Sed posuere consectetur est at lobortis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+</body>
+</html>

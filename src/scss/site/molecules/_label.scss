@@ -1,25 +1,43 @@
-/* Labels
+/* Label
    ========================================================================== */
 
 .k-label {
   display: inline-block;
-  padding: $tag-padding-y $tag-padding-x;
+  padding: $k-site-label-vertical-padding $k-site-label-horizontal-padding;
   font-size: small;
-  font-weight: $tag-font-weight;
-  line-height: 1;
-  color: $tag-color;
+  font-weight: $k-site-label-font-weight;
+  line-height: 1.2;
+  color: $k-site-label-color;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
+  box-shadow: inset 0 0 0 160px rgba(0, 0, 0, 0);
+  transition: box-shadow 200ms ease-in-out;
   margin-top: -0.1em;
   margin-left: 0.25em;
-  border-radius: $border-radius;
+  border-radius: $k-site-border-radius;
+  text-decoration: none;
+  background-color: $k-site-label-default-background;
 
 
   /* Empty tags collapse automatically */
 
   &:empty {
     display: none;
+  }
+
+
+  /* Focus and hover */
+
+  &[type="button"],
+  &[href] {
+    &:active,
+    &:focus,
+    &:hover {
+      box-shadow: inset 0 0 0 160px rgba(0, 0, 0, 0.15);
+      text-decoration: none;
+      cursor: pointer;
+    }
   }
 }
 
@@ -30,26 +48,23 @@
  * Contextual variations (linked tags get darker on :hover).
  */
 
-.k-label--default {
-  @include tag-variant($tag-default-bg);
+.k-label--primary {
+  background-color: var(--primary-color);
+  color: var(--primary-text-color);
 }
 
-.k-label--primary {
-  @include tag-variant($tag-primary-bg);
+.k-label--default {
+  background-color: $k-site-label-default-background;
 }
 
 .k-label--success {
-  @include tag-variant($tag-success-bg);
-}
-
-.k-label--info {
-  @include tag-variant($tag-info-bg);
+  background-color: $k-site-label-success-background;
 }
 
 .k-label--warning {
-  @include tag-variant($tag-warning-bg);
+  background-color: $k-site-label-warning-background;
 }
 
-.k-label--danger {
-  @include tag-variant($tag-danger-bg);
+.k-label--error {
+  background-color: $k-site-label-error-background;
 }

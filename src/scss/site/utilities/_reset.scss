@@ -1,0 +1,40 @@
+/* reset */
+.k-button,
+.k-label {
+  border: none;
+  transform: none;
+  width: auto;
+  outline: none;
+  float: none;
+  height: auto;
+  text-indent: 0;
+  text-transform: none;
+  text-decoration: none;
+  text-shadow: none;
+  margin: 0;
+
+  /* reset for hover focus and active */
+  &:hover, &:focus, &:active {
+    border: none;
+    transform: none;
+    outline: none;
+    text-indent: 0;
+    text-transform: none;
+    text-decoration: none;
+    text-shadow: none;
+  }
+
+  /* Hide pseudo elements coming from template from default a elements */
+  &:before,
+  &:after {
+    display: none;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  /* Hide empty tags */
+  &:empty {
+    display: none;
+  }
+}

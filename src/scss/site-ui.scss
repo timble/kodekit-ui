@@ -1,94 +1,39 @@
-/* ==========================================================================
-   Global tools
-   ========================================================================== */
+// ==========================================================================
+// Global tools
+// ==========================================================================
+//
+// Containing different libraries, variables, mixins and functions
+
+@import "site/core/tools";
 
 
-/* Set icon path variable before loading core tools to override them */
+// ==========================================================================
+// Core styling
+// ==========================================================================
 
-$k-icon-path: '../../koowa/com_koowa/fonts' !default;
-
-
-/* Load core tools and icons */
-
-@import "admin/core/tools";
-@import "admin/utilities/k-icons";
+@import "site/core/core";
 
 
-/* Load site variables and mixins */
+// ==========================================================================
+// 3rd party styling
+// ==========================================================================
+//
+// Loading all 3rd party plugin SCSS files
 
-@import "site/utilities/variables";
-@import "site/utilities/mixins";
-
-
-/* namespaced styling */
-
-.k-ui-namespace {
+@import "site/core/3rdparty";
 
 
-  /* Border-box-size everything */
-
-  @import "admin/utilities/boxsizing";
 
 
-  /* Custom selected admin atoms */
-
-  @import "admin/atoms/img";
-  @import "admin/atoms/legend";
 
 
-  /* Site atoms */
-
-  @import "site/atoms/legend";
 
 
-  /* Custom selected admin molecules */
-
-  @import "admin/molecules/icons";
-  @import "admin/molecules/tree";
-  @import "admin/molecules/card";
-  @import "admin/molecules/buttons";
-  @import "admin/molecules/pagination";
-  @import "admin/molecules/forms";
 
 
-  /* Site molecules */
-
-  @import "site/molecules/alert";
-  @import "site/molecules/card";
-  @import "site/molecules/dropdown-toggle";
-  @import "site/molecules/element-querie";
-  @import "site/molecules/flag-object";
-  @import "site/molecules/forms"; // Or should we omit fields entirely? But then select2 looks different..
-  @import "site/molecules/gallery";
-  @import "site/molecules/inline-list";
-  @import "site/molecules/label";
-  @import "site/molecules/list";
-  @import "site/molecules/responsive-embed";
-  @import "site/molecules/section";
-  @import "site/molecules/tab";
-  @import "site/molecules/table";
-  @import "site/molecules/title";
-  @import "site/molecules/toolbar";
-  @import "site/molecules/tree";
 
 
-  /* Utilities */
 
-  @import "admin/utilities/utilities";
-  @import "site/utilities/utilities";
-
-
-  /* Shame */
-
-  @import "site/shame";
-
+#system-message-container#system-message-container {
+  display: none;
 }
-
-
-/* Outside the namespace container */
-
-@import "../../node_modules/select2/src/scss/core";
-@import "admin/molecules/select2";
-
-
-

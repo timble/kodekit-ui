@@ -2,8 +2,8 @@
    ========================================================================== */
 
 .k-toolbar {
-  @include content-block($section-spacing);
-  padding: 1em;
-  background: rgba(0, 0, 0, 0.05);
-  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  @include content-block($k-site-toolbar-margin);
+  padding: $k-site-toolbar-padding;
+  background: $k-site-toolbar-background;
+  border-bottom: $k-site-toolbar-border-bottom;
 }

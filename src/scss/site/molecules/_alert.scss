@@ -1,26 +1,23 @@
-/* Alerts
+/* Alert
    ========================================================================== */
 
 .k-alert {
-  padding: $alert-padding;
-  border-top: $alert-border-width solid transparent;
-  border-bottom: $alert-border-width solid transparent;
-  @include content-block($spacer-y);
-
+  padding: $k-site-alert-padding;
+  background: $k-site-alert-background;
+  color: $k-site-alert-color;
+  @include content-block($k-site-alert-spacing);
 
   h1, h2, h3, h4, h5, h6 {
     @include reset;
+    color: inherit;
   }
 
   .k-alert__heading, address, h1, h2, h3, h4, h5, h6, p {
     @include content-block(0.5em);
   }
 
-  h1, h2, h3, h4, h5, h6, a {
-    color: inherit
-  }
-
   a {
+    color: inherit;
     text-decoration: underline;
 
     &:focus,
@@ -35,18 +32,28 @@
  * Alternate styles
  */
 
-.k-alert--success {
-  @include alert-variant($alert-success-bg, $alert-success-border, $alert-success-text);
+.k-alert--primary {
+  // @TODO: add default color as variable?
+  background-color: var(--primary-color);
+  color: var(--primary-text-color);
+
+  @supports ((--a: 0)) {
+    background-color: var(--primary-color);
+    color: var(--primary-text-color);
+  }
 }
 
-.k-alert--info {
-  @include alert-variant($alert-info-bg, $alert-info-border, $alert-info-text);
+.k-alert--success {
+  background: $k-site-alert-success-background;
+  color: $k-site-alert-success-color;
 }
 
 .k-alert--warning {
-  @include alert-variant($alert-warning-bg, $alert-warning-border, $alert-warning-text);
+  background: $k-site-alert-warning-background;
+  color: $k-site-alert-success-color;
 }
 
-.k-alert--danger {
-  @include alert-variant($alert-danger-bg, $alert-danger-border, $alert-danger-text);
+.k-alert--error {
+  background: $k-site-alert-error-background;
+  color: $k-site-alert-success-color;
 }

@@ -1,0 +1,18 @@
+/* Thumbnail @TODO: reset other styling like buttons and labels?
+   ========================================================================== */
+
+.k-thumbnail {
+  border: $k-site-thumbnail-border;
+  border-radius: $k-site-thumbnail-border-radius;
+  padding: $k-site-thumbnail-spacing;
+  background: $k-site-thumbnail-background;
+  transition: border 200ms ease-in-out;
+}
+
+a {
+  &:focus, &:hover, &active {
+    .k-thumbnail {
+      border-color: $k-site-thumbnail-hover-border-color;
+    }
+  }
+}

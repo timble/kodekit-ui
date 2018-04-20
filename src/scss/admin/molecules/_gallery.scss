@@ -23,7 +23,6 @@
 
   .k-gallery__items {
     margin: -($k-grid-spacing / 2);
-    font-size: 0;
 
     @supports (display: flex) {
       display: flex;
@@ -39,10 +38,11 @@
   .k-gallery__item {
     padding: ($k-grid-spacing / 2);
     display: inline-block;
+    margin-left: -0.25em; // account for whitespace
     vertical-align: middle;
-    font-size: 1rem;
 
     @supports (display: flex) {
+      margin-left: 0; // reset
       display: flex;
       flex: 0 0 auto;
     }
