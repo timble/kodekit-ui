@@ -1532,11 +1532,11 @@
    */
   /* Pagination */
   /* Site molecules */
-  /* Alert
-   ========================================================================== */
+  /* Alerts
+     ========================================================================== */
   /**
- * Alternate styles
- */
+   * Alternate styles
+   */
   /* Button
    ========================================================================== */
   /**
@@ -3099,7 +3099,7 @@
 
 .k-ui-namespace .k-alert {
   padding: 1em;
-  background: #3498db;
+  background: #718093;
   color: white;
   margin-bottom: 1em;
 }
@@ -3139,11 +3139,9 @@
   color: var(--primary-text-color);
 }
 
-@supports (--a: 0) {
-  .k-ui-namespace .k-alert--primary {
-    background-color: var(--primary-color);
-    color: var(--primary-text-color);
-  }
+.k-ui-namespace .k-alert--neutral {
+  background: #3498db;
+  color: white;
 }
 
 .k-ui-namespace .k-alert--success {
@@ -3171,7 +3169,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #7f8c8d;
+  background: #718093;
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 0 0 160px transparent, inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
   border-radius: 3px;
@@ -3202,8 +3200,13 @@
   color: var(--primary-text-color);
 }
 
-.k-ui-namespace .k-button--error {
-  background: #c0392b;
+.k-ui-namespace .k-button--neutral {
+  background: #3498db;
+  color: white;
+}
+
+.k-ui-namespace .k-button--success {
+  background: #27ae60;
   color: white;
 }
 
@@ -3212,8 +3215,8 @@
   color: white;
 }
 
-.k-ui-namespace .k-button--success {
-  background: #27ae60;
+.k-ui-namespace .k-button--error {
+  background: #c0392b;
   color: white;
 }
 
@@ -3351,6 +3354,7 @@
   font-size: small;
   font-weight: bold;
   line-height: 1.2;
+  background-color: #718093;
   color: white;
   text-align: center;
   white-space: nowrap;
@@ -3361,7 +3365,6 @@
   margin-left: 0.25em;
   border-radius: 3px;
   text-decoration: none;
-  background-color: #3498db;
   /* Empty tags collapse automatically */
   /* Focus and hover */
 }
@@ -3381,20 +3384,24 @@
   color: var(--primary-text-color);
 }
 
-.k-ui-namespace .k-label--default {
+.k-ui-namespace .k-label--neutral {
   background-color: #3498db;
+  color: white;
 }
 
 .k-ui-namespace .k-label--success {
   background-color: #27ae60;
+  color: white;
 }
 
 .k-ui-namespace .k-label--warning {
   background-color: #e67e22;
+  color: white;
 }
 
 .k-ui-namespace .k-label--error {
   background-color: #c0392b;
+  color: white;
 }
 
 .k-ui-namespace .k-list {

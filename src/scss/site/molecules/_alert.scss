@@ -1,59 +1,61 @@
-/* Alert
-   ========================================================================== */
+@if ($k-site-molecules == true and $k-site-molecule-alert != false) or $k-site-molecule-alert == true {
 
-.k-alert {
-  padding: $k-site-alert-padding;
-  background: $k-site-alert-background;
-  color: $k-site-alert-color;
-  @include content-block($k-site-alert-spacing);
+  /* Alerts
+     ========================================================================== */
 
-  h1, h2, h3, h4, h5, h6 {
-    @include reset;
-    color: inherit;
-  }
+  .k-alert {
+    padding: $k-site-alert-padding;
+    background: $k-site-alert-background;
+    color: $k-site-alert-color;
+    @include content-block($k-site-alert-margin-bottom);
 
-  .k-alert__heading, address, h1, h2, h3, h4, h5, h6, p {
-    @include content-block(0.5em);
-  }
+    h1, h2, h3, h4, h5, h6 {
+      @include reset();
+      color: inherit;
+    }
 
-  a {
-    color: inherit;
-    text-decoration: underline;
+    .k-alert__heading, address, h1, h2, h3, h4, h5, h6, p {
+      @include content-block($k-site-alert-element-margin-bottom);
+    }
 
-    &:focus,
-    &:hover {
-      text-decoration: none;
+    a {
+      color: inherit;
+      text-decoration: $k-site-alert-link-text-decoration;
+
+      &:focus,
+      &:hover {
+        text-decoration: $k-site-alert-link-hover-text-decoration;
+      }
     }
   }
-}
 
 
-/**
- * Alternate styles
- */
+  /**
+   * Alternate styles
+   */
 
-.k-alert--primary {
-  // @TODO: add default color as variable?
-  background-color: var(--primary-color);
-  color: var(--primary-text-color);
-
-  @supports ((--a: 0)) {
+  .k-alert--primary {
     background-color: var(--primary-color);
     color: var(--primary-text-color);
   }
-}
 
-.k-alert--success {
-  background: $k-site-alert-success-background;
-  color: $k-site-alert-success-color;
-}
+  .k-alert--neutral {
+    background: $k-site-alert-neutral-background;
+    color: $k-site-alert-neutral-color;
+  }
 
-.k-alert--warning {
-  background: $k-site-alert-warning-background;
-  color: $k-site-alert-success-color;
-}
+  .k-alert--success {
+    background: $k-site-alert-success-background;
+    color: $k-site-alert-success-color;
+  }
 
-.k-alert--error {
-  background: $k-site-alert-error-background;
-  color: $k-site-alert-success-color;
+  .k-alert--warning {
+    background: $k-site-alert-warning-background;
+    color: $k-site-alert-success-color;
+  }
+
+  .k-alert--error {
+    background: $k-site-alert-error-background;
+    color: $k-site-alert-success-color;
+  }
 }

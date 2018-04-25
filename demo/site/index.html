@@ -125,10 +125,11 @@
     <h1 class="example-title">Buttons</h1>
     <p>
         <a class="k-button" href="#">Default button</a>
-        <a class="k-button k-button--primary" href="#">Primary button</a>
-        <a class="k-button k-button--error" href="#">Error button</a>
-        <a class="k-button k-button--warning" href="#">Warning button</a>
+        <a class="k-button k-button--neutral" href="#">Neutral button</a>
+        <a class="k-button k-button--primary" href="#">Primary button (template color)</a>
         <a class="k-button k-button--success" href="#">Success button</a>
+        <a class="k-button k-button--warning" href="#">Warning button</a>
+        <a class="k-button k-button--error" href="#">Error button</a>
     </p>
     <hr />
 
@@ -319,11 +320,12 @@
 
 
     <h1 class="example-title">Alert</h1>
-    <div class="k-alert">Alert</div>
-    <div class="k-alert k-alert--primary">Alert</div>
-    <div class="k-alert k-alert--success">Alert</div>
-    <div class="k-alert k-alert--warning">Alert</div>
-    <div class="k-alert k-alert--error">Alert</div>
+    <div class="k-alert">Default alert</div>
+    <div class="k-alert k-alert--neutral">Neutral alert</div>
+    <div class="k-alert k-alert--primary">Primary alert</div>
+    <div class="k-alert k-alert--success">Success alert</div>
+    <div class="k-alert k-alert--warning">Warning alert</div>
+    <div class="k-alert k-alert--error">Error alert</div>
     <hr />
 
 
@@ -380,25 +382,28 @@
 
     <h1 class="example-title">Labels</h1>
     <p>
-        <span class="k-label">Label</span>
-        <span class="k-label k-label--primary">Label</span>
-        <span class="k-label k-label--success">Label</span>
-        <span class="k-label k-label--warning">Label</span>
-        <span class="k-label k-label--error">Label</span>
+        <span class="k-label">Default label</span>
+        <span class="k-label k-label--neutral">Neutral label</span>
+        <span class="k-label k-label--primary">Primary label</span>
+        <span class="k-label k-label--success">Success label</span>
+        <span class="k-label k-label--warning">Warning label</span>
+        <span class="k-label k-label--error">Error label</span>
     </p>
     <p>
-        <a href="#" class="k-label">Label link</a>
-        <a href="#" class="k-label k-label--primary">Label link</a>
-        <a href="#" class="k-label k-label--success">Label link</a>
-        <a href="#" class="k-label k-label--warning">Label link</a>
-        <a href="#" class="k-label k-label--error">Label link</a>
+        <a href="#" class="k-label">Default label link</a>
+        <a href="#" class="k-label k-label--neutral">Neutral label link</a>
+        <a href="#" class="k-label k-label--primary">Primary label link</a>
+        <a href="#" class="k-label k-label--success">Success label link</a>
+        <a href="#" class="k-label k-label--warning">Warning label link</a>
+        <a href="#" class="k-label k-label--error">Error label link</a>
     </p>
     <p>
-        <button type="button" class="k-label">Label button</button>
-        <button type="button" class="k-label k-label--primary">Label button</button>
-        <button type="button" class="k-label k-label--success">Label button</button>
-        <button type="button" class="k-label k-label--warning">Label button</button>
-        <button type="button" class="k-label k-label--error">Label button</button>
+        <button type="button" class="k-label">Default label button</button>
+        <button type="button" class="k-label k-label--neutral">Neutral label button</button>
+        <button type="button" class="k-label k-label--primary">Primary label button</button>
+        <button type="button" class="k-label k-label--success">Success label button</button>
+        <button type="button" class="k-label k-label--warning">Warning label button</button>
+        <button type="button" class="k-label k-label--error">Error label button</button>
     </p>
     <hr />
 
@@ -785,7 +790,22 @@
         <div class="k-query-grid k-query-grid--1-3">
             <div class="k-query-grid__item">
                 <div class="k-query-grid__body">
-                    Tree
+                    <div class="k-tree" id="k-jqtree2"></div>
+                    <script type="text/javascript">
+                        (function($) {
+                            $(document).ready(function () {
+                                new Koowa.Tree('#k-jqtree2', {
+                                    "data": [
+                                        {"label":"Main category","id":4},
+                                        {"label":"Sub category 1","id":5,"parent":4},
+                                        {"label":"Sub category 2","id":6,"parent":4},
+                                        {"label":"Deeper category","id":7,"parent":6},
+                                        {"label":"Sub category 3","id":8,"parent":4}
+                                    ]
+                                });
+                            });
+                        })(kQuery);
+                    </script>
                 </div>
             </div>
             <div class="k-query-grid__item">
