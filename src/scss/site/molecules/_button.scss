@@ -1,73 +1,64 @@
-/* Button
-   ========================================================================== */
+@if ($k-site-molecules == true and $k-site-molecule-button != false) or $k-site-molecule-button == true {
 
-.k-button {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  background: $k-site-button-default-background;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0 0 0 160px rgba(0, 0, 0, 0), inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
-  border-radius: 3px;
-  line-height: 1.2;
-  padding: 0.35em 0.6em;
-  transition: all 200ms ease-in-out;
-  text-align: center;
-  color: $k-site-button-default-color;
+  /* Button
+     ========================================================================== */
+
+  .k-button {
+    display: $k-site-button-display;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: $k-site-button-background;
+    border: $k-site-button-border;
+    box-shadow: $k-site-button-box-shadow;
+    border-radius: $k-site-button-border-radius;
+    line-height: $k-site-button-line-height;
+    padding: $k-site-button-padding;
+    color: $k-site-button-color;
+    @include transition(all);
 
 
-  /* Focus / hover / active */
+    /* Focus / hover / active */
 
-  &:active,
-  &:focus,
-  &:hover {
-    box-shadow: inset 0 0 0 160px rgba(0, 0, 0, 0.15), inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(0, 0, 0, 0.33);
-    text-decoration: none;
+    &:active,
+    &:focus,
+    &:hover {
+      box-shadow: $k-site-button-hover-box-shadow;
+      border: $k-site-button-hover-border;
+    }
   }
 
 
-  /* Hide pseudo elements coming from template from default a elements */
+  /**
+   * Alternate styles
+   */
 
-  &:before,
-  &:after {
-    display: none;
-    position: absolute;
-    visibility: hidden;
-    opacity: 0;
+  .k-button--primary {
+    background-color: var(--primary-color);
+    color: var(--primary-text-color);
   }
-}
 
+  .k-button--neutral {
+    background: $k-site-button-neutral-background;
+    color: $k-site-button-neutral-color;
+  }
 
-/**
- * Alternate styles
- */
+  .k-button--success {
+    background: $k-site-button-success-background;
+    color: $k-site-button-success-color;
+  }
 
-.k-button--primary {
-  background-color: var(--primary-color);
-  color: var(--primary-text-color);
-}
+  .k-button--warning {
+    background: $k-site-button-warning-background;
+    color: $k-site-button-warning-color;
+  }
 
-.k-button--neutral {
-  background: $k-site-button-neutral-background;
-  color: $k-site-button-neutral-color;
-}
+  .k-button--error {
+    background: $k-site-button-error-background;
+    color: $k-site-button-error-color;
+  }
 
-.k-button--success {
-  background: $k-site-button-success-background;
-  color: $k-site-button-success-color;
-}
-
-.k-button--warning {
-  background: $k-site-button-warning-background;
-  color: $k-site-button-warning-color;
-}
-
-.k-button--error {
-  background: $k-site-button-error-background;
-  color: $k-site-button-error-color;
-}
-
-.k-button--block {
-  display: block;
+  .k-button--block {
+    display: block;
+  }
 }

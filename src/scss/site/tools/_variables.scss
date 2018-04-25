@@ -10,6 +10,7 @@ $k-site-atoms:                                      true !default;
 
 $k-site-molecules:                                  true !default;
 $k-site-molecule-alert:                             true !default;
+$k-site-molecule-button:                            true !default;
 
 
 // Spacing
@@ -64,10 +65,19 @@ $k-site-alert-error-color:                          $k-error-type-color !default
 
 // Buttons
 // ==========================================================================
-// @TODO: More inside variables
 
-$k-site-button-default-background:                  $k-site-default-color !default;
-$k-site-button-default-color:                       $k-site-default-type-color !default;
+$k-site-button-display:                             inline-flex !default;
+$k-site-button-border:                              1px solid rgba(0, 0, 0, 0.1) !default;
+$k-site-button-box-shadow:                          inset 0 0 0 160px rgba(0, 0, 0, 0), inset 0 1px 0 0 rgba(255, 255, 255, 0.2) !default;
+$k-site-button-border-radius:                       $k-site-border-radius !default;
+$k-site-button-line-height:                         1.2 !default;
+$k-site-button-padding:                             0.35em 0.6em !default;
+
+$k-site-button-hover-box-shadow:                    inset 0 0 0 160px rgba(0, 0, 0, 0.15), inset 0 1px 0 0 rgba(255, 255, 255, 0.2) !default;
+$k-site-button-hover-border:                        1px solid rgba(0, 0, 0, 0.33) !default;
+
+$k-site-button-background:                          $k-site-default-color !default;
+$k-site-button-color:                               $k-site-default-type-color !default;
 
 $k-site-button-neutral-background:                  $k-neutral-color !default;
 $k-site-button-neutral-color:                       $k-neutral-type-color !default;
