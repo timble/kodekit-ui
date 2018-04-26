@@ -1,18 +1,21 @@
-/* Thumbnail @TODO: reset other styling like buttons and labels?
-   ========================================================================== */
+@if ($k-site-molecules == true and $k-site-molecule-thumbnail != false) or $k-site-molecule-thumbnail == true {
 
-.k-thumbnail {
-  border: $k-site-thumbnail-border;
-  border-radius: $k-site-thumbnail-border-radius;
-  padding: $k-site-thumbnail-spacing;
-  background: $k-site-thumbnail-background;
-  transition: border 200ms ease-in-out;
-}
+  /* Thumbnail @TODO: reset other styling like buttons and labels?
+     ========================================================================== */
 
-a {
-  &:focus, &:hover, &active {
-    .k-thumbnail {
-      border-color: $k-site-thumbnail-hover-border-color;
+  .k-thumbnail {
+    border: $k-site-thumbnail-border;
+    border-radius: $k-site-thumbnail-border-radius;
+    padding: $k-site-thumbnail-spacing;
+    background: $k-site-thumbnail-background;
+    transition: border 200ms ease-in-out;
+  }
+
+  a {
+    &:focus, &:hover, &active {
+      .k-thumbnail {
+        border-color: $k-site-thumbnail-hover-border-color;
+      }
     }
   }
 }

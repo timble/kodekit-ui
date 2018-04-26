@@ -1,45 +1,48 @@
-/* Table
-   ========================================================================== */
+@if ($k-site-molecules == true and $k-site-molecule-table != false) or $k-site-molecule-table == true {
 
-/**
- * Basic table
- */
+  /* Table
+     ========================================================================== */
 
-.k-table {
-  width: 100%;
-  max-width: 100%;
-  border-collapse: collapse;
-  border: none;
-  @include content-block($k-site-table-spacing);
+  /**
+   * Basic table
+   */
 
-  th,
-  td {
+  .k-table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
     border: none;
-    padding: 0.5em 0.65em;
-    vertical-align: middle;
-    border-top: $k-site-table-border-width solid $k-site-table-border-color;
-    text-align: left;
+    @include content-block($k-site-table-spacing);
+
+    th,
+    td {
+      border: none;
+      padding: 0.5em 0.65em;
+      vertical-align: middle;
+      border-top: $k-site-table-border-width solid $k-site-table-border-color;
+      text-align: left;
+    }
+
+    thead th {
+      vertical-align: bottom;
+      border-bottom: (2 * $k-site-table-border-width) solid $k-site-table-border-color;
+    }
+
+    tbody + tbody {
+      border-top: (2 * $k-site-table-border-width) solid $k-site-table-border-color;
+    }
   }
 
-  thead th {
-    vertical-align: bottom;
-    border-bottom: (2 * $k-site-table-border-width) solid $k-site-table-border-color;
-  }
 
-  tbody + tbody {
-    border-top: (2 * $k-site-table-border-width) solid $k-site-table-border-color;
-  }
-}
+  /**
+   * Zebra-striping
+   *
+   * Default zebra-stripe styles (alternating gray and transparent backgrounds)
+   */
 
-
-/**
- * Zebra-striping
- *
- * Default zebra-stripe styles (alternating gray and transparent backgrounds)
- */
-
-.k-table--striped {
-  tbody tr:nth-of-type(odd) {
-    background-color: $k-site-table-accent-background;
+  .k-table--striped {
+    tbody tr:nth-of-type(odd) {
+      background-color: $k-site-table-accent-background;
+    }
   }
 }

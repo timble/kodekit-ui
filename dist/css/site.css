@@ -1543,92 +1543,97 @@
    * Alternate styles
    */
   /* Card
-   ========================================================================== */
+     ========================================================================== */
   /**
- * Admin card overrides using RGBA to fit template style
- */
+   * Admin card overrides using RGBA to fit template style
+   */
   /* Flag object
-   ========================================================================== */
+     ========================================================================== */
   /**
- * Inline flag object
- */
+   * Inline flag object
+   */
   /**
- * Top aligned flag object
- */
+   * Top aligned flag object
+   */
   /**
- * Bottom aligned flag object
- */
+   * Bottom aligned flag object
+   */
   /**
- * Flag object children
- */
+   * Flag object children
+   */
   /**
- * Horizontal spacing
- */
+   * Horizontal spacing
+   */
   /* Inline list
-   ========================================================================== */
+     ========================================================================== */
   /* Label
-   ========================================================================== */
+     ========================================================================== */
   /**
- * Colors
- *
- * Contextual variations (linked tags get darker on :hover).
- */
+   * Colors
+   *
+   * Contextual variations (linked tags get darker on :hover).
+   */
   /* List
-   ========================================================================== */
+     ========================================================================== */
   /**
- * Bordered list
- */
+   * Bordered list
+   */
   /**
- * Rounded list
- */
+   * Rounded list
+   */
+  /* List
+     ========================================================================== */
+  /**
+   * Admin pagination overrides using RGBA to fit template style
+   */
   /* Query grid
-   ========================================================================== */
+     ========================================================================== */
   /**
- * 1. negative margin so we can have consistent margin even when wrapping items
- */
+   * 1. negative margin so we can have consistent margin even when wrapping items
+   */
   /**
- * Grid item
- *
- * 1. bottom margin to separate items from each other
- * 2. half spacing as left and right padding to separate items horizontally
- * 3. negative spacing for grid inside grid__item to negate the double margin
- */
+   * Grid item
+   *
+   * 1. bottom margin to separate items from each other
+   * 2. half spacing as left and right padding to separate items horizontally
+   * 3. negative spacing for grid inside grid__item to negate the double margin
+   */
   /* Section
-   ========================================================================== */
+     ========================================================================== */
   /**
- * 1. Clearfix so both top and bottom will be cleared of floats and margin
- * 2. Content block adds bottom margin to all except the last-child
- */
+   * 1. Clearfix so both top and bottom will be cleared of floats and margin
+   * 2. Content block adds bottom margin to all except the last-child
+   */
   /* Table
-   ========================================================================== */
+     ========================================================================== */
   /**
- * Basic table
- */
+   * Basic table
+   */
   /**
- * Zebra-striping
- *
- * Default zebra-stripe styles (alternating gray and transparent backgrounds)
- */
+   * Zebra-striping
+   *
+   * Default zebra-stripe styles (alternating gray and transparent backgrounds)
+   */
   /* Thumbnail @TODO: reset other styling like buttons and labels?
-   ========================================================================== */
+     ========================================================================== */
   /* Title
-   ========================================================================== */
+     ========================================================================== */
   /**
- * 1. We need this for the k-link-coverleft to be able to click on icons / images without the need for an extra link
- */
+   * 1. We need this for the k-link-coverleft to be able to click on icons / images without the need for an extra link
+   */
   /**
- * Subtitle
- *
- * 1. Using `smaller` as font-size to have a smaller font-size than the body text while respecting the template font size
- * 2. Closer to title element
- */
+   * Subtitle
+   *
+   * 1. Using `smaller` as font-size to have a smaller font-size than the body text while respecting the template font size
+   * 2. Closer to title element
+   */
   /* Toolbar
-   ========================================================================== */
+     ========================================================================== */
   /* Tree
-   ========================================================================== */
+     ========================================================================== */
   /**
- * Admin tree overrides using RGBA to fit template style
- */
+   * Admin tree overrides using RGBA to fit template style
+   */
   /* Align
      ========================================================================== */
   /**
@@ -3225,8 +3230,8 @@
 .k-ui-namespace a.k-card__body:focus, .k-ui-namespace a.k-card__body:hover,
 .k-ui-namespace a.k-card__section:focus,
 .k-ui-namespace a.k-card__section:hover {
-  border-color: rgba(0, 0, 0, 0.2);
   background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.2);
 }
 
 .k-ui-namespace a.k-card__body:focus .k-card__header, .k-ui-namespace a.k-card__body:hover .k-card__header,
@@ -3311,12 +3316,12 @@
 .k-ui-namespace .k-flag-object__aside + .k-flag-object__aside,
 .k-ui-namespace .k-flag-object__aside + .k-flag-object__body,
 .k-ui-namespace .k-flag-object__body + .k-flag-object__aside {
-  padding-left: 0.5em;
+  padding-left: inline-block;
 }
 
 [dir="rtl"] .k-ui-namespace .k-flag-object__aside + .k-flag-object__aside, [dir="rtl"] .k-ui-namespace .k-flag-object__aside + .k-flag-object__body, [dir="rtl"] .k-ui-namespace .k-flag-object__body + .k-flag-object__aside {
   padding-left: 0;
-  padding-right: 0.5em;
+  padding-right: inline-block;
 }
 
 .k-ui-namespace .k-inline-list {
@@ -3411,7 +3416,7 @@
 }
 
 .k-ui-namespace .k-list__item {
-  line-height: 1.5em;
+  line-height: 1.5;
   padding-top: 0.25em;
   padding-bottom: 0.25em;
 }
@@ -3503,6 +3508,30 @@
 .k-ui-namespace .k-list--rounded .k-list__item {
   padding-left: 0.5em;
   padding-right: 0.5em;
+}
+
+.k-ui-namespace .k-pagination .k-pagination__pages > li > a,
+.k-ui-namespace .k-pagination .k-pagination__pages > li > span {
+  color: inherit;
+  background-color: transparent;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.k-ui-namespace .k-pagination .k-pagination__pages > li > a:hover, .k-ui-namespace .k-pagination .k-pagination__pages > li > a:focus,
+.k-ui-namespace .k-pagination .k-pagination__pages > li > span:hover,
+.k-ui-namespace .k-pagination .k-pagination__pages > li > span:focus {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+.k-ui-namespace .k-pagination .k-pagination__pages > .k-is-active > a, .k-ui-namespace .k-pagination .k-pagination__pages > .k-is-active > a:hover, .k-ui-namespace .k-pagination .k-pagination__pages > .k-is-active > a:focus,
+.k-ui-namespace .k-pagination .k-pagination__pages > .k-is-active > span,
+.k-ui-namespace .k-pagination .k-pagination__pages > .k-is-active > span:hover,
+.k-ui-namespace .k-pagination .k-pagination__pages > .k-is-active > span:focus {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.125);
+  border-color: rgba(0, 0, 0, 0.125);
 }
 
 .k-ui-namespace .k-query-grid {

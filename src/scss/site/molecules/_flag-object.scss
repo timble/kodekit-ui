@@ -1,76 +1,79 @@
-/* Flag object
-   ========================================================================== */
+@if ($k-site-molecules == true and $k-site-molecule-flag-object != false) or $k-site-molecule-flag-object == true {
 
-.k-flag-object {
-  position: relative;
-  display: flex;
-  align-items: center;
-  max-width: 100%;
-}
+  /* Flag object
+     ========================================================================== */
 
-
-/**
- * Inline flag object
- */
-
-.k-flag-object--inline {
-  display: inline-flex;
-}
-
-
-/**
- * Top aligned flag object
- */
-
-.k-flag-object--top {
-  align-items: flex-start;
-}
-
-
-/**
- * Bottom aligned flag object
- */
-
-.k-flag-object--bottom {
-  align-items: flex-end;
-}
-
-
-/**
- * Flag object children
- */
-
-.k-flag-object__aside {
-  flex: 0 0 auto;
-
-  [class*="k-icon"],
-  [class*="k-icon"]:before,
-  img {
-    display: block;
+  .k-flag-object {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 100%;
   }
-}
-
-.k-flag-object__body {
-  flex: 1 1 auto;
-  text-overflow: ellipsis;
-}
 
 
-/**
- * Horizontal spacing
- */
+  /**
+   * Inline flag object
+   */
 
-.k-flag-object__aside + .k-flag-object__aside,
-.k-flag-object__aside + .k-flag-object__body,
-.k-flag-object__body + .k-flag-object__aside {
-  padding-left: 0.5em;
-}
+  .k-flag-object--inline {
+    display: inline-flex;
+  }
 
-@include rtl {
+
+  /**
+   * Top aligned flag object
+   */
+
+  .k-flag-object--top {
+    align-items: flex-start;
+  }
+
+
+  /**
+   * Bottom aligned flag object
+   */
+
+  .k-flag-object--bottom {
+    align-items: flex-end;
+  }
+
+
+  /**
+   * Flag object children
+   */
+
+  .k-flag-object__aside {
+    flex: 0 0 auto;
+
+    [class*="k-icon"],
+    [class*="k-icon"]:before,
+    img {
+      display: block;
+    }
+  }
+
+  .k-flag-object__body {
+    flex: 1 1 auto;
+    text-overflow: ellipsis;
+  }
+
+
+  /**
+   * Horizontal spacing
+   */
+
   .k-flag-object__aside + .k-flag-object__aside,
   .k-flag-object__aside + .k-flag-object__body,
   .k-flag-object__body + .k-flag-object__aside {
-    padding-left: 0;
-    padding-right: 0.5em;
+    padding-left: $k-site-flag-object-padding;
+  }
+
+  @include rtl {
+    .k-flag-object__aside + .k-flag-object__aside,
+    .k-flag-object__aside + .k-flag-object__body,
+    .k-flag-object__body + .k-flag-object__aside {
+      padding-left: 0;
+      padding-right: $k-site-flag-object-padding;
+    }
   }
 }

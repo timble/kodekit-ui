@@ -1,103 +1,106 @@
-/* Query grid
-   ========================================================================== */
+@if ($k-site-molecules == true and $k-site-molecule-query-grid != false) or $k-site-molecule-query-grid == true {
 
-/**
- * 1. negative margin so we can have consistent margin even when wrapping items
- */
+  /* Query grid
+     ========================================================================== */
 
-.k-query-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin-right: -(round($k-site-query-spacing / 2)); /* 1 */
-  margin-left: -(round($k-site-query-spacing / 2)); /* 1 */
-}
-
-
-/**
- * Grid item
- *
- * 1. bottom margin to separate items from each other
- * 2. half spacing as left and right padding to separate items horizontally
- * 3. negative spacing for grid inside grid__item to negate the double margin
- */
-
-.k-query-grid__item {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-grow: 1;
-  flex-shrink: 1;
-  margin-bottom: $k-site-query-spacing; /* 1 */
-  padding-left: round($k-site-query-spacing / 2); /* 2 */
-  padding-right: round($k-site-query-spacing / 2); /* 2 */
+  /**
+   * 1. negative margin so we can have consistent margin even when wrapping items
+   */
 
   .k-query-grid {
-    margin-bottom: -($k-site-query-spacing); /* 3 */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-right: -(round($k-site-query-spacing / 2)); /* 1 */
+    margin-left: -(round($k-site-query-spacing / 2)); /* 1 */
   }
-}
 
-.k-query-grid__body {
-  flex: 1 1 auto;
-}
 
-.k-query-grid--1-1-1 {
+  /**
+   * Grid item
+   *
+   * 1. bottom margin to separate items from each other
+   * 2. half spacing as left and right padding to separate items horizontally
+   * 3. negative spacing for grid inside grid__item to negate the double margin
+   */
+
   .k-query-grid__item {
-    flex-basis: $k-site-query-grid-third-width;
-  }
-}
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin-bottom: $k-site-query-spacing; /* 1 */
+    padding-left: round($k-site-query-spacing / 2); /* 2 */
+    padding-right: round($k-site-query-spacing / 2); /* 2 */
 
-.k-query-grid--1-1-1-1 {
-  .k-query-grid__item {
-    flex-basis: $k-site-query-grid-fourth-width;
-  }
-}
-
-.k-query-grid--1-2 {
-  .k-query-grid__item {
-    &:first-child {
-      flex-basis: $k-site-query-grid-third-width;
-    }
-    &:last-child {
-      flex-basis: $k-site-query-grid-thirds-width;
-      flex-grow: 2;
-    }
-  }
-}
-
-.k-query-grid--1-3 {
-  .k-query-grid__item {
-    &:first-child {
-      flex-basis: $k-site-query-grid-fourth-width;
-    }
-    &:last-child {
-      flex-basis: $k-site-query-grid-fourths-width;
-      flex-grow: 3;
+    .k-query-grid {
+      margin-bottom: -($k-site-query-spacing); /* 3 */
     }
   }
-}
 
-.k-query-grid--2-1 {
-  .k-query-grid__item {
-    &:first-child {
-      flex-basis: $k-site-query-grid-thirds-width;
-      flex-grow: 2;
-    }
-    &:last-child {
+  .k-query-grid__body {
+    flex: 1 1 auto;
+  }
+
+  .k-query-grid--1-1-1 {
+    .k-query-grid__item {
       flex-basis: $k-site-query-grid-third-width;
     }
   }
-}
 
-.k-query-grid--3-1 {
-  .k-query-grid__item {
-    &:first-child {
-      flex-basis: $k-site-query-grid-fourths-width;
-      flex-grow: 3;
-    }
-    &:last-child {
+  .k-query-grid--1-1-1-1 {
+    .k-query-grid__item {
       flex-basis: $k-site-query-grid-fourth-width;
+    }
+  }
+
+  .k-query-grid--1-2 {
+    .k-query-grid__item {
+      &:first-child {
+        flex-basis: $k-site-query-grid-third-width;
+      }
+      &:last-child {
+        flex-basis: $k-site-query-grid-thirds-width;
+        flex-grow: $k-site-query-grid-thirds-width / $k-site-query-grid-third-width;
+      }
+    }
+  }
+
+  .k-query-grid--1-3 {
+    .k-query-grid__item {
+      &:first-child {
+        flex-basis: $k-site-query-grid-fourth-width;
+      }
+      &:last-child {
+        flex-basis: $k-site-query-grid-fourths-width;
+        flex-grow: $k-site-query-grid-fourths-width / $k-site-query-grid-fourth-width;
+      }
+    }
+  }
+
+  .k-query-grid--2-1 {
+    .k-query-grid__item {
+      &:first-child {
+        flex-basis: $k-site-query-grid-thirds-width;
+        flex-grow: $k-site-query-grid-thirds-width / $k-site-query-grid-third-width;
+      }
+      &:last-child {
+        flex-basis: $k-site-query-grid-third-width;
+      }
+    }
+  }
+
+  .k-query-grid--3-1 {
+    .k-query-grid__item {
+      &:first-child {
+        flex-basis: $k-site-query-grid-fourths-width;
+        flex-grow: $k-site-query-grid-fourths-width / $k-site-query-grid-fourth-width;
+      }
+      &:last-child {
+        flex-basis: $k-site-query-grid-fourth-width;
+      }
     }
   }
 }

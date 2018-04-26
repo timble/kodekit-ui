@@ -1,9 +1,12 @@
-/* Toolbar
-   ========================================================================== */
+@if ($k-site-molecules == true and $k-site-molecule-toolbar != false) or $k-site-molecule-toolbar == true {
 
-.k-toolbar {
-  @include content-block($k-site-toolbar-margin);
-  padding: $k-site-toolbar-padding;
-  background: $k-site-toolbar-background;
-  border-bottom: $k-site-toolbar-border-bottom;
+  /* Toolbar
+     ========================================================================== */
+
+  .k-toolbar {
+    @include content-block($k-site-toolbar-margin);
+    padding: $k-site-toolbar-padding;
+    background: $k-site-toolbar-background;
+    border-bottom: $k-site-toolbar-border-bottom;
+  }
 }

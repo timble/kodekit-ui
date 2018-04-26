@@ -1,21 +1,24 @@
-/* Inline list
-   ========================================================================== */
+@if ($k-site-molecules == true and $k-site-molecule-inline-list != false) or $k-site-molecule-inline-list == true {
 
-.k-inline-list {
-  @include reset;
+  /* Inline list
+     ========================================================================== */
 
-  .k-inline-list__item {
-    display: inline-block;
+  .k-inline-list {
+    @include reset;
 
-    &:after {
-      content: "•";
-      padding: 0 0.5em;
+    .k-inline-list__item {
+      display: $k-site-inline-list-item-display;
+
+      &:after {
+        content: $k-site-inline-list-item-pseudo-content;
+        padding: $k-site-inline-list-item-pseudo-padding;
+      }
     }
-  }
 
-  .k-inline-list__item:last-child {
-    &:after {
-      display: none;
+    .k-inline-list__item:last-child {
+      &:after {
+        display: none;
+      }
     }
   }
 }

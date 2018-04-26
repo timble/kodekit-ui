@@ -1,48 +1,51 @@
-/* Card
-   ========================================================================== */
+@if ($k-site-molecules == true and $k-site-molecule-card != false) or $k-site-molecule-card == true {
 
-/**
- * Admin card overrides using RGBA to fit template style
- */
+  /* Card
+     ========================================================================== */
 
-.k-card__body {
-  background: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  color: inherit;
-}
+  /**
+   * Admin card overrides using RGBA to fit template style
+   */
 
-a.k-card__body,
-a.k-card__section {
-  &:focus,
-  &:hover {
-    border-color: rgba(0, 0, 0, 0.2);
-    background: rgba(0, 0, 0, 0.05);
+  .k-card__body {
+    background: $k-site-card-body-background;
+    border: $k-site-card-body-border;
+    color: $k-site-card-body-color;
+  }
 
-    .k-card__header {
-      border-color: rgba(0, 0, 0, 0.2);
-    }
+  a.k-card__body,
+  a.k-card__section {
+    &:focus,
+    &:hover {
+      background: $k-site-card-body-hover-background;
+      border-color: $k-site-card-body-hover-border-color;
 
-    .k-card__footer {
-      border-color: rgba(0, 0, 0, 0.2);
+      .k-card__header {
+        border-color: $k-site-card-body-hover-border-color;
+      }
+
+      .k-card__footer {
+        border-color: $k-site-card-body-hover-border-color;
+      }
     }
   }
-}
 
-.k-card__header {
-  background: rgba(0, 0, 0, 0.075);
-  border-bottom-color: rgba(0, 0, 0, 0.2);
-  color: inherit;
+  .k-card__header {
+    background: $k-site-card-header-background;
+    border-bottom-color: $k-site-card-header-border-bottom-color;
+    color: $k-site-card-header-color;
 
-  &:not(:first-child) {
-    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    &:not(:first-child) {
+      border-top: $k-site-card-header-border-top;
+    }
   }
-}
 
-.k-card__footer {
-  background: rgba(0, 0, 0, 0.075);
-  color: inherit;
+  .k-card__footer {
+    background: $k-site-card-footer-background;
+    color: $k-site-card-footer-color;
 
-  &:not(:first-child) {
-    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    &:not(:first-child) {
+      border-top: $k-site-card-footer-border-top;
+    }
   }
 }

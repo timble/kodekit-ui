@@ -11,7 +11,7 @@
 
     h1, h2, h3, h4, h5, h6 {
       @include reset();
-      color: inherit;
+      color: $k-site-alert-element-color;
     }
 
     .k-alert__heading, address, h1, h2, h3, h4, h5, h6, p {
@@ -19,7 +19,7 @@
     }
 
     a {
-      color: inherit;
+      color: $k-site-alert-link-color;
       text-decoration: $k-site-alert-link-text-decoration;
 
       &:focus,

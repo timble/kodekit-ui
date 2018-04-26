@@ -1,35 +1,38 @@
-/* Tree
-   ========================================================================== */
+@if ($k-site-molecules == true and $k-site-molecule-tree != false) or $k-site-molecule-tree == true {
 
-/**
- * Admin tree overrides using RGBA to fit template style
- */
+  /* Tree
+     ========================================================================== */
 
-.k-tree {
-  .jqtree-element {
-    &:hover,
-    &:focus {
-      &:after {
-        border-color: inherit;
-        opacity: 0.085;
-      }
-    }
-  }
+  /**
+   * Admin tree overrides using RGBA to fit template style
+   */
 
-  .jqtree-selected {
-    & > .jqtree-element {
-      color: inherit;
-
-      &:after {
-        border-color: inherit;
-        opacity: 0.15;
-      }
-    }
-
-    &:hover {
-      & > .jqtree-element {
+  .k-tree {
+    .jqtree-element {
+      &:hover,
+      &:focus {
         &:after {
           border-color: inherit;
+          opacity: 0.085;
+        }
+      }
+    }
+
+    .jqtree-selected {
+      & > .jqtree-element {
+        color: inherit;
+
+        &:after {
+          border-color: inherit;
+          opacity: 0.15;
+        }
+      }
+
+      &:hover {
+        & > .jqtree-element {
+          &:after {
+            border-color: inherit;
+          }
         }
       }
     }

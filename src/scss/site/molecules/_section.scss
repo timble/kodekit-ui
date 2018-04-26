@@ -1,31 +1,34 @@
-/* Section
-   ========================================================================== */
+@if ($k-site-molecules == true and $k-site-molecule-section != false) or $k-site-molecule-section == true {
 
-/**
- * 1. Clearfix so both top and bottom will be cleared of floats and margin
- * 2. Content block adds bottom margin to all except the last-child
- */
+  /* Section
+     ========================================================================== */
 
-.k-section {
-  @include clearfix(); /* 1 */
-  @include content-block($k-site-section-spacing); /* 2 */
-}
+  /**
+   * 1. Clearfix so both top and bottom will be cleared of floats and margin
+   * 2. Content block adds bottom margin to all except the last-child
+   */
 
-.k-section--gradient {
-  background-image: $k-site-section-background;
-  padding: 1em;
-  margin-top: ($k-site-section-border-width * 2);
-  @include content-block(1em);
-
-  @include pseudo(before) {
-    top: -($k-site-section-border-width * 2);
-    left: 0;
-    right: 0;
-    height: $k-site-section-border-width;
-    background: $k-site-section-pseudo-background;
+  .k-section {
+    @include clearfix(); /* 1 */
+    @include content-block($k-site-section-spacing); /* 2 */
   }
-}
 
-.k-section--joined {
-  margin-bottom: 0;
+  .k-section--gradient {
+    background-image: $k-site-section-background;
+    padding: 1em;
+    margin-top: ($k-site-section-border-width * 2);
+    @include content-block(1em);
+
+    @include pseudo(before) {
+      top: -($k-site-section-border-width * 2);
+      left: 0;
+      right: 0;
+      height: $k-site-section-border-width;
+      background: $k-site-section-pseudo-background;
+    }
+  }
+
+  .k-section--joined {
+    margin-bottom: 0;
+  }
 }

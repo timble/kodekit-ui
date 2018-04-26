@@ -1,0 +1,43 @@
+@if ($k-site-molecules == true and $k-molecule-site-pagination != false) or $k-molecule-site-pagination == true {
+
+  /* List
+     ========================================================================== */
+
+  /**
+   * Admin pagination overrides using RGBA to fit template style
+   */
+
+  .k-pagination {
+    .k-pagination__pages {
+      & > li {
+        & > a,
+        & > span {
+          color: $k-site-pagination-item-color;
+          background-color: $k-site-pagination-item-background-color;
+          border-color: $k-site-pagination-item-border-color;
+        }
+      }
+
+      & > li > a,
+      & > li > span {
+        &:hover,
+        &:focus {
+          color: $k-site-pagination-item-hover-color;
+          background-color: $k-site-pagination-item-hover-background-color;
+          border-color: $k-site-pagination-item-hover-border-color;
+        }
+      }
+
+      & > #{$k-pagination-active-class} > a,
+      & > #{$k-pagination-active-class} > span {
+        &,
+        &:hover,
+        &:focus {
+          color: $k-site-pagination-item-active-color;
+          background-color: $k-site-pagination-item-active-background-color;
+          border-color: $k-site-pagination-item-active-border-color;
+        }
+      }
+    }
+  }
+}
