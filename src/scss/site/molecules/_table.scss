@@ -17,7 +17,7 @@
     th,
     td {
       border: none;
-      padding: 0.5em 0.65em;
+      padding: $k-site-table-padding;
       vertical-align: middle;
       border-top: $k-site-table-border-width solid $k-site-table-border-color;
       text-align: left;

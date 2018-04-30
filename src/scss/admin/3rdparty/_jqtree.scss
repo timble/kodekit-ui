@@ -157,14 +157,14 @@
           width: 6px;
           height: 6px;
           border-left: 1px solid;
-          border-bottom: 1px solid #aaa;
+          border-bottom: 1px solid;
           top: 50%;
           margin-top: -3px;
           left: -(($k-tree-size / 2) + 3px);
 
           @include rtl {
             border-left: none;
-            border-right: 1px solid #aaa;
+            border-right: 1px solid;
             left: auto;
             right: -(($k-tree-size / 2) + 3px);
           }

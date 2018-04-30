@@ -5,9 +5,6 @@
 // Disable individual molecules by setting `$k-molecule-alert: false' for example
 // Enable individual molecules by setting `$k-molecules: false` and `$k-molecule-alert: true' for example
 
-// @TODO: actually use them
-$k-site-atoms:                                      true !default;
-
 $k-site-molecules:                                  true !default;
 $k-site-molecule-alert:                             inherit !default;
 $k-site-molecule-button:                            inherit !default;
@@ -41,6 +38,7 @@ $k-site-vertical-spacing:                           $k-site-spacing !default;
 
 $k-site-border-radius:                              3px !default;
 $k-site-border-width:                               1px !default;
+$k-site-border-style:                               solid !default;
 $k-site-element-line-height:                        1.2 !default
 
 
@@ -49,6 +47,18 @@ $k-site-element-line-height:                        1.2 !default
 
 $k-site-default-color:                              #718093 !default;
 $k-site-default-type-color:                         white !default;
+
+$k-site-neutral-color:                              $k-neutral-color !default;
+$k-site-neutral-type-color:                         $k-neutral-type-color !default;
+
+$k-site-success-color:                              $k-success-color !default;
+$k-site-success-type-color:                         $k-success-type-color !default;
+
+$k-site-warning-color:                              $k-warning-color !default;
+$k-site-warning-type-color:                         $k-warning-type-color !default;
+
+$k-site-error-color:                                $k-error-color !default;
+$k-site-error-type-color:                           $k-error-type-color !default;
 
 
 // Alert
@@ -60,59 +70,59 @@ $k-site-alert-background:                           $k-site-default-color !defau
 $k-site-alert-color:                                $k-site-default-type-color !default;
 
 $k-site-alert-element-color:                        inherit !default;
-$k-site-alert-element-margin-bottom:                0.5em !default;
+$k-site-alert-element-margin-bottom:                round($k-site-spacing / 2) !default;
 
 $k-site-alert-link-color:                           inherit !default;
 $k-site-alert-link-text-decoration:                 underline !default;
 $k-site-alert-link-hover-text-decoration:           none !default;
 
-$k-site-alert-neutral-background:                   $k-neutral-color !default;
-$k-site-alert-neutral-color:                        $k-neutral-type-color !default;
+$k-site-alert-neutral-background:                   $k-site-neutral-color !default;
+$k-site-alert-neutral-color:                        $k-site-neutral-type-color !default;
 
-$k-site-alert-success-background:                   $k-success-color !default;
-$k-site-alert-success-color:                        $k-success-type-color !default;
+$k-site-alert-success-background:                   $k-site-success-color !default;
+$k-site-alert-success-color:                        $k-site-success-type-color !default;
 
-$k-site-alert-warning-background:                   $k-warning-color !default;
-$k-site-alert-warning-color:                        $k-warning-type-color !default;
+$k-site-alert-warning-background:                   $k-site-warning-color !default;
+$k-site-alert-warning-color:                        $k-site-warning-type-color !default;
 
-$k-site-alert-error-background:                     $k-error-color !default;
-$k-site-alert-error-color:                          $k-error-type-color !default;
+$k-site-alert-error-background:                     $k-site-error-color !default;
+$k-site-alert-error-color:                          $k-site-error-type-color !default;
 
 
 // Buttons
 // ==========================================================================
 
 $k-site-button-display:                             inline-flex !default;
-$k-site-button-border:                              1px solid rgba(0, 0, 0, 0.1) !default;
+$k-site-button-border:                              $k-site-border-width $k-site-border-style rgba(0, 0, 0, 0.1) !default;
 $k-site-button-box-shadow:                          inset 0 0 0 160px rgba(0, 0, 0, 0), inset 0 1px 0 0 rgba(255, 255, 255, 0.2) !default;
 $k-site-button-border-radius:                       $k-site-border-radius !default;
 $k-site-button-line-height:                         $k-site-element-line-height !default;
 $k-site-button-padding:                             0.35em 0.6em !default;
 
 $k-site-button-hover-box-shadow:                    inset 0 0 0 160px rgba(0, 0, 0, 0.15), inset 0 1px 0 0 rgba(255, 255, 255, 0.2) !default;
-$k-site-button-hover-border:                        1px solid rgba(0, 0, 0, 0.33) !default;
+$k-site-button-hover-border:                        $k-site-border-width $k-site-border-style rgba(0, 0, 0, 0.33) !default;
 
 $k-site-button-background:                          $k-site-default-color !default;
 $k-site-button-color:                               $k-site-default-type-color !default;
 
-$k-site-button-neutral-background:                  $k-neutral-color !default;
-$k-site-button-neutral-color:                       $k-neutral-type-color !default;
+$k-site-button-neutral-background:                  $k-site-neutral-color !default;
+$k-site-button-neutral-color:                       $k-site-neutral-type-color !default;
 
-$k-site-button-success-background:                  $k-success-color !default;
-$k-site-button-success-color:                       $k-success-type-color !default;
+$k-site-button-success-background:                  $k-site-success-color !default;
+$k-site-button-success-color:                       $k-site-success-type-color !default;
 
-$k-site-button-warning-background:                  $k-warning-color !default;
-$k-site-button-warning-color:                       $k-warning-type-color !default;
+$k-site-button-warning-background:                  $k-site-warning-color !default;
+$k-site-button-warning-color:                       $k-site-warning-type-color !default;
 
-$k-site-button-error-background:                    $k-error-color !default;
-$k-site-button-error-color:                         $k-error-type-color !default;
+$k-site-button-error-background:                    $k-site-error-color !default;
+$k-site-button-error-color:                         $k-site-error-type-color !default;
 
 
 // Card
 // ==========================================================================
 
 $k-site-card-body-background:                       transparent !default;
-$k-site-card-body-border:                           1px solid rgba(0, 0, 0, 0.15) !default;
+$k-site-card-body-border:                           $k-site-border-width $k-site-border-style rgba(0, 0, 0, 0.15) !default;
 $k-site-card-body-color:                            inherit !default;
 
 $k-site-card-body-hover-background:                 rgba(0, 0, 0, 0.05) !default;
@@ -120,18 +130,18 @@ $k-site-card-body-hover-border-color:               rgba(0, 0, 0, 0.2) !default;
 
 $k-site-card-header-background:                     rgba(0, 0, 0, 0.075) !default;
 $k-site-card-header-border-bottom-color:            rgba(0, 0, 0, 0.2) !default;
-$k-site-card-header-border-top:                     1px solid rgba(0, 0, 0, 0.15) !default;
+$k-site-card-header-border-top:                     $k-site-border-width $k-site-border-style rgba(0, 0, 0, 0.15) !default;
 $k-site-card-header-color:                          inherit !default;
 
 $k-site-card-footer-background:                     rgba(0, 0, 0, 0.075) !default;
-$k-site-card-footer-border-top:                     1px solid rgba(0, 0, 0, 0.15) !default;
+$k-site-card-footer-border-top:                     $k-site-border-width $k-site-border-style rgba(0, 0, 0, 0.15) !default;
 $k-site-card-footer-color:                          inherit !default;
 
 
 // Flag object
 // ==========================================================================
 
-$k-site-flag-object-padding:                   inline-block !default;
+$k-site-flag-object-padding:                        inline-block !default;
 
 
 // Inline list
@@ -166,25 +176,25 @@ $k-site-label-hover-box-shadow:                     inset 0 0 0 160px rgba(0, 0,
 $k-site-label-hover-text-decoration:                none !default;
 $k-site-label-hover-cursor:                         pointer !default;
 
-$k-site-label-neutral-background:                   $k-neutral-color !default;
-$k-site-label-neutral-type-background:              $k-neutral-type-color !default;
+$k-site-label-neutral-background:                   $k-site-neutral-color !default;
+$k-site-label-neutral-type-background:              $k-site-neutral-type-color !default;
 
-$k-site-label-success-background:                   $k-success-color !default;
-$k-site-label-success-type-background:              $k-success-type-color !default;
+$k-site-label-success-background:                   $k-site-success-color !default;
+$k-site-label-success-type-background:              $k-site-success-type-color !default;
 
-$k-site-label-warning-background:                   $k-warning-color !default;
-$k-site-label-warning-type-background:              $k-warning-type-color !default;
+$k-site-label-warning-background:                   $k-site-warning-color !default;
+$k-site-label-warning-type-background:              $k-site-warning-type-color !default;
 
-$k-site-label-error-background:                     $k-error-color !default;
-$k-site-label-error-type-background:                $k-error-type-color !default;
+$k-site-label-error-background:                     $k-site-error-color !default;
+$k-site-label-error-type-background:                $k-site-error-type-color !default;
 
 
 // List
 // ==========================================================================
 
-$k-site-list-margin:                   $k-site-spacing !default;
-$k-site-list-item-line-height:            1.5 !default;
-$k-site-list-item-padding:            0.25em !default;
+$k-site-list-margin:                                $k-site-spacing !default;
+$k-site-list-item-line-height:                      1.5 !default;
+$k-site-list-item-padding:                          0.25em !default;
 
 
 // Pagination
@@ -206,10 +216,10 @@ $k-site-pagination-item-active-color:               inherit !default;
 // Query grid
 // ==========================================================================
 
-$k-site-query-grid-thirds-width:                    288px !default;
 $k-site-query-grid-third-width:                     144px !default;
-$k-site-query-grid-fourths-width:                   432px !default;
-$k-site-query-grid-fourth-width:                    144px !default;
+$k-site-query-grid-thirds-width:                    $k-site-query-grid-third-width * 2 !default;
+$k-site-query-grid-fourth-width:                    $k-site-query-grid-third-width !default;
+$k-site-query-grid-fourths-width:                   $k-site-query-grid-third-width * 3 !default;
 $k-site-query-spacing:                              24px !default;
 
 
@@ -217,9 +227,12 @@ $k-site-query-spacing:                              24px !default;
 // ==========================================================================
 
 $k-site-section-spacing:                            $k-site-spacing !default;
-$k-site-section-background:                         linear-gradient(to bottom, rgba(0, 0, 0, 0.05), transparent) !default;
-$k-site-section-border-width:                       1px !default;
-$k-site-section-pseudo-background:                  rgba(0, 0 , 0, 0.08) !default;
+
+$k-site-section-gradient-border-width:              $k-site-border-width !default;
+$k-site-section-gradient-background:                linear-gradient(to bottom, rgba(0, 0, 0, 0.05), transparent) !default;
+$k-site-section-gradient-margin:                    $k-site-spacing !default;
+$k-site-section-gradient-padding:                   $k-site-spacing !default;
+$k-site-section-gradient-pseudo-background:         rgba(0, 0 , 0, 0.08) !default;
 
 
 // Table
@@ -228,18 +241,18 @@ $k-site-section-pseudo-background:                  rgba(0, 0 , 0, 0.08) !defaul
 $k-site-table-spacing:                              $k-site-spacing !default;
 $k-site-table-background:                           transparent !default;
 $k-site-table-accent-background:                    rgba(0, 0, 0, .033) !default;
-
 $k-site-table-border-width:                         $k-site-border-width !default;
 $k-site-table-border-color:                         rgba(0, 0, 0, 0.075) !default;
+$k-site-table-padding:                              0.5em 0.65em !default;
 
 
 // Thumbnail
 // ==========================================================================
 
-$k-site-thumbnail-border:                           1px solid rgba(0, 0, 0, 0.2) !default;
+$k-site-thumbnail-border:                           $k-site-border-width $k-site-border-style rgba(0, 0, 0, 0.25) !default;
 $k-site-thumbnail-border-radius:                    $k-site-border-radius !default;
 $k-site-thumbnail-spacing:                          3px !default;
-$k-site-thumbnail-background:                       white !default;
+$k-site-thumbnail-background:                       rgba(255, 255, 255, 0.05) !default;
 $k-site-thumbnail-hover-border-color:               rgba(0, 0, 0, 0.33) !default;
 
 
@@ -247,15 +260,17 @@ $k-site-thumbnail-hover-border-color:               rgba(0, 0, 0, 0.33) !default
 // ==========================================================================
 
 $k-site-title-spacing:                              round($k-site-section-spacing / 2) !default;
+
+$k-site-subtitle-font-size:                         smaller !default;
 $k-site-subtitle-padding:                           round($k-site-section-spacing * 0.25) !default;
 $k-site-subtitle-margin:                            $k-site-section-spacing !default;
-$k-site-subtitle-border-bottom:                     1px solid rgba(0, 0, 0, 0.1) !default;
+$k-site-subtitle-border-bottom:                     $k-site-border-width $k-site-border-style rgba(0, 0, 0, 0.1) !default;
 
 
 // Toolbar
 // ==========================================================================
 
 $k-site-toolbar-margin:                             $k-site-section-spacing !default;
-$k-site-toolbar-padding:                            1em !default;
+$k-site-toolbar-padding:                            $k-site-spacing !default;
 $k-site-toolbar-background:                         rgba(0, 0, 0, 0.05) !default;
-$k-site-toolbar-border-bottom:                      2px solid rgba(0, 0, 0, 0.1) !default;
+$k-site-toolbar-border-bottom:                      2px $k-site-border-style rgba(0, 0, 0, 0.1) !default;

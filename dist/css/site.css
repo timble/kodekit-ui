@@ -1969,7 +1969,7 @@
   width: 6px;
   height: 6px;
   border-left: 1px solid;
-  border-bottom: 1px solid #aaa;
+  border-bottom: 1px solid;
   top: 50%;
   margin-top: -3px;
   left: -17px;
@@ -1977,7 +1977,7 @@
 
 [dir="rtl"] .k-ui-namespace .k-tree li li .jqtree-whitespace + .jqtree_common:not(.jqtree-toggler):after {
   border-left: none;
-  border-right: 1px solid #aaa;
+  border-right: 1px solid;
   left: auto;
   right: -17px;
 }
@@ -3123,7 +3123,7 @@
 }
 
 .k-ui-namespace .k-alert .k-alert__heading, .k-ui-namespace .k-alert address, .k-ui-namespace .k-alert h1, .k-ui-namespace .k-alert h2, .k-ui-namespace .k-alert h3, .k-ui-namespace .k-alert h4, .k-ui-namespace .k-alert h5, .k-ui-namespace .k-alert h6, .k-ui-namespace .k-alert p {
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
 }
 
 .k-ui-namespace .k-alert .k-alert__heading:last-child, .k-ui-namespace .k-alert address:last-child, .k-ui-namespace .k-alert h1:last-child, .k-ui-namespace .k-alert h2:last-child, .k-ui-namespace .k-alert h3:last-child, .k-ui-namespace .k-alert h4:last-child, .k-ui-namespace .k-alert h5:last-child, .k-ui-namespace .k-alert h6:last-child, .k-ui-namespace .k-alert p:last-child {
@@ -3729,11 +3729,12 @@
 }
 
 .k-ui-namespace .k-thumbnail {
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.25);
   border-radius: 3px;
   padding: 3px;
-  background: white;
-  transition: border 200ms ease-in-out;
+  background: rgba(255, 255, 255, 0.05);
+  transition: border 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+  -webkit-backface-visibility: hidden;
 }
 
 .k-ui-namespace a:focus .k-thumbnail, .k-ui-namespace a:hover .k-thumbnail, .k-ui-namespace aactive .k-thumbnail {
@@ -4341,7 +4342,7 @@ html:not([dir=rtl]) .k-no-padding-left.k-no-padding-left.k-no-padding-left {
   width: 6px;
   height: 6px;
   border-left: 1px solid;
-  border-bottom: 1px solid #aaa;
+  border-bottom: 1px solid;
   top: 50%;
   margin-top: -3px;
   left: -17px;
@@ -4349,7 +4350,7 @@ html:not([dir=rtl]) .k-no-padding-left.k-no-padding-left.k-no-padding-left {
 
 [dir="rtl"] .k-tree li li .jqtree-whitespace + .jqtree_common:not(.jqtree-toggler):after {
   border-left: none;
-  border-right: 1px solid #aaa;
+  border-right: 1px solid;
   left: auto;
   right: -17px;
 }

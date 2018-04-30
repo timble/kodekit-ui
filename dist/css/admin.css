@@ -12103,7 +12103,7 @@ html:not([dir=rtl]) .k-no-padding-left.k-no-padding-left.k-no-padding-left {
   width: 6px;
   height: 6px;
   border-left: 1px solid;
-  border-bottom: 1px solid #aaa;
+  border-bottom: 1px solid;
   top: 50%;
   margin-top: -3px;
   left: -17px;
@@ -12111,7 +12111,7 @@ html:not([dir=rtl]) .k-no-padding-left.k-no-padding-left.k-no-padding-left {
 
 [dir="rtl"] .k-tree li li .jqtree-whitespace + .jqtree_common:not(.jqtree-toggler):after {
   border-left: none;
-  border-right: 1px solid #aaa;
+  border-right: 1px solid;
   left: auto;
   right: -17px;
 }

@@ -14,17 +14,17 @@
   }
 
   .k-section--gradient {
-    background-image: $k-site-section-background;
-    padding: 1em;
-    margin-top: ($k-site-section-border-width * 2);
-    @include content-block(1em);
+    background-image: $k-site-section-gradient-background;
+    padding: $k-site-section-gradient-padding;
+    margin-top: ($k-site-section-gradient-border-width * 2);
+    @include content-block($k-site-section-gradient-margin);
 
     @include pseudo(before) {
-      top: -($k-site-section-border-width * 2);
+      top: -($k-site-section-gradient-border-width * 2);
       left: 0;
       right: 0;
-      height: $k-site-section-border-width;
-      background: $k-site-section-pseudo-background;
+      height: $k-site-section-gradient-border-width;
+      background: $k-site-section-gradient-pseudo-background;
     }
   }
 
