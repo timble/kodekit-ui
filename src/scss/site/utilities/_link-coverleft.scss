@@ -1,0 +1,19 @@
+@if ($k-site-utilities == true and $k-site-utility-link-coverleft != false) or $k-site-utility-link-coverleft == true {
+
+  /* Link cover left
+     ========================================================================== */
+
+  /**
+   * Cover the left side of the link
+   */
+
+  .k-link-coverleft {
+    @include pseudo(before) {
+      top: 0;
+      right: 100%;
+      left: -100%;
+      bottom: 0;
+      background: transparent;
+    }
+  }
+}

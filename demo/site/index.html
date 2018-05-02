@@ -22,7 +22,7 @@
             -moz-osx-font-smoothing: grayscale;
             color: #0b0c0c;
 
-            /*background: #2c3e50;*/
+            /*background: red;*/
         }
 
         a {
@@ -85,7 +85,145 @@
             </span>
             <span class="k-flag-object__body">
                 <a class="k-link-coverleft" href="#">
-                    Title example
+                    <span class="k-wrapped-content">
+                        <span class="k-whitespace-preserver">
+                            Title example
+                        </span>
+                    </span>
+                </a>
+            </span>
+        </span>
+    </h2>
+    <hr />
+
+
+    <div class="k-section k-section--border k-overflow-hidden">
+        <input class="k-toglr-input" type="checkbox" id="search-open" />
+        <div class="k-toglr-togglers">
+            <label class="k-toglr-label" for="search-open" onKeyPress="this.click()" tabindex="0" aria-label="Toggle search">
+                <span class="k-toglr-label-open">Search for documents</span>
+                <span class="k-toglr-label-close">Search for documents</span>
+            </label>
+            <a class="k-toglr-open" href="#search-open">Search for documents</a>
+            <a class="k-toglr-close" href="#search-closed">Search for documents</a>
+        </div>
+        <div class="k-toglr-body">
+
+
+            <div class="k-form-group k-section">
+                <div class="k-form-label">
+                    <label for="search">Find by title or description… </label>
+                </div>
+                <div class="k-form-control">
+                    <input type="search" name="filter[search]" id="search" value="">
+                </div>
+            </div>
+
+            <div class="k-form-group k-section">
+                <div class="k-form-label">
+                    <label>Category</label>
+                </div>
+                <div class="k-form-control">
+                    <select name="filter[category][]" id="category" multiple="multiple" class="k-js-category-search" data-placeholder="- Select -" size="1">
+                        <option value="8" class="level1">Animals</option>
+                        <option value="9" class="level1">Cars</option>
+                        <option value="62" class="level1">Files</option>
+                        <option value="10" class="level1">Flowers</option>
+                        <option value="11" class="level1">- Red flowers</option>
+                        <option value="12" class="level1">- Blue flowers</option>
+                        <option value="13" class="level1">- Yellow flowers</option>
+                        <option value="14" class="level1">- Orange flowers</option>
+                        <option value="15" class="level1">- Pink flowers</option>
+                        <option value="16" class="level1">- Purple flowers</option>
+                        <option value="17" class="level1">- White flowers</option>
+                        <option value="3" class="level1">Movies</option>
+                        <option value="1" class="level1">Recipes</option>
+                        <option value="21" class="level1">- Appetizers</option>
+                        <option value="26" class="level1">- - Dips and spreads</option>
+                        <option value="27" class="level1">- - Cheese</option>
+                        <option value="28" class="level1">- - Meat</option>
+                        <option value="48" class="level1">- - - Pork</option>
+                        <option value="49" class="level1">- - - Beef</option>
+                        <option value="50" class="level1">- - - Chicken</option>
+                        <option value="29" class="level1">- - Spicy</option>
+                        <option value="30" class="level1">- - Seafood</option>
+                        <option value="31" class="level1">- - Snacks</option>
+                        <option value="22" class="level1">- Dinners</option>
+                        <option value="32" class="level1">- - Chicken</option>
+                        <option value="33" class="level1">- - Pasta</option>
+                        <option value="55" class="level1">- - - Lasagna</option>
+                        <option value="56" class="level1">- - - Macaroni</option>
+                        <option value="57" class="level1">- - - Spaghetti</option>
+                        <option value="34" class="level1">- - Seafood</option>
+                        <option value="35" class="level1">- - Pork</option>
+                        <option value="36" class="level1">- - Beef</option>
+                        <option value="37" class="level1">- - Vegetarian</option>
+                        <option value="38" class="level1">- - Vegan</option>
+                        <option value="23" class="level1">- Salads</option>
+                        <option value="39" class="level1">- - Vegetable</option>
+                        <option value="40" class="level1">- - Pasta</option>
+                        <option value="41" class="level1">- - Fruit</option>
+                        <option value="58" class="level1">- - - Apple</option>
+                        <option value="59" class="level1">- - - Strawberry</option>
+                        <option value="60" class="level1">- - - Orange</option>
+                        <option value="61" class="level1">- - - Goji berry</option>
+                        <option value="42" class="level1">- - Potato</option>
+                        <option value="24" class="level1">- Dessert</option>
+                        <option value="43" class="level1">- - Cookies</option>
+                        <option value="44" class="level1">- - Cake</option>
+                        <option value="45" class="level1">- - Fruit</option>
+                        <option value="46" class="level1">- - Chocolate</option>
+                        <option value="52" class="level1">- - - White</option>
+                        <option value="53" class="level1">- - - Milk</option>
+                        <option value="54" class="level1">- - - Dark</option>
+                        <option value="47" class="level1">- - Pie</option>
+                        <option value="25" class="level1">Gallery</option>
+                        <option value="63" class="level1">Plugins</option>
+                        <option value="64" class="level1">- Leads plugin</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="k-form-group">
+                <button class="k-button k-js-search-submit" type="submit">Search</button>
+                <button class="k-button k-button--link k-js-search-reset">Reset</button>
+            </div>
+
+        </div>
+
+    </div>
+    <hr />
+
+    <h2 class="k-title">
+        <span class="k-flag-object k-flag-object--inline">
+            <span class="k-flag-object__aside">
+                <span class="k-icon-document-folder k-icon--size-medium" aria-hidden="true"></span>
+                <span class="k-visually-hidden">Folder</span>
+            </span>
+            <span class="k-flag-object__body">
+                <a class="k-link-coverleft" href="#">
+                    <span class="k-wrapped-content">
+                        <span class="k-whitespace-preserver">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+                        </span>
+                    </span>
+                </a>
+            </span>
+        </span>
+    </h2>
+    <h2 class="k-title">
+        <span class="k-flag-object k-flag-object--inline">
+            <span class="k-flag-object__aside">
+                <span class="k-icon-document-folder k-icon--size-medium" aria-hidden="true"></span>
+                <span class="k-visually-hidden">Folder</span>
+            </span>
+            <span class="k-flag-object__body">
+                <a class="k-link-coverleft" href="#">
+                    <span class="k-wrapped-content">
+                        <span class="k-whitespace-preserver">
+                            Loremipsumdolorsitamet,consecteturadipiscingelit.Vestibulumidligulaportafeliseuismodsemper.Fuscedapibus,tellusaccursuscommodo,tortormauriscondimentumnibh,utfermentummassajustositametrisus.Crasjustoodio,dapibusacfacilisisin,egestasegetquam.
+                        </span>
+                    </span>
                 </a>
             </span>
         </span>
@@ -102,7 +240,11 @@
             </span>
             <span class="k-flag-object__body">
                 <a class="k-link-coverleft" href="#">
-                    Title example
+                    <span class="k-wrapped-content">
+                        <span class="k-whitespace-preserver">
+                            Title example
+                        </span>
+                    </span>
                 </a>
             </span>
         </span>
@@ -132,6 +274,7 @@
         <a class="k-button k-button--success" href="#">Success button</a>
         <a class="k-button k-button--warning" href="#">Warning button</a>
         <a class="k-button k-button--error" href="#">Error button</a>
+        <a class="k-button k-button--link" href="#">Link button</a>
     </p>
     <hr />
 
@@ -759,9 +902,7 @@
             <div class="k-query-grid__item">
                 <div class="k-query-grid__body">
                     <a href="#">
-                        <a href="#">
-                            <img class="k-thumbnail" src="https://placeimg.com/800/600/tech" alt="" />
-                        </a>
+                        <img class="k-thumbnail" src="https://placeimg.com/800/600/tech" alt="" />
                     </a>
                 </div>
             </div>
@@ -846,9 +987,7 @@
                         <div class="k-query-grid__item">
                             <div class="k-query-grid__body">
                                 <a href="#">
-                                    <a href="#">
-                                        <img class="k-thumbnail" src="https://placeimg.com/800/600/tech" alt="" />
-                                    </a>
+                                    <img class="k-thumbnail" src="https://placeimg.com/800/600/tech" alt="" />
                                 </a>
                             </div>
                         </div>

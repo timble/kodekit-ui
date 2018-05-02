@@ -8,6 +8,8 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-size: inherit;
+    cursor: pointer;
     background: $k-site-button-background;
     border: $k-site-button-border;
     box-shadow: $k-site-button-box-shadow;
@@ -60,5 +62,22 @@
 
   .k-button--block {
     display: block;
+  }
+
+  .k-button--link {
+    background: transparent;
+    color: inherit;
+    border: none;
+    text-decoration: underline;
+
+    /* Focus / hover / active */
+
+    &:active,
+    &:focus,
+    &:hover {
+      box-shadow: none;
+      border: none;
+      text-decoration: none;
+    }
   }
 }

@@ -1,0 +1,23 @@
+@if ($k-site-molecules == true and $k-site-molecule-icon != false) or $k-site-molecule-icon == true {
+
+  /* Icons
+     ========================================================================== */
+
+  /**
+   * To win over other templates
+   */
+
+  [class*="k-icon"][class*="k-icon"][class*="k-icon"] {
+    @extend %icon;
+  }
+
+
+  /**
+   * Primary colored icon
+   */
+
+  .k-icon--primary {
+    color: var(--primary-color);
+  }
+
+}

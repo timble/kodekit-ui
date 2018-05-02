@@ -9,11 +9,12 @@ $k-site-molecules:                                  true !default;
 $k-site-molecule-alert:                             inherit !default;
 $k-site-molecule-button:                            inherit !default;
 $k-site-molecule-card:                              inherit !default;
+$k-site-molecule-icon:                              inherit !default;
 $k-site-molecule-flag-object:                       inherit !default;
 $k-site-molecule-inline-list:                       inherit !default;
 $k-site-molecule-label:                             inherit !default;
 $k-site-molecule-list:                              inherit !default;
-$k-molecule-site-pagination:                        inherit !default;
+$k-site-molecule-pagination:                        inherit !default;
 $k-site-molecule-query-grid:                        inherit !default;
 $k-site-molecule-section:                           inherit !default;
 $k-site-molecule-table:                             inherit !default;
@@ -21,6 +22,11 @@ $k-site-molecule-thumbnail:                         inherit !default;
 $k-site-molecule-title:                             inherit !default;
 $k-site-molecule-toolbar:                           inherit !default;
 $k-site-molecule-tree:                              inherit !default;
+
+$k-site-utilities:                                  true !default;
+$k-site-utility-link-coverleft:                     inherit !default;
+$k-site-utility-reset:                              inherit !default;
+$k-site-utility-wrapped-content:                    inherit !default;
 
 
 // Spacing
@@ -141,7 +147,7 @@ $k-site-card-footer-color:                          inherit !default;
 // Flag object
 // ==========================================================================
 
-$k-site-flag-object-padding:                        inline-block !default;
+$k-site-flag-object-padding:                        0.5em !default;
 
 
 // Inline list
@@ -234,6 +240,9 @@ $k-site-section-gradient-margin:                    $k-site-spacing !default;
 $k-site-section-gradient-padding:                   $k-site-spacing !default;
 $k-site-section-gradient-pseudo-background:         rgba(0, 0 , 0, 0.08) !default;
 
+$k-site-section-border-border:                      1px solid rgba(0, 0 , 0, 0.15) !default;
+$k-site-section-border-padding:                     0.5em !default;
+
 
 // Table
 // ==========================================================================
@@ -274,3 +283,25 @@ $k-site-toolbar-margin:                             $k-site-section-spacing !def
 $k-site-toolbar-padding:                            $k-site-spacing !default;
 $k-site-toolbar-background:                         rgba(0, 0, 0, 0.05) !default;
 $k-site-toolbar-border-bottom:                      2px $k-site-border-style rgba(0, 0, 0, 0.1) !default;
+
+
+// Toglr repo
+// ==========================================================================
+
+// Defaults
+$toglr-id: '#search-open' !default;
+$toglr-js-class: '.k-js' !default;
+$toglr-breakpoint: false !default;
+$toglr-visually-hidden: false !default;
+
+$toglr-input-selector: '.k-toglr-input' !default;
+
+$toglr-nav-selector: '.k-toglr-body' !default;
+$toglr-nav-breakpoint-display: false !default;
+
+$toglr-togglers-selector: '.k-toglr-togglers' !default;
+$toglr-label-selector: '.k-toglr-label' !default;
+$toglr-label-open-selector: '.k-toglr-label-open' !default;
+$toglr-label-close-selector: '.k-toglr-label-close' !default;
+$toglr-open-selector: '.k-toglr-open' !default;
+$toglr-close-selector: '.k-toglr-close' !default;

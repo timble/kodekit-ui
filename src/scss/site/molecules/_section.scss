@@ -28,6 +28,11 @@
     }
   }
 
+  .k-section--border {
+    border: $k-site-section-border-border;
+    padding: $k-site-section-border-padding;
+  }
+
   .k-section--joined {
     margin-bottom: 0;
   }

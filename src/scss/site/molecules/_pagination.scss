@@ -1,4 +1,4 @@
-@if ($k-site-molecules == true and $k-molecule-site-pagination != false) or $k-molecule-site-pagination == true {
+@if ($k-site-molecules == true and $k-site-molecule-pagination != false) or $k-site-molecule-pagination == true {
 
   /* List
      ========================================================================== */
@@ -6,6 +6,10 @@
   /**
    * Admin pagination overrides using RGBA to fit template style
    */
+
+  .k-table-pagination {
+    @include content-block($k-site-section-spacing);
+  }
 
   .k-pagination {
     .k-pagination__pages {

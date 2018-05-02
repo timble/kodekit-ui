@@ -11,6 +11,16 @@
 @import "../../admin/generated/k-icons";
 
 
+// UI Container
+// ==========================================================================
+//
+// To hide overflowing grid margin for example, also clearing floats
+
+.k-ui-container {
+  overflow: hidden;
+}
+
+
 // ==========================================================================
 // k-ui-namespace namespaced styling
 // ==========================================================================
@@ -65,13 +75,10 @@
   @import "../../admin/utilities/loader";
   @import "../../admin/utilities/no-margin";
   @import "../../admin/utilities/no-padding";
+  @import "../../admin/utilities/overflow";
   @import "../../admin/utilities/visually-hidden";
   @import "../../admin/utilities/visually-shown";
 
-  //@import "site/utilities/utilities";
-
-
-  // Shame
-
-  @import "../shame";
+  @import "../utilities/link-coverleft";
+  @import "../utilities/wrapped-content";
 }

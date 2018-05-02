@@ -1,0 +1,15 @@
+@if ($k-site-utilities == true and $k-site-utility-wrapped-content != false) or $k-site-utility-wrapped-content == true {
+
+  /* Reset
+     ========================================================================== */
+
+  .k-wrapped-content {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: none;
+  }
+}

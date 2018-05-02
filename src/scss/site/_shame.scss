@@ -1,50 +1,65 @@
-.k-wrapped-content {
-  display: table;
-  table-layout: fixed;
-  width: 100%;
-  white-space: normal;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
-.k-link-coverleft {
-  @include pseudo(before) {
-    top: 0;
-    right: 100%;
-    left: -100%;
-    bottom: 0;
-    background: transparent;
+.k-toglr-label {
+  &:focus {
+    outline-offset: 0.4em;
   }
 }
 
-.k-table-pagination {
-  @include content-block($k-site-section-spacing);
+.k-toglr-body {
+  opacity: 0;
+  padding-top: 0.5em;
 }
 
+.k-toglr-togglers {
+  .k-toglr-label,
+  .k-toglr-open,
+  .k-toglr-close {
+    padding: 0 40px 0 16px;
+  }
 
-
-
-
-
-
-
-
-.k-ui-container {
-  overflow: hidden; // To hide overflowing grid margin for example, also clearing floats
+  @include pseudo(before) {
+    @include caret(bottom, 5px);
+    top: calc(50% - 2px);
+    left: 0;
+    transition: transform .3s ease-in-out;
+    transform: rotate(-90deg);
+  }
+  @include pseudo(after, false, $content: "✖") {
+    font-family: sans-serif;
+    font-size: 16px;
+    line-height: 1;
+    top: 50%;
+    right: 0;
+    transition: all .3s ease-in-out;
+    transform: translate(0, -200%);
+    opacity: 0;
+  }
 }
 
-
-.k-icon--primary {
-  color: var(--primary-color);
+// Open menu on :target and only when JS is disabled
+.k-toglr-input:checked,
+html:not(#{$toglr-js-class}) #{$toglr-id}:target {
+  & ~ .k-toglr-togglers {
+    &:before {
+      transform: rotate(0deg);
+    }
+  }
+  & ~ .k-toglr-togglers {
+    &:after {
+      opacity: 1;
+      transform: translate(0, -50%);
+    }
+  }
+  & ~ .k-toglr-body {
+    animation: fadeIn 400ms;
+    animation-fill-mode: forwards;
+  }
 }
 
-
-// TO win over other templates
-[class*="k-icon"][class*="k-icon"][class*="k-icon"] {
-  @extend %icon;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-
-
-
-
-

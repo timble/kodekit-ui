@@ -1,40 +1,67 @@
-/* reset */
-.k-button,
-.k-label {
-  border: none;
-  transform: none;
-  width: auto;
-  outline: none;
-  float: none;
-  height: auto;
-  text-indent: 0;
-  text-transform: none;
-  text-decoration: none;
-  text-shadow: none;
-  margin: 0;
+@if ($k-site-utilities == true and $k-site-utility-reset != false) or $k-site-utility-reset == true {
 
-  /* reset for hover focus and active */
-  &:hover, &:focus, &:active {
+  /* Reset
+     ========================================================================== */
+
+  .k-button,
+  .k-label,
+  .k-list,
+  .k-thumbnail {
     border: none;
     transform: none;
+    width: auto;
     outline: none;
+    float: none;
+    height: auto;
     text-indent: 0;
     text-transform: none;
     text-decoration: none;
     text-shadow: none;
+    margin: 0;
+
+
+    /**
+     * Hide pseudo elements coming from template
+     */
+
+    &:before,
+    &:after {
+      display: none;
+      position: absolute;
+      visibility: hidden;
+      opacity: 0;
+    }
   }
 
-  /* Hide pseudo elements coming from template from default a elements */
-  &:before,
-  &:after {
-    display: none;
-    position: absolute;
-    visibility: hidden;
-    opacity: 0;
+
+  /**
+   * reset for hover focus and active
+   */
+
+  .k-button,
+  .k-label {
+    &:hover,
+    &:focus,
+    &:active {
+      border: none;
+      transform: none;
+      outline: none;
+      text-indent: 0;
+      text-transform: none;
+      text-decoration: none;
+      text-shadow: none;
+    }
   }
 
-  /* Hide empty tags */
-  &:empty {
-    display: none;
+
+  /**
+   * Hide empty tags
+   */
+
+  .k-button,
+  .k-label {
+    &:empty {
+      display: none;
+    }
   }
 }
