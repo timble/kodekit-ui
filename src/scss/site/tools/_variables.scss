@@ -20,6 +20,7 @@ $k-site-molecule-section:                           inherit !default;
 $k-site-molecule-table:                             inherit !default;
 $k-site-molecule-thumbnail:                         inherit !default;
 $k-site-molecule-title:                             inherit !default;
+$k-site-molecule-toglr:                             inherit !default;
 $k-site-molecule-toolbar:                           inherit !default;
 $k-site-molecule-tree:                              inherit !default;
 
@@ -135,12 +136,12 @@ $k-site-card-body-hover-background:                 rgba(0, 0, 0, 0.05) !default
 $k-site-card-body-hover-border-color:               rgba(0, 0, 0, 0.2) !default;
 
 $k-site-card-header-background:                     rgba(0, 0, 0, 0.075) !default;
-$k-site-card-header-border-bottom-color:            rgba(0, 0, 0, 0.2) !default;
+$k-site-card-header-border-bottom-color:            rgba(0, 0, 0, 0.1) !default;
 $k-site-card-header-border-top:                     $k-site-border-width $k-site-border-style rgba(0, 0, 0, 0.15) !default;
 $k-site-card-header-color:                          inherit !default;
 
 $k-site-card-footer-background:                     rgba(0, 0, 0, 0.075) !default;
-$k-site-card-footer-border-top:                     $k-site-border-width $k-site-border-style rgba(0, 0, 0, 0.15) !default;
+$k-site-card-footer-border-top:                     $k-site-border-width $k-site-border-style rgba(0, 0, 0, 0.1) !default;
 $k-site-card-footer-color:                          inherit !default;
 
 
@@ -207,15 +208,15 @@ $k-site-list-item-padding:                          0.25em !default;
 // ==========================================================================
 
 $k-site-pagination-item-background-color:           transparent !default;
-$k-site-pagination-item-border-color:               rgba(0, 0, 0, 0.2) !default;
+$k-site-pagination-item-border-color:               rgba(0, 0, 0, 0.15) !default;
 $k-site-pagination-item-color:                      inherit !default;
 
 $k-site-pagination-item-hover-background-color:     rgba(0, 0, 0, 0.05) !default;
-$k-site-pagination-item-hover-border-color:         rgba(0, 0, 0, 0.15) !default;
+$k-site-pagination-item-hover-border-color:         rgba(0, 0, 0, 0.2) !default;
 $k-site-pagination-item-hover-color:                inherit !default;
 
-$k-site-pagination-item-active-background-color:    rgba(0, 0, 0, 0.125) !default;
-$k-site-pagination-item-active-border-color:        rgba(0, 0, 0, 0.125) !default;
+$k-site-pagination-item-active-background-color:    rgba(0, 0, 0, 0.075) !default;
+$k-site-pagination-item-active-border-color:        rgba(0, 0, 0, 0.15) !default;
 $k-site-pagination-item-active-color:               inherit !default;
 
 
@@ -276,6 +277,39 @@ $k-site-subtitle-margin:                            $k-site-section-spacing !def
 $k-site-subtitle-border-bottom:                     $k-site-border-width $k-site-border-style rgba(0, 0, 0, 0.1) !default;
 
 
+// Toglr
+// ==========================================================================
+
+// Repo overrides
+$toglr-id:                                          '#search-open' !default;
+$toglr-js-class:                                    '.k-js-enabled' !default;
+$toglr-breakpoint:                                  false !default;
+$toglr-visually-hidden:                             false !default;
+
+$toglr-input-selector:                              '.k-toglr-input' !default;
+
+$toglr-nav-selector:                                '.k-toglr-body' !default;
+$toglr-nav-breakpoint-display:                      false !default;
+
+$toglr-togglers-selector:                           '.k-toglr-togglers' !default;
+$toglr-label-selector:                              '.k-toglr-label' !default;
+$toglr-label-open-selector:                         '.k-toglr-label-open' !default;
+$toglr-label-close-selector:                        '.k-toglr-label-close' !default;
+$toglr-open-selector:                               '.k-toglr-open' !default;
+$toglr-close-selector:                              '.k-toglr-close' !default;
+
+// Custom styling
+$k-site-toglr-togglers-cursor:                      pointer !default;
+$k-site-toglr-togglers-color:                       inherit !default;
+$k-site-toglr-togglers-text-decoration:             none !default;
+$k-site-toglr-togglers-hover-text-decoration:       underline !default;
+
+$k-site-toglr-togglers-before-caret-size:           5px !default;
+
+$k-site-toglr-togglers-after-content:               "✖" !default;
+$k-site-toglr-togglers-after-font-size:             16px !default;
+
+
 // Toolbar
 // ==========================================================================
 
@@ -283,25 +317,3 @@ $k-site-toolbar-margin:                             $k-site-section-spacing !def
 $k-site-toolbar-padding:                            $k-site-spacing !default;
 $k-site-toolbar-background:                         rgba(0, 0, 0, 0.05) !default;
 $k-site-toolbar-border-bottom:                      2px $k-site-border-style rgba(0, 0, 0, 0.1) !default;
-
-
-// Toglr repo
-// ==========================================================================
-
-// Defaults
-$toglr-id: '#search-open' !default;
-$toglr-js-class: '.k-js' !default;
-$toglr-breakpoint: false !default;
-$toglr-visually-hidden: false !default;
-
-$toglr-input-selector: '.k-toglr-input' !default;
-
-$toglr-nav-selector: '.k-toglr-body' !default;
-$toglr-nav-breakpoint-display: false !default;
-
-$toglr-togglers-selector: '.k-toglr-togglers' !default;
-$toglr-label-selector: '.k-toglr-label' !default;
-$toglr-label-open-selector: '.k-toglr-label-open' !default;
-$toglr-label-close-selector: '.k-toglr-label-close' !default;
-$toglr-open-selector: '.k-toglr-open' !default;
-$toglr-close-selector: '.k-toglr-close' !default;

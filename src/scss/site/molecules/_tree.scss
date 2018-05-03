@@ -9,6 +9,10 @@
 
   .k-tree {
     .jqtree-element {
+      .jqtree_common:after {
+        opacity: 0.4;
+      }
+
       &:hover,
       &:focus {
         &:after {

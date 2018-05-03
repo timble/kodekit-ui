@@ -1,65 +1,8 @@
-.k-toglr-label {
-  &:focus {
-    outline-offset: 0.4em;
-  }
+.k-tree .jqtree-element.jqtree-element {
+  padding-left: 0;
+  padding-right: 0;
 }
 
-.k-toglr-body {
-  opacity: 0;
-  padding-top: 0.5em;
-}
-
-.k-toglr-togglers {
-  .k-toglr-label,
-  .k-toglr-open,
-  .k-toglr-close {
-    padding: 0 40px 0 16px;
-  }
-
-  @include pseudo(before) {
-    @include caret(bottom, 5px);
-    top: calc(50% - 2px);
-    left: 0;
-    transition: transform .3s ease-in-out;
-    transform: rotate(-90deg);
-  }
-  @include pseudo(after, false, $content: "✖") {
-    font-family: sans-serif;
-    font-size: 16px;
-    line-height: 1;
-    top: 50%;
-    right: 0;
-    transition: all .3s ease-in-out;
-    transform: translate(0, -200%);
-    opacity: 0;
-  }
-}
-
-// Open menu on :target and only when JS is disabled
-.k-toglr-input:checked,
-html:not(#{$toglr-js-class}) #{$toglr-id}:target {
-  & ~ .k-toglr-togglers {
-    &:before {
-      transform: rotate(0deg);
-    }
-  }
-  & ~ .k-toglr-togglers {
-    &:after {
-      opacity: 1;
-      transform: translate(0, -50%);
-    }
-  }
-  & ~ .k-toglr-body {
-    animation: fadeIn 400ms;
-    animation-fill-mode: forwards;
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.k-ui-namespace .k-tree>.jqtree-tree>.jqtree_common>.jqtree-element {
+  padding-left: 0;
 }

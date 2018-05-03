@@ -1,0 +1,104 @@
+@if ($k-site-molecules == true and $k-site-molecule-toglr != false) or $k-site-molecule-toglr == true {
+
+  /* Toglr
+     ========================================================================== */
+
+  .k-toglr-body {
+    opacity: 0;
+  }
+
+  .k-toglr-togglers {
+    cursor: $k-site-toglr-togglers-cursor;
+    color: $k-site-toglr-togglers-color;
+    text-decoration: $k-site-toglr-togglers-text-decoration;
+
+    @include pseudo(before) {
+      @include caret(bottom, $k-site-toglr-togglers-before-caret-size);
+      top: calc(50% - #{$k-site-toglr-togglers-before-caret-size / 2});
+      left: 0;
+      transition: transform .3s ease-in-out;
+      transform: rotate(-90deg);
+    }
+
+    @include pseudo(after, false, $content: $k-site-toglr-togglers-after-content) {
+      font-family: sans-serif;
+      font-size: $k-site-toglr-togglers-after-font-size;
+      line-height: 1;
+      top: 50%;
+      right: 0;
+      transition: all .3s ease-in-out;
+      transform: translate(0, -200%);
+      opacity: 0;
+    }
+
+    .k-toglr-label,
+    .k-toglr-open,
+    .k-toglr-close {
+      cursor: inherit;
+      color: inherit;
+      text-decoration: inherit;
+      padding: 0 ($k-site-toglr-togglers-after-font-size * 2) 0 ($k-site-toglr-togglers-before-caret-size * 3);
+
+      &:focus,
+      &:hover {
+        text-decoration: $k-site-toglr-togglers-hover-text-decoration;
+      }
+    }
+  }
+
+
+  /**
+   * When toggled
+   */
+
+  .k-toglr-input:checked,
+  html:not(#{$toglr-js-class}) #{$toglr-id}:target {
+    & ~ .k-toglr-togglers {
+      &:before {
+        transform: rotate(0deg);
+      }
+    }
+    & ~ .k-toglr-togglers {
+      &:after {
+        opacity: 1;
+        transform: translate(0, -50%);
+      }
+    }
+    & ~ .k-toglr-body {
+      animation: fadeIn 500ms;
+      animation-fill-mode: forwards;
+    }
+  }
+
+
+  /**
+   * Fade in using animation so we can respect the use of display:none > display:block
+   */
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+
+  /**
+   * Extra styling when used inside .k-section--border
+   */
+
+  .k-section--border {
+    .k-toglr-label,
+    .k-toglr-open,
+    .k-toglr-close {
+      margin: -($k-site-section-border-padding);
+      padding: $k-site-section-border-padding calc(#{($k-site-toglr-togglers-after-font-size * 2)} + #{$k-site-section-border-padding}) $k-site-section-border-padding calc(#{($k-site-toglr-togglers-before-caret-size * 3)} + #{$k-site-section-border-padding});
+    }
+
+    .k-toglr-body {
+      padding-top: $k-site-section-border-padding * 2;
+    }
+  }
+}
