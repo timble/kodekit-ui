@@ -184,16 +184,16 @@ $k-site-label-hover-text-decoration:                none !default;
 $k-site-label-hover-cursor:                         pointer !default;
 
 $k-site-label-neutral-background:                   $k-site-neutral-color !default;
-$k-site-label-neutral-type-background:              $k-site-neutral-type-color !default;
+$k-site-label-neutral-color:                        $k-site-neutral-type-color !default;
 
 $k-site-label-success-background:                   $k-site-success-color !default;
-$k-site-label-success-type-background:              $k-site-success-type-color !default;
+$k-site-label-success-color:                        $k-site-success-type-color !default;
 
 $k-site-label-warning-background:                   $k-site-warning-color !default;
-$k-site-label-warning-type-background:              $k-site-warning-type-color !default;
+$k-site-label-warning-color:                        $k-site-warning-type-color !default;
 
 $k-site-label-error-background:                     $k-site-error-color !default;
-$k-site-label-error-type-background:                $k-site-error-type-color !default;
+$k-site-label-error-color:                          $k-site-error-type-color !default;
 
 
 // List
@@ -271,7 +271,7 @@ $k-site-thumbnail-hover-border-color:               rgba(0, 0, 0, 0.33) !default
 
 $k-site-title-spacing:                              round($k-site-section-spacing / 2) !default;
 
-$k-site-subtitle-font-size:                         smaller !default;
+$k-site-subtitle-font-size:                         small !default;
 $k-site-subtitle-padding:                           round($k-site-section-spacing * 0.25) !default;
 $k-site-subtitle-margin:                            $k-site-section-spacing !default;
 $k-site-subtitle-border-bottom:                     $k-site-border-width $k-site-border-style rgba(0, 0, 0, 0.1) !default;

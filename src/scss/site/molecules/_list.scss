@@ -10,6 +10,7 @@
   }
 
   .k-list__item {
+    @include reset();
     line-height: $k-site-list-item-line-height;
     padding-top: $k-site-list-item-padding;
     padding-bottom: $k-site-list-item-padding;

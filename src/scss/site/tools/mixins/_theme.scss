@@ -1,0 +1,9 @@
+@mixin theme($background, $color) {
+  &,
+  &:active,
+  &:focus,
+  &:hover {
+    background: $background;
+    color: $color;
+  }
+}

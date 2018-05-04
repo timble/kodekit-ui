@@ -19,6 +19,15 @@
     &:hover {
       background: $k-site-card-body-hover-background;
       border-color: $k-site-card-body-hover-border-color;
+      color: $k-site-card-body-color;
+
+      .k-card__header {
+        border-color: $k-site-card-body-hover-border-color;
+      }
+
+      .k-card__footer {
+        border-color: $k-site-card-body-hover-border-color;
+      }
     }
   }
 

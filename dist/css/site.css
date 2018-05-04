@@ -3231,27 +3231,31 @@
   border: 1px solid rgba(0, 0, 0, 0.33);
 }
 
-.k-ui-namespace .k-button--primary {
-  background-color: var(--primary-color);
+.k-ui-namespace .k-button:active:not(.k-button--link), .k-ui-namespace .k-button:focus:not(.k-button--link), .k-ui-namespace .k-button:hover:not(.k-button--link) {
+  color: white;
+}
+
+.k-ui-namespace .k-button--primary:not(.k-button--link), .k-ui-namespace .k-button--primary:not(.k-button--link):active, .k-ui-namespace .k-button--primary:not(.k-button--link):focus, .k-ui-namespace .k-button--primary:not(.k-button--link):hover {
+  background: var(--primary-color);
   color: var(--primary-text-color);
 }
 
-.k-ui-namespace .k-button--neutral {
+.k-ui-namespace .k-button--neutral:not(.k-button--link), .k-ui-namespace .k-button--neutral:not(.k-button--link):active, .k-ui-namespace .k-button--neutral:not(.k-button--link):focus, .k-ui-namespace .k-button--neutral:not(.k-button--link):hover {
   background: #3498db;
   color: white;
 }
 
-.k-ui-namespace .k-button--success {
+.k-ui-namespace .k-button--success:not(.k-button--link), .k-ui-namespace .k-button--success:not(.k-button--link):active, .k-ui-namespace .k-button--success:not(.k-button--link):focus, .k-ui-namespace .k-button--success:not(.k-button--link):hover {
   background: #27ae60;
   color: white;
 }
 
-.k-ui-namespace .k-button--warning {
+.k-ui-namespace .k-button--warning:not(.k-button--link), .k-ui-namespace .k-button--warning:not(.k-button--link):active, .k-ui-namespace .k-button--warning:not(.k-button--link):focus, .k-ui-namespace .k-button--warning:not(.k-button--link):hover {
   background: #e67e22;
   color: white;
 }
 
-.k-ui-namespace .k-button--error {
+.k-ui-namespace .k-button--error:not(.k-button--link), .k-ui-namespace .k-button--error:not(.k-button--link):active, .k-ui-namespace .k-button--error:not(.k-button--link):focus, .k-ui-namespace .k-button--error:not(.k-button--link):hover {
   background: #c0392b;
   color: white;
 }
@@ -3265,6 +3269,7 @@
   color: inherit;
   border: none;
   text-decoration: underline;
+  box-shadow: none;
   /* Focus / hover / active */
 }
 
@@ -3284,6 +3289,19 @@
 .k-ui-namespace a.k-card__section:focus,
 .k-ui-namespace a.k-card__section:hover {
   background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.2);
+  color: inherit;
+}
+
+.k-ui-namespace a.k-card__body:focus .k-card__header, .k-ui-namespace a.k-card__body:hover .k-card__header,
+.k-ui-namespace a.k-card__section:focus .k-card__header,
+.k-ui-namespace a.k-card__section:hover .k-card__header {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.k-ui-namespace a.k-card__body:focus .k-card__footer, .k-ui-namespace a.k-card__body:hover .k-card__footer,
+.k-ui-namespace a.k-card__section:focus .k-card__footer,
+.k-ui-namespace a.k-card__section:hover .k-card__footer {
   border-color: rgba(0, 0, 0, 0.2);
 }
 
@@ -3417,28 +3435,28 @@
   cursor: pointer;
 }
 
-.k-ui-namespace .k-label--primary {
-  background-color: var(--primary-color);
+.k-ui-namespace .k-label--primary, .k-ui-namespace .k-label--primary:active, .k-ui-namespace .k-label--primary:focus, .k-ui-namespace .k-label--primary:hover {
+  background: var(--primary-color);
   color: var(--primary-text-color);
 }
 
-.k-ui-namespace .k-label--neutral {
-  background-color: #3498db;
+.k-ui-namespace .k-label--neutral, .k-ui-namespace .k-label--neutral:active, .k-ui-namespace .k-label--neutral:focus, .k-ui-namespace .k-label--neutral:hover {
+  background: #3498db;
   color: white;
 }
 
-.k-ui-namespace .k-label--success {
-  background-color: #27ae60;
+.k-ui-namespace .k-label--success, .k-ui-namespace .k-label--success:active, .k-ui-namespace .k-label--success:focus, .k-ui-namespace .k-label--success:hover {
+  background: #27ae60;
   color: white;
 }
 
-.k-ui-namespace .k-label--warning {
-  background-color: #e67e22;
+.k-ui-namespace .k-label--warning, .k-ui-namespace .k-label--warning:active, .k-ui-namespace .k-label--warning:focus, .k-ui-namespace .k-label--warning:hover {
+  background: #e67e22;
   color: white;
 }
 
-.k-ui-namespace .k-label--error {
-  background-color: #c0392b;
+.k-ui-namespace .k-label--error, .k-ui-namespace .k-label--error:active, .k-ui-namespace .k-label--error:focus, .k-ui-namespace .k-label--error:hover {
+  background: #c0392b;
   color: white;
 }
 
@@ -3457,6 +3475,11 @@
 }
 
 .k-ui-namespace .k-list__item {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: none;
+  background: transparent;
   line-height: 1.5;
   padding-top: 0.25em;
   padding-bottom: 0.25em;
@@ -3807,7 +3830,7 @@
 }
 
 .k-ui-namespace .k-subtitle {
-  font-size: smaller;
+  font-size: small;
   /* 1 */
   padding-bottom: 0em;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);

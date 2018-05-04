@@ -27,6 +27,10 @@
     &:hover {
       box-shadow: $k-site-button-hover-box-shadow;
       border: $k-site-button-hover-border;
+
+      &:not(.k-button--link) {
+        color: $k-site-button-color;
+      }
     }
   }
 
@@ -36,28 +40,33 @@
    */
 
   .k-button--primary {
-    background-color: var(--primary-color);
-    color: var(--primary-text-color);
+    &:not(.k-button--link) {
+      @include theme(var(--primary-color), var(--primary-text-color));
+    }
   }
 
   .k-button--neutral {
-    background: $k-site-button-neutral-background;
-    color: $k-site-button-neutral-color;
+    &:not(.k-button--link) {
+      @include theme($k-site-button-neutral-background, $k-site-button-neutral-color);
+    }
   }
 
   .k-button--success {
-    background: $k-site-button-success-background;
-    color: $k-site-button-success-color;
+    &:not(.k-button--link) {
+      @include theme($k-site-button-success-background, $k-site-button-success-color);
+    }
   }
 
   .k-button--warning {
-    background: $k-site-button-warning-background;
-    color: $k-site-button-warning-color;
+    &:not(.k-button--link) {
+      @include theme($k-site-button-warning-background, $k-site-button-warning-color);
+    }
   }
 
   .k-button--error {
-    background: $k-site-button-error-background;
-    color: $k-site-button-error-color;
+    &:not(.k-button--link) {
+      @include theme($k-site-button-error-background, $k-site-button-error-color);
+    }
   }
 
   .k-button--block {
@@ -69,6 +78,7 @@
     color: inherit;
     border: none;
     text-decoration: underline;
+    box-shadow: none;
 
     /* Focus / hover / active */
 

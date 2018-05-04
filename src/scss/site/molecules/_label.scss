@@ -51,27 +51,22 @@
    */
 
   .k-label--primary {
-    background-color: var(--primary-color);
-    color: var(--primary-text-color);
+    @include theme(var(--primary-color), var(--primary-text-color));
   }
 
   .k-label--neutral {
-    background-color: $k-site-label-neutral-background;
-    color: $k-site-label-neutral-type-background;
+    @include theme($k-site-label-neutral-background, $k-site-label-neutral-color);
   }
 
   .k-label--success {
-    background-color: $k-site-label-success-background;
-    color: $k-site-label-success-type-background;
+    @include theme($k-site-label-success-background, $k-site-label-success-color);
   }
 
   .k-label--warning {
-    background-color: $k-site-label-warning-background;
-    color: $k-site-label-warning-type-background;
+    @include theme($k-site-label-warning-background, $k-site-label-warning-color);
   }
 
   .k-label--error {
-    background-color: $k-site-label-error-background;
-    color: $k-site-label-error-type-background;
+    @include theme($k-site-label-error-background, $k-site-label-error-color);
   }
 }
