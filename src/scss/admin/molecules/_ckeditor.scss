@@ -5,8 +5,9 @@
 
   .cke_chrome.cke_chrome,
   .cke_inner.cke_inner,
-  .cke_contents.cke_contents {
-    display: flex;
+  .cke_contents.cke_contents,
+  .cke_source.cke_source {
+    display: flex !important;
     flex-direction: column;
     flex: 1 1 auto;
     height: auto !important;
