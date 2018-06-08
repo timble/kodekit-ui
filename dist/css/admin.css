@@ -1845,6 +1845,13 @@ body.k-is-resizing {
    * 3. Set opacity to 0 by default
    * 4. Hide overlay when screen is wide enough
    */
+  /* Image
+     ========================================================================== */
+  /**
+   * 1. Responsive images
+   * 2. Eliminating line-height bug when used alone in container
+   * 3. No hidden borders on parents
+   */
   /* Anchor
      ========================================================================== */
   /* Backface visibility
@@ -1881,13 +1888,6 @@ body.k-is-resizing {
    * 2. Remove all spacing
    * 3. Set basic font here. Other systems could set font on `<body>` element to override this.
    *    We're just making sure there's alwas a default font available
-   */
-  /* Image
-     ========================================================================== */
-  /**
-   * 1. Responsive images
-   * 2. Eliminating line-height bug when used alone in container
-   * 3. No hidden borders on parents
    */
   /* Normalize form controls
      ========================================================================== */
@@ -3946,6 +3946,26 @@ body.k-is-resizing {
   -webkit-backface-visibility: hidden;
 }
 
+.k-ui-namespace img {
+  max-width: 100%;
+  /* 1 */
+  height: auto;
+}
+
+.k-ui-namespace img:only-child {
+  vertical-align: middle;
+  /* 2 */
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  /* 3 */
+}
+
+.k-ui-namespace .k-image-16 {
+  min-width: 16px;
+  width: 16px;
+  max-width: 16px;
+}
+
 .k-ui-namespace a {
   color: #222222;
   cursor: pointer;
@@ -4104,26 +4124,6 @@ body.k-is-resizing {
   color: #222222;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.k-ui-namespace img {
-  max-width: 100%;
-  /* 1 */
-  height: auto;
-}
-
-.k-ui-namespace img:only-child {
-  vertical-align: middle;
-  /* 2 */
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  /* 3 */
-}
-
-.k-ui-namespace .k-image-16 {
-  min-width: 16px;
-  width: 16px;
-  max-width: 16px;
 }
 
 .k-ui-namespace input[type="search"] {

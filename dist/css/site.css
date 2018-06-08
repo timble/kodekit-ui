@@ -3,8 +3,8 @@
      ========================================================================== */
 @font-face {
   font-family: "k-icons";
-  src: url("../../koowa/com_koowa/fonts/k-icons/k-icons.eot");
-  src: url("../../koowa/com_koowa/fonts/k-icons/k-icons.eot?#iefix") format("embedded-opentype"), url("../../koowa/com_koowa/fonts/k-icons/k-icons.woff") format("woff"), url("../../koowa/com_koowa/fonts/k-icons/k-icons.ttf") format("truetype"), url("../../koowa/com_koowa/fonts/k-icons/k-icons.svg#k-icons") format("svg");
+  src: url("../fonts/k-icons/k-icons.eot");
+  src: url("../fonts/k-icons/k-icons.eot?#iefix") format("embedded-opentype"), url("../fonts/k-icons/k-icons.woff") format("woff"), url("../fonts/k-icons/k-icons.ttf") format("truetype"), url("../fonts/k-icons/k-icons.svg#k-icons") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -17,7 +17,7 @@
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
     font-family: "k-icons";
-    src: url("../../koowa/com_koowa/fonts/k-icons/k-icons.svg#k-icons") format("svg");
+    src: url("../fonts/k-icons/k-icons.svg#k-icons") format("svg");
   }
 }
 

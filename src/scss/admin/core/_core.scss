@@ -29,7 +29,7 @@
 
   // Base
 
-  @import "../atoms/boxsizing";
+  @import "../../shared/atoms/boxsizing";
   @import "../3rdparty/normalize";
 
 
@@ -51,6 +51,7 @@
 
   // Atoms
 
+  @import "../../shared/atoms/img";
   @import "../atoms/a";
   @import "../atoms/backface-visibility";
   @import "../atoms/body";
@@ -58,7 +59,6 @@
   @import "../atoms/fieldset";
   @import "../atoms/heading";
   @import "../atoms/html";
-  @import "../atoms/img";
   @import "../atoms/input";
   @import "../atoms/label";
   @import "../atoms/legend";
