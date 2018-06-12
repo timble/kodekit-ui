@@ -10,7 +10,7 @@
 
 //$k-icon-path: '../../koowa/com_koowa/fonts';
 $k-icon-path: '../fonts';
-@import "../../admin/generated/k-icons";
+@import "../../shared/generated/k-icons";
 
 
 // UI Container
@@ -37,21 +37,18 @@ $k-icon-path: '../fonts';
   @import "../utilities/reset";
 
 
-  // Custom selected admin atoms
+  // Atoms
 
   @import "../../shared/atoms/img";
 
 
-  // Custom selected admin molecules (@TODO: place in shared folder?)
+  // Molecules
 
-  @import "../../admin/molecules/icon";
-  @import "../../admin/3rdparty/jqtree";
-  @import "../../admin/molecules/card";
-  @import "../../admin/molecules/gallery";
-  @import "../../admin/molecules/pagination";
-
-
-  /* Site molecules */
+  @import "../../shared/molecules/card";
+  @import "../../shared/molecules/gallery";
+  @import "../../shared/molecules/icon";
+  @import "../../shared/molecules/pagination";
+  @import "../../shared/3rdparty/jqtree";
 
   @import "../molecules/alert";
   @import "../molecules/button";
@@ -71,17 +68,17 @@ $k-icon-path: '../fonts';
   @import "../molecules/tree";
 
 
-  // Custom selected admin utilities (@TODO: place in shared folder?)
-  // Loading last so we have the biggest chance of 'winning' specificity wars without using !important
+  // Utilities
 
-  @import "../../admin/utilities/align";
-  @import "../../admin/utilities/loader";
-  @import "../../admin/utilities/no-margin";
-  @import "../../admin/utilities/no-padding";
-  @import "../../admin/utilities/overflow";
-  @import "../../admin/utilities/visually-hidden";
-  @import "../../admin/utilities/visually-shown";
+  @import "../../shared/utilities/align";
+  @import "../../shared/utilities/loader";
+  @import "../../shared/utilities/no-margin";
+  @import "../../shared/utilities/no-padding";
+  @import "../../shared/utilities/overflow";
+  @import "../../shared/utilities/visually-hidden";
+  @import "../../shared/utilities/visually-shown";
 
   @import "../utilities/link-coverleft";
   @import "../utilities/wrapped-content";
+
 }

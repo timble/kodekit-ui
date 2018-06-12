@@ -1483,21 +1483,6 @@
    * 2. Eliminating line-height bug when used alone in container
    * 3. No hidden borders on parents
    */
-  /* Icons
-     ========================================================================== */
-  /**
-   * Icon colors
-   */
-  /**
-   * Icon sizes
-   */
-  /**
-   * Custom background image icons
-   *
-   * Make sure that custom icons get background-size cover so they fit their container nicely
-   */
-  /* Tree
-     ========================================================================== */
   /* Card
      ========================================================================== */
   /**
@@ -1541,8 +1526,22 @@
   /**
    * Pagination
    */
+  /* Icons
+     ========================================================================== */
+  /**
+   * Icon colors
+   */
+  /**
+   * Icon sizes
+   */
+  /**
+   * Custom background image icons
+   *
+   * Make sure that custom icons get background-size cover so they fit their container nicely
+   */
   /* Pagination */
-  /* Site molecules */
+  /* Tree
+     ========================================================================== */
   /* Alerts
      ========================================================================== */
   /**
@@ -1781,295 +1780,6 @@
   min-width: 16px;
   width: 16px;
   max-width: 16px;
-}
-
-.k-ui-namespace .k-icon--accent {
-  color: #3071a9;
-}
-
-.k-ui-namespace .k-icon--success {
-  color: #27ae60;
-}
-
-.k-ui-namespace .k-icon--error {
-  color: #c0392b;
-}
-
-.k-ui-namespace .k-icon--size-tiny {
-  font-size: 10px;
-}
-
-.k-ui-namespace .k-icon--size-small {
-  font-size: 13px;
-}
-
-.k-ui-namespace .k-icon--size-default {
-  font-size: 16px;
-}
-
-.k-ui-namespace .k-icon--size-medium {
-  font-size: 24px;
-}
-
-.k-ui-namespace .k-icon--size-large {
-  font-size: 32px;
-}
-
-.k-ui-namespace .k-icon--size-xlarge {
-  font-size: 48px;
-}
-
-.k-ui-namespace .k-icon--size-huge {
-  font-size: 64px;
-}
-
-.k-ui-namespace .k-icon-text-item {
-  display: inline-block;
-  font-size: inherit !important;
-  line-height: 20px;
-  vertical-align: middle;
-  margin-right: 4px;
-}
-
-.k-ui-namespace [class^="k-icon-document-"]:before,
-.k-ui-namespace [class*=" k-icon-document-"]:before {
-  background-size: cover;
-}
-
-.k-ui-namespace .k-tree {
-  margin: 4px 0;
-  overflow: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.k-ui-namespace .k-tree:before, .k-ui-namespace .k-tree:after {
-  display: table;
-  content: " ";
-}
-
-.k-ui-namespace .k-tree:after {
-  clear: both;
-}
-
-.k-ui-namespace .k-tree:last-child {
-  margin-bottom: 0;
-}
-
-.k-ui-namespace .k-tree .jqtree-element {
-  padding: 0 12px 0 16px;
-}
-
-[dir="rtl"] .k-ui-namespace .k-tree .jqtree-element {
-  padding: 0 16px 0 12px;
-}
-
-.k-ui-namespace .k-tree .jqtree-element:hover, .k-ui-namespace .k-tree .jqtree-element:focus {
-  background: white;
-}
-
-.k-ui-namespace .k-tree > .jqtree-tree {
-  margin: 0;
-  padding: 0;
-}
-
-.k-ui-namespace .k-tree > .jqtree-tree > .jqtree_common > .jqtree-element {
-  padding-left: 15px;
-}
-
-[dir="rtl"] .k-ui-namespace .k-tree > .jqtree-tree > .jqtree_common > .jqtree-element {
-  padding-left: 12px;
-  padding-right: 15px;
-}
-
-.k-ui-namespace .k-tree .jqtree-selected > .jqtree-element {
-  background: #3071a9;
-  color: white;
-}
-
-.k-ui-namespace .k-tree .jqtree-selected:hover > .jqtree-element {
-  background: #2d699d;
-}
-
-.k-ui-namespace .k-sidebar-item .k-tree > .jqtree-tree > .jqtree-folder .jqtree-element {
-  padding-left: 16px;
-}
-
-[dir="rtl"] .k-ui-namespace .k-sidebar-item .k-tree > .jqtree-tree > .jqtree-folder .jqtree-element {
-  padding-left: 12px;
-  padding-right: 16px;
-}
-
-.k-ui-namespace .jqtree-tree {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  border: none;
-  background: transparent;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  /* Reset default ul li styling */
-}
-
-.k-ui-namespace .jqtree-tree ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  border: none;
-  background: transparent;
-  float: left;
-  min-width: 100%;
-}
-
-.k-ui-namespace .jqtree-tree ul:before, .k-ui-namespace .jqtree-tree ul:after {
-  display: table;
-  content: " ";
-}
-
-.k-ui-namespace .jqtree-tree ul:after {
-  clear: both;
-}
-
-[dir="rtl"] .k-ui-namespace .jqtree-tree.jqtree-tree {
-  padding: 0;
-}
-
-[dir="rtl"] .k-ui-namespace .jqtree-tree, [dir="rtl"] .k-ui-namespace .jqtree-tree ul {
-  float: right;
-  padding: 0;
-}
-
-.k-ui-namespace .jqtree-folder:before, .k-ui-namespace .jqtree-folder:after {
-  display: table;
-  content: " ";
-}
-
-.k-ui-namespace .jqtree-folder:after {
-  clear: both;
-}
-
-.k-ui-namespace .jqtree-element {
-  position: relative;
-  display: block;
-  width: 100%;
-  font-size: 0;
-  padding: 0;
-  white-space: nowrap;
-  height: auto;
-  cursor: pointer;
-}
-
-.k-ui-namespace .jqtree-element a {
-  padding: 0;
-  background: transparent;
-}
-
-.k-ui-namespace .jqtree-element .jqtree-toggler {
-  height: 0;
-  padding-top: 28px;
-  overflow: hidden;
-  color: inherit;
-}
-
-.k-ui-namespace .jqtree-whitespace,
-.k-ui-namespace .jqtree-toggler,
-.k-ui-namespace .jqtree-icon,
-.k-ui-namespace .jqtree-title {
-  display: inline-block;
-  font-size: 13px;
-  line-height: 28px;
-  height: 28px;
-  vertical-align: middle;
-}
-
-.k-ui-namespace .jqtree-whitespace,
-.k-ui-namespace .jqtree-toggler,
-.k-ui-namespace .jqtree-icon {
-  width: 28px;
-  text-align: center;
-}
-
-.k-ui-namespace .jqtree-icon:before {
-  line-height: 28px;
-}
-
-.k-ui-namespace .k-tree li li .jqtree-whitespace + .jqtree_common:not(.jqtree-toggler) {
-  position: relative;
-}
-
-.k-ui-namespace .k-tree li li .jqtree-whitespace + .jqtree_common:not(.jqtree-toggler):after {
-  display: block;
-  position: absolute;
-  content: " ";
-  width: 6px;
-  height: 6px;
-  border-left: 1px solid;
-  border-bottom: 1px solid;
-  top: 50%;
-  margin-top: -3px;
-  left: -17px;
-}
-
-[dir="rtl"] .k-ui-namespace .k-tree li li .jqtree-whitespace + .jqtree_common:not(.jqtree-toggler):after {
-  border-left: none;
-  border-right: 1px solid;
-  left: auto;
-  right: -17px;
-}
-
-.k-ui-namespace .jqtree-toggler {
-  position: relative;
-}
-
-.k-ui-namespace .jqtree-toggler:before {
-  display: block;
-  position: absolute;
-  content: " ";
-  top: 50%;
-  left: 50%;
-  margin-top: -1px;
-  margin-left: -4px;
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-top: 4px solid;
-  transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-  -webkit-backface-visibility: hidden;
-}
-
-.k-ui-namespace .jqtree-toggler:hover:before, .k-ui-namespace .jqtree-toggler:focus:before {
-  border-top-color: black;
-}
-
-.k-ui-namespace .jqtree-toggler.jqtree-closed:before {
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-}
-
-[dir="rtl"] .k-ui-namespace .jqtree-toggler.jqtree-closed:before {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-}
-
-.k-ui-namespace .jqtree-selected > .jqtree-element {
-  font-weight: 700;
-}
-
-.k-ui-namespace .jqtree-selected > .jqtree_common > .jqtree-toggler:hover {
-  color: white;
-}
-
-.k-ui-namespace .jqtree-selected > .jqtree_common > .jqtree-toggler:hover:before {
-  border-top-color: white;
-}
-
-.k-ui-namespace .jqtree-closed ul {
-  display: none;
-}
-
-.k-ui-namespace .jqtree--one-level .jqtree-whitespace {
-  display: none;
 }
 
 .k-ui-namespace .k-card {
@@ -3017,6 +2727,59 @@
   /* 1 */
 }
 
+.k-ui-namespace .k-icon--accent {
+  color: #3071a9;
+}
+
+.k-ui-namespace .k-icon--success {
+  color: #27ae60;
+}
+
+.k-ui-namespace .k-icon--error {
+  color: #c0392b;
+}
+
+.k-ui-namespace .k-icon--size-tiny {
+  font-size: 10px;
+}
+
+.k-ui-namespace .k-icon--size-small {
+  font-size: 13px;
+}
+
+.k-ui-namespace .k-icon--size-default {
+  font-size: 16px;
+}
+
+.k-ui-namespace .k-icon--size-medium {
+  font-size: 24px;
+}
+
+.k-ui-namespace .k-icon--size-large {
+  font-size: 32px;
+}
+
+.k-ui-namespace .k-icon--size-xlarge {
+  font-size: 48px;
+}
+
+.k-ui-namespace .k-icon--size-huge {
+  font-size: 64px;
+}
+
+.k-ui-namespace .k-icon-text-item {
+  display: inline-block;
+  font-size: inherit !important;
+  line-height: 20px;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+.k-ui-namespace [class^="k-icon-document-"]:before,
+.k-ui-namespace [class*=" k-icon-document-"]:before {
+  background-size: cover;
+}
+
 .k-ui-namespace .k-pagination {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3137,6 +2900,242 @@
 [dir="rtl"] .k-ui-namespace .k-pagination select {
   margin-right: auto;
   margin-left: 8px;
+}
+
+.k-ui-namespace .k-tree {
+  margin: 4px 0;
+  overflow: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.k-ui-namespace .k-tree:before, .k-ui-namespace .k-tree:after {
+  display: table;
+  content: " ";
+}
+
+.k-ui-namespace .k-tree:after {
+  clear: both;
+}
+
+.k-ui-namespace .k-tree:last-child {
+  margin-bottom: 0;
+}
+
+.k-ui-namespace .k-tree .jqtree-element {
+  padding: 0 12px 0 16px;
+}
+
+[dir="rtl"] .k-ui-namespace .k-tree .jqtree-element {
+  padding: 0 16px 0 12px;
+}
+
+.k-ui-namespace .k-tree .jqtree-element:hover, .k-ui-namespace .k-tree .jqtree-element:focus {
+  background: white;
+}
+
+.k-ui-namespace .k-tree > .jqtree-tree {
+  margin: 0;
+  padding: 0;
+}
+
+.k-ui-namespace .k-tree > .jqtree-tree > .jqtree_common > .jqtree-element {
+  padding-left: 15px;
+}
+
+[dir="rtl"] .k-ui-namespace .k-tree > .jqtree-tree > .jqtree_common > .jqtree-element {
+  padding-left: 12px;
+  padding-right: 15px;
+}
+
+.k-ui-namespace .k-tree .jqtree-selected > .jqtree-element {
+  background: #3071a9;
+  color: white;
+}
+
+.k-ui-namespace .k-tree .jqtree-selected:hover > .jqtree-element {
+  background: #2d699d;
+}
+
+.k-ui-namespace .k-sidebar-item .k-tree > .jqtree-tree > .jqtree-folder .jqtree-element {
+  padding-left: 16px;
+}
+
+[dir="rtl"] .k-ui-namespace .k-sidebar-item .k-tree > .jqtree-tree > .jqtree-folder .jqtree-element {
+  padding-left: 12px;
+  padding-right: 16px;
+}
+
+.k-ui-namespace .jqtree-tree {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: none;
+  background: transparent;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  /* Reset default ul li styling */
+}
+
+.k-ui-namespace .jqtree-tree ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: none;
+  background: transparent;
+  float: left;
+  min-width: 100%;
+}
+
+.k-ui-namespace .jqtree-tree ul:before, .k-ui-namespace .jqtree-tree ul:after {
+  display: table;
+  content: " ";
+}
+
+.k-ui-namespace .jqtree-tree ul:after {
+  clear: both;
+}
+
+[dir="rtl"] .k-ui-namespace .jqtree-tree.jqtree-tree {
+  padding: 0;
+}
+
+[dir="rtl"] .k-ui-namespace .jqtree-tree, [dir="rtl"] .k-ui-namespace .jqtree-tree ul {
+  float: right;
+  padding: 0;
+}
+
+.k-ui-namespace .jqtree-folder:before, .k-ui-namespace .jqtree-folder:after {
+  display: table;
+  content: " ";
+}
+
+.k-ui-namespace .jqtree-folder:after {
+  clear: both;
+}
+
+.k-ui-namespace .jqtree-element {
+  position: relative;
+  display: block;
+  width: 100%;
+  font-size: 0;
+  padding: 0;
+  white-space: nowrap;
+  height: auto;
+  cursor: pointer;
+}
+
+.k-ui-namespace .jqtree-element a {
+  padding: 0;
+  background: transparent;
+}
+
+.k-ui-namespace .jqtree-element .jqtree-toggler {
+  height: 0;
+  padding-top: 28px;
+  overflow: hidden;
+  color: inherit;
+}
+
+.k-ui-namespace .jqtree-whitespace,
+.k-ui-namespace .jqtree-toggler,
+.k-ui-namespace .jqtree-icon,
+.k-ui-namespace .jqtree-title {
+  display: inline-block;
+  font-size: 13px;
+  line-height: 28px;
+  height: 28px;
+  vertical-align: middle;
+}
+
+.k-ui-namespace .jqtree-whitespace,
+.k-ui-namespace .jqtree-toggler,
+.k-ui-namespace .jqtree-icon {
+  width: 28px;
+  text-align: center;
+}
+
+.k-ui-namespace .jqtree-icon:before {
+  line-height: 28px;
+}
+
+.k-ui-namespace .k-tree li li .jqtree-whitespace + .jqtree_common:not(.jqtree-toggler) {
+  position: relative;
+}
+
+.k-ui-namespace .k-tree li li .jqtree-whitespace + .jqtree_common:not(.jqtree-toggler):after {
+  display: block;
+  position: absolute;
+  content: " ";
+  width: 6px;
+  height: 6px;
+  border-left: 1px solid;
+  border-bottom: 1px solid;
+  top: 50%;
+  margin-top: -3px;
+  left: -17px;
+}
+
+[dir="rtl"] .k-ui-namespace .k-tree li li .jqtree-whitespace + .jqtree_common:not(.jqtree-toggler):after {
+  border-left: none;
+  border-right: 1px solid;
+  left: auto;
+  right: -17px;
+}
+
+.k-ui-namespace .jqtree-toggler {
+  position: relative;
+}
+
+.k-ui-namespace .jqtree-toggler:before {
+  display: block;
+  position: absolute;
+  content: " ";
+  top: 50%;
+  left: 50%;
+  margin-top: -1px;
+  margin-left: -4px;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid;
+  transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+  -webkit-backface-visibility: hidden;
+}
+
+.k-ui-namespace .jqtree-toggler:hover:before, .k-ui-namespace .jqtree-toggler:focus:before {
+  border-top-color: black;
+}
+
+.k-ui-namespace .jqtree-toggler.jqtree-closed:before {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+[dir="rtl"] .k-ui-namespace .jqtree-toggler.jqtree-closed:before {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.k-ui-namespace .jqtree-selected > .jqtree-element {
+  font-weight: 700;
+}
+
+.k-ui-namespace .jqtree-selected > .jqtree_common > .jqtree-toggler:hover {
+  color: white;
+}
+
+.k-ui-namespace .jqtree-selected > .jqtree_common > .jqtree-toggler:hover:before {
+  border-top-color: white;
+}
+
+.k-ui-namespace .jqtree-closed ul {
+  display: none;
+}
+
+.k-ui-namespace .jqtree--one-level .jqtree-whitespace {
+  display: none;
 }
 
 .k-ui-namespace .k-alert {
@@ -4256,104 +4255,6 @@ html:not([dir=rtl]) .k-no-padding-left.k-no-padding-left.k-no-padding-left {
           hyphens: none;
 }
 
-/* Responsive table
-     ========================================================================== */
-.footable.breakpoint {
-  /**
-     * Reset padding, and re-set them on individual divs
-     */
-  /**
-     * 1. Just like table cells
-     * 2. Almost as tall as the main table rows
-     * 3. Same spacing as on table cells
-     */
-  /* Hide toggle button for sub headings */
-}
-
-.footable.breakpoint .footable-toggle {
-  content: " ";
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  line-height: 18px;
-  border: 1px solid #a2a1a1;
-  border-radius: 50%;
-  text-align: center;
-  vertical-align: middle;
-}
-
-.footable.breakpoint .footable-toggle:after {
-  content: "";
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  margin: 4px;
-  color: #a2a1a1;
-  font-size: 10px;
-  line-height: 1.3em;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-  transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-  -webkit-backface-visibility: hidden;
-}
-
-[dir="rtl"] .footable.breakpoint .footable-toggle:after {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-}
-
-.footable.breakpoint tr.k-is-selected .footable-toggle {
-  border-color: white;
-}
-
-.footable.breakpoint tr.k-is-selected .footable-toggle:after {
-  color: white;
-}
-
-.footable.breakpoint .footable-row-detail-cell {
-  padding: 0;
-}
-
-.footable.breakpoint tr.footable-detail-show .footable-toggle:after {
-  -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
-}
-
-.footable.breakpoint .footable-row-detail-row {
-  margin-bottom: 6px;
-}
-
-.footable.breakpoint .footable-row-detail-row:before, .footable.breakpoint .footable-row-detail-row:after {
-  display: table;
-  content: " ";
-}
-
-.footable.breakpoint .footable-row-detail-row:after {
-  clear: both;
-}
-
-.footable.breakpoint .footable-row-detail-row:last-child {
-  margin-bottom: 0;
-}
-
-.footable.breakpoint .footable-row-detail-name {
-  font-weight: 700;
-}
-
-.footable.breakpoint .footable-row-detail-name,
-.footable.breakpoint .footable-row-detail-value {
-  position: relative;
-  /* 1 */
-  min-height: 30px;
-  /* 2 */
-  padding: 6px 8px;
-  /* 3 */
-}
-
-.footable.breakpoint th .footable-toggle {
-  display: none;
-}
-
 /* Tree
      ========================================================================== */
 .k-tree {
@@ -4589,6 +4490,104 @@ html:not([dir=rtl]) .k-no-padding-left.k-no-padding-left.k-no-padding-left {
 }
 
 .jqtree--one-level .jqtree-whitespace {
+  display: none;
+}
+
+/* Responsive table
+     ========================================================================== */
+.footable.breakpoint {
+  /**
+     * Reset padding, and re-set them on individual divs
+     */
+  /**
+     * 1. Just like table cells
+     * 2. Almost as tall as the main table rows
+     * 3. Same spacing as on table cells
+     */
+  /* Hide toggle button for sub headings */
+}
+
+.footable.breakpoint .footable-toggle {
+  content: " ";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  line-height: 18px;
+  border: 1px solid #a2a1a1;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.footable.breakpoint .footable-toggle:after {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 4px;
+  color: #a2a1a1;
+  font-size: 10px;
+  line-height: 1.3em;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+  -webkit-backface-visibility: hidden;
+}
+
+[dir="rtl"] .footable.breakpoint .footable-toggle:after {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.footable.breakpoint tr.k-is-selected .footable-toggle {
+  border-color: white;
+}
+
+.footable.breakpoint tr.k-is-selected .footable-toggle:after {
+  color: white;
+}
+
+.footable.breakpoint .footable-row-detail-cell {
+  padding: 0;
+}
+
+.footable.breakpoint tr.footable-detail-show .footable-toggle:after {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.footable.breakpoint .footable-row-detail-row {
+  margin-bottom: 6px;
+}
+
+.footable.breakpoint .footable-row-detail-row:before, .footable.breakpoint .footable-row-detail-row:after {
+  display: table;
+  content: " ";
+}
+
+.footable.breakpoint .footable-row-detail-row:after {
+  clear: both;
+}
+
+.footable.breakpoint .footable-row-detail-row:last-child {
+  margin-bottom: 0;
+}
+
+.footable.breakpoint .footable-row-detail-name {
+  font-weight: 700;
+}
+
+.footable.breakpoint .footable-row-detail-name,
+.footable.breakpoint .footable-row-detail-value {
+  position: relative;
+  /* 1 */
+  min-height: 30px;
+  /* 2 */
+  padding: 6px 12px;
+  /* 3 */
+}
+
+.footable.breakpoint th .footable-toggle {
   display: none;
 }
 

@@ -4,6 +4,19 @@
 //
 // These file do not produce any CSS code on their own
 
-@import "../tools/functions";
+
+// Functions
+
+@import "../../shared/tools/functions";
+
+
+// Variables
+
+@import "../../shared/tools/variables";
 @import "../tools/variables";
+
+
+// Mixins
+
+@import "../../shared/tools/mixins";
 @import "../tools/mixins";

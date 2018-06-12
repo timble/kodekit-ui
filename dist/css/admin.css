@@ -1918,6 +1918,63 @@ body.k-is-resizing {
    */
   /* Lists
      ========================================================================== */
+  /* Card
+     ========================================================================== */
+  /**
+   * Card body
+   */
+  /**
+   * Card image
+   *
+   * 1. For when background image is used
+   * 2. Cover complete card minus border
+   * 3. Cover complete card minus border and 1pixel spacing
+   */
+  /**
+   * Card title
+   */
+  /**
+   * Card section
+   *
+   * 1. Use margin instead of padding to keep border-radius on rounded cards
+   */
+  /**
+   * Card footer
+   */
+  /**
+   * Card caption
+   */
+  /**
+   * Selected card
+   */
+  /**
+   * Flexing card
+   */
+  /* Gallery
+     ========================================================================== */
+  /**
+   * Set widths
+   */
+  /**
+   * Gallery sizes
+   */
+  /**
+   * Pagination
+   */
+  /* Icons
+     ========================================================================== */
+  /**
+   * Icon colors
+   */
+  /**
+   * Icon sizes
+   */
+  /**
+   * Custom background image icons
+   *
+   * Make sure that custom icons get background-size cover so they fit their container nicely
+   */
+  /* Pagination */
   /* Alerts
      ========================================================================== */
   /**
@@ -1967,38 +2024,6 @@ body.k-is-resizing {
    */
   /**
    * Button groups
-   */
-  /* Card
-     ========================================================================== */
-  /**
-   * Card body
-   */
-  /**
-   * Card image
-   *
-   * 1. For when background image is used
-   * 2. Cover complete card minus border
-   * 3. Cover complete card minus border and 1pixel spacing
-   */
-  /**
-   * Card title
-   */
-  /**
-   * Card section
-   *
-   * 1. Use margin instead of padding to keep border-radius on rounded cards
-   */
-  /**
-   * Card footer
-   */
-  /**
-   * Card caption
-   */
-  /**
-   * Selected card
-   */
-  /**
-   * Flexing card
    */
   /* CK Editor
      ========================================================================== */
@@ -2197,17 +2222,6 @@ body.k-is-resizing {
   /**
    * The content
    */
-  /* Gallery
-     ========================================================================== */
-  /**
-   * Set widths
-   */
-  /**
-   * Gallery sizes
-   */
-  /**
-   * Pagination
-   */
   /* Hamburger
      ========================================================================== */
   /**
@@ -2241,19 +2255,6 @@ body.k-is-resizing {
    */
   /* Heading
      ========================================================================== */
-  /* Icons
-     ========================================================================== */
-  /**
-   * Icon colors
-   */
-  /**
-   * Icon sizes
-   */
-  /**
-   * Custom background image icons
-   *
-   * Make sure that custom icons get background-size cover so they fit their container nicely
-   */
   /* List
      ========================================================================== */
   /**
@@ -2286,7 +2287,6 @@ body.k-is-resizing {
   /**
    * Check if :checked is supported using modernizr
    */
-  /* Pagination */
   /* Scopebar
      ========================================================================== */
   /**
@@ -2490,6 +2490,36 @@ body.k-is-resizing {
   /**
    * Align right
    */
+  /* Loader
+     ========================================================================== */
+  /**
+   * Cover it's entire parent (the parent with an `absolute` or `relative` position)
+   * - Add `k-hidden` class to the element when items are done loading
+   */
+  /**
+   * Loader
+   * CSS only loading animation.
+   * Falls back to `Loading...` on non capable browsers
+   * Add `k-hidden` class to the element when items are done loading
+   */
+  /* No margin
+     ========================================================================== */
+  /* No padding
+     ========================================================================== */
+  /* Overflow
+     ========================================================================== */
+  /* Visually hidden
+     ========================================================================== */
+  /**
+   * Hide the content in an accessible way. Content is hidden for viewers but not for screenreaders
+   */
+  /* Visually shown
+     ========================================================================== */
+  /**
+   * Show content that have the visually-hidden class
+   * Use as @extend for items that are already extending `.k-visually-hidden`
+   * Try not to use `.k-visually-hidden` and `.k-visually-shown` classes together if possible.
+   */
   /* Background
      ========================================================================== */
   /* Color
@@ -2552,27 +2582,9 @@ body.k-is-resizing {
   /**
    * Hide content in a non-accessible way. Content is hidden for everybody including screenreaders
    */
-  /* Loader
-     ========================================================================== */
-  /**
-   * Cover it's entire parent (the parent with an `absolute` or `relative` position)
-   * - Add `k-hidden` class to the element when items are done loading
-   */
-  /**
-   * Loader
-   * CSS only loading animation.
-   * Falls back to `Loading...` on non capable browsers
-   * Add `k-hidden` class to the element when items are done loading
-   */
-  /* No margin
-     ========================================================================== */
-  /* No padding
-     ========================================================================== */
   /* No transition
      ========================================================================== */
   /* No wrap
-     ========================================================================== */
-  /* Overflow
      ========================================================================== */
   /* Position
      ========================================================================== */
@@ -2611,18 +2623,6 @@ body.k-is-resizing {
      ========================================================================== */
   /**
    * Make sure nothing can get selected
-   */
-  /* Visually hidden
-     ========================================================================== */
-  /**
-   * Hide the content in an accessible way. Content is hidden for viewers but not for screenreaders
-   */
-  /* Visually shown
-     ========================================================================== */
-  /**
-   * Show content that have the visually-hidden class
-   * Use as @extend for items that are already extending `.k-visually-hidden`
-   * Try not to use `.k-visually-hidden` and `.k-visually-shown` classes together if possible.
    */
 }
 
@@ -4308,6 +4308,1126 @@ body.k-is-resizing {
   padding-right: 1.5em;
 }
 
+.k-ui-namespace .k-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.k-ui-namespace .k-card:last-child {
+  margin-bottom: 0;
+}
+
+.k-ui-namespace .k-card--center .k-card__body {
+  text-align: center;
+}
+
+.k-ui-namespace .k-card--rounded .k-card__body {
+  border-radius: 4px;
+}
+
+.k-ui-namespace .k-card--rounded .k-card__caption {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.k-ui-namespace .k-card--rounded .k-card__image,
+.k-ui-namespace .k-card--rounded .k-card__image--background,
+.k-ui-namespace .k-card--rounded .k-card__image--spaced-background,
+.k-ui-namespace .k-card--rounded .k-card__header,
+.k-ui-namespace .k-card--rounded .k-card__section,
+.k-ui-namespace .k-card--rounded .k-card__footer {
+  overflow: hidden;
+}
+
+.k-ui-namespace .k-card--rounded .k-card__image:only-child, .k-ui-namespace .k-card--rounded .k-card__image:only-child img,
+.k-ui-namespace .k-card--rounded .k-card__image--background:only-child,
+.k-ui-namespace .k-card--rounded .k-card__image--background:only-child img,
+.k-ui-namespace .k-card--rounded .k-card__image--spaced-background:only-child,
+.k-ui-namespace .k-card--rounded .k-card__image--spaced-background:only-child img,
+.k-ui-namespace .k-card--rounded .k-card__header:only-child,
+.k-ui-namespace .k-card--rounded .k-card__header:only-child img,
+.k-ui-namespace .k-card--rounded .k-card__section:only-child,
+.k-ui-namespace .k-card--rounded .k-card__section:only-child img,
+.k-ui-namespace .k-card--rounded .k-card__footer:only-child,
+.k-ui-namespace .k-card--rounded .k-card__footer:only-child img {
+  border-radius: 3px;
+}
+
+.k-ui-namespace .k-card--rounded .k-card__image:first-child, .k-ui-namespace .k-card--rounded .k-card__image:first-child img,
+.k-ui-namespace .k-card--rounded .k-card__image--background:first-child,
+.k-ui-namespace .k-card--rounded .k-card__image--background:first-child img,
+.k-ui-namespace .k-card--rounded .k-card__image--spaced-background:first-child,
+.k-ui-namespace .k-card--rounded .k-card__image--spaced-background:first-child img,
+.k-ui-namespace .k-card--rounded .k-card__header:first-child,
+.k-ui-namespace .k-card--rounded .k-card__header:first-child img,
+.k-ui-namespace .k-card--rounded .k-card__section:first-child,
+.k-ui-namespace .k-card--rounded .k-card__section:first-child img,
+.k-ui-namespace .k-card--rounded .k-card__footer:first-child,
+.k-ui-namespace .k-card--rounded .k-card__footer:first-child img {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.k-ui-namespace .k-card--rounded .k-card__image:last-child, .k-ui-namespace .k-card--rounded .k-card__image:last-child img,
+.k-ui-namespace .k-card--rounded .k-card__image--background:last-child,
+.k-ui-namespace .k-card--rounded .k-card__image--background:last-child img,
+.k-ui-namespace .k-card--rounded .k-card__image--spaced-background:last-child,
+.k-ui-namespace .k-card--rounded .k-card__image--spaced-background:last-child img,
+.k-ui-namespace .k-card--rounded .k-card__header:last-child,
+.k-ui-namespace .k-card--rounded .k-card__header:last-child img,
+.k-ui-namespace .k-card--rounded .k-card__section:last-child,
+.k-ui-namespace .k-card--rounded .k-card__section:last-child img,
+.k-ui-namespace .k-card--rounded .k-card__footer:last-child,
+.k-ui-namespace .k-card--rounded .k-card__footer:last-child img {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.k-ui-namespace .k-card--rounded .k-card__image--background {
+  border-radius: 3px;
+}
+
+.k-ui-namespace .k-card--rounded .k-card__image--spaced-background {
+  border-radius: 2px;
+}
+
+.k-ui-namespace .k-card__body {
+  position: relative;
+  display: block;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  background: white;
+  border: 1px solid gainsboro;
+  color: #222222;
+  text-decoration: none;
+  transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+  -webkit-backface-visibility: hidden;
+}
+
+.k-ui-namespace a.k-card__body:focus, .k-ui-namespace a.k-card__body:hover {
+  border-color: #bdbdbd;
+}
+
+.k-ui-namespace a.k-card__body:focus .k-card__header, .k-ui-namespace a.k-card__body:hover .k-card__header {
+  border-color: #bdbdbd;
+}
+
+.k-ui-namespace a.k-card__body:focus .k-card__footer, .k-ui-namespace a.k-card__body:hover .k-card__footer {
+  border-color: #bdbdbd;
+}
+
+.k-ui-namespace .k-card__image {
+  z-index: 0;
+  display: block;
+  overflow: hidden;
+  transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+  -webkit-backface-visibility: hidden;
+}
+
+.k-ui-namespace .k-card__image img {
+  vertical-align: top;
+}
+
+.k-ui-namespace .k-card__image--background {
+  background-position: center;
+  /* 1 */
+  background-repeat: no-repeat;
+  /* 1 */
+  background-size: cover;
+  /* 1 */
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
+  left: 1px;
+  /* 2 */
+}
+
+.k-ui-namespace .k-card__image--spaced-background {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  left: 2px;
+  /* 3 */
+}
+
+.k-ui-namespace .k-card__header {
+  position: relative;
+  z-index: 1;
+  display: block;
+  padding: 8px;
+  font-weight: 700;
+  background: #fbfafa;
+  border-bottom: 1px solid gainsboro;
+  padding-bottom: 7px;
+  color: #222222;
+  text-decoration: none;
+  transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+  -webkit-backface-visibility: hidden;
+}
+
+.k-ui-namespace .k-card__header:last-child {
+  border-bottom: none;
+}
+
+.k-ui-namespace .k-card__header:not(:first-child) {
+  border-top: 1px solid gainsboro;
+  padding-top: 7px;
+}
+
+.k-ui-namespace .k-card__section {
+  position: relative;
+  z-index: 1;
+  display: block;
+  padding: 8px;
+  text-decoration: none;
+  transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+  -webkit-backface-visibility: hidden;
+}
+
+.k-ui-namespace .k-card__section--small-spacing {
+  padding: 0;
+  margin: 1px;
+  /* 1 */
+}
+
+.k-ui-namespace .k-card__footer {
+  position: relative;
+  z-index: 1;
+  display: block;
+  padding: 8px;
+  background: #fbfafa;
+  border-top: 1px solid gainsboro;
+  padding-top: 7px;
+  color: #222222;
+  text-decoration: none;
+  transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+  -webkit-backface-visibility: hidden;
+}
+
+.k-ui-namespace .k-card__footer:first-child {
+  border-top: none;
+}
+
+.k-ui-namespace .k-card__footer:not(:last-child) {
+  border-bottom: 1px solid gainsboro;
+}
+
+.k-ui-namespace .k-card__caption {
+  display: block;
+  width: 100%;
+  padding: 12px 8px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+  -webkit-backface-visibility: hidden;
+}
+
+.k-ui-namespace .k-card__caption--overflow {
+  height: 3em;
+  line-height: 1em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.k-ui-namespace .k-card.k-is-selected .k-card__body {
+  border-color: #3071a9;
+}
+
+.k-ui-namespace .k-card.k-is-selected .k-card__body:not(:last-child) {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.k-ui-namespace .k-card.k-is-selected .k-card__body:only-child .k-card__header {
+  background: #3071a9;
+  color: white;
+}
+
+.k-ui-namespace .k-card.k-is-selected .k-card__header,
+.k-ui-namespace .k-card.k-is-selected .k-card__footer,
+.k-ui-namespace .k-card.k-is-selected .k-card__caption {
+  border-color: #3071a9;
+  background: #3071a9;
+  color: white;
+}
+
+.k-ui-namespace .k-card--flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.k-ui-namespace .k-card--flex .k-card__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.k-ui-namespace .k-card--flex .k-card__flex-item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.k-ui-namespace .k-gallery-container {
+  margin-bottom: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  overflow: hidden;
+}
+
+.k-ui-namespace .k-gallery-container:last-child {
+  margin-bottom: 0;
+}
+
+.k-ui-namespace .k-gallery-container .k-gallery {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  overflow: auto;
+  padding: 16px;
+}
+
+.k-ui-namespace .k-gallery {
+  overflow: hidden;
+}
+
+.k-ui-namespace .k-gallery__items {
+  margin: -8px;
+}
+
+@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
+  .k-ui-namespace .k-gallery__items {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+@supports (display: grid) {
+  .k-ui-namespace .k-gallery__items {
+    display: grid;
+  }
+}
+
+.k-ui-namespace .k-gallery__item {
+  padding: 8px;
+  display: inline-block;
+  margin-left: -0.25em;
+  vertical-align: middle;
+  /**
+     * Selected styling
+     */
+}
+
+@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
+  .k-ui-namespace .k-gallery__item {
+    margin-left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+  }
+}
+
+.k-ui-namespace .k-gallery__item.k-is-selected .k-card__header {
+  background: #3071a9;
+  border-color: #225179;
+  color: white;
+}
+
+.k-ui-namespace .k-gallery__item.k-is-selected .k-card__header a {
+  color: white;
+}
+
+.k-ui-namespace .k-gallery__item.k-is-selected .k-card__body {
+  color: white;
+  border-color: #285e8d;
+}
+
+.k-ui-namespace .k-gallery__item.k-is-selected:hover .k-card__header, .k-ui-namespace .k-gallery__item.k-is-selected:focus .k-card__header {
+  background: #225179;
+}
+
+.k-ui-namespace [data-gallery-items='1'] .k-gallery__item.k-gallery__item {
+  width: 100%;
+}
+
+@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
+  .k-ui-namespace [data-gallery-items='1'] .k-gallery__item.k-gallery__item {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+}
+
+@supports (display: grid) {
+  .k-ui-namespace [data-gallery-items='1'] .k-gallery__item.k-gallery__item {
+    width: 100%;
+  }
+}
+
+.k-ui-namespace [data-gallery-items='2'] .k-gallery__item.k-gallery__item {
+  width: 50%;
+}
+
+@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
+  .k-ui-namespace [data-gallery-items='2'] .k-gallery__item.k-gallery__item {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+  }
+}
+
+@supports (display: grid) {
+  .k-ui-namespace [data-gallery-items='2'] .k-gallery__item.k-gallery__item {
+    width: 100%;
+  }
+}
+
+.k-ui-namespace [data-gallery-items='3'] .k-gallery__item.k-gallery__item {
+  width: 33.3333333333%;
+}
+
+@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
+  .k-ui-namespace [data-gallery-items='3'] .k-gallery__item.k-gallery__item {
+    -ms-flex-preferred-size: 33.3333333333%;
+        flex-basis: 33.3333333333%;
+  }
+}
+
+@supports (display: grid) {
+  .k-ui-namespace [data-gallery-items='3'] .k-gallery__item.k-gallery__item {
+    width: 100%;
+  }
+}
+
+.k-ui-namespace [data-gallery-items='4'] .k-gallery__item.k-gallery__item {
+  width: 25%;
+}
+
+@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
+  .k-ui-namespace [data-gallery-items='4'] .k-gallery__item.k-gallery__item {
+    -ms-flex-preferred-size: 25%;
+        flex-basis: 25%;
+  }
+}
+
+@supports (display: grid) {
+  .k-ui-namespace [data-gallery-items='4'] .k-gallery__item.k-gallery__item {
+    width: 100%;
+  }
+}
+
+.k-ui-namespace [data-gallery-items='5'] .k-gallery__item.k-gallery__item {
+  width: 20%;
+}
+
+@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
+  .k-ui-namespace [data-gallery-items='5'] .k-gallery__item.k-gallery__item {
+    -ms-flex-preferred-size: 20%;
+        flex-basis: 20%;
+  }
+}
+
+@supports (display: grid) {
+  .k-ui-namespace [data-gallery-items='5'] .k-gallery__item.k-gallery__item {
+    width: 100%;
+  }
+}
+
+.k-ui-namespace [data-gallery-items='6'] .k-gallery__item.k-gallery__item {
+  width: 16.6666666667%;
+}
+
+@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
+  .k-ui-namespace [data-gallery-items='6'] .k-gallery__item.k-gallery__item {
+    -ms-flex-preferred-size: 16.6666666667%;
+        flex-basis: 16.6666666667%;
+  }
+}
+
+@supports (display: grid) {
+  .k-ui-namespace [data-gallery-items='6'] .k-gallery__item.k-gallery__item {
+    width: 100%;
+  }
+}
+
+.k-ui-namespace [data-gallery-items='7'] .k-gallery__item.k-gallery__item {
+  width: 14.2857142857%;
+}
+
+@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
+  .k-ui-namespace [data-gallery-items='7'] .k-gallery__item.k-gallery__item {
+    -ms-flex-preferred-size: 14.2857142857%;
+        flex-basis: 14.2857142857%;
+  }
+}
+
+@supports (display: grid) {
+  .k-ui-namespace [data-gallery-items='7'] .k-gallery__item.k-gallery__item {
+    width: 100%;
+  }
+}
+
+.k-ui-namespace [data-gallery-items='8'] .k-gallery__item.k-gallery__item {
+  width: 12.5%;
+}
+
+@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
+  .k-ui-namespace [data-gallery-items='8'] .k-gallery__item.k-gallery__item {
+    -ms-flex-preferred-size: 12.5%;
+        flex-basis: 12.5%;
+  }
+}
+
+@supports (display: grid) {
+  .k-ui-namespace [data-gallery-items='8'] .k-gallery__item.k-gallery__item {
+    width: 100%;
+  }
+}
+
+.k-ui-namespace [data-gallery-items='9'] .k-gallery__item.k-gallery__item {
+  width: 11.1111111111%;
+}
+
+@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
+  .k-ui-namespace [data-gallery-items='9'] .k-gallery__item.k-gallery__item {
+    -ms-flex-preferred-size: 11.1111111111%;
+        flex-basis: 11.1111111111%;
+  }
+}
+
+@supports (display: grid) {
+  .k-ui-namespace [data-gallery-items='9'] .k-gallery__item.k-gallery__item {
+    width: 100%;
+  }
+}
+
+.k-ui-namespace [data-gallery-items='10'] .k-gallery__item.k-gallery__item {
+  width: 10%;
+}
+
+@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
+  .k-ui-namespace [data-gallery-items='10'] .k-gallery__item.k-gallery__item {
+    -ms-flex-preferred-size: 10%;
+        flex-basis: 10%;
+  }
+}
+
+@supports (display: grid) {
+  .k-ui-namespace [data-gallery-items='10'] .k-gallery__item.k-gallery__item {
+    width: 100%;
+  }
+}
+
+.k-ui-namespace [data-gallery-items='11'] .k-gallery__item.k-gallery__item {
+  width: 9.0909090909%;
+}
+
+@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
+  .k-ui-namespace [data-gallery-items='11'] .k-gallery__item.k-gallery__item {
+    -ms-flex-preferred-size: 9.0909090909%;
+        flex-basis: 9.0909090909%;
+  }
+}
+
+@supports (display: grid) {
+  .k-ui-namespace [data-gallery-items='11'] .k-gallery__item.k-gallery__item {
+    width: 100%;
+  }
+}
+
+.k-ui-namespace [data-gallery-items='12'] .k-gallery__item.k-gallery__item {
+  width: 8.3333333333%;
+}
+
+@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
+  .k-ui-namespace [data-gallery-items='12'] .k-gallery__item.k-gallery__item {
+    -ms-flex-preferred-size: 8.3333333333%;
+        flex-basis: 8.3333333333%;
+  }
+}
+
+@supports (display: grid) {
+  .k-ui-namespace [data-gallery-items='12'] .k-gallery__item.k-gallery__item {
+    width: 100%;
+  }
+}
+
+.k-ui-namespace [data-gallery-items='13'] .k-gallery__item.k-gallery__item {
+  width: 7.6923076923%;
+}
+
+@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
+  .k-ui-namespace [data-gallery-items='13'] .k-gallery__item.k-gallery__item {
+    -ms-flex-preferred-size: 7.6923076923%;
+        flex-basis: 7.6923076923%;
+  }
+}
+
+@supports (display: grid) {
+  .k-ui-namespace [data-gallery-items='13'] .k-gallery__item.k-gallery__item {
+    width: 100%;
+  }
+}
+
+.k-ui-namespace [data-gallery-items='14'] .k-gallery__item.k-gallery__item {
+  width: 7.1428571429%;
+}
+
+@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
+  .k-ui-namespace [data-gallery-items='14'] .k-gallery__item.k-gallery__item {
+    -ms-flex-preferred-size: 7.1428571429%;
+        flex-basis: 7.1428571429%;
+  }
+}
+
+@supports (display: grid) {
+  .k-ui-namespace [data-gallery-items='14'] .k-gallery__item.k-gallery__item {
+    width: 100%;
+  }
+}
+
+.k-ui-namespace [data-gallery-items='15'] .k-gallery__item.k-gallery__item {
+  width: 6.6666666667%;
+}
+
+@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
+  .k-ui-namespace [data-gallery-items='15'] .k-gallery__item.k-gallery__item {
+    -ms-flex-preferred-size: 6.6666666667%;
+        flex-basis: 6.6666666667%;
+  }
+}
+
+@supports (display: grid) {
+  .k-ui-namespace [data-gallery-items='15'] .k-gallery__item.k-gallery__item {
+    width: 100%;
+  }
+}
+
+.k-ui-namespace [data-gallery-items='16'] .k-gallery__item.k-gallery__item {
+  width: 6.25%;
+}
+
+@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
+  .k-ui-namespace [data-gallery-items='16'] .k-gallery__item.k-gallery__item {
+    -ms-flex-preferred-size: 6.25%;
+        flex-basis: 6.25%;
+  }
+}
+
+@supports (display: grid) {
+  .k-ui-namespace [data-gallery-items='16'] .k-gallery__item.k-gallery__item {
+    width: 100%;
+  }
+}
+
+.k-ui-namespace [data-gallery-items='17'] .k-gallery__item.k-gallery__item {
+  width: 5.8823529412%;
+}
+
+@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
+  .k-ui-namespace [data-gallery-items='17'] .k-gallery__item.k-gallery__item {
+    -ms-flex-preferred-size: 5.8823529412%;
+        flex-basis: 5.8823529412%;
+  }
+}
+
+@supports (display: grid) {
+  .k-ui-namespace [data-gallery-items='17'] .k-gallery__item.k-gallery__item {
+    width: 100%;
+  }
+}
+
+.k-ui-namespace [data-gallery-items='18'] .k-gallery__item.k-gallery__item {
+  width: 5.5555555556%;
+}
+
+@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
+  .k-ui-namespace [data-gallery-items='18'] .k-gallery__item.k-gallery__item {
+    -ms-flex-preferred-size: 5.5555555556%;
+        flex-basis: 5.5555555556%;
+  }
+}
+
+@supports (display: grid) {
+  .k-ui-namespace [data-gallery-items='18'] .k-gallery__item.k-gallery__item {
+    width: 100%;
+  }
+}
+
+.k-ui-namespace [data-gallery-items='19'] .k-gallery__item.k-gallery__item {
+  width: 5.2631578947%;
+}
+
+@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
+  .k-ui-namespace [data-gallery-items='19'] .k-gallery__item.k-gallery__item {
+    -ms-flex-preferred-size: 5.2631578947%;
+        flex-basis: 5.2631578947%;
+  }
+}
+
+@supports (display: grid) {
+  .k-ui-namespace [data-gallery-items='19'] .k-gallery__item.k-gallery__item {
+    width: 100%;
+  }
+}
+
+.k-ui-namespace [data-gallery-items='20'] .k-gallery__item.k-gallery__item {
+  width: 5%;
+}
+
+@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
+  .k-ui-namespace [data-gallery-items='20'] .k-gallery__item.k-gallery__item {
+    -ms-flex-preferred-size: 5%;
+        flex-basis: 5%;
+  }
+}
+
+@supports (display: grid) {
+  .k-ui-namespace [data-gallery-items='20'] .k-gallery__item.k-gallery__item {
+    width: 100%;
+  }
+}
+
+.k-ui-namespace [data-gallery-items='21'] .k-gallery__item.k-gallery__item {
+  width: 4.7619047619%;
+}
+
+@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
+  .k-ui-namespace [data-gallery-items='21'] .k-gallery__item.k-gallery__item {
+    -ms-flex-preferred-size: 4.7619047619%;
+        flex-basis: 4.7619047619%;
+  }
+}
+
+@supports (display: grid) {
+  .k-ui-namespace [data-gallery-items='21'] .k-gallery__item.k-gallery__item {
+    width: 100%;
+  }
+}
+
+.k-ui-namespace [data-gallery-items='22'] .k-gallery__item.k-gallery__item {
+  width: 4.5454545455%;
+}
+
+@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
+  .k-ui-namespace [data-gallery-items='22'] .k-gallery__item.k-gallery__item {
+    -ms-flex-preferred-size: 4.5454545455%;
+        flex-basis: 4.5454545455%;
+  }
+}
+
+@supports (display: grid) {
+  .k-ui-namespace [data-gallery-items='22'] .k-gallery__item.k-gallery__item {
+    width: 100%;
+  }
+}
+
+.k-ui-namespace [data-gallery-items='23'] .k-gallery__item.k-gallery__item {
+  width: 4.347826087%;
+}
+
+@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
+  .k-ui-namespace [data-gallery-items='23'] .k-gallery__item.k-gallery__item {
+    -ms-flex-preferred-size: 4.347826087%;
+        flex-basis: 4.347826087%;
+  }
+}
+
+@supports (display: grid) {
+  .k-ui-namespace [data-gallery-items='23'] .k-gallery__item.k-gallery__item {
+    width: 100%;
+  }
+}
+
+.k-ui-namespace [data-gallery-items='24'] .k-gallery__item.k-gallery__item {
+  width: 4.1666666667%;
+}
+
+@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
+  .k-ui-namespace [data-gallery-items='24'] .k-gallery__item.k-gallery__item {
+    -ms-flex-preferred-size: 4.1666666667%;
+        flex-basis: 4.1666666667%;
+  }
+}
+
+@supports (display: grid) {
+  .k-ui-namespace [data-gallery-items='24'] .k-gallery__item.k-gallery__item {
+    width: 100%;
+  }
+}
+
+.k-ui-namespace .k-gallery .k-gallery__items {
+  content: "176px";
+}
+
+@supports (display: grid) {
+  .k-ui-namespace .k-gallery .k-gallery__items {
+    grid-template-columns: repeat(auto-fill, minmax(176px, 1fr));
+  }
+}
+
+.k-ui-namespace .k-gallery .k-gallery__item {
+  width: 176px;
+}
+
+@supports (display: grid) {
+  .k-ui-namespace .k-gallery .k-gallery__item {
+    width: 100%;
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+  }
+}
+
+.k-ui-namespace .k-gallery--xxs .k-gallery__items {
+  content: "64px";
+}
+
+@supports (display: grid) {
+  .k-ui-namespace .k-gallery--xxs .k-gallery__items {
+    grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
+  }
+}
+
+.k-ui-namespace .k-gallery--xxs .k-gallery__item {
+  width: 64px;
+}
+
+@supports (display: grid) {
+  .k-ui-namespace .k-gallery--xxs .k-gallery__item {
+    width: 100%;
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+  }
+}
+
+.k-ui-namespace .k-gallery--xs .k-gallery__items {
+  content: "112px";
+}
+
+@supports (display: grid) {
+  .k-ui-namespace .k-gallery--xs .k-gallery__items {
+    grid-template-columns: repeat(auto-fill, minmax(112px, 1fr));
+  }
+}
+
+.k-ui-namespace .k-gallery--xs .k-gallery__item {
+  width: 112px;
+}
+
+@supports (display: grid) {
+  .k-ui-namespace .k-gallery--xs .k-gallery__item {
+    width: 100%;
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+  }
+}
+
+.k-ui-namespace .k-gallery--s .k-gallery__items {
+  content: "144px";
+}
+
+@supports (display: grid) {
+  .k-ui-namespace .k-gallery--s .k-gallery__items {
+    grid-template-columns: repeat(auto-fill, minmax(144px, 1fr));
+  }
+}
+
+.k-ui-namespace .k-gallery--s .k-gallery__item {
+  width: 144px;
+}
+
+@supports (display: grid) {
+  .k-ui-namespace .k-gallery--s .k-gallery__item {
+    width: 100%;
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+  }
+}
+
+.k-ui-namespace .k-gallery--l .k-gallery__items {
+  content: "224px";
+}
+
+@supports (display: grid) {
+  .k-ui-namespace .k-gallery--l .k-gallery__items {
+    grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
+  }
+}
+
+.k-ui-namespace .k-gallery--l .k-gallery__item {
+  width: 224px;
+}
+
+@supports (display: grid) {
+  .k-ui-namespace .k-gallery--l .k-gallery__item {
+    width: 100%;
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+  }
+}
+
+.k-ui-namespace .k-gallery--xl .k-gallery__items {
+  content: "288px";
+}
+
+@supports (display: grid) {
+  .k-ui-namespace .k-gallery--xl .k-gallery__items {
+    grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
+  }
+}
+
+.k-ui-namespace .k-gallery--xl .k-gallery__item {
+  width: 288px;
+}
+
+@supports (display: grid) {
+  .k-ui-namespace .k-gallery--xl .k-gallery__item {
+    width: 100%;
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+  }
+}
+
+.k-ui-namespace .k-gallery--xxl .k-gallery__items {
+  content: "352px";
+}
+
+@supports (display: grid) {
+  .k-ui-namespace .k-gallery--xxl .k-gallery__items {
+    grid-template-columns: repeat(auto-fill, minmax(352px, 1fr));
+  }
+}
+
+.k-ui-namespace .k-gallery--xxl .k-gallery__item {
+  width: 352px;
+}
+
+@supports (display: grid) {
+  .k-ui-namespace .k-gallery--xxl .k-gallery__item {
+    width: 100%;
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+  }
+}
+
+.k-ui-namespace .k-gallery-pagination {
+  padding: 8px 8px 7px;
+  background: #fbfafa;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  border-top: 1px solid gainsboro;
+  box-shadow: 0 1px 0 gainsboro;
+  /* 1 */
+}
+
+.k-ui-namespace .k-icon--accent {
+  color: #3071a9;
+}
+
+.k-ui-namespace .k-icon--success {
+  color: #27ae60;
+}
+
+.k-ui-namespace .k-icon--error {
+  color: #c0392b;
+}
+
+.k-ui-namespace .k-icon--size-tiny {
+  font-size: 10px;
+}
+
+.k-ui-namespace .k-icon--size-small {
+  font-size: 13px;
+}
+
+.k-ui-namespace .k-icon--size-default {
+  font-size: 16px;
+}
+
+.k-ui-namespace .k-icon--size-medium {
+  font-size: 24px;
+}
+
+.k-ui-namespace .k-icon--size-large {
+  font-size: 32px;
+}
+
+.k-ui-namespace .k-icon--size-xlarge {
+  font-size: 48px;
+}
+
+.k-ui-namespace .k-icon--size-huge {
+  font-size: 64px;
+}
+
+.k-ui-namespace .k-icon-text-item {
+  display: inline-block;
+  font-size: inherit !important;
+  line-height: 20px;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+.k-ui-namespace [class^="k-icon-document-"]:before,
+.k-ui-namespace [class*=" k-icon-document-"]:before {
+  background-size: cover;
+}
+
+.k-ui-namespace .k-pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  /**
+     * Pagination
+     *
+     * 1. Remove list-style and block-level defaults
+     * 2. Collapse white-space
+     */
+  /**
+     * Limit
+     */
+}
+
+.k-ui-namespace .k-pagination .k-pagination__pages {
+  padding: 0;
+  margin: 0;
+  border-radius: 4px;
+  /**
+       * Override for rtl ul-ol-li styling
+       */
+  /**
+       * Contents
+       */
+}
+
+[dir="rtl"] .k-ui-namespace .k-pagination .k-pagination__pages {
+  padding: 0;
+}
+
+.k-ui-namespace .k-pagination .k-pagination__pages > li {
+  display: inline;
+  /* 1 */
+}
+
+.k-ui-namespace .k-pagination .k-pagination__pages > li > a,
+.k-ui-namespace .k-pagination .k-pagination__pages > li > span {
+  display: block;
+  position: relative;
+  float: left;
+  /* 2 */
+  padding: 6px 12px;
+  line-height: 18px;
+  text-decoration: none;
+  color: #3071a9;
+  background-color: white;
+  border: 1px solid gainsboro;
+  margin-left: -1px;
+}
+
+[dir="rtl"] .k-ui-namespace .k-pagination .k-pagination__pages > li > a, [dir="rtl"] .k-ui-namespace .k-pagination .k-pagination__pages > li > span {
+  float: right;
+  margin-left: 0;
+  margin-right: -1px;
+}
+
+.k-ui-namespace .k-pagination .k-pagination__pages > li:first-child > a,
+.k-ui-namespace .k-pagination .k-pagination__pages > li:first-child > span {
+  margin-left: 0;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+[dir="rtl"] .k-ui-namespace .k-pagination .k-pagination__pages > li:first-child > a, [dir="rtl"] .k-ui-namespace .k-pagination .k-pagination__pages > li:first-child > span {
+  margin-right: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.k-ui-namespace .k-pagination .k-pagination__pages > li:last-child > a,
+.k-ui-namespace .k-pagination .k-pagination__pages > li:last-child > span {
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+[dir="rtl"] .k-ui-namespace .k-pagination .k-pagination__pages > li:last-child > a, .k-ui-namespace .k-pagination .k-pagination__pages > li:last-child > span {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+.k-ui-namespace .k-pagination .k-pagination__pages > li > a:hover, .k-ui-namespace .k-pagination .k-pagination__pages > li > a:focus,
+.k-ui-namespace .k-pagination .k-pagination__pages > li > span:hover,
+.k-ui-namespace .k-pagination .k-pagination__pages > li > span:focus {
+  z-index: 2;
+  color: #285e8d;
+  background-color: #eeeeee;
+  border-color: gainsboro;
+}
+
+.k-ui-namespace .k-pagination .k-pagination__pages > .k-is-active > a, .k-ui-namespace .k-pagination .k-pagination__pages > .k-is-active > a:hover, .k-ui-namespace .k-pagination .k-pagination__pages > .k-is-active > a:focus,
+.k-ui-namespace .k-pagination .k-pagination__pages > .k-is-active > span,
+.k-ui-namespace .k-pagination .k-pagination__pages > .k-is-active > span:hover,
+.k-ui-namespace .k-pagination .k-pagination__pages > .k-is-active > span:focus {
+  z-index: 3;
+  color: white;
+  background-color: #3071a9;
+  border-color: #285e8d;
+  cursor: default;
+}
+
+.k-ui-namespace .k-pagination select {
+  height: 32px;
+  width: auto;
+  margin: 0;
+  margin-right: 8px;
+}
+
+[dir="rtl"] .k-ui-namespace .k-pagination select {
+  margin-right: auto;
+  margin-left: 8px;
+}
+
 .k-ui-namespace .k-alert {
   position: relative;
   overflow: hidden;
@@ -5206,283 +6326,6 @@ fieldset[disabled] .k-ui-namespace .k-button--danger.k-has-focus {
 [dir="rtl"] .k-ui-namespace .k-button-group > .k-button:last-child:not(:first-child).k-button--large {
   border-bottom-left-radius: 6px;
   border-top-left-radius: 6px;
-}
-
-.k-ui-namespace .k-card {
-  position: relative;
-  display: block;
-  width: 100%;
-  margin-bottom: 16px;
-}
-
-.k-ui-namespace .k-card:last-child {
-  margin-bottom: 0;
-}
-
-.k-ui-namespace .k-card--center .k-card__body {
-  text-align: center;
-}
-
-.k-ui-namespace .k-card--rounded .k-card__body {
-  border-radius: 4px;
-}
-
-.k-ui-namespace .k-card--rounded .k-card__caption {
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-}
-
-.k-ui-namespace .k-card--rounded .k-card__image,
-.k-ui-namespace .k-card--rounded .k-card__image--background,
-.k-ui-namespace .k-card--rounded .k-card__image--spaced-background,
-.k-ui-namespace .k-card--rounded .k-card__header,
-.k-ui-namespace .k-card--rounded .k-card__section,
-.k-ui-namespace .k-card--rounded .k-card__footer {
-  overflow: hidden;
-}
-
-.k-ui-namespace .k-card--rounded .k-card__image:only-child, .k-ui-namespace .k-card--rounded .k-card__image:only-child img,
-.k-ui-namespace .k-card--rounded .k-card__image--background:only-child,
-.k-ui-namespace .k-card--rounded .k-card__image--background:only-child img,
-.k-ui-namespace .k-card--rounded .k-card__image--spaced-background:only-child,
-.k-ui-namespace .k-card--rounded .k-card__image--spaced-background:only-child img,
-.k-ui-namespace .k-card--rounded .k-card__header:only-child,
-.k-ui-namespace .k-card--rounded .k-card__header:only-child img,
-.k-ui-namespace .k-card--rounded .k-card__section:only-child,
-.k-ui-namespace .k-card--rounded .k-card__section:only-child img,
-.k-ui-namespace .k-card--rounded .k-card__footer:only-child,
-.k-ui-namespace .k-card--rounded .k-card__footer:only-child img {
-  border-radius: 3px;
-}
-
-.k-ui-namespace .k-card--rounded .k-card__image:first-child, .k-ui-namespace .k-card--rounded .k-card__image:first-child img,
-.k-ui-namespace .k-card--rounded .k-card__image--background:first-child,
-.k-ui-namespace .k-card--rounded .k-card__image--background:first-child img,
-.k-ui-namespace .k-card--rounded .k-card__image--spaced-background:first-child,
-.k-ui-namespace .k-card--rounded .k-card__image--spaced-background:first-child img,
-.k-ui-namespace .k-card--rounded .k-card__header:first-child,
-.k-ui-namespace .k-card--rounded .k-card__header:first-child img,
-.k-ui-namespace .k-card--rounded .k-card__section:first-child,
-.k-ui-namespace .k-card--rounded .k-card__section:first-child img,
-.k-ui-namespace .k-card--rounded .k-card__footer:first-child,
-.k-ui-namespace .k-card--rounded .k-card__footer:first-child img {
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-}
-
-.k-ui-namespace .k-card--rounded .k-card__image:last-child, .k-ui-namespace .k-card--rounded .k-card__image:last-child img,
-.k-ui-namespace .k-card--rounded .k-card__image--background:last-child,
-.k-ui-namespace .k-card--rounded .k-card__image--background:last-child img,
-.k-ui-namespace .k-card--rounded .k-card__image--spaced-background:last-child,
-.k-ui-namespace .k-card--rounded .k-card__image--spaced-background:last-child img,
-.k-ui-namespace .k-card--rounded .k-card__header:last-child,
-.k-ui-namespace .k-card--rounded .k-card__header:last-child img,
-.k-ui-namespace .k-card--rounded .k-card__section:last-child,
-.k-ui-namespace .k-card--rounded .k-card__section:last-child img,
-.k-ui-namespace .k-card--rounded .k-card__footer:last-child,
-.k-ui-namespace .k-card--rounded .k-card__footer:last-child img {
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-}
-
-.k-ui-namespace .k-card--rounded .k-card__image--background {
-  border-radius: 3px;
-}
-
-.k-ui-namespace .k-card--rounded .k-card__image--spaced-background {
-  border-radius: 2px;
-}
-
-.k-ui-namespace .k-card__body {
-  position: relative;
-  display: block;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  background: white;
-  border: 1px solid gainsboro;
-  color: #222222;
-  text-decoration: none;
-  transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-  -webkit-backface-visibility: hidden;
-}
-
-.k-ui-namespace a.k-card__body:focus, .k-ui-namespace a.k-card__body:hover {
-  border-color: #bdbdbd;
-}
-
-.k-ui-namespace a.k-card__body:focus .k-card__header, .k-ui-namespace a.k-card__body:hover .k-card__header {
-  border-color: #bdbdbd;
-}
-
-.k-ui-namespace a.k-card__body:focus .k-card__footer, .k-ui-namespace a.k-card__body:hover .k-card__footer {
-  border-color: #bdbdbd;
-}
-
-.k-ui-namespace .k-card__image {
-  z-index: 0;
-  display: block;
-  overflow: hidden;
-  transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-  -webkit-backface-visibility: hidden;
-}
-
-.k-ui-namespace .k-card__image img {
-  vertical-align: top;
-}
-
-.k-ui-namespace .k-card__image--background {
-  background-position: center;
-  /* 1 */
-  background-repeat: no-repeat;
-  /* 1 */
-  background-size: cover;
-  /* 1 */
-  position: absolute;
-  top: 1px;
-  right: 1px;
-  bottom: 1px;
-  left: 1px;
-  /* 2 */
-}
-
-.k-ui-namespace .k-card__image--spaced-background {
-  position: absolute;
-  top: 2px;
-  right: 2px;
-  bottom: 2px;
-  left: 2px;
-  /* 3 */
-}
-
-.k-ui-namespace .k-card__header {
-  position: relative;
-  z-index: 1;
-  display: block;
-  padding: 8px;
-  font-weight: 700;
-  background: #fbfafa;
-  border-bottom: 1px solid gainsboro;
-  padding-bottom: 7px;
-  color: #222222;
-  text-decoration: none;
-  transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-  -webkit-backface-visibility: hidden;
-}
-
-.k-ui-namespace .k-card__header:last-child {
-  border-bottom: none;
-}
-
-.k-ui-namespace .k-card__header:not(:first-child) {
-  border-top: 1px solid gainsboro;
-  padding-top: 7px;
-}
-
-.k-ui-namespace .k-card__section {
-  position: relative;
-  z-index: 1;
-  display: block;
-  padding: 8px;
-  text-decoration: none;
-  transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-  -webkit-backface-visibility: hidden;
-}
-
-.k-ui-namespace .k-card__section--small-spacing {
-  padding: 0;
-  margin: 1px;
-  /* 1 */
-}
-
-.k-ui-namespace .k-card__footer {
-  position: relative;
-  z-index: 1;
-  display: block;
-  padding: 8px;
-  background: #fbfafa;
-  border-top: 1px solid gainsboro;
-  padding-top: 7px;
-  color: #222222;
-  text-decoration: none;
-  transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-  -webkit-backface-visibility: hidden;
-}
-
-.k-ui-namespace .k-card__footer:first-child {
-  border-top: none;
-}
-
-.k-ui-namespace .k-card__footer:not(:last-child) {
-  border-bottom: 1px solid gainsboro;
-}
-
-.k-ui-namespace .k-card__caption {
-  display: block;
-  width: 100%;
-  padding: 12px 8px;
-  font-weight: 400;
-  text-decoration: none;
-  transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-  -webkit-backface-visibility: hidden;
-}
-
-.k-ui-namespace .k-card__caption--overflow {
-  height: 3em;
-  line-height: 1em;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.k-ui-namespace .k-card.k-is-selected .k-card__body {
-  border-color: #3071a9;
-}
-
-.k-ui-namespace .k-card.k-is-selected .k-card__body:not(:last-child) {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-.k-ui-namespace .k-card.k-is-selected .k-card__body:only-child .k-card__header {
-  background: #3071a9;
-  color: white;
-}
-
-.k-ui-namespace .k-card.k-is-selected .k-card__header,
-.k-ui-namespace .k-card.k-is-selected .k-card__footer,
-.k-ui-namespace .k-card.k-is-selected .k-card__caption {
-  border-color: #3071a9;
-  background: #3071a9;
-  color: white;
-}
-
-.k-ui-namespace .k-card--flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.k-ui-namespace .k-card--flex .k-card__body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-}
-
-.k-ui-namespace .k-card--flex .k-card__flex-item {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
 }
 
 .k-ui-namespace .cke_chrome.cke_chrome,
@@ -6630,674 +7473,6 @@ html:not([dir="rtl"]) .k-input-group .k-form-control:last-child, html:not([dir="
   padding: 7px 8px;
 }
 
-.k-ui-namespace .k-gallery-container {
-  margin-bottom: 16px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  overflow: hidden;
-}
-
-.k-ui-namespace .k-gallery-container:last-child {
-  margin-bottom: 0;
-}
-
-.k-ui-namespace .k-gallery-container .k-gallery {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  overflow: auto;
-  padding: 16px;
-}
-
-.k-ui-namespace .k-gallery {
-  overflow: hidden;
-}
-
-.k-ui-namespace .k-gallery__items {
-  margin: -8px;
-}
-
-@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
-  .k-ui-namespace .k-gallery__items {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-  }
-}
-
-@supports (display: grid) {
-  .k-ui-namespace .k-gallery__items {
-    display: grid;
-  }
-}
-
-.k-ui-namespace .k-gallery__item {
-  padding: 8px;
-  display: inline-block;
-  margin-left: -0.25em;
-  vertical-align: middle;
-  /**
-     * Selected styling
-     */
-}
-
-@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
-  .k-ui-namespace .k-gallery__item {
-    margin-left: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 auto;
-            flex: 0 0 auto;
-  }
-}
-
-.k-ui-namespace .k-gallery__item.k-is-selected .k-card__header {
-  background: #3071a9;
-  border-color: #225179;
-  color: white;
-}
-
-.k-ui-namespace .k-gallery__item.k-is-selected .k-card__header a {
-  color: white;
-}
-
-.k-ui-namespace .k-gallery__item.k-is-selected .k-card__body {
-  color: white;
-  border-color: #285e8d;
-}
-
-.k-ui-namespace .k-gallery__item.k-is-selected:hover .k-card__header, .k-ui-namespace .k-gallery__item.k-is-selected:focus .k-card__header {
-  background: #225179;
-}
-
-.k-ui-namespace [data-gallery-items='1'] .k-gallery__item.k-gallery__item {
-  width: 100%;
-}
-
-@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
-  .k-ui-namespace [data-gallery-items='1'] .k-gallery__item.k-gallery__item {
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
-  }
-}
-
-@supports (display: grid) {
-  .k-ui-namespace [data-gallery-items='1'] .k-gallery__item.k-gallery__item {
-    width: 100%;
-  }
-}
-
-.k-ui-namespace [data-gallery-items='2'] .k-gallery__item.k-gallery__item {
-  width: 50%;
-}
-
-@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
-  .k-ui-namespace [data-gallery-items='2'] .k-gallery__item.k-gallery__item {
-    -ms-flex-preferred-size: 50%;
-        flex-basis: 50%;
-  }
-}
-
-@supports (display: grid) {
-  .k-ui-namespace [data-gallery-items='2'] .k-gallery__item.k-gallery__item {
-    width: 100%;
-  }
-}
-
-.k-ui-namespace [data-gallery-items='3'] .k-gallery__item.k-gallery__item {
-  width: 33.3333333333%;
-}
-
-@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
-  .k-ui-namespace [data-gallery-items='3'] .k-gallery__item.k-gallery__item {
-    -ms-flex-preferred-size: 33.3333333333%;
-        flex-basis: 33.3333333333%;
-  }
-}
-
-@supports (display: grid) {
-  .k-ui-namespace [data-gallery-items='3'] .k-gallery__item.k-gallery__item {
-    width: 100%;
-  }
-}
-
-.k-ui-namespace [data-gallery-items='4'] .k-gallery__item.k-gallery__item {
-  width: 25%;
-}
-
-@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
-  .k-ui-namespace [data-gallery-items='4'] .k-gallery__item.k-gallery__item {
-    -ms-flex-preferred-size: 25%;
-        flex-basis: 25%;
-  }
-}
-
-@supports (display: grid) {
-  .k-ui-namespace [data-gallery-items='4'] .k-gallery__item.k-gallery__item {
-    width: 100%;
-  }
-}
-
-.k-ui-namespace [data-gallery-items='5'] .k-gallery__item.k-gallery__item {
-  width: 20%;
-}
-
-@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
-  .k-ui-namespace [data-gallery-items='5'] .k-gallery__item.k-gallery__item {
-    -ms-flex-preferred-size: 20%;
-        flex-basis: 20%;
-  }
-}
-
-@supports (display: grid) {
-  .k-ui-namespace [data-gallery-items='5'] .k-gallery__item.k-gallery__item {
-    width: 100%;
-  }
-}
-
-.k-ui-namespace [data-gallery-items='6'] .k-gallery__item.k-gallery__item {
-  width: 16.6666666667%;
-}
-
-@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
-  .k-ui-namespace [data-gallery-items='6'] .k-gallery__item.k-gallery__item {
-    -ms-flex-preferred-size: 16.6666666667%;
-        flex-basis: 16.6666666667%;
-  }
-}
-
-@supports (display: grid) {
-  .k-ui-namespace [data-gallery-items='6'] .k-gallery__item.k-gallery__item {
-    width: 100%;
-  }
-}
-
-.k-ui-namespace [data-gallery-items='7'] .k-gallery__item.k-gallery__item {
-  width: 14.2857142857%;
-}
-
-@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
-  .k-ui-namespace [data-gallery-items='7'] .k-gallery__item.k-gallery__item {
-    -ms-flex-preferred-size: 14.2857142857%;
-        flex-basis: 14.2857142857%;
-  }
-}
-
-@supports (display: grid) {
-  .k-ui-namespace [data-gallery-items='7'] .k-gallery__item.k-gallery__item {
-    width: 100%;
-  }
-}
-
-.k-ui-namespace [data-gallery-items='8'] .k-gallery__item.k-gallery__item {
-  width: 12.5%;
-}
-
-@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
-  .k-ui-namespace [data-gallery-items='8'] .k-gallery__item.k-gallery__item {
-    -ms-flex-preferred-size: 12.5%;
-        flex-basis: 12.5%;
-  }
-}
-
-@supports (display: grid) {
-  .k-ui-namespace [data-gallery-items='8'] .k-gallery__item.k-gallery__item {
-    width: 100%;
-  }
-}
-
-.k-ui-namespace [data-gallery-items='9'] .k-gallery__item.k-gallery__item {
-  width: 11.1111111111%;
-}
-
-@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
-  .k-ui-namespace [data-gallery-items='9'] .k-gallery__item.k-gallery__item {
-    -ms-flex-preferred-size: 11.1111111111%;
-        flex-basis: 11.1111111111%;
-  }
-}
-
-@supports (display: grid) {
-  .k-ui-namespace [data-gallery-items='9'] .k-gallery__item.k-gallery__item {
-    width: 100%;
-  }
-}
-
-.k-ui-namespace [data-gallery-items='10'] .k-gallery__item.k-gallery__item {
-  width: 10%;
-}
-
-@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
-  .k-ui-namespace [data-gallery-items='10'] .k-gallery__item.k-gallery__item {
-    -ms-flex-preferred-size: 10%;
-        flex-basis: 10%;
-  }
-}
-
-@supports (display: grid) {
-  .k-ui-namespace [data-gallery-items='10'] .k-gallery__item.k-gallery__item {
-    width: 100%;
-  }
-}
-
-.k-ui-namespace [data-gallery-items='11'] .k-gallery__item.k-gallery__item {
-  width: 9.0909090909%;
-}
-
-@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
-  .k-ui-namespace [data-gallery-items='11'] .k-gallery__item.k-gallery__item {
-    -ms-flex-preferred-size: 9.0909090909%;
-        flex-basis: 9.0909090909%;
-  }
-}
-
-@supports (display: grid) {
-  .k-ui-namespace [data-gallery-items='11'] .k-gallery__item.k-gallery__item {
-    width: 100%;
-  }
-}
-
-.k-ui-namespace [data-gallery-items='12'] .k-gallery__item.k-gallery__item {
-  width: 8.3333333333%;
-}
-
-@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
-  .k-ui-namespace [data-gallery-items='12'] .k-gallery__item.k-gallery__item {
-    -ms-flex-preferred-size: 8.3333333333%;
-        flex-basis: 8.3333333333%;
-  }
-}
-
-@supports (display: grid) {
-  .k-ui-namespace [data-gallery-items='12'] .k-gallery__item.k-gallery__item {
-    width: 100%;
-  }
-}
-
-.k-ui-namespace [data-gallery-items='13'] .k-gallery__item.k-gallery__item {
-  width: 7.6923076923%;
-}
-
-@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
-  .k-ui-namespace [data-gallery-items='13'] .k-gallery__item.k-gallery__item {
-    -ms-flex-preferred-size: 7.6923076923%;
-        flex-basis: 7.6923076923%;
-  }
-}
-
-@supports (display: grid) {
-  .k-ui-namespace [data-gallery-items='13'] .k-gallery__item.k-gallery__item {
-    width: 100%;
-  }
-}
-
-.k-ui-namespace [data-gallery-items='14'] .k-gallery__item.k-gallery__item {
-  width: 7.1428571429%;
-}
-
-@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
-  .k-ui-namespace [data-gallery-items='14'] .k-gallery__item.k-gallery__item {
-    -ms-flex-preferred-size: 7.1428571429%;
-        flex-basis: 7.1428571429%;
-  }
-}
-
-@supports (display: grid) {
-  .k-ui-namespace [data-gallery-items='14'] .k-gallery__item.k-gallery__item {
-    width: 100%;
-  }
-}
-
-.k-ui-namespace [data-gallery-items='15'] .k-gallery__item.k-gallery__item {
-  width: 6.6666666667%;
-}
-
-@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
-  .k-ui-namespace [data-gallery-items='15'] .k-gallery__item.k-gallery__item {
-    -ms-flex-preferred-size: 6.6666666667%;
-        flex-basis: 6.6666666667%;
-  }
-}
-
-@supports (display: grid) {
-  .k-ui-namespace [data-gallery-items='15'] .k-gallery__item.k-gallery__item {
-    width: 100%;
-  }
-}
-
-.k-ui-namespace [data-gallery-items='16'] .k-gallery__item.k-gallery__item {
-  width: 6.25%;
-}
-
-@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
-  .k-ui-namespace [data-gallery-items='16'] .k-gallery__item.k-gallery__item {
-    -ms-flex-preferred-size: 6.25%;
-        flex-basis: 6.25%;
-  }
-}
-
-@supports (display: grid) {
-  .k-ui-namespace [data-gallery-items='16'] .k-gallery__item.k-gallery__item {
-    width: 100%;
-  }
-}
-
-.k-ui-namespace [data-gallery-items='17'] .k-gallery__item.k-gallery__item {
-  width: 5.8823529412%;
-}
-
-@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
-  .k-ui-namespace [data-gallery-items='17'] .k-gallery__item.k-gallery__item {
-    -ms-flex-preferred-size: 5.8823529412%;
-        flex-basis: 5.8823529412%;
-  }
-}
-
-@supports (display: grid) {
-  .k-ui-namespace [data-gallery-items='17'] .k-gallery__item.k-gallery__item {
-    width: 100%;
-  }
-}
-
-.k-ui-namespace [data-gallery-items='18'] .k-gallery__item.k-gallery__item {
-  width: 5.5555555556%;
-}
-
-@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
-  .k-ui-namespace [data-gallery-items='18'] .k-gallery__item.k-gallery__item {
-    -ms-flex-preferred-size: 5.5555555556%;
-        flex-basis: 5.5555555556%;
-  }
-}
-
-@supports (display: grid) {
-  .k-ui-namespace [data-gallery-items='18'] .k-gallery__item.k-gallery__item {
-    width: 100%;
-  }
-}
-
-.k-ui-namespace [data-gallery-items='19'] .k-gallery__item.k-gallery__item {
-  width: 5.2631578947%;
-}
-
-@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
-  .k-ui-namespace [data-gallery-items='19'] .k-gallery__item.k-gallery__item {
-    -ms-flex-preferred-size: 5.2631578947%;
-        flex-basis: 5.2631578947%;
-  }
-}
-
-@supports (display: grid) {
-  .k-ui-namespace [data-gallery-items='19'] .k-gallery__item.k-gallery__item {
-    width: 100%;
-  }
-}
-
-.k-ui-namespace [data-gallery-items='20'] .k-gallery__item.k-gallery__item {
-  width: 5%;
-}
-
-@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
-  .k-ui-namespace [data-gallery-items='20'] .k-gallery__item.k-gallery__item {
-    -ms-flex-preferred-size: 5%;
-        flex-basis: 5%;
-  }
-}
-
-@supports (display: grid) {
-  .k-ui-namespace [data-gallery-items='20'] .k-gallery__item.k-gallery__item {
-    width: 100%;
-  }
-}
-
-.k-ui-namespace [data-gallery-items='21'] .k-gallery__item.k-gallery__item {
-  width: 4.7619047619%;
-}
-
-@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
-  .k-ui-namespace [data-gallery-items='21'] .k-gallery__item.k-gallery__item {
-    -ms-flex-preferred-size: 4.7619047619%;
-        flex-basis: 4.7619047619%;
-  }
-}
-
-@supports (display: grid) {
-  .k-ui-namespace [data-gallery-items='21'] .k-gallery__item.k-gallery__item {
-    width: 100%;
-  }
-}
-
-.k-ui-namespace [data-gallery-items='22'] .k-gallery__item.k-gallery__item {
-  width: 4.5454545455%;
-}
-
-@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
-  .k-ui-namespace [data-gallery-items='22'] .k-gallery__item.k-gallery__item {
-    -ms-flex-preferred-size: 4.5454545455%;
-        flex-basis: 4.5454545455%;
-  }
-}
-
-@supports (display: grid) {
-  .k-ui-namespace [data-gallery-items='22'] .k-gallery__item.k-gallery__item {
-    width: 100%;
-  }
-}
-
-.k-ui-namespace [data-gallery-items='23'] .k-gallery__item.k-gallery__item {
-  width: 4.347826087%;
-}
-
-@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
-  .k-ui-namespace [data-gallery-items='23'] .k-gallery__item.k-gallery__item {
-    -ms-flex-preferred-size: 4.347826087%;
-        flex-basis: 4.347826087%;
-  }
-}
-
-@supports (display: grid) {
-  .k-ui-namespace [data-gallery-items='23'] .k-gallery__item.k-gallery__item {
-    width: 100%;
-  }
-}
-
-.k-ui-namespace [data-gallery-items='24'] .k-gallery__item.k-gallery__item {
-  width: 4.1666666667%;
-}
-
-@supports ((display: -webkit-box) or (display: -ms-flexbox) or (display: flex)) {
-  .k-ui-namespace [data-gallery-items='24'] .k-gallery__item.k-gallery__item {
-    -ms-flex-preferred-size: 4.1666666667%;
-        flex-basis: 4.1666666667%;
-  }
-}
-
-@supports (display: grid) {
-  .k-ui-namespace [data-gallery-items='24'] .k-gallery__item.k-gallery__item {
-    width: 100%;
-  }
-}
-
-.k-ui-namespace .k-gallery .k-gallery__items {
-  content: "176px";
-}
-
-@supports (display: grid) {
-  .k-ui-namespace .k-gallery .k-gallery__items {
-    grid-template-columns: repeat(auto-fill, minmax(176px, 1fr));
-  }
-}
-
-.k-ui-namespace .k-gallery .k-gallery__item {
-  width: 176px;
-}
-
-@supports (display: grid) {
-  .k-ui-namespace .k-gallery .k-gallery__item {
-    width: 100%;
-    -ms-flex-preferred-size: auto;
-        flex-basis: auto;
-  }
-}
-
-.k-ui-namespace .k-gallery--xxs .k-gallery__items {
-  content: "64px";
-}
-
-@supports (display: grid) {
-  .k-ui-namespace .k-gallery--xxs .k-gallery__items {
-    grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
-  }
-}
-
-.k-ui-namespace .k-gallery--xxs .k-gallery__item {
-  width: 64px;
-}
-
-@supports (display: grid) {
-  .k-ui-namespace .k-gallery--xxs .k-gallery__item {
-    width: 100%;
-    -ms-flex-preferred-size: auto;
-        flex-basis: auto;
-  }
-}
-
-.k-ui-namespace .k-gallery--xs .k-gallery__items {
-  content: "112px";
-}
-
-@supports (display: grid) {
-  .k-ui-namespace .k-gallery--xs .k-gallery__items {
-    grid-template-columns: repeat(auto-fill, minmax(112px, 1fr));
-  }
-}
-
-.k-ui-namespace .k-gallery--xs .k-gallery__item {
-  width: 112px;
-}
-
-@supports (display: grid) {
-  .k-ui-namespace .k-gallery--xs .k-gallery__item {
-    width: 100%;
-    -ms-flex-preferred-size: auto;
-        flex-basis: auto;
-  }
-}
-
-.k-ui-namespace .k-gallery--s .k-gallery__items {
-  content: "144px";
-}
-
-@supports (display: grid) {
-  .k-ui-namespace .k-gallery--s .k-gallery__items {
-    grid-template-columns: repeat(auto-fill, minmax(144px, 1fr));
-  }
-}
-
-.k-ui-namespace .k-gallery--s .k-gallery__item {
-  width: 144px;
-}
-
-@supports (display: grid) {
-  .k-ui-namespace .k-gallery--s .k-gallery__item {
-    width: 100%;
-    -ms-flex-preferred-size: auto;
-        flex-basis: auto;
-  }
-}
-
-.k-ui-namespace .k-gallery--l .k-gallery__items {
-  content: "224px";
-}
-
-@supports (display: grid) {
-  .k-ui-namespace .k-gallery--l .k-gallery__items {
-    grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
-  }
-}
-
-.k-ui-namespace .k-gallery--l .k-gallery__item {
-  width: 224px;
-}
-
-@supports (display: grid) {
-  .k-ui-namespace .k-gallery--l .k-gallery__item {
-    width: 100%;
-    -ms-flex-preferred-size: auto;
-        flex-basis: auto;
-  }
-}
-
-.k-ui-namespace .k-gallery--xl .k-gallery__items {
-  content: "288px";
-}
-
-@supports (display: grid) {
-  .k-ui-namespace .k-gallery--xl .k-gallery__items {
-    grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
-  }
-}
-
-.k-ui-namespace .k-gallery--xl .k-gallery__item {
-  width: 288px;
-}
-
-@supports (display: grid) {
-  .k-ui-namespace .k-gallery--xl .k-gallery__item {
-    width: 100%;
-    -ms-flex-preferred-size: auto;
-        flex-basis: auto;
-  }
-}
-
-.k-ui-namespace .k-gallery--xxl .k-gallery__items {
-  content: "352px";
-}
-
-@supports (display: grid) {
-  .k-ui-namespace .k-gallery--xxl .k-gallery__items {
-    grid-template-columns: repeat(auto-fill, minmax(352px, 1fr));
-  }
-}
-
-.k-ui-namespace .k-gallery--xxl .k-gallery__item {
-  width: 352px;
-}
-
-@supports (display: grid) {
-  .k-ui-namespace .k-gallery--xxl .k-gallery__item {
-    width: 100%;
-    -ms-flex-preferred-size: auto;
-        flex-basis: auto;
-  }
-}
-
-.k-ui-namespace .k-gallery-pagination {
-  padding: 8px 8px 7px;
-  background: #fbfafa;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
-  border-top: 1px solid gainsboro;
-  box-shadow: 0 1px 0 gainsboro;
-  /* 1 */
-}
-
 .k-ui-namespace .k-off-canvas-toggle-holder {
   display: none;
   /* 1 */
@@ -7467,59 +7642,6 @@ html:not([dir="rtl"]) .k-input-group .k-form-control:last-child, html:not([dir="
 
 .k-ui-namespace .k-heading:last-child {
   margin-bottom: 0;
-}
-
-.k-ui-namespace .k-icon--accent {
-  color: #3071a9;
-}
-
-.k-ui-namespace .k-icon--success {
-  color: #27ae60;
-}
-
-.k-ui-namespace .k-icon--error {
-  color: #c0392b;
-}
-
-.k-ui-namespace .k-icon--size-tiny {
-  font-size: 10px;
-}
-
-.k-ui-namespace .k-icon--size-small {
-  font-size: 13px;
-}
-
-.k-ui-namespace .k-icon--size-default {
-  font-size: 16px;
-}
-
-.k-ui-namespace .k-icon--size-medium {
-  font-size: 24px;
-}
-
-.k-ui-namespace .k-icon--size-large {
-  font-size: 32px;
-}
-
-.k-ui-namespace .k-icon--size-xlarge {
-  font-size: 48px;
-}
-
-.k-ui-namespace .k-icon--size-huge {
-  font-size: 64px;
-}
-
-.k-ui-namespace .k-icon-text-item {
-  display: inline-block;
-  font-size: inherit !important;
-  line-height: 20px;
-  vertical-align: middle;
-  margin-right: 4px;
-}
-
-.k-ui-namespace [class^="k-icon-document-"]:before,
-.k-ui-namespace [class*=" k-icon-document-"]:before {
-  background-size: cover;
 }
 
 .k-ui-namespace .k-list {
@@ -7979,128 +8101,6 @@ html:not([dir="rtl"]) .k-input-group .k-form-control:last-child, html:not([dir="
 
 .k-checked .k-ui-namespace .k-optionlist [disabled] + label:active ~ .k-optionlist__focus {
   border-color: #c0392b;
-}
-
-.k-ui-namespace .k-pagination {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  /**
-     * Pagination
-     *
-     * 1. Remove list-style and block-level defaults
-     * 2. Collapse white-space
-     */
-  /**
-     * Limit
-     */
-}
-
-.k-ui-namespace .k-pagination .k-pagination__pages {
-  padding: 0;
-  margin: 0;
-  border-radius: 4px;
-  /**
-       * Override for rtl ul-ol-li styling
-       */
-  /**
-       * Contents
-       */
-}
-
-[dir="rtl"] .k-ui-namespace .k-pagination .k-pagination__pages {
-  padding: 0;
-}
-
-.k-ui-namespace .k-pagination .k-pagination__pages > li {
-  display: inline;
-  /* 1 */
-}
-
-.k-ui-namespace .k-pagination .k-pagination__pages > li > a,
-.k-ui-namespace .k-pagination .k-pagination__pages > li > span {
-  display: block;
-  position: relative;
-  float: left;
-  /* 2 */
-  padding: 6px 12px;
-  line-height: 18px;
-  text-decoration: none;
-  color: #3071a9;
-  background-color: white;
-  border: 1px solid gainsboro;
-  margin-left: -1px;
-}
-
-[dir="rtl"] .k-ui-namespace .k-pagination .k-pagination__pages > li > a, [dir="rtl"] .k-ui-namespace .k-pagination .k-pagination__pages > li > span {
-  float: right;
-  margin-left: 0;
-  margin-right: -1px;
-}
-
-.k-ui-namespace .k-pagination .k-pagination__pages > li:first-child > a,
-.k-ui-namespace .k-pagination .k-pagination__pages > li:first-child > span {
-  margin-left: 0;
-  border-bottom-left-radius: 4px;
-  border-top-left-radius: 4px;
-}
-
-[dir="rtl"] .k-ui-namespace .k-pagination .k-pagination__pages > li:first-child > a, [dir="rtl"] .k-ui-namespace .k-pagination .k-pagination__pages > li:first-child > span {
-  margin-right: 0;
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;
-  border-bottom-right-radius: 4px;
-  border-top-right-radius: 4px;
-}
-
-.k-ui-namespace .k-pagination .k-pagination__pages > li:last-child > a,
-.k-ui-namespace .k-pagination .k-pagination__pages > li:last-child > span {
-  border-bottom-right-radius: 4px;
-  border-top-right-radius: 4px;
-}
-
-[dir="rtl"] .k-ui-namespace .k-pagination .k-pagination__pages > li:last-child > a, .k-ui-namespace .k-pagination .k-pagination__pages > li:last-child > span {
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0;
-  border-bottom-left-radius: 4px;
-  border-top-left-radius: 4px;
-}
-
-.k-ui-namespace .k-pagination .k-pagination__pages > li > a:hover, .k-ui-namespace .k-pagination .k-pagination__pages > li > a:focus,
-.k-ui-namespace .k-pagination .k-pagination__pages > li > span:hover,
-.k-ui-namespace .k-pagination .k-pagination__pages > li > span:focus {
-  z-index: 2;
-  color: #285e8d;
-  background-color: #eeeeee;
-  border-color: gainsboro;
-}
-
-.k-ui-namespace .k-pagination .k-pagination__pages > .k-is-active > a, .k-ui-namespace .k-pagination .k-pagination__pages > .k-is-active > a:hover, .k-ui-namespace .k-pagination .k-pagination__pages > .k-is-active > a:focus,
-.k-ui-namespace .k-pagination .k-pagination__pages > .k-is-active > span,
-.k-ui-namespace .k-pagination .k-pagination__pages > .k-is-active > span:hover,
-.k-ui-namespace .k-pagination .k-pagination__pages > .k-is-active > span:focus {
-  z-index: 3;
-  color: white;
-  background-color: #3071a9;
-  border-color: #285e8d;
-  cursor: default;
-}
-
-.k-ui-namespace .k-pagination select {
-  height: 32px;
-  width: auto;
-  margin: 0;
-  margin-right: 8px;
-}
-
-[dir="rtl"] .k-ui-namespace .k-pagination select {
-  margin-right: auto;
-  margin-left: 8px;
 }
 
 .k-ui-namespace .k-scopebar {
@@ -11113,6 +11113,214 @@ html:not([dir="rtl"]) .k-input-group .k-form-control:last-child, html:not([dir="
   margin-right: auto;
 }
 
+.k-ui-namespace .k-loader-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  background: rgba(255, 255, 255, 0.8);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.k-cssanimations.k-boxshadow .k-ui-namespace .k-loader-container .k-loader {
+  left: 0;
+}
+
+.k-cssanimations.k-boxshadow .k-ui-namespace .k-loader {
+  display: inline-block;
+  color: #3071a9;
+  font-size: 5px;
+  margin: 0 auto 2em;
+  position: relative;
+  text-indent: -9999em;
+  vertical-align: middle;
+  /**
+       * Sizes
+       */
+}
+
+.k-cssanimations.k-boxshadow .k-ui-namespace .k-loader, .k-cssanimations.k-boxshadow .k-ui-namespace .k-loader:before, .k-cssanimations.k-boxshadow .k-ui-namespace .k-loader:after {
+  border-radius: 50%;
+  width: 1em;
+  height: 1em;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation: k-loader 1.61s infinite ease-in-out;
+          animation: k-loader 1.61s infinite ease-in-out;
+}
+
+.k-cssanimations.k-boxshadow .k-ui-namespace .k-loader {
+  left: 1.25em;
+}
+
+.k-cssanimations.k-boxshadow .k-ui-namespace .k-loader:before {
+  left: -1.25em;
+  -webkit-animation-delay: -0.20125s;
+          animation-delay: -0.20125s;
+}
+
+.k-cssanimations.k-boxshadow .k-ui-namespace .k-loader:after {
+  left: 1.25em;
+  -webkit-animation-delay: 0.20125s;
+          animation-delay: 0.20125s;
+}
+
+.k-cssanimations.k-boxshadow .k-ui-namespace .k-loader:before, .k-cssanimations.k-boxshadow .k-ui-namespace .k-loader:after {
+  content: '';
+  position: absolute;
+  top: 0;
+}
+
+.k-cssanimations.k-boxshadow .k-ui-namespace .k-loader.k-loader--small {
+  font-size: 5px;
+}
+
+.k-cssanimations.k-boxshadow .k-ui-namespace .k-loader.k-loader--medium {
+  font-size: 10px;
+}
+
+.k-cssanimations.k-boxshadow .k-ui-namespace .k-loader.k-loader--large {
+  font-size: 20px;
+}
+
+@-webkit-keyframes k-loader {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 1em 0 -0.5em;
+  }
+  40% {
+    box-shadow: 0 1em 0 0;
+  }
+}
+
+@keyframes k-loader {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 1em 0 -0.5em;
+  }
+  40% {
+    box-shadow: 0 1em 0 0;
+  }
+}
+
+[dir="rtl"] .k-ui-namespace .k-loader {
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
+.k-ui-namespace .k-no-margin.k-no-margin.k-no-margin {
+  margin: 0;
+}
+
+.k-ui-namespace .k-no-margin-horizontal.k-no-margin-horizontal.k-no-margin-horizontal {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.k-ui-namespace .k-no-margin-vertical.k-no-margin-vertical.k-no-margin-vertical {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.k-ui-namespace .k-no-margin-top.k-no-margin-top.k-no-margin-top {
+  margin-top: 0;
+}
+
+.k-ui-namespace .k-no-margin-bottom.k-no-margin-bottom.k-no-margin-bottom {
+  margin-bottom: 0;
+}
+
+html:not([dir=rtl]) .k-no-margin-right.k-no-margin-right.k-no-margin-right {
+  margin-right: 0;
+}
+
+[dir="rtl"] .k-ui-namespace .k-no-margin-right.k-no-margin-right.k-no-margin-right {
+  margin-left: 0;
+}
+
+html:not([dir=rtl]) .k-no-margin-left.k-no-margin-left.k-no-margin-left {
+  margin-left: 0;
+}
+
+[dir="rtl"] .k-ui-namespace .k-no-margin-left.k-no-margin-left.k-no-margin-left {
+  margin-right: 0;
+}
+
+.k-ui-namespace .k-no-padding.k-no-padding.k-no-padding {
+  padding: 0;
+}
+
+.k-ui-namespace .k-no-padding-horizontal.k-no-padding-horizontal.k-no-padding-horizontal {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.k-ui-namespace .k-no-padding-vertical.k-no-padding-vertical.k-no-padding-vertical {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.k-ui-namespace .k-no-padding-top.k-no-padding-top.k-no-padding-top {
+  padding-top: 0;
+}
+
+.k-ui-namespace .k-no-padding-bottom.k-no-padding-bottom.k-no-padding-bottom {
+  padding-bottom: 0;
+}
+
+html:not([dir=rtl]) .k-no-padding-right.k-no-padding-right.k-no-padding-right {
+  padding-right: 0;
+}
+
+[dir="rtl"] .k-ui-namespace .k-no-padding-right.k-no-padding-right.k-no-padding-right {
+  padding-left: 0;
+}
+
+html:not([dir=rtl]) .k-no-padding-left.k-no-padding-left.k-no-padding-left {
+  padding-left: 0;
+}
+
+[dir="rtl"] .k-ui-namespace .k-no-padding-left.k-no-padding-left.k-no-padding-left {
+  padding-right: 0;
+}
+
+.k-ui-namespace .k-overflow.k-overflow.k-overflow {
+  overflow: auto;
+}
+
+.k-ui-namespace .k-overflow-hidden.k-overflow-hidden.k-overflow-hidden {
+  overflow: hidden;
+}
+
+.k-ui-namespace .k-visually-hidden.k-visually-hidden.k-visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.k-ui-namespace .k-visually-shown.k-visually-shown.k-visually-shown {
+  position: static;
+  overflow: visible;
+  clip: auto;
+  height: auto;
+  width: auto;
+  margin: 0;
+}
+
 .k-ui-namespace .k-background-type {
   background: #222222;
 }
@@ -11367,200 +11575,12 @@ html:not([dir="rtl"]) .k-input-group .k-form-control:last-child, html:not([dir="
   display: none;
 }
 
-.k-ui-namespace .k-loader-container {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 5;
-  background: rgba(255, 255, 255, 0.8);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.k-cssanimations.k-boxshadow .k-ui-namespace .k-loader-container .k-loader {
-  left: 0;
-}
-
-.k-cssanimations.k-boxshadow .k-ui-namespace .k-loader {
-  display: inline-block;
-  color: #3071a9;
-  font-size: 5px;
-  margin: 0 auto 2em;
-  position: relative;
-  text-indent: -9999em;
-  vertical-align: middle;
-  /**
-       * Sizes
-       */
-}
-
-.k-cssanimations.k-boxshadow .k-ui-namespace .k-loader, .k-cssanimations.k-boxshadow .k-ui-namespace .k-loader:before, .k-cssanimations.k-boxshadow .k-ui-namespace .k-loader:after {
-  border-radius: 50%;
-  width: 1em;
-  height: 1em;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-  -webkit-animation: k-loader 1.61s infinite ease-in-out;
-          animation: k-loader 1.61s infinite ease-in-out;
-}
-
-.k-cssanimations.k-boxshadow .k-ui-namespace .k-loader {
-  left: 1.25em;
-}
-
-.k-cssanimations.k-boxshadow .k-ui-namespace .k-loader:before {
-  left: -1.25em;
-  -webkit-animation-delay: -0.20125s;
-          animation-delay: -0.20125s;
-}
-
-.k-cssanimations.k-boxshadow .k-ui-namespace .k-loader:after {
-  left: 1.25em;
-  -webkit-animation-delay: 0.20125s;
-          animation-delay: 0.20125s;
-}
-
-.k-cssanimations.k-boxshadow .k-ui-namespace .k-loader:before, .k-cssanimations.k-boxshadow .k-ui-namespace .k-loader:after {
-  content: '';
-  position: absolute;
-  top: 0;
-}
-
-.k-cssanimations.k-boxshadow .k-ui-namespace .k-loader.k-loader--small {
-  font-size: 5px;
-}
-
-.k-cssanimations.k-boxshadow .k-ui-namespace .k-loader.k-loader--medium {
-  font-size: 10px;
-}
-
-.k-cssanimations.k-boxshadow .k-ui-namespace .k-loader.k-loader--large {
-  font-size: 20px;
-}
-
-@-webkit-keyframes k-loader {
-  0%,
-  80%,
-  100% {
-    box-shadow: 0 1em 0 -0.5em;
-  }
-  40% {
-    box-shadow: 0 1em 0 0;
-  }
-}
-
-@keyframes k-loader {
-  0%,
-  80%,
-  100% {
-    box-shadow: 0 1em 0 -0.5em;
-  }
-  40% {
-    box-shadow: 0 1em 0 0;
-  }
-}
-
-[dir="rtl"] .k-ui-namespace .k-loader {
-  -webkit-transform: scaleX(-1);
-          transform: scaleX(-1);
-}
-
-.k-ui-namespace .k-no-margin.k-no-margin.k-no-margin {
-  margin: 0;
-}
-
-.k-ui-namespace .k-no-margin-horizontal.k-no-margin-horizontal.k-no-margin-horizontal {
-  margin-right: 0;
-  margin-left: 0;
-}
-
-.k-ui-namespace .k-no-margin-vertical.k-no-margin-vertical.k-no-margin-vertical {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.k-ui-namespace .k-no-margin-top.k-no-margin-top.k-no-margin-top {
-  margin-top: 0;
-}
-
-.k-ui-namespace .k-no-margin-bottom.k-no-margin-bottom.k-no-margin-bottom {
-  margin-bottom: 0;
-}
-
-html:not([dir=rtl]) .k-no-margin-right.k-no-margin-right.k-no-margin-right {
-  margin-right: 0;
-}
-
-[dir="rtl"] .k-ui-namespace .k-no-margin-right.k-no-margin-right.k-no-margin-right {
-  margin-left: 0;
-}
-
-html:not([dir=rtl]) .k-no-margin-left.k-no-margin-left.k-no-margin-left {
-  margin-left: 0;
-}
-
-[dir="rtl"] .k-ui-namespace .k-no-margin-left.k-no-margin-left.k-no-margin-left {
-  margin-right: 0;
-}
-
-.k-ui-namespace .k-no-padding.k-no-padding.k-no-padding {
-  padding: 0;
-}
-
-.k-ui-namespace .k-no-padding-horizontal.k-no-padding-horizontal.k-no-padding-horizontal {
-  padding-right: 0;
-  padding-left: 0;
-}
-
-.k-ui-namespace .k-no-padding-vertical.k-no-padding-vertical.k-no-padding-vertical {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-.k-ui-namespace .k-no-padding-top.k-no-padding-top.k-no-padding-top {
-  padding-top: 0;
-}
-
-.k-ui-namespace .k-no-padding-bottom.k-no-padding-bottom.k-no-padding-bottom {
-  padding-bottom: 0;
-}
-
-html:not([dir=rtl]) .k-no-padding-right.k-no-padding-right.k-no-padding-right {
-  padding-right: 0;
-}
-
-[dir="rtl"] .k-ui-namespace .k-no-padding-right.k-no-padding-right.k-no-padding-right {
-  padding-left: 0;
-}
-
-html:not([dir=rtl]) .k-no-padding-left.k-no-padding-left.k-no-padding-left {
-  padding-left: 0;
-}
-
-[dir="rtl"] .k-ui-namespace .k-no-padding-left.k-no-padding-left.k-no-padding-left {
-  padding-right: 0;
-}
-
 .k-ui-namespace .k-no-transition.k-no-transition.k-no-transition {
   transition: none;
 }
 
 .k-ui-namespace .k-no-wrap.k-no-wrap.k-no-wrap {
   white-space: nowrap;
-}
-
-.k-ui-namespace .k-overflow.k-overflow.k-overflow {
-  overflow: auto;
-}
-
-.k-ui-namespace .k-overflow-hidden.k-overflow-hidden.k-overflow-hidden {
-  overflow: hidden;
 }
 
 .k-ui-namespace .k-position-static {
@@ -11732,26 +11752,6 @@ html:not([dir=rtl]) .k-no-padding-left.k-no-padding-left.k-no-padding-left {
   user-focus: none;
 }
 
-.k-ui-namespace .k-visually-hidden.k-visually-hidden.k-visually-hidden {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  width: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-}
-
-.k-ui-namespace .k-visually-shown.k-visually-shown.k-visually-shown {
-  position: static;
-  overflow: visible;
-  clip: auto;
-  height: auto;
-  width: auto;
-  margin: 0;
-}
-
 /* CSS errors
      ========================================================================== */
 /**
@@ -11832,104 +11832,6 @@ html:not([dir=rtl]) .k-no-padding-left.k-no-padding-left.k-no-padding-left {
 .k-ui-container:not(.k-no-css-errors) .k-flex-wrapper:not(:only-child):after,
 .k-ui-container:not(.k-no-css-errors) .k-content-wrapper > .k-sidebar-left:first-child:after,
 .k-ui-container:not(.k-no-css-errors) .k-component + .k-sidebar-right:after {
-  display: none;
-}
-
-/* Responsive table
-     ========================================================================== */
-.footable.breakpoint {
-  /**
-     * Reset padding, and re-set them on individual divs
-     */
-  /**
-     * 1. Just like table cells
-     * 2. Almost as tall as the main table rows
-     * 3. Same spacing as on table cells
-     */
-  /* Hide toggle button for sub headings */
-}
-
-.footable.breakpoint .footable-toggle {
-  content: " ";
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  line-height: 18px;
-  border: 1px solid #a2a1a1;
-  border-radius: 50%;
-  text-align: center;
-  vertical-align: middle;
-}
-
-.footable.breakpoint .footable-toggle:after {
-  content: "";
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  margin: 4px;
-  color: #a2a1a1;
-  font-size: 10px;
-  line-height: 1.3em;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-  transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-  -webkit-backface-visibility: hidden;
-}
-
-[dir="rtl"] .footable.breakpoint .footable-toggle:after {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-}
-
-.footable.breakpoint tr.k-is-selected .footable-toggle {
-  border-color: white;
-}
-
-.footable.breakpoint tr.k-is-selected .footable-toggle:after {
-  color: white;
-}
-
-.footable.breakpoint .footable-row-detail-cell {
-  padding: 0;
-}
-
-.footable.breakpoint tr.footable-detail-show .footable-toggle:after {
-  -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
-}
-
-.footable.breakpoint .footable-row-detail-row {
-  margin-bottom: 6px;
-}
-
-.footable.breakpoint .footable-row-detail-row:before, .footable.breakpoint .footable-row-detail-row:after {
-  display: table;
-  content: " ";
-}
-
-.footable.breakpoint .footable-row-detail-row:after {
-  clear: both;
-}
-
-.footable.breakpoint .footable-row-detail-row:last-child {
-  margin-bottom: 0;
-}
-
-.footable.breakpoint .footable-row-detail-name {
-  font-weight: 700;
-}
-
-.footable.breakpoint .footable-row-detail-name,
-.footable.breakpoint .footable-row-detail-value {
-  position: relative;
-  /* 1 */
-  min-height: 30px;
-  /* 2 */
-  padding: 6px 8px;
-  /* 3 */
-}
-
-.footable.breakpoint th .footable-toggle {
   display: none;
 }
 
@@ -12168,6 +12070,104 @@ html:not([dir=rtl]) .k-no-padding-left.k-no-padding-left.k-no-padding-left {
 }
 
 .jqtree--one-level .jqtree-whitespace {
+  display: none;
+}
+
+/* Responsive table
+     ========================================================================== */
+.footable.breakpoint {
+  /**
+     * Reset padding, and re-set them on individual divs
+     */
+  /**
+     * 1. Just like table cells
+     * 2. Almost as tall as the main table rows
+     * 3. Same spacing as on table cells
+     */
+  /* Hide toggle button for sub headings */
+}
+
+.footable.breakpoint .footable-toggle {
+  content: " ";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  line-height: 18px;
+  border: 1px solid #a2a1a1;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.footable.breakpoint .footable-toggle:after {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 4px;
+  color: #a2a1a1;
+  font-size: 10px;
+  line-height: 1.3em;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+  -webkit-backface-visibility: hidden;
+}
+
+[dir="rtl"] .footable.breakpoint .footable-toggle:after {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.footable.breakpoint tr.k-is-selected .footable-toggle {
+  border-color: white;
+}
+
+.footable.breakpoint tr.k-is-selected .footable-toggle:after {
+  color: white;
+}
+
+.footable.breakpoint .footable-row-detail-cell {
+  padding: 0;
+}
+
+.footable.breakpoint tr.footable-detail-show .footable-toggle:after {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.footable.breakpoint .footable-row-detail-row {
+  margin-bottom: 6px;
+}
+
+.footable.breakpoint .footable-row-detail-row:before, .footable.breakpoint .footable-row-detail-row:after {
+  display: table;
+  content: " ";
+}
+
+.footable.breakpoint .footable-row-detail-row:after {
+  clear: both;
+}
+
+.footable.breakpoint .footable-row-detail-row:last-child {
+  margin-bottom: 0;
+}
+
+.footable.breakpoint .footable-row-detail-name {
+  font-weight: 700;
+}
+
+.footable.breakpoint .footable-row-detail-name,
+.footable.breakpoint .footable-row-detail-value {
+  position: relative;
+  /* 1 */
+  min-height: 30px;
+  /* 2 */
+  padding: 6px 12px;
+  /* 3 */
+}
+
+.footable.breakpoint th .footable-toggle {
   display: none;
 }
 

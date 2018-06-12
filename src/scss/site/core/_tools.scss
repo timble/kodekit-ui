@@ -4,16 +4,19 @@
 //
 // These file do not produce any CSS code on their own
 
-// Import admin tools
 
-@import "../../admin/core/tools";
+// Functions
+
+@import "../../shared/tools/functions";
 
 
-// Site tools
+// Variables
 
+@import "../../shared/tools/variables";
 @import "../tools/variables";
 
 
-// Site mixins
+// Mixins
 
+@import "../../shared/tools/mixins";
 @import "../tools/mixins/theme";

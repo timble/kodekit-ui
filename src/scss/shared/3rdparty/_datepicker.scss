@@ -224,7 +224,7 @@
       &.active.disabled:hover {
         color: #fff;
         text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-        background: $k-button-primary-background;
+        background: $k-accent-color;
       }
 
       span {
@@ -254,7 +254,7 @@
         &.active.disabled:hover {
           color: #fff;
           text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-          background: $k-button-primary-background;
+          background: $k-accent-color;
         }
 
         &.old,

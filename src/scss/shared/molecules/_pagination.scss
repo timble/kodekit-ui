@@ -121,14 +121,14 @@
      */
 
     select {
-      height: $k-table-pagination-height;
+      height: $k-pagination-select-height;
       width: auto;
       margin: 0;
-      margin-right: $k-table-pagination-spacing;
+      margin-right: $k-pagination-select-spacing;
 
       @include rtl {
         margin-right: auto;
-        margin-left: $k-table-pagination-spacing;
+        margin-left: $k-pagination-select-spacing;
       }
     }
   }

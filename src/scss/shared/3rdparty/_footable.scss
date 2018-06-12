@@ -60,7 +60,7 @@
 
     .footable-row-detail-row {
       @include clearfix;
-      @include content-block($k-table-cell-vertical-spacing);
+      @include content-block($k-base-vertical-spacing);
     }
 
     .footable-row-detail-name {
