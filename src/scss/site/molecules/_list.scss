@@ -70,7 +70,7 @@
    */
 
   .k-list--bordered {
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: $k-site-list-bordered-border;
 
     & > .k-list__item:first-child {
       &:before {
@@ -87,7 +87,7 @@
         left: -999px;
         right: 0;
         height: 1px;
-        background: rgba(0, 0, 0, 0.1);
+        background: $k-site-list-bordered-pseudo-background;
       }
 
       .k-list__item {
@@ -107,6 +107,21 @@
     .k-list__item {
       padding-left: 0.5em;
       padding-right: 0.5em;
+    }
+  }
+
+
+  /* Dark theme */
+
+  &.k-theme-dark {
+    .k-list--bordered {
+      border: $k-site-list-dark-bordered-border;
+
+      > .k-list__item {
+        &:before {
+          background: $k-site-list-dark-bordered-pseudo-background;
+        }
+      }
     }
   }
 }

@@ -1,0 +1,156 @@
+// Variables
+// =========
+
+// Defaults
+$toglr-id: '#open-menu' !default;
+$toglr-js-class: '.js' !default;
+$toglr-breakpoint: 800px !default;
+$toglr-visually-hidden: true !default;
+
+// Input
+$toglr-input-selector: '.toglr-input' !default;
+$toglr-input-display: none !default;
+
+// Nav
+$toglr-nav-selector: '.toglr-nav' !default;
+$toglr-nav-display: none !default;
+$toglr-nav-breakpoint-display: block !default;
+
+// Togglers
+$toglr-togglers-selector: '.toglr-togglers' !default;
+$toglr-togglers-breakpoint-display: none !default;
+
+$toglr-label-selector: '.toglr-label' !default;
+$toglr-label-display: none !default;
+
+$toglr-label-open-selector: '.toglr-label-open' !default;
+$toglr-label-open-display: block !default;
+
+$toglr-label-close-selector: '.toglr-label-close' !default;
+$toglr-label-close-display: none !default;
+
+$toglr-open-selector: '.toglr-open' !default;
+$toglr-open-display: block !default;
+
+$toglr-close-selector: '.toglr-close' !default;
+$toglr-close-display: none !default;
+
+// Toggled styling
+$toglr-toggled-nav-display: block !default;
+$toglr-toggled-open-display: none !default;
+$toglr-toggled-close-display: block !default;
+
+// JS enabled styling
+$toglr-js-open-close-display: none !default;
+$toglr-js-label-display: block !default;
+
+
+// Selectors
+// =========
+
+// Input
+#{$toglr-input-selector} {
+  @if $toglr-input-display != false { display: $toglr-input-display; }
+
+  // Display menu when checked
+  &:checked {
+    ~ #{$toglr-nav-selector} {
+      @if $toglr-toggled-nav-display != false { display: $toglr-toggled-nav-display; }
+    }
+
+    ~ #{$toglr-togglers-selector} {
+      #{$toglr-label-open-selector} {
+        @if $toglr-toggled-open-display != false { display: $toglr-toggled-open-display; }
+      }
+
+      #{$toglr-label-close-selector} {
+        @if $toglr-toggled-close-display != false { display: $toglr-toggled-close-display; }
+      }
+    }
+  }
+}
+
+// Togglers
+#{$toglr-togglers-selector} {
+  @if $toglr-breakpoint != false {
+    @media screen and (min-width: $toglr-breakpoint) {
+      display: $toglr-togglers-breakpoint-display;
+    }
+  }
+}
+
+// Label
+#{$toglr-label-selector} {
+  @if $toglr-label-display != false { display: $toglr-label-display; }
+}
+
+// Open button
+#{$toglr-open-selector},
+#{$toglr-label-open-selector} {
+  @if $toglr-open-display != false { display: $toglr-open-display; }
+}
+
+// Close button
+#{$toglr-close-selector},
+#{$toglr-label-close-selector} {
+  @if $toglr-close-display != false { display: $toglr-close-display; }
+}
+
+// Nav
+#{$toglr-nav-selector} {
+  @if $toglr-nav-display != false { display: $toglr-nav-display; }
+  @if $toglr-breakpoint != false {
+    @media screen and (min-width: $toglr-breakpoint) {
+      display: $toglr-nav-breakpoint-display;
+    }
+  }
+}
+
+// Open menu on :target and only when JS is disabled
+html:not(#{$toglr-js-class}) #{$toglr-id}:target {
+
+  // Set toggler button correctly
+  ~ #{$toglr-togglers-selector} {
+    #{$toglr-open-selector} {
+      @if $toglr-toggled-open-display != false { display: $toglr-toggled-open-display; }
+    }
+
+    #{$toglr-close-selector} {
+      @if $toglr-toggled-close-display != false { display: $toglr-toggled-close-display; }
+    }
+  }
+
+  // Display menu
+  ~ #{$toglr-nav-selector} {
+    @if $toglr-toggled-nav-display != false { display: $toglr-toggled-nav-display; }
+  }
+}
+
+// When JS is enabled
+#{$toglr-js-class} {
+
+  // Hide togglers
+  #{$toglr-open-selector},
+  #{$toglr-close-selector} {
+    @if $toglr-js-open-close-display != false { display: $toglr-js-open-close-display; }
+  }
+
+  // Display label
+  #{$toglr-label-selector} {
+    @if $toglr-js-label-display != false { display: $toglr-js-label-display; }
+  }
+}
+
+@if $toglr-visually-hidden != false {
+  // Visually hide item
+  .visually-hidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+  }
+}

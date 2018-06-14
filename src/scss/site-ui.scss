@@ -20,9 +20,5 @@
 //
 // Loading all 3rd party plugin SCSS files
 
-@import "site/core/3rdparty";
-
-
-// Shame
-
-@import "site/shame";
+@import "shared/3rdparty/3rdparty";
+@import "shared/3rdparty/copied/toglr/toglr";

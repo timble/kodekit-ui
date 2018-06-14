@@ -6,83 +6,83 @@
 // Enable individual molecules by setting `$k-molecules: false` and `$k-molecule-alert: true' for example
 
 // CSS errors
-$k-css-errors:                  true !default;
+$k-css-errors:                                          true !default;
 
 // Layout
-$k-layout:                      true !default;
-$k-layout-component:            inherit !default;
-$k-layout-component-wrapper:    inherit !default;
-$k-layout-content:              inherit !default;
-$k-layout-content-area:         inherit !default;
-$k-layout-content-wrapper:      inherit !default;
-$k-layout-flex-wrapper:         inherit !default;
-$k-layout-grid:                 inherit !default;
-$k-layout-koowa-container:      inherit !default;
-$k-layout-login-container:      inherit !default;
-$k-layout-sidebar:              inherit !default;
-$k-layout-subcontent:           inherit !default;
-$k-layout-wrapper:              inherit !default;
+$k-layout:                                              true !default;
+$k-layout-component:                                    inherit !default;
+$k-layout-component-wrapper:                            inherit !default;
+$k-layout-content:                                      inherit !default;
+$k-layout-content-area:                                 inherit !default;
+$k-layout-content-wrapper:                              inherit !default;
+$k-layout-flex-wrapper:                                 inherit !default;
+$k-layout-grid:                                         inherit !default;
+$k-layout-koowa-container:                              inherit !default;
+$k-layout-login-container:                              inherit !default;
+$k-layout-sidebar:                                      inherit !default;
+$k-layout-subcontent:                                   inherit !default;
+$k-layout-wrapper:                                      inherit !default;
 
 // Atoms
-$k-atom-a:                      inherit !default;
-$k-atom-backface-visibility:    inherit !default;
-$k-atom-body:                   inherit !default;
-$k-atom-dl:                     inherit !default;
-$k-atom-fieldset:               inherit !default;
-$k-atom-heading:                inherit !default;
-$k-atom-html:                   inherit !default;
-$k-atom-input:                  inherit !default;
-$k-atom-label:                  inherit !default;
-$k-atom-legend:                 inherit !default;
-$k-atom-p:                      inherit !default;
-$k-atom-ul-ol-li:               inherit !default;
+$k-atom-a:                                              inherit !default;
+$k-atom-backface-visibility:                            inherit !default;
+$k-atom-body:                                           inherit !default;
+$k-atom-dl:                                             inherit !default;
+$k-atom-fieldset:                                       inherit !default;
+$k-atom-heading:                                        inherit !default;
+$k-atom-html:                                           inherit !default;
+$k-atom-input:                                          inherit !default;
+$k-atom-label:                                          inherit !default;
+$k-atom-legend:                                         inherit !default;
+$k-atom-p:                                              inherit !default;
+$k-atom-ul-ol-li:                                       inherit !default;
 
 // Molecules
-$k-molecule-alert:              inherit !default;
-$k-molecule-breadcrumb:         inherit !default;
-$k-molecule-button:             inherit !default;
-$k-molecule-ckeditor:           inherit !default;
-$k-molecule-dropdown:           inherit !default;
-$k-molecule-empty-state:        inherit !default;
-$k-molecule-form-block:         inherit !default;
-$k-molecule-form:               inherit !default;
-$k-molecule-hamburger:          inherit !default;
-$k-molecule-heading:            inherit !default;
-$k-molecule-list:               inherit !default;
-$k-molecule-login:              inherit !default;
-$k-molecule-modernizr:          inherit !default;
-$k-molecule-navigation:         inherit !default;
-$k-molecule-optionlist:         inherit !default;
-$k-molecule-scopebar:           inherit !default;
-$k-molecule-sidebar-item:       inherit !default;
-$k-molecule-styled-file-input:  inherit !default;
-$k-molecule-table:              inherit !default;
-$k-molecule-tab:                inherit !default;
-$k-molecule-title-bar:          inherit !default;
-$k-molecule-toolbar:            inherit !default;
-$k-molecule-tooltip:            inherit !default;
-$k-molecule-top:                inherit !default;
-$k-molecule-well:               inherit !default;
+$k-molecule-alert:                                      inherit !default;
+$k-molecule-breadcrumb:                                 inherit !default;
+$k-molecule-button:                                     inherit !default;
+$k-molecule-ckeditor:                                   inherit !default;
+$k-molecule-dropdown:                                   inherit !default;
+$k-molecule-empty-state:                                inherit !default;
+$k-molecule-form-block:                                 inherit !default;
+$k-molecule-form:                                       inherit !default;
+$k-molecule-hamburger:                                  inherit !default;
+$k-molecule-heading:                                    inherit !default;
+$k-molecule-list:                                       inherit !default;
+$k-molecule-login:                                      inherit !default;
+$k-molecule-modernizr:                                  inherit !default;
+$k-molecule-navigation:                                 inherit !default;
+$k-molecule-optionlist:                                 inherit !default;
+$k-molecule-scopebar:                                   inherit !default;
+$k-molecule-sidebar-item:                               inherit !default;
+$k-molecule-styled-file-input:                          inherit !default;
+$k-molecule-table:                                      inherit !default;
+$k-molecule-tab:                                        inherit !default;
+$k-molecule-title-bar:                                  inherit !default;
+$k-molecule-toolbar:                                    inherit !default;
+$k-molecule-tooltip:                                    inherit !default;
+$k-molecule-top:                                        inherit !default;
+$k-molecule-well:                                       inherit !default;
 
 // Utilities
-$k-utility-background:          inherit !default;
-$k-utility-color:               inherit !default;
-$k-utility-animation:           inherit !default;
-$k-utility-content-block:       inherit !default;
-$k-utility-coverall:            inherit !default;
-$k-utility-dynamic-holder:      inherit !default;
-$k-utility-ellipsis:            inherit !default;
-$k-utility-flag-object:         inherit !default;
-$k-utility-flexing:             inherit !default;
-$k-utility-hidden:              inherit !default;
-$k-utility-no-transition:       inherit !default;
-$k-utility-no-wrap:             inherit !default;
-$k-utility-position:            inherit !default;
-$k-utility-ratio-content:       inherit !default;
-$k-utility-this-or-that:        inherit !default;
-$k-utility-touchevent:          inherit !default;
-$k-utility-unavailable:         inherit !default;
-$k-utility-unresponsive:        inherit !default;
+$k-utility-background:                                  inherit !default;
+$k-utility-color:                                       inherit !default;
+$k-utility-animation:                                   inherit !default;
+$k-utility-content-block:                               inherit !default;
+$k-utility-coverall:                                    inherit !default;
+$k-utility-dynamic-holder:                              inherit !default;
+$k-utility-ellipsis:                                    inherit !default;
+$k-utility-flag-object:                                 inherit !default;
+$k-utility-flexing:                                     inherit !default;
+$k-utility-hidden:                                      inherit !default;
+$k-utility-no-transition:                               inherit !default;
+$k-utility-no-wrap:                                     inherit !default;
+$k-utility-position:                                    inherit !default;
+$k-utility-ratio-content:                               inherit !default;
+$k-utility-this-or-that:                                inherit !default;
+$k-utility-touchevent:                                  inherit !default;
+$k-utility-unavailable:                                 inherit !default;
+$k-utility-unresponsive:                                inherit !default;
 
 
 // Breakpoints
@@ -99,14 +99,14 @@ $k-utility-unresponsive:        inherit !default;
 // 2. Separate $k-desktop variable is being used so all styles
 //    change together when going from small to larger screen.
 
-$k-alpha:       400px !default;
-$k-beta:        600px !default;
-$k-charlie:     768px !default;
-$k-delta:       1024px !default;
-$k-echo:        1200px !default;
+$k-alpha:                                               400px !default;
+$k-beta:                                                600px !default;
+$k-charlie:                                             768px !default;
+$k-delta:                                               1024px !default;
+$k-echo:                                                1200px !default;
 
-$k-min-width:   $k-alpha !default; // 1
-$k-desktop:     $k-charlie !default; // 2
+$k-min-width:                                           $k-alpha !default; // 1
+$k-desktop:                                             $k-charlie !default; // 2
 
 
 // Typography
@@ -115,151 +115,151 @@ $k-desktop:     $k-charlie !default; // 2
 // 1. Borrowed font-stack from WordPress
 //    - https://make.wordpress.org/core/2016/07/07/native-fonts-in-4-6/
 
-$k-font-family:             -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !default;
+$k-font-family:                                         -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !default;
 
-$k-webkit-font-smoothing:   antialiased !default;
-$k-firefox-font-smoothing:  grayscale !default;
+$k-webkit-font-smoothing:                               antialiased !default;
+$k-firefox-font-smoothing:                              grayscale !default;
 
 
 // Helpers
 // ==========================================================================
 
-$k-left-menu-show-class:      '.k-show-left-menu' !default;
-$k-left-menu-opened-class:    '.k-is-opened-left' !default;
-$k-left-menu-overlay-class:   '.k-off-canvas-overlay-left' !default;
+$k-left-menu-show-class:                                '.k-show-left-menu' !default;
+$k-left-menu-opened-class:                              '.k-is-opened-left' !default;
+$k-left-menu-overlay-class:                             '.k-off-canvas-overlay-left' !default;
 
-$k-right-menu-show-class:     '.k-show-right-menu' !default;
-$k-right-menu-opened-class:   '.k-is-opened-right' !default;
-$k-right-menu-overlay-class:  '.k-off-canvas-overlay-right' !default;
+$k-right-menu-show-class:                               '.k-show-right-menu' !default;
+$k-right-menu-opened-class:                             '.k-is-opened-right' !default;
+$k-right-menu-overlay-class:                            '.k-off-canvas-overlay-right' !default;
 
-$k-subcontent-show-class:     '.k-show-subcontent-area' !default;
-$k-subcontent-opened-class:   '.k-is-opened-subcontent' !default;
-$k-subcontent-overlay-class:  '.k-off-canvas-overlay-subcontent' !default;
+$k-subcontent-show-class:                               '.k-show-subcontent-area' !default;
+$k-subcontent-opened-class:                             '.k-is-opened-subcontent' !default;
+$k-subcontent-overlay-class:                            '.k-off-canvas-overlay-subcontent' !default;
 
-$k-top-menu-show-class:       '.k-show-top-menu' !default;
-$k-top-menu-opened-class:     '.k-is-opened-top' !default;
-$k-top-menu-overlay-class:    '.k-off-canvas-overlay-top' !default;
+$k-top-menu-show-class:                                 '.k-show-top-menu' !default;
+$k-top-menu-opened-class:                               '.k-is-opened-top' !default;
+$k-top-menu-overlay-class:                              '.k-off-canvas-overlay-top' !default;
 
-$k-optionlist-class:          '.k-optionlist' !default;
-$k-optionlist-content-class:  '.k-optionlist__content' !default;
-$k-optionlist-focus-class:    '.k-optionlist__focus' !default;
-$k-optionlist-boolean-class:  '.k-optionlist--boolean' !default;
-$k-optionlist-block-class:    '.k-optionlist--block' !default;
+$k-optionlist-class:                                    '.k-optionlist' !default;
+$k-optionlist-content-class:                            '.k-optionlist__content' !default;
+$k-optionlist-focus-class:                              '.k-optionlist__focus' !default;
+$k-optionlist-boolean-class:                            '.k-optionlist--boolean' !default;
+$k-optionlist-block-class:                              '.k-optionlist--block' !default;
 
-$k-low-opacity:               0.33 !default;
-$k-medium-opacity:            0.66 !default;
-$k-high-opacity:              1 !default;
+$k-low-opacity:                                         0.33 !default;
+$k-medium-opacity:                                      0.66 !default;
+$k-high-opacity:                                        1 !default;
 
 
 // Links
 // ==========================================================================
 
-$k-link-color:            $k-type-color !default;
+$k-link-color:                                          $k-type-color !default;
 
 
 // Koowa
 // ==========================================================================
 
-$k-koowa-background:  white !default;
-$k-koowa-padding:     0 !default;
+$k-koowa-background:                                    white !default;
+$k-koowa-padding:                                       0 !default;
 
 
 // Login
 // ==========================================================================
 
-$k-login-container-background:  $k-base-color !default;
-$k-login-container-color:       $k-base-type-color !default;
-$k-login-container-spacing:     $k-spacing !default;
+$k-login-container-background:                          $k-base-color !default;
+$k-login-container-color:                               $k-base-type-color !default;
+$k-login-container-spacing:                             $k-spacing !default;
 
-$k-login-width:                 360px !default;
-$k-login-border-radius:         $k-border-radius !default;
-$k-login-background:            white !default;
-$k-login-color:                 $k-type-color !default;
-$k-login-font-size:             $k-large-font-size !default;
-$k-login-spacing:               $k-spacing !default;
-$k-login-box-shadow:            0 6px 0 -4px rgba(0,0,0,.3) !default;
+$k-login-width:                                         360px !default;
+$k-login-border-radius:                                 $k-border-radius !default;
+$k-login-background:                                    white !default;
+$k-login-color:                                         $k-type-color !default;
+$k-login-font-size:                                     $k-large-font-size !default;
+$k-login-spacing:                                       $k-spacing !default;
+$k-login-box-shadow:                                    0 6px 0 -4px rgba(0,0,0,.3) !default;
 
 
 // Topbar
 // ==========================================================================
 
-$k-top-container-z-index:                             11 !default;
-$k-top-container-size:                                $k-element-huge-size !default;
-$k-top-container-breakpoint:                          $k-charlie !default;
-$k-top-container-background:                          $k-base-color !default;
-$k-top-container-color:                               $k-base-type-color !default;
+$k-top-container-z-index:                               11 !default;
+$k-top-container-size:                                  $k-element-huge-size !default;
+$k-top-container-breakpoint:                            $k-charlie !default;
+$k-top-container-background:                            $k-base-color !default;
+$k-top-container-color:                                 $k-base-type-color !default;
 
-$k-top-container-logo-spacing:                        $k-small-spacing !default;
-$k-top-container-logo-font-size:                      $k-large-font-size !default;
-$k-top-container-logo-font-weight:                    $k-bold-font-weight !default;
-$k-top-container-logo-line-height:                    $k-large-line-height !default;
-$k-top-container-logo-text-decoration:                none !default;
-$k-top-container-logo-hover-text-decoration:          none !default;
+$k-top-container-logo-spacing:                          $k-small-spacing !default;
+$k-top-container-logo-font-size:                        $k-large-font-size !default;
+$k-top-container-logo-font-weight:                      $k-bold-font-weight !default;
+$k-top-container-logo-line-height:                      $k-large-line-height !default;
+$k-top-container-logo-text-decoration:                  none !default;
+$k-top-container-logo-hover-text-decoration:            none !default;
 
-$k-top-container-navigation-width:                    276px !default;
-$k-top-container-navigation-box-shadow:               inset 5px 5px 5px rgba(black, 0.1) !default;
+$k-top-container-navigation-width:                      276px !default;
+$k-top-container-navigation-box-shadow:                 inset 5px 5px 5px rgba(black, 0.1) !default;
 
-$k-top-container-navigation-item-disabled-class:      $k-disabled-class !default;
-$k-top-container-navigation-item-line-height:         $k-element-large-size !default;
-$k-top-container-navigation-item-border:              1px solid rgba(white, 0.15) !default;
-$k-top-container-navigation-item-spacing:             0 $k-spacing !default;
-$k-top-container-navigation-item-breakpoint-spacing:  0 $k-small-spacing !default;
-$k-top-container-navigation-item-delta-spacing:       0 $k-small-spacing !default;
-$k-top-container-navigation-item-open-submenu-class:  '.has-open-submenu' !default;
+$k-top-container-navigation-item-disabled-class:        $k-disabled-class !default;
+$k-top-container-navigation-item-line-height:           $k-element-large-size !default;
+$k-top-container-navigation-item-border:                1px solid rgba(white, 0.15) !default;
+$k-top-container-navigation-item-spacing:               0 $k-spacing !default;
+$k-top-container-navigation-item-breakpoint-spacing:    0 $k-small-spacing !default;
+$k-top-container-navigation-item-delta-spacing:         0 $k-small-spacing !default;
+$k-top-container-navigation-item-open-submenu-class:    '.has-open-submenu' !default;
 
-$k-top-container-navigation-item-level1-parent-arrow: true !default;
-$k-top-container-navigation-item-level2-parent-arrow: true !default;
+$k-top-container-navigation-item-level1-parent-arrow:   true !default;
+$k-top-container-navigation-item-level2-parent-arrow:   true !default;
 
 
 // Content
 // ==========================================================================
 
-$k-content-background:          white !default;
-$k-content-border:              darkest($k-content-background) !default;
-$k-content-width-delta:         280px !default;
-$k-content-resizer-width:       8px !default;
-$k-content-resizer-breakpoint:  $k-delta !default;
-$k-content-resizer-background:  $k-primary-plus-6-color !default;
-$k-content-resizer-border:      1px solid $k-primary-color !default;
+$k-content-background:                                  white !default;
+$k-content-border:                                      darkest($k-content-background) !default;
+$k-content-width-delta:                                 280px !default;
+$k-content-resizer-width:                               8px !default;
+$k-content-resizer-breakpoint:                          $k-delta !default;
+$k-content-resizer-background:                          $k-primary-plus-6-color !default;
+$k-content-resizer-border:                              1px solid $k-primary-color !default;
 
 
 // Subcontent
 // ==========================================================================
 
-$k-subcontent-background:           white !default;
-$k-subcontent-border:               1px solid $k-primary-color !default;
-$k-subcontent-breakpoint:           $k-delta !default;
-$k-subcontent-width:                calc(100% - 48px) !default;
-$k-subcontent-child-active-class:   $k-active-class !default;
-$k-subcontent-toggle-position:      $k-extrasmall-spacing !default;
-$k-subcontent-toggle-size:          $k-element-medium-size !default;
-$k-subcontent-toggle-spacing:       $k-tiny-spacing !default;
+$k-subcontent-background:                               white !default;
+$k-subcontent-border:                                   1px solid $k-primary-color !default;
+$k-subcontent-breakpoint:                               $k-delta !default;
+$k-subcontent-width:                                    calc(100% - 48px) !default;
+$k-subcontent-child-active-class:                       $k-active-class !default;
+$k-subcontent-toggle-position:                          $k-extrasmall-spacing !default;
+$k-subcontent-toggle-size:                              $k-element-medium-size !default;
+$k-subcontent-toggle-spacing:                           $k-tiny-spacing !default;
 
 
 // Title-bar
 // ==========================================================================
 
-$k-title-bar-background:          $k-primary-plus-3-color !default;
-$k-title-bar-border:              darkest($k-title-bar-background) !default;
-$k-title-bar-color:               $k-type-color !default;
-$k-title-bar-font-size:           $k-huge-font-size !default;
-$k-title-bar-z-index:             10 !default;
-$k-title-bar-spacing:             $k-extrasmall-spacing !default;
-$k-title-bar-toggle-spacing:      $k-extrasmall-spacing !default;
+$k-title-bar-background:                                $k-primary-plus-3-color !default;
+$k-title-bar-border:                                    darkest($k-title-bar-background) !default;
+$k-title-bar-color:                                     $k-type-color !default;
+$k-title-bar-font-size:                                 $k-huge-font-size !default;
+$k-title-bar-z-index:                                   10 !default;
+$k-title-bar-spacing:                                   $k-extrasmall-spacing !default;
+$k-title-bar-toggle-spacing:                            $k-extrasmall-spacing !default;
 
-$k-title-bar-mobile-background:   $k-title-bar-background !default;
-$k-title-bar-mobile-border:       darkest($k-title-bar-mobile-background) !default;
+$k-title-bar-mobile-background:                         $k-title-bar-background !default;
+$k-title-bar-mobile-border:                             darkest($k-title-bar-mobile-background) !default;
 
 
 // Toolbar
 // ==========================================================================
 
-$k-toolbar-spacing:         $k-extrasmall-spacing !default;
-$k-toolbar-height:          $k-unit-size !default;
-$k-toolbar-background:      $k-primary-plus-3-color !default;
-$k-toolbar-border:          darkest($k-toolbar-background) !default;
-$k-toolbar-color:           $k-type-color !default;
-$k-toolbar-button-height:   $k-unit-size - $k-toolbar-spacing !default;
+$k-toolbar-spacing:                                     $k-extrasmall-spacing !default;
+$k-toolbar-height:                                      $k-unit-size !default;
+$k-toolbar-background:                                  $k-primary-plus-3-color !default;
+$k-toolbar-border:                                      darkest($k-toolbar-background) !default;
+$k-toolbar-color:                                       $k-type-color !default;
+$k-toolbar-button-height:                               $k-unit-size - $k-toolbar-spacing !default;
 
 
 // Sidebar
@@ -268,83 +268,83 @@ $k-toolbar-button-height:   $k-unit-size - $k-toolbar-spacing !default;
 // 1. Sidebar width on smaller screens
 // 2. Sidebar width when screen is "$k-desktop"
 
-$k-sidebar-left-small-width:    208px !default; // 1
-$k-sidebar-left-width:          272px !default; // 2
-$k-sidebar-left-querie-width:   $k-charlie !default; // 2
+$k-sidebar-left-small-width:                            208px !default; // 1
+$k-sidebar-left-width:                                  272px !default; // 2
+$k-sidebar-left-querie-width:                           $k-charlie !default; // 2
 
-$k-sidebar-right-small-width:   208px !default; // 1
-$k-sidebar-right-width:         272px !default; // 2
-$k-sidebar-right-querie-width:  $k-beta !default; // 2
+$k-sidebar-right-small-width:                           208px !default; // 1
+$k-sidebar-right-width:                                 272px !default; // 2
+$k-sidebar-right-querie-width:                          $k-beta !default; // 2
 
-$k-sidebar-background:          $k-primary-plus-2-color !default;
-$k-sidebar-border:              darkest($k-sidebar-background) !default;
-$k-sidebar-color:               $k-type-color !default;
+$k-sidebar-background:                                  $k-primary-plus-2-color !default;
+$k-sidebar-border:                                      darkest($k-sidebar-background) !default;
+$k-sidebar-color:                                       $k-type-color !default;
 
 
 // Sidebar item
 // ==========================================================================
 
-$k-sidebar-item-spacing:                $k-spacing !default;
-$k-sidebar-item-flex-min-height:        96px !default;
+$k-sidebar-item-spacing:                                $k-spacing !default;
+$k-sidebar-item-flex-min-height:                        96px !default;
 
-$k-sidebar-item-toggle-active-class:    $k-active-class !default;
-$k-sidebar-item-toggle-background:      white !default;
-$k-sidebar-item-toggle-border:          1px solid #ddd !default;
-$k-sidebar-item-toggle-size:            20px !default;
-$k-sidebar-item-toggle-border-radius:   $k-sidebar-item-toggle-size / 2 !default;
-$k-sidebar-item-toggle-font-size:       $k-tiny-font-size !default;
-$k-sidebar-item-toggle-line-height:     $k-sidebar-item-toggle-size - 2px !default;
+$k-sidebar-item-toggle-active-class:                    $k-active-class !default;
+$k-sidebar-item-toggle-background:                      white !default;
+$k-sidebar-item-toggle-border:                          1px solid #ddd !default;
+$k-sidebar-item-toggle-size:                            20px !default;
+$k-sidebar-item-toggle-border-radius:                   $k-sidebar-item-toggle-size / 2 !default;
+$k-sidebar-item-toggle-font-size:                       $k-tiny-font-size !default;
+$k-sidebar-item-toggle-line-height:                     $k-sidebar-item-toggle-size - 2px !default;
 
-$k-sidebar-item-header-font-size:       $k-small-font-size !default;
-$k-sidebar-item-header-line-height:     $k-large-line-height !default;
-$k-sidebar-item-header-font-weight:     $k-bold-font-weight !default;
-$k-sidebar-item-header-text-transform:  uppercase !default;
+$k-sidebar-item-header-font-size:                       $k-small-font-size !default;
+$k-sidebar-item-header-line-height:                     $k-large-line-height !default;
+$k-sidebar-item-header-font-weight:                     $k-bold-font-weight !default;
+$k-sidebar-item-header-text-transform:                  uppercase !default;
 
-$k-sidebar-item-small-spacing:          $k-extrasmall-spacing $k-sidebar-item-spacing !default;
-$k-sidebar-item-horizontal-spacing:     0 $k-sidebar-item-spacing !default;
+$k-sidebar-item-small-spacing:                          $k-extrasmall-spacing $k-sidebar-item-spacing !default;
+$k-sidebar-item-horizontal-spacing:                     0 $k-sidebar-item-spacing !default;
 
 
 // Navigation
 // ==========================================================================
 
-$k-navigation-spacing:            $k-extrasmall-spacing !default;
-$k-navigation-font-size:          $k-large-font-size !default;
-$k-navigation-line-height:        $k-small-line-height !default;
+$k-navigation-spacing:                                  $k-extrasmall-spacing !default;
+$k-navigation-font-size:                                $k-large-font-size !default;
+$k-navigation-line-height:                              $k-small-line-height !default;
 
-$k-navigation-background:         $k-primary-plus-1-color !default;
-$k-navigation-border:             darkest($k-navigation-background) !default;
-$k-navigation-pseudo-width:       5px !default;
-$k-navigation-color:              $k-type-color !default;
+$k-navigation-background:                               $k-primary-plus-1-color !default;
+$k-navigation-border:                                   darkest($k-navigation-background) !default;
+$k-navigation-pseudo-width:                             5px !default;
+$k-navigation-color:                                    $k-type-color !default;
 
-$k-navigation-hover-background:   lighter($k-navigation-background) !default;
-$k-navigation-hover-border:       $k-accent-color !default;
-$k-navigation-hover-color:        $k-type-color !default;
+$k-navigation-hover-background:                         lighter($k-navigation-background) !default;
+$k-navigation-hover-border:                             $k-accent-color !default;
+$k-navigation-hover-color:                              $k-type-color !default;
 
-$k-navigation-active-class:       $k-active-class !default;
-$k-navigation-active-background:  $k-navigation-background !default;
-$k-navigation-active-border:      $k-accent-color !default;
-$k-navigation-active-color:       $k-accent-color !default;
-$k-navigation-active-font-weight: $k-bold-font-weight !default;
+$k-navigation-active-class:                             $k-active-class !default;
+$k-navigation-active-background:                        $k-navigation-background !default;
+$k-navigation-active-border:                            $k-accent-color !default;
+$k-navigation-active-color:                             $k-accent-color !default;
+$k-navigation-active-font-weight:                       $k-bold-font-weight !default;
 
 
 // List
 // ==========================================================================
 
-$k-list-spacing:                  $k-tiny-spacing !default;
+$k-list-spacing:                                        $k-tiny-spacing !default;
 
-$k-list-link-line-height:         $k-line-height !default;
-$k-list-link-spacing:             $k-extrasmall-spacing $k-spacing !default;
-$k-list-link-color:               $k-sidebar-color !default;
+$k-list-link-line-height:                               $k-line-height !default;
+$k-list-link-spacing:                                   $k-extrasmall-spacing $k-spacing !default;
+$k-list-link-color:                                     $k-sidebar-color !default;
 
-$k-list-link-hover-background:    lighter($k-sidebar-background) !default;
-$k-list-link-hover-color:         $k-type-color !default;
+$k-list-link-hover-background:                          lighter($k-sidebar-background) !default;
+$k-list-link-hover-color:                               $k-type-color !default;
 
-$k-list-link-active-class:        $k-active-class !default;
-$k-list-link-active-background:   $k-sidebar-background !default;
-$k-list-link-active-color:        $k-type-color !default;
-$k-list-link-active-font-weight:  $k-bold-font-weight !default;
+$k-list-link-active-class:                              $k-active-class !default;
+$k-list-link-active-background:                         $k-sidebar-background !default;
+$k-list-link-active-color:                              $k-type-color !default;
+$k-list-link-active-font-weight:                        $k-bold-font-weight !default;
 
-$k-list-icon-spacing:             $k-extrasmall-spacing !default;
+$k-list-icon-spacing:                                   $k-extrasmall-spacing !default;
 
 
 // Breadcrumbs
@@ -356,18 +356,18 @@ $k-list-icon-spacing:             $k-extrasmall-spacing !default;
 // 4. The content of the divider
 // 5. The width of dividers between breadcrumb items
 
-$k-breadcrumb-size:               $k-unit-size !default; // 1
-$k-breadcrumb-query:              $k-charlie !default; // 2
-$k-breadcrumb-missing-content:    "…" !default; // 3
-$k-breadcrumb-divider-content:    "»" !default; // 4
-$k-breadcrumb-divider-size:       round($k-breadcrumb-size / 2) !default; // 5
+$k-breadcrumb-size:                                     $k-unit-size !default; // 1
+$k-breadcrumb-query:                                    $k-charlie !default; // 2
+$k-breadcrumb-missing-content:                          "…" !default; // 3
+$k-breadcrumb-divider-content:                          "»" !default; // 4
+$k-breadcrumb-divider-size:                             round($k-breadcrumb-size / 2) !default; // 5
 
-$k-breadcrumb-background:         $k-primary-plus-4-color !default;
-$k-breadcrumb-border:             darkest($k-breadcrumb-background) !default;
-$k-breadcrumb-color:              $k-type-color !default;
-$k-breadcrumb-active-font-weight: $k-bold-font-weight !default;
+$k-breadcrumb-background:                               $k-primary-plus-4-color !default;
+$k-breadcrumb-border:                                   darkest($k-breadcrumb-background) !default;
+$k-breadcrumb-color:                                    $k-type-color !default;
+$k-breadcrumb-active-font-weight:                       $k-bold-font-weight !default;
 
-$k-breadcrumb-hover-background:   darker($k-breadcrumb-background) !default;
+$k-breadcrumb-hover-background:                         darker($k-breadcrumb-background) !default;
 
 
 // Scopebar
@@ -375,38 +375,38 @@ $k-breadcrumb-hover-background:   darker($k-breadcrumb-background) !default;
 //
 // 1. Height of the scopebar
 
-$k-scopebar-size:                           $k-unit-size !default; // 1
+$k-scopebar-size:                                       $k-unit-size !default; // 1
 
-$k-scopebar-background:                     $k-primary-plus-4-color !default;
-$k-scopebar-border:                         darkest($k-scopebar-background) !default;
-$k-scopebar-color:                          $k-type-color !default;
+$k-scopebar-background:                                 $k-primary-plus-4-color !default;
+$k-scopebar-border:                                     darkest($k-scopebar-background) !default;
+$k-scopebar-color:                                      $k-type-color !default;
 
-$k-scopebar-search-background:              $k-form-color !default;
-$k-scopebar-search-color:                   $k-type-color !default;
+$k-scopebar-search-background:                          $k-form-color !default;
+$k-scopebar-search-color:                               $k-type-color !default;
 
-$k-scopebar-filter-font-size:               $k-font-size !default;
+$k-scopebar-filter-font-size:                           $k-font-size !default;
 
-$k-scopebar-search-delta-size:              $k-font-size * 17 !default;
-$k-scopebar-search-echo-size:               $k-font-size * 22 !default;
-$k-scopebar-search-visible-class:           $k-visible-class !default;
-$k-scopebar-search-button-visible-class:    $k-visible-class !default;
+$k-scopebar-search-delta-size:                          $k-font-size * 17 !default;
+$k-scopebar-search-echo-size:                           $k-font-size * 22 !default;
+$k-scopebar-search-visible-class:                       $k-visible-class !default;
+$k-scopebar-search-button-visible-class:                $k-visible-class !default;
 
-$k-scopebar-submit-button-spacing:          $k-font-size * 2 !default;
-$k-scopebar-submit-button-size:             $k-font-size !default;
+$k-scopebar-submit-button-spacing:                      $k-font-size * 2 !default;
+$k-scopebar-submit-button-size:                         $k-font-size !default;
 
-$k-scopebar-empty-button-spacing:           round($k-font-size * 1.5) !default;
-$k-scopebar-empty-button-size:              round($k-font-size * 0.75) !default;
+$k-scopebar-empty-button-spacing:                       round($k-font-size * 1.5) !default;
+$k-scopebar-empty-button-size:                          round($k-font-size * 0.75) !default;
 
-$k-scopebar-filter-label-size:              round($k-font-size * 1.2) !default;
-$k-scopebar-filter-label-background:        $k-error-color !default;
-$k-scopebar-filter-label-color:             $k-error-type-color !default;
-$k-scopebar-filter-label-font-size:         $k-small-font-size !default;
+$k-scopebar-filter-label-size:                          round($k-font-size * 1.2) !default;
+$k-scopebar-filter-label-background:                    $k-error-color !default;
+$k-scopebar-filter-label-color:                         $k-error-type-color !default;
+$k-scopebar-filter-label-font-size:                     $k-small-font-size !default;
 
-$k-scopebar-button-spacing:                 $k-tiny-spacing !default;
-$k-scopebar-button-active-class:            $k-active-class !default;
-$k-scopebar-button-hover-background:        darker($k-primary-plus-6-color) !default;
+$k-scopebar-button-spacing:                             $k-tiny-spacing !default;
+$k-scopebar-button-active-class:                        $k-active-class !default;
+$k-scopebar-button-hover-background:                    darker($k-primary-plus-6-color) !default;
 
-$k-scopebar-dropdown-active-class:          $k-active-class !default;
+$k-scopebar-dropdown-active-class:                      $k-active-class !default;
 
 
 // Table
@@ -415,97 +415,97 @@ $k-scopebar-dropdown-active-class:          $k-active-class !default;
 // 1. Height of the table cells
 // 2. Table cell padding
 
-$k-table-background:                      $k-primary-plus-6-color !default;
+$k-table-background:                                    $k-primary-plus-6-color !default;
 
-$k-table-header-background:               $k-primary-plus-5-color !default;
-$k-table-header-border:                   darkest($k-table-header-background) !default;
-$k-table-header-color:                    $k-type-color !default;
-$k-table-header-hover-background:         $k-primary-plus-4-color !default;
-$k-table-header-font-weight:              $k-normal-font-weight !default;
+$k-table-header-background:                             $k-primary-plus-5-color !default;
+$k-table-header-border:                                 darkest($k-table-header-background) !default;
+$k-table-header-color:                                  $k-type-color !default;
+$k-table-header-hover-background:                       $k-primary-plus-4-color !default;
+$k-table-header-font-weight:                            $k-normal-font-weight !default;
 
-$k-table-cell-size:                       $k-unit-size !default; // 1
-$k-table-cell-vertical-spacing:           $k-base-vertical-spacing !default; // 2
-$k-table-cell-horizontal-spacing:         $k-extrasmall-horizontal-spacing !default; // 2
-$k-table-cell-align:                      left !default; // 2
-$k-table-cell-rtl-align:                  right !default; // 2
-$k-table-cell-vertical-align:             middle !default; // 2
-$k-table-cell-icon-size:                  $k-icon-size !default;
-$k-table-cell-even-background:            $k-primary-plus-6-color !default;
-$k-table-cell-odd-background:             $k-primary-plus-6-color !default;
-$k-table-cell-border:                     darker($k-table-cell-odd-background) !default;
-$k-table-cell-color:                      $k-type-color !default;
+$k-table-cell-size:                                     $k-unit-size !default; // 1
+$k-table-cell-vertical-spacing:                         $k-base-vertical-spacing !default; // 2
+$k-table-cell-horizontal-spacing:                       $k-extrasmall-horizontal-spacing !default; // 2
+$k-table-cell-align:                                    left !default; // 2
+$k-table-cell-rtl-align:                                right !default; // 2
+$k-table-cell-vertical-align:                           middle !default; // 2
+$k-table-cell-icon-size:                                $k-icon-size !default;
+$k-table-cell-even-background:                          $k-primary-plus-6-color !default;
+$k-table-cell-odd-background:                           $k-primary-plus-6-color !default;
+$k-table-cell-border:                                   darker($k-table-cell-odd-background) !default;
+$k-table-cell-color:                                    $k-type-color !default;
 
-$k-table-cell-even-hover-background:      $k-primary-plus-5-color !default;
-$k-table-cell-odd-hover-background:       $k-primary-plus-5-color !default;
+$k-table-cell-even-hover-background:                    $k-primary-plus-5-color !default;
+$k-table-cell-odd-hover-background:                     $k-primary-plus-5-color !default;
 
-$k-table-cell-selected-background:        $k-accent-color !default;
-$k-table-cell-selected-color:             $k-accent-type-color !default;
+$k-table-cell-selected-background:                      $k-accent-color !default;
+$k-table-cell-selected-color:                           $k-accent-type-color !default;
 
-$k-table-cell-accent-hover-background:    darken($k-accent-color,10%) !default;
+$k-table-cell-accent-hover-background:                  darken($k-accent-color,10%) !default;
 
-$k-table-cell-small-font-size:            $k-small-font-size !default;
-$k-table-cell-small-line-height:          $k-small-line-height !default;
+$k-table-cell-small-font-size:                          $k-small-font-size !default;
+$k-table-cell-small-line-height:                        $k-small-line-height !default;
 
-$k-table-row-active-class:                $k-active-class !default;
+$k-table-row-active-class:                              $k-active-class !default;
 
-$k-table-row-selected-class:              $k-selected-class !default;
-$k-table-row-positioner-selected-class:   $k-selected-class !default;
-$k-table-row-positioner-size:             16px !default;
-$k-table-row-positioner-color:            $k-primary-min-2-color !default;
+$k-table-row-selected-class:                            $k-selected-class !default;
+$k-table-row-positioner-selected-class:                 $k-selected-class !default;
+$k-table-row-positioner-size:                           16px !default;
+$k-table-row-positioner-color:                          $k-primary-min-2-color !default;
 
-$k-table-item-pending-color:              $k-warning-color !default;
-$k-table-item-expired-color:              $k-neutral-color !default;
-$k-table-item-unpublished-color:          $k-error-color !default;
-$k-table-item-published-color:            $k-success-color !default;
+$k-table-item-pending-color:                            $k-warning-color !default;
+$k-table-item-expired-color:                            $k-neutral-color !default;
+$k-table-item-unpublished-color:                        $k-error-color !default;
+$k-table-item-published-color:                          $k-success-color !default;
 
-$k-table-sub-header-spacing:              0.7em $k-table-cell-horizontal-spacing 0.5em !default;
-$k-table-sub-header-font-size:            $k-small-font-size !default;
-$k-table-sub-header-line-height:          $k-small-line-height !default;
-$k-table-sub-header-font-weight:          $k-bold-font-weight !default;
-$k-table-sub-header-background:           $k-table-header-background !default;
-$k-table-sub-header-border:               $k-table-cell-border !default;
+$k-table-sub-header-spacing:                            0.7em $k-table-cell-horizontal-spacing 0.5em !default;
+$k-table-sub-header-font-size:                          $k-small-font-size !default;
+$k-table-sub-header-line-height:                        $k-small-line-height !default;
+$k-table-sub-header-font-weight:                        $k-bold-font-weight !default;
+$k-table-sub-header-background:                         $k-table-header-background !default;
+$k-table-sub-header-border:                             $k-table-cell-border !default;
 
-$k-table-item-level-size:                 6px !default;
-$k-table-item-level-border:               1px solid #bbb !default;
-$k-table-item-level-spacer:               24px !default;
-$k-table-item-level-icon-size:            $k-icon-size !default;
-$k-table-item-level-icon-spacing:         $k-tiny-spacing !default;
+$k-table-item-level-size:                               6px !default;
+$k-table-item-level-border:                             1px solid #bbb !default;
+$k-table-item-level-spacer:                             24px !default;
+$k-table-item-level-icon-size:                          $k-icon-size !default;
+$k-table-item-level-icon-spacing:                       $k-tiny-spacing !default;
 
-$k-table-sorting-spacing:                 0.66em !default;
-$k-table-sorting-width:                   6px !default;
-$k-table-sorting-height:                  3px !default;
-$k-table-sorting-low-opacity:             $k-low-opacity !default;
-$k-table-sorting-medium-opacity:          $k-medium-opacity !default;
-$k-table-sorting-high-opacity:            $k-high-opacity !default;
+$k-table-sorting-spacing:                               0.66em !default;
+$k-table-sorting-width:                                 6px !default;
+$k-table-sorting-height:                                3px !default;
+$k-table-sorting-low-opacity:                           $k-low-opacity !default;
+$k-table-sorting-medium-opacity:                        $k-medium-opacity !default;
+$k-table-sorting-high-opacity:                          $k-high-opacity !default;
 
 
 // Table pagination
 // ==========================================================================
 
-$k-table-pagination-height:               ($k-line-height + ($k-base-vertical-spacing * 2)) !default;
-$k-table-pagination-spacing:              $k-extrasmall-spacing !default;
-$k-table-pagination-background:           $k-table-header-background !default;
-$k-table-pagination-border:               $k-table-header-border !default;
+$k-table-pagination-height:                             ($k-line-height + ($k-base-vertical-spacing * 2)) !default;
+$k-table-pagination-spacing:                            $k-extrasmall-spacing !default;
+$k-table-pagination-background:                         $k-table-header-background !default;
+$k-table-pagination-border:                             $k-table-header-border !default;
 
 
 // Component layout
 // ==========================================================================
 
-$k-component-background: $k-primary-plus-5-color !default;
+$k-component-background:                                $k-primary-plus-5-color !default;
 
 
 // Form block
 // ==========================================================================
 
-$k-form-block-background:         $k-primary-plus-6-color !default;
-$k-form-block-border:             darkest($k-form-block-background) !default;
+$k-form-block-background:                               $k-primary-plus-6-color !default;
+$k-form-block-border:                                   darkest($k-form-block-background) !default;
 
-$k-form-block-header-spacing:     $k-extrasmall-spacing $k-extrasmall-spacing ($k-extrasmall-spacing - 1px) !default;
-$k-form-block-header-background:  $k-primary-plus-4-color !default;
-$k-form-block-header-border:      darkest($k-form-block-header-background) !default;
-$k-form-block-header-font-weight: $k-bold-font-weight !default;
+$k-form-block-header-spacing:                           $k-extrasmall-spacing $k-extrasmall-spacing ($k-extrasmall-spacing - 1px) !default;
+$k-form-block-header-background:                        $k-primary-plus-4-color !default;
+$k-form-block-header-border:                            darkest($k-form-block-header-background) !default;
+$k-form-block-header-font-weight:                       $k-bold-font-weight !default;
 
-$k-form-block-content-spacing:    ($k-extrasmall-spacing - 1px) $k-extrasmall-spacing !default;
+$k-form-block-content-spacing:                          ($k-extrasmall-spacing - 1px) $k-extrasmall-spacing !default;
 
 
 // Offcanvas container
@@ -516,261 +516,259 @@ $k-form-block-content-spacing:    ($k-extrasmall-spacing - 1px) $k-extrasmall-sp
 // 3. The information bar width, best to use a number dividable by 5
 // 4. The height is automatically calculated
 
-$k-off-canvas-overlay-background:           black !default;
-$k-off-canvas-overlay-opacity:              0.75 !default;
-$k-off-canvas-overlay-top-opacity:          $k-off-canvas-overlay-opacity !default;
-$k-off-canvas-overlay-left-opacity:         $k-off-canvas-overlay-opacity !default;
-$k-off-canvas-overlay-right-opacity:        $k-off-canvas-overlay-opacity !default;
-$k-off-canvas-overlay-subcontent-opacity:   $k-off-canvas-overlay-opacity !default;
-$k-toggle-button-font-size:                 $k-font-size !default;
-$k-toggle-button-size:                      32px !default;
-$k-toggle-button-background:                $k-accent-color !default;
-$k-toggle-button-color:                     white !default;
-$k-toggle-button-border-radius:             3px !default;
-$k-hamburger-bar-width:                     15px !default; // 1
-$k-hamburger-bar-height:                    round($k-hamburger-bar-width / 5) !default; // 2
-$k-info-bar-width:                          5px !default; // 3
-$k-info-bar-height:                         $k-info-bar-width * 2 !default; // 4
+$k-off-canvas-overlay-background:                       black !default;
+$k-off-canvas-overlay-opacity:                          0.75 !default;
+$k-off-canvas-overlay-top-opacity:                      $k-off-canvas-overlay-opacity !default;
+$k-off-canvas-overlay-left-opacity:                     $k-off-canvas-overlay-opacity !default;
+$k-off-canvas-overlay-right-opacity:                    $k-off-canvas-overlay-opacity !default;
+$k-off-canvas-overlay-subcontent-opacity:               $k-off-canvas-overlay-opacity !default;
+$k-toggle-button-font-size:                             $k-font-size !default;
+$k-toggle-button-size:                                  32px !default;
+$k-toggle-button-background:                            $k-accent-color !default;
+$k-toggle-button-color:                                 white !default;
+$k-toggle-button-border-radius:                         3px !default;
+$k-hamburger-bar-width:                                 15px !default; // 1
+$k-hamburger-bar-height:                                round($k-hamburger-bar-width / 5) !default; // 2
+$k-info-bar-width:                                      5px !default; // 3
+$k-info-bar-height:                                     $k-info-bar-width * 2 !default; // 4
 
 
 // Form styles
 // ==========================================================================
 
-$k-form-option-size:          16px !default;
-$k-form-option-background:    white !default;
-$k-form-option-border-color:  $k-primary-min-3-color !default;
-$k-form-option-border-width:  1px !default;
-$k-form-option-border:        $k-form-option-border-width solid $k-form-option-border-color !default;
-$k-form-option-color:         $k-accent-color !default;
-$k-form-option-box-shadow:    inset 0 1px 2px rgba(0, 0, 0, 0.15) !default;
+$k-form-option-size:                                    16px !default;
+$k-form-option-background:                              white !default;
+$k-form-option-border-color:                            $k-primary-min-3-color !default;
+$k-form-option-border-width:                            1px !default;
+$k-form-option-border:                                  $k-form-option-border-width solid $k-form-option-border-color !default;
+$k-form-option-color:                                   $k-accent-color !default;
+$k-form-option-box-shadow:                              inset 0 1px 2px rgba(0, 0, 0, 0.15) !default;
 
 
 // Styled file input
 // ==========================================================================
 
-$k-styled-file-input-fallback-font-size:    $k-font-size !default;
-$k-styled-file-input-fallback-line-height:  $k-line-height !default;
-$k-styled-file-input-fallback-color:        $k-accent-color !default;
+$k-styled-file-input-fallback-font-size:                $k-font-size !default;
+$k-styled-file-input-fallback-line-height:              $k-line-height !default;
+$k-styled-file-input-fallback-color:                    $k-accent-color !default;
 
-$k-styled-file-input-font-weight:           $k-normal-font-weight !default;
-$k-styled-file-input-cursor:                pointer !default;
-$k-styled-file-input-background:            $k-accent-color !default;
-$k-styled-file-input-color:                 $k-accent-type-color !default;
-$k-styled-file-input-border-radius:         $k-large-border-radius !default;
-$k-styled-file-input-font-size:             $k-large-font-size !default;
-$k-styled-file-input-line-height:           $k-large-line-height !default;
-$k-styled-file-input-spacing:               $k-large-vertical-spacing $k-large-horizontal-spacing !default;
+$k-styled-file-input-font-weight:                       $k-normal-font-weight !default;
+$k-styled-file-input-cursor:                            pointer !default;
+$k-styled-file-input-background:                        $k-accent-color !default;
+$k-styled-file-input-color:                             $k-accent-type-color !default;
+$k-styled-file-input-border-radius:                     $k-large-border-radius !default;
+$k-styled-file-input-font-size:                         $k-large-font-size !default;
+$k-styled-file-input-line-height:                       $k-large-line-height !default;
+$k-styled-file-input-spacing:                           $k-large-vertical-spacing $k-large-horizontal-spacing !default;
 
-$k-styled-file-focus-class:                 $k-focus-class !default;
-$k-styled-file-drop-focus-class:            $k-drop-focus-class !default;
+$k-styled-file-focus-class:                             $k-focus-class !default;
+$k-styled-file-drop-focus-class:                        $k-drop-focus-class !default;
 
 
 // Empty state
 // ==========================================================================
 
-$k-empty-state-background:    white !default;
-$k-empty-state-color:         $k-type-color !default;
-$k-empty-state-spacing:       $k-spacing !default;
-$k-empty-state-font-size:     $k-large-font-size !default;
-$k-empty-state-line-height:   $k-large-line-height !default;
-$k-empty-state-align:         center !default;
+$k-empty-state-background:                              white !default;
+$k-empty-state-color:                                   $k-type-color !default;
+$k-empty-state-spacing:                                 $k-spacing !default;
+$k-empty-state-font-size:                               $k-large-font-size !default;
+$k-empty-state-line-height:                             $k-large-line-height !default;
+$k-empty-state-align:                                   center !default;
 
 
 // Tabs
 // ==========================================================================
 
-$k-tabs-wrapper-height:                   $k-large-spacing * 2 !default;
+$k-tabs-wrapper-height:                                 $k-large-spacing * 2 !default;
 
-$k-tabs-border-width:                     1px !default;
-$k-tabs-border-color:                     $k-primary-min-1-color !default;
-$k-tabs-border:                           $k-tabs-border-width solid $k-tabs-border-color !default;
-$k-tabs-spacing:                          (($k-large-spacing / 2) - 1px) !default;
+$k-tabs-border-width:                                   1px !default;
+$k-tabs-border-color:                                   $k-primary-min-1-color !default;
+$k-tabs-border:                                         $k-tabs-border-width solid $k-tabs-border-color !default;
+$k-tabs-spacing:                                        (($k-large-spacing / 2) - 1px) !default;
 
-$k-tabs-item-spacing:                     2px !default;
-$k-tabs-item-active-class:                $k-active-class !default;
+$k-tabs-item-spacing:                                   2px !default;
+$k-tabs-item-active-class:                              $k-active-class !default;
 
-$k-tabs-link-border:                      1px solid transparent !default;
-$k-tabs-link-font-size:                   $k-font-size !default;
-$k-tabs-link-line-height:                 $k-line-height !default;
-$k-tabs-link-border-radius:               $k-border-radius $k-border-radius 0 0 !default;
+$k-tabs-link-border:                                    1px solid transparent !default;
+$k-tabs-link-font-size:                                 $k-font-size !default;
+$k-tabs-link-line-height:                               $k-line-height !default;
+$k-tabs-link-border-radius:                             $k-border-radius $k-border-radius 0 0 !default;
 
-$k-tabs-link-disabled-cursor:             $k-disabled-cursor !default;
+$k-tabs-link-disabled-cursor:                           $k-disabled-cursor !default;
 
-$k-tabs-link-spacing:                     $k-extrasmall-spacing $k-spacing ($k-extrasmall-spacing - 2px) !default;
-$k-tabs-link-hover-background:            $k-primary-plus-2-color !default;
-$k-tabs-link-hover-border:                $k-primary-min-1-color !default;
+$k-tabs-link-spacing:                                   $k-extrasmall-spacing $k-spacing ($k-extrasmall-spacing - 2px) !default;
+$k-tabs-link-hover-background:                          $k-primary-plus-2-color !default;
+$k-tabs-link-hover-border:                              $k-primary-min-1-color !default;
 
-$k-tabs-link-disabled-class:              $k-disabled-class !default;
-$k-tabs-link-disabled-color:              $k-primary-min-6-color !default;
-$k-tabs-link-disabled-hover-color:        $k-tabs-link-disabled-color !default;
+$k-tabs-link-disabled-class:                            $k-disabled-class !default;
+$k-tabs-link-disabled-color:                            $k-primary-min-6-color !default;
+$k-tabs-link-disabled-hover-color:                      $k-tabs-link-disabled-color !default;
 
-$k-tabs-link-active-class:                $k-active-class !default;
-$k-tabs-link-active-hover-background:     white !default;
-$k-tabs-link-active-hover-color:          $k-primary-min-7-color !default;
-$k-tabs-link-active-hover-border:         $k-primary-min-1-color !default;
+$k-tabs-link-active-class:                              $k-active-class !default;
+$k-tabs-link-active-hover-background:                   white !default;
+$k-tabs-link-active-hover-color:                        $k-primary-min-7-color !default;
+$k-tabs-link-active-hover-border:                       $k-primary-min-1-color !default;
 
-$k-tabs-overflow-button-width:            32px !default;
-$k-tabs-overflow-button-low-opacity:      $k-low-opacity !default;
-$k-tabs-overflow-button-high-opacity:     $k-high-opacity !default;
-$k-tabs-overflow-button-border:           $k-tabs-border !default;
+$k-tabs-overflow-button-width:                          32px !default;
+$k-tabs-overflow-button-low-opacity:                    $k-low-opacity !default;
+$k-tabs-overflow-button-high-opacity:                   $k-high-opacity !default;
+$k-tabs-overflow-button-border:                         $k-tabs-border !default;
 
-$k-tabs-scroller-height:                  $k-tabs-wrapper-height * 1.5 !default;
-$k-tabs-scroller-spacing:                 ($k-large-spacing / 2) ($k-spacing / 2) 0 !default;
-$k-tabs-scroller-charlie-spacing:         $k-spacing !default;
+$k-tabs-scroller-height:                                $k-tabs-wrapper-height * 1.5 !default;
+$k-tabs-scroller-spacing:                               ($k-large-spacing / 2) ($k-spacing / 2) 0 !default;
+$k-tabs-scroller-charlie-spacing:                       $k-spacing !default;
 
-$k-tabs-scroller-item-active-background:  $k-component-background !default;
-$k-tabs-scroller-item-active-color:       $k-type-color !default;
+$k-tabs-scroller-item-active-background:                $k-component-background !default;
+$k-tabs-scroller-item-active-color:                     $k-type-color !default;
 
-$k-tabs-content-tab-active-class:         $k-active-class !default
-$k-tabs-content-tab-spacing:              $k-small-spacing !default
+$k-tabs-content-tab-active-class:                       $k-active-class !default
+$k-tabs-content-tab-spacing:                            $k-small-spacing !default
 
 
 // Buttons
 // ==========================================================================
 
-$k-button-font-weight:               $k-normal-font-weight !default;
-$k-button-spacer:                    $k-tiny-spacing !default;
-$k-button-active-class:              $k-active-class !default;
-$k-button-disabled-class:            $k-disabled-class !default;
-$k-button-open-class:                $k-open-class !default;
-$k-button-focus-class:               $k-focus-class !default;
-$k-button-border-radius:             $k-border-radius !default;
-$k-button-font-size:                 $k-font-size !default;
-$k-button-line-height:               $k-line-height - 2px !default;
-$k-button-vertical-spacing:          $k-base-vertical-spacing !default;
-$k-button-horizontal-spacing:        $k-base-horizontal-spacing !default;
+$k-button-font-weight:                                  $k-normal-font-weight !default;
+$k-button-spacer:                                       $k-tiny-spacing !default;
+$k-button-active-class:                                 $k-active-class !default;
+$k-button-disabled-class:                               $k-disabled-class !default;
+$k-button-open-class:                                   $k-open-class !default;
+$k-button-focus-class:                                  $k-focus-class !default;
+$k-button-border-radius:                                $k-border-radius !default;
+$k-button-font-size:                                    $k-font-size !default;
+$k-button-line-height:                                  $k-line-height - 2px !default;
+$k-button-vertical-spacing:                             $k-base-vertical-spacing !default;
+$k-button-horizontal-spacing:                           $k-base-horizontal-spacing !default;
 
-$k-button-default-color:             $k-type-color !default;
-$k-button-default-background:        $k-button-color !default;
-$k-button-default-border:            $k-primary-min-2-color !default;
+$k-button-default-color:                                $k-type-color !default;
+$k-button-default-background:                           $k-button-color !default;
+$k-button-default-border:                               $k-primary-min-2-color !default;
 
-$k-button-primary-color:             $k-accent-type-color !default;
-$k-button-primary-background:        $k-accent-color !default;
-$k-button-primary-border:            darken($k-button-primary-background, 5%) !default;
+$k-button-primary-color:                                $k-accent-type-color !default;
+$k-button-primary-background:                           $k-accent-color !default;
+$k-button-primary-border:                               darken($k-button-primary-background, 5%) !default;
 
-$k-button-success-color:             $k-success-type-color !default;
-$k-button-success-background:        $k-success-color !default
-$k-button-success-border:            darken($k-button-success-background, 5%) !default;
+$k-button-success-color:                                $k-success-type-color !default;
+$k-button-success-background:                           $k-success-color !default
+$k-button-success-border:                               darken($k-button-success-background, 5%) !default;
 
-$k-button-info-color:                $k-neutral-type-color !default;
-$k-button-info-background:           $k-neutral-color !default;
-$k-button-info-border:               darken($k-button-info-background, 5%) !default;
+$k-button-info-color:                                   $k-neutral-type-color !default;
+$k-button-info-background:                              $k-neutral-color !default;
+$k-button-info-border:                                  darken($k-button-info-background, 5%) !default;
 
-$k-button-warning-color:             $k-warning-type-color !default;
-$k-button-warning-background:        $k-warning-color !default;
-$k-button-warning-border:            darken($k-button-warning-background, 5%) !default;
+$k-button-warning-color:                                $k-warning-type-color !default;
+$k-button-warning-background:                           $k-warning-color !default;
+$k-button-warning-border:                               darken($k-button-warning-background, 5%) !default;
 
-$k-button-danger-color:              $k-error-type-color !default;
-$k-button-danger-background:         $k-error-color !default;
-$k-button-danger-border:             darken($k-button-danger-background, 5%) !default;
+$k-button-danger-color:                                 $k-error-type-color !default;
+$k-button-danger-background:                            $k-error-color !default;
+$k-button-danger-border:                                darken($k-button-danger-background, 5%) !default;
 
-$k-button-link-disabled-color:       $k-primary-min-6-color !default;
+$k-button-link-disabled-color:                          $k-primary-min-6-color !default;
 
-$k-button-tiny-border-radius:        $k-small-border-radius !default;
-$k-button-tiny-font-size:            $k-tiny-font-size !default;
-$k-button-tiny-line-height:          $k-tiny-line-height !default;
-$k-button-tiny-vertical-spacing:     $k-tiny-vertical-spacing + 1px !default;
-$k-button-tiny-horizontal-spacing:   $k-tiny-horizontal-spacing !default;
+$k-button-tiny-border-radius:                           $k-small-border-radius !default;
+$k-button-tiny-font-size:                               $k-tiny-font-size !default;
+$k-button-tiny-line-height:                             $k-tiny-line-height !default;
+$k-button-tiny-vertical-spacing:                        $k-tiny-vertical-spacing + 1px !default;
+$k-button-tiny-horizontal-spacing:                      $k-tiny-horizontal-spacing !default;
 
-$k-button-small-border-radius:       $k-small-border-radius !default;
-$k-button-small-font-size:           $k-small-font-size !default;
-$k-button-small-line-height:         $k-small-line-height !default;
-$k-button-small-vertical-spacing:    $k-extrasmall-vertical-spacing + 1px !default;
-$k-button-small-horizontal-spacing:  $k-extrasmall-horizontal-spacing !default;
+$k-button-small-border-radius:                          $k-small-border-radius !default;
+$k-button-small-font-size:                              $k-small-font-size !default;
+$k-button-small-line-height:                            $k-small-line-height !default;
+$k-button-small-vertical-spacing:                       $k-extrasmall-vertical-spacing + 1px !default;
+$k-button-small-horizontal-spacing:                     $k-extrasmall-horizontal-spacing !default;
 
-$k-button-large-border-radius:       $k-large-border-radius !default;
-$k-button-large-font-size:           $k-large-font-size !default;
-$k-button-large-line-height:         $k-large-line-height - 2px !default;
-$k-button-large-vertical-spacing:    $k-large-vertical-spacing !default;
-$k-button-large-horizontal-spacing:  $k-large-horizontal-spacing !default;
+$k-button-large-border-radius:                          $k-large-border-radius !default;
+$k-button-large-font-size:                              $k-large-font-size !default;
+$k-button-large-line-height:                            $k-large-line-height - 2px !default;
+$k-button-large-vertical-spacing:                       $k-large-vertical-spacing !default;
+$k-button-large-horizontal-spacing:                     $k-large-horizontal-spacing !default;
 
 
 // Heading
 // ==========================================================================
 
-$k-heading-font-size:     $k-huge-font-size !default;
-$k-heading-line-height:   $k-huge-line-height !default;
+$k-heading-font-size:                                   $k-huge-font-size !default;
+$k-heading-line-height:                                 $k-huge-line-height !default;
 
 
 // Tooltips
 // ==========================================================================
 
-$k-tooltip-max-width:       264px !default;
-$k-tooltip-color:           white !default;
-$k-tooltip-background:      black !default;
-$k-tooltip-spacing:         $k-tiny-spacing $k-extrasmall-spacing !default;
-$k-tooltip-align:           center !default;
-$k-tooltip-border-radius:   $k-border-radius !default;
-$k-tooltip-font-size:       $k-small-font-size !default;
-$k-tooltip-opacity:         0.9 !default;
-$k-tooltip-arrow-width:     5px !default;
-$k-tooltip-arrow-color:     $k-tooltip-background !default;
+$k-tooltip-max-width:                                   264px !default;
+$k-tooltip-color:                                       white !default;
+$k-tooltip-background:                                  black !default;
+$k-tooltip-spacing:                                     $k-tiny-spacing $k-extrasmall-spacing !default;
+$k-tooltip-align:                                       center !default;
+$k-tooltip-border-radius:                               $k-border-radius !default;
+$k-tooltip-font-size:                                   $k-small-font-size !default;
+$k-tooltip-opacity:                                     0.9 !default;
+$k-tooltip-arrow-width:                                 5px !default;
+$k-tooltip-arrow-color:                                 $k-tooltip-background !default;
 
 
 // Wells
 // ==========================================================================
 
-$k-well-spacing:              $k-small-spacing !default;
-$k-well-background:           $k-primary-plus-4-color !default;
-$k-well-border:               darken($k-well-background, 7%) !default;
-$k-well-border-radius:        $k-border-radius !default;
-$k-well-box-shadow:           inset 0 1px 1px rgba(0, 0, 0, 0.05) !default;
+$k-well-spacing:                                        $k-small-spacing !default;
+$k-well-background:                                     $k-primary-plus-4-color !default;
+$k-well-border:                                         darken($k-well-background, 7%) !default;
+$k-well-border-radius:                                  $k-border-radius !default;
+$k-well-box-shadow:                                     inset 0 1px 1px rgba(0, 0, 0, 0.05) !default;
 
-$k-well-paragraph-spacing:    $k-well-spacing !default;
+$k-well-paragraph-spacing:                              $k-well-spacing !default;
 
-$k-well-content-spacing:      $k-well-spacing !default;
-$k-well-content-background:   white !default;
-$k-well-content-border:       1px solid $k-well-border !default;
+$k-well-content-spacing:                                $k-well-spacing !default;
+$k-well-content-background:                             white !default;
+$k-well-content-border:                                 1px solid $k-well-border !default;
 
 
 // Alerts
 // ==========================================================================
 
-$k-alert-spacing:                 $k-small-spacing !default;
-$k-alert-border-radius:           $k-border-radius !default;
+$k-alert-spacing:                                       $k-small-spacing !default;
+$k-alert-border-radius:                                 $k-border-radius !default;
 
-$k-alert-success-background:      $k-success-color !default;
-$k-alert-success-color:           $k-success-type-color !default;
+$k-alert-success-background:                            $k-success-color !default;
+$k-alert-success-color:                                 $k-success-type-color !default;
 
-$k-alert-info-background:         $k-neutral-color !default;
-$k-alert-info-color:              $k-neutral-type-color !default;
+$k-alert-info-background:                               $k-neutral-color !default;
+$k-alert-info-color:                                    $k-neutral-type-color !default;
 
-$k-alert-warning-background:      $k-warning-color !default;
-$k-alert-warning-color:           $k-warning-type-color !default;
+$k-alert-warning-background:                            $k-warning-color !default;
+$k-alert-warning-color:                                 $k-warning-type-color !default;
 
-$k-alert-danger-background:       $k-error-color !default;
-$k-alert-danger-color:            $k-error-type-color !default;
+$k-alert-danger-background:                             $k-error-color !default;
+$k-alert-danger-color:                                  $k-error-type-color !default;
 
-$k-alert-overflow-max-height:     200px !default;
-$k-alert-overflow-max-height-vh:  25vh !default;
+$k-alert-overflow-max-height:                           200px !default;
+$k-alert-overflow-max-height-vh:                        25vh !default;
 
-$k-alert-close-spacing:           $k-tiny-spacing / 2 !default;
-$k-alert-close-size:              $k-unit-size !default;
+$k-alert-close-spacing:                                 $k-tiny-spacing / 2 !default;
+$k-alert-close-size:                                    $k-unit-size !default;
 
 
 // Optionlist
 // ==========================================================================
 
-$k-optionlist-border:                   1px solid $k-input-border !default;
-$k-optionlist-border-radius:            $k-input-border-radius !default;
-$k-optionlist-background:               $k-input-background !default;
-$k-optionlist-spacing:                  1px !default;
+$k-optionlist-border:                                   1px solid $k-input-border !default;
+$k-optionlist-border-radius:                            $k-input-border-radius !default;
+$k-optionlist-background:                               $k-input-background !default;
+$k-optionlist-spacing:                                  1px !default;
 
-$k-optionlist-label-spacing:            floor(($k-input-base-height - $k-font-size - 6px) / 2) 10px !default;
-$k-optionlist-label-line-height:        1.25em !default;
-$k-optionlist-label-background:         $k-neutral-color !default;
-$k-optionlist-label-color:              $k-input-color !default;
-$k-optionlist-label-font-weight:        $k-normal-font-weight !default;
-$k-optionlist-label-border-radius:      $k-input-border-radius - 1px !default;
+$k-optionlist-label-spacing:                            floor(($k-input-base-height - $k-font-size - 6px) / 2) 10px !default;
+$k-optionlist-label-line-height:                        1.25em !default;
+$k-optionlist-label-background:                         $k-neutral-color !default;
+$k-optionlist-label-color:                              $k-input-color !default;
+$k-optionlist-label-font-weight:                        $k-normal-font-weight !default;
+$k-optionlist-label-border-radius:                      $k-input-border-radius - 1px !default;
 
-$k-optionlist-label-focus-color:        $k-neutral-type-color - 1px !default;
-$k-optionlist-label-focus-border:       1px solid $k-input-focus-border !default;
-$k-optionlist-label-focus-box-shadow:   inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($k-input-focus-border, 0.6) !default;
+$k-optionlist-label-focus-color:                        $k-neutral-type-color - 1px !default;
+$k-optionlist-label-focus-border:                       1px solid $k-input-focus-border !default;
+$k-optionlist-label-focus-box-shadow:                   inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($k-input-focus-border, 0.6) !default;
 
-$k-optionlist-0-color:                  $k-error-color !default;
-$k-optionlist-1-color:                  $k-success-color !default;
+$k-optionlist-0-color:                                  $k-error-color !default;
+$k-optionlist-1-color:                                  $k-success-color !default;
 
-$k-optionlist-disabled-cursor:          $k-disabled-cursor !default;
-$k-optionlist-disabled-active-color:    $k-error-color !default;
-
-
+$k-optionlist-disabled-cursor:                          $k-disabled-cursor !default;
+$k-optionlist-disabled-active-color:                    $k-error-color !default;

@@ -44,4 +44,39 @@
       }
     }
   }
+
+
+  /* Dark theme */
+
+  &.k-theme-dark {
+    .k-pagination {
+      .k-pagination__pages {
+        & > li {
+          & > a,
+          & > span {
+            border-color: $k-site-pagination-item-dark-border-color;
+          }
+        }
+
+        & > li > a,
+        & > li > span {
+          &:hover,
+          &:focus {
+            background-color: $k-site-pagination-item-dark-hover-background-color;
+            border-color: $k-site-pagination-item-dark-hover-border-color;
+          }
+        }
+
+        & > #{$k-pagination-active-class} > a,
+        & > #{$k-pagination-active-class} > span {
+          &,
+          &:hover,
+          &:focus {
+            background-color: $k-site-pagination-item-dark-active-background-color;
+            border-color: $k-site-pagination-item-dark-active-border-color;
+          }
+        }
+      }
+    }
+  }
 }

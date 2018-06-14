@@ -9,4 +9,14 @@
     background: $k-site-toolbar-background;
     border-bottom: $k-site-toolbar-border-bottom;
   }
+
+
+  /* Dark theme */
+
+  &.k-theme-dark {
+    .k-toolbar {
+      background: $k-site-toolbar-dark-background;
+      border-bottom: $k-site-toolbar-dark-border-bottom;
+    }
+  }
 }

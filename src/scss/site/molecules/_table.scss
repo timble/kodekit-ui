@@ -45,4 +45,30 @@
       background-color: $k-site-table-accent-background;
     }
   }
+
+
+  /* Dark theme */
+
+  &.k-theme-dark {
+    .k-table {
+      th,
+      td {
+        border-top-color: $k-site-table-dark-border-color;
+      }
+
+      thead th {
+        border-bottom-color: $k-site-table-dark-border-color;
+      }
+
+      tbody + tbody {
+        border-top-color: $k-site-table-dark-border-color;
+      }
+    }
+
+    .k-table--striped {
+      tbody tr:nth-of-type(odd) {
+        background-color: $k-site-table-dark-accent-background;
+      }
+    }
+  }
 }

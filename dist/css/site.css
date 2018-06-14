@@ -3964,6 +3964,11 @@
   margin-bottom: 0;
 }
 
+.k-ui-namespace .k-tree .jqtree-element.jqtree-element {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .k-ui-namespace .k-tree .jqtree-element .jqtree_common:after {
   opacity: 0.4;
 }
@@ -3984,6 +3989,10 @@
 
 .k-ui-namespace .k-tree .jqtree-selected:hover > .jqtree-element:after {
   border-color: inherit;
+}
+
+.k-ui-namespace .k-tree > .jqtree-tree > .jqtree_common > .jqtree-element {
+  padding-left: 0;
 }
 
 .k-ui-namespace .k-align-left {
@@ -6928,13 +6937,4 @@ html:not(.k-js-enabled) #search-open:target ~ .k-toglr-body {
 
 .k-js-enabled .k-toglr-label {
   display: block;
-}
-
-.k-tree .jqtree-element.jqtree-element {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.k-ui-namespace .k-tree > .jqtree-tree > .jqtree_common > .jqtree-element {
-  padding-left: 0;
 }

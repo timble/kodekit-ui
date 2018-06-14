@@ -18,4 +18,22 @@
       }
     }
   }
+
+
+  /* Dark theme */
+
+  &.k-theme-dark {
+    .k-thumbnail {
+      border: $k-site-thumbnail-dark-border;
+      background: $k-site-thumbnail-dark-background;
+    }
+
+    a {
+      &:focus, &:hover, &active {
+        .k-thumbnail {
+          border-color: $k-site-thumbnail-dark-hover-border-color;
+        }
+      }
+    }
+  }
 }

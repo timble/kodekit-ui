@@ -49,4 +49,47 @@
       border-top: $k-site-card-footer-border-top;
     }
   }
+
+
+  /* Dark theme */
+
+  &.k-theme-dark {
+    .k-card__body {
+      border: $k-site-card-dark-body-border;
+    }
+
+    a.k-card__body,
+    a.k-card__section {
+      &:focus,
+      &:hover {
+        background: $k-site-card-dark-body-hover-background;
+        border-color: $k-site-card-dark-body-hover-border-color;
+
+        .k-card__header {
+          border-color: $k-site-card-dark-body-hover-border-color;
+        }
+
+        .k-card__footer {
+          border-color: $k-site-card-dark-body-hover-border-color;
+        }
+      }
+    }
+
+    .k-card__header {
+      background: $k-site-card-dark-header-background;
+      border-bottom-color: $k-site-card-dark-header-border-bottom-color;
+
+      &:not(:first-child) {
+        border-top: $k-site-card-dark-header-border-top;
+      }
+    }
+
+    .k-card__footer {
+      background: $k-site-card-dark-footer-background;
+
+      &:not(:first-child) {
+        border-top: $k-site-card-dark-footer-border-top;
+      }
+    }
+  }
 }

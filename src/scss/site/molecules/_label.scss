@@ -51,7 +51,7 @@
    */
 
   .k-label--primary {
-    @include theme(var(--primary-color), var(--primary-text-color));
+    @include theme(var(--primary-color)!important, var(--primary-text-color)!important);
   }
 
   .k-label--neutral {

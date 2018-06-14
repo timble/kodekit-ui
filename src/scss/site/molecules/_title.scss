@@ -30,4 +30,12 @@
   .k-title + .k-subtitle {
     margin-top: -($k-site-subtitle-padding); /* 2 */
   }
+
+
+  /* Dark theme */
+  &.k-theme-dark {
+    .k-subtitle {
+      border-bottom: $k-site-subtitle-dark-border-bottom;
+    }
+  }
 }

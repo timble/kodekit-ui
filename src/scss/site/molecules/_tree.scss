@@ -9,12 +9,19 @@
 
   .k-tree {
     .jqtree-element {
+      &.jqtree-element {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
       .jqtree_common:after {
         opacity: 0.4;
       }
 
       &:hover,
       &:focus {
+        background: transparent;
+
         &:after {
           border-color: inherit;
           opacity: 0.085;
@@ -24,7 +31,8 @@
 
     .jqtree-selected {
       & > .jqtree-element {
-        color: inherit;
+        background: var(--primary-color)!important;
+        color: var(--primary-text-color)!important;
 
         &:after {
           border-color: inherit;
@@ -32,11 +40,42 @@
         }
       }
 
+      & > .jqtree-element > .jqtree-toggler {
+        color: var(--primary-text-color)!important;
+      }
+
       &:hover {
         & > .jqtree-element {
           &:after {
             border-color: inherit;
           }
+        }
+      }
+
+      .jqtree_common {
+        & > .jqtree-toggler {
+          &:hover:before {
+            border-top-color: inherit;
+          }
+        }
+      }
+    }
+
+
+    > .jqtree-tree > .jqtree_common > .jqtree-element {
+      padding-left: 0;
+    }
+
+    .jqtree-toggler {
+      &:before {
+        opacity: 0.8;
+      }
+
+      &:hover,
+      &:focus {
+        &:before {
+          border-top-color: inherit;
+          opacity: 1;
         }
       }
     }

@@ -36,4 +36,21 @@
   .k-section--joined {
     margin-bottom: 0;
   }
+
+
+  /* Dark theme */
+
+  &.k-theme-dark {
+    .k-section--gradient {
+      background-image: $k-site-section-dark-gradient-background;
+
+      @include pseudo(before) {
+        background: $k-site-section-dark-gradient-pseudo-background;
+      }
+    }
+
+    .k-section--border {
+      border: $k-site-section-dark-border-border;
+    }
+  }
 }
