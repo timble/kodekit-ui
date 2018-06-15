@@ -12829,6 +12829,10 @@ img.mfp-img {
   max-width: 100% !important;
 }
 
+.select2-dropdown {
+  color: #222222;
+}
+
 /* Datepicker
      ========================================================================== */
 .datepicker {

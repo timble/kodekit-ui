@@ -3538,11 +3538,11 @@
   padding-bottom: 0.25em;
 }
 
-.k-ui-namespace .k-list__item .k-title {
+.k-ui-namespace .k-list__item .k-title.k-title {
   margin: 0;
 }
 
-.k-ui-namespace .k-list__item .k-subtitle {
+.k-ui-namespace .k-list__item .k-subtitle.k-subtitle {
   padding: 0;
   margin-bottom: 0;
   border: none;
@@ -3969,8 +3969,9 @@
 .k-ui-namespace .k-subtitle {
   font-size: small;
   /* 1 */
-  padding-bottom: 0em;
+  padding-bottom: 0.33em;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 0;
   margin-bottom: 1em;
 }
 
@@ -3979,7 +3980,7 @@
 }
 
 .k-ui-namespace .k-title + .k-subtitle {
-  margin-top: 0em;
+  margin-top: -1em;
   /* 2 */
 }
 
@@ -5454,6 +5455,10 @@ img.mfp-img {
 .select2.select2-container--bootstrap {
   width: 100% !important;
   max-width: 100% !important;
+}
+
+.select2-dropdown {
+  color: #222222;
 }
 
 /* Datepicker

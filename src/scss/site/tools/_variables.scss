@@ -307,58 +307,58 @@ $k-site-thumbnail-dark-hover-border-color:            rgba(255, 255, 255, 0.3) !
 // Title
 // ==========================================================================
 
-$k-site-title-spacing:                              round($k-site-section-spacing / 2) !default;
+$k-site-title-spacing:                                1em !default;
 
-$k-site-subtitle-font-size:                         small !default;
-$k-site-subtitle-padding:                           round($k-site-section-spacing * 0.25) !default;
-$k-site-subtitle-margin:                            $k-site-section-spacing !default;
-$k-site-subtitle-border-bottom:                     $k-site-border-width $k-site-border-style rgba(0, 0, 0, 0.1) !default;
+$k-site-subtitle-font-size:                           small !default;
+$k-site-subtitle-padding:                             $k-site-section-spacing * 0.33 !default; // Don't round
+$k-site-subtitle-margin:                              $k-site-section-spacing !default;
+$k-site-subtitle-border-bottom:                       $k-site-border-width $k-site-border-style rgba(0, 0, 0, 0.1) !default;
 
 // Dark theme
-$k-site-subtitle-dark-border-bottom:                $k-site-border-width $k-site-border-style rgba(255, 255, 255, 0.1) !default;
+$k-site-subtitle-dark-border-bottom:                  $k-site-border-width $k-site-border-style rgba(255, 255, 255, 0.1) !default;
 
 
 // Toglr
 // ==========================================================================
 
 // Repo overrides
-$toglr-id:                                          '#search-open' !default;
-$toglr-js-class:                                    '.k-js-enabled' !default;
-$toglr-breakpoint:                                  false !default;
-$toglr-visually-hidden:                             false !default;
+$toglr-id:                                            '#search-open' !default;
+$toglr-js-class:                                      '.k-js-enabled' !default;
+$toglr-breakpoint:                                    false !default;
+$toglr-visually-hidden:                               false !default;
 
-$toglr-input-selector:                              '.k-toglr-input' !default;
+$toglr-input-selector:                                '.k-toglr-input' !default;
 
-$toglr-nav-selector:                                '.k-toglr-body' !default;
-$toglr-nav-breakpoint-display:                      false !default;
+$toglr-nav-selector:                                  '.k-toglr-body' !default;
+$toglr-nav-breakpoint-display:                        false !default;
 
-$toglr-togglers-selector:                           '.k-toglr-togglers' !default;
-$toglr-label-selector:                              '.k-toglr-label' !default;
-$toglr-label-open-selector:                         '.k-toglr-label-open' !default;
-$toglr-label-close-selector:                        '.k-toglr-label-close' !default;
-$toglr-open-selector:                               '.k-toglr-open' !default;
-$toglr-close-selector:                              '.k-toglr-close' !default;
+$toglr-togglers-selector:                             '.k-toglr-togglers' !default;
+$toglr-label-selector:                                '.k-toglr-label' !default;
+$toglr-label-open-selector:                           '.k-toglr-label-open' !default;
+$toglr-label-close-selector:                          '.k-toglr-label-close' !default;
+$toglr-open-selector:                                 '.k-toglr-open' !default;
+$toglr-close-selector:                                '.k-toglr-close' !default;
 
 // Custom styling
-$k-site-toglr-togglers-cursor:                      pointer !default;
-$k-site-toglr-togglers-color:                       inherit !default;
-$k-site-toglr-togglers-text-decoration:             none !default;
-$k-site-toglr-togglers-hover-text-decoration:       underline !default;
+$k-site-toglr-togglers-cursor:                        pointer !default;
+$k-site-toglr-togglers-color:                         inherit !default;
+$k-site-toglr-togglers-text-decoration:               none !default;
+$k-site-toglr-togglers-hover-text-decoration:         underline !default;
 
-$k-site-toglr-togglers-before-caret-size:           5px !default;
+$k-site-toglr-togglers-before-caret-size:             5px !default;
 
-$k-site-toglr-togglers-after-content:               "✖" !default;
-$k-site-toglr-togglers-after-font-size:             16px !default;
+$k-site-toglr-togglers-after-content:                 "✖" !default;
+$k-site-toglr-togglers-after-font-size:               16px !default;
 
 
 // Toolbar
 // ==========================================================================
 
-$k-site-toolbar-margin:                             $k-site-section-spacing !default;
-$k-site-toolbar-padding:                            $k-site-spacing !default;
-$k-site-toolbar-background:                         rgba(0, 0, 0, 0.05) !default;
-$k-site-toolbar-border-bottom:                      2px $k-site-border-style rgba(0, 0, 0, 0.1) !default;
+$k-site-toolbar-margin:                               $k-site-section-spacing !default;
+$k-site-toolbar-padding:                              $k-site-spacing !default;
+$k-site-toolbar-background:                           rgba(0, 0, 0, 0.05) !default;
+$k-site-toolbar-border-bottom:                        2px $k-site-border-style rgba(0, 0, 0, 0.1) !default;
 
 // Dark theme
-$k-site-toolbar-dark-background:                    rgba(255, 255, 255, 0.05) !default;
-$k-site-toolbar-dark-border-bottom:                 2px $k-site-border-style rgba(255, 255, 255, 0.1) !default;
+$k-site-toolbar-dark-background:                      rgba(255, 255, 255, 0.05) !default;
+$k-site-toolbar-dark-border-bottom:                   2px $k-site-border-style rgba(255, 255, 255, 0.1) !default;

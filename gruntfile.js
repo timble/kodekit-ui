@@ -238,6 +238,9 @@ module.exports = function(grunt) {
                     ],
                     '<%= distPath %>/js/kui-initialize.js': [
                         '<%= srcPath %>/js/ui.initialize.js'
+                    ],
+                    '<%= distPath %>/js/k-site-ui-initialize.js': [
+                        '<%= srcPath %>/js/site.ui.initialize.js'
                     ]
                 }
             }

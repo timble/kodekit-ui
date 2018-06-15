@@ -24,11 +24,12 @@
     font-size: $k-site-subtitle-font-size; /* 1 */
     padding-bottom: $k-site-subtitle-padding;
     border-bottom: $k-site-subtitle-border-bottom;
+    margin-top: 0;
     @include content-block($k-site-subtitle-margin);
   }
 
   .k-title + .k-subtitle {
-    margin-top: -($k-site-subtitle-padding); /* 2 */
+    margin-top: -($k-site-title-spacing); /* 2 */
   }
 
 
