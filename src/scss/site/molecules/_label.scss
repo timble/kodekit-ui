@@ -21,6 +21,11 @@
     border-radius: $k-site-label-border-radius;
     text-decoration: $k-site-label-text-decoration;
 
+    @include rtl {
+      margin-left: 0;
+      margin-right: $k-site-label-margin-left;
+    }
+
 
     /* Empty tags collapse automatically */
 

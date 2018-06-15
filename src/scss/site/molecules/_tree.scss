@@ -64,6 +64,10 @@
 
     > .jqtree-tree > .jqtree_common > .jqtree-element {
       padding-left: 0;
+
+      @include rtl {
+        padding-right: 0;
+      }
     }
 
     .jqtree-toggler {

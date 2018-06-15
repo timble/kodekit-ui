@@ -88,10 +88,20 @@
         right: 0;
         height: 1px;
         background: $k-site-list-bordered-pseudo-background;
+
+        @include rtl {
+          left: 0;
+          right: -999px;
+        }
       }
 
       .k-list__item {
         padding-left: 1.5em;
+
+        @include rtl {
+          padding-left: 0.5em;
+          padding-right: 1.5em;
+        }
       }
     }
   }

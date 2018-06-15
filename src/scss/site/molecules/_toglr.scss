@@ -18,6 +18,11 @@
       left: 0;
       transition: transform .3s ease-in-out;
       transform: rotate(-90deg);
+
+      @include rtl {
+        left: auto;
+        right: 0;
+      }
     }
 
     @include pseudo(after, false, $content: $k-site-toglr-togglers-after-content) {
@@ -29,6 +34,11 @@
       transition: all .3s ease-in-out;
       transform: translate(0, -200%);
       opacity: 0;
+
+      @include rtl {
+        right: auto;
+        left: 0;
+      }
     }
 
     .k-toglr-label,
@@ -42,6 +52,14 @@
       &:focus,
       &:hover {
         text-decoration: $k-site-toglr-togglers-hover-text-decoration;
+      }
+    }
+
+    @include rtl {
+      .k-toglr-label,
+      .k-toglr-open,
+      .k-toglr-close {
+        padding: 0 ($k-site-toglr-togglers-before-caret-size * 3) 0 ($k-site-toglr-togglers-after-font-size * 2);
       }
     }
   }
@@ -95,6 +113,14 @@
     .k-toglr-close {
       margin: -($k-site-section-border-padding);
       padding: $k-site-section-border-padding calc(#{($k-site-toglr-togglers-after-font-size * 2)} + #{$k-site-section-border-padding}) $k-site-section-border-padding calc(#{($k-site-toglr-togglers-before-caret-size * 3)} + #{$k-site-section-border-padding});
+    }
+
+    @include rtl {
+      .k-toglr-label,
+      .k-toglr-open,
+      .k-toglr-close {
+        padding: $k-site-section-border-padding calc(#{($k-site-toglr-togglers-before-caret-size * 3)} + #{$k-site-section-border-padding}) $k-site-section-border-padding calc(#{($k-site-toglr-togglers-after-font-size * 2)} + #{$k-site-section-border-padding});
+      }
     }
 
     .k-toglr-body {

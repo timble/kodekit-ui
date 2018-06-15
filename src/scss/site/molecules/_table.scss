@@ -23,6 +23,13 @@
       text-align: left;
     }
 
+    @include rtl {
+      th,
+      td {
+        text-align: right;
+      }
+    }
+
     thead th {
       vertical-align: bottom;
       border-bottom: (2 * $k-site-table-border-width) solid $k-site-table-border-color;
