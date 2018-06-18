@@ -6,9 +6,43 @@
   .select2.select2-container--bootstrap {
     width: 100%!important;
     max-width: 100%!important;
+
+    .select2-selection--multiple .select2-selection__choice {
+      margin: 4px 0 0 4px;
+      line-height: 20px;
+      list-style: none;
+    }
+
+    .select2-selection--multiple .select2-search--inline {
+      padding: 0 6px;
+      margin: 0;
+      background: transparent;
+      list-style: none;
+
+      .select2-search__field {
+        margin-bottom: 0;
+        line-height: 31px;
+        padding: 0;
+
+        &:focus {
+          box-shadow: none;
+        }
+      }
+    }
   }
 
   .select2-dropdown {
     color: $k-type-color;
+
+    li {
+      margin: 0;
+      list-style: none;
+    }
+  }
+
+  .select2-container--open {
+    li {
+      background-image: none !important;
+    }
   }
 }

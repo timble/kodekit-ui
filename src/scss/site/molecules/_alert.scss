@@ -12,6 +12,7 @@
     h1, h2, h3, h4, h5, h6 {
       @include reset();
       color: $k-site-alert-element-color;
+      font-size: $k-site-alert-heading-font-size;
     }
 
     .k-alert__heading, address, h1, h2, h3, h4, h5, h6, p {

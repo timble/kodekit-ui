@@ -52,6 +52,8 @@
     .k-pagination {
       .k-pagination__pages {
         & > li {
+        background-image: none;
+
           & > a,
           & > span {
             border-color: $k-site-pagination-item-dark-border-color;

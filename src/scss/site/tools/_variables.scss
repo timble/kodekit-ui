@@ -76,8 +76,10 @@ $k-site-alert-margin-bottom:                          $k-site-vertical-spacing !
 $k-site-alert-background:                             $k-site-default-color !default;
 $k-site-alert-color:                                  $k-site-default-type-color !default;
 
+$k-site-alert-heading-font-size:                      1.25em !default;
+
 $k-site-alert-element-color:                          inherit !default;
-$k-site-alert-element-margin-bottom:                  round($k-site-spacing / 2) !default;
+$k-site-alert-element-margin-bottom:                  20px !default;
 
 $k-site-alert-link-color:                             inherit !default;
 $k-site-alert-link-text-decoration:                   underline !default;
@@ -178,7 +180,7 @@ $k-site-label-vertical-padding:                       0.25em !default;
 $k-site-label-background:                             $k-site-default-color !default;
 $k-site-label-color:                                  $k-site-default-type-color !default;
 $k-site-label-link-hover-color:                       white !default;
-$k-site-label-font-weight:                            bold !default;
+$k-site-label-font-weight:                            normal !default;
 $k-site-label-font-size:                              small !default;
 $k-site-label-line-height:                            $k-site-element-line-height !default;
 $k-site-label-white-space:                            nowrap !default;
@@ -307,7 +309,7 @@ $k-site-thumbnail-dark-hover-border-color:            rgba(255, 255, 255, 0.3) !
 // Title
 // ==========================================================================
 
-$k-site-title-spacing:                                1em !default;
+$k-site-title-spacing:                                24px !default;
 
 $k-site-subtitle-font-size:                           small !default;
 $k-site-subtitle-padding:                             $k-site-section-spacing * 0.33 !default; // Don't round

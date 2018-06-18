@@ -26,8 +26,10 @@
 // ==========================================================================
 //
 // By namespacing we make sure our styles never interfere with other template styles
+// Using the ID here so we have a big chance of winning over default template styling
+// without having to resort to !important
 
-.k-ui-namespace {
+#k-ui-container {
 
   // Base
 
@@ -78,5 +80,14 @@
 
   @import "../utilities/link-coverleft";
   @import "../utilities/wrapped-content";
+
+
+  // 3rd party
+  // Re-load select2 here to make sure we win over templates styled with ID's while keeping overwriteable CSS
+  // We need it both in and out of the namespace for the dropdown
+
+  @import "../../shared/3rdparty/select2";
+  @import "../../shared/3rdparty/copied/select2/core";
+  @import "../../shared/3rdparty/copied/select2-bootstrap-theme/select2-bootstrap";
 
 }

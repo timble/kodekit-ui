@@ -15,6 +15,10 @@
 
   a.k-card__body,
   a.k-card__section {
+    text-decoration: none;
+    box-shadow: none;
+    cursor: pointer;
+
     &:focus,
     &:hover {
       background: $k-site-card-body-hover-background;

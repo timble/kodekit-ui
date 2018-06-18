@@ -4,16 +4,13 @@
      ========================================================================== */
 
   .k-list {
-    @include reset();
     @include content-block($k-site-list-margin);
     overflow-x: hidden;
   }
 
   .k-list__item {
-    @include reset();
     line-height: $k-site-list-item-line-height;
-    padding-top: $k-site-list-item-padding;
-    padding-bottom: $k-site-list-item-padding;
+    padding: $k-site-list-item-padding 0;
 
     .k-title.k-title {
       margin: 0;

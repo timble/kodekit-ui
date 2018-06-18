@@ -6,6 +6,9 @@
   .k-button,
   .k-label,
   .k-list,
+  .k-list__item,
+  .k-pagination__pages,
+  .k-pagination__pages li,
   .k-thumbnail {
     border: none;
     transform: none;
@@ -18,6 +21,8 @@
     text-decoration: none;
     text-shadow: none;
     margin: 0;
+    padding: 0;
+    background: transparent;
 
 
     /**

@@ -35,6 +35,7 @@
       transition: all .3s ease-in-out;
       transform: translate(0, -200%);
       opacity: 0;
+      pointer-events: none;
 
       @include rtl {
         right: auto;
@@ -45,6 +46,8 @@
     .k-toglr-label,
     .k-toglr-open,
     .k-toglr-close {
+      width: auto;
+      max-width: none;
       cursor: inherit;
       color: inherit;
       text-decoration: inherit;
@@ -69,6 +72,10 @@
   /**
    * When toggled
    */
+
+  .k-toglr-input {
+    display: none;
+  }
 
   .k-toglr-input:checked,
   html:not(#{$toglr-js-class}) #{$toglr-id}:target {

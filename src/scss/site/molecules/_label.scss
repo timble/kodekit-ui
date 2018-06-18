@@ -38,6 +38,10 @@
 
     &[type="button"],
     &[href] {
+      text-decoration: none;
+      box-shadow: none;
+      cursor: pointer;
+
       &:active,
       &:focus,
       &:hover {

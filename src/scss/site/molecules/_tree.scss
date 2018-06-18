@@ -8,6 +8,20 @@
    */
 
   .k-tree {
+
+    /* Reset */
+
+    .jqtree_common {
+      padding-left: 0;
+      padding-right: 0;
+      margin: 0;
+      background: transparent;
+    }
+
+    .jqtree-folder {
+      border: none;
+    }
+
     .jqtree-element {
       &.jqtree-element {
         padding-left: 0;
