@@ -3502,6 +3502,11 @@
   padding-right: 0.5em;
 }
 
+#k-ui-container input[type="text"],
+#k-ui-container input[type="search"] {
+  min-height: 32px;
+}
+
 #k-ui-container .k-inline-list {
   margin: 0;
   padding: 0;
