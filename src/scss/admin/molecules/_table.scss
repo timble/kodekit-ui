@@ -600,7 +600,7 @@
     border-bottom: 1px solid $k-table-row-positioner-color;
     cursor: no-drop;
 
-    &#{$k-table-row-positioner-selected-class} {
+    &#{$k-table-row-positioner-active-class} {
       cursor: move;
     }
 
