@@ -82,6 +82,12 @@
     > .k-tabs li#{$k-tabs-item-active-class} a {
       background: $k-tabs-scroller-item-active-background;
       color: $k-tabs-scroller-item-active-color;
+
+      &:focus {
+        border-color: $k-tabs-scroller-item-active-focus-border;
+        border-bottom-color: transparent;
+        box-shadow: $k-tabs-scroller-item-active-focus-box-shadow;
+      }
     }
   }
 
@@ -182,6 +188,7 @@
         text-decoration: none;
         background-color: $k-tabs-link-hover-background;
         border-color: $k-tabs-link-hover-border;
+        outline: none;
       }
     }
   }
@@ -248,11 +255,17 @@
     bottom: 0;
     width: $k-tabs-overflow-button-width;
     overflow: hidden;
+    display: none;
     opacity: 0;
     background: $k-tabs-link-active-hover-background;
     border: $k-tabs-overflow-button-border;
     border-radius: 0;
     @include transition;
+
+    &:focus,
+    &:hover {
+      background-color: $k-tabs-link-hover-background;
+    }
 
     span {
       @include transition;
@@ -289,6 +302,7 @@
       transform: translateX(0);
       cursor: no-drop;
       opacity: 1;
+      display: block;
 
       span {
         opacity: $k-tabs-overflow-button-low-opacity;

@@ -22,7 +22,6 @@ $k-utility-ellipsis:            inherit !default;
 $k-utility-flag-object:         inherit !default;
 $k-utility-flexing:             inherit !default;
 $k-utility-hidden:              inherit !default;
-$k-utility-loader:              inherit !default;
 $k-utility-no-margin:           inherit !default;
 $k-utility-no-padding:          inherit !default;
 $k-utility-no-transition:       inherit !default;
@@ -81,8 +80,10 @@ $k-molecule-form:               inherit !default;
 $k-molecule-gallery:            inherit !default;
 $k-molecule-hamburger:          inherit !default;
 $k-molecule-heading:            inherit !default;
+$k-molecule-label:              inherit !default;
 $k-molecule-icon:               inherit !default;
 $k-molecule-list:               inherit !default;
+$k-molecule-loader:             inherit !default;
 $k-molecule-login:              inherit !default;
 $k-molecule-modal:              inherit !default;
 $k-molecule-modernizr:          inherit !default;
@@ -826,12 +827,46 @@ $k-styled-file-drop-focus-class:            $k-drop-focus-class !default;
 // Empty state
 // ==========================================================================
 
-$k-empty-state-background:    white !default;
-$k-empty-state-color:         $k-type-color !default;
+$k-empty-state-background:    transparent !default;
+$k-empty-state-color:         inherit !default;
 $k-empty-state-spacing:       $k-spacing !default;
 $k-empty-state-font-size:     $k-large-font-size !default;
 $k-empty-state-line-height:   $k-large-line-height !default;
 $k-empty-state-align:         center !default;
+
+
+// Label
+// ==========================================================================
+
+$k-label-display:             inline-block !default;
+$k-label-padding:             0.33em 0.4em !default;
+$k-label-font-size:           80% !default;
+$k-label-font-weight:         $k-bold-font-weight !default;
+$k-label-line-height:         1 !default;
+$k-label-text-align:          center !default;
+$k-label-white-space:         no-wrap !default;
+$k-label-vertical-align:      baseline !default;
+$k-label-border-radius:       0.33em !default;
+$k-label-background:          rgba(0, 0, 0, 0.4) !default;
+$k-label-color:               white !default;
+
+$k-label-base-background:     $k-base-color !default;
+$k-label-base-color:          $k-base-type-color !default;
+
+$k-label-accent-background:   $k-accent-color !default;
+$k-label-accent-color:        $k-accent-type-color !default;
+
+$k-label-success-background:  $k-success-color !default;
+$k-label-success-color:       $k-success-type-color !default;
+
+$k-label-neutral-background:  $k-neutral-color !default;
+$k-label-neutral-color:       $k-neutral-type-color !default;
+
+$k-label-warning-background:  $k-warning-color !default;
+$k-label-warning-color:       $k-warning-type-color !default;
+
+$k-label-error-background:    $k-error-color !default;
+$k-label-error-color:         $k-error-type-color !default;
 
 
 // Grid
@@ -862,50 +897,53 @@ $k-grid-selected-body-color:                $k-accent-type-color !default;
 // Tabs
 // ==========================================================================
 
-$k-tabs-wrapper-height:                   $k-large-spacing * 2 !default;
+$k-tabs-wrapper-height:                         $k-large-spacing * 2 !default;
 
-$k-tabs-border-width:                     1px !default;
-$k-tabs-border-color:                     $k-primary-min-1-color !default;
-$k-tabs-border:                           $k-tabs-border-width solid $k-tabs-border-color !default;
-$k-tabs-spacing:                          (($k-large-spacing / 2) - 1px) !default;
+$k-tabs-border-width:                           1px !default;
+$k-tabs-border-color:                           $k-primary-min-1-color !default;
+$k-tabs-border:                                 $k-tabs-border-width solid $k-tabs-border-color !default;
+$k-tabs-spacing:                                (($k-large-spacing / 2) - 1px) !default;
 
-$k-tabs-item-spacing:                     2px !default;
-$k-tabs-item-active-class:                $k-active-class !default;
+$k-tabs-item-spacing:                           2px !default;
+$k-tabs-item-active-class:                      $k-active-class !default;
 
-$k-tabs-link-border:                      1px solid transparent !default;
-$k-tabs-link-font-size:                   $k-font-size !default;
-$k-tabs-link-line-height:                 $k-line-height !default;
-$k-tabs-link-border-radius:               $k-border-radius $k-border-radius 0 0 !default;
+$k-tabs-link-border:                            1px solid transparent !default;
+$k-tabs-link-font-size:                         $k-font-size !default;
+$k-tabs-link-line-height:                       $k-line-height !default;
+$k-tabs-link-border-radius:                     $k-border-radius $k-border-radius 0 0 !default;
 
-$k-tabs-link-disabled-cursor:             $k-disabled-cursor !default;
+$k-tabs-link-disabled-cursor:                   $k-disabled-cursor !default;
 
-$k-tabs-link-spacing:                     $k-extrasmall-spacing $k-spacing ($k-extrasmall-spacing - 2px) !default;
-$k-tabs-link-hover-background:            $k-primary-plus-2-color !default;
-$k-tabs-link-hover-border:                $k-primary-min-1-color !default;
+$k-tabs-link-spacing:                           $k-extrasmall-spacing $k-spacing ($k-extrasmall-spacing - 2px) !default;
+$k-tabs-link-hover-background:                  $k-primary-plus-2-color !default;
+$k-tabs-link-hover-border:                      $k-primary-min-1-color !default;
 
-$k-tabs-link-disabled-class:              $k-disabled-class !default;
-$k-tabs-link-disabled-color:              $k-primary-min-6-color !default;
-$k-tabs-link-disabled-hover-color:        $k-tabs-link-disabled-color !default;
+$k-tabs-link-disabled-class:                    $k-disabled-class !default;
+$k-tabs-link-disabled-color:                    $k-primary-min-6-color !default;
+$k-tabs-link-disabled-hover-color:              $k-tabs-link-disabled-color !default;
 
-$k-tabs-link-active-class:                $k-active-class !default;
-$k-tabs-link-active-hover-background:     white !default;
-$k-tabs-link-active-hover-color:          $k-primary-min-7-color !default;
-$k-tabs-link-active-hover-border:         $k-primary-min-1-color !default;
+$k-tabs-link-active-class:                      $k-active-class !default;
+$k-tabs-link-active-hover-background:           white !default;
+$k-tabs-link-active-hover-color:                $k-primary-min-7-color !default;
+$k-tabs-link-active-hover-border:               $k-primary-min-1-color !default;
 
-$k-tabs-overflow-button-width:            32px !default;
-$k-tabs-overflow-button-low-opacity:      $k-low-opacity !default;
-$k-tabs-overflow-button-high-opacity:     $k-high-opacity !default;
-$k-tabs-overflow-button-border:           $k-tabs-border !default;
+$k-tabs-overflow-button-width:                  32px !default;
+$k-tabs-overflow-button-low-opacity:            $k-low-opacity !default;
+$k-tabs-overflow-button-high-opacity:           $k-high-opacity !default;
+$k-tabs-overflow-button-border:                 $k-tabs-border !default;
+$k-tabs-overflow-button-hover-background:       $k-tabs-link-hover-background !default;
 
-$k-tabs-scroller-height:                  $k-tabs-wrapper-height * 1.5 !default;
-$k-tabs-scroller-spacing:                 ($k-large-spacing / 2) ($k-spacing / 2) 0 !default;
-$k-tabs-scroller-charlie-spacing:         $k-spacing !default;
+$k-tabs-scroller-height:                        $k-tabs-wrapper-height * 1.5 !default;
+$k-tabs-scroller-spacing:                       ($k-large-spacing / 2) ($k-spacing / 2) 0 !default;
+$k-tabs-scroller-charlie-spacing:               $k-spacing !default;
 
-$k-tabs-scroller-item-active-background:  $k-component-background !default;
-$k-tabs-scroller-item-active-color:       $k-type-color !default;
+$k-tabs-scroller-item-active-background:        $k-component-background !default;
+$k-tabs-scroller-item-active-color:             $k-type-color !default;
+$k-tabs-scroller-item-active-focus-border:      darker($k-primary-min-1-color) !default;
+$k-tabs-scroller-item-active-focus-box-shadow:  inset 0 1px 0 0 $k-tabs-scroller-item-active-focus-border !default;
 
-$k-tabs-content-tab-active-class:         $k-active-class !default
-$k-tabs-content-tab-spacing:              $k-small-spacing !default
+$k-tabs-content-tab-active-class:               $k-active-class !default
+$k-tabs-content-tab-spacing:                    $k-small-spacing !default
 
 
 // Buttons

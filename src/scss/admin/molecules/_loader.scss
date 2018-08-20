@@ -1,4 +1,4 @@
-@if ($k-utilities == true and $k-utility-loader != false) or $k-utility-loader == true {
+@if ($k-molecules == true and $k-molecule-loader != false) or $k-molecule-loader == true {
 
   /* Loader
      ========================================================================== */
@@ -13,7 +13,9 @@
     z-index: 5;
     background: rgba($k-loader-container-background, $k-loader-container-opacity);
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
 
     .k-loader {
       @include modernizr('.k-cssanimations.k-boxshadow') {
@@ -48,6 +50,7 @@
         height: 1em;
         animation-fill-mode: both;
         animation: k-loader $k-loader-duration infinite ease-in-out;
+        backface-visibility: visible;
       }
 
       & {
