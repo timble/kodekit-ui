@@ -36,4 +36,14 @@
     background: $k-error-color;
     color: $k-error-type-color;
   }
+
+  .k-background-transparent {
+    background: transparent;
+    color: inherit;
+  }
+
+  .k-background-inherit {
+    background: inherit;
+    color: inherit;
+  }
 }
