@@ -838,35 +838,41 @@ $k-empty-state-align:         center !default;
 // Label
 // ==========================================================================
 
-$k-label-display:             inline-block !default;
-$k-label-padding:             0.33em 0.4em !default;
-$k-label-font-size:           80% !default;
-$k-label-font-weight:         $k-bold-font-weight !default;
-$k-label-line-height:         1 !default;
-$k-label-text-align:          center !default;
-$k-label-white-space:         no-wrap !default;
-$k-label-vertical-align:      baseline !default;
-$k-label-border-radius:       0.33em !default;
-$k-label-background:          rgba(0, 0, 0, 0.4) !default;
-$k-label-color:               white !default;
+$k-label-display:                   inline-block !default;
+$k-label-padding:                   0.33em 0.4em !default;
+$k-label-font-size:                 80% !default;
+$k-label-font-weight:               $k-bold-font-weight !default;
+$k-label-line-height:               1 !default;
+$k-label-text-align:                center !default;
+$k-label-white-space:               no-wrap !default;
+$k-label-vertical-align:            baseline !default;
+$k-label-border-radius:             0.33em !default;
+$k-label-background:                rgba(0, 0, 0, 0.4) !default;
+$k-label-color:                     white !default;
 
-$k-label-base-background:     $k-base-color !default;
-$k-label-base-color:          $k-base-type-color !default;
+$k-label-base-background:           $k-base-color !default;
+$k-label-base-color:                $k-base-type-color !default;
+$k-label-hover-base-background:     darker($k-label-base-background) !default;
 
-$k-label-accent-background:   $k-accent-color !default;
-$k-label-accent-color:        $k-accent-type-color !default;
+$k-label-accent-background:         $k-accent-color !default;
+$k-label-accent-color:              $k-accent-type-color !default;
+$k-label-hover-accent-background:   darker($k-label-accent-background) !default;
 
-$k-label-success-background:  $k-success-color !default;
-$k-label-success-color:       $k-success-type-color !default;
+$k-label-success-background:        $k-success-color !default;
+$k-label-success-color:             $k-success-type-color !default;
+$k-label-hover-success-background:  darker($k-label-success-background) !default;
 
-$k-label-neutral-background:  $k-neutral-color !default;
-$k-label-neutral-color:       $k-neutral-type-color !default;
+$k-label-neutral-background:        $k-neutral-color !default;
+$k-label-neutral-color:             $k-neutral-type-color !default;
+$k-label-hover-neutral-background:  darker($k-label-neutral-background) !default;
 
-$k-label-warning-background:  $k-warning-color !default;
-$k-label-warning-color:       $k-warning-type-color !default;
+$k-label-warning-background:        $k-warning-color !default;
+$k-label-warning-color:             $k-warning-type-color !default;
+$k-label-hover-warning-background:  darker($k-label-warning-background) !default;
 
-$k-label-error-background:    $k-error-color !default;
-$k-label-error-color:         $k-error-type-color !default;
+$k-label-error-background:          $k-error-color !default;
+$k-label-error-color:               $k-error-type-color !default;
+$k-label-hover-error-background:    darker($k-label-error-background) !default;
 
 
 // Grid
@@ -926,6 +932,7 @@ $k-tabs-link-active-class:                      $k-active-class !default;
 $k-tabs-link-active-hover-background:           white !default;
 $k-tabs-link-active-hover-color:                $k-primary-min-7-color !default;
 $k-tabs-link-active-hover-border:               $k-primary-min-1-color !default;
+$k-tabs-link-active-box-shadow:                 inset 0 1px 0 0 darker($k-tabs-link-active-hover-border) !default;
 
 $k-tabs-overflow-button-width:                  32px !default;
 $k-tabs-overflow-button-low-opacity:            $k-low-opacity !default;

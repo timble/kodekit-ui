@@ -86,7 +86,6 @@
       &:focus {
         border-color: $k-tabs-scroller-item-active-focus-border;
         border-bottom-color: transparent;
-        box-shadow: $k-tabs-scroller-item-active-focus-box-shadow;
       }
     }
   }
@@ -164,6 +163,10 @@
         border: 1px solid $k-tabs-link-active-hover-border;
         border-bottom-color: transparent;
         cursor: default;
+      }
+
+      &:focus {
+        box-shadow: $k-tabs-link-active-box-shadow;
       }
     }
 

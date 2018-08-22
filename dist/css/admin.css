@@ -2164,6 +2164,13 @@ body.k-is-resizing {
    */
   /* Label
      ========================================================================== */
+  /* Base */
+  /* Accent */
+  /* Success */
+  /* Neutral */
+  /* Warning */
+  /* Error */
+  /* Float */
   /* Navigation styling */
   /* List
      ========================================================================== */
@@ -7371,10 +7378,20 @@ html:not([dir="rtl"]) .k-input-group__button:first-child > .k-button-group:not(:
   border-radius: 0.33em;
   background: rgba(0, 0, 0, 0.4);
   color: white;
+  border: none;
+}
+
+.k-ui-namespace .k-label[href], .k-ui-namespace .k-label[href]:hover, .k-ui-namespace .k-label[href]:focus {
+  text-decoration: none;
 }
 
 .k-ui-namespace .k-label--base {
   background: #2c3e50;
+  color: white;
+}
+
+.k-ui-namespace a.k-label--base:hover, .k-ui-namespace a.k-label--base:focus, .k-ui-namespace button.k-label--base:hover, .k-ui-namespace button.k-label--base:focus {
+  background: #1f2c39;
   color: white;
 }
 
@@ -7383,8 +7400,18 @@ html:not([dir="rtl"]) .k-input-group__button:first-child > .k-button-group:not(:
   color: white;
 }
 
+.k-ui-namespace a.k-label--accent:hover, .k-ui-namespace a.k-label--accent:focus, .k-ui-namespace button.k-label--accent:hover, .k-ui-namespace button.k-label--accent:focus {
+  background: #285e8d;
+  color: white;
+}
+
 .k-ui-namespace .k-label--success {
   background: #27ae60;
+  color: white;
+}
+
+.k-ui-namespace a.k-label--success:hover, .k-ui-namespace a.k-label--success:focus, .k-ui-namespace button.k-label--success:hover, .k-ui-namespace button.k-label--success:focus {
+  background: #209150;
   color: white;
 }
 
@@ -7393,13 +7420,28 @@ html:not([dir="rtl"]) .k-input-group__button:first-child > .k-button-group:not(:
   color: white;
 }
 
+.k-ui-namespace a.k-label--neutral:hover, .k-ui-namespace a.k-label--neutral:focus, .k-ui-namespace button.k-label--neutral:hover, .k-ui-namespace button.k-label--neutral:focus {
+  background: #2386c8;
+  color: white;
+}
+
 .k-ui-namespace .k-label--warning {
   background: #e67e22;
   color: white;
 }
 
+.k-ui-namespace a.k-label--warning:hover, .k-ui-namespace a.k-label--warning:focus, .k-ui-namespace button.k-label--warning:hover, .k-ui-namespace button.k-label--warning:focus {
+  background: #cd6d17;
+  color: white;
+}
+
 .k-ui-namespace .k-label--error {
   background: #c0392b;
+  color: white;
+}
+
+.k-ui-namespace a.k-label--error:hover, .k-ui-namespace a.k-label--error:focus, .k-ui-namespace button.k-label--error:hover, .k-ui-namespace button.k-label--error:focus {
+  background: #a33024;
   color: white;
 }
 
@@ -9219,7 +9261,6 @@ html:not([dir="rtl"]) .k-input-group__button:first-child > .k-button-group:not(:
 .k-ui-namespace .k-tabs-scroller > .k-tabs li.k-is-active a:focus {
   border-color: #cacaca;
   border-bottom-color: transparent;
-  box-shadow: inset 0 1px 0 0 #cacaca;
 }
 
 .k-ui-namespace .k-tabs {
@@ -9284,6 +9325,10 @@ html:not([dir="rtl"]) .k-input-group__button:first-child > .k-button-group:not(:
   border: 1px solid gainsboro;
   border-bottom-color: transparent;
   cursor: default;
+}
+
+.k-ui-namespace .k-tabs .k-is-active a:focus {
+  box-shadow: inset 0 1px 0 0 #cacaca;
 }
 
 .k-ui-namespace .k-tabs a {
@@ -11114,6 +11159,16 @@ html:not([dir="rtl"]) .k-input-group__button:first-child > .k-button-group:not(:
   color: white;
 }
 
+.k-ui-namespace .k-background-transparent {
+  background: transparent;
+  color: inherit;
+}
+
+.k-ui-namespace .k-background-inherit {
+  background: inherit;
+  color: inherit;
+}
+
 .k-ui-namespace .k-color-type {
   color: #222222;
 }
@@ -11140,6 +11195,10 @@ html:not([dir="rtl"]) .k-input-group__button:first-child > .k-button-group:not(:
 
 .k-ui-namespace .k-color-error {
   color: #c0392b;
+}
+
+.k-ui-namespace .k-color-inherit {
+  color: inherit;
 }
 
 .k-ui-namespace .fade {

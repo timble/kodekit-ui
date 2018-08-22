@@ -15,37 +15,128 @@
     border-radius: $k-label-border-radius;
     background: $k-label-background;
     color: $k-label-color;
+    border: none;
+
+    &[href] {
+      &,
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
+    }
   }
+
+
+  /* Base */
 
   .k-label--base {
     background: $k-label-base-background;
     color: $k-label-base-color;
   }
 
+  a, button {
+    &.k-label--base {
+      &:hover,
+      &:focus {
+        background: $k-label-hover-base-background;
+        color: $k-label-base-color;
+      }
+    }
+  }
+
+
+  /* Accent */
+
   .k-label--accent {
     background: $k-label-accent-background;
     color: $k-label-accent-color;
   }
+
+  a, button {
+    &.k-label--accent {
+      &:hover,
+      &:focus {
+        background: $k-label-hover-accent-background;
+        color: $k-label-accent-color;
+      }
+    }
+  }
+
+
+  /* Success */
 
   .k-label--success {
     background: $k-label-success-background;
     color: $k-label-success-color;
   }
 
+  a, button {
+    &.k-label--success {
+      &:hover,
+      &:focus {
+        background: $k-label-hover-success-background;
+        color: $k-label-success-color;
+      }
+    }
+  }
+
+
+  /* Neutral */
+
   .k-label--neutral {
     background: $k-label-neutral-background;
     color: $k-label-neutral-color;
   }
+
+  a, button {
+    &.k-label--neutral {
+      &:hover,
+      &:focus {
+        background: $k-label-hover-neutral-background;
+        color: $k-label-neutral-color;
+      }
+    }
+  }
+
+
+  /* Warning */
 
   .k-label--warning {
     background: $k-label-warning-background;
     color: $k-label-warning-color;
   }
 
+
+  a, button {
+    &.k-label--warning {
+      &:hover,
+      &:focus {
+        background: $k-label-hover-warning-background;
+        color: $k-label-warning-color;
+      }
+    }
+  }
+
+
+  /* Error */
+
   .k-label--error {
     background: $k-label-error-background;
     color: $k-label-error-color;
   }
+
+  a, button {
+    &.k-label--error {
+      &:hover,
+      &:focus {
+        background: $k-label-hover-error-background;
+        color: $k-label-error-color;
+      }
+    }
+  }
+
+
+  /* Float */
 
   .k-label--float-end {
     float: right;
