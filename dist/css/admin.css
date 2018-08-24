@@ -2189,6 +2189,14 @@ body.k-is-resizing {
    * Falls back to `Loading...` on non capable browsers
    * Add `k-hidden` class to the element when items are done loading
    */
+  /**
+   * Container styling for buttons and tabs
+   *
+   * 1. Inherit for pseudo element (and for loader)
+   * 2. "Hide" element itself by giving scaling down to 0.001
+   * 3. Cover parent by scaling up to 1000
+   * 4. Top to reset elements own height and margin
+   */
   /* ==========================================================================
      Login screen
      ========================================================================== */
@@ -7589,14 +7597,14 @@ html:not([dir="rtl"]) .k-input-group__button:first-child > .k-button-group:not(:
 }
 
 .k-cssanimations.k-boxshadow .k-ui-namespace .k-loader-container .k-loader {
+  color: #3071a9;
   left: 0;
 }
 
 .k-cssanimations.k-boxshadow .k-ui-namespace .k-loader {
   display: inline-block;
-  color: #3071a9;
   font-size: 5px;
-  margin: 0 auto 2em;
+  margin: 0 1.5em 2em;
   position: relative;
   text-indent: -9999em;
   vertical-align: middle;
@@ -7612,10 +7620,6 @@ html:not([dir="rtl"]) .k-input-group__button:first-child > .k-button-group:not(:
   animation-fill-mode: both;
   animation: k-loader 1.61s infinite ease-in-out;
   backface-visibility: visible;
-}
-
-.k-cssanimations.k-boxshadow .k-ui-namespace .k-loader {
-  left: 1.25em;
 }
 
 .k-cssanimations.k-boxshadow .k-ui-namespace .k-loader:before {
@@ -7659,6 +7663,70 @@ html:not([dir="rtl"]) .k-input-group__button:first-child > .k-button-group:not(:
 
 [dir="rtl"] .k-ui-namespace .k-loader {
   transform: scaleX(-1);
+}
+
+.k-ui-namespace .k-button .k-loader-container,
+.k-ui-namespace .k-tabs .k-loader-container {
+  background: inherit;
+  /* 1 */
+  color: inherit;
+  /* 1 */
+  border-radius: inherit;
+  /* 1 */
+  display: block;
+  text-align: center;
+  transform: scale(0.001);
+  /* 2 */
+  transform-origin: 50% 50%;
+}
+
+.k-ui-namespace .k-button .k-loader-container:before,
+.k-ui-namespace .k-tabs .k-loader-container:before {
+  position: absolute;
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  /* 1 */
+  opacity: 0.75;
+  transform: scale(1000);
+  /* 3 */
+  transform-origin: 50% 50%;
+  border-radius: inherit;
+}
+
+.k-cssanimations.k-boxshadow .k-ui-namespace .k-button .k-loader-container .k-loader, .k-cssanimations.k-boxshadow
+.k-ui-namespace .k-tabs .k-loader-container .k-loader {
+  color: inherit;
+  transform: scale(1000);
+  transform-origin: 50% 50%;
+  top: -1000em;
+  /* 4 */
+}
+
+.k-cssanimations.k-boxshadow .k-ui-namespace .k-button .k-loader-container .k-loader:nth-child(n), .k-cssanimations.k-boxshadow
+.k-ui-namespace .k-tabs .k-loader-container .k-loader:nth-child(n) {
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+}
+
+.k-ui-namespace .k-button .k-loader:first-child,
+.k-ui-namespace .k-tabs .k-loader:first-child {
+  margin-right: 3em;
+}
+
+.k-ui-namespace .k-button .k-loader:not(first-child),
+.k-ui-namespace .k-tabs .k-loader:not(first-child) {
+  margin-left: 3em;
+}
+
+.k-ui-namespace .k-button .k-loader:last-child,
+.k-ui-namespace .k-tabs .k-loader:last-child {
+  margin-right: 1.5em;
+  margin-left: 3em;
 }
 
 .k-ui-namespace .k-login {
@@ -11199,6 +11267,10 @@ html:not([dir="rtl"]) .k-input-group__button:first-child > .k-button-group:not(:
 
 .k-ui-namespace .k-color-inherit {
   color: inherit;
+}
+
+.k-ui-namespace .k-color-white {
+  color: white;
 }
 
 .k-ui-namespace .fade {

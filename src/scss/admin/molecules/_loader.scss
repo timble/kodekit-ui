@@ -19,6 +19,7 @@
 
     .k-loader {
       @include modernizr('.k-cssanimations.k-boxshadow') {
+        color: $k-loader-container-color;
         left: 0;
       }
     }
@@ -35,9 +36,8 @@
   .k-loader {
     @include modernizr('.k-cssanimations.k-boxshadow') {
       display: inline-block;
-      color: $k-loader-color;
       font-size: $k-loader-small-size;
-      margin: 0 auto 2em;
+      margin: 0 1.5em 2em;
       position: relative;
       text-indent: -9999em;
       vertical-align: middle;
@@ -51,10 +51,6 @@
         animation-fill-mode: both;
         animation: k-loader $k-loader-duration infinite ease-in-out;
         backface-visibility: visible;
-      }
-
-      & {
-        left: 1.25em;
       }
 
       &:before {
@@ -105,6 +101,67 @@
 
     @include rtl {
       @include flip-item;
+    }
+  }
+
+
+  /**
+   * Container styling for buttons and tabs
+   *
+   * 1. Inherit for pseudo element (and for loader)
+   * 2. "Hide" element itself by giving scaling down to 0.001
+   * 3. Cover parent by scaling up to 1000
+   * 4. Top to reset elements own height and margin
+   */
+
+  .k-button,
+  .k-tabs {
+    .k-loader-container {
+      background: inherit; /* 1 */
+      color: inherit; /* 1 */
+      border-radius: inherit; /* 1 */
+      display: block;
+      text-align: center;
+      transform: scale(0.001); /* 2 */
+      transform-origin: 50% 50%;
+
+      @include pseudo(before, false, false) {
+        @include coverall();
+        background: inherit; /* 1 */
+        opacity: 0.75;
+        transform: scale(1000); /* 3 */
+        transform-origin: 50% 50%;
+        border-radius: inherit;
+      }
+
+      .k-loader {
+        @include modernizr('.k-cssanimations.k-boxshadow') {
+          color: inherit;
+          transform: scale(1000);
+          transform-origin: 50% 50%;
+          top: -1000em; /* 4 */
+
+          &:nth-child(n) {
+            margin-left: 1.5em;
+            margin-right: 1.5em;
+          }
+        }
+      }
+    }
+
+    .k-loader {
+      &:first-child {
+        margin-right: 3em;
+      }
+
+      &:not(first-child) {
+        margin-left: 3em;
+      }
+
+      &:last-child {
+        margin-right: 1.5em;
+        margin-left: 3em;
+      }
     }
   }
 }
