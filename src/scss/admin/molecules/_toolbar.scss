@@ -144,22 +144,7 @@
 
     /**
      * Position the icons
-     *
-     * Only position them if media queries are supported
-     * By default we just want them aligned normally
      */
-
-    [class^="k-icon"] {
-      display: inline-block;
-
-      &:first-child {
-        margin: 0 0.25em 0 0.1em;
-      }
-
-      @include rtl {
-        margin: 0 0.1em 0 0.25em;
-      }
-    }
 
     .k-off-canvas-toggle-holder {
       display: inline-block;

@@ -79,6 +79,29 @@
   }
 
 
+  /* Aligning icons */
+
+  [class^="k-icon"] {
+    display: inline-block;
+
+    &:first-child {
+      margin: 0 0.25em 0 0.1em;
+
+      @include rtl {
+        margin: 0 0.1em 0 0.25em;
+      }
+    }
+
+    &:last-child {
+      margin: 0 0.1em 0 0.25em;
+
+      @include rtl {
+        margin: 0 0.25em 0 0.1em;
+      }
+    }
+  }
+
+
   /* Align single icon buttons */
 
   [class*="icon-"]:only-child,

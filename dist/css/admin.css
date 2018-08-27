@@ -4521,6 +4521,7 @@ body.k-is-resizing {
   line-height: 18px;
   padding: 6px 12px;
   /* Align checkbox properly inside button */
+  /* Aligning icons */
   /* Align single icon buttons */
   /* Properly align dropdown button in button */
 }
@@ -4566,6 +4567,26 @@ body.k-is-resizing {
 .k-ui-namespace .k-button.k-button input[type="checkbox"] {
   margin: 0 -1px;
   vertical-align: top;
+}
+
+.k-ui-namespace .k-button [class^="k-icon"] {
+  display: inline-block;
+}
+
+.k-ui-namespace .k-button [class^="k-icon"]:first-child {
+  margin: 0 0.25em 0 0.1em;
+}
+
+[dir="rtl"] .k-ui-namespace .k-button [class^="k-icon"]:first-child {
+  margin: 0 0.1em 0 0.25em;
+}
+
+.k-ui-namespace .k-button [class^="k-icon"]:last-child {
+  margin: 0 0.1em 0 0.25em;
+}
+
+[dir="rtl"] .k-ui-namespace .k-button [class^="k-icon"]:last-child {
+  margin: 0 0.25em 0 0.1em;
 }
 
 .k-ui-namespace .k-button [class*="icon-"]:only-child,
@@ -10492,9 +10513,6 @@ html:not([dir="rtl"]) .k-input-group__button:first-child > .k-button-group:not(:
      */
   /**
      * Position the icons
-     *
-     * Only position them if media queries are supported
-     * By default we just want them aligned normally
      */
 }
 
@@ -10590,18 +10608,6 @@ html:not([dir="rtl"]) .k-input-group__button:first-child > .k-button-group:not(:
 
 [dir="rtl"] .k-ui-namespace .k-toolbar .k-autosave-indicator {
   margin: 8px 8px 0 0;
-}
-
-.k-ui-namespace .k-toolbar [class^="k-icon"] {
-  display: inline-block;
-}
-
-.k-ui-namespace .k-toolbar [class^="k-icon"]:first-child {
-  margin: 0 0.25em 0 0.1em;
-}
-
-[dir="rtl"] .k-ui-namespace .k-toolbar [class^="k-icon"] {
-  margin: 0 0.1em 0 0.25em;
 }
 
 .k-ui-namespace .k-toolbar .k-off-canvas-toggle-holder {
