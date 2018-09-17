@@ -65,6 +65,10 @@
         $('.k-js-file-input').kfileinput();
     };
 
+    kodekitUI.initializeTabscroller = function() {
+        $('.k-js-tabs-scroller').ktabscroller();
+    };
+
     /**
      * Load functions
      *
@@ -87,11 +91,11 @@
             kodekitUI.initializeTooltip();
             kodekitUI.initializeNavigation();
             kodekitUI.initializeFileinput();
+            kodekitUI.initializeTabscroller();
 
             /**
              * Global kodekitUI functions
              */
-            kodekitUI.tabsScroller();
             kodekitUI.sidebarToggle();
             kodekitUI.scopebarToggles();
             kodekitUI.subcontentToggle();
