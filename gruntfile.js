@@ -6,6 +6,8 @@ module.exports = function(grunt) {
     // load time-grunt and all grunt plugins found in the package.json
     require('jit-grunt')(grunt);
 
+    const sass = require('node-sass');
+
     // grunt config
     grunt.initConfig({
 
@@ -29,6 +31,12 @@ module.exports = function(grunt) {
                         cwd: 'node_modules/select2-bootstrap-theme/src',
                         src: '*.scss',
                         dest: '<%= srcPath %>/scss/admin/3rdparty/copied/select2-bootstrap-theme'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'node_modules/bootstrap/scss',
+                        src: '**',
+                        dest: '<%= srcPath %>/scss/admin/3rdparty/copied/bootstrap'
                     }
                 ]
             }
@@ -47,7 +55,8 @@ module.exports = function(grunt) {
                     'node_modules'
                 ],
                 outputStyle: 'expanded',
-                sourceMap: false
+                sourceMap: false,
+                implementation: sass
             }
         },
 
@@ -88,7 +97,7 @@ module.exports = function(grunt) {
         webfont: {
             icons: {
                 src: [
-                    'node_modules/openiconic/svg/*.svg',
+                    'node_modules/open-iconic/svg/*.svg',
                     '<%= srcPath %>/icons/*.svg'
                 ],
                 dest: '<%= distPath %>/fonts/k-icons',

@@ -8,7 +8,7 @@ Our goal is to make it easier for developers to create user-centered web applica
 
 ```
 $ bundle install
-$ yarn install
+$ npm install
 ```
 
 ## Development
