@@ -1,0 +1,42 @@
+$enable-grid-classes:       true !default;
+
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+        xs: 0,
+        s:  $k-alpha,
+        sm: $k-beta,
+        md: $k-charlie,
+        lg: $k-delta,
+        xl: $k-echo
+) !default;
+
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints);
+
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns:                12 !default;
+$grid-gutter-width:           30px !default;
+
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+        s: $k-alpha - $grid-gutter-width,
+        sm: $k-beta - $grid-gutter-width,
+        md: $k-charlie - $grid-gutter-width,
+        lg: $k-delta - $grid-gutter-width,
+        xl: $k-echo - $grid-gutter-width
+) !default;
+
+@include _assert-ascending($container-max-widths, "$container-max-widths");
