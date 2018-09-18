@@ -1659,6 +1659,9 @@ body.k-is-resizing {
    *
    * 1. for breadcrumbs to work properly
    */
+  /**
+   * Remove overflow for component to fix horizontal overflow issue in webkit
+   */
   /* Content wrapper
      ========================================================================== */
   /**
@@ -3237,6 +3240,11 @@ body.k-is-resizing {
 
 .k-ui-namespace .k-content-area__child .k-content {
   z-index: inherit;
+}
+
+.k-ui-namespace .k-content-area .k-component-wrapper,
+.k-ui-namespace .k-content-area .k-component {
+  overflow: hidden;
 }
 
 .k-ui-namespace .k-content-wrapper {
@@ -9910,9 +9918,31 @@ html:not([dir="rtl"]) .k-input-group__button:first-child > .k-button-group:not(:
   border-bottom-color: #ededed;
 }
 
+.k-ui-namespace .k-table-container thead ~ tbody .k-table__sub-header th {
+  /**
+         * Hack:
+         * Webkit treats the tbody as scrollbox instead of the table container
+         * Target webkit and reset top to 0 to fix th sticky position
+         * Also targetting MS Edge, so overwriting again for Edge
+         */
+}
+
 @supports ((position: -webkit-sticky) or (position: sticky)) {
   .k-ui-namespace .k-table-container thead ~ tbody .k-table__sub-header th {
     top: 40px;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @supports ((position: -webkit-sticky) or (position: sticky)) {
+    .k-ui-namespace .k-table-container thead ~ tbody .k-table__sub-header th {
+      top: 0;
+    }
+  }
+  @supports (-ms-accelerator: true) {
+    .k-ui-namespace .k-table-container thead ~ tbody .k-table__sub-header th {
+      top: 40px;
+    }
   }
 }
 

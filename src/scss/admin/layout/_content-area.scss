@@ -111,4 +111,16 @@
       z-index: inherit;
     }
   }
+
+
+  /**
+   * Remove overflow for component to fix horizontal overflow issue in webkit
+   */
+
+  .k-content-area {
+    .k-component-wrapper,
+    .k-component {
+      overflow: hidden;
+    }
+  }
 }
