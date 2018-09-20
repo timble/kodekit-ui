@@ -1659,9 +1659,6 @@ body.k-is-resizing {
    *
    * 1. for breadcrumbs to work properly
    */
-  /**
-   * Remove overflow for component to fix horizontal overflow issue in webkit
-   */
   /* Content wrapper
      ========================================================================== */
   /**
@@ -3240,11 +3237,6 @@ body.k-is-resizing {
 
 .k-ui-namespace .k-content-area__child .k-content {
   z-index: inherit;
-}
-
-.k-ui-namespace .k-content-area .k-component-wrapper,
-.k-ui-namespace .k-content-area .k-component {
-  overflow: hidden;
 }
 
 .k-ui-namespace .k-content-wrapper {
