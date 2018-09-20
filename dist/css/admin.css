@@ -9653,10 +9653,16 @@ html:not([dir="rtl"]) .k-input-group__button:first-child > .k-button-group:not(:
 }
 
 .k-ui-namespace .k-table-container th {
-  /* autoprefixer: off */
-  position: sticky;
-  top: 0;
-  z-index: 1;
+  position: static;
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+  .k-ui-namespace .k-table-container th {
+    /* autoprefixer: off */
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
 }
 
 .k-ui-namespace .k-table-container th {
