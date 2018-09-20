@@ -95,6 +95,7 @@
      */
 
     th {
+      /* autoprefixer: off */
       position: sticky;
       top: 0;
       z-index: 1;
@@ -410,23 +411,6 @@
       th {
         @supports (position: sticky) {
           top: $k-table-cell-size;
-        }
-
-        /**
-         * Hack:
-         * Webkit treats the tbody as scrollbox instead of the table container
-         * Target webkit and reset top to 0 to fix th sticky position
-         * Also targetting MS Edge, so overwriting again for Edge
-         */
-
-        @media screen and (-webkit-min-device-pixel-ratio:0) {
-          @supports (position: sticky) {
-            top: 0;
-          }
-
-          @supports (-ms-accelerator:true) {
-            top: $k-table-cell-size;
-          }
         }
       }
     }

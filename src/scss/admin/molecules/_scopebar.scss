@@ -5,6 +5,7 @@
 
   /**
    * 1. Faking a border for when items are not stretching
+   * 2. Hide horizontal scrollbar
    */
 
   .k-scopebar {
@@ -17,6 +18,7 @@
     width: auto;
     flex: 0 0 auto;
     flex-wrap: wrap;
+    overflow: hidden; /* 2 */
 
     @include breakpoint($k-delta) {
       flex-wrap: nowrap;
