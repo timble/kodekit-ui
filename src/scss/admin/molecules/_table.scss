@@ -95,9 +95,13 @@
      */
 
     th {
-      position: sticky;
-      top: 0;
-      z-index: 1;
+      /* autoprefixer: off */
+      @supports (position: sticky) and (not (position: -webkit-sticky)) {
+        /* autoprefixer: off */
+        position: sticky;
+        top: 0;
+        z-index: 1;
+      }
     }
 
 
@@ -408,7 +412,8 @@
 
     thead ~ tbody .k-table__sub-header {
       th {
-        @supports (position: sticky) {
+        /* autoprefixer: off */
+        @supports (position: sticky) and (not (position: -webkit-sticky)) {
           top: $k-table-cell-size;
         }
       }
