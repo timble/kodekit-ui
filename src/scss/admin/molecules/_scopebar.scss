@@ -25,6 +25,10 @@
     }
   }
 
+  .k-scopebar.k-scopebar.k-scopebar {
+    overflow: visible; // Scopebar will not be visible without this on desktop
+  }
+
 
   /**
    * Scopebar items
