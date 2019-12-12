@@ -1218,7 +1218,7 @@ $k-optionlist-label-color:              $k-input-color !default;
 $k-optionlist-label-font-weight:        $k-normal-font-weight !default;
 $k-optionlist-label-border-radius:      $k-input-border-radius - 1px !default;
 
-$k-optionlist-label-focus-color:        $k-neutral-type-color - 1px !default;
+$k-optionlist-label-focus-color:        $k-neutral-type-color !default;
 $k-optionlist-label-focus-border:       1px solid $k-input-focus-border !default;
 $k-optionlist-label-focus-box-shadow:   inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($k-input-focus-border, 0.6) !default;
 
