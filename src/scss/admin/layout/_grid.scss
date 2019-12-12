@@ -9,7 +9,6 @@
 
   .k-container {
     @include clearfix;
-    overflow: hidden;
     width: 100%;
     margin: 0 auto;
     flex: 0 0 auto;
@@ -17,6 +16,10 @@
 
     /* When resizing */
     @include resizing {
+      overflow: hidden;
+    }
+
+    @include breakpoint($k-charlie) {
       overflow: hidden;
     }
 
