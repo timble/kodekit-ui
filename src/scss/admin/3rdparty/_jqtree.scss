@@ -32,11 +32,11 @@
 
       & > .jqtree_common {
         & > .jqtree-element {
-          padding-left: 15px;
+          padding-left: $k-tree-element-start-spacing;
 
           @include rtl {
             padding-left: $k-tree-element-end-spacing;
-            padding-right: 15px;
+            padding-right: $k-tree-element-start-spacing;
           }
         }
       }
