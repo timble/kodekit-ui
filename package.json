@@ -30,7 +30,7 @@
     "jquery": "1.12.4",
     "jquery-validation": "1.14.0",
     "magnific-popup": "1.1.0",
-    "node-sass": "4.13.0",
+    "node-sass": "^4.13.1",
     "open-iconic": "git+https://github.com/iconic/open-iconic.git#1.1.1",
     "select2": "4.0.3",
     "select2-bootstrap-theme": "0.1.0-beta.9",
