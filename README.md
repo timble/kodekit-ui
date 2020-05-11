@@ -7,12 +7,15 @@ Our goal is to make it easier for developers to create user-centered web applica
 ## Installation
 
 ```
-$ bundle install
 $ npm install
 ```
 
 ## Development
 
+### Generating webfonts
+
+Run the following command. This requires [Docker](https://www.docker.com/) on your host. 
+
 ```
-$ grunt
+$ make font-generator
 ````
