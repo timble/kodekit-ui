@@ -12,6 +12,15 @@ $ npm install
 
 ## Development
 
+### Recompiling assets
+
+Run the following command in the repo root:
+
+```
+$ /scripts/compile-assets
+````
+
+
 ### Generating webfonts
 
 Run the following command. This requires [Docker](https://www.docker.com/) on your host. 
