@@ -1,0 +1,87 @@
+/* Bootstrap 2.3.2 variables and mixins used in files (Joomla uses old Bootstrap) */
+@import "sass-twitter-bootstrap/variables";
+@import "sass-twitter-bootstrap/mixins";
+
+/* Bootstrap 3.x variables and mixins (select2 bootstrap styling uses BS 3) */
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+
+/* Site variables and mixins */
+@import "site/utilities/variables";
+@import "site/utilities/mixins";
+
+/* Kodekit tools */
+@import "admin/core/tools";
+
+/* Outside of the k-ui-namespace scope */
+@import "site/modal";
+
+.mfp-wrap {
+  // Importing the well here so the advanced permissions popup looks nice
+  @import "sass-twitter-bootstrap/wells";
+}
+
+@import "admin/3rdparty/datepicker";
+
+@import "../../node_modules/select2/src/scss/core";
+@import "../../node_modules/select2-bootstrap-theme/src/select2-bootstrap";
+
+/* Icons */
+@import "admin/generated/k-icons";
+@import "admin/molecules/icon";
+
+/* Tooltips */
+@import "admin/molecules/tooltip";
+
+/* Inside k-ui-namespace scope */
+.k-ui-namespace {
+
+  /* Border-box size everything */
+
+  &, *, *:before, *:after {
+    box-sizing: border-box;
+  }
+
+  /* Responsive tables */
+  @import "admin/3rdparty/footable";
+
+  /* Pagination */
+  @import "admin/molecules/pagination";
+
+  /* File select input */
+  @import "admin/molecules/styled-file-input";
+
+  @import "site/anchor";
+  @import "site/header";
+  @import "admin/3rdparty/jqtree";
+  @import "site/select2";
+  @import "site/table";
+  @import "site/toolbar";
+  @import "site/wrapped-content";
+
+  /**
+   * Utilities
+   *
+   * Loading last so we have the biggest chance of 'winning' specificity wars without using !important
+   */
+
+  @import "admin/utilities/dynamic-content-holder";
+  @import "admin/utilities/hidden";
+  @import "admin/molecules/loader";
+  @import "admin/utilities/no-margin";
+  @import "admin/utilities/no-transition";
+  @import "admin/utilities/no-wrap";
+  @import "admin/utilities/visually-hidden";
+  @import "admin/utilities/visually-shown";
+  @import "admin/utilities/ratio-content";
+  @import "admin/utilities/color";
+  @import "admin/utilities/content-block";
+  @import "admin/utilities/position";
+  @import "admin/utilities/flexing";
+  @import "admin/utilities/touchevent";
+  @import "admin/utilities/ellipsis";
+  @import "admin/utilities/coverall";
+  @import "admin/utilities/this-or-that";
+  @import "admin/utilities/component-animation";
+  @import "admin/molecules/hamburger";
+}
