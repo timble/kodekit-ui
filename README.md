@@ -7,12 +7,24 @@ Our goal is to make it easier for developers to create user-centered web applica
 ## Installation
 
 ```
-$ bundle install
 $ npm install
 ```
 
 ## Development
 
+### Recompiling assets
+
+Run the following command in the repo root:
+
 ```
-$ grunt
+$ /scripts/compile-assets
+````
+
+
+### Generating webfonts
+
+Run the following command. This requires [Docker](https://www.docker.com/) on your host. 
+
+```
+$ make font-generator
 ````

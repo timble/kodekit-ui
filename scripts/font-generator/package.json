@@ -1,0 +1,10 @@
+{
+  "name": "kodekit-webfont",
+  "description": "kodekit-webfont",
+  "author": "Joomlatools",
+  "devDependencies": {
+    "grunt": "1.0.4",
+    "grunt-cli": "1.3.2",
+    "grunt-webfont": "1.5.0"
+  }
+}

@@ -1,0 +1,170 @@
+/**
+ * Bootstrap
+ * =========
+ * Custom generated bootstrap
+ * All SCSS files that are not being used are not being compiled
+ * All files that might be used in the future and most likely won't cause styling issues are included
+ * Added some custom values to classes at the end since we're not including scaffolding.scss
+ */
+
+.k-ui-namespace {
+
+  /**
+   * Core variables and mixins
+   * -------------------------
+   */
+
+  @import "sass-twitter-bootstrap/variables";
+  @import "sass-twitter-bootstrap/mixins";
+  $iconSpritePath: "../img/glyphicons-halflings.png";
+  $iconWhiteSpritePath: "../img/glyphicons-halflings-white.png";
+
+
+  /**
+   * Reset file
+   * ----------
+   */
+
+  @import "sass-twitter-bootstrap/reset";
+
+
+  /**
+   * Grid system and page structure
+   * ------------------------------
+   */
+
+  // @import "sass-twitter-bootstrap/scaffolding";
+  // @import "sass-twitter-bootstrap/grid";
+  // @import "sass-twitter-bootstrap/layouts";
+
+
+  /**
+   * Base CSS
+   * --------
+   */
+
+  @import "sass-twitter-bootstrap/type";
+  @import "sass-twitter-bootstrap/code";
+  @import "sass-twitter-bootstrap/forms";
+  @import "sass-twitter-bootstrap/tables";
+
+
+  /**
+   * Components: Common
+   * ------------------
+   */
+
+  @import "sass-twitter-bootstrap/sprites";
+  @import "sass-twitter-bootstrap/dropdowns";
+  @import "sass-twitter-bootstrap/wells";
+  @import "sass-twitter-bootstrap/component-animations";
+  @import "sass-twitter-bootstrap/close";
+
+
+  /**
+   * Components: Buttons & Alerts
+   * ----------------------------
+   * 1. Note: alerts share common CSS with buttons and thus have styles in buttons
+   */
+
+  @import "sass-twitter-bootstrap/buttons";
+  @import "sass-twitter-bootstrap/button-groups";
+  @import "sass-twitter-bootstrap/alerts"; // 1
+
+
+  /**
+   * Components: Nav
+   * ---------------
+   */
+
+  @import "sass-twitter-bootstrap/navs";
+  // @import "sass-twitter-bootstrap/navbar";
+  // @import "sass-twitter-bootstrap/breadcrumbs";
+  @import "sass-twitter-bootstrap/pagination";
+  @import "sass-twitter-bootstrap/pager";
+
+
+  /**
+   * Components: Popovers
+   * --------------------
+   */
+
+  // @import "sass-twitter-bootstrap/modals";
+  @import "sass-twitter-bootstrap/tooltip";
+  // @import "sass-twitter-bootstrap/popovers";
+
+
+  /**
+   * Components: Misc
+   * ----------------
+   */
+
+  @import "sass-twitter-bootstrap/thumbnails";
+  @import "sass-twitter-bootstrap/media";
+  @import "sass-twitter-bootstrap/labels-badges";
+  @import "sass-twitter-bootstrap/progress-bars";
+  // @import "sass-twitter-bootstrap/accordion";
+  // @import "sass-twitter-bootstrap/carousel";
+  // @import "sass-twitter-bootstrap/hero-unit";
+
+
+  /**
+   * Utility classes
+   * ---------------
+   * Has to be last to override when necessary
+   */
+
+  @import "sass-twitter-bootstrap/utilities";
+
+
+  /**
+   * Overwrites for custom bootstrap file
+   * ------------------------------------
+   */
+
+  .btn,
+  #editor-xtd-buttons a,
+  .toggle-editor a {
+    text-decoration: none;
+  }
+  .table {
+    margin-bottom: 0;
+  }
+
+
+  /**
+   * Pagination
+   * ----------
+   * The default pagination links do have a background-color but no font color
+   * If a template has link color specified as a light color (e.g. white or light grey etc.)
+   * you don't see a thing. So adding '$textColor' color to links within pagination
+   */
+
+  .pagination ul > li > a,
+  .pagination ul > li > span {
+    color: $textColor;
+  }
+
+
+  /**
+   * Custom Joomla classes
+   * ---------------------
+   */
+
+  .k-ui-namespace .nav-tabs>li {
+    margin-bottom: -1px !important;
+  }
+
+  #rules,
+  .koowa_dialog {
+    a {
+      color: #555;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+  }
+}
