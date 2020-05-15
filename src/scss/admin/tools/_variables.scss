@@ -950,8 +950,8 @@ $k-tabs-scroller-item-active-color:             $k-type-color !default;
 $k-tabs-scroller-item-active-focus-border:      darker($k-primary-min-1-color) !default;
 $k-tabs-scroller-item-active-focus-box-shadow:  inset 0 1px 0 0 $k-tabs-scroller-item-active-focus-border !default;
 
-$k-tabs-content-tab-active-class:               $k-active-class !default
-$k-tabs-content-tab-spacing:                    $k-small-spacing !default
+$k-tabs-content-tab-active-class:               $k-active-class !default;
+$k-tabs-content-tab-spacing:                    $k-small-spacing !default;
 
 
 // Buttons
@@ -978,7 +978,7 @@ $k-button-primary-background:        $k-accent-color !default;
 $k-button-primary-border:            darken($k-button-primary-background, 5%) !default;
 
 $k-button-success-color:             $k-success-type-color !default;
-$k-button-success-background:        $k-success-color !default
+$k-button-success-background:        $k-success-color !default;
 $k-button-success-border:            darken($k-button-success-background, 5%) !default;
 
 $k-button-info-color:                $k-neutral-type-color !default;
