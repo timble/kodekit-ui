@@ -1,0 +1,46 @@
+$k-accent-color: #0073AA;
+
+$k-primary-color:         #212121 !default;
+
+$k-primary-plus-5-color:  lighten($k-primary-color, 10%) !default;    //#3b3a3a
+
+$k-primary-plus-7-color:  lighten($k-primary-color, 20%);
+
+$k-primary-plus-9-color:  lighten($k-primary-color, 45%);
+
+//strictly speaking min should darken but what to soften black borders
+$k-primary-min-2-color:   lighten($k-primary-color, 20%) !default;
+
+$k-secondary-color:       #FFFFFF !default;
+
+$k-type-color:            $k-secondary-color !default;
+
+$k-sidebar-border:        $k-primary-plus-7-color !default;
+
+$k-navigation-border:     $k-primary-plus-7-color !default;
+
+$k-scopebar-border:       $k-primary-plus-7-color !default;
+
+$k-toolbar-border:        $k-primary-plus-7-color !default;
+
+$k-scopebar-color:        $k-secondary-color !default;
+
+$k-input-placeholder-color: $k-primary-plus-9-color !default;
+
+$k-form-option-border: none !default;
+
+$k-form-color: $k-primary-plus-7-color !default;
+
+$k-form-option-background: darken($k-secondary-color, 41%) !default;
+
+$k-button-color: $k-primary-plus-7-color !default;
+
+$k-input-color: $k-secondary-color !default;
+
+$k-type-lighter-color: darken($k-secondary-color, 41%) !default;
+
+$k-input-disabled-background: $k-form-color !default;
+
+$k-button-default-color: $k-secondary-color !default;
+
+$dropdown-bg-color: $k-primary-plus-9-color !important;
