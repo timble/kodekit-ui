@@ -19592,14 +19592,16 @@ var Konami = function (callback) {
      * Footable
      */
     kodekitUI.initializeFootable = function() {
-        $('.k-js-responsive-table').removeClass('footable footable-loaded').footable({
-            toggleSelector: '.footable-toggle',
-            breakpoints: {
-                phone: 400,
-                tablet: 600,
-                desktop: 800
-            }
-        });
+        if ($.fn.footable) {
+            $('.k-js-responsive-table').removeClass('footable footable-loaded').footable({
+                toggleSelector: '.footable-toggle',
+                breakpoints: {
+                    phone: 400,
+                    tablet: 600,
+                    desktop: 800
+                }
+            });
+        }
     };
 
 
@@ -19607,9 +19609,11 @@ var Konami = function (callback) {
      * Select 2
      */
     kodekitUI.initializeSelect2 = function() {
-        $('.k-js-select2').select2({
-            theme: "bootstrap"
-        });
+        if ($.fn.select2) {
+            $('.k-js-select2').select2({
+                theme: "bootstrap"
+            });
+        }
     };
 
 
@@ -19617,7 +19621,9 @@ var Konami = function (callback) {
      * Datepicker
      */
     kodekitUI.initializeDatepicker = function datepicker() {
-        $('.k-js-datepicker').kdatepicker();
+        if ($.fn.kdatepicker) {
+            $('.k-js-datepicker').kdatepicker();
+        }
     };
 
 
@@ -19625,9 +19631,12 @@ var Konami = function (callback) {
      * Magnific popup
      */
     kodekitUI.initializeModal = function() {
-        $('.k-js-image-modal').magnificPopup({type: 'image'});
-        $('.k-js-inline-modal').magnificPopup({type: 'inline'});
-        $('.k-js-iframe-modal').magnificPopup({type: 'iframe'});
+        if ($.fn.magnificPopup) {
+            $('.k-js-image-modal').magnificPopup({type: 'image'});
+            $('.k-js-inline-modal').magnificPopup({type: 'inline'});
+            $('.k-js-iframe-modal').magnificPopup({type: 'iframe'});
+        }
+
     };
 
 
@@ -19636,12 +19645,15 @@ var Konami = function (callback) {
      */
 
     kodekitUI.initializeTooltip = function() {
-        $('.k-js-tooltip').ktooltip({
-            animation: true,
-            placement: 'top',
-            delay: {show: 200, hide: 50},
-            container: '.k-ui-container'
-        });
+        if ($.fn.ktooltip) {
+            $('.k-js-tooltip').ktooltip({
+                animation: true,
+                placement: 'top',
+                delay: {show: 200, hide: 50},
+                container: '.k-ui-container'
+            });
+        }
+
     };
 
     kodekitUI.initializeNavigation = function() {
