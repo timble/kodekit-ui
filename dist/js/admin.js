@@ -15814,6 +15814,8 @@ module.exports = '1.3.4';
                     .val('')
                     .filter('select').trigger('change'); // For select2
 
+                box.find('.k-js-scopebar-clearable').val('');
+
                 var form = event.target.form;
 
                 if (form) {
