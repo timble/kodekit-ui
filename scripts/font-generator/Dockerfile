@@ -14,5 +14,5 @@ COPY ./node_modules/open-iconic ./node_modules/open-iconic
 
 COPY scripts/font-generator/gruntfile.js ./
 
-CMD ["npx", "grunt"]
+CMD ["npx", "grunt", "--verbose"]
 

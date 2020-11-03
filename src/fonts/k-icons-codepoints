@@ -10,6 +10,7 @@
     "document-pdf": 61705,
     "document-spreadsheet": 61706,
     "document-video": 61707,
+    "document-link": 62000,
     "documents": 61708,
     "enabled": 61709,
     "filter": 61710,

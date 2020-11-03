@@ -20,6 +20,14 @@ Run the following command in the repo root:
 $ /scripts/compile-assets
 ````
 
+### Adding an icon
+
+* Add the icon as an SVG file to `src/icons/ICONNAME.svg`
+* Edit `src/fonts/k-icons-codepoints` and add the following to the end where `62xxx` is the largest number in the file: `"ICONNAME": 62xxx,`
+* Convert `62xxx` from base10 to base16
+* Edit `src/scss/admin/generated/_k-icons.scss` and add the following to the $icons array: `document-link: "\62XXXINHEX",`
+* Run `make font-generator` in repository root
+* Go to kodekit, foliokit, and component repositories and run `mason`
 
 ### Generating webfonts
 
