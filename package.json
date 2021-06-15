@@ -24,7 +24,6 @@
     "select2-bootstrap-theme": "0.1.0-beta.9"
   },
   "dependencies": {
-    "alpinejs": "^2.3.3",
     "bootstrap-sass": "^3.4.1",
     "promise-polyfill": "8.1.3",
     "vue": "^2.3.3",

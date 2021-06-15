@@ -8,6 +8,10 @@ const distPath = `${projectPath}/dist`;
 const nodeModules = `${projectPath}/node_modules`;
 
 async function files() {
+
+    await mason.fs.download('https://unpkg.com/alpinejs@3.0.6/dist/cdn.js', `${distPath}/js/alpine.js`);
+    await mason.fs.download('https://unpkg.com/alpinejs@3.0.6/dist/cdn.min.js', `${distPath}/js/alpine.min.js`);
+
     await mason.fs.copyFolderContents(`${nodeModules}/select2/src/scss`, `${srcPath}/scss/admin/3rdparty/copied/select2`);
     await mason.fs.copyFolderContents(`${nodeModules}/select2-bootstrap-theme/src`, `${srcPath}/scss/admin/3rdparty/copied/select2-bootstrap-theme`);
     await mason.fs.copyFolderContents(`${nodeModules}/bootstrap/scss`, `${srcPath}/scss/admin/3rdparty/copied/bootstrap`);
@@ -140,12 +144,6 @@ async function js() {
             `${nodeModules}/vue/dist/vue.js`,
             `${nodeModules}/vuex/dist/vuex.js`,
             `${srcPath}/js/koowa.vue.js`
-        ],
-        [`${distPath}/js/alpine.js`]: [
-            `${nodeModules}/alpinejs/dist/alpine.js`,
-        ],
-        [`${distPath}/js/alpine-ie11.js`]: [
-            `${nodeModules}/alpinejs/dist/alpine-ie11.js`,
         ],
         [`${distPath}/js/debugger.js`]: [
             `${srcPath}/js/debugger.js`,
