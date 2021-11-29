@@ -1,3 +1,28 @@
+@mixin k-body {
+  min-height: 100%; /* 1 */
+  height: 100%; /* 1 */
+  padding: 0; /* 2 */
+  margin: 0; /* 2 */
+
+
+  /**
+   * Setup flexbox
+   */
+
+  display: flex; /* 3 */
+  flex-direction: column; /* 3 */
+  flex: 1 1 auto; /* 3 */
+
+
+  /**
+   * When resizing
+   */
+
+  &#{$k-resizing-class} {
+    overflow: hidden; /* 4 */
+  }
+}
+
 @if ($k-atoms == true and $k-atom-body != false) or $k-atom-body == true {
 
   /* Body
@@ -11,27 +36,6 @@
    */
 
   body {
-    min-height: 100%; /* 1 */
-    height: 100%; /* 1 */
-    padding: 0; /* 2 */
-    margin: 0; /* 2 */
-
-
-    /**
-     * Setup flexbox
-     */
-
-    display: flex; /* 3 */
-    flex-direction: column; /* 3 */
-    flex: 1 1 auto; /* 3 */
-
-
-    /**
-     * When resizing
-     */
-
-    &#{$k-resizing-class} {
-      overflow: hidden; /* 4 */
-    }
+    @include k-body;
   }
 }
