@@ -1,17 +1,3 @@
-@mixin k-html {
-  min-height: 100%; /* 1 */
-  height: 100%; /* 1 */
-  padding: 0; /* 2 */
-  margin: 0; /* 2 */
-  font-family: $k-font-family; /* 3 */
-  font-size: $k-font-size; /* 3 */
-  line-height: $k-line-height; /* 3 */
-  font-weight: $k-normal-font-weight; /* 3 */
-  color: $k-type-color;
-  -webkit-font-smoothing: $k-webkit-font-smoothing;
-  -moz-osx-font-smoothing: $k-firefox-font-smoothing;
-}
-
 @if ($k-atoms == true and $k-atom-html != false) or $k-atom-html == true {
 
   /* HTML
