@@ -1616,7 +1616,9 @@ Koowa.Controller.Form = Koowa.Controller.extend({
         return this._actionDefault(context);
     },
     _actionDefault: function(context){
-        if (context.validate && !this.trigger('validate', [context])) {
+        if (context.validate && !this.trigger('validate', [context]))
+		{
+			this.trigger('invalid-form-data');
             return false;
         }
 
