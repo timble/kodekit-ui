@@ -60,6 +60,17 @@
     margin-right: $k-icon-text-item-spacing;
   }
 
+	/**
+	* Icon modifiers
+	*/
+
+	.k-icon {
+		&--disabled {
+			cursor: not-allowed;
+			opacity: 0.65;
+			pointer-events: none;
+		}
+	}
 
   /**
    * Custom background image icons
