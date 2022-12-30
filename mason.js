@@ -61,6 +61,7 @@ async function js() {
             `${srcPath}/js/kquery.set.js`,
             `${nodeModules}/select2/dist/js/select2.full.js`,
             `${srcPath}/js/koowa.select2.autocomplete.js`,
+            `${srcPath}/js/koowa.select2.scroll.js`,
             `${srcPath}/js/kquery.unset.js`,
         ],
         [`${distPath}/js/koowa.tree.js`]: [
