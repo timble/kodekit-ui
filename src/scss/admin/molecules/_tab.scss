@@ -104,6 +104,10 @@
     list-style: none;
     border-bottom: $k-tabs-border;
     font-size: 0;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
 
 
     /**
