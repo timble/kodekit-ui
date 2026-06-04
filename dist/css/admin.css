@@ -1701,6 +1701,14 @@ body.k-is-resizing {
    * 6. Set font-size to 16px on touch supported devices so browser won't automatically zoom
    * 7. Make multiple select elements height not fixed
    */
+  /**
+   * Native date & time inputs render a browser picker indicator whose size
+   * tracks the font-size. The 16px touch bump above (6) — meant to stop mobile
+   * zoom on textual inputs — scales that indicator and shifts it on tap, making
+   * the picker hard to open in Chrome. These inputs open a native picker rather
+   * than zooming, so keep them at the base font-size on touch focus/active.
+   * Scoped to date/time only, so textual inputs keep the zoom-prevention bump.
+   */
   /* Label
      ========================================================================== */
   /**
@@ -1876,12 +1884,23 @@ body.k-is-resizing {
    * https://github.com/twbs/bootstrap/issues/11586.
    */
   /**
-   * Special styles for iOS temporal inputs
+   * Native temporal inputs (WebKit)
    *
-   * In Mobile Safari, setting `display: block` on temporal inputs causes the
-   * text within the input to become vertically misaligned. As a workaround, we
-   * set a pixel line-height that matches the given height of the input, but only
-   * for Safari. See https://bugs.webkit.org/show_bug.cgi?id=139848
+   * The old fixed line-height below was a workaround for a 2015 Mobile Safari
+   * bug where `display: block` vertically misaligned temporal inputs
+   * (https://bugs.webkit.org/show_bug.cgi?id=139848). That bug is long fixed,
+   * and the workaround now does the opposite — a line-height equal to the input
+   * height pushes the value below center in modern Safari. `line-height: normal`
+   * lets WebKit center the native value itself.
+   *
+   * `color-scheme` makes WebKit render the native widget chrome (picker
+   * indicator, focused segment, calendar/clock popups) for the active theme;
+   * without it, on a dark form-control background the indicator is dark-on-dark
+   * and the segments look like stray text selection. Derived from the input
+   * background so it follows light/dark automatically.
+   *
+   * Scoped to native date/time inputs, so consumers using text-input datepickers
+   * (e.g. the Joomla framework's calendar) are unaffected.
    *
    * Note that as of 8.3, iOS doesn't support `datetime` or `week`.
    */
@@ -3655,6 +3674,12 @@ body.k-is-resizing {
   font-size: 16px !important; /* 6 */
 }
 
+.k-touchevents .k-ui-namespace input[type=date]:focus, .k-touchevents .k-ui-namespace input[type=date]:active,
+.k-touchevents .k-ui-namespace input[type=time]:focus,
+.k-touchevents .k-ui-namespace input[type=time]:active {
+  font-size: 13px !important;
+}
+
 [dir=rtl] .k-ui-namespace select,
 [dir=rtl] .k-ui-namespace textarea,
 [dir=rtl] .k-ui-namespace input[type=text],
@@ -4991,24 +5016,24 @@ body.k-is-resizing {
   -webkit-appearance: none;
 }
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
-  .k-ui-namespace input[type=date].k-form-control,
+  .k-ui-namespace input[type=date].k-form-control, .k-input-group--small .k-ui-namespace input[type=date], .k-input-group--large .k-ui-namespace input[type=date],
   .k-ui-namespace input[type=time].k-form-control,
-  .k-ui-namespace input[type=datetime-local].k-form-control,
-  .k-ui-namespace input[type=month].k-form-control {
-    line-height: 32px;
-  }
-  .k-input-group--small .k-ui-namespace input[type=date],
   .k-input-group--small .k-ui-namespace input[type=time],
-  .k-input-group--small .k-ui-namespace input[type=datetime-local],
-  .k-input-group--small .k-ui-namespace input[type=month] {
-    line-height: 28px;
-  }
-  .k-input-group--large .k-ui-namespace input[type=date],
   .k-input-group--large .k-ui-namespace input[type=time],
+  .k-ui-namespace input[type=datetime-local].k-form-control,
+  .k-input-group--small .k-ui-namespace input[type=datetime-local],
   .k-input-group--large .k-ui-namespace input[type=datetime-local],
+  .k-ui-namespace input[type=month].k-form-control,
+  .k-input-group--small .k-ui-namespace input[type=month],
   .k-input-group--large .k-ui-namespace input[type=month] {
-    line-height: 40px;
+    line-height: normal;
   }
+}
+.k-ui-namespace input[type=date],
+.k-ui-namespace input[type=time],
+.k-ui-namespace input[type=datetime-local],
+.k-ui-namespace input[type=month] {
+  color-scheme: light;
 }
 .k-appearance .k-ui-namespace {
   /**
