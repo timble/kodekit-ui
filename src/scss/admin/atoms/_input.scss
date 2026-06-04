@@ -65,6 +65,24 @@
     }
   }
 
+  /**
+   * Native date & time inputs render a browser picker indicator whose size
+   * tracks the font-size. The 16px touch bump above (6) — meant to stop mobile
+   * zoom on textual inputs — scales that indicator and shifts it on tap, making
+   * the picker hard to open in Chrome. These inputs open a native picker rather
+   * than zooming, so keep them at the base font-size on touch focus/active.
+   * Scoped to date/time only, so textual inputs keep the zoom-prevention bump.
+   */
+  input[type="date"],
+  input[type="time"] {
+    @include modernizr('.k-touchevents') {
+      &:focus,
+      &:active {
+        font-size: $k-font-size !important;
+      }
+    }
+  }
+
   @include rtl {
     select,
     textarea,

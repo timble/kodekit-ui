@@ -100,12 +100,23 @@
 
 
   /**
-   * Special styles for iOS temporal inputs
+   * Native temporal inputs (WebKit)
    *
-   * In Mobile Safari, setting `display: block` on temporal inputs causes the
-   * text within the input to become vertically misaligned. As a workaround, we
-   * set a pixel line-height that matches the given height of the input, but only
-   * for Safari. See https://bugs.webkit.org/show_bug.cgi?id=139848
+   * The old fixed line-height below was a workaround for a 2015 Mobile Safari
+   * bug where `display: block` vertically misaligned temporal inputs
+   * (https://bugs.webkit.org/show_bug.cgi?id=139848). That bug is long fixed,
+   * and the workaround now does the opposite — a line-height equal to the input
+   * height pushes the value below center in modern Safari. `line-height: normal`
+   * lets WebKit center the native value itself.
+   *
+   * `color-scheme` makes WebKit render the native widget chrome (picker
+   * indicator, focused segment, calendar/clock popups) for the active theme;
+   * without it, on a dark form-control background the indicator is dark-on-dark
+   * and the segments look like stray text selection. Derived from the input
+   * background so it follows light/dark automatically.
+   *
+   * Scoped to native date/time inputs, so consumers using text-input datepickers
+   * (e.g. the Joomla framework's calendar) are unaffected.
    *
    * Note that as of 8.3, iOS doesn't support `datetime` or `week`.
    */
@@ -115,18 +126,19 @@
     input[type="time"],
     input[type="datetime-local"],
     input[type="month"] {
-      &.k-form-control {
-        line-height: $k-input-base-height;
-      }
-
-      .k-input-group--small & {
-        line-height: $k-input-small-height;
-      }
-
+      &.k-form-control,
+      .k-input-group--small &,
       .k-input-group--large & {
-        line-height: $k-input-large-height;
+        line-height: normal;
       }
     }
+  }
+
+  input[type="date"],
+  input[type="time"],
+  input[type="datetime-local"],
+  input[type="month"] {
+    color-scheme: if(lightness($k-input-background) < 50%, dark, light);
   }
 
 
